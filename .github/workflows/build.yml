@@ -1,0 +1,53 @@
+name: build
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+
+  uv:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v7
+        with:
+          submodules: true
+
+      - name: setup uv
+        uses: astral-sh/setup-uv@v8.3.2
+        with:
+          python-version: '3.13'
+          enable-cache: true
+
+      - name: report
+        run: make report.ci
+
+      - name: check tree is unmodified
+        run: make check-tree-clean
+
+  devcontainer:
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+    steps:
+      - name: checkout
+        uses: actions/checkout@v7
+        with:
+          submodules: true
+
+      - name: devcontainer
+        uses: ./.github/workflows/actions/devcontainer
+        id: devcontainer
+        with:
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: setup
+        run: echo 'EXEC=${{ steps.devcontainer.outputs.exec }}' >> $GITHUB_ENV
+
+      - name: report
+        run: ${{ env.EXEC }} make report.ci
+
+      - name: check tree is unmodified
+        run: ${{ env.EXEC }} make check-tree-clean

@@ -1,0 +1,33 @@
+[project]
+name = "devcontainer-pytorch-image-models"
+version = "0.1.0"
+description = "Tooling for exporting and analyzing PyTorch model zoos via torch.export"
+requires-python = ">=3.10"
+dependencies = [
+        'pyyaml',
+        'timm',
+        'torch',
+        'torchvision',
+]
+
+[dependency-groups]
+dev = [
+        'pytest',
+        'pytest-timeout',
+        'pytest-xdist',
+        'pytest-forked',
+        'expecttest',
+]
+
+[tool.uv]
+package = false
+
+[tool.uv.sources]
+timm = { path = "modules/pytorch-image-models", editable = true }
+torch = { index = "pytorch-cpu" }
+torchvision = { index = "pytorch-cpu" }
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true

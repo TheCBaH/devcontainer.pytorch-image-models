@@ -1,0 +1,17 @@
+// For format details, see https://aka.ms/devcontainer.json.
+{
+    "name": "devcontainer.pytorch-image-models",
+    "build":  {
+        "dockerfile": "Dockerfile"
+    },
+    "features": {
+    },
+    "customizations": {
+    },
+    "remoteUser": "vscode",
+    "postCreateCommand": {
+        "submodules": "git submodule update --init --depth 1"
+    },
+    "waitFor": "postCreateCommand"
+}
+
