@@ -92,6 +92,23 @@ def run_worker(script, argv, name, timeout, hf_home=None):
             return {'name': name, 'status': 'crashed', 'error': 'unparseable worker output'}
 
 
+def pretrained_info(name):
+    """(tag, hf_hub_id) for a model's default pretrained weights, or (None, None).
+
+    A model can carry a pretrained *tag* while having nowhere to fetch it from -- timm's
+    `test_*` architectures are the obvious case -- so the presence of a real source, not of
+    a tag, is what decides whether a variant can ship as a runnable .pt2.
+    """
+    from timm.models import get_pretrained_cfg
+    try:
+        cfg = get_pretrained_cfg(name)
+    except Exception:
+        return None, None
+    if not (cfg.hf_hub_id or cfg.url or cfg.file):
+        return None, None
+    return cfg.tag or None, cfg.hf_hub_id or None
+
+
 def resolved_input_size(default_cfg, max_res):
     """The (C, H, W) a model is traced at: its own default, capped at `max_res`.
 
