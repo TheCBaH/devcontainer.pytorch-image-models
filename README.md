@@ -68,21 +68,40 @@ part carrying absolute filesystem paths.
 ### Which models, and why
 
 Publishing all ~1300 would be hundreds of megabytes of near-duplicate JSON. Instead
-[`models-selected.yaml`](models-selected.yaml) is computed from the reports above, so the
-subset is justified rather than chosen by taste:
+[`models-selected.yaml`](models-selected.yaml) is computed from the reports above plus
+[`model-popularity.yaml`](model-popularity.yaml) (HuggingFace Hub downloads per model,
+summed across pretrained tags), so the subset is justified rather than chosen by taste:
 
-- **operator coverage** — a greedy set cover over the core ATen operators in `ops.yaml`,
-  scored by operators gained per graph node, so the cheapest carrier of a rare operator wins
-  over a large model that only repeats common ones;
-- **family breadth** — then the smallest architecture family with no representative yet,
-  repeatedly, until the target count.
+- **coverage** — a greedy set cover, not over bare operator names but over (operator, call
+  configuration) pairs, since most operators in `ops.yaml` carry several recorded
+  configurations (dtype, rank, kwargs) and a graph exercising only the commonest one
+  demonstrates less than one that also hits its edges. Scored by units gained per graph node,
+  so the cheapest carrier of a still-uncovered unit wins over a large model that only repeats
+  covered ones;
+- **family breadth** — then the cheapest so-far-unrepresented architecture family, repeatedly
+  until the target count, so the remaining budget stretches over as many families as possible.
 
-Each entry records `phase` (which of the two put it there), `nodes`, `weight_mb` and whether
-it ships as a release archive. `include`/`exclude` at the top of the file are hand-editable
-and survive regeneration — `include` is the escape hatch for an operator the size caps would
-otherwise price out, and `uncovered_ops` names any that remain.
+Popularity does not decide which coverage need gets a slot next — cost does, on both counts
+above. It only decides *which* model fills a slot once several are eligible for it: the tie
+inside coverage's greedy step, and the representative chosen for a family with more than one
+eligible variant.
+
+Each entry records `phase` (which of the two put it there), `nodes`, `weight_mb`, `downloads`
+(when the Hub has seen the model) and whether it ships as a release archive. `include`/
+`exclude` at the top of the file are hand-editable and survive regeneration — `include` is
+the escape hatch for an (operator, configuration) or architecture the size caps would
+otherwise price out, and `uncovered_op_configs` names any that remain.
+
+`--target` (`TARGET=` for the make targets) trades coverage against committed size — bigger
+covers more but every model adds ~4KB/node of committed JSON regardless of whether it's still
+buying much. [`coverage-curve.yaml`](coverage-curve.yaml) is `make models.curve`'s report of
+coverage and family breadth at every target in steps of 10, so that trade-off is a number to
+look at rather than a guess: **100** is where op-config coverage's gain per 10 models drops
+from ~5-7pp to ~2.5pp, so it's the current default.
 
 ```bash
+make models.popularity  # refresh model-popularity.yaml from the HuggingFace Hub (needs network)
+make models.curve    # report coverage vs. model count in steps of 10, to (re)pick --target from
 make models.select   # recompute the subset (seconds; reads the reports, exports nothing)
 make models          # export the subset and refresh models/
 make models.verify   # cross-check every committed graph against ops.yaml
@@ -92,7 +111,7 @@ make check-models    # readable diff of models/ vs HEAD
 ### The graphs and `ops.yaml` do not always agree
 
 `make models.verify` compares each committed graph with the operator counts `ops.yaml`
-recorded for the same model. 50 of the 60 agree exactly. The other 10 differ, and the reason
+recorded for the same model. 91 of the 100 agree exactly. The other 9 differ, and the reason
 is the **export device**:
 
 - `ops.yaml` sweeps ~1300 architectures, so it traces on `meta` — the only way to touch a

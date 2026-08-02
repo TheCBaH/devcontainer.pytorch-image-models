@@ -4,6 +4,7 @@ version = "0.1.0"
 description = "Tooling for exporting and analyzing PyTorch model zoos via torch.export"
 requires-python = ">=3.10"
 dependencies = [
+        'huggingface-hub',
         'pyyaml',
         'timm',
         'torch',

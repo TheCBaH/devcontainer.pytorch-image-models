@@ -12,16 +12,15 @@
 # decomposition differs from the math path meta takes -- so architectures using it
 # land on different counts for the ops attention expands into.
 #
-# Values are `op=ops.yaml/graph`. 10 of 60 models differ.
+# Values are `op=ops.yaml/graph`. 9 of 100 models differ.
 
 models:
-  coatnet_0_224: permute.default=74/88
+  convit_tiny: _to_copy.default=10/0
+  convnext_nano: as_strided.default=0/1
   edgenext_xx_small: as_strided.default=0/1
-  hiera_small_abswin_256: permute.default=118/142
-  pvt_v2_b2_li: add.Tensor=48/32 addmm.default=65/81 bmm.default=48/32 expand.default=96/64 permute.default=217/249 view.default=392/376
+  hiera_tiny_224: permute.default=92/108
+  poolformerv2_s12: as_strided.default=0/1 clone.default=28/24
   rdnet_tiny: as_strided.default=0/1
-  resnet50_clip: permute.default=10/12
   sam2_hiera_tiny: addmm.default=51/47 bmm.default=24/28 cat.default=0/4 clone.default=53/58 expand.default=48/56 mul.Tensor=46/34 permute.default=143/167 slice.Tensor=36/44 squeeze.dims=36/44 sub.Tensor=22/16 view.default=240/248
   test_vit4: permute.default=65/83
-  vit_small_patch16_dinov3: _to_copy.default=1/0 permute.default=85/109
-  volo_d1_224: permute.default=175/203
+  vit_small_patch16_dinov3_qkvb: _to_copy.default=1/0 permute.default=85/109

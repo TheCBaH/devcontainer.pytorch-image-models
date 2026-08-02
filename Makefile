@@ -1,13 +1,17 @@
 ROOT          := $(CURDIR)
 SCRIPTS_DIR   := $(ROOT)/scripts
-REPORT_SCRIPT := $(SCRIPTS_DIR)/export_report.py
-SELECT_SCRIPT := $(SCRIPTS_DIR)/select_models.py
-PT2_SCRIPT    := $(SCRIPTS_DIR)/export_pt2.py
+REPORT_SCRIPT     := $(SCRIPTS_DIR)/export_report.py
+SELECT_SCRIPT     := $(SCRIPTS_DIR)/select_models.py
+PT2_SCRIPT        := $(SCRIPTS_DIR)/export_pt2.py
+POPULARITY_SCRIPT := $(SCRIPTS_DIR)/fetch_popularity.py
+CURVE_SCRIPT      := $(SCRIPTS_DIR)/coverage_curve.py
 MODELS_MD     := $(ROOT)/models.md
 OPS_YAML      := $(ROOT)/ops.yaml
 OPS_MD        := $(ROOT)/ops.md
 EXCLUSIONS    := $(ROOT)/export-exclusions.yaml
 MANIFEST      := $(ROOT)/models-selected.yaml
+POPULARITY    := $(ROOT)/model-popularity.yaml
+CURVE         := $(ROOT)/coverage-curve.yaml
 DIFFERENCES   := $(ROOT)/graph-differences.yaml
 MODELS_DIR    := $(ROOT)/models
 BUILD_DIR     := $(ROOT)/.build
@@ -20,8 +24,8 @@ TIMEOUT          ?= 120
 DYNAMIC_TIMEOUT  ?= 60
 
 .PHONY: report report.ci report.exclusions report.dry-run check-tree-clean \
-        models models.select models.dry-run models.verify models.differences models.fetch \
-        download images release check-models
+        models models.select models.popularity models.curve models.dry-run models.verify models.differences \
+        models.fetch download images release check-models
 
 # ── timm export report ───────────────────────────────────────────────────────
 
@@ -56,13 +60,32 @@ report.dry-run:
 
 # ── PT2 graphs ───────────────────────────────────────────────────────────────
 
-# Recompute which models to publish, from the committed reports. Runs in seconds -- it reads
-# ops.yaml/models.md rather than exporting anything -- so the subset is reviewable in a diff
-# before any archive is built. `include`/`exclude` in the manifest are preserved.
-models.select:
-	uv run python $(SELECT_SCRIPT) --models-md $(MODELS_MD) --ops $(OPS_YAML) --output $(MANIFEST)
+# Refresh model-popularity.yaml from the HuggingFace Hub (one paginated API call, a few
+# seconds). Needs network; not part of `models.select` so that step stays offline. Rerun
+# occasionally -- popularity drifts, the committed reports it feeds do not need to.
+models.popularity:
+	uv run python $(POPULARITY_SCRIPT) --output $(POPULARITY)
 
-# Export every selected model and commit the JSON parts of its .pt2 (~60 models, ~5 minutes).
+# Recompute which models to publish, from the committed reports. Runs in seconds -- it reads
+# ops.yaml/models.md/model-popularity.yaml rather than exporting anything -- so the subset is
+# reviewable in a diff before any archive is built. `include`/`exclude` in the manifest are
+# preserved. Pass TARGET= to override the model count, e.g. `make models.select TARGET=120` --
+# see coverage-curve.yaml (make models.curve) for what count buys what coverage. 100 is the
+# knee of that curve: op-config coverage gain per 10 models drops from ~5-7pp to ~2.5pp around
+# here, while committed size keeps climbing linearly (~4KB/node) regardless of where it bends.
+TARGET ?= 100
+models.select:
+	uv run python $(SELECT_SCRIPT) --models-md $(MODELS_MD) --ops $(OPS_YAML) \
+		--popularity $(POPULARITY) --target $(TARGET) --output $(MANIFEST)
+
+# Report (operator, configuration) coverage and family breadth at every model count in steps
+# of 10, from 10 up to where the selection saturates on its own. Runs in seconds, same inputs
+# as models.select -- read coverage-curve.yaml to decide TARGET before committing to it.
+models.curve:
+	uv run python $(CURVE_SCRIPT) --models-md $(MODELS_MD) --ops $(OPS_YAML) \
+		--popularity $(POPULARITY) --output $(CURVE)
+
+# Export every selected model and commit the JSON parts of its .pt2 (~100 models, a few minutes).
 # Random weights, fully offline: the graph does not depend on what the tensors contain, and
 # keeping this path offline is what makes it reproducible in CI.
 models:
