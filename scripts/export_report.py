@@ -17,67 +17,22 @@ import contextlib
 import json
 import os
 import re
-import subprocess
 import sys
-import tempfile
 import time
 
 import yaml
 
-
-def _cpu_count():
-    """Cores this process may actually run on -- sched_getaffinity, not os.cpu_count(),
-    which reports the host's cores and so over-counts inside a cpu-limited container."""
-    try:
-        return len(os.sched_getaffinity(0))
-    except AttributeError:
-        return os.cpu_count() or 1
-
-
-def _iso_env(tmpdir):
-    env = os.environ.copy()
-    env['HF_HUB_OFFLINE'] = '1'
-    env['TRANSFORMERS_OFFLINE'] = '1'
-    # One worker per core, so each worker gets one thread. Left at torch's default, every
-    # worker would size its intra-op pool to the whole machine (24 threads x 24 workers
-    # here) and they would spend the CPU-path exports fighting each other; the meta-path
-    # ones never touch the pool at all.
-    env['OMP_NUM_THREADS'] = '1'
-    env['MKL_NUM_THREADS'] = '1'
-    env['HOME'] = tmpdir
-    env['XDG_CACHE_HOME'] = os.path.join(tmpdir, 'cache')
-    env['HF_HOME'] = os.path.join(tmpdir, 'cache', 'huggingface')
-    env['TORCHINDUCTOR_CACHE_DIR'] = os.path.join(tmpdir, 'cache', 'inductor')
-    env['TRITON_CACHE_DIR'] = os.path.join(tmpdir, 'cache', 'triton')
-    return env
+from exportlib import MAX_RES, cpu_count, globs, resolved_input_size, run_worker as _run_worker
 
 
 def run_worker(model_name, max_res, timeout, dynamic_timeout, ops_timeout, collect, excluded=False):
-    with tempfile.TemporaryDirectory(prefix='timm_export_') as tmpdir:
-        env = _iso_env(tmpdir)
-        cmd = [sys.executable, os.path.abspath(__file__), '--worker', model_name, '--max-res', str(max_res),
-               '--dynamic-timeout', str(dynamic_timeout), '--ops-timeout', str(ops_timeout)]
-        if not collect:
-            cmd.append('--no-ops')
-        if excluded:
-            cmd.append('--excluded')
-        try:
-            proc = subprocess.run(
-                cmd, env=env, cwd=tmpdir, timeout=timeout,
-                capture_output=True, text=True,
-            )
-        except subprocess.TimeoutExpired:
-            return {'name': model_name, 'status': 'timeout', 'error': f'exceeded {timeout}s'}
-
-        if proc.returncode != 0:
-            stderr_tail = '\n'.join(proc.stderr.strip().splitlines()[-5:])
-            return {'name': model_name, 'status': 'crashed', 'error': stderr_tail or f'exit {proc.returncode}'}
-
-        line = proc.stdout.strip().splitlines()[-1] if proc.stdout.strip() else ''
-        try:
-            return json.loads(line)
-        except json.JSONDecodeError:
-            return {'name': model_name, 'status': 'crashed', 'error': 'unparseable worker output'}
+    argv = ['--worker', model_name, '--max-res', max_res,
+            '--dynamic-timeout', dynamic_timeout, '--ops-timeout', ops_timeout]
+    if not collect:
+        argv.append('--no-ops')
+    if excluded:
+        argv.append('--excluded')
+    return _run_worker(__file__, argv, model_name, timeout)
 
 
 # Structural fact from how every example input in this script is built -- always
@@ -384,22 +339,8 @@ def worker_main(model_name, max_res, dynamic_timeout, ops_timeout, collect, excl
     except Exception:
         result['preprocessing'] = ''
 
-    def resolved_input_size():
-        default_cfg = model.default_cfg
-        input_size = default_cfg['input_size']
-        fixed_input_size = default_cfg.get('fixed_input_size', None)
-        min_input_size = default_cfg.get('min_input_size', None)
-        if not fixed_input_size:
-            if min_input_size:
-                if max(input_size) > max_res:
-                    input_size = min_input_size
-            else:
-                if max(input_size) > max_res:
-                    input_size = tuple(min(x, max_res) for x in input_size)
-        return input_size
-
     def try_export(device):
-        input_size = resolved_input_size()
+        input_size = resolved_input_size(model.default_cfg, max_res)
         if device == 'meta':
             example = torch.empty(1, *input_size, device='meta')
         else:
@@ -987,7 +928,7 @@ def main():
     parser.add_argument('--filter', default='', help='fnmatch glob(s), comma-separated, to select model names')
     parser.add_argument('--exclude', default='', help='fnmatch glob(s), comma-separated, to exclude model names')
     parser.add_argument('--limit', type=int, default=None, help='only process the first N models')
-    parser.add_argument('--workers', type=int, default=_cpu_count(),
+    parser.add_argument('--workers', type=int, default=cpu_count(),
                          help='parallel model subprocesses (default: one per available core). Each holds '
                               'a whole model, and the CPU-fallback path materializes real weights, so on '
                               'a machine with many cores but little RAM this is the knob to turn down -- '
@@ -1001,7 +942,7 @@ def main():
                          help='budget (seconds) for decomposing the exported graph into core ATen for the '
                               'op cross-reference; bounded independently of --timeout for the same reason '
                               'as --dynamic-timeout')
-    parser.add_argument('--max-res', type=int, default=224, help='cap input resolution used for export')
+    parser.add_argument('--max-res', type=int, default=MAX_RES, help='cap input resolution used for export')
     parser.add_argument('--output', default=None, help='output models.md path (default: repo-root models.md)')
     parser.add_argument('--ops-output', default=None,
                          help='output ops.yaml path, the models x operations cross-reference '
@@ -1067,12 +1008,6 @@ def main():
     if exclusions:
         print(f'Excluding the dynamic-shapes check for {len(exclusions)} models '
               f'({os.path.basename(exclusions_path)})', file=sys.stderr)
-
-    # timm.list_models takes either a glob or a list of them; accepting a comma-separated
-    # set here is what makes regenerating a handful of named variants practical.
-    def globs(value):
-        parts = [p for p in value.split(',') if p]
-        return parts if len(parts) > 1 else value
 
     names = timm.list_models(filter=globs(args.filter), exclude_filters=globs(args.exclude), pretrained=False)
     if args.limit:
