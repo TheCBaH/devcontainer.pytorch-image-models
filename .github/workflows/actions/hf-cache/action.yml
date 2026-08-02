@@ -1,0 +1,45 @@
+name: hf-cache
+description: >
+  Restore (and optionally save) the shared HuggingFace cache holding the release tier's
+  pretrained weights. The cache key lives here rather than in each workflow because the whole
+  arrangement depends on the two agreeing: a key that drifts does not fail, it just silently
+  re-downloads ~1.3 GB on every release.
+
+inputs:
+  path:
+    description: Where the cache is materialized. Must match HF_HOME in the steps that follow.
+    default: .hf-cache
+  save:
+    description: >
+      'true' to write the cache back on a miss, 'false' to restore only. Tag builds must not
+      save: GitHub scopes caches by ref, so what a tag writes lands in a scope no later tag
+      can read. Only the default branch populates it.
+    default: 'false'
+
+outputs:
+  cache-hit:
+    description: 'true' when the exact key was found, so no fetch is needed.
+    value: ${{ steps.restore.outputs.cache-hit || steps.cache.outputs.cache-hit }}
+
+runs:
+  using: composite
+  steps:
+    # The manifest decides which checkpoints are needed; uv.lock pins the timm version whose
+    # per-architecture default tag decides *which* checkpoint each name resolves to.
+    - name: restore huggingface cache
+      if: inputs.save != 'true'
+      id: restore
+      uses: actions/cache/restore@v6
+      with:
+        path: ${{ inputs.path }}
+        key: hf-${{ runner.os }}-${{ hashFiles('models-selected.yaml', 'uv.lock') }}
+        restore-keys: hf-${{ runner.os }}-
+
+    - name: cache huggingface
+      if: inputs.save == 'true'
+      id: cache
+      uses: actions/cache@v6
+      with:
+        path: ${{ inputs.path }}
+        key: hf-${{ runner.os }}-${{ hashFiles('models-selected.yaml', 'uv.lock') }}
+        restore-keys: hf-${{ runner.os }}-
