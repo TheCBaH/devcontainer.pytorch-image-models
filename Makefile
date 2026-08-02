@@ -1,10 +1,17 @@
 ROOT          := $(CURDIR)
 SCRIPTS_DIR   := $(ROOT)/scripts
 REPORT_SCRIPT := $(SCRIPTS_DIR)/export_report.py
+SELECT_SCRIPT := $(SCRIPTS_DIR)/select_models.py
+PT2_SCRIPT    := $(SCRIPTS_DIR)/export_pt2.py
 MODELS_MD     := $(ROOT)/models.md
 OPS_YAML      := $(ROOT)/ops.yaml
 OPS_MD        := $(ROOT)/ops.md
 EXCLUSIONS    := $(ROOT)/export-exclusions.yaml
+MANIFEST      := $(ROOT)/models-selected.yaml
+DIFFERENCES   := $(ROOT)/graph-differences.yaml
+MODELS_DIR    := $(ROOT)/models
+BUILD_DIR     := $(ROOT)/.build
+DATA_DIR      := $(ROOT)/data
 
 # Per-model subprocess budget and the dynamic-shape sub-check budget. Both are wall-clock,
 # so both have to move together: a dynamic budget above the subprocess one would just get
@@ -12,7 +19,9 @@ EXCLUSIONS    := $(ROOT)/export-exclusions.yaml
 TIMEOUT          ?= 120
 DYNAMIC_TIMEOUT  ?= 60
 
-.PHONY: report report.ci report.exclusions report.dry-run check-tree-clean
+.PHONY: report report.ci report.exclusions report.dry-run check-tree-clean \
+        models models.select models.dry-run models.verify models.differences models.fetch \
+        download images release check-models
 
 # ── timm export report ───────────────────────────────────────────────────────
 
@@ -45,8 +54,88 @@ report.dry-run:
 	uv run python $(REPORT_SCRIPT) --limit 20 --workers 4 --output $(ROOT)/.report-dry-run.md \
 		--ops-output $(ROOT)/.report-dry-run.yaml --ops-md $(ROOT)/.report-dry-run.ops.md
 
+# ── PT2 graphs ───────────────────────────────────────────────────────────────
+
+# Recompute which models to publish, from the committed reports. Runs in seconds -- it reads
+# ops.yaml/models.md rather than exporting anything -- so the subset is reviewable in a diff
+# before any archive is built. `include`/`exclude` in the manifest are preserved.
+models.select:
+	uv run python $(SELECT_SCRIPT) --models-md $(MODELS_MD) --ops $(OPS_YAML) --output $(MANIFEST)
+
+# Export every selected model and commit the JSON parts of its .pt2 (~60 models, ~5 minutes).
+# Random weights, fully offline: the graph does not depend on what the tensors contain, and
+# keeping this path offline is what makes it reproducible in CI.
+models:
+	uv run python $(PT2_SCRIPT) --manifest $(MANIFEST) --models-dir $(MODELS_DIR) \
+		--build-dir $(BUILD_DIR) build
+
+# Smoke-test the graph pipeline on a handful of models, into a throwaway directory, so it
+# never leaves models/ half-regenerated.
+models.dry-run:
+	uv run python $(PT2_SCRIPT) --manifest $(MANIFEST) --models-dir $(ROOT)/.models-dry-run \
+		--build-dir $(BUILD_DIR) build --limit 3
+
+# Hold every committed graph to the operator counts ops.yaml recorded for the same model.
+# The 50 that agree exactly are evidence the published graph is the one the reports describe;
+# the rest are pinned in graph-differences.yaml, and a change either way fails.
+models.verify:
+	uv run python $(PT2_SCRIPT) --manifest $(MANIFEST) --models-dir $(MODELS_DIR) \
+		verify --ops $(OPS_YAML) --differences $(DIFFERENCES)
+
+# Re-record graph-differences.yaml. Run after a torch or timm bump moves a decomposition,
+# and review the diff -- a model appearing or vanishing there is worth understanding.
+models.differences:
+	uv run python $(PT2_SCRIPT) --manifest $(MANIFEST) --models-dir $(MODELS_DIR) \
+		verify --ops $(OPS_YAML) --differences $(DIFFERENCES) --write
+
+# ── Release ──────────────────────────────────────────────────────────────────
+
+# Sample images and ImageNet labels, unmodified from their upstream releases.
+download:
+	bash $(SCRIPTS_DIR)/download.sh $(DATA_DIR)
+
+# Warm a shared HuggingFace cache with the release tier's checkpoints. The only target that
+# reaches the network for weights; everything else runs with HF_HUB_OFFLINE=1 against
+# whatever this left behind.
+models.fetch:
+	uv run python $(PT2_SCRIPT) --manifest $(MANIFEST) fetch
+
+# One shared images archive, plus one archive per release-tier model holding its .pt2,
+# its preprocessing recipe and the predictions it should reproduce on those images.
+images: $(BUILD_DIR)/images.zip
+
+$(BUILD_DIR)/images.zip: FORCE | download
+	@mkdir -p $(BUILD_DIR)
+	rm -f $@
+	cd $(DATA_DIR) && zip -q -X -r $@ images labels SOURCES.md -x 'images/.*'
+
+release: $(BUILD_DIR)/images.zip
+	uv run python $(PT2_SCRIPT) --manifest $(MANIFEST) --build-dir $(BUILD_DIR) \
+		release --images $(DATA_DIR)/images
+
+# Single-model helpers, e.g. `make resnet10t.convert`. FORCE makes the pattern rules always
+# run, which is what .PHONY would do if it applied to patterns.
+FORCE:
+
+%.convert: FORCE
+	uv run python $(PT2_SCRIPT) convert $* --output $(BUILD_DIR)/$*.pt2
+
+%.extract: FORCE
+	uv run python $(PT2_SCRIPT) --models-dir $(MODELS_DIR) extract $* --pt2 $(BUILD_DIR)/$*.pt2
+
+# Fetches just this model's weights first: the export worker itself is offline, so the
+# checkpoint has to already be in the cache by the time it runs.
+%.release: FORCE $(BUILD_DIR)/images.zip
+	uv run python $(PT2_SCRIPT) --manifest $(MANIFEST) fetch --only $*
+	uv run python $(PT2_SCRIPT) --manifest $(MANIFEST) --build-dir $(BUILD_DIR) \
+		release --images $(DATA_DIR)/images --workers 1 --only $*
+
 # ── CI helpers ────────────────────────────────────────────────────────────────
 
+# Readable diff for models/: the committed JSON is minified onto one line, so `git diff`
+# alone shows a single changed line and says nothing about what actually moved.
+check-models:
+	bash $(SCRIPTS_DIR)/check_models.sh $(MODELS_DIR)
 # Fail with a diff if the working tree has uncommitted changes (used in CI to
 # catch generated files, like models.md, drifting from what's committed)
 check-tree-clean:

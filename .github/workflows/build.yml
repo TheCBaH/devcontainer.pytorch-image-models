@@ -24,6 +24,15 @@ jobs:
       - name: report
         run: make report.ci
 
+      - name: select
+        run: make models.select
+
+      - name: models
+        run: make models
+
+      - name: verify graphs against ops.yaml
+        run: make models.verify
+
       - name: check tree is unmodified
         run: make check-tree-clean
 
@@ -48,6 +57,20 @@ jobs:
 
       - name: report
         run: ${{ env.EXEC }} make report.ci
+
+      - name: select
+        run: ${{ env.EXEC }} make models.select
+
+      - name: models
+        run: ${{ env.EXEC }} make models
+
+      - name: verify graphs against ops.yaml
+        run: ${{ env.EXEC }} make models.verify
+
+      # Runs in the devcontainer only, where paths differ from the uv job's: if a graph ever
+      # picked up machine-specific state again, this is where it shows up, and readably.
+      - name: check models
+        run: ${{ env.EXEC }} make check-models
 
       - name: check tree is unmodified
         run: ${{ env.EXEC }} make check-tree-clean

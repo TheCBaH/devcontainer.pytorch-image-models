@@ -1,2 +1,17 @@
 .venv
+__pycache__/
 .report-dry-run.*
+/.models-dry-run/
+
+# Build outputs: .pt2 archives, release zips, the shared images.zip. Only the JSON members
+# extracted into models/ are committed -- the weight blobs are large, and reproducible from
+# timm at any time.
+/.build/
+
+# Sample images and labels, fetched by scripts/download.sh. Redistributed unmodified in the
+# release rather than vendored here. Anchored: models/<name>/data/ holds the committed
+# weight index, and an unanchored `data/` would silently swallow it.
+/data/
+
+# Shared HuggingFace cache, when pointed at the repo (as CI does for its actions/cache).
+/.hf-cache/

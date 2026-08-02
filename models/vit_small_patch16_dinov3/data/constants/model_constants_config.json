@@ -1,0 +1,1 @@
+{"config": {"rope.periods": {"path_name": "tensor_0", "is_param": false, "use_pickle": false, "tensor_meta": {"dtype": 7, "sizes": [{"as_int": 16}], "requires_grad": false, "device": {"type": "cpu", "index": null}, "strides": [{"as_int": 1}], "storage_offset": {"as_int": 0}, "layout": 7}}}}

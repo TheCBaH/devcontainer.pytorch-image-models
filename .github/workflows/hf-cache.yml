@@ -1,0 +1,50 @@
+name: hf-cache
+
+# Keeps a warm HuggingFace cache on the default branch for the release workflow to restore.
+#
+# GitHub scopes caches by ref: a tag-triggered run can *read* caches created on the default
+# branch, but anything it writes lands in that tag's own scope, which no later tag can read.
+# Caching inside release.yml alone would therefore re-download the whole release tier on every
+# release. Populating it from main means each tag build restores instead.
+#
+# The weekly run exists because GitHub evicts entries untouched for 7 days, and releases are
+# rarer than that.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - models-selected.yaml
+      - uv.lock
+      - .github/workflows/hf-cache.yml
+      - .github/workflows/actions/hf-cache/action.yml
+  schedule:
+    - cron: '0 4 * * 1'
+  workflow_dispatch:
+
+jobs:
+  warm:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v7
+        with:
+          submodules: true
+
+      - name: setup uv
+        uses: astral-sh/setup-uv@v8.3.2
+        with:
+          python-version: '3.13'
+          enable-cache: true
+
+      - name: huggingface cache
+        id: hf
+        uses: ./.github/workflows/actions/hf-cache
+        with:
+          save: 'true'
+
+      - name: fetch checkpoints
+        if: steps.hf.outputs.cache-hit != 'true'
+        env:
+          HF_HOME: ${{ github.workspace }}/.hf-cache
+        run: make models.fetch

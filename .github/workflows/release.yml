@@ -1,0 +1,59 @@
+name: release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v7
+        with:
+          submodules: true
+
+      - name: setup uv
+        uses: astral-sh/setup-uv@v8.3.2
+        with:
+          python-version: '3.13'
+          enable-cache: true
+
+      # Restore-only: see hf-cache.yml for why a tag build cannot usefully save one. A miss
+      # is not fatal, it just means the fetch step below does the full download.
+      - name: huggingface cache
+        uses: ./.github/workflows/actions/hf-cache
+
+      - name: cache sample data
+        uses: actions/cache@v6
+        with:
+          path: data
+          key: data-${{ hashFiles('scripts/download.sh') }}
+
+      - name: download
+        run: make download
+
+      - name: fetch checkpoints
+        env:
+          HF_HOME: ${{ github.workspace }}/.hf-cache
+        run: make models.fetch
+
+      - name: build release archives
+        env:
+          HF_HOME: ${{ github.workspace }}/.hf-cache
+        run: make release
+
+      # images.zip first, since it is the one asset every consumer needs regardless of which
+      # model they pick.
+      - name: create release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "${{ github.ref_name }}" \
+            --title "Models ${{ github.ref_name }}" \
+            --generate-notes \
+            .build/*.zip

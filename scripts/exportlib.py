@@ -5,11 +5,13 @@ Both drivers -- ``export_report.py`` (measures every timm model) and ``export_pt
 scratch directory. The isolation, the input-size rule and the CLI glob parsing have to
 agree between them, so they live here rather than being reimplemented per driver.
 """
+import concurrent.futures
 import json
 import os
 import subprocess
 import sys
 import tempfile
+import time
 
 # The resolution every driver caps its tracing at. Shared because `make models.verify`
 # compares graphs the two drivers produced, and that comparison only means anything if both
@@ -109,3 +111,32 @@ def globs(value):
     set here is what makes regenerating a handful of named variants practical."""
     parts = [p for p in value.split(',') if p]
     return parts if len(parts) > 1 else value
+
+
+def run_pool(names, work, workers, progress):
+    """Run `work(name)` over `names` in a thread pool, returning {name: error} for failures.
+
+    Every caller here drives subprocesses, so the pool is waiting on them rather than
+    computing; and every caller wants the same failure semantics -- one model that raises is
+    one recorded failure, not an aborted run over the other fifty-nine.
+    """
+    failures = {}
+    start = time.monotonic()
+    with concurrent.futures.ThreadPoolExecutor(max_workers=workers) as pool:
+        futures = {pool.submit(work, name): name for name in names}
+        for index, future in enumerate(concurrent.futures.as_completed(futures), 1):
+            name = futures[future]
+            try:
+                result = future.result()
+            except Exception as e:
+                result = {'name': name, 'status': 'crashed', 'error': str(e)[:300]}
+            if result.get('status') != 'ok':
+                failures[name] = result.get('error') or result.get('status')
+            print(f'[{index}/{len(names)}] {name}: {result.get("status")}'
+                  f'{progress(result)} ({time.monotonic() - start:.0f}s elapsed)', file=sys.stderr)
+
+    if failures:
+        print(f'\n{len(failures)} model(s) failed:', file=sys.stderr)
+        for name, error in sorted(failures.items()):
+            print(f'  {name}: {error}', file=sys.stderr)
+    return failures
