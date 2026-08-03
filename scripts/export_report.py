@@ -651,8 +651,13 @@ def render_markdown(rows, timm_version, family_docs=None):
     lines.append('')
 
     def sort_key(r):
+        # Round to the precision actually rendered below: an unrounded key orders ties
+        # that display identically by their invisible sub-hundredth difference, which
+        # can flip between machines (e.g. SDPA backend dispatch nudges an attention
+        # model's flop count) -- reordering rows in CI with nothing visible to justify
+        # the diff. Rounding first makes the order depend only on what's on the page.
         gflops = r.get('gflops')
-        return (gflops is None, gflops if gflops is not None else 0.0, r['name'])
+        return (gflops is None, round(gflops, 2) if gflops is not None else 0.0, r['name'])
 
     for family in sorted(by_family):
         lines.append(f'## {family}')
