@@ -5,6 +5,7 @@ description = "Tooling for exporting and analyzing PyTorch model zoos via torch.
 requires-python = ">=3.10"
 dependencies = [
         'huggingface-hub',
+        'pt2-export-core',
         'pyyaml',
         'timm',
         'torch',
@@ -24,6 +25,7 @@ dev = [
 package = false
 
 [tool.uv.sources]
+pt2-export-core = { path = "modules/pt2-export-core", editable = true }
 timm = { path = "modules/pytorch-image-models", editable = true }
 torch = { index = "pytorch-cpu" }
 torchvision = { index = "pytorch-cpu" }

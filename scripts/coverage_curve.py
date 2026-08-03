@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """Report (operator, configuration) coverage and family breadth as a function of model count.
 
-`select_models.py` picks a fixed-size subset; this instead re-runs the same `select()` at
-every target in steps of 10, from 10 up to the point the algorithm saturates on its own (no
-eligible candidate gains anything further), so the actual shape of the coverage-vs-count curve
-is something to look at and decide `--target` from, rather than something to guess.
+`select_models.py` picks a fixed-size subset; this instead re-runs `pt2_export_core.selection
+.select()` at every target in steps of 10, from 10 up to the point the algorithm saturates on
+its own (no eligible candidate gains anything further), so the actual shape of the
+coverage-vs-count curve is something to look at and decide `--target` from, rather than
+something to guess. See `pt2_export_core.selection.curve` for the implementation.
 """
 import argparse
 import os
@@ -12,36 +13,8 @@ import sys
 
 import yaml
 
-from select_models import load_candidates, load_popularity, select
-
-
-def curve(candidates, popularity, max_nodes, max_weight_mb, step):
-    all_ops = set().union(*(c['ops'] for c in candidates.values()))
-    all_families = {c['family'] for c in candidates.values()}
-
-    # Uncapped run to find where the algorithm stops adding anything on its own -- the natural
-    # ceiling, past which a bigger --target would just repeat this same selection.
-    saturated = select(candidates, 10**9, max_nodes, max_weight_mb, [], set(), popularity)
-    max_models = len(saturated)
-
-    targets = list(range(step, max_models, step)) + [max_models]
-    points = []
-    for target in targets:
-        selected = select(candidates, target, max_nodes, max_weight_mb, [], set(), popularity)
-        covered_ops = set().union(*(candidates[n]['ops'] for n, _ in selected)) if selected else set()
-        covered_families = {candidates[n]['family'] for n, _ in selected}
-        points.append({
-            'target': target,
-            'models': len(selected),
-            'op_configs_covered': len(covered_ops),
-            'op_configs_total': len(all_ops),
-            'op_configs_pct': round(100 * len(covered_ops) / len(all_ops), 1),
-            'families_covered': len(covered_families),
-            'families_total': len(all_families),
-            'families_pct': round(100 * len(covered_families) / len(all_families), 1),
-            'total_nodes': sum(candidates[n]['nodes'] for n, _ in selected),
-        })
-    return points, max_models, len(all_ops), len(all_families)
+from pt2_export_core.selection import curve as _curve, load_popularity
+from select_models import load_candidates
 
 
 def main():
@@ -60,7 +33,7 @@ def main():
     candidates = load_candidates(args.models_md, args.ops)
     popularity = load_popularity(args.popularity)
 
-    points, max_models, total_ops, total_families = curve(
+    points, max_models, total_ops, total_families = _curve(
         candidates, popularity, args.max_nodes, args.max_weight, args.step)
 
     document = {

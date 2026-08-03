@@ -5,29 +5,17 @@
 `ops.yaml`/`models.md` say what a model costs to export; neither says whether anyone actually
 uses it. The `timm` org on the Hub carries a download count per pretrained tag, which is the
 cheapest real usage signal available for the whole zoo at once. This fetches it in a single
-paginated call and commits the result -- the same reason `make report` commits an export pass
-rather than `select_models.py` exporting anything itself -- so `models.select` stays a
-seconds-long, offline, reviewable-in-a-diff step.
+paginated call (via `pt2_export_core.popularity.fetch`) and commits the result -- the same
+reason `make report` commits an export pass rather than `select_models.py` exporting anything
+itself -- so `models.select` stays a seconds-long, offline, reviewable-in-a-diff step.
 """
 import argparse
 import os
 import sys
 
 import yaml
-from huggingface_hub import HfApi
 
-
-def fetch(author):
-    """{repo name relative to `author`: downloads} for every repo under `author`.
-
-    The `timm/` org prefix is stripped rather than kept as part of the key: this repo only
-    ever fetches one author, so every key would carry the same redundant prefix, and
-    select_models.py only cares about the part after it anyway.
-    """
-    api = HfApi()
-    prefix = f'{author}/'
-    return {info.id.removeprefix(prefix): int(info.downloads or 0)
-            for info in api.list_models(author=author, limit=None)}
+from pt2_export_core.popularity import fetch
 
 
 def main():
