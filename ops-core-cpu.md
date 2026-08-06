@@ -8,54 +8,58 @@ A *configuration* is an operator's non-Tensor schema arguments plus `out_dtype` 
 
 ## summary
 
+Every operator in the file, most widely used first; each name links to its configurations below.
+
 | op | configs | models | families | nodes |
 |---|---|---|---|---|
-| add.Tensor | 3 | 45 | 3 | 1374 |
-| addmm.default | 1 | 45 | 3 | 202 |
-| clone.default | 7 | 45 | 3 | 753 |
-| convolution.default | 139 | 45 | 3 | 4105 |
-| mean.dim | 4 | 45 | 3 | 585 |
-| permute.default | 12 | 45 | 3 | 853 |
-| view.default | 5 | 45 | 3 | 1329 |
-| _native_batch_norm_legit_no_training.default | 2 | 42 | 2 | 2590 |
-| relu.default | 1 | 37 | 2 | 2251 |
-| mul.Tensor | 3 | 29 | 3 | 1288 |
-| sigmoid.default | 1 | 23 | 1 | 994 |
-| bmm.default | 1 | 9 | 2 | 142 |
-| cat.default | 2 | 9 | 2 | 93 |
-| div.Tensor | 3 | 9 | 2 | 247 |
-| expand.default | 2 | 9 | 2 | 284 |
-| mm.default | 1 | 9 | 2 | 111 |
-| native_layer_norm.default | 4 | 9 | 2 | 130 |
-| slice.Tensor | 3 | 9 | 2 | 242 |
-| constant_pad_nd.default | 1 | 7 | 1 | 58 |
-| split_with_sizes.default | 1 | 7 | 1 | 58 |
-| gelu.default | 4 | 5 | 2 | 201 |
-| clamp.default | 4 | 4 | 1 | 312 |
-| _adaptive_avg_pool2d.default | 1 | 2 | 1 | 31 |
-| _softmax.default | 2 | 2 | 1 | 42 |
-| amax.default | 1 | 2 | 1 | 31 |
-| any.dim | 1 | 2 | 1 | 11 |
-| as_strided.default | 1 | 2 | 1 | 2 |
-| eq.Scalar | 1 | 2 | 1 | 11 |
-| full_like.default | 1 | 2 | 1 | 11 |
-| index.Tensor | 1 | 2 | 1 | 2 |
-| linalg_vector_norm.default | 1 | 2 | 1 | 31 |
-| logical_not.default | 1 | 2 | 1 | 22 |
-| mul.Scalar | 1 | 2 | 1 | 22 |
-| pow.Tensor_Scalar | 1 | 2 | 1 | 2 |
-| select.int | 2 | 2 | 1 | 12 |
-| squeeze.dims | 2 | 2 | 1 | 126 |
-| sub.Tensor | 1 | 2 | 1 | 6 |
-| unsqueeze.default | 1 | 2 | 1 | 31 |
-| upsample_bilinear2d.vec | 1 | 2 | 1 | 31 |
-| where.self | 1 | 2 | 1 | 11 |
-| avg_pool2d.default | 1 | 1 | 1 | 4 |
-| native_group_norm.default | 5 | 1 | 1 | 71 |
+| [add.Tensor](#addtensor) | 3 | 45 | 3 | 1374 |
+| [addmm.default](#addmmdefault) | 1 | 45 | 3 | 202 |
+| [clone.default](#clonedefault) | 7 | 45 | 3 | 753 |
+| [convolution.default](#convolutiondefault) | 139 | 45 | 3 | 4105 |
+| [mean.dim](#meandim) | 4 | 45 | 3 | 585 |
+| [permute.default](#permutedefault) | 12 | 45 | 3 | 853 |
+| [view.default](#viewdefault) | 5 | 45 | 3 | 1329 |
+| [_native_batch_norm_legit_no_training.default](#_native_batch_norm_legit_no_trainingdefault) | 2 | 42 | 2 | 2590 |
+| [relu.default](#reludefault) | 1 | 37 | 2 | 2251 |
+| [mul.Tensor](#multensor) | 3 | 29 | 3 | 1288 |
+| [sigmoid.default](#sigmoiddefault) | 1 | 23 | 1 | 994 |
+| [bmm.default](#bmmdefault) | 1 | 9 | 2 | 142 |
+| [cat.default](#catdefault) | 2 | 9 | 2 | 93 |
+| [div.Tensor](#divtensor) | 3 | 9 | 2 | 247 |
+| [expand.default](#expanddefault) | 2 | 9 | 2 | 284 |
+| [mm.default](#mmdefault) | 1 | 9 | 2 | 111 |
+| [native_layer_norm.default](#native_layer_normdefault) | 4 | 9 | 2 | 130 |
+| [slice.Tensor](#slicetensor) | 3 | 9 | 2 | 242 |
+| [constant_pad_nd.default](#constant_pad_nddefault) | 1 | 7 | 1 | 58 |
+| [split_with_sizes.default](#split_with_sizesdefault) | 1 | 7 | 1 | 58 |
+| [gelu.default](#geludefault) | 4 | 5 | 2 | 201 |
+| [clamp.default](#clampdefault) | 4 | 4 | 1 | 312 |
+| [_adaptive_avg_pool2d.default](#_adaptive_avg_pool2ddefault) | 1 | 2 | 1 | 31 |
+| [_softmax.default](#_softmaxdefault) | 2 | 2 | 1 | 42 |
+| [amax.default](#amaxdefault) | 1 | 2 | 1 | 31 |
+| [any.dim](#anydim) | 1 | 2 | 1 | 11 |
+| [as_strided.default](#as_strideddefault) | 1 | 2 | 1 | 2 |
+| [eq.Scalar](#eqscalar) | 1 | 2 | 1 | 11 |
+| [full_like.default](#full_likedefault) | 1 | 2 | 1 | 11 |
+| [index.Tensor](#indextensor) | 1 | 2 | 1 | 2 |
+| [linalg_vector_norm.default](#linalg_vector_normdefault) | 1 | 2 | 1 | 31 |
+| [logical_not.default](#logical_notdefault) | 1 | 2 | 1 | 22 |
+| [mul.Scalar](#mulscalar) | 1 | 2 | 1 | 22 |
+| [pow.Tensor_Scalar](#powtensor_scalar) | 1 | 2 | 1 | 2 |
+| [select.int](#selectint) | 2 | 2 | 1 | 12 |
+| [squeeze.dims](#squeezedims) | 2 | 2 | 1 | 126 |
+| [sub.Tensor](#subtensor) | 1 | 2 | 1 | 6 |
+| [unsqueeze.default](#unsqueezedefault) | 1 | 2 | 1 | 31 |
+| [upsample_bilinear2d.vec](#upsample_bilinear2dvec) | 1 | 2 | 1 | 31 |
+| [where.self](#whereself) | 1 | 2 | 1 | 11 |
+| [avg_pool2d.default](#avg_pool2ddefault) | 1 | 1 | 1 | 4 |
+| [native_group_norm.default](#native_group_normdefault) | 5 | 1 | 1 | 71 |
 
 ## configurations
 
 ### add.Tensor
+
+[↑ summary](#summary)
 
 `add.Tensor(Tensor self, Tensor other, *, Scalar alpha=1) -> Tensor`
 
@@ -67,6 +71,8 @@ A *configuration* is an operator's non-Tensor schema arguments plus `out_dtype` 
 
 ### addmm.default
 
+[↑ summary](#summary)
+
 `addmm(Tensor self, Tensor mat1, Tensor mat2, *, Scalar beta=1, Scalar alpha=1) -> Tensor`
 
 | id | configuration | models | families | nodes | e.g. |
@@ -74,6 +80,8 @@ A *configuration* is an operator's non-Tensor schema arguments plus `out_dtype` 
 | 1 | beta=1 alpha=1 out_dtype=f32 out_rank=2 | 45 | 3 | 202 | csatv2 |
 
 ### clone.default
+
+[↑ summary](#summary)
 
 `clone(Tensor self, *, MemoryFormat? memory_format=None) -> Tensor`
 
@@ -88,6 +96,8 @@ A *configuration* is an operator's non-Tensor schema arguments plus `out_dtype` 
 | 7 | memory_format=none out_dtype=i64 out_rank=1 | 2 | 1 | 2 | csatv2 |
 
 ### convolution.default
+
+[↑ summary](#summary)
 
 `convolution(Tensor input, Tensor weight, Tensor? bias, SymInt[] stride, SymInt[] padding, SymInt[] dilation, bool transposed, SymInt[] output_padding, SymInt groups) -> Tensor`
 
@@ -235,6 +245,8 @@ A *configuration* is an operator's non-Tensor schema arguments plus `out_dtype` 
 
 ### mean.dim
 
+[↑ summary](#summary)
+
 `mean.dim(Tensor self, int[1]? dim, bool keepdim=False, *, ScalarType? dtype=None) -> Tensor`
 
 | id | configuration | models | families | nodes | e.g. |
@@ -245,6 +257,8 @@ A *configuration* is an operator's non-Tensor schema arguments plus `out_dtype` 
 | 3 | dim=[1] keepdim=true dtype=none out_dtype=f32 out_rank=4 | 2 | 1 | 31 | csatv2 |
 
 ### permute.default
+
+[↑ summary](#summary)
 
 `permute(Tensor(a) self, int[] dims) -> Tensor(a)`
 
@@ -265,6 +279,8 @@ A *configuration* is an operator's non-Tensor schema arguments plus `out_dtype` 
 
 ### view.default
 
+[↑ summary](#summary)
+
 `view(Tensor(a) self, SymInt[] size) -> Tensor(a)`
 
 | id | configuration | models | families | nodes | e.g. |
@@ -277,6 +293,8 @@ A *configuration* is an operator's non-Tensor schema arguments plus `out_dtype` 
 
 ### _native_batch_norm_legit_no_training.default
 
+[↑ summary](#summary)
+
 `_native_batch_norm_legit_no_training(Tensor input, Tensor? weight, Tensor? bias, Tensor running_mean, Tensor running_var, float momentum, float eps) -> (Tensor, Tensor, Tensor)`
 
 | id | configuration | models | families | nodes | e.g. |
@@ -286,6 +304,8 @@ A *configuration* is an operator's non-Tensor schema arguments plus `out_dtype` 
 
 ### relu.default
 
+[↑ summary](#summary)
+
 `relu(Tensor self) -> Tensor`
 
 | id | configuration | models | families | nodes | e.g. |
@@ -293,6 +313,8 @@ A *configuration* is an operator's non-Tensor schema arguments plus `out_dtype` 
 | 1 | out_dtype=f32 out_rank=4 | 37 | 2 | 2251 | efficientvit_b0 |
 
 ### mul.Tensor
+
+[↑ summary](#summary)
 
 `mul.Tensor(Tensor self, Tensor other) -> Tensor`
 
@@ -304,6 +326,8 @@ A *configuration* is an operator's non-Tensor schema arguments plus `out_dtype` 
 
 ### sigmoid.default
 
+[↑ summary](#summary)
+
 `sigmoid(Tensor self) -> Tensor`
 
 | id | configuration | models | families | nodes | e.g. |
@@ -311,6 +335,8 @@ A *configuration* is an operator's non-Tensor schema arguments plus `out_dtype` 
 | 1 | out_dtype=f32 out_rank=4 | 23 | 1 | 994 | regnetv_040 |
 
 ### bmm.default
+
+[↑ summary](#summary)
 
 `bmm(Tensor self, Tensor mat2) -> Tensor`
 
@@ -320,6 +346,8 @@ A *configuration* is an operator's non-Tensor schema arguments plus `out_dtype` 
 
 ### cat.default
 
+[↑ summary](#summary)
+
 `cat(Tensor[] tensors, int dim=0) -> Tensor`
 
 | id | configuration | models | families | nodes | e.g. |
@@ -328,6 +356,8 @@ A *configuration* is an operator's non-Tensor schema arguments plus `out_dtype` 
 | 1 | dim=1 out_dtype=f32 out_rank=3 | 2 | 1 | 2 | csatv2 |
 
 ### div.Tensor
+
+[↑ summary](#summary)
 
 `div.Tensor(Tensor self, Tensor other) -> Tensor`
 
@@ -339,6 +369,8 @@ A *configuration* is an operator's non-Tensor schema arguments plus `out_dtype` 
 
 ### expand.default
 
+[↑ summary](#summary)
+
 `expand(Tensor(a) self, SymInt[] size, *, bool implicit=False) -> Tensor(a)`
 
 | id | configuration | models | families | nodes | e.g. |
@@ -348,6 +380,8 @@ A *configuration* is an operator's non-Tensor schema arguments plus `out_dtype` 
 
 ### mm.default
 
+[↑ summary](#summary)
+
 `mm(Tensor self, Tensor mat2) -> Tensor`
 
 | id | configuration | models | families | nodes | e.g. |
@@ -355,6 +389,8 @@ A *configuration* is an operator's non-Tensor schema arguments plus `out_dtype` 
 | 1 | out_dtype=f32 out_rank=2 | 9 | 2 | 111 | csatv2 |
 
 ### native_layer_norm.default
+
+[↑ summary](#summary)
 
 `native_layer_norm(Tensor input, SymInt[] normalized_shape, Tensor? weight, Tensor? bias, float eps) -> (Tensor, Tensor, Tensor)`
 
@@ -367,6 +403,8 @@ A *configuration* is an operator's non-Tensor schema arguments plus `out_dtype` 
 
 ### slice.Tensor
 
+[↑ summary](#summary)
+
 `slice.Tensor(Tensor(a) self, int dim=0, SymInt? start=None, SymInt? end=None, SymInt step=1) -> Tensor(a)`
 
 | id | configuration | models | families | nodes | e.g. |
@@ -377,6 +415,8 @@ A *configuration* is an operator's non-Tensor schema arguments plus `out_dtype` 
 
 ### constant_pad_nd.default
 
+[↑ summary](#summary)
+
 `constant_pad_nd(Tensor self, SymInt[] pad, Scalar value=0) -> Tensor`
 
 | id | configuration | models | families | nodes | e.g. |
@@ -385,6 +425,8 @@ A *configuration* is an operator's non-Tensor schema arguments plus `out_dtype` 
 
 ### split_with_sizes.default
 
+[↑ summary](#summary)
+
 `split_with_sizes(Tensor(a -> *) self, SymInt[] split_sizes, int dim=0) -> Tensor(a)[]`
 
 | id | configuration | models | families | nodes | e.g. |
@@ -392,6 +434,8 @@ A *configuration* is an operator's non-Tensor schema arguments plus `out_dtype` 
 | 1 | split_sizes=[*3] dim=-1 out_dtype=f32 out_rank=4 | 7 | 1 | 58 | efficientvit_b0 |
 
 ### gelu.default
+
+[↑ summary](#summary)
 
 `gelu(Tensor self, *, str approximate="none") -> Tensor`
 
@@ -404,6 +448,8 @@ A *configuration* is an operator's non-Tensor schema arguments plus `out_dtype` 
 
 ### clamp.default
 
+[↑ summary](#summary)
+
 `clamp(Tensor self, Scalar? min=None, Scalar? max=None) -> Tensor`
 
 | id | configuration | models | families | nodes | e.g. |
@@ -415,6 +461,8 @@ A *configuration* is an operator's non-Tensor schema arguments plus `out_dtype` 
 
 ### _adaptive_avg_pool2d.default
 
+[↑ summary](#summary)
+
 `_adaptive_avg_pool2d(Tensor self, SymInt[2] output_size) -> Tensor`
 
 | id | configuration | models | families | nodes | e.g. |
@@ -422,6 +470,8 @@ A *configuration* is an operator's non-Tensor schema arguments plus `out_dtype` 
 | 1 | output_size=[*2] out_dtype=f32 out_rank=4 | 2 | 1 | 31 | csatv2 |
 
 ### _softmax.default
+
+[↑ summary](#summary)
 
 `_softmax(Tensor self, int dim, bool half_to_float) -> Tensor`
 
@@ -432,6 +482,8 @@ A *configuration* is an operator's non-Tensor schema arguments plus `out_dtype` 
 
 ### amax.default
 
+[↑ summary](#summary)
+
 `amax(Tensor self, int[1] dim=[], bool keepdim=False) -> Tensor`
 
 | id | configuration | models | families | nodes | e.g. |
@@ -439,6 +491,8 @@ A *configuration* is an operator's non-Tensor schema arguments plus `out_dtype` 
 | 1 | dim=[1] keepdim=true out_dtype=f32 out_rank=4 | 2 | 1 | 31 | csatv2 |
 
 ### any.dim
+
+[↑ summary](#summary)
 
 `any.dim(Tensor self, int dim, bool keepdim=False) -> Tensor`
 
@@ -448,6 +502,8 @@ A *configuration* is an operator's non-Tensor schema arguments plus `out_dtype` 
 
 ### as_strided.default
 
+[↑ summary](#summary)
+
 `as_strided(Tensor(a) self, SymInt[] size, SymInt[] stride, SymInt? storage_offset=None) -> Tensor(a)`
 
 | id | configuration | models | families | nodes | e.g. |
@@ -455,6 +511,8 @@ A *configuration* is an operator's non-Tensor schema arguments plus `out_dtype` 
 | 1 | size=[*4] stride=[*4] storage_offset=* out_dtype=f32 out_rank=4 | 2 | 1 | 2 | csatv2 |
 
 ### eq.Scalar
+
+[↑ summary](#summary)
 
 `eq.Scalar(Tensor self, Scalar other) -> Tensor`
 
@@ -464,6 +522,8 @@ A *configuration* is an operator's non-Tensor schema arguments plus `out_dtype` 
 
 ### full_like.default
 
+[↑ summary](#summary)
+
 `full_like(Tensor self, Scalar fill_value, *, ScalarType? dtype=None, Layout? layout=None, Device? device=None, bool? pin_memory=None, MemoryFormat? memory_format=None) -> Tensor`
 
 | id | configuration | models | families | nodes | e.g. |
@@ -471,6 +531,8 @@ A *configuration* is an operator's non-Tensor schema arguments plus `out_dtype` 
 | 1 | fill_value=0 dtype=none memory_format=torch.preserve_format out_dtype=f32 out_rank=4 | 2 | 1 | 11 | csatv2 |
 
 ### index.Tensor
+
+[↑ summary](#summary)
 
 `index.Tensor(Tensor self, Tensor?[] indices) -> Tensor`
 
@@ -480,6 +542,8 @@ A *configuration* is an operator's non-Tensor schema arguments plus `out_dtype` 
 
 ### linalg_vector_norm.default
 
+[↑ summary](#summary)
+
 `linalg_vector_norm(Tensor self, Scalar ord=2, int[1]? dim=None, bool keepdim=False, *, ScalarType? dtype=None) -> Tensor`
 
 | id | configuration | models | families | nodes | e.g. |
@@ -487,6 +551,8 @@ A *configuration* is an operator's non-Tensor schema arguments plus `out_dtype` 
 | 1 | ord=2 dim=[1,2] keepdim=true dtype=none out_dtype=f32 out_rank=4 | 2 | 1 | 31 | csatv2 |
 
 ### logical_not.default
+
+[↑ summary](#summary)
 
 `logical_not(Tensor self) -> Tensor`
 
@@ -496,6 +562,8 @@ A *configuration* is an operator's non-Tensor schema arguments plus `out_dtype` 
 
 ### mul.Scalar
 
+[↑ summary](#summary)
+
 `mul.Scalar(Tensor self, Scalar other) -> Tensor`
 
 | id | configuration | models | families | nodes | e.g. |
@@ -504,6 +572,8 @@ A *configuration* is an operator's non-Tensor schema arguments plus `out_dtype` 
 
 ### pow.Tensor_Scalar
 
+[↑ summary](#summary)
+
 `pow.Tensor_Scalar(Tensor self, Scalar exponent) -> Tensor`
 
 | id | configuration | models | families | nodes | e.g. |
@@ -511,6 +581,8 @@ A *configuration* is an operator's non-Tensor schema arguments plus `out_dtype` 
 | 1 | exponent=0.5 out_dtype=f32 out_rank=2 | 2 | 1 | 2 | csatv2 |
 
 ### select.int
+
+[↑ summary](#summary)
 
 `select.int(Tensor(a) self, int dim, SymInt index) -> Tensor(a)`
 
@@ -521,6 +593,8 @@ A *configuration* is an operator's non-Tensor schema arguments plus `out_dtype` 
 
 ### squeeze.dims
 
+[↑ summary](#summary)
+
 `squeeze.dims(Tensor(a) self, int[] dim) -> Tensor(a)`
 
 | id | configuration | models | families | nodes | e.g. |
@@ -530,6 +604,8 @@ A *configuration* is an operator's non-Tensor schema arguments plus `out_dtype` 
 
 ### sub.Tensor
 
+[↑ summary](#summary)
+
 `sub.Tensor(Tensor self, Tensor other, *, Scalar alpha=1) -> Tensor`
 
 | id | configuration | models | families | nodes | e.g. |
@@ -537,6 +613,8 @@ A *configuration* is an operator's non-Tensor schema arguments plus `out_dtype` 
 | 1 | alpha=1 out_dtype=f32 out_rank=3 | 2 | 1 | 6 | csatv2 |
 
 ### unsqueeze.default
+
+[↑ summary](#summary)
 
 `unsqueeze(Tensor(a) self, int dim) -> Tensor(a)`
 
@@ -546,6 +624,8 @@ A *configuration* is an operator's non-Tensor schema arguments plus `out_dtype` 
 
 ### upsample_bilinear2d.vec
 
+[↑ summary](#summary)
+
 `upsample_bilinear2d.vec(Tensor input, SymInt[]? output_size, bool align_corners, float[]? scale_factors) -> Tensor`
 
 | id | configuration | models | families | nodes | e.g. |
@@ -553,6 +633,8 @@ A *configuration* is an operator's non-Tensor schema arguments plus `out_dtype` 
 | 1 | output_size=[*2] align_corners=true scale_factors=none out_dtype=f32 out_rank=4 | 2 | 1 | 31 | csatv2 |
 
 ### where.self
+
+[↑ summary](#summary)
 
 `where.self(Tensor condition, Tensor self, Tensor other) -> Tensor`
 
@@ -562,6 +644,8 @@ A *configuration* is an operator's non-Tensor schema arguments plus `out_dtype` 
 
 ### avg_pool2d.default
 
+[↑ summary](#summary)
+
 `avg_pool2d(Tensor self, int[2] kernel_size, int[2] stride=[], int[2] padding=0, bool ceil_mode=False, bool count_include_pad=True, int? divisor_override=None) -> Tensor`
 
 | id | configuration | models | families | nodes | e.g. |
@@ -569,6 +653,8 @@ A *configuration* is an operator's non-Tensor schema arguments plus `out_dtype` 
 | 1 | kernel_size=[2,2] stride=[2,2] padding=[0,0] ceil_mode=true count_include_pad=false divisor_override=none out_dtype=f32 out_rank=4 | 1 | 1 | 4 | regnetv_064 |
 
 ### native_group_norm.default
+
+[↑ summary](#summary)
 
 `native_group_norm(Tensor input, Tensor? weight, Tensor? bias, SymInt N, SymInt C, SymInt HxW, int group, float eps) -> (Tensor, Tensor, Tensor)`
 

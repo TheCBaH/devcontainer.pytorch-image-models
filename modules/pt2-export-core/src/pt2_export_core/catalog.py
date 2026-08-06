@@ -12,6 +12,7 @@ from typing import NamedTuple
 
 import yaml
 
+from .markdown import heading_anchor
 from .opgraph import canonical_config
 
 # Backends a core ATen cross-reference is always written for, so an empty one states that
@@ -249,6 +250,14 @@ def render_ops_md(ops_by_model, op_schemas, families, skipped, dialect, zoo_name
 
     ordered_ops = sorted(catalog, key=lambda op: (-len(op_models(op)), op))
 
+    # Anchors are minted in the order the headings below are emitted, since that is what
+    # decides GitHub's numeric suffix on any repeated slug. The summary table doubles as
+    # this file's table of contents, so every operator in it links to its own section.
+    anchors = {}
+    summary_anchor = heading_anchor('summary', anchors)
+    heading_anchor('configurations', anchors)
+    op_anchor = {op: heading_anchor(short_op(op), anchors) for op in ordered_ops}
+
     title = f'{zoo_name} {dialect.label} operator cross-reference'
     if dialect.backend:
         title += f' ({dialect.backend})'
@@ -273,11 +282,15 @@ def render_ops_md(ops_by_model, op_schemas, families, skipped, dialect, zoo_name
 
     lines.append('## summary')
     lines.append('')
+    lines.append('Every operator in the file, most widely used first; each name links to its '
+                 'configurations below.')
+    lines.append('')
     lines.append('| op | configs | models | families | nodes |')
     lines.append('|---|---|---|---|---|')
     for op in ordered_ops:
         cells = usage[op].values()
-        lines.append(f'| {short_op(op)} | {len(catalog[op])} | {len(op_models(op))} | '
+        lines.append(f'| [{short_op(op)}](#{op_anchor[op]}) | {len(catalog[op])} | '
+                     f'{len(op_models(op))} | '
                      f'{len(set().union(*(c["families"] for c in cells)))} | '
                      f'{sum(c["nodes"] for c in cells)} |')
     lines.append('')
@@ -286,6 +299,8 @@ def render_ops_md(ops_by_model, op_schemas, families, skipped, dialect, zoo_name
     lines.append('')
     for op in ordered_ops:
         lines.append(f'### {short_op(op)}')
+        lines.append('')
+        lines.append(f'[↑ summary](#{summary_anchor})')
         lines.append('')
         schema = op_schemas.get(op)
         if schema:

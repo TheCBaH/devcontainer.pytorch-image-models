@@ -27,6 +27,7 @@ from pt2_export_core.catalog import render_ops_md as _render_ops_md
 from pt2_export_core.catalog import render_ops_yaml as _render_ops_yaml
 from pt2_export_core.exclusions import parse_exclusions, render_exclusions as _render_exclusions
 from pt2_export_core.harness import cpu_count, globs, run_worker as _run_worker
+from pt2_export_core.markdown import heading_anchor
 from pt2_export_core.opgraph import collect_ops, describe_dynamic_shapes as _describe_dynamic_shapes, time_budget
 
 
@@ -489,8 +490,44 @@ def render_markdown(rows, timm_version, family_docs=None):
         gflops = r.get('gflops')
         return (gflops is None, round(gflops, 2) if gflops is not None else 0.0, r['name'])
 
+    # Anchors are minted in the order the headings are emitted, since that is what decides
+    # GitHub's numeric suffix on any repeated slug.
+    anchors = {}
+    index_anchor = heading_anchor('families', anchors)
+    family_anchor = {family: heading_anchor(family, anchors) for family in sorted(by_family)}
+
+    def gflops_range(family_rows):
+        """Span of the traced GFLOPs across a family -- the one number that separates a family's
+        variants from each other, and so what a reader scanning the index is choosing between."""
+        values = sorted(r['gflops'] for r in family_rows if r.get('gflops') is not None)
+        if not values:
+            return ''
+        low, high = f'{values[0]:.2f}', f'{values[-1]:.2f}'
+        return low if low == high else f'{low}-{high}'
+
+    lines.append('## families')
+    lines.append('')
+    lines.append(f'{len(by_family)} architecture families, one table each below; the name links '
+                  'to it. `variants` is how many this report covers, `exported` how many of those '
+                  '`torch.export` accepted, `pretrained` how many have weights timm can fetch, '
+                  'and `GFLOPs` the range over the exported ones at their traced resolution.')
+    lines.append('')
+    lines.append('| family | variants | exported | pretrained | GFLOPs |')
+    lines.append('|---|---|---|---|---|')
+    for family in sorted(by_family):
+        family_rows = by_family[family]
+        lines.append(
+            f'| [{family}](#{family_anchor[family]}) | {len(family_rows)} | '
+            f"{sum(1 for r in family_rows if r.get('status') == 'ok')} | "
+            f"{sum(1 for r in family_rows if r.get('pretrained'))} | "
+            f'{gflops_range(family_rows)} |'
+        )
+    lines.append('')
+
     for family in sorted(by_family):
         lines.append(f'## {family}')
+        lines.append('')
+        lines.append(f'[↑ families](#{index_anchor})')
         lines.append('')
         doc = family_docs.get(family)
         if doc:
