@@ -30,7 +30,7 @@ jobs:
       - name: models
         run: make models
 
-      - name: verify graphs against ops.yaml
+      - name: verify graphs against ops-aten.yaml
         run: make models.verify
 
       - name: check tree is unmodified
@@ -64,7 +64,7 @@ jobs:
       - name: models
         run: ${{ env.EXEC }} make models
 
-      - name: verify graphs against ops.yaml
+      - name: verify graphs against ops-aten.yaml
         run: ${{ env.EXEC }} make models.verify
 
       # Runs in the devcontainer only, where paths differ from the uv job's: if a graph ever

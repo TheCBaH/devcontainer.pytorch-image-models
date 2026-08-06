@@ -6,12 +6,17 @@ tensors (`data/weights/model_weights_config.json`), and the raw weight blobs. Th
 the index are small, text, and describe the architecture exactly as a PT2 backend sees it,
 so those are extracted into `models/<name>/` and committed; the blobs are not.
 
-`stack_trace` is dropped from every node before saving. It is a third of the serialized
-graph, and it is the only part that embeds absolute filesystem paths -- committing it would
-make the output differ between a uv checkout and the devcontainer, breaking the "regenerate
-and diff" check that gives these files their meaning. What is kept (`nn_module_stack`,
-`from_node`, `torch_fn`) is the portable provenance: which module and which pre-dispatch
-operator each core ATen node came from.
+The graph is the ATen dialect -- what `torch.export.export()` returns, undecomposed -- so it
+carries `conv2d`, `linear`, `layer_norm` and `scaled_dot_product_attention` as themselves, and
+does not depend on the machine that produced it. See `worker_convert`.
+
+`stack_trace` is dropped from every node before saving, in every graph -- including those
+nested inside higher-order ops, which an undecomposed graph keeps. It is a third of the
+serialized graph and the only part that embeds absolute filesystem paths, which would make the
+output differ between a uv checkout and the devcontainer and break the "regenerate and diff"
+check that gives these files their meaning; `assert_portable` re-reads each archive to be sure.
+What is kept (`nn_module_stack`, `from_node`, `torch_fn`) is the portable provenance: which
+module each ATen node came from.
 
 Commands:
   build     convert + extract every model in the manifest (what `make models` runs)
@@ -32,8 +37,8 @@ import zipfile
 
 from exportlib import MAX_RES, resolved_input_size
 from pt2_export_core.archive import (
-    ARCHIVE_JSON, extract, graph_differences, graph_op_counts, load_manifest, make_portable,
-    read_differences, release_names, render_differences,
+    ARCHIVE_JSON, assert_portable, extract, graph_differences, graph_op_counts, load_manifest,
+    make_portable, read_differences, release_names, render_differences,
 )
 from pt2_export_core.harness import cpu_count, run_pool, run_worker
 
@@ -53,14 +58,17 @@ def worker_convert(name, output, pretrained, max_res):
         input_size = resolved_input_size(model.default_cfg, max_res)
         example = torch.randn(1, *input_size)
 
-        # run_decompositions() lowers pre-dispatch ATen (conv2d, batch_norm, linear) to core
-        # ATen (convolution, _native_batch_norm_legit_no_training, addmm) -- what a backend
-        # actually implements, and what ops.yaml already catalogues for these same models.
-        exported = torch.export.export(model, (example,)).run_decompositions()
+        # The ATen dialect: the graph torch.export hands back, with conv2d, batch_norm, linear
+        # and scaled_dot_product_attention still whole. run_decompositions() here would lower
+        # those to core ATen and cost twice over -- it discards the operator detail a reader of
+        # the graph wants, and it ties the artifact to this machine, since decomposition runs
+        # after dispatch. ops-core-<backend>.yaml catalogues those lowerings, one per backend.
+        exported = torch.export.export(model, (example,))
         make_portable(exported)
 
         os.makedirs(os.path.dirname(os.path.abspath(output)) or '.', exist_ok=True)
         torch.export.save(exported, output)
+        assert_portable(output)
 
         result['status'] = 'ok'
         result['input_size'] = list(input_size)
@@ -231,24 +239,27 @@ def cmd_build(args):
 
 
 def cmd_verify(args):
-    """Hold every committed graph to what ops.yaml says about the same model.
+    """Hold every committed graph to what ops-aten.yaml says about the same model.
 
-    Where the two agree -- 50 of 60 -- that is real evidence the published graph is the one
-    the reports describe: same architecture, different code, different runs. Where they
-    disagree the cause is the export device rather than a defect (see render_differences), so
-    the divergences are recorded in a file and this checks the recorded set still holds,
+    Where the two agree that is real evidence the published graph is the one the reports
+    describe: same architecture, different code, different runs, different machines. Both are
+    ATen graphs, which is what makes the comparison meaningful across the meta/CPU divide --
+    the report traces on meta and an archive has to trace on CPU to carry real weights, and the
+    undecomposed graph is the one that does not vary between them.
+
+    Any residual divergence is recorded in a file and this checks the recorded set still holds,
     following the same pattern export-exclusions.yaml already uses for the other place a
-    measured deviation has to be pinned down rather than argued about.
-
-    That makes both directions failures: a model that starts diverging after a torch bump, and
-    one that quietly stops. Either is worth a human looking at the diff.
+    measured deviation has to be pinned down rather than argued about. That makes both
+    directions failures: a model that starts diverging after a torch bump, and one that quietly
+    stops. Either is worth a human looking at the diff.
     """
     models = load_manifest(args.manifest)
+    ops_name = os.path.basename(args.ops)
     differences, problems = graph_differences(models, args.models_dir, args.ops)
 
     if args.write:
         with open(args.differences, 'w') as f:
-            f.write(render_differences(differences, len(models)))
+            f.write(render_differences(differences, len(models), ops_name))
         print(f'Wrote {args.differences} ({len(differences)} of {len(models)} models differ)',
               file=sys.stderr)
         return 1 if problems else 0
@@ -256,9 +267,9 @@ def cmd_verify(args):
     recorded = read_differences(args.differences)
     for name in sorted(set(differences) | set(recorded)):
         if name not in recorded:
-            problems.append(f'{name}: newly differs from ops.yaml -- {differences[name]}')
+            problems.append(f'{name}: newly differs from {ops_name} -- {differences[name]}')
         elif name not in differences:
-            problems.append(f'{name}: no longer differs from ops.yaml (recorded: {recorded[name]})')
+            problems.append(f'{name}: no longer differs from {ops_name} (recorded: {recorded[name]})')
         elif differences[name] != recorded[name]:
             problems.append(f'{name}: differs differently\n'
                             f'      recorded: {recorded[name]}\n'
@@ -382,8 +393,8 @@ def main():
     p.add_argument('--pt2', required=True)
     p.set_defaults(func=cmd_extract)
 
-    p = sub.add_parser('verify', help='cross-check committed graphs against ops.yaml')
-    p.add_argument('--ops', default=os.path.join(repo_root, 'ops.yaml'))
+    p = sub.add_parser('verify', help='cross-check committed graphs against ops-aten.yaml')
+    p.add_argument('--ops', default=os.path.join(repo_root, 'ops-aten.yaml'))
     p.add_argument('--differences', default=os.path.join(repo_root, 'graph-differences.yaml'))
     p.add_argument('--write', action='store_true',
                    help='re-record the differences file instead of checking against it')

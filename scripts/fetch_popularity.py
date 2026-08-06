@@ -2,7 +2,8 @@
 """Fetch per-repo download counts from the HuggingFace Hub, as a popularity signal for
 `scripts/select_models.py`.
 
-`ops.yaml`/`models.md` say what a model costs to export; neither says whether anyone actually
+The operator cross-references and `models.md` say what a model costs to export; neither says
+whether anyone actually
 uses it. The `timm` org on the Hub carries a download count per pretrained tag, which is the
 cheapest real usage signal available for the whole zoo at once. This fetches it in a single
 paginated call (via `pt2_export_core.popularity.fetch`) and commits the result -- the same

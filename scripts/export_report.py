@@ -22,7 +22,7 @@ import time
 import yaml
 
 from exportlib import MAX_RES, pretrained_info, resolved_input_size
-from pt2_export_core.catalog import parse_existing_ops
+from pt2_export_core.catalog import ATEN, CORE_BACKENDS, core, parse_existing_ops
 from pt2_export_core.catalog import render_ops_md as _render_ops_md
 from pt2_export_core.catalog import render_ops_yaml as _render_ops_yaml
 from pt2_export_core.exclusions import parse_exclusions, render_exclusions as _render_exclusions
@@ -177,20 +177,27 @@ def worker_main(model_name, max_res, dynamic_timeout, ops_timeout, collect, excl
             result['status'] = 'export_failed'
             result['error'] = str(export_error)[:300]
 
+    # Which device the graph was traced on, and so which core ATen cross-reference the model
+    # belongs in: decomposition runs after dispatch, so a model that fell back to CPU was
+    # lowered by different kernels than one traced on meta.
+    result['device'] = export_device
+
     if collect and exported is not None:
-        # The op cross-reference is harvested from the export we already paid for, one
-        # decomposition later: torch.export hands back pre-dispatch ATen (conv2d,
-        # batch_norm, linear), while what a PT2 backend actually lowers is core ATen
-        # (convolution, _native_batch_norm_legit_no_training, addmm).
-        try:
-            with time_budget(ops_timeout):
-                result['ops'], result['op_schemas'] = collect_ops(exported.run_decompositions())
-        except TimeoutError:
-            result['ops'] = None
-            result['ops_error'] = f'decomposition exceeded {ops_timeout}s'
-        except Exception as e:
-            result['ops'] = None
-            result['ops_error'] = str(e)[:200]
+        # Both dialects out of the one export already paid for. ATen first and from the program
+        # itself -- it is what torch.export hands back, and what this repo publishes -- since
+        # run_decompositions() consumes it to produce the core ATen a backend lowers.
+        #
+        # Collected independently so they fail independently: decomposition is the expensive
+        # half, and a model that runs out of budget there still has an ATen graph worth keeping.
+        result['ops'], result['op_schemas'], result['ops_error'] = {}, {}, {}
+        for key, graph in (('aten', lambda: exported), ('core', lambda: exported.run_decompositions())):
+            try:
+                with time_budget(ops_timeout):
+                    result['ops'][key], result['op_schemas'][key] = collect_ops(graph())
+            except TimeoutError:
+                result['ops_error'][key] = f'{key} op collection exceeded {ops_timeout}s'
+            except Exception as e:
+                result['ops_error'][key] = str(e)[:200]
 
     if export_device is not None:
         # Guard-solving for dynamic H/W is cheap (~seconds) for most architectures but, for a
@@ -331,16 +338,40 @@ def parse_pretrained(s):
 TABLE_ROW_RE = re.compile(
     r'^\|\s*(?P<name>[^|]+?)\s*\|\s*(?P<status>[^|]+?)\s*\|\s*(?P<params>[^|]*?)\s*\|'
     r'\s*(?P<weight>[^|]*?)\s*\|\s*(?P<pretrained>[^|]*?)\s*\|\s*(?P<resolution>[^|]*?)\s*\|'
-    r'\s*(?P<gflops>[^|]*?)\s*\|'
+    r'\s*(?P<gflops>[^|]*?)\s*\|\s*(?P<device>[^|]*?)\s*\|'
+    r'\s*(?P<aten_nodes>[^|]*?)\s*\|\s*(?P<aten_ops>[^|]*?)\s*\|'
+    r'\s*(?P<core_nodes>[^|]*?)\s*\|\s*(?P<core_ops>[^|]*?)\s*\|'
     r'\s*(?P<resizable_cfg>[^|]*?)\s*\|\s*(?P<resizable_export>[^|]*?)\s*\|'
     r'\s*(?P<preprocessing>[^|]*?)\s*\|\s*(?P<description>[^|]*?)\s*\|\s*(?P<error>[^|]*?)\s*\|$'
 )
+
+
+def fmt_count(n):
+    return '' if n is None else str(n)
+
+
+def parse_count(s):
+    return int(s) if s else None
+
+
+def dialect_counts(result, key):
+    """(node count, distinct operator count) for one dialect of a worker result.
+
+    Distinct *operators*, not configurations: configuration detail is what the cross-reference
+    files exist for.
+    """
+    cells = (result.get('ops') or {}).get(key)
+    if not cells:
+        return None, None
+    return sum(count for _, _, count in cells), len({op for op, _, _ in cells})
 
 
 def row_for_display(result):
     """Normalize a fresh worker result (raw num_params/weight_bytes/flops) into the
     pre-formatted display fields used both for rendering and for --resume round-tripping."""
     gflops = fmt_gflops(result.get('flops'))
+    aten_nodes, aten_ops = dialect_counts(result, 'aten')
+    core_nodes, core_ops = dialect_counts(result, 'core')
     return {
         'name': result['name'],
         'family': result.get('family', 'unknown'),
@@ -350,6 +381,11 @@ def row_for_display(result):
         'pretrained': result.get('pretrained_tag'),
         'resolution': result.get('resolution') or '',
         'gflops': gflops,
+        'device': result.get('device') or '',
+        'aten_nodes': aten_nodes,
+        'aten_ops': aten_ops,
+        'core_nodes': core_nodes,
+        'core_ops': core_ops,
         'resizable_cfg': result.get('resizable_cfg'),
         'resizable_export': result.get('resizable_export'),
         'preprocessing': result.get('preprocessing') or '',
@@ -384,6 +420,11 @@ def parse_existing(path):
                 'pretrained': parse_pretrained(d['pretrained']),
                 'resolution': d['resolution'] or '',
                 'gflops': gflops,
+                'device': d['device'] or '',
+                'aten_nodes': parse_count(d['aten_nodes']),
+                'aten_ops': parse_count(d['aten_ops']),
+                'core_nodes': parse_count(d['core_nodes']),
+                'core_ops': parse_count(d['core_ops']),
                 'resizable_cfg': parse_bool(d['resizable_cfg']),
                 'resizable_export': parse_dynamic_export(d['resizable_export']),
                 'preprocessing': d['preprocessing'] or '',
@@ -409,6 +450,16 @@ def render_markdown(rows, timm_version, family_docs=None):
     lines.append('✅/❌ mark `status` (export succeeded or not, failure kind alongside), `dynamic (cfg)`, '
                   '`dynamic (export)` (false only -- see below for its other values), and `pretrained` '
                   '(no fetchable weights). ')
+    lines.append('`aten nodes`/`aten ops` count the graph `torch.export` hands back -- the ATen dialect, '
+                  'with `conv2d`/`linear`/`layer_norm`/`scaled_dot_product_attention` whole -- and '
+                  '`core nodes`/`core ops` the same graph after `run_decompositions()`. `ops` is distinct '
+                  'operators, `nodes` total call sites. Core usually counts more of both, since '
+                  'decomposition trades a few composite operators for many primitive ones '
+                  '(`vit_tiny_patch16_224`: 227 nodes over 15 operators against 696 over 21), but neither '
+                  'operator set contains the other. The per-variant matrices are `ops-aten.yaml` and '
+                  '`ops-core-<device>.yaml`. `device` is where the model was traced -- `meta` normally, '
+                  '`cpu` for architectures meta cannot build -- and so which core cross-reference it is '
+                  'in, that decomposition being backend-specific. ')
     lines.append('`resolution` is the size the model was actually traced at to produce the reported GFLOPs -- '
                   'for architectures marked dynamic this is only a reference default, not a requirement. '
                   '`dynamic (cfg)` is timm\'s own declared intent (`fixed_input_size` in the model config); '
@@ -446,15 +497,18 @@ def render_markdown(rows, timm_version, family_docs=None):
             lines.append(f'_{doc}_')
             lines.append('')
         lines.append('| variant | status | params | weight (MB) | pretrained | resolution | GFLOPs | '
+                      'device | aten nodes | aten ops | core nodes | core ops | '
                       'dynamic (cfg) | dynamic (export) | preprocessing | description | error |')
-        lines.append('|---|---|---|---|---|---|---|---|---|---|---|---|')
+        lines.append('|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|')
 
         for row in sorted(by_family[family], key=sort_key):
             gflops = row.get('gflops')
             lines.append(
                 f"| {row['name']} | {fmt_status(row['status'])} | {row['params_str']} | "
                 f"{row['weight_str']} | {fmt_pretrained(row.get('pretrained'))} | {row['resolution']} | "
-                f"{f'{gflops:.2f}' if gflops is not None else ''} | "
+                f"{f'{gflops:.2f}' if gflops is not None else ''} | {row.get('device') or ''} | "
+                f"{fmt_count(row.get('aten_nodes'))} | {fmt_count(row.get('aten_ops'))} | "
+                f"{fmt_count(row.get('core_nodes'))} | {fmt_count(row.get('core_ops'))} | "
                 f"{fmt_bool(row.get('resizable_cfg'))} | {fmt_dynamic_export(row.get('resizable_export'))} | "
                 f"{row['preprocessing']} | {row['description']} | {row['error']} |"
             )
@@ -463,12 +517,13 @@ def render_markdown(rows, timm_version, family_docs=None):
     return '\n'.join(lines)
 
 
-def render_ops_yaml(ops_by_model, op_schemas, skipped, timm_version, torch_version):
-    return _render_ops_yaml(ops_by_model, op_schemas, skipped, 'timm', timm_version, torch_version)
+def render_ops_yaml(ops_by_model, op_schemas, skipped, dialect, timm_version, torch_version):
+    return _render_ops_yaml(ops_by_model, op_schemas, skipped, dialect, 'timm', timm_version, torch_version)
 
 
-def render_ops_md(ops_by_model, op_schemas, families, skipped, timm_version, torch_version):
-    return _render_ops_md(ops_by_model, op_schemas, families, skipped, 'timm', timm_version, torch_version)
+def render_ops_md(ops_by_model, op_schemas, families, skipped, dialect, timm_version, torch_version):
+    return _render_ops_md(ops_by_model, op_schemas, families, skipped, dialect, 'timm',
+                          timm_version, torch_version)
 
 
 def render_exclusions(rows, dynamic_timeout):
@@ -493,17 +548,22 @@ def main():
                               '(windowed/halo attention) never converge on it, so it is bounded independently '
                               'of --timeout to avoid losing already-computed static results')
     parser.add_argument('--ops-timeout', type=int, default=120,
-                         help='budget (seconds) for decomposing the exported graph into core ATen for the '
-                              'op cross-reference; bounded independently of --timeout for the same reason '
-                              'as --dynamic-timeout')
+                         help='budget (seconds) for collecting one dialect of the op cross-reference '
+                              'from an exported graph -- the core ATen half pays for a decomposition, '
+                              'which is the slow part; bounded independently of --timeout for the same '
+                              'reason as --dynamic-timeout')
     parser.add_argument('--max-res', type=int, default=MAX_RES, help='cap input resolution used for export')
     parser.add_argument('--output', default=None, help='output models.md path (default: repo-root models.md)')
-    parser.add_argument('--ops-output', default=None,
-                         help='output ops.yaml path, the models x operations cross-reference '
-                              '(default: repo-root ops.yaml)')
-    parser.add_argument('--ops-md', default=None,
-                         help='output ops.md path, the op-major digest of the cross-reference '
-                              '(default: repo-root ops.md)')
+    parser.add_argument('--ops-aten-output', default=None,
+                         help='output ops-aten.yaml path, the models x operations cross-reference of the '
+                              'graph torch.export hands back (default: repo-root ops-aten.yaml)')
+    parser.add_argument('--ops-aten-md', default=None,
+                         help='output ops-aten.md path, the op-major digest of that cross-reference '
+                              '(default: repo-root ops-aten.md)')
+    parser.add_argument('--ops-core-prefix', default=None,
+                         help='path prefix for the core ATen cross-references; each backend gets its own '
+                              '<prefix>-<backend>.yaml and .md, because that decomposition depends on the '
+                              'device the model was traced on (default: repo-root ops-core)')
     parser.add_argument('--no-ops', action='store_true',
                          help='skip op collection entirely and write only models.md')
     parser.add_argument('--exclusions', default=None,
@@ -552,10 +612,15 @@ def main():
 
     repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     output_path = args.output or os.path.join(repo_root, 'models.md')
-    ops_path = args.ops_output or os.path.join(repo_root, 'ops.yaml')
-    ops_md_path = args.ops_md or os.path.join(repo_root, 'ops.md')
-    exclusions_path = args.exclusions or os.path.join(repo_root, 'export-exclusions.yaml')
+    aten_yaml_path = args.ops_aten_output or os.path.join(repo_root, f'{ATEN.stem}.yaml')
+    aten_md_path = args.ops_aten_md or os.path.join(repo_root, f'{ATEN.stem}.md')
+    core_prefix = args.ops_core_prefix or os.path.join(repo_root, 'ops-core')
     collect = not args.no_ops
+
+    def core_paths(backend):
+        return f'{core_prefix}-{backend}.yaml', f'{core_prefix}-{backend}.md'
+
+    exclusions_path = args.exclusions or os.path.join(repo_root, 'export-exclusions.yaml')
 
     # Regenerating the list means measuring every model, so the two are mutually exclusive.
     exclusions = {} if args.write_exclusions else parse_exclusions(exclusions_path)
@@ -568,20 +633,32 @@ def main():
         names = names[:args.limit]
 
     rows = {}
-    ops_by_model, op_schemas, ops_skipped = {}, {}, {}
+    # One matrix per dialect. The core one is kept whole here and partitioned by export device
+    # only when it is written out: a model's backend is a property of the row, so there is
+    # nothing to gain from carrying the split through the run itself.
+    ops_by_model = {'aten': {}, 'core': {}}
+    op_schemas = {'aten': {}, 'core': {}}
+    ops_skipped = {'aten': {}, 'core': {}}
     if args.resume:
         rows = parse_existing(output_path)
         if collect:
-            ops_by_model, op_schemas, ops_skipped = parse_existing_ops(ops_path)
+            ops_by_model['aten'], op_schemas['aten'], ops_skipped['aten'] = \
+                parse_existing_ops(aten_yaml_path)
+            for backend in CORE_BACKENDS:
+                matrix, schemas, skipped = parse_existing_ops(core_paths(backend)[0])
+                ops_by_model['core'].update(matrix)
+                op_schemas['core'].update(schemas)
+                ops_skipped['core'].update(skipped)
 
         def done(name):
             if name not in rows or rows[name].get('status') not in ('ok', 'export_failed', 'create_failed'):
                 return False
-            # A model that exported but is missing from the cross-reference has ops still to
-            # collect, so it is not done -- which is also what makes the first run after
-            # adding ops.yaml re-export everything, rather than emitting an empty matrix.
+            # A model that exported but is missing from either cross-reference has ops still to
+            # collect, so it is not done -- which is also what makes the first run after a new
+            # dialect is added re-export everything, rather than emitting an empty matrix.
             if collect and rows[name].get('status') == 'ok':
-                return name in ops_by_model or name in ops_skipped
+                return all(name in ops_by_model[key] or name in ops_skipped[key]
+                           for key in ops_by_model)
             return True
 
         names = [n for n in names if not done(n)]
@@ -589,17 +666,34 @@ def main():
     total = len(names)
     print(f'Running {total} models with {args.workers} workers (timeout={args.timeout}s each)...', file=sys.stderr)
 
+    def write_ops(dialect, yaml_path, md_path, matrix, schemas, skipped, families):
+        with open(yaml_path, 'w') as f:
+            f.write(render_ops_yaml(matrix, schemas, skipped, dialect, timm.__version__, torch_version))
+        with open(md_path, 'w') as f:
+            f.write(render_ops_md(matrix, schemas, families, skipped, dialect,
+                                  timm.__version__, torch_version))
+
     def write_outputs():
         with open(output_path, 'w') as f:
             f.write(render_markdown(rows, timm.__version__, family_docs))
         if not collect:
             return
         families = {name: rows[name].get('family', 'unknown') for name in rows}
-        with open(ops_path, 'w') as f:
-            f.write(render_ops_yaml(ops_by_model, op_schemas, ops_skipped, timm.__version__, torch_version))
-        with open(ops_md_path, 'w') as f:
-            f.write(render_ops_md(ops_by_model, op_schemas, families, ops_skipped,
-                                  timm.__version__, torch_version))
+        write_ops(ATEN, aten_yaml_path, aten_md_path, ops_by_model['aten'], op_schemas['aten'],
+                  ops_skipped['aten'], families)
+
+        # Split by the device each model was traced on, since that is what decided its
+        # decomposition. CORE_BACKENDS is written even when empty: a missing file would leave a
+        # reader guessing whether the sweep or the file was incomplete.
+        seen = {row.get('device') for row in rows.values() if row.get('device')}
+        for backend in list(CORE_BACKENDS) + sorted(seen - set(CORE_BACKENDS)):
+            on_backend = {name for name, row in rows.items() if row.get('device') == backend}
+            yaml_path, md_path = core_paths(backend)
+            write_ops(core(backend), yaml_path, md_path,
+                      {n: v for n, v in ops_by_model['core'].items() if n in on_backend},
+                      op_schemas['core'],
+                      {n: v for n, v in ops_skipped['core'].items() if n in on_backend},
+                      families)
 
     completed = 0
     start = time.monotonic()
@@ -617,13 +711,16 @@ def main():
                 result['family'] = family_of(name)
             rows[result['name']] = row_for_display(result)
             if collect:
-                ops_by_model.pop(name, None)
-                ops_skipped.pop(name, None)
-                if result.get('ops'):
-                    ops_by_model[name] = result['ops']
-                    op_schemas.update(result.get('op_schemas') or {})
-                elif result.get('status') == 'ok':
-                    ops_skipped[name] = result.get('ops_error') or 'no ops collected'
+                for key in ops_by_model:
+                    ops_by_model[key].pop(name, None)
+                    ops_skipped[key].pop(name, None)
+                    collected = (result.get('ops') or {}).get(key)
+                    if collected:
+                        ops_by_model[key][name] = collected
+                        op_schemas[key].update((result.get('op_schemas') or {}).get(key) or {})
+                    elif result.get('status') == 'ok':
+                        ops_skipped[key][name] = ((result.get('ops_error') or {}).get(key)
+                                                  or 'no ops collected')
             completed += 1
             elapsed = time.monotonic() - start
             print(f'[{completed}/{total}] {name}: {result["status"]} ({elapsed:.0f}s elapsed)', file=sys.stderr)
@@ -644,7 +741,13 @@ def main():
 
     write_outputs()
 
-    print(f'Wrote {output_path}' + ('' if not collect else f', {ops_path}, {ops_md_path}'), file=sys.stderr)
+    written = [output_path]
+    if collect:
+        written += [aten_yaml_path, aten_md_path]
+        seen = {row.get('device') for row in rows.values() if row.get('device')}
+        for backend in list(CORE_BACKENDS) + sorted(seen - set(CORE_BACKENDS)):
+            written += list(core_paths(backend))
+    print('Wrote ' + ', '.join(written), file=sys.stderr)
 
 
 if __name__ == '__main__':

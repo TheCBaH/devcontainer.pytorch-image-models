@@ -15,7 +15,7 @@ import zipfile
 import yaml
 
 from .catalog import parse_existing_ops, short_op
-from .opgraph import DROPPED_OPS
+from .opgraph import DROPPED_NAMESPACES, DROPPED_OPS
 
 # The parts of a .pt2 archive that are worth committing: the graph itself, and the index
 # mapping graph tensor names to weight blobs and their shapes/dtypes. Everything else is
@@ -26,6 +26,20 @@ ARCHIVE_JSON = (
     'data/weights/model_weights_config.json',
     'data/constants/model_constants_config.json',
 )
+
+
+def graphs(exported):
+    """Every graph in the program, the top-level one and any a higher-order op carries.
+
+    An undecomposed ATen graph keeps its higher-order ops -- `wrap_with_autocast` around an
+    autocast region, control flow -- and each holds a nested graph of its own, serialized in
+    full alongside the rest. Anything that walks "the graph" to make it portable has to reach
+    those too.
+    """
+    for module in exported.graph_module.modules():
+        graph = getattr(module, 'graph', None)
+        if graph is not None:
+            yield graph
 
 
 def make_portable(exported):
@@ -40,18 +54,21 @@ def make_portable(exported):
       from_node       provenance, tagged with id(node.graph) -- a Python object address, so a
                       different value on every single run
 
+    Applied to every graph in the program, not just the top-level one: see `graphs()`.
+
     Done before saving rather than after extracting, so the released .pt2 is as portable as
     the committed JSON, and so the committed bytes stay the serializer's own output.
     """
-    for node in exported.graph.nodes:
-        node.meta.pop('stack_trace', None)
+    for graph in graphs(exported):
+        for node in graph.nodes:
+            node.meta.pop('stack_trace', None)
     _canonicalize_provenance(exported)
 
 
 def _canonicalize_provenance(exported):
     """Renumber the graph ids inside `from_node` so the same model always serializes the same.
 
-    `from_node` records where each core ATen node came from, and tags every entry with the
+    `from_node` records where each node came from, and tags every entry with the
     graph it came from -- as `id(node.graph)`, a Python object address. That address is
     different on every run, so the serialized graph would never be byte-identical twice and
     the "regenerate and diff" check these files exist for could never pass.
@@ -60,6 +77,9 @@ def _canonicalize_provenance(exported):
     graph?), so replacing them with 0, 1, 2... in order of first appearance keeps everything
     the field is used for and drops the only part that was never meaningful. Older torch
     versions numbered them this way to begin with.
+
+    One numbering spans the whole program rather than one per graph, so that "same source
+    graph" still means the same thing across a higher-order op's boundary.
     """
     ids = {}
     sources = 0
@@ -76,10 +96,11 @@ def _canonicalize_provenance(exported):
             visit(parent)
 
     seen_from_node = False
-    for node in exported.graph.nodes:
-        for source in node.meta.get('from_node') or ():
-            seen_from_node = True
-            visit(source)
+    for graph in graphs(exported):
+        for node in graph.nodes:
+            for source in node.meta.get('from_node') or ():
+                seen_from_node = True
+                visit(source)
 
     # Everything above reaches into torch internals that are explicitly not backward
     # compatible (NodeSource is @compatibility(is_backward_compatible=False), and `_dict` is
@@ -91,6 +112,25 @@ def _canonicalize_provenance(exported):
             'from_node metadata is present but carries no node_info: torch has changed '
             'NodeSource and graph ids are no longer being canonicalized. The committed '
             'graphs would not be reproducible -- update _canonicalize_provenance.')
+
+
+def assert_portable(pt2_path):
+    """Fail if a saved archive still carries machine-specific provenance.
+
+    `make_portable` only strips what it walks, and a higher-order op nests a graph it may not
+    reach. Such a `stack_trace` is invisible on the machine that wrote it -- every path matches
+    -- and shows up as absolute venv paths everywhere else, so it is worth one zip read to be
+    sure before the JSON is committed.
+    """
+    with zipfile.ZipFile(pt2_path) as z:
+        members = [name for name in z.namelist() if name.endswith('models/model.json')]
+        for member in members:
+            raw = z.read(member)
+            if b'"stack_trace"' in raw:
+                raise RuntimeError(
+                    f'{pt2_path}: {member} still contains stack_trace after make_portable -- '
+                    'some graph was not walked (a new higher-order op nesting one?). The '
+                    'committed JSON would embed absolute venv paths and differ per machine.')
 
 
 def load_manifest(path):
@@ -159,19 +199,27 @@ def extract(pt2_path, name, models_dir):
 
 def graph_op_counts(model_json_path):
     """{aten target: node count} from a committed graph, for cross-checking against a report's
-    ops matrix."""
+    ops matrix.
+
+    Higher-order targets are left out for the same reason `collect_ops` leaves them out of the
+    report: they carry no schema, so there is nothing to describe and nothing to compare. A
+    live graph tests `hasattr(target, '_schema')`; here only the target string survives, so the
+    rule is expressed as the namespace it amounts to.
+    """
     with open(model_json_path) as f:
         document = json.load(f)
     counts = {}
     for node in document['graph_module']['graph']['nodes']:
         target = node['target'].replace('torch.ops.', '')
+        if target.split('.', 1)[0] in DROPPED_NAMESPACES:
+            continue
         counts[target] = counts.get(target, 0) + 1
     return counts
 
 
 def graph_differences(models, models_dir, ops_path):
     """({name: 'op=reported/committed ...'}, [problem, ...]) comparing graphs with a report's
-    ops.yaml-shaped operator matrix.
+    operator matrix. Both must describe the same dialect for the comparison to mean anything.
 
     `_assert_tensor_metadata` is dropped on the committed side because the report already
     drops it as export bookkeeping rather than computation -- DROPPED_OPS is that rule, so a
@@ -209,24 +257,23 @@ def graph_differences(models, models_dir, ops_path):
     return differences, problems
 
 
-def render_differences(differences, total):
+def render_differences(differences, total, ops_name='ops-aten.yaml'):
     """The models whose committed graph disagrees with the ops report, as a file to commit."""
     lines = [
-        '# Where a committed graph disagrees with the operator counts in ops.yaml.',
+        f'# Where a committed graph disagrees with the operator counts in {ops_name}.',
         '#',
         '# Generated by `make models.differences`, do not edit by hand. `make models.verify`',
         '# holds the tree to this list: a model that starts or stops diverging, or diverges',
         '# differently, is a failure until it is regenerated here and reviewed in the diff.',
         '#',
-        '# These are not defects. The two artifacts are exported on different devices, and',
-        '# they have to be: ops.yaml sweeps ~1300 architectures and so traces on `meta`, the',
-        '# only way to reach a multi-billion-parameter model without materializing it, while',
-        '# a .pt2 must carry real weight blobs and so traces on CPU. Attention is where the',
-        '# two part company -- scaled_dot_product_attention lowers to a fused CPU kernel whose',
-        '# decomposition differs from the math path meta takes -- so architectures using it',
-        '# land on different counts for the ops attention expands into.',
+        '# Empty is the expected state. The two artifacts are exported on different devices and',
+        '# have to be -- the report sweeps ~1300 architectures and so traces on `meta`, while a',
+        '# .pt2 carries real weight blobs and so traces on CPU -- but both are ATen graphs, and',
+        '# that dialect does not depend on the device. Its decomposition does, which is why the',
+        '# core ATen cross-references are per backend. An entry here is something else, and worth',
+        '# understanding before it is pinned.',
         '#',
-        f'# Values are `op=ops.yaml/graph`. {len(differences)} of {total} models differ.',
+        f'# Values are `op={ops_name}/graph`. {len(differences)} of {total} models differ.',
         '',
         'models:',
     ]

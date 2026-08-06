@@ -1,5 +1,10 @@
-"""Analysis of an already-exported `torch.export.ExportedProgram`: which core ATen
-operators it uses, in which call configurations, and which dims stayed dynamic.
+"""Analysis of an already-exported `torch.export.ExportedProgram`: which ATen operators it
+uses, in which call configurations, and which dims stayed dynamic.
+
+Dialect-agnostic: the same walk describes the graph `torch.export.export()` hands back (ATen:
+`conv2d`, `linear`, `layer_norm`, `scaled_dot_product_attention`) and the one
+`run_decompositions()` produces from it (core ATen: `convolution`, `addmm`,
+`native_layer_norm`). Nothing here decides which of the two it is looking at.
 
 Everything here is duck-typed on the exported graph itself (node schema,
 `node.meta['val']`) -- it never constructs a model or an example input, so it has no
@@ -20,6 +25,16 @@ import re
 SYMINT_LITERAL_OPS = {
     'aten.convolution.default',
     'aten.constant_pad_nd.default',
+    # The ATen-dialect counterparts of the two above: at that level a convolution's stride,
+    # padding, dilation and groups are all SymInt-typed, and abstracting them would describe
+    # convolution in less detail than the core catalog does. `pad` stands to `constant_pad_nd`
+    # as `conv2d` does to `convolution`.
+    'aten.conv1d.default',
+    'aten.conv2d.default',
+    'aten.conv3d.default',
+    'aten.conv_transpose2d.input',
+    'aten._convolution.default',
+    'aten.pad.default',
 }
 
 # `device` differs between the meta and CPU export paths a driver may take per model, so
@@ -29,6 +44,12 @@ DROPPED_ARGS = {'device', 'layout', 'pin_memory'}
 
 # An export bookkeeping node, not computation a backend has to implement.
 DROPPED_OPS = {'aten._assert_tensor_metadata.default'}
+
+# Namespaces whose members carry no schema, so `collect_ops` skips them: higher-order ops are
+# graph structure (autocast regions, control flow), not operators. Named rather than left to
+# the `_schema` check because `archive.graph_op_counts` reads serialized graphs, where only the
+# target string survives, and has to apply the same rule.
+DROPPED_NAMESPACES = {'higher_order'}
 
 _DTYPE_NAMES = {
     'torch.float32': 'f32', 'torch.float64': 'f64', 'torch.float16': 'f16',

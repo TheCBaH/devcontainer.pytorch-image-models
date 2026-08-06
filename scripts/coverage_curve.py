@@ -13,6 +13,7 @@ import sys
 
 import yaml
 
+from pt2_export_core.catalog import CORE_BACKENDS
 from pt2_export_core.selection import curve as _curve, load_popularity
 from select_models import load_candidates
 
@@ -22,15 +23,18 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('--models-md', default=os.path.join(repo_root, 'models.md'))
-    parser.add_argument('--ops', default=os.path.join(repo_root, 'ops.yaml'))
+    parser.add_argument('--ops-aten', default=os.path.join(repo_root, 'ops-aten.yaml'))
+    parser.add_argument('--ops-core', nargs='+',
+                        default=[os.path.join(repo_root, f'ops-core-{backend}.yaml')
+                                 for backend in CORE_BACKENDS])
     parser.add_argument('--popularity', default=os.path.join(repo_root, 'model-popularity.yaml'))
     parser.add_argument('--output', default=os.path.join(repo_root, 'coverage-curve.yaml'))
     parser.add_argument('--step', type=int, default=10)
-    parser.add_argument('--max-nodes', type=int, default=2500)
+    parser.add_argument('--max-nodes', type=int, default=1500)
     parser.add_argument('--max-weight', type=float, default=150.0)
     args = parser.parse_args()
 
-    candidates = load_candidates(args.models_md, args.ops)
+    candidates = load_candidates(args.models_md, args.ops_aten, args.ops_core)
     popularity = load_popularity(args.popularity)
 
     points, max_models, total_ops, total_families = _curve(

@@ -6,8 +6,13 @@ PT2_SCRIPT        := $(SCRIPTS_DIR)/export_pt2.py
 POPULARITY_SCRIPT := $(SCRIPTS_DIR)/fetch_popularity.py
 CURVE_SCRIPT      := $(SCRIPTS_DIR)/coverage_curve.py
 MODELS_MD     := $(ROOT)/models.md
-OPS_YAML      := $(ROOT)/ops.yaml
-OPS_MD        := $(ROOT)/ops.md
+# The published dialect gets one cross-reference; core ATen gets one per backend, because that
+# decomposition runs after dispatch and so depends on where the model was traced.
+OPS_ATEN_YAML := $(ROOT)/ops-aten.yaml
+OPS_ATEN_MD   := $(ROOT)/ops-aten.md
+OPS_CORE      := $(ROOT)/ops-core
+CORE_BACKENDS := meta cpu
+OPS_CORE_YAML := $(foreach b,$(CORE_BACKENDS),$(OPS_CORE)-$(b).yaml)
 EXCLUSIONS    := $(ROOT)/export-exclusions.yaml
 MANIFEST      := $(ROOT)/models-selected.yaml
 POPULARITY    := $(ROOT)/model-popularity.yaml
@@ -30,9 +35,11 @@ DYNAMIC_TIMEOUT  ?= 60
 # ── timm export report ───────────────────────────────────────────────────────
 
 # Regenerate models.md (torch.export compatibility, weight size, FLOPs) plus the aten op
-# cross-reference ops.yaml/ops.md, all from the same export pass (~1300 models, ~15 minutes)
+# cross-references ops-aten.* and ops-core-<backend>.*, all from the same export pass
+# (~1300 models, ~15 minutes)
 report:
-	uv run python $(REPORT_SCRIPT) --output $(MODELS_MD) --ops-output $(OPS_YAML) --ops-md $(OPS_MD) \
+	uv run python $(REPORT_SCRIPT) --output $(MODELS_MD) \
+		--ops-aten-output $(OPS_ATEN_YAML) --ops-aten-md $(OPS_ATEN_MD) --ops-core-prefix $(OPS_CORE) \
 		--exclusions $(EXCLUSIONS) --timeout $(TIMEOUT) --dynamic-timeout $(DYNAMIC_TIMEOUT)
 
 # What CI runs. Guard solving is single-threaded sympy and a hosted runner's core is several
@@ -48,7 +55,8 @@ report.ci:
 # applied) and list the ones that run out of budget. Run this locally, and commit the result
 # along with the reports it rewrites.
 report.exclusions:
-	uv run python $(REPORT_SCRIPT) --output $(MODELS_MD) --ops-output $(OPS_YAML) --ops-md $(OPS_MD) \
+	uv run python $(REPORT_SCRIPT) --output $(MODELS_MD) \
+		--ops-aten-output $(OPS_ATEN_YAML) --ops-aten-md $(OPS_ATEN_MD) --ops-core-prefix $(OPS_CORE) \
 		--exclusions $(EXCLUSIONS) --write-exclusions \
 		--timeout $(TIMEOUT) --dynamic-timeout $(DYNAMIC_TIMEOUT)
 
@@ -56,7 +64,8 @@ report.exclusions:
 # paths so it never leaves the committed reports half-regenerated.
 report.dry-run:
 	uv run python $(REPORT_SCRIPT) --limit 20 --workers 4 --output $(ROOT)/.report-dry-run.md \
-		--ops-output $(ROOT)/.report-dry-run.yaml --ops-md $(ROOT)/.report-dry-run.ops.md
+		--ops-aten-output $(ROOT)/.report-dry-run.aten.yaml --ops-aten-md $(ROOT)/.report-dry-run.aten.md \
+		--ops-core-prefix $(ROOT)/.report-dry-run.core
 
 # ── PT2 graphs ───────────────────────────────────────────────────────────────
 
@@ -66,23 +75,25 @@ report.dry-run:
 models.popularity:
 	uv run python $(POPULARITY_SCRIPT) --output $(POPULARITY)
 
-# Recompute which models to publish, from the committed reports. Runs in seconds -- it reads
-# ops.yaml/models.md/model-popularity.yaml rather than exporting anything -- so the subset is
-# reviewable in a diff before any archive is built. `include`/`exclude` in the manifest are
+# Recompute which models to publish, from the committed reports. Runs in seconds -- it reads the
+# cross-references, models.md and model-popularity.yaml rather than exporting anything -- so the
+# subset is reviewable in a diff before any archive is built. `include`/`exclude` in the manifest are
 # preserved. Pass TARGET= to override the model count, e.g. `make models.select TARGET=120` --
 # see coverage-curve.yaml (make models.curve) for what count buys what coverage. 100 is the
-# knee of that curve: op-config coverage gain per 10 models drops from ~5-7pp to ~2.5pp around
-# here, while committed size keeps climbing linearly (~4KB/node) regardless of where it bends.
+# knee of that curve: op-config coverage gain per 10 models drops from ~4-6pp to ~2.3pp around
+# here, while committed size keeps climbing linearly (~1.8KB/node) regardless of where it bends.
 TARGET ?= 100
 models.select:
-	uv run python $(SELECT_SCRIPT) --models-md $(MODELS_MD) --ops $(OPS_YAML) \
+	uv run python $(SELECT_SCRIPT) --models-md $(MODELS_MD) \
+		--ops-aten $(OPS_ATEN_YAML) --ops-core $(OPS_CORE_YAML) \
 		--popularity $(POPULARITY) --target $(TARGET) --output $(MANIFEST)
 
 # Report (operator, configuration) coverage and family breadth at every model count in steps
 # of 10, from 10 up to where the selection saturates on its own. Runs in seconds, same inputs
 # as models.select -- read coverage-curve.yaml to decide TARGET before committing to it.
 models.curve:
-	uv run python $(CURVE_SCRIPT) --models-md $(MODELS_MD) --ops $(OPS_YAML) \
+	uv run python $(CURVE_SCRIPT) --models-md $(MODELS_MD) \
+		--ops-aten $(OPS_ATEN_YAML) --ops-core $(OPS_CORE_YAML) \
 		--popularity $(POPULARITY) --output $(CURVE)
 
 # Export every selected model and commit the JSON parts of its .pt2 (~100 models, a few minutes).
@@ -98,18 +109,20 @@ models.dry-run:
 	uv run python $(PT2_SCRIPT) --manifest $(MANIFEST) --models-dir $(ROOT)/.models-dry-run \
 		--build-dir $(BUILD_DIR) build --limit 3
 
-# Hold every committed graph to the operator counts ops.yaml recorded for the same model.
-# The 50 that agree exactly are evidence the published graph is the one the reports describe;
-# the rest are pinned in graph-differences.yaml, and a change either way fails.
+# Hold every committed graph to the operator counts ops-aten.yaml recorded for the same model.
+# Agreement is evidence the published graph is the one the reports describe -- and it can be
+# expected here, unlike with a decomposed graph, because both sides are ATen and that dialect
+# does not depend on the device. Residual differences are pinned in graph-differences.yaml,
+# and a change either way fails.
 models.verify:
 	uv run python $(PT2_SCRIPT) --manifest $(MANIFEST) --models-dir $(MODELS_DIR) \
-		verify --ops $(OPS_YAML) --differences $(DIFFERENCES)
+		verify --ops $(OPS_ATEN_YAML) --differences $(DIFFERENCES)
 
 # Re-record graph-differences.yaml. Run after a torch or timm bump moves a decomposition,
 # and review the diff -- a model appearing or vanishing there is worth understanding.
 models.differences:
 	uv run python $(PT2_SCRIPT) --manifest $(MANIFEST) --models-dir $(MODELS_DIR) \
-		verify --ops $(OPS_YAML) --differences $(DIFFERENCES) --write
+		verify --ops $(OPS_ATEN_YAML) --differences $(DIFFERENCES) --write
 
 # ── Release ──────────────────────────────────────────────────────────────────
 
