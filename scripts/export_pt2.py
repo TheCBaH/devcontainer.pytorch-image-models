@@ -18,10 +18,11 @@ Commands:
   convert   one model -> <name>.pt2
   extract   one .pt2 -> models/<name>/ (JSON only)
   fetch     download the release tier's pretrained weights into a shared HF cache
-  pack      one release archive: .pt2 + preprocessing.json + expected.json
+  pack      one release archive: .pt2 + preprocessing.json + expected.json + inputs.pt + outputs.pt
 """
 import argparse
 import concurrent.futures
+import io
 import json
 import os
 import shutil
@@ -113,24 +114,44 @@ def worker_pack(name, model_path, images_dir, output, max_res):
         module = torch.export.load(model_path).module()
         transform = create_transform(**data_config, is_training=False)
 
-        # The images ship once, unmodified, in their own archive; this records what each
-        # model makes of them so a consumer can prove they reassembled the pieces correctly.
-        expected = {}
+        # The images ship once, unmodified, in their own archive; preprocessing is per model,
+        # so what this model actually consumes is captured here as inputs.pt, per image and
+        # pre-batch-dim. Inference then reads its tensors back out of that file (torch.load,
+        # not the freshly-transformed value still sitting in memory), so the archive is proven
+        # to contain exactly what was run, not just what was intended.
         images = sorted(f for f in os.listdir(images_dir) if f.lower().endswith(('.jpg', '.jpeg', '.png')))
-        for image_name in images:
-            tensor = transform(Image.open(os.path.join(images_dir, image_name)).convert('RGB')).unsqueeze(0)
+        inputs = {
+            image_name: transform(Image.open(os.path.join(images_dir, image_name)).convert('RGB'))
+            for image_name in images
+        }
+        inputs_buffer = io.BytesIO()
+        torch.save(inputs, inputs_buffer)
+
+        # outputs.pt is the full, unrounded tensor per image, for exact numerical
+        # verification; expected.json is a rounded top-5 of the same values, for a quick
+        # glance without loading a tensor file.
+        expected = {}
+        outputs = {}
+        inputs_buffer.seek(0)
+        for image_name, image_input in torch.load(inputs_buffer, weights_only=True).items():
             with torch.no_grad():
-                logits = module(tensor)
-            top = torch.topk(logits[0].float(), 5)
+                logits = module(image_input.unsqueeze(0))
+            image_output = logits[0].float()
+            outputs[image_name] = image_output
+            top = torch.topk(image_output, 5)
             expected[image_name] = {
                 'top5': [int(i) for i in top.indices],
                 'logits': [round(float(v), 4) for v in top.values],
             }
+        outputs_buffer = io.BytesIO()
+        torch.save(outputs, outputs_buffer)
 
         with zipfile.ZipFile(output, 'w', zipfile.ZIP_DEFLATED) as z:
             z.write(model_path, f'{name}.pt2')
             z.writestr('preprocessing.json', json.dumps(preprocessing, indent=2) + '\n')
             z.writestr('expected.json', json.dumps(expected, indent=2) + '\n')
+            z.writestr('inputs.pt', inputs_buffer.getvalue())
+            z.writestr('outputs.pt', outputs_buffer.getvalue())
 
         result['status'] = 'ok'
         result['images'] = len(expected)
