@@ -6,9 +6,10 @@ tensors (`data/weights/model_weights_config.json`), and the raw weight blobs. Th
 the index are small, text, and describe the architecture exactly as a PT2 backend sees it,
 so those are extracted into `models/<name>/` and committed; the blobs are not.
 
-The graph is the ATen dialect -- what `torch.export.export()` returns, undecomposed -- so it
-carries `conv2d`, `linear`, `layer_norm` and `scaled_dot_product_attention` as themselves, and
-does not depend on the machine that produced it. See `worker_convert`.
+The graph is the functional ATen dialect: `torch.export.export()` followed by
+`run_decompositions(decomp_table={})`. This removes mutation without lowering composite
+operators such as `conv2d`, `linear`, `layer_norm`, and `scaled_dot_product_attention` to core
+ATen. See `worker_convert`.
 
 `stack_trace` is dropped from every node before saving, in every graph -- including those
 nested inside higher-order ops, which an undecomposed graph keeps. It is a third of the
@@ -58,12 +59,12 @@ def worker_convert(name, output, pretrained, max_res):
         input_size = resolved_input_size(model.default_cfg, max_res)
         example = torch.randn(1, *input_size)
 
-        # The ATen dialect: the graph torch.export hands back, with conv2d, batch_norm, linear
-        # and scaled_dot_product_attention still whole. run_decompositions() here would lower
-        # those to core ATen and cost twice over -- it discards the operator detail a reader of
-        # the graph wants, and it ties the artifact to this machine, since decomposition runs
-        # after dispatch. ops-core-<backend>.yaml catalogues those lowerings, one per backend.
+        # Functional ATen: the empty table disables optional decompositions while the retrace
+        # still functionalizes mutation. Composite operators such as conv2d, linear, and
+        # scaled_dot_product_attention remain whole; unlike run_decompositions() with its
+        # default table, this does not lower the graph all the way to core ATen.
         exported = torch.export.export(model, (example,))
+        exported = exported.run_decompositions(decomp_table={})
         make_portable(exported)
 
         os.makedirs(os.path.dirname(os.path.abspath(output)) or '.', exist_ok=True)
@@ -239,13 +240,11 @@ def cmd_build(args):
 
 
 def cmd_verify(args):
-    """Hold every committed graph to what ops-aten.yaml says about the same model.
+    """Hold every committed graph to what ops-func.yaml says about the same model.
 
     Where the two agree that is real evidence the published graph is the one the reports
     describe: same architecture, different code, different runs, different machines. Both are
-    ATen graphs, which is what makes the comparison meaningful across the meta/CPU divide --
-    the report traces on meta and an archive has to trace on CPU to carry real weights, and the
-    undecomposed graph is the one that does not vary between them.
+    functional ATen graphs, which makes the comparison meaningful across the meta/CPU divide.
 
     Any residual divergence is recorded in a file and this checks the recorded set still holds,
     following the same pattern export-exclusions.yaml already uses for the other place a
@@ -393,8 +392,8 @@ def main():
     p.add_argument('--pt2', required=True)
     p.set_defaults(func=cmd_extract)
 
-    p = sub.add_parser('verify', help='cross-check committed graphs against ops-aten.yaml')
-    p.add_argument('--ops', default=os.path.join(repo_root, 'ops-aten.yaml'))
+    p = sub.add_parser('verify', help='cross-check committed graphs against ops-func.yaml')
+    p.add_argument('--ops', default=os.path.join(repo_root, 'ops-func.yaml'))
     p.add_argument('--differences', default=os.path.join(repo_root, 'graph-differences.yaml'))
     p.add_argument('--write', action='store_true',
                    help='re-record the differences file instead of checking against it')

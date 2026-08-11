@@ -257,7 +257,7 @@ def graph_differences(models, models_dir, ops_path):
     return differences, problems
 
 
-def render_differences(differences, total, ops_name='ops-aten.yaml'):
+def render_differences(differences, total, ops_name='ops-func.yaml'):
     """The models whose committed graph disagrees with the ops report, as a file to commit."""
     lines = [
         f'# Where a committed graph disagrees with the operator counts in {ops_name}.',
@@ -266,12 +266,10 @@ def render_differences(differences, total, ops_name='ops-aten.yaml'):
         '# holds the tree to this list: a model that starts or stops diverging, or diverges',
         '# differently, is a failure until it is regenerated here and reviewed in the diff.',
         '#',
-        '# Empty is the expected state. The two artifacts are exported on different devices and',
-        '# have to be -- the report sweeps ~1300 architectures and so traces on `meta`, while a',
-        '# .pt2 carries real weight blobs and so traces on CPU -- but both are ATen graphs, and',
-        '# that dialect does not depend on the device. Its decomposition does, which is why the',
-        '# core ATen cross-references are per backend. An entry here is something else, and worth',
-        '# understanding before it is pinned.',
+        '# The two artifacts are exported on different devices: the report traces on `meta`,',
+        '# while a .pt2 carries real weight blobs and traces on CPU. Functional ATen is normally',
+        '# device-independent, except that attention-result strides can change whether a reshape',
+        '# becomes a view or clone + _unsafe_view. Any differences are pinned here for review.',
         '#',
         f'# Values are `op={ops_name}/graph`. {len(differences)} of {total} models differ.',
         '',

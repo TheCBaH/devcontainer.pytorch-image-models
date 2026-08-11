@@ -25,14 +25,15 @@ from pt2_export_core.catalog import CORE_BACKENDS
 from pt2_export_core.selection import build_candidates, load_popularity, read_overrides, render_manifest, select
 
 
-def load_candidates(models_md, ops_aten, ops_core):
+def load_candidates(models_md, ops_aten, ops_core, ops_func):
     """Parse the committed reports and join them into candidates via
     `pt2_export_core.selection.build_candidates`.
 
     `ops_aten` is the matrix of the graph this repo publishes, so it decides which models are
-    candidates and what each costs. `ops_core` is one file per backend: the same models lowered,
-    a different operator set worth covering but not a different artifact, so they are merged and
-    contribute coverage only.
+    candidates and what each costs. `ops_func` and `ops_core` are the same models functionalized
+    and lowered: different operator sets worth covering, but not different artifacts, so they
+    contribute coverage only. `ops_core` is one file per backend, and they are merged, since a
+    model appears in exactly the one for the device that traced it.
     """
     rows = parse_existing(models_md)
     if not rows:
@@ -40,11 +41,12 @@ def load_candidates(models_md, ops_aten, ops_core):
     ops_by_model, _, _ = parse_existing_ops(ops_aten)
     if not ops_by_model:
         sys.exit(f'{ops_aten}: no operator matrix found -- run `make report` first')
+    func_by_model, _, _ = parse_existing_ops(ops_func)
     core_by_model = {}
     for path in ops_core:
         matrix, _, _ = parse_existing_ops(path)
         core_by_model.update(matrix)
-    return build_candidates(rows, ops_by_model, core_by_model)
+    return build_candidates(rows, ops_by_model, func_by_model, core_by_model)
 
 
 def main():
@@ -55,6 +57,9 @@ def main():
     parser.add_argument('--ops-aten', default=os.path.join(repo_root, 'ops-aten.yaml'),
                         help='cross-reference of the graph that actually gets published; decides '
                              'candidacy and per-model cost')
+    parser.add_argument('--ops-func', default=os.path.join(repo_root, 'ops-func.yaml'),
+                        help='functional ATen cross-reference; folded into coverage so a model gets '
+                             'credit for the units it exercises once its mutation is removed')
     parser.add_argument('--ops-core', nargs='+',
                         default=[os.path.join(repo_root, f'ops-core-{backend}.yaml')
                                  for backend in CORE_BACKENDS],
@@ -82,7 +87,7 @@ def main():
                              'pretrained weights and so pays the size in every download')
     args = parser.parse_args()
 
-    candidates = load_candidates(args.models_md, args.ops_aten, args.ops_core)
+    candidates = load_candidates(args.models_md, args.ops_aten, args.ops_core, args.ops_func)
     include, exclude = read_overrides(args.output)
     popularity = load_popularity(args.popularity)
 

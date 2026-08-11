@@ -28,18 +28,65 @@ models:
     relu_.default: {1: 17}
 ```
 
-It is written **once per dialect**, because the two describe genuinely different operator
-sets rather than one being a subset of the other:
+It is written **once per dialect**, because each describes a genuinely different operator set
+rather than one being a subset of another:
 
 | | file | what it is |
 |---|---|---|
-| ATen | [`ops-aten.yaml`](ops-aten.yaml) / [`ops-aten.md`](ops-aten.md) | the graph `torch.export.export()` hands back — `conv2d`, `linear`, `layer_norm`, `scaled_dot_product_attention` — and the graph published under `models/` |
+| ATen | [`ops-aten.yaml`](ops-aten.yaml) / [`ops-aten.md`](ops-aten.md) | the graph `torch.export.export()` hands back — `conv2d`, `linear`, `layer_norm`, `scaled_dot_product_attention` |
+| functional ATen | [`ops-func.yaml`](ops-func.yaml) / [`ops-func.md`](ops-func.md) | the same graphs after `run_decompositions(decomp_table={})` — the same composite operators, but no `relu_`, no `add_`, no eval-time `dropout`; this is the graph published under `models/` |
 | core ATen | [`ops-core-meta.yaml`](ops-core-meta.yaml) / [`.md`](ops-core-meta.md), [`ops-core-cpu.yaml`](ops-core-cpu.yaml) / [`.md`](ops-core-cpu.md) | the same graphs after `run_decompositions()` — `convolution`, `addmm`, `native_layer_norm`, `bmm` — what a PT2 backend actually lowers |
 
-Measured across a 24-model sample, ATen contributes 33 operator names core ATen never shows
-and core contributes 24 the ATen graph never shows; only 25 are common to both. So a backend
-author wants the core files, someone reading a published graph wants the ATen one, and model
-selection (below) covers the union.
+Across the whole zoo the three vocabularies overlap only partially — 149 distinct operator names
+between them, and no one file contains another:
+
+| | operators | vs. ATen | vs. core ATen |
+|---|---|---|---|
+| ATen | 111 | — | 67 it has that core lacks, 36 core has that it lacks |
+| functional ATen | 96 | 23 dropped, 8 added | 46 it has that core lacks, 30 core has that it lacks |
+| core ATen | 80 | 36 added, 67 dropped | — |
+
+The functional dialect is the small step (31 names move, and the operator count *falls*, since
+`relu_`/`relu` and the view family collapse together); decomposition is the large one. So a backend
+author wants the core files, while someone reading a published graph gets the functional one and
+does not need to implement mutation. Model selection (below) covers
+the union of all three.
+
+### Why there is a functional dialect in between
+
+`run_decompositions()` always re-runs the AOTDispatcher trace, and functionalization is a fixed
+part of that trace rather than a decomposition rule. So an *empty* decomposition table buys the
+functionalization without any of the lowering: in-place operators become out-of-place ones, an
+in-place slice assignment becomes `select_scatter`, eval-time `dropout` disappears instead of
+becoming an identity node, and `conv2d`/`linear`/`layer_norm`/`scaled_dot_product_attention` are
+still there as themselves.
+
+Two rewrites come along that are not about mutation, and they have the same cause. An empty table
+preserves a composite operator only where torch.export can prove it safe to
+(`torch._export.utils._check_valid_to_preserve`): the operator's schema must neither mutate nor
+alias its arguments, and it must not be tagged `maybe_aliasing_or_mutating`. `reshape`, `flatten`,
+`contiguous`, `chunk` and `to` may all return a view, so they are expanded to
+`view`/`_unsafe_view`/`split`/`clone`/`_to_copy`; `batch_norm` and `dropout` are tagged, since they
+touch running statistics and RNG state, so `batch_norm` expands to
+`_native_batch_norm_legit_no_training`. The vocabulary is therefore small, fixed and derivable —
+not "whatever the decomposition table happened to contain".
+
+Like the ATen dialect and unlike core ATen, this all happens before backend dispatch, so it gets a
+single file rather than one per backend — with one measured exception worth knowing about.
+`scaled_dot_product_attention` survives whole, but the *strides* of the tensor it returns are still
+the dispatcher's choice, and a `reshape` sitting directly on top of it decomposes by reading them:
+
+```
+meta  sdpa out stride (512, 128, 8, 1) → transpose → clone + _unsafe_view
+cpu   sdpa out stride (512,   8, 32, 1) → transpose → view
+```
+
+So an attention model traced on CPU can differ from the same model traced on meta by a `clone`/
+`_unsafe_view` pair per attention block — `sam2_hiera_tiny` differs in exactly this way, 11 blocks
+over 22 nodes. The ATen dialect is immune because it never expands `reshape` at all; core ATen has
+the same dependence far more pervasively, which is why it *is* split per backend. Here it is narrow
+enough to name rather than to model, and `models.md`'s `device` column says which backend traced
+each variant.
 
 ### Why core ATen is named per backend
 
@@ -90,24 +137,19 @@ What is committed is the part that describes the architecture: every ATen node, 
 its shapes and dtypes, and which `nn.Module` it came from. `stack_trace` is dropped before
 saving, because it is a third of the file and the only part carrying absolute filesystem paths.
 
-These are **ATen** graphs — `torch.export.export()` with no `run_decompositions()` — for three
-reasons, all measured:
+These are **functional ATen** graphs — `torch.export.export()` followed by
+`run_decompositions(decomp_table={})`. This removes in-place mutation and eval-time dropout
+without applying the default core ATen decomposition table. As a result:
 
-- **they say more.** `conv2d`, `linear`, `layer_norm` and `scaled_dot_product_attention` are
+- `conv2d`, `linear`, `layer_norm` and `scaled_dot_product_attention` are
   still there as themselves, instead of the two dozen primitives attention expands into;
-- **they do not depend on the machine.** The decomposed graph does (see above), so a committed
-  core ATen graph would be one lowering of several, tied to whatever traced it. The ATen graph
-  exported on `meta` and on `cpu` is the same graph, which is also what lets `make models.verify`
-  compare a CPU-traced archive against a meta-traced report at all;
-- **they are smaller and numerically exact.** `vit_tiny_patch16_224` is 263 nodes / 302 KB
+- in-place operators such as `relu_`, `add_`, and `silu_` become functional operators;
+- the graphs remain much smaller than core ATen. `vit_tiny_patch16_224` is 263 nodes / 302 KB
   against 745 nodes / 1055 KB decomposed, and reproduces eager output bit for bit where the
   decomposed graph drifts by ~1e-6.
 
-The trade-off, stated plainly: this IR is not functionalized. Published graphs contain in-place
-operators (`relu_`, `add_`, `silu_`) and eval-time `dropout` nodes, so a consumer has to handle
-mutation. `run_decompositions({})` would functionalize without decomposing, but it reintroduces
-the backend dependence and drops `dropout` while adding `_unsafe_view`/`clone`, so it buys less
-than it costs.
+Functionalization also canonicalizes the view family and has a narrow device dependence around
+attention-result strides; `graph-differences.yaml` records any resulting CPU/meta count mismatch.
 
 ### Which models, and why
 
@@ -120,8 +162,8 @@ summed across pretrained tags), so the subset is justified rather than chosen by
   configuration) pairs, since most operators carry several recorded configurations (dtype,
   rank, kwargs) and a graph exercising only the commonest one demonstrates less than one that
   also hits its edges. Coverage spans **every** cross-reference — a model gets credit both for
-  the ATen units it publishes and for the core ATen units it decomposes to — while cost is
-  always its ATen node count, the graph actually committed. Scored by units gained per graph
+  its ATen, functional ATen, and core ATen units — while cost uses its ATen node count as a
+  stable size proxy. Scored by units gained per graph
   node, so the cheapest carrier of a still-uncovered unit wins over a large model that only
   repeats covered ones;
 - **family breadth** — then the cheapest so-far-unrepresented architecture family, repeatedly
@@ -143,39 +185,35 @@ covers more but every model adds ~1.8KB/node of committed JSON regardless of whe
 buying much. [`coverage-curve.yaml`](coverage-curve.yaml) is `make models.curve`'s report of
 coverage and family breadth at every target in steps of 10, so that trade-off is a number to
 look at rather than a guess: **100** is where op-config coverage's gain per 10 models drops
-from ~4-6pp to ~2.3pp, so it's the current default. It covers 2059 of the 3062 (operator,
-configuration) units the zoo uses across both dialects, and 41 of 89 families.
+from ~4-6pp to ~2.3pp, so it's the current default. It covers 2067 of the 3074 (operator,
+configuration) units the zoo uses across all three dialects, and 40 of 89 families.
 
 ```bash
 make models.popularity  # refresh model-popularity.yaml from the HuggingFace Hub (needs network)
 make models.curve    # report coverage vs. model count in steps of 10, to (re)pick --target from
 make models.select   # recompute the subset (seconds; reads the reports, exports nothing)
 make models          # export the subset and refresh models/
-make models.verify   # cross-check every committed graph against ops-aten.yaml
+make models.verify   # cross-check every committed graph against ops-func.yaml
 make check-models    # readable diff of models/ vs HEAD
 ```
 
-### The graphs and `ops-aten.yaml` agree exactly
+### The graphs and `ops-func.yaml` are cross-checked
 
-`make models.verify` compares each committed graph with the operator counts `ops-aten.yaml`
-recorded for the same model. **All 100 match**, which is worth more than it sounds: the two are
+`make models.verify` compares each committed graph with the operator counts `ops-func.yaml`
+recorded for the same model. **92 of 100 match exactly**: the two are
 produced by different code, on different runs, on *different devices* — the report sweeps ~1300
 architectures and so traces on `meta`, the only way to touch a multi-billion-parameter model
 without materializing it, while a `.pt2` must carry real weight blobs and so traces on CPU.
 
-They agree because both are ATen graphs, and that dialect does not depend on the device. When
-the committed graphs were core ATen, 9 of 100 disagreed and had to be pinned as known
-divergences: `scaled_dot_product_attention` lowers to a fused CPU kernel whose decomposition
-differs from the math path `meta` takes, so attention architectures landed on different counts
-for the operators attention expands into (`test_vit4`: `permute` 65 on meta, 83 on CPU;
-`sam2_hiera_tiny` differed in `bmm`, `addmm`, `mul`, `sub` and `cat` as well). Publishing the
-undecomposed graph removed the whole category — and it is the same fact that makes the core
-ATen cross-references per backend.
+The remaining eight differences are the narrow device dependence documented for functional
+ATen: attention-result strides determine whether a following reshape becomes `view` or
+`clone` + `_unsafe_view`; two models also omit `_to_copy` on CPU. These are representation
+differences rather than mutation or core-ATen lowering.
 
-[`graph-differences.yaml`](graph-differences.yaml) is consequently empty, and `models.verify`
+[`graph-differences.yaml`](graph-differences.yaml) pins those differences, and `models.verify`
 fails if a model starts diverging, stops diverging, or diverges differently — so a torch bump
 that shifts something shows up as a reviewable diff rather than passing silently. An entry
-appearing there now means something genuinely unexplained.
+appearing there unexpectedly therefore requires review.
 
 ```bash
 make models.differences   # re-record after a torch/timm bump, then review the diff

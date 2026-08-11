@@ -22,7 +22,7 @@ import time
 import yaml
 
 from exportlib import MAX_RES, pretrained_info, resolved_input_size
-from pt2_export_core.catalog import ATEN, CORE_BACKENDS, core, parse_existing_ops
+from pt2_export_core.catalog import ATEN, CORE_BACKENDS, FUNC, core, parse_existing_ops
 from pt2_export_core.catalog import render_ops_md as _render_ops_md
 from pt2_export_core.catalog import render_ops_yaml as _render_ops_yaml
 from pt2_export_core.exclusions import parse_exclusions, render_exclusions as _render_exclusions
@@ -184,14 +184,18 @@ def worker_main(model_name, max_res, dynamic_timeout, ops_timeout, collect, excl
     result['device'] = export_device
 
     if collect and exported is not None:
-        # Both dialects out of the one export already paid for. ATen first and from the program
-        # itself -- it is what torch.export hands back, and what this repo publishes -- since
-        # run_decompositions() consumes it to produce the core ATen a backend lowers.
+        # All three dialects out of the one export already paid for, in order of how much they
+        # rewrite. ATen first and from the program itself -- it is what torch.export hands back,
+        # and what this repo publishes. The other two are the same AOTDispatcher retrace with
+        # different decomposition tables: an empty one leaves only the functionalization the
+        # retrace does unconditionally, the default one lowers all the way to core ATen.
         #
-        # Collected independently so they fail independently: decomposition is the expensive
+        # Collected independently so they fail independently: the retraces are the expensive
         # half, and a model that runs out of budget there still has an ATen graph worth keeping.
         result['ops'], result['op_schemas'], result['ops_error'] = {}, {}, {}
-        for key, graph in (('aten', lambda: exported), ('core', lambda: exported.run_decompositions())):
+        for key, graph in (('aten', lambda: exported),
+                           ('func', lambda: exported.run_decompositions(decomp_table={})),
+                           ('core', lambda: exported.run_decompositions())):
             try:
                 with time_budget(ops_timeout):
                     result['ops'][key], result['op_schemas'][key] = collect_ops(graph())
@@ -341,6 +345,7 @@ TABLE_ROW_RE = re.compile(
     r'\s*(?P<weight>[^|]*?)\s*\|\s*(?P<pretrained>[^|]*?)\s*\|\s*(?P<resolution>[^|]*?)\s*\|'
     r'\s*(?P<gflops>[^|]*?)\s*\|\s*(?P<device>[^|]*?)\s*\|'
     r'\s*(?P<aten_nodes>[^|]*?)\s*\|\s*(?P<aten_ops>[^|]*?)\s*\|'
+    r'\s*(?P<func_nodes>[^|]*?)\s*\|\s*(?P<func_ops>[^|]*?)\s*\|'
     r'\s*(?P<core_nodes>[^|]*?)\s*\|\s*(?P<core_ops>[^|]*?)\s*\|'
     r'\s*(?P<resizable_cfg>[^|]*?)\s*\|\s*(?P<resizable_export>[^|]*?)\s*\|'
     r'\s*(?P<preprocessing>[^|]*?)\s*\|\s*(?P<description>[^|]*?)\s*\|\s*(?P<error>[^|]*?)\s*\|$'
@@ -372,6 +377,7 @@ def row_for_display(result):
     pre-formatted display fields used both for rendering and for --resume round-tripping."""
     gflops = fmt_gflops(result.get('flops'))
     aten_nodes, aten_ops = dialect_counts(result, 'aten')
+    func_nodes, func_ops = dialect_counts(result, 'func')
     core_nodes, core_ops = dialect_counts(result, 'core')
     return {
         'name': result['name'],
@@ -385,6 +391,8 @@ def row_for_display(result):
         'device': result.get('device') or '',
         'aten_nodes': aten_nodes,
         'aten_ops': aten_ops,
+        'func_nodes': func_nodes,
+        'func_ops': func_ops,
         'core_nodes': core_nodes,
         'core_ops': core_ops,
         'resizable_cfg': result.get('resizable_cfg'),
@@ -424,6 +432,8 @@ def parse_existing(path):
                 'device': d['device'] or '',
                 'aten_nodes': parse_count(d['aten_nodes']),
                 'aten_ops': parse_count(d['aten_ops']),
+                'func_nodes': parse_count(d['func_nodes']),
+                'func_ops': parse_count(d['func_ops']),
                 'core_nodes': parse_count(d['core_nodes']),
                 'core_ops': parse_count(d['core_ops']),
                 'resizable_cfg': parse_bool(d['resizable_cfg']),
@@ -452,15 +462,19 @@ def render_markdown(rows, timm_version, family_docs=None):
                   '`dynamic (export)` (false only -- see below for its other values), and `pretrained` '
                   '(no fetchable weights). ')
     lines.append('`aten nodes`/`aten ops` count the graph `torch.export` hands back -- the ATen dialect, '
-                  'with `conv2d`/`linear`/`layer_norm`/`scaled_dot_product_attention` whole -- and '
-                  '`core nodes`/`core ops` the same graph after `run_decompositions()`. `ops` is distinct '
-                  'operators, `nodes` total call sites. Core usually counts more of both, since '
-                  'decomposition trades a few composite operators for many primitive ones '
-                  '(`vit_tiny_patch16_224`: 227 nodes over 15 operators against 696 over 21), but neither '
-                  'operator set contains the other. The per-variant matrices are `ops-aten.yaml` and '
-                  '`ops-core-<device>.yaml`. `device` is where the model was traced -- `meta` normally, '
-                  '`cpu` for architectures meta cannot build -- and so which core cross-reference it is '
-                  'in, that decomposition being backend-specific. ')
+                  'with `conv2d`/`linear`/`layer_norm`/`scaled_dot_product_attention` whole -- '
+                  '`func nodes`/`func ops` the same graph functionalized but not decomposed '
+                  '(`run_decompositions(decomp_table={})`), and `core nodes`/`core ops` the same graph '
+                  'decomposed all the way (`run_decompositions()`). `ops` is distinct operators, `nodes` '
+                  'total call sites. The three are a progression in how much has been rewritten, not in '
+                  'size: functionalizing costs a handful of nodes and usually no new operators at all, '
+                  'while decomposition trades a few composite operators for many primitive ones '
+                  '(`vit_tiny_patch16_224`: 227 nodes over 15 operators, 239 over 15, then 696 over 21). '
+                  'No two of the operator sets contain each other. The per-variant matrices are '
+                  '`ops-aten.yaml`, `ops-func.yaml` and `ops-core-<device>.yaml`. `device` is where the '
+                  'model was traced -- `meta` normally, `cpu` for architectures meta cannot build -- and '
+                  'so which core cross-reference it is in, that decomposition being backend-specific; '
+                  'the other two dialects are written whole, being fixed before dispatch. ')
     lines.append('`resolution` is the size the model was actually traced at to produce the reported GFLOPs -- '
                   'for architectures marked dynamic this is only a reference default, not a requirement. '
                   '`dynamic (cfg)` is timm\'s own declared intent (`fixed_input_size` in the model config); '
@@ -534,9 +548,9 @@ def render_markdown(rows, timm_version, family_docs=None):
             lines.append(f'_{doc}_')
             lines.append('')
         lines.append('| variant | status | params | weight (MB) | pretrained | resolution | GFLOPs | '
-                      'device | aten nodes | aten ops | core nodes | core ops | '
+                      'device | aten nodes | aten ops | func nodes | func ops | core nodes | core ops | '
                       'dynamic (cfg) | dynamic (export) | preprocessing | description | error |')
-        lines.append('|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|')
+        lines.append('|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|')
 
         for row in sorted(by_family[family], key=sort_key):
             gflops = row.get('gflops')
@@ -545,6 +559,7 @@ def render_markdown(rows, timm_version, family_docs=None):
                 f"{row['weight_str']} | {fmt_pretrained(row.get('pretrained'))} | {row['resolution']} | "
                 f"{f'{gflops:.2f}' if gflops is not None else ''} | {row.get('device') or ''} | "
                 f"{fmt_count(row.get('aten_nodes'))} | {fmt_count(row.get('aten_ops'))} | "
+                f"{fmt_count(row.get('func_nodes'))} | {fmt_count(row.get('func_ops'))} | "
                 f"{fmt_count(row.get('core_nodes'))} | {fmt_count(row.get('core_ops'))} | "
                 f"{fmt_bool(row.get('resizable_cfg'))} | {fmt_dynamic_export(row.get('resizable_export'))} | "
                 f"{row['preprocessing']} | {row['description']} | {row['error']} |"
@@ -597,6 +612,13 @@ def main():
     parser.add_argument('--ops-aten-md', default=None,
                          help='output ops-aten.md path, the op-major digest of that cross-reference '
                               '(default: repo-root ops-aten.md)')
+    parser.add_argument('--ops-func-output', default=None,
+                         help='output ops-func.yaml path, the same cross-reference of the graph '
+                              'run_decompositions(decomp_table={}) produces -- functionalized, but '
+                              'otherwise undecomposed (default: repo-root ops-func.yaml)')
+    parser.add_argument('--ops-func-md', default=None,
+                         help='output ops-func.md path, the op-major digest of that cross-reference '
+                              '(default: repo-root ops-func.md)')
     parser.add_argument('--ops-core-prefix', default=None,
                          help='path prefix for the core ATen cross-references; each backend gets its own '
                               '<prefix>-<backend>.yaml and .md, because that decomposition depends on the '
@@ -651,6 +673,8 @@ def main():
     output_path = args.output or os.path.join(repo_root, 'models.md')
     aten_yaml_path = args.ops_aten_output or os.path.join(repo_root, f'{ATEN.stem}.yaml')
     aten_md_path = args.ops_aten_md or os.path.join(repo_root, f'{ATEN.stem}.md')
+    func_yaml_path = args.ops_func_output or os.path.join(repo_root, f'{FUNC.stem}.yaml')
+    func_md_path = args.ops_func_md or os.path.join(repo_root, f'{FUNC.stem}.md')
     core_prefix = args.ops_core_prefix or os.path.join(repo_root, 'ops-core')
     collect = not args.no_ops
 
@@ -673,14 +697,16 @@ def main():
     # One matrix per dialect. The core one is kept whole here and partitioned by export device
     # only when it is written out: a model's backend is a property of the row, so there is
     # nothing to gain from carrying the split through the run itself.
-    ops_by_model = {'aten': {}, 'core': {}}
-    op_schemas = {'aten': {}, 'core': {}}
-    ops_skipped = {'aten': {}, 'core': {}}
+    ops_by_model = {'aten': {}, 'func': {}, 'core': {}}
+    op_schemas = {'aten': {}, 'func': {}, 'core': {}}
+    ops_skipped = {'aten': {}, 'func': {}, 'core': {}}
     if args.resume:
         rows = parse_existing(output_path)
         if collect:
             ops_by_model['aten'], op_schemas['aten'], ops_skipped['aten'] = \
                 parse_existing_ops(aten_yaml_path)
+            ops_by_model['func'], op_schemas['func'], ops_skipped['func'] = \
+                parse_existing_ops(func_yaml_path)
             for backend in CORE_BACKENDS:
                 matrix, schemas, skipped = parse_existing_ops(core_paths(backend)[0])
                 ops_by_model['core'].update(matrix)
@@ -718,6 +744,10 @@ def main():
         families = {name: rows[name].get('family', 'unknown') for name in rows}
         write_ops(ATEN, aten_yaml_path, aten_md_path, ops_by_model['aten'], op_schemas['aten'],
                   ops_skipped['aten'], families)
+        # Functionalization happens in the retrace, before dispatch, so this one is written whole
+        # like the ATen cross-reference rather than split the way the core ones below are.
+        write_ops(FUNC, func_yaml_path, func_md_path, ops_by_model['func'], op_schemas['func'],
+                  ops_skipped['func'], families)
 
         # Split by the device each model was traced on, since that is what decided its
         # decomposition. CORE_BACKENDS is written even when empty: a missing file would leave a
@@ -780,7 +810,7 @@ def main():
 
     written = [output_path]
     if collect:
-        written += [aten_yaml_path, aten_md_path]
+        written += [aten_yaml_path, aten_md_path, func_yaml_path, func_md_path]
         seen = {row.get('device') for row in rows.values() if row.get('device')}
         for backend in list(CORE_BACKENDS) + sorted(seen - set(CORE_BACKENDS)):
             written += list(core_paths(backend))

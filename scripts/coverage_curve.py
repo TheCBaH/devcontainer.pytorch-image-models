@@ -24,6 +24,7 @@ def main():
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('--models-md', default=os.path.join(repo_root, 'models.md'))
     parser.add_argument('--ops-aten', default=os.path.join(repo_root, 'ops-aten.yaml'))
+    parser.add_argument('--ops-func', default=os.path.join(repo_root, 'ops-func.yaml'))
     parser.add_argument('--ops-core', nargs='+',
                         default=[os.path.join(repo_root, f'ops-core-{backend}.yaml')
                                  for backend in CORE_BACKENDS])
@@ -34,7 +35,7 @@ def main():
     parser.add_argument('--max-weight', type=float, default=150.0)
     args = parser.parse_args()
 
-    candidates = load_candidates(args.models_md, args.ops_aten, args.ops_core)
+    candidates = load_candidates(args.models_md, args.ops_aten, args.ops_core, args.ops_func)
     popularity = load_popularity(args.popularity)
 
     points, max_models, total_ops, total_families = _curve(

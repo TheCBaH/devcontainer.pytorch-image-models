@@ -1,12 +1,13 @@
 """Render/parse the operator cross-reference: a models x operations matrix over the (op, call
 configuration) units `opgraph.collect_ops` produces for each exported model.
 
-One cross-reference is written per *dialect* -- the ATen graph `torch.export` hands back, and
-the core ATen graph `run_decompositions()` produces from it -- because the two describe
-genuinely different operator sets rather than one being a subset of the other. The core one is
-additionally written per *backend*: decomposition runs after dispatch, so which kernel a
-composite operator expands into depends on the device the model was traced on, and a file that
-merged two backends would be describing no single lowering at all.
+One cross-reference is written per *dialect* -- the ATen graph `torch.export` hands back, the
+functionalized graph an empty decomposition table produces from it, and the core ATen graph the
+default table produces -- because each describes a genuinely different operator set rather than
+one being a subset of another. The core one is additionally written per *backend*: decomposition
+runs after dispatch, so which kernel a composite operator expands into depends on the device the
+model was traced on, and a file that merged two backends would be describing no single lowering
+at all.
 """
 from typing import NamedTuple
 
@@ -23,11 +24,36 @@ CORE_BACKENDS = ('meta', 'cpu')
 _ATEN_PROSE = (
     'Operators are read from the graph `torch.export.export()` hands back, before any '
     'decomposition -- the ATen dialect, with `conv2d`, `linear`, `layer_norm` and '
-    '`scaled_dot_product_attention` still whole. This is also the graph published under '
-    '`models/`. It is not functionalized, so in-place forms (`relu_`, `add_`, `silu_`) and '
-    'eval-time `dropout` appear as themselves and a consumer has to handle mutation. What it '
-    'does not depend on is the device it was traced on; the decomposed graph does, which is why '
-    'its cross-references are named per backend (`ops-core-<backend>.md`).'
+    '`scaled_dot_product_attention` still whole. It is not functionalized, so in-place forms '
+    '(`relu_`, `add_`, `silu_`) and '
+    'eval-time `dropout` appear as themselves and a consumer has to handle mutation -- or read '
+    '[`ops-func.md`](ops-func.md), which is this same graph with the mutation taken out and '
+    'nothing else decomposed. What it does not depend on is the device it was traced on; the '
+    'decomposed graph does, which is why its cross-references are named per backend '
+    '(`ops-core-<backend>.md`).'
+)
+
+_FUNC_PROSE = (
+    'Operators are read from the graph `run_decompositions(decomp_table={})` produces -- the same '
+    'retrace core ATen pays for, with every decomposition rule switched off, so functionalization '
+    'is all that is left of it. In-place forms become their out-of-place counterparts (`relu_` to '
+    '`relu`, `add_` to `add`), an in-place *slice* assignment becomes `select_scatter`, and '
+    'eval-time `dropout` disappears rather than becoming an identity node, while `conv2d`, '
+    '`linear`, `layer_norm` and `scaled_dot_product_attention` are still whole -- which is the '
+    'whole point of this dialect, and what separates it from core ATen '
+    '([`ops-core-meta.md`](ops-core-meta.md)). Two rewrites arrive that are not about mutation: the '
+    'view family (`reshape`, `flatten`, `contiguous`, `chunk`, `to`) is canonicalized to '
+    '`view`/`_unsafe_view`/`split`/`clone`/`_to_copy`, and `batch_norm` expands to '
+    '`_native_batch_norm_legit_no_training`. Both follow from the same rule that removes the '
+    'mutation: an empty table preserves a composite operator only where its schema neither aliases '
+    'nor mutates its arguments, and `reshape` may return a view while `batch_norm` writes running '
+    'statistics. This is also the graph published under `models/`. One caveat on reading this as '
+    'a single device-independent file: '
+    '`scaled_dot_product_attention` survives whole, but the strides of its *result* are still the '
+    'dispatcher\'s choice, so a `reshape` sitting directly on top of it expands to `view` where '
+    'that result is viewable and to `clone` + `_unsafe_view` where it is not -- the one place this '
+    'dialect inherits core ATen\'s backend dependence, and only for attention architectures traced '
+    'on more than one device. The `device` column in `models.md` says which one each variant used.'
 )
 
 _CORE_PROSE = (
@@ -48,9 +74,9 @@ class Dialect(NamedTuple):
     of the renderers.
     """
 
-    key: str            # 'aten' | 'core'
+    key: str            # 'aten' | 'func' | 'core'
     label: str          # how the dialect is named in prose
-    backend: str | None  # None when the graph does not depend on one, i.e. for ATen
+    backend: str | None  # None when the graph does not depend on one, i.e. for ATen and func
     ir: str             # the `# ir:` line of the YAML header
     prose: str          # the markdown paragraph saying where this graph comes from
 
@@ -68,6 +94,15 @@ class Dialect(NamedTuple):
 
 
 ATEN = Dialect('aten', 'ATen', None, 'ATen (torch.export.export)', _ATEN_PROSE)
+
+# Functionalization runs in the retrace itself, ahead of backend dispatch, so this dialect needs
+# no backend suffix either -- almost. A `reshape` immediately after `scaled_dot_product_attention`
+# reads strides the dispatcher chose, so it expands to `view` on one backend and `clone` +
+# `_unsafe_view` on another. That is narrow enough to be a caveat in the prose rather than a
+# reason to split the file the way core ATen is split, where the dependence is pervasive.
+FUNC = Dialect('func', 'functional ATen', None,
+               'functional ATen (torch.export + run_decompositions(decomp_table={}))',
+               _FUNC_PROSE)
 
 
 def core(backend):
