@@ -1586,13 +1586,13 @@ ops:
       20: {pad: [0, 0, 0, 8, 0, 8], mode: constant, value: null, out_dtype: f32, out_rank: 4}
       21: {pad: [0, 0, 0, 9, 0, 9], mode: constant, value: null, out_dtype: f32, out_rank: 4}
       22: {pad: [0, 0, 1, 0, 0, 0], mode: constant, value: null, out_dtype: f32, out_rank: 4}
-      23: {pad: [0, 1, 0, 1], mode: constant, value: -.inf, out_dtype: f32, out_rank: 4}
-      24: {pad: [0, 1, 0, 1], mode: constant, value: 0.0, out_dtype: f32, out_rank: 4}
-      25: {pad: [0, 1, 0, 1], mode: constant, value: null, out_dtype: f32, out_rank: 4}
+      23: {pad: [0, 1, 0, 1], mode: constant, value: 0.0, out_dtype: f32, out_rank: 4}
+      24: {pad: [0, 1, 0, 1], mode: constant, value: null, out_dtype: f32, out_rank: 4}
+      25: {pad: [0, 1, 0, 1], mode: constant, value: {$nonfinite_float: -inf}, out_dtype: f32, out_rank: 4}
       26: {pad: [0, 1], mode: constant, value: 1.0, out_dtype: f32, out_rank: 4}
-      27: {pad: [1, 1, 1, 1], mode: constant, value: -.inf, out_dtype: f32, out_rank: 4}
-      28: {pad: [1, 1, 1, 1], mode: constant, value: 0.0, out_dtype: f32, out_rank: 4}
-      29: {pad: [1, 1, 1, 1], mode: constant, value: null, out_dtype: f32, out_rank: 4}
+      27: {pad: [1, 1, 1, 1], mode: constant, value: 0.0, out_dtype: f32, out_rank: 4}
+      28: {pad: [1, 1, 1, 1], mode: constant, value: null, out_dtype: f32, out_rank: 4}
+      29: {pad: [1, 1, 1, 1], mode: constant, value: {$nonfinite_float: -inf}, out_dtype: f32, out_rank: 4}
       30: {pad: [1, 2, 1, 2], mode: constant, value: 0.0, out_dtype: f32, out_rank: 4}
       31: {pad: [2, 2, 2, 2], mode: constant, value: 0.0, out_dtype: f32, out_rank: 4}
       32: {pad: [2, 2, 2, 2], mode: constant, value: null, out_dtype: f32, out_rank: 4}
@@ -5230,7 +5230,7 @@ models:
     mean.dim: {11: 12}
     mul.Tensor: {4: 105}
     mul_.Tensor: {1: 64}
-    pad.default: {24: 5}
+    pad.default: {23: 5}
     relu_.default: {1: 12}
     reshape.default: {2: 57}
     reshape_as.default: {2: 57}
@@ -5249,7 +5249,7 @@ models:
     mean.dim: {11: 24}
     mul.Tensor: {4: 201}
     mul_.Tensor: {1: 124}
-    pad.default: {24: 5}
+    pad.default: {23: 5}
     relu_.default: {1: 24}
     reshape.default: {2: 105}
     reshape_as.default: {2: 105}
@@ -5268,7 +5268,7 @@ models:
     mean.dim: {11: 36}
     mul.Tensor: {4: 297}
     mul_.Tensor: {1: 184}
-    pad.default: {24: 5}
+    pad.default: {23: 5}
     relu_.default: {1: 36}
     reshape.default: {2: 153}
     reshape_as.default: {2: 153}
@@ -5287,7 +5287,7 @@ models:
     mean.dim: {11: 48}
     mul.Tensor: {4: 393}
     mul_.Tensor: {1: 244}
-    pad.default: {24: 5}
+    pad.default: {23: 5}
     relu_.default: {1: 48}
     reshape.default: {2: 201}
     reshape_as.default: {2: 201}
@@ -5306,7 +5306,7 @@ models:
     mean.dim: {11: 60}
     mul.Tensor: {4: 489}
     mul_.Tensor: {1: 304}
-    pad.default: {24: 5}
+    pad.default: {23: 5}
     relu_.default: {1: 60}
     reshape.default: {2: 249}
     reshape_as.default: {2: 249}
@@ -5325,7 +5325,7 @@ models:
     mean.dim: {11: 72}
     mul.Tensor: {4: 585}
     mul_.Tensor: {1: 364}
-    pad.default: {24: 5}
+    pad.default: {23: 5}
     relu_.default: {1: 72}
     reshape.default: {2: 297}
     reshape_as.default: {2: 297}
@@ -5344,7 +5344,7 @@ models:
     mean.dim: {11: 84}
     mul.Tensor: {4: 681}
     mul_.Tensor: {1: 424}
-    pad.default: {24: 5}
+    pad.default: {23: 5}
     relu_.default: {1: 84}
     reshape.default: {2: 345}
     reshape_as.default: {2: 345}
@@ -6165,7 +6165,7 @@ models:
     linear.default: {1: 1}
     mean.dim: {11: 23}
     mul.Tensor: {4: 23}
-    pad.default: {24: 3, 30: 2}
+    pad.default: {23: 3, 30: 2}
     sigmoid.default: {3: 23}
     silu_.default: {1: 69}
   efficientnet_b2:
@@ -6188,7 +6188,7 @@ models:
     linear.default: {1: 1}
     mean.dim: {11: 23}
     mul.Tensor: {4: 23}
-    pad.default: {24: 3, 30: 2}
+    pad.default: {23: 3, 30: 2}
     sigmoid.default: {3: 23}
     silu_.default: {1: 69}
   efficientnet_b3:
@@ -6233,7 +6233,7 @@ models:
     linear.default: {1: 1}
     mean.dim: {11: 26}
     mul.Tensor: {4: 26}
-    pad.default: {24: 3, 30: 2}
+    pad.default: {23: 3, 30: 2}
     sigmoid.default: {3: 26}
     silu_.default: {1: 78}
   efficientnet_b4:
@@ -6300,7 +6300,7 @@ models:
     linear.default: {1: 1}
     mean.dim: {11: 16}
     mul.Tensor: {4: 16}
-    pad.default: {29: 4}
+    pad.default: {28: 4}
     sigmoid.default: {3: 16}
     silu_.default: {1: 49}
   efficientnet_cc_b0_4e:
@@ -6397,7 +6397,7 @@ models:
     linear.default: {1: 1}
     mean.dim: {11: 39}
     mul.Tensor: {4: 39}
-    pad.default: {11: 1, 24: 1}
+    pad.default: {11: 1, 23: 1}
     relu_.default: {1: 20}
     sigmoid.default: {3: 39}
     silu_.default: {1: 87}
@@ -6461,7 +6461,7 @@ models:
     linear.default: {1: 1}
     mean.dim: {11: 26}
     mul.Tensor: {4: 26}
-    pad.default: {11: 1, 24: 1}
+    pad.default: {11: 1, 23: 1}
     relu_.default: {1: 12}
     sigmoid.default: {3: 26}
     silu_.default: {1: 61}
@@ -6474,7 +6474,7 @@ models:
     linear.default: {1: 1}
     mean.dim: {11: 39}
     mul.Tensor: {4: 39}
-    pad.default: {11: 1, 24: 1}
+    pad.default: {11: 1, 23: 1}
     relu_.default: {1: 20}
     sigmoid.default: {3: 39}
     silu_.default: {1: 87}
@@ -8521,7 +8521,7 @@ models:
     linear.default: {1: 1}
     max_pool2d.default: {5: 1}
     mul.Tensor: {4: 31}
-    pad.default: {25: 2}
+    pad.default: {24: 2}
     relu.default: {3: 31}
   hgnetv2_b1:
     adaptive_avg_pool2d.default: {1: 1}
@@ -8534,7 +8534,7 @@ models:
     linear.default: {1: 1}
     max_pool2d.default: {5: 1}
     mul.Tensor: {4: 31}
-    pad.default: {25: 2}
+    pad.default: {24: 2}
     relu.default: {3: 31}
   hgnetv2_b2:
     adaptive_avg_pool2d.default: {1: 1}
@@ -8547,7 +8547,7 @@ models:
     linear.default: {1: 1}
     max_pool2d.default: {5: 1}
     mul.Tensor: {4: 42}
-    pad.default: {25: 2}
+    pad.default: {24: 2}
     relu.default: {3: 42}
   hgnetv2_b3:
     adaptive_avg_pool2d.default: {1: 1}
@@ -8560,7 +8560,7 @@ models:
     linear.default: {1: 1}
     max_pool2d.default: {5: 1}
     mul.Tensor: {4: 48}
-    pad.default: {25: 2}
+    pad.default: {24: 2}
     relu.default: {3: 48}
   hgnetv2_b4:
     adaptive_avg_pool2d.default: {1: 1}
@@ -8572,7 +8572,7 @@ models:
     flatten.using_ints: {1: 1}
     linear.default: {1: 1}
     max_pool2d.default: {5: 1}
-    pad.default: {25: 2}
+    pad.default: {24: 2}
     relu.default: {3: 54}
   hgnetv2_b5:
     adaptive_avg_pool2d.default: {1: 1}
@@ -8584,7 +8584,7 @@ models:
     flatten.using_ints: {1: 1}
     linear.default: {1: 1}
     max_pool2d.default: {5: 1}
-    pad.default: {25: 2}
+    pad.default: {24: 2}
     relu.default: {3: 86}
   hgnetv2_b6:
     adaptive_avg_pool2d.default: {1: 1}
@@ -8596,7 +8596,7 @@ models:
     flatten.using_ints: {1: 1}
     linear.default: {1: 1}
     max_pool2d.default: {5: 1}
-    pad.default: {25: 2}
+    pad.default: {24: 2}
     relu.default: {3: 118}
   hiera_base_224:
     add.Tensor: {4: 49}
@@ -9771,7 +9771,7 @@ models:
     linear.default: {1: 2, 3: 192}
     mean.dim: {11: 24}
     mul.Tensor: {4: 24}
-    pad.default: {11: 4, 24: 5}
+    pad.default: {11: 4, 23: 5}
     permute.default: {2: 48, 12: 25, 14: 24, 16: 25, 17: 24}
     reshape.default: {2: 48, 3: 48, 4: 48}
     scaled_dot_product_attention.default: {2: 48}
@@ -9796,7 +9796,7 @@ models:
     linear.default: {1: 2, 3: 192}
     mean.dim: {11: 24}
     mul.Tensor: {4: 24}
-    pad.default: {11: 4, 24: 5}
+    pad.default: {11: 4, 23: 5}
     permute.default: {2: 48, 12: 25, 14: 24, 16: 25, 17: 24}
     reshape.default: {2: 48, 3: 48, 4: 48}
     scaled_dot_product_attention.default: {2: 48}
@@ -9821,7 +9821,7 @@ models:
     linear.default: {1: 2, 3: 192}
     mean.dim: {11: 24}
     mul.Tensor: {4: 24}
-    pad.default: {11: 4, 24: 5}
+    pad.default: {11: 4, 23: 5}
     permute.default: {2: 48, 12: 25, 14: 24, 16: 25, 17: 24}
     reshape.default: {2: 48, 3: 48, 4: 48}
     scaled_dot_product_attention.default: {2: 48}
@@ -9846,7 +9846,7 @@ models:
     linear.default: {1: 2, 3: 192}
     mean.dim: {11: 24}
     mul.Tensor: {4: 24}
-    pad.default: {11: 4, 24: 5}
+    pad.default: {11: 4, 23: 5}
     permute.default: {2: 48, 12: 25, 14: 24, 16: 25, 17: 24}
     reshape.default: {2: 48, 3: 48, 4: 48}
     scaled_dot_product_attention.default: {2: 48}
@@ -9871,7 +9871,7 @@ models:
     linear.default: {1: 2, 3: 192}
     mean.dim: {11: 24}
     mul.Tensor: {4: 24}
-    pad.default: {11: 4, 24: 5}
+    pad.default: {11: 4, 23: 5}
     permute.default: {2: 48, 12: 25, 14: 24, 16: 25, 17: 24}
     reshape.default: {2: 48, 3: 48, 4: 48}
     scaled_dot_product_attention.default: {2: 48}
@@ -9896,7 +9896,7 @@ models:
     linear.default: {1: 2, 3: 192}
     mean.dim: {11: 24}
     mul.Tensor: {4: 24}
-    pad.default: {11: 4, 24: 5}
+    pad.default: {11: 4, 23: 5}
     permute.default: {2: 48, 12: 25, 14: 24, 16: 25, 17: 24}
     reshape.default: {2: 48, 3: 48, 4: 48}
     scaled_dot_product_attention.default: {2: 48}
@@ -10146,7 +10146,7 @@ models:
     linear.default: {1: 2, 3: 88}
     mean.dim: {11: 11}
     mul.Tensor: {4: 11}
-    pad.default: {11: 4, 24: 5}
+    pad.default: {11: 4, 23: 5}
     permute.default: {2: 22, 12: 12, 14: 11, 16: 12, 17: 11}
     reshape.default: {2: 22, 3: 22, 4: 22}
     scaled_dot_product_attention.default: {2: 22}
@@ -10171,7 +10171,7 @@ models:
     linear.default: {1: 2, 3: 88}
     mean.dim: {11: 11}
     mul.Tensor: {4: 11}
-    pad.default: {11: 4, 24: 5}
+    pad.default: {11: 4, 23: 5}
     permute.default: {2: 22, 12: 12, 14: 11, 16: 12, 17: 11}
     reshape.default: {2: 22, 3: 22, 4: 22}
     scaled_dot_product_attention.default: {2: 22}
@@ -10196,7 +10196,7 @@ models:
     linear.default: {1: 2, 3: 88}
     mean.dim: {11: 11}
     mul.Tensor: {4: 11}
-    pad.default: {11: 4, 24: 5}
+    pad.default: {11: 4, 23: 5}
     permute.default: {2: 22, 12: 12, 14: 11, 16: 12, 17: 11}
     reshape.default: {2: 22, 3: 22, 4: 22}
     scaled_dot_product_attention.default: {2: 22}
@@ -10294,7 +10294,7 @@ models:
     linear.default: {1: 2, 3: 88}
     mean.dim: {11: 11}
     mul.Tensor: {4: 11}
-    pad.default: {11: 4, 24: 5}
+    pad.default: {11: 4, 23: 5}
     permute.default: {2: 22, 12: 12, 14: 11, 16: 12, 17: 11}
     reshape.default: {2: 22, 3: 22, 4: 22}
     scaled_dot_product_attention.default: {2: 22}
@@ -10319,7 +10319,7 @@ models:
     linear.default: {1: 2, 3: 88}
     mean.dim: {11: 11}
     mul.Tensor: {4: 11}
-    pad.default: {11: 4, 24: 5}
+    pad.default: {11: 4, 23: 5}
     permute.default: {2: 22, 12: 12, 14: 11, 16: 12, 17: 11}
     reshape.default: {2: 22, 3: 22, 4: 22}
     scaled_dot_product_attention.default: {2: 22}
@@ -10344,7 +10344,7 @@ models:
     linear.default: {1: 2, 3: 88}
     mean.dim: {11: 11}
     mul.Tensor: {4: 11}
-    pad.default: {11: 4, 24: 5}
+    pad.default: {11: 4, 23: 5}
     permute.default: {2: 22, 12: 12, 14: 11, 16: 12, 17: 11}
     reshape.default: {2: 22, 3: 22, 4: 22}
     scaled_dot_product_attention.default: {2: 22}
@@ -10369,7 +10369,7 @@ models:
     linear.default: {1: 2, 3: 192}
     mean.dim: {11: 24}
     mul.Tensor: {4: 24}
-    pad.default: {11: 4, 24: 5}
+    pad.default: {11: 4, 23: 5}
     permute.default: {2: 48, 12: 25, 14: 24, 16: 25, 17: 24}
     reshape.default: {2: 48, 3: 48, 4: 48}
     scaled_dot_product_attention.default: {2: 48}
@@ -10394,7 +10394,7 @@ models:
     linear.default: {1: 2, 3: 192}
     mean.dim: {11: 24}
     mul.Tensor: {4: 24}
-    pad.default: {11: 4, 24: 5}
+    pad.default: {11: 4, 23: 5}
     permute.default: {2: 48, 12: 25, 14: 24, 16: 25, 17: 24}
     reshape.default: {2: 48, 3: 48, 4: 48}
     scaled_dot_product_attention.default: {2: 48}
@@ -10419,7 +10419,7 @@ models:
     linear.default: {1: 2, 3: 192}
     mean.dim: {11: 24}
     mul.Tensor: {4: 24}
-    pad.default: {11: 4, 24: 5}
+    pad.default: {11: 4, 23: 5}
     permute.default: {2: 48, 12: 25, 14: 24, 16: 25, 17: 24}
     reshape.default: {2: 48, 3: 48, 4: 48}
     scaled_dot_product_attention.default: {2: 48}
@@ -10975,7 +10975,7 @@ models:
     conv2d.default: {1: 45, 17: 1, 18: 1, 200: 4, 303: 1, 409: 7, 411: 1, 460: 1, 465: 1, 565: 4, 567: 3, 787: 1, 799: 1, 803: 1, 825: 1, 924: 3, 926: 1, 1020: 2, 1112: 1, 1117: 1}
     flatten.using_ints: {1: 1}
     linear.default: {1: 1}
-    pad.default: {29: 4}
+    pad.default: {28: 4}
     relu_.default: {1: 38}
   mobilenetv4_conv_large:
     adaptive_avg_pool2d.default: {1: 1}
@@ -11115,7 +11115,7 @@ models:
     gelu.default: {6: 56}
     mean.dim: {9: 184}
     mul.Tensor: {4: 449}
-    pad.default: {24: 30, 30: 3}
+    pad.default: {23: 30, 30: 3}
     permute.default: {16: 33}
     pow.Tensor_Scalar: {4: 184}
     reshape.default: {2: 66, 3: 250}
@@ -11812,7 +11812,7 @@ models:
     flatten.using_ints: {1: 1}
     linear.default: {1: 1}
     max_pool2d.default: {2: 8}
-    pad.default: {9: 4, 23: 6, 24: 3, 27: 2, 28: 1, 30: 6, 31: 2, 33: 6, 34: 2}
+    pad.default: {9: 4, 23: 3, 25: 6, 27: 1, 29: 2, 30: 6, 31: 2, 33: 6, 34: 2}
     relu.default: {3: 153}
     relu_.default: {1: 111}
   nest_base:
@@ -11840,7 +11840,7 @@ models:
     layer_norm.default: {6: 51}
     linear.default: {1: 1, 3: 96}
     max_pool2d.default: {2: 2}
-    pad.default: {23: 2}
+    pad.default: {25: 2}
     permute.default: {12: 6, 13: 24, 16: 6, 27: 24}
     reshape.default: {3: 30, 5: 30}
     scaled_dot_product_attention.default: {3: 24}
@@ -11871,7 +11871,7 @@ models:
     layer_norm.default: {6: 51}
     linear.default: {1: 1, 3: 96}
     max_pool2d.default: {2: 2}
-    pad.default: {23: 2}
+    pad.default: {25: 2}
     permute.default: {12: 6, 13: 24, 16: 6, 27: 24}
     reshape.default: {3: 30, 5: 30}
     scaled_dot_product_attention.default: {3: 24}
@@ -11902,7 +11902,7 @@ models:
     layer_norm.default: {6: 27}
     linear.default: {1: 1, 3: 48}
     max_pool2d.default: {2: 2}
-    pad.default: {23: 2}
+    pad.default: {25: 2}
     permute.default: {12: 6, 13: 12, 16: 6, 27: 12}
     reshape.default: {3: 18, 5: 18}
     scaled_dot_product_attention.default: {3: 12}
@@ -12531,7 +12531,7 @@ models:
     flatten.using_ints: {1: 1}
     linear.default: {1: 1}
     max_pool2d.default: {2: 12, 3: 30}
-    pad.default: {9: 4, 11: 4, 23: 9, 24: 6, 27: 3, 28: 2, 30: 6, 31: 2, 33: 3, 34: 1}
+    pad.default: {9: 4, 11: 4, 23: 6, 25: 9, 27: 2, 29: 3, 30: 6, 31: 2, 33: 3, 34: 1}
     relu.default: {3: 200}
   poolformer_m36:
     adaptive_avg_pool2d.default: {1: 1}
@@ -14617,7 +14617,7 @@ models:
     flatten.using_ints: {1: 1}
     group_norm.default: {13: 100}
     max_pool2d.default: {2: 1}
-    pad.default: {28: 1}
+    pad.default: {27: 1}
     relu_.default: {1: 100}
     reshape.default: {2: 104}
     reshape_as.default: {2: 104}
@@ -14630,7 +14630,7 @@ models:
     flatten.using_ints: {1: 1}
     group_norm.default: {13: 100}
     max_pool2d.default: {2: 1}
-    pad.default: {28: 1}
+    pad.default: {27: 1}
     relu_.default: {1: 100}
     reshape.default: {2: 104}
     reshape_as.default: {2: 104}
@@ -14662,7 +14662,7 @@ models:
     flatten.using_ints: {1: 1}
     group_norm.default: {13: 151}
     max_pool2d.default: {2: 1}
-    pad.default: {28: 1}
+    pad.default: {27: 1}
     relu_.default: {1: 151}
     reshape.default: {2: 155}
     reshape_as.default: {2: 155}
@@ -14675,7 +14675,7 @@ models:
     flatten.using_ints: {1: 1}
     group_norm.default: {13: 151}
     max_pool2d.default: {2: 1}
-    pad.default: {28: 1}
+    pad.default: {27: 1}
     relu_.default: {1: 151}
     reshape.default: {2: 155}
     reshape_as.default: {2: 155}
@@ -14799,7 +14799,7 @@ models:
     flatten.using_ints: {1: 1}
     group_norm.default: {13: 49}
     max_pool2d.default: {2: 1}
-    pad.default: {28: 1}
+    pad.default: {27: 1}
     relu_.default: {1: 49}
     reshape.default: {2: 53}
     reshape_as.default: {2: 53}
@@ -14812,7 +14812,7 @@ models:
     flatten.using_ints: {1: 1}
     group_norm.default: {13: 49}
     max_pool2d.default: {2: 1}
-    pad.default: {28: 1}
+    pad.default: {27: 1}
     relu_.default: {1: 49}
     reshape.default: {2: 53}
     reshape_as.default: {2: 53}
@@ -17265,7 +17265,7 @@ models:
     linear.default: {1: 1}
     mean.dim: {11: 16}
     mul.Tensor: {4: 16}
-    pad.default: {24: 3, 30: 2}
+    pad.default: {23: 3, 30: 2}
     sigmoid.default: {3: 16}
     silu_.default: {1: 49}
   tf_efficientnet_b1:
@@ -17277,7 +17277,7 @@ models:
     linear.default: {1: 1}
     mean.dim: {11: 23}
     mul.Tensor: {4: 23}
-    pad.default: {24: 3, 30: 2}
+    pad.default: {23: 3, 30: 2}
     sigmoid.default: {3: 23}
     silu_.default: {1: 69}
   tf_efficientnet_b2:
@@ -17289,7 +17289,7 @@ models:
     linear.default: {1: 1}
     mean.dim: {11: 23}
     mul.Tensor: {4: 23}
-    pad.default: {24: 3, 30: 2}
+    pad.default: {23: 3, 30: 2}
     sigmoid.default: {3: 23}
     silu_.default: {1: 69}
   tf_efficientnet_b3:
@@ -17301,7 +17301,7 @@ models:
     linear.default: {1: 1}
     mean.dim: {11: 26}
     mul.Tensor: {4: 26}
-    pad.default: {24: 3, 30: 2}
+    pad.default: {23: 3, 30: 2}
     sigmoid.default: {3: 26}
     silu_.default: {1: 78}
   tf_efficientnet_b4:
@@ -17313,7 +17313,7 @@ models:
     linear.default: {1: 1}
     mean.dim: {11: 32}
     mul.Tensor: {4: 32}
-    pad.default: {24: 3, 30: 2}
+    pad.default: {23: 3, 30: 2}
     sigmoid.default: {3: 32}
     silu_.default: {1: 96}
   tf_efficientnet_b5:
@@ -17325,7 +17325,7 @@ models:
     linear.default: {1: 1}
     mean.dim: {11: 39}
     mul.Tensor: {4: 39}
-    pad.default: {24: 3, 30: 2}
+    pad.default: {23: 3, 30: 2}
     sigmoid.default: {3: 39}
     silu_.default: {1: 116}
   tf_efficientnet_b6:
@@ -17337,7 +17337,7 @@ models:
     linear.default: {1: 1}
     mean.dim: {11: 45}
     mul.Tensor: {4: 45}
-    pad.default: {24: 3, 30: 2}
+    pad.default: {23: 3, 30: 2}
     sigmoid.default: {3: 45}
     silu_.default: {1: 134}
   tf_efficientnet_b7:
@@ -17349,7 +17349,7 @@ models:
     linear.default: {1: 1}
     mean.dim: {11: 55}
     mul.Tensor: {4: 55}
-    pad.default: {24: 3, 30: 2}
+    pad.default: {23: 3, 30: 2}
     sigmoid.default: {3: 55}
     silu_.default: {1: 163}
   tf_efficientnet_b8:
@@ -17361,7 +17361,7 @@ models:
     linear.default: {1: 1}
     mean.dim: {11: 61}
     mul.Tensor: {4: 61}
-    pad.default: {24: 3, 30: 2}
+    pad.default: {23: 3, 30: 2}
     sigmoid.default: {3: 61}
     silu_.default: {1: 181}
   tf_efficientnet_cc_b0_4e:
@@ -17374,7 +17374,7 @@ models:
     matmul.default: {1: 24}
     mean.dim: {11: 16}
     mul.Tensor: {4: 16}
-    pad.default: {24: 3, 30: 2}
+    pad.default: {23: 3, 30: 2}
     permute.default: {21: 24}
     reshape.default: {3: 24}
     sigmoid.default: {1: 8, 3: 16}
@@ -17390,7 +17390,7 @@ models:
     matmul.default: {1: 24}
     mean.dim: {11: 16}
     mul.Tensor: {4: 16}
-    pad.default: {24: 3, 30: 2}
+    pad.default: {23: 3, 30: 2}
     permute.default: {21: 24}
     reshape.default: {3: 24}
     sigmoid.default: {1: 8, 3: 16}
@@ -17406,7 +17406,7 @@ models:
     matmul.default: {1: 33}
     mean.dim: {11: 23}
     mul.Tensor: {4: 23}
-    pad.default: {24: 3, 30: 2}
+    pad.default: {23: 3, 30: 2}
     permute.default: {21: 33}
     reshape.default: {3: 33}
     sigmoid.default: {1: 11, 3: 23}
@@ -17419,7 +17419,7 @@ models:
     conv2d.default: {1: 44, 15: 3, 17: 9, 338: 1, 339: 5, 452: 2, 770: 1, 1077: 7}
     flatten.using_ints: {1: 1}
     linear.default: {1: 1}
-    pad.default: {24: 3, 30: 2}
+    pad.default: {23: 3, 30: 2}
     relu_.default: {1: 45}
   tf_efficientnet_em:
     adaptive_avg_pool2d.default: {1: 1}
@@ -17428,7 +17428,7 @@ models:
     conv2d.default: {1: 39, 15: 3, 17: 8, 245: 1, 246: 4, 382: 2, 711: 1, 1004: 6}
     flatten.using_ints: {1: 1}
     linear.default: {1: 1}
-    pad.default: {24: 3, 30: 2}
+    pad.default: {23: 3, 30: 2}
     relu_.default: {1: 40}
   tf_efficientnet_es:
     adaptive_avg_pool2d.default: {1: 1}
@@ -17437,7 +17437,7 @@ models:
     conv2d.default: {1: 30, 15: 3, 17: 5, 245: 1, 246: 3, 382: 1, 711: 1, 1004: 5}
     flatten.using_ints: {1: 1}
     linear.default: {1: 1}
-    pad.default: {24: 3, 30: 2}
+    pad.default: {23: 3, 30: 2}
     relu_.default: {1: 31}
   tf_efficientnet_l2:
     adaptive_avg_pool2d.default: {1: 1}
@@ -17448,7 +17448,7 @@ models:
     linear.default: {1: 1}
     mean.dim: {11: 88}
     mul.Tensor: {4: 88}
-    pad.default: {24: 3, 30: 2}
+    pad.default: {23: 3, 30: 2}
     sigmoid.default: {3: 88}
     silu_.default: {1: 260}
   tf_efficientnet_lite0:
@@ -17459,7 +17459,7 @@ models:
     flatten.using_ints: {1: 1}
     hardtanh_.default: {1: 33}
     linear.default: {1: 1}
-    pad.default: {24: 3, 30: 2}
+    pad.default: {23: 3, 30: 2}
   tf_efficientnet_lite1:
     adaptive_avg_pool2d.default: {1: 1}
     add.Tensor: {5: 14}
@@ -17468,7 +17468,7 @@ models:
     flatten.using_ints: {1: 1}
     hardtanh_.default: {1: 43}
     linear.default: {1: 1}
-    pad.default: {24: 3, 30: 2}
+    pad.default: {23: 3, 30: 2}
   tf_efficientnet_lite2:
     adaptive_avg_pool2d.default: {1: 1}
     add.Tensor: {5: 14}
@@ -17477,7 +17477,7 @@ models:
     flatten.using_ints: {1: 1}
     hardtanh_.default: {1: 43}
     linear.default: {1: 1}
-    pad.default: {24: 3, 30: 2}
+    pad.default: {23: 3, 30: 2}
   tf_efficientnet_lite3:
     adaptive_avg_pool2d.default: {1: 1}
     add.Tensor: {5: 17}
@@ -17486,7 +17486,7 @@ models:
     flatten.using_ints: {1: 1}
     hardtanh_.default: {1: 49}
     linear.default: {1: 1}
-    pad.default: {24: 3, 30: 2}
+    pad.default: {23: 3, 30: 2}
   tf_efficientnet_lite4:
     adaptive_avg_pool2d.default: {1: 1}
     add.Tensor: {5: 23}
@@ -17495,7 +17495,7 @@ models:
     flatten.using_ints: {1: 1}
     hardtanh_.default: {1: 61}
     linear.default: {1: 1}
-    pad.default: {24: 3, 30: 2}
+    pad.default: {23: 3, 30: 2}
   tf_efficientnetv2_b0:
     adaptive_avg_pool2d.default: {1: 1}
     add.Tensor: {5: 15}
@@ -17505,7 +17505,7 @@ models:
     linear.default: {1: 1}
     mean.dim: {11: 16}
     mul.Tensor: {4: 16}
-    pad.default: {24: 5}
+    pad.default: {23: 5}
     sigmoid.default: {3: 16}
     silu_.default: {1: 55}
   tf_efficientnetv2_b1:
@@ -17517,7 +17517,7 @@ models:
     linear.default: {1: 1}
     mean.dim: {11: 19}
     mul.Tensor: {4: 19}
-    pad.default: {24: 5}
+    pad.default: {23: 5}
     sigmoid.default: {3: 19}
     silu_.default: {1: 67}
   tf_efficientnetv2_b2:
@@ -17529,7 +17529,7 @@ models:
     linear.default: {1: 1}
     mean.dim: {11: 20}
     mul.Tensor: {4: 20}
-    pad.default: {24: 4, 28: 1}
+    pad.default: {23: 4, 27: 1}
     sigmoid.default: {3: 20}
     silu_.default: {1: 70}
   tf_efficientnetv2_b3:
@@ -17541,7 +17541,7 @@ models:
     linear.default: {1: 1}
     mean.dim: {11: 24}
     mul.Tensor: {4: 24}
-    pad.default: {24: 5}
+    pad.default: {23: 5}
     sigmoid.default: {3: 24}
     silu_.default: {1: 82}
   tf_efficientnetv2_l:
@@ -17553,7 +17553,7 @@ models:
     linear.default: {1: 1}
     mean.dim: {11: 61}
     mul.Tensor: {4: 61}
-    pad.default: {24: 5}
+    pad.default: {23: 5}
     sigmoid.default: {3: 61}
     silu_.default: {1: 203}
   tf_efficientnetv2_m:
@@ -17565,7 +17565,7 @@ models:
     linear.default: {1: 1}
     mean.dim: {11: 44}
     mul.Tensor: {4: 44}
-    pad.default: {24: 5}
+    pad.default: {23: 5}
     sigmoid.default: {3: 44}
     silu_.default: {1: 147}
   tf_efficientnetv2_s:
@@ -17577,7 +17577,7 @@ models:
     linear.default: {1: 1}
     mean.dim: {11: 30}
     mul.Tensor: {4: 30}
-    pad.default: {24: 5}
+    pad.default: {23: 5}
     sigmoid.default: {3: 30}
     silu_.default: {1: 102}
   tf_efficientnetv2_xl:
@@ -17589,7 +17589,7 @@ models:
     linear.default: {1: 1}
     mean.dim: {11: 80}
     mul.Tensor: {4: 80}
-    pad.default: {24: 5}
+    pad.default: {23: 5}
     sigmoid.default: {3: 80}
     silu_.default: {1: 262}
   tf_mixnet_l:
@@ -17602,7 +17602,7 @@ models:
     linear.default: {1: 1}
     mean.dim: {11: 16}
     mul.Tensor: {4: 16}
-    pad.default: {24: 5, 30: 4, 33: 4, 36: 2}
+    pad.default: {23: 5, 30: 4, 33: 4, 36: 2}
     relu_.default: {1: 7}
     sigmoid.default: {3: 16}
     silu_.default: {1: 48}
@@ -17617,7 +17617,7 @@ models:
     linear.default: {1: 1}
     mean.dim: {11: 16}
     mul.Tensor: {4: 16}
-    pad.default: {24: 5, 30: 4, 33: 4, 36: 2}
+    pad.default: {23: 5, 30: 4, 33: 4, 36: 2}
     relu_.default: {1: 7}
     sigmoid.default: {3: 16}
     silu_.default: {1: 48}
@@ -17632,7 +17632,7 @@ models:
     linear.default: {1: 1}
     mean.dim: {11: 13}
     mul.Tensor: {4: 13}
-    pad.default: {24: 5, 30: 3, 33: 3, 36: 1, 37: 1}
+    pad.default: {23: 5, 30: 3, 33: 3, 36: 1, 37: 1}
     relu_.default: {1: 7}
     sigmoid.default: {3: 13}
     silu_.default: {1: 39}
@@ -17648,7 +17648,7 @@ models:
     linear.default: {1: 1}
     mean.dim: {11: 8}
     mul.Tensor: {4: 8}
-    pad.default: {24: 3, 30: 2}
+    pad.default: {23: 3, 30: 2}
     relu_.default: {1: 19}
   tf_mobilenetv3_large_100:
     adaptive_avg_pool2d.default: {1: 1}
@@ -17661,7 +17661,7 @@ models:
     linear.default: {1: 1}
     mean.dim: {11: 8}
     mul.Tensor: {4: 8}
-    pad.default: {24: 3, 30: 2}
+    pad.default: {23: 3, 30: 2}
     relu_.default: {1: 19}
   tf_mobilenetv3_large_minimal_100:
     adaptive_avg_pool2d.default: {1: 1}
@@ -17670,7 +17670,7 @@ models:
     conv2d.default: {1: 31, 15: 1, 268: 2, 402: 1, 450: 2, 485: 1, 543: 1, 800: 1, 911: 1, 937: 1, 938: 1, 961: 1, 962: 1, 1113: 2}
     flatten.using_ints: {1: 1}
     linear.default: {1: 1}
-    pad.default: {24: 5}
+    pad.default: {23: 5}
     relu_.default: {1: 32}
   tf_mobilenetv3_small_075:
     adaptive_avg_pool2d.default: {1: 1}
@@ -17683,7 +17683,7 @@ models:
     linear.default: {1: 1}
     mean.dim: {11: 9}
     mul.Tensor: {4: 9}
-    pad.default: {24: 3, 30: 2}
+    pad.default: {23: 3, 30: 2}
     relu_.default: {1: 14}
   tf_mobilenetv3_small_100:
     adaptive_avg_pool2d.default: {1: 1}
@@ -17696,7 +17696,7 @@ models:
     linear.default: {1: 1}
     mean.dim: {11: 9}
     mul.Tensor: {4: 9}
-    pad.default: {24: 3, 30: 2}
+    pad.default: {23: 3, 30: 2}
     relu_.default: {1: 14}
   tf_mobilenetv3_small_minimal_100:
     adaptive_avg_pool2d.default: {1: 1}
@@ -17705,7 +17705,7 @@ models:
     conv2d.default: {1: 23, 15: 1, 268: 1, 347: 1, 401: 1, 544: 2, 595: 1, 860: 2, 961: 1, 1067: 1, 1101: 1}
     flatten.using_ints: {1: 1}
     linear.default: {1: 1}
-    pad.default: {24: 5}
+    pad.default: {23: 5}
     relu_.default: {1: 24}
   tiny_vit_11m_224:
     adaptive_avg_pool2d.default: {1: 1}
@@ -19001,7 +19001,7 @@ models:
     layer_norm.default: {5: 25}
     linear.default: {1: 1, 2: 48}
     max_pool2d.default: {2: 1}
-    pad.default: {11: 3, 23: 1, 24: 3, 33: 1}
+    pad.default: {11: 3, 23: 3, 25: 1, 33: 1}
     permute.default: {24: 12}
     relu_.default: {1: 25}
     reshape.default: {2: 41, 4: 12}
@@ -19023,7 +19023,7 @@ models:
     layer_norm.default: {5: 25}
     linear.default: {2: 48}
     max_pool2d.default: {2: 1}
-    pad.default: {11: 2, 23: 1, 24: 2, 33: 1}
+    pad.default: {11: 2, 23: 2, 25: 1, 33: 1}
     permute.default: {24: 12}
     relu_.default: {1: 49}
     reshape.default: {2: 64, 4: 12}
@@ -19045,7 +19045,7 @@ models:
     layer_norm.default: {5: 25}
     linear.default: {1: 1, 2: 48}
     max_pool2d.default: {2: 1}
-    pad.default: {11: 2, 23: 1, 24: 2, 33: 1}
+    pad.default: {11: 2, 23: 2, 25: 1, 33: 1}
     permute.default: {24: 12}
     relu_.default: {1: 49}
     reshape.default: {2: 64, 4: 12}
@@ -20216,7 +20216,7 @@ models:
     layer_norm.default: {5: 49}
     linear.default: {1: 1, 2: 96}
     max_pool2d.default: {2: 1}
-    pad.default: {11: 3, 23: 1, 24: 3, 33: 1}
+    pad.default: {11: 3, 23: 3, 25: 1, 33: 1}
     permute.default: {24: 24}
     relu_.default: {1: 49}
     reshape.default: {2: 77, 4: 24}
@@ -20238,7 +20238,7 @@ models:
     layer_norm.default: {5: 49}
     linear.default: {1: 1, 2: 96}
     max_pool2d.default: {2: 1}
-    pad.default: {11: 3, 23: 1, 24: 3, 33: 1}
+    pad.default: {11: 3, 23: 3, 25: 1, 33: 1}
     permute.default: {24: 24}
     relu_.default: {1: 49}
     reshape.default: {2: 77, 4: 24}
@@ -21388,7 +21388,7 @@ models:
     layer_norm.default: {5: 25}
     linear.default: {1: 1, 2: 48}
     max_pool2d.default: {2: 1}
-    pad.default: {11: 3, 23: 1, 24: 3, 33: 1}
+    pad.default: {11: 3, 23: 3, 25: 1, 33: 1}
     permute.default: {24: 12}
     relu_.default: {1: 25}
     reshape.default: {2: 41, 4: 12}
@@ -21410,7 +21410,7 @@ models:
     layer_norm.default: {5: 25}
     linear.default: {1: 1, 2: 48}
     max_pool2d.default: {2: 1}
-    pad.default: {11: 3, 23: 1, 24: 3, 33: 1}
+    pad.default: {11: 3, 23: 3, 25: 1, 33: 1}
     permute.default: {24: 12}
     relu_.default: {1: 25}
     reshape.default: {2: 41, 4: 12}
@@ -21919,7 +21919,7 @@ models:
     layer_norm.default: {5: 25}
     linear.default: {1: 1, 2: 48}
     max_pool2d.default: {2: 1}
-    pad.default: {23: 1, 33: 1}
+    pad.default: {25: 1, 33: 1}
     permute.default: {24: 12}
     relu_.default: {1: 1}
     reshape.default: {2: 13, 4: 12}
@@ -21941,7 +21941,7 @@ models:
     layer_norm.default: {5: 25}
     linear.default: {1: 1, 2: 48}
     max_pool2d.default: {2: 1}
-    pad.default: {23: 1, 33: 1}
+    pad.default: {25: 1, 33: 1}
     permute.default: {24: 12}
     relu_.default: {1: 1}
     reshape.default: {2: 13, 4: 12}

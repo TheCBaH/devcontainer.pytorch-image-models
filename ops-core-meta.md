@@ -1467,12 +1467,12 @@ Every operator in the file, most widely used first; each name links to its confi
 
 | id | configuration | models | families | nodes | e.g. |
 |---|---|---|---|---|---|
-| 2 | other=-inf out_dtype=bool out_rank=4 | 478 | 27 | 8736 | aimv2_1b_patch14_224 |
-| 3 | other=-inf out_dtype=bool out_rank=5 | 17 | 3 | 201 | hiera_base_224 |
-| 1 | other=-inf out_dtype=bool out_rank=3 | 4 | 1 | 80 | samvit_base_patch16 |
-| 4 | other=0 out_dtype=bool out_rank=4 | 3 | 1 | 30 | convit_base |
-| 5 | other=1 out_dtype=bool out_rank=4 | 3 | 1 | 30 | convit_base |
-| 6 | other=2 out_dtype=bool out_rank=4 | 3 | 1 | 30 | convit_base |
+| 5 | other=-inf out_dtype=bool out_rank=4 | 478 | 27 | 8736 | aimv2_1b_patch14_224 |
+| 6 | other=-inf out_dtype=bool out_rank=5 | 17 | 3 | 201 | hiera_base_224 |
+| 4 | other=-inf out_dtype=bool out_rank=3 | 4 | 1 | 80 | samvit_base_patch16 |
+| 1 | other=0 out_dtype=bool out_rank=4 | 3 | 1 | 30 | convit_base |
+| 2 | other=1 out_dtype=bool out_rank=4 | 3 | 1 | 30 | convit_base |
+| 3 | other=2 out_dtype=bool out_rank=4 | 3 | 1 | 30 | convit_base |
 
 ### where.self
 
@@ -1730,12 +1730,12 @@ Every operator in the file, most widely used first; each name links to its confi
 
 | id | configuration | models | families | nodes | e.g. |
 |---|---|---|---|---|---|
-| 24 | pad=[0,1,0,1] value=0.0 out_dtype=f32 out_rank=4 | 83 | 9 | 333 | dm_nfnet_f0 |
+| 23 | pad=[0,1,0,1] value=0.0 out_dtype=f32 out_rank=4 | 83 | 9 | 333 | dm_nfnet_f0 |
 | 11 | pad=[0,0,0,0,0,0] value=0.0 out_dtype=f32 out_rank=4 | 58 | 8 | 1185 | davit_base |
 | 12 | pad=[0,0,0,0] value=0.0 out_dtype=f32 out_rank=4 | 37 | 6 | 115 | davit_base |
 | 27 | pad=[1,2,1,2] value=0.0 out_dtype=f32 out_rank=4 | 34 | 5 | 82 | efficientnet_b1_pruned |
-| 26 | pad=[1,1,1,1] value=0.0 out_dtype=f32 out_rank=4 | 22 | 6 | 106 | efficientnet_blur_b0 |
-| 23 | pad=[0,1,0,1] value=-inf out_dtype=f32 out_rank=4 | 14 | 4 | 30 | nasnetalarge |
+| 25 | pad=[1,1,1,1] value=0.0 out_dtype=f32 out_rank=4 | 22 | 6 | 106 | efficientnet_blur_b0 |
+| 24 | pad=[0,1,0,1] value=-inf out_dtype=f32 out_rank=4 | 14 | 4 | 30 | nasnetalarge |
 | 29 | pad=[2,3,2,3] value=0.0 out_dtype=f32 out_rank=4 | 14 | 4 | 29 | nasnetalarge |
 | 7 | pad=[0,1] value=0.0 out_dtype=f32 out_rank=3 | 12 | 1 | 128 | botnet26t_256 |
 | 9 | pad=[-1,-1,-1,-1] value=0.0 out_dtype=f32 out_rank=4 | 11 | 1 | 88 | volo_d1_224 |
@@ -1755,7 +1755,7 @@ Every operator in the file, most widely used first; each name links to its confi
 | 4 | pad=[0,23] value=0.0 out_dtype=f32 out_rank=2 | 2 | 1 | 8 | halonet_h1 |
 | 5 | pad=[0,31] value=0.0 out_dtype=f32 out_rank=2 | 2 | 1 | 4 | botnet50ts_256 |
 | 10 | pad=[-1,1,-1,1] value=0.0 out_dtype=f32 out_rank=4 | 2 | 2 | 8 | nasnetalarge |
-| 25 | pad=[1,1,1,1] value=-inf out_dtype=f32 out_rank=4 | 2 | 2 | 5 | nasnetalarge |
+| 26 | pad=[1,1,1,1] value=-inf out_dtype=f32 out_rank=4 | 2 | 2 | 5 | nasnetalarge |
 | 1 | pad=[0,14] value=0.0 out_dtype=f32 out_rank=2 | 1 | 1 | 10 | haloregnetz_b |
 | 13 | pad=[0,0,0,1,0,1] value=0.0 out_dtype=f32 out_rank=4 | 1 | 1 | 1 | hieradet_small |
 | 15 | pad=[0,0,0,18,0,18] value=0.0 out_dtype=f32 out_rank=4 | 1 | 1 | 6 | tiny_vit_21m_512 |

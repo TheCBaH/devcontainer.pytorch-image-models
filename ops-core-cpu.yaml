@@ -240,7 +240,7 @@ ops:
   eq.Scalar:
     schema: eq.Scalar(Tensor self, Scalar other) -> Tensor
     configs:
-      1: {other: -.inf, out_dtype: bool, out_rank: 4}
+      1: {other: {$nonfinite_float: -inf}, out_dtype: bool, out_rank: 4}
   expand.default:
     schema: expand(Tensor(a) self, SymInt[] size, *, bool implicit=False) -> Tensor(a)
     configs:

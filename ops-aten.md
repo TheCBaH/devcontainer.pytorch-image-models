@@ -1725,19 +1725,19 @@ Every operator in the file, most widely used first; each name links to its confi
 
 | id | configuration | models | families | nodes | e.g. |
 |---|---|---|---|---|---|
-| 24 | pad=[0,1,0,1] mode=constant value=0.0 out_dtype=f32 out_rank=4 | 76 | 8 | 319 | dm_nfnet_f0 |
+| 23 | pad=[0,1,0,1] mode=constant value=0.0 out_dtype=f32 out_rank=4 | 76 | 8 | 319 | dm_nfnet_f0 |
 | 10 | pad=[0,0,0,0,0,0] mode=constant value=none out_dtype=f32 out_rank=4 | 58 | 8 | 1185 | davit_base |
 | 30 | pad=[1,2,1,2] mode=constant value=0.0 out_dtype=f32 out_rank=4 | 34 | 5 | 82 | efficientnet_b1_pruned |
 | 11 | pad=[0,0,0,0] mode=constant value=0.0 out_dtype=f32 out_rank=4 | 26 | 4 | 86 | efficientnet_h_b5 |
-| 23 | pad=[0,1,0,1] mode=constant value=-inf out_dtype=f32 out_rank=4 | 14 | 4 | 30 | nasnetalarge |
+| 25 | pad=[0,1,0,1] mode=constant value=-inf out_dtype=f32 out_rank=4 | 14 | 4 | 30 | nasnetalarge |
 | 33 | pad=[2,3,2,3] mode=constant value=0.0 out_dtype=f32 out_rank=4 | 14 | 4 | 29 | nasnetalarge |
 | 7 | pad=[0,1] mode=constant value=none out_dtype=f32 out_rank=3 | 12 | 1 | 128 | botnet26t_256 |
-| 28 | pad=[1,1,1,1] mode=constant value=0.0 out_dtype=f32 out_rank=4 | 9 | 4 | 10 | nasnetalarge |
+| 27 | pad=[1,1,1,1] mode=constant value=0.0 out_dtype=f32 out_rank=4 | 9 | 4 | 10 | nasnetalarge |
 | 38 | pad=[1,1,1,1] mode=reflect value=none out_dtype=f32 out_rank=4 | 9 | 3 | 29 | densenetblur121d |
 | 12 | pad=[0,0,0,0] mode=constant value=none out_dtype=f32 out_rank=4 | 8 | 1 | 26 | davit_base |
 | 22 | pad=[0,0,1,0,0,0] mode=constant value=none out_dtype=f32 out_rank=4 | 8 | 1 | 164 | coat_lite_medium |
 | 3 | pad=[0,19] mode=constant value=none out_dtype=f32 out_rank=2 | 7 | 1 | 68 | eca_halonext26ts |
-| 25 | pad=[0,1,0,1] mode=constant value=none out_dtype=f32 out_rank=4 | 7 | 1 | 14 | hgnetv2_b0 |
+| 24 | pad=[0,1,0,1] mode=constant value=none out_dtype=f32 out_rank=4 | 7 | 1 | 14 | hgnetv2_b0 |
 | 26 | pad=[0,1] mode=constant value=1.0 out_dtype=f32 out_rank=4 | 7 | 1 | 58 | efficientvit_b0 |
 | 2 | pad=[0,15] mode=constant value=none out_dtype=f32 out_rank=2 | 6 | 1 | 26 | botnet26t_256 |
 | 6 | pad=[0,7] mode=constant value=none out_dtype=f32 out_rank=2 | 6 | 1 | 12 | botnet26t_256 |
@@ -1753,8 +1753,8 @@ Every operator in the file, most widely used first; each name links to its confi
 | 4 | pad=[0,23] mode=constant value=none out_dtype=f32 out_rank=2 | 2 | 1 | 8 | halonet_h1 |
 | 5 | pad=[0,31] mode=constant value=none out_dtype=f32 out_rank=2 | 2 | 1 | 4 | botnet50ts_256 |
 | 9 | pad=[-1,1,-1,1] mode=constant value=0.0 out_dtype=f32 out_rank=4 | 2 | 2 | 8 | nasnetalarge |
-| 27 | pad=[1,1,1,1] mode=constant value=-inf out_dtype=f32 out_rank=4 | 2 | 2 | 5 | nasnetalarge |
-| 29 | pad=[1,1,1,1] mode=constant value=none out_dtype=f32 out_rank=4 | 2 | 2 | 8 | efficientnet_blur_b0 |
+| 28 | pad=[1,1,1,1] mode=constant value=none out_dtype=f32 out_rank=4 | 2 | 2 | 8 | efficientnet_blur_b0 |
+| 29 | pad=[1,1,1,1] mode=constant value=-inf out_dtype=f32 out_rank=4 | 2 | 2 | 5 | nasnetalarge |
 | 31 | pad=[2,2,2,2] mode=constant value=0.0 out_dtype=f32 out_rank=4 | 2 | 2 | 4 | nasnetalarge |
 | 34 | pad=[3,3,3,3] mode=constant value=0.0 out_dtype=f32 out_rank=4 | 2 | 2 | 3 | nasnetalarge |
 | 1 | pad=[0,14] mode=constant value=none out_dtype=f32 out_rank=2 | 1 | 1 | 10 | haloregnetz_b |
