@@ -29,7 +29,7 @@ runs:
     - name: restore huggingface cache
       if: inputs.save != 'true'
       id: restore
-      uses: actions/cache/restore@v6
+      uses: actions/cache/restore@v6.1.0
       with:
         path: ${{ inputs.path }}
         key: hf-${{ runner.os }}-${{ hashFiles('models-selected.yaml', 'uv.lock') }}
@@ -38,7 +38,7 @@ runs:
     - name: cache huggingface
       if: inputs.save == 'true'
       id: cache
-      uses: actions/cache@v6
+      uses: actions/cache@v6.1.0
       with:
         path: ${{ inputs.path }}
         key: hf-${{ runner.os }}-${{ hashFiles('models-selected.yaml', 'uv.lock') }}

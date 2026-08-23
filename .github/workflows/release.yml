@@ -10,13 +10,13 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      # For actions/attest-build-provenance@v2, below.
+      # For actions/attest-build-provenance@v4, below.
       attestations: write
       id-token: write
 
     steps:
       - name: checkout
-        uses: actions/checkout@v7
+        uses: actions/checkout@v7.0.1
         with:
           submodules: true
           # check-history walks the first-parent tag history, which a shallow checkout
@@ -24,7 +24,7 @@ jobs:
           fetch-depth: 0
 
       - name: setup uv
-        uses: astral-sh/setup-uv@v9.0.0
+        uses: astral-sh/setup-uv@v10.0.1
         with:
           python-version: '3.13'
           enable-cache: true
@@ -38,7 +38,7 @@ jobs:
         uses: ./.github/workflows/actions/hf-cache
 
       - name: cache sample data
-        uses: actions/cache@v6
+        uses: actions/cache@v6.1.0
         with:
           path: data
           key: data-${{ hashFiles('scripts/download.sh') }}
@@ -84,7 +84,7 @@ jobs:
           } >> "$GITHUB_OUTPUT"
 
       - name: attest build provenance
-        uses: actions/attest-build-provenance@v2
+        uses: actions/attest-build-provenance@v4.2.2
         with:
           subject-path: ${{ steps.assets_first.outputs.paths }}
 
@@ -108,8 +108,13 @@ jobs:
       - name: create release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RELEASE_ASSET_PATHS: ${{ steps.assets_second.outputs.paths }}
         run: |
+          # RELEASE_ASSET_PATHS is newline-separated; splicing it straight into the `run:`
+          # script would put every path after the first on its own line, and bash would try
+          # to *execute* each as a command instead of passing it as an argument.
+          mapfile -t asset_paths <<< "$RELEASE_ASSET_PATHS"
           gh release create "${{ github.ref_name }}" \
             --title "Models ${{ github.ref_name }}" \
             --generate-notes \
-            ${{ steps.assets_second.outputs.paths }}
+            "${asset_paths[@]}"

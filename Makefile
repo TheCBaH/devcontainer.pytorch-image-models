@@ -212,7 +212,7 @@ release.manifest: release
 # the freshly-computed digests -- release.yml invokes this twice (see the workflow), bound
 # together by that pinned digest, never as one unpinned call reused for both purposes.
 release.assets: FORCE
-	uv run python $(PT2_SCRIPT) release-assets --release-dir $(RELEASE_DIR) \
+	@uv run python $(PT2_SCRIPT) release-assets --release-dir $(RELEASE_DIR) \
 		$(if $(EXPECT_CHECKSUMS_SHA256),--expect-checksums-sha256 $(EXPECT_CHECKSUMS_SHA256),)
 
 # Smoke-scope: ONLY=<names>, writes under .build/smoke/ -- structurally distinct from
