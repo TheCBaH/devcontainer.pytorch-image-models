@@ -156,6 +156,58 @@ def test_cmd_pack_rejects_graph_only_model_before_worker_pack_runs(tmp_path, mon
     assert not called, 'worker_pack must never run for a non-release-tier name'
 
 
+# ---------------------------------------------------------------------------- cmd_build / PRETRAINED_SENSITIVE_MODELS
+#
+# Postmortem for the fbnetc_100 release-verify failure: cmd_build always traced every model
+# with pretrained=False (cheap, no download) to produce the committed models/<name>/model.json,
+# while cmd_release's pack step traces release-tier models with pretrained=True. For almost
+# every model that only changes weight values, not the exported graph -- but timm's
+# fbnetc_100 factory does `if pretrained: kwargs.setdefault('bn_eps', ...)`, which bakes a
+# different literal BatchNorm eps into the graph depending on the flag. verify-release's
+# byte-comparison caught the resulting divergence at release-cut time.
+#
+# PRETRAINED_SENSITIVE_MODELS is the fix: names in it get pretrained=True in cmd_build too, so
+# the committed graph matches what actually ships. This test pins that cmd_build's worker
+# invocation actually threads --pretrained through for such a name, and leaves an ordinary
+# model alone.
+
+
+def test_cmd_build_forces_pretrained_for_sensitive_models(tmp_path, monkeypatch):
+    manifest = tmp_path / 'models-selected.yaml'
+    manifest.write_text(
+        'models:\n'
+        '  fbnetc_100:\n'
+        '    release: true\n'
+        '  ordinary_model:\n'
+        '    release: true\n'
+    )
+    models_dir = tmp_path / 'models'
+
+    calls = {}
+
+    def fake_run_worker(script, argv, name, timeout, hf_home=None):
+        calls[name] = argv
+        return {'name': name, 'status': 'failed', 'error': 'stubbed'}
+
+    monkeypatch.setattr(export_pt2, 'run_worker', fake_run_worker)
+
+    args = _Args(manifest=str(manifest), models_dir=str(models_dir), build_dir=str(tmp_path / 'build'),
+                keep_pt2=False, workers=1, timeout=60, hf_home=None, max_res=224, limit=None)
+    export_pt2.cmd_build(args)
+
+    assert '--pretrained' in calls['fbnetc_100']
+    assert '--pretrained' not in calls['ordinary_model']
+
+
+def test_pretrained_sensitive_models_are_in_the_current_manifest():
+    """Catches the manifest typo/rename case where a PRETRAINED_SENSITIVE_MODELS entry
+    silently stops matching anything -- cmd_build would then trace it with pretrained=False
+    and nothing would notice until the next release-verify run."""
+    models = export_pt2.load_manifest(MODELS_SELECTED)
+    for name in export_pt2.PRETRAINED_SENSITIVE_MODELS:
+        assert name in models, f'{name}: PRETRAINED_SENSITIVE_MODELS entry not in the manifest'
+
+
 # ---------------------------------------------------------------------------- worker_convert / worker_pack round trip
 
 
@@ -267,7 +319,7 @@ def test_worker_pack_rejects_bad_model_archive_before_torch_export_load(tmp_path
 
 
 @pytest.mark.filterwarnings(
-    r"ignore:`torch\.jit\.script_method` is not supported in Python 3\.14\+:DeprecationWarning")
+    r"ignore:`torch\.jit\.script_method` is:DeprecationWarning")
 @pytest.mark.filterwarnings(
     r"ignore:.*isinstance\(treespec, LeafSpec\).*:FutureWarning")
 def test_worker_aoti_attempt_matches_interpreter_output(tmp_path, tiny_pt2, tiny_images, capsys):
@@ -285,7 +337,7 @@ def test_worker_aoti_attempt_matches_interpreter_output(tmp_path, tiny_pt2, tiny
 
 
 @pytest.mark.filterwarnings(
-    r"ignore:`torch\.jit\.script_method` is not supported in Python 3\.14\+:DeprecationWarning")
+    r"ignore:`torch\.jit\.script_method` is:DeprecationWarning")
 @pytest.mark.filterwarnings(
     r"ignore:.*isinstance\(treespec, LeafSpec\).*:FutureWarning")
 def test_worker_aoti_attempt_records_failure_without_raising(tmp_path, tiny_pt2, tiny_images,

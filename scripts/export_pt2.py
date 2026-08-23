@@ -208,6 +208,19 @@ def _tensor_map_contract(tensors, *, member, call_signature, extra_fields=None):
 
 # ---------------------------------------------------------------------------- worker
 
+# Models whose *architecture* (not just its weight values) changes when timm.create_model()
+# is called with pretrained=True -- e.g. a factory that does
+# `if pretrained: kwargs.setdefault('bn_eps', ...)`. `cmd_build` normally traces every model
+# with pretrained=False (cheap, no download) to produce the committed models/<name>/model.json,
+# while `cmd_release`'s pack step always uses pretrained=True for the real release-tier .pt2.
+# For an ordinary model that only changes which graph is compared to which -- for a model in
+# this set the two pipelines would silently diverge (see fbnetc_100, whose exported graph
+# bakes in nn.BatchNorm2d's eps as a literal constant, 1e-5 vs 1e-3 depending on the flag),
+# breaking verify-release's byte-comparison. Add a name here and re-run `make models` the
+# moment such a model is found; test_export_pt2.py pins that cmd_build actually threads
+# --pretrained through for every entry, and flags one that has fallen out of the manifest.
+PRETRAINED_SENSITIVE_MODELS = {'fbnetc_100'}
+
 
 def worker_convert(name, output, pretrained, max_res, manifest):
     """Export one model and write its .pt2. Runs in its own process (see `run_worker`)."""
@@ -563,12 +576,16 @@ def cmd_build(args):
     def one(name, scratch):
         _clean_stale_build_artifacts(args.models_dir, name)
         pt2 = os.path.join(scratch, f'{name}.pt2')
-        # Options declared on the top-level parser have to precede the subcommand.
+        # Options declared on the top-level parser have to precede the subcommand. Real
+        # weights only for PRETRAINED_SENSITIVE_MODELS -- see its docstring -- so the
+        # committed graph matches what cmd_release actually ships for those; everything else
+        # stays on the cheap, download-free pretrained=False path.
+        convert_args = ['--manifest', args.manifest, '--max-res', args.max_res, 'convert', name,
+                         '--output', pt2]
+        if name in PRETRAINED_SENSITIVE_MODELS:
+            convert_args.append('--pretrained')
         result = run_worker(
-            __file__,
-            ['--manifest', args.manifest, '--max-res', args.max_res, 'convert', name,
-             '--output', pt2],
-            name, args.timeout, hf_home=args.hf_home,
+            __file__, convert_args, name, args.timeout, hf_home=args.hf_home,
         )
         if result.get('status') == 'ok':
             building = os.path.join(args.models_dir, f'{name}.building-{os.getpid()}')
@@ -662,7 +679,8 @@ def cmd_fetch(args):
     import timm
 
     models = load_manifest(args.manifest)
-    names = release_names(models, args.only)
+    only = sorted(PRETRAINED_SENSITIVE_MODELS) if args.pretrained_sensitive else args.only
+    names = release_names(models, only)
     print(f'Fetching {len(names)} checkpoints into {os.environ["HF_HOME"]}', file=sys.stderr)
 
     def one(name):
@@ -1058,8 +1076,12 @@ def main():
     p = sub.add_parser('fetch', help='download the release tier pretrained weights')
     p.add_argument('--workers', type=int, default=8,
                    help='parallel downloads; network-bound, so not tied to core count')
-    p.add_argument('--only', nargs='+', default=None, metavar='MODEL',
-                   help='fetch these models instead of the whole release tier')
+    fetch_which = p.add_mutually_exclusive_group()
+    fetch_which.add_argument('--only', nargs='+', default=None, metavar='MODEL',
+                              help='fetch these models instead of the whole release tier')
+    fetch_which.add_argument('--pretrained-sensitive', action='store_true',
+                              help="fetch just PRETRAINED_SENSITIVE_MODELS -- the real weights "
+                                   "cmd_build itself needs -- instead of the whole release tier")
     p.set_defaults(func=cmd_fetch)
 
     p = sub.add_parser('pack', help='build one release archive')

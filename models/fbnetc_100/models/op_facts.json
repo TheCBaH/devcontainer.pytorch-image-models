@@ -1,11 +1,11 @@
 {
   "dialect": "functional_aten",
-  "model_json_sha256": "d535df5e535a2a75dd9d6e0375f7692d4f05e3fc3ba677a95cfe4cd6148f8284",
+  "model_json_sha256": "2ea26521d28ab51f2d84bd38294bf8b457b11dfb28bf2528ded54966bca6c67d",
   "ops": [
     [
       "aten._native_batch_norm_legit_no_training.default",
       {
-        "eps": 1e-05,
+        "eps": 0.001,
         "momentum": 0.1,
         "out_dtype": "f32",
         "out_rank": 4

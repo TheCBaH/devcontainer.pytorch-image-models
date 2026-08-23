@@ -50,8 +50,8 @@ DYNAMIC_TIMEOUT  ?= 60
 
 .PHONY: report report.ci report.exclusions report.dry-run check-tree-clean \
         models models.select models.popularity models.curve models.dry-run models.verify models.differences \
-        models.fetch models.compat-static models.role-candidates download images release release.manifest \
-        release.assets release.dry-run check-history check-models test
+        models.fetch models.fetch-sensitive models.compat-static models.role-candidates download images release \
+        release.manifest release.assets release.dry-run check-history check-models test
 
 # ── timm export report ───────────────────────────────────────────────────────
 
@@ -175,6 +175,14 @@ download:
 # whatever this left behind.
 models.fetch:
 	uv run python $(PT2_SCRIPT) --manifest $(MANIFEST) fetch
+
+# Just PRETRAINED_SENSITIVE_MODELS' checkpoint(s) -- the real weights `models` (cmd_build)
+# itself now needs, per export_pt2.py's PRETRAINED_SENSITIVE_MODELS docstring. `models` still
+# runs its workers with HF_HUB_OFFLINE=1 like everything else; this is what leaves those
+# weights in HF_HOME beforehand. Small and cheap enough to run unconditionally ahead of
+# `models` in CI, unlike the full release-tier `models.fetch`.
+models.fetch-sensitive:
+	uv run python $(PT2_SCRIPT) --manifest $(MANIFEST) fetch --pretrained-sensitive
 
 # One shared images archive, plus one archive per release-tier model holding its .pt2,
 # its preprocessing recipe and the predictions it should reproduce on those images. Lives

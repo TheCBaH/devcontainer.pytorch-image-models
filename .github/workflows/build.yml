@@ -33,6 +33,16 @@ jobs:
       - name: select
         run: make models.select
 
+      # Restore-only, same cache release.yml restores from: `models` (cmd_build) traces
+      # PRETRAINED_SENSITIVE_MODELS with real weights, so it needs *some* HF cache to stay
+      # off the network per iso_env's HF_HUB_OFFLINE=1. A miss just means the fetch step
+      # below does a small real download instead of finding it already there.
+      - name: huggingface cache
+        uses: ./.github/workflows/actions/hf-cache
+
+      - name: fetch pretrained-sensitive checkpoints
+        run: make models.fetch-sensitive
+
       - name: models
         run: make models
 
@@ -76,6 +86,18 @@ jobs:
 
       - name: select
         run: ${{ env.EXEC }} make models.select
+
+      # Restore-only, same cache release.yml restores from: `models` (cmd_build) traces
+      # PRETRAINED_SENSITIVE_MODELS with real weights, so it needs *some* HF cache to stay
+      # off the network per iso_env's HF_HUB_OFFLINE=1. A miss just means the fetch step
+      # below does a small real download instead of finding it already there. Runs on the
+      # host, ahead of devcontainer exec, into the bind-mounted workspace's .hf-cache -- the
+      # same relative path cmd_build's own --hf-home default resolves to inside the container.
+      - name: huggingface cache
+        uses: ./.github/workflows/actions/hf-cache
+
+      - name: fetch pretrained-sensitive checkpoints
+        run: ${{ env.EXEC }} make models.fetch-sensitive
 
       - name: models
         run: ${{ env.EXEC }} make models
