@@ -96,7 +96,7 @@ def worker_main(model_name, max_res, dynamic_timeout, ops_timeout, collect, excl
     # for this architecture, independent of whether this run traced it with real or random
     # ones. `select_models.py` needs this same fact to decide the release tier, so it lives
     # in exportlib rather than being derived twice.
-    result['pretrained_tag'], _ = pretrained_info(model_name)
+    result['pretrained_tag'], _, _ = pretrained_info(model_name)
 
     # timm's own declared intent: fixed_input_size=False means the architecture (typically
     # global-pooled CNNs) is *designed* to accept other resolutions. This is a static claim

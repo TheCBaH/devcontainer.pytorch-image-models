@@ -16,4 +16,14 @@
 #     removed_in: <tag it first became release-tier or fully absent as of, e.g. v0.0.4>
 #     reason: <free text -- weight cap, superseded by another id, dropped from the zoo, ...>
 #     migrate_to: <a current model id, or null if there is no direct replacement>
-models: {}
+models:
+  vit_small_patch16_dinov3_qkvb:
+    removed_in: v0.0.4
+    reason: >-
+      Selection's release eligibility now requires a classification head (num_classes > 0).
+      This is timm's DINOv3 self-supervised backbone (lvd1689m tag): num_classes=0 by design,
+      so it has no logits for the release archive's expected-top5 contract to report --
+      export_pt2 was producing a contract.json with classes.count=0, which fails
+      contract.schema.json's minimum-1 constraint.
+    migrate_to: null
+

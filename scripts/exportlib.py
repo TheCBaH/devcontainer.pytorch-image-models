@@ -14,20 +14,25 @@ MAX_RES = 224
 
 
 def pretrained_info(name):
-    """(tag, hf_hub_id) for a model's default pretrained weights, or (None, None).
+    """(tag, hf_hub_id, num_classes) for a model's default pretrained weights, or
+    (None, None, None).
 
     A model can carry a pretrained *tag* while having nowhere to fetch it from -- timm's
     `test_*` architectures are the obvious case -- so the presence of a real source, not of
-    a tag, is what decides whether a variant can ship as a runnable .pt2.
+    a tag, is what decides whether a variant can ship as a runnable .pt2. `num_classes` is
+    reported alongside because it decides something distinct: a fetchable backbone can still
+    be a self-supervised feature extractor with no classification head (`num_classes=0`, e.g.
+    the DINOv3 weights), which has nothing for the release archive's expected-top5 contract
+    to report.
     """
     from timm.models import get_pretrained_cfg
     try:
         cfg = get_pretrained_cfg(name)
     except Exception:
-        return None, None
+        return None, None, None
     if not (cfg.hf_hub_id or cfg.url or cfg.file):
-        return None, None
-    return cfg.tag or None, cfg.hf_hub_id or None
+        return None, None, None
+    return cfg.tag or None, cfg.hf_hub_id or None, cfg.num_classes
 
 
 def resolved_input_size(default_cfg, max_res):

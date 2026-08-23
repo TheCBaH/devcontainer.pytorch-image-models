@@ -13,8 +13,10 @@
 # downloads HuggingFace Hub downloads (last 30 days, summed across pretrained tags); decides
 #           which model fills a coverage slot when several could, not which slot goes next.
 #           Absent if the model has no Hub weights or fetch_popularity.py has not seen it.
-# release   shipped as a .pt2 on tagged releases: has fetchable pretrained weights and fits
-#           under the release weight cap.
+# release   shipped as a .pt2 on tagged releases: has fetchable pretrained weights, fits
+#           under the release weight cap, and has a classification head (num_classes > 0)
+#           -- a self-supervised backbone with no head has nothing for the release
+#           archive's expected-top5 contract to report.
 
 selection:
   target: 100
@@ -25,7 +27,7 @@ selection:
   op_configs_covered: 2067/3074
   families_covered: 40/89
   total_nodes: 30217
-  release_models: 71
+  release_models: 70
 uncovered_op_configs:
 - 'aten._native_batch_norm_legit_no_training.default {"eps": 1e-05, "momentum": 0.1, "out_dtype": "f32",
   "out_rank": 3}'
@@ -2879,7 +2881,7 @@ models:
     nodes: 551
     weight_mb: 82.4
     resolution: 256x256
-    release: true
+    release: false
     pretrained_tag: lvd1689m
     hf_hub_id: timm/vit_small_patch16_dinov3_qkvb.lvd1689m
     downloads: 6879

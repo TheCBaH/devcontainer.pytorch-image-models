@@ -28,7 +28,7 @@ and `bmm` -- so a model earns its place by what it demonstrates in any of them, 
 
 This module has no opinion about where `rows`/`ops_by_model` came from -- that is a zoo's own
 report format, parsed by the caller -- nor about pretrained-weight lookup, which callers
-inject as a `pretrained_info(name) -> (tag, hf_hub_id)` callback so this stays usable by any
+inject as a `pretrained_info(name) -> (tag, hf_hub_id, num_classes)` callback so this stays usable by any
 zoo, not just the one whose report format populated `rows`.
 """
 import json
@@ -190,7 +190,7 @@ def select(candidates, target, max_nodes, max_weight_mb, include, exclude, popul
 def render_manifest(selected, candidates, target, max_nodes, max_weight_mb, release_max_weight_mb,
                      include, exclude, popularity=None, pretrained_info=None,
                      script='scripts/select_models.py', make_target='make models.select'):
-    """Render the selection manifest. `pretrained_info(name) -> (tag, hf_hub_id)` is injected
+    """Render the selection manifest. `pretrained_info(name) -> (tag, hf_hub_id, num_classes)` is injected
     by the caller (rather than imported here) so this stays usable by any zoo's own registry,
     not just the one whose report format populated `candidates`."""
     popularity = popularity or {}
@@ -210,8 +210,10 @@ def render_manifest(selected, candidates, target, max_nodes, max_weight_mb, rele
         '# downloads HuggingFace Hub downloads (last 30 days, summed across pretrained tags); decides',
         '#           which model fills a coverage slot when several could, not which slot goes next.',
         '#           Absent if the model has no Hub weights or fetch_popularity.py has not seen it.',
-        '# release   shipped as a .pt2 on tagged releases: has fetchable pretrained weights and fits',
-        '#           under the release weight cap.',
+        '# release   shipped as a .pt2 on tagged releases: has fetchable pretrained weights, fits',
+        '#           under the release weight cap, and has a classification head (num_classes > 0)',
+        '#           -- a self-supervised backbone with no head has nothing for the release',
+        '#           archive\'s expected-top5 contract to report.',
         '',
     ]
 
@@ -243,7 +245,7 @@ def render_manifest(selected, candidates, target, max_nodes, max_weight_mb, rele
     models = {}
     for name, phase in sorted(selected):
         c = candidates[name]
-        tag, hub_id = pretrained_info(name) if pretrained_info else (None, None)
+        tag, hub_id, num_classes = pretrained_info(name) if pretrained_info else (None, None, None)
         entry = {
             'family': c['family'],
             'phase': phase,
@@ -252,7 +254,9 @@ def render_manifest(selected, candidates, target, max_nodes, max_weight_mb, rele
             'resolution': c['resolution'],
             # The one place the release tier is defined. A driver's own archive builder reads
             # this flag rather than re-deriving it, so what ships on a tag is decided once.
-            'release': bool(hub_id) and c['weight_mb'] <= release_max_weight_mb,
+            # `num_classes` excludes self-supervised backbones (e.g. DINOv3): fetchable and
+            # small enough, but with no classification head for expected.json's top5 to name.
+            'release': bool(hub_id) and c['weight_mb'] <= release_max_weight_mb and bool(num_classes),
         }
         if tag:
             entry['pretrained_tag'] = tag
