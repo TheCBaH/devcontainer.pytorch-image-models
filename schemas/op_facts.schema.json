@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/thecbah/devcontainer.pytorch-image-models/schemas/op_facts.schema.json",
+  "title": "op_facts",
+  "description": "Static operator facts for one committed models/<name>/models/model.json, staged and swapped in alongside it by cmd_build. Bound to that exact graph by model_json_sha256, not just by torch_version.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "torch_version", "dialect", "model_json_sha256", "ops", "schemas"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "torch_version": {"type": "string"},
+    "dialect": {"const": "functional_aten"},
+    "model_json_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "ops": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "prefixItems": [
+          {"type": "string", "description": "aten target, e.g. aten.convolution.default"},
+          {
+            "type": "object",
+            "additionalProperties": {"$ref": "_config_value.schema.json"}
+          },
+          {"type": "integer", "minimum": 1}
+        ],
+        "minItems": 3,
+        "maxItems": 3
+      }
+    },
+    "schemas": {
+      "type": "object",
+      "additionalProperties": {"type": "string"}
+    }
+  }
+}

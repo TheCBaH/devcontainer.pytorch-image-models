@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/thecbah/devcontainer.pytorch-image-models/schemas/_config_value.schema.json",
+  "title": "config_value",
+  "description": "One operator-configuration argument value, as produced by opgraph._plain(). A non-finite float is never a bare number or string -- it is tagged so it can never collide with a genuine string argument of the same text.",
+  "$defs": {
+    "nonfinite_float": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["$nonfinite_float"],
+      "properties": {
+        "$nonfinite_float": {"enum": ["-inf", "+inf", "nan"]}
+      }
+    },
+    "value": {
+      "anyOf": [
+        {"type": "null"},
+        {"type": "boolean"},
+        {"type": "number"},
+        {"type": "string"},
+        {"$ref": "#/$defs/nonfinite_float"},
+        {"type": "array", "items": {"$ref": "#/$defs/value"}}
+      ]
+    }
+  },
+  "$ref": "#/$defs/value"
+}

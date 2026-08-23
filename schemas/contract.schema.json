@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/thecbah/devcontainer.pytorch-image-models/schemas/contract.schema.json",
+  "title": "contract",
+  "description": "Per-model runnable payload contract shipped inside a release archive: what inputs.pt/outputs.pt/expected.json actually hold, so a consumer never has to guess.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "graph", "images_asset_sha256", "inputs", "outputs", "expected", "preprocessing", "classes"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "graph": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["pt2_member", "input_size"],
+      "properties": {
+        "pt2_member": {"type": "string"},
+        "input_size": {"type": "array", "items": {"type": "integer"}}
+      }
+    },
+    "images_asset_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "inputs": {"$ref": "#/$defs/tensor_map"},
+    "outputs": {
+      "allOf": [{"$ref": "#/$defs/tensor_map"}],
+      "type": "object",
+      "required": ["keys_order", "semantics"],
+      "properties": {
+        "keys_order": {"const": "identical to inputs"},
+        "semantics": {"const": "raw pre-softmax logits"}
+      }
+    },
+    "expected": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["member", "atol", "rtol", "nonfinite_policy", "tie_break"],
+      "properties": {
+        "member": {"const": "expected.json"},
+        "atol": {"type": "number"},
+        "rtol": {"type": "number"},
+        "nonfinite_policy": {"type": "string"},
+        "tie_break": {"type": "string"}
+      }
+    },
+    "preprocessing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["member", "provenance"],
+      "properties": {
+        "member": {"const": "preprocessing.json"},
+        "provenance": {"type": "object"}
+      }
+    },
+    "classes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["count"],
+      "properties": {
+        "count": {"type": "integer", "minimum": 1}
+      }
+    }
+  },
+  "$defs": {
+    "tensor_layout": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["layout", "strides", "storage_offset", "is_contiguous"],
+      "properties": {
+        "layout": {"type": "string"},
+        "strides": {"type": "array", "items": {"type": "integer"}},
+        "storage_offset": {"type": "integer"},
+        "is_contiguous": {"type": "boolean"}
+      }
+    },
+    "tensor_map": {
+      "type": "object",
+      "required": ["member", "format", "count", "keys", "dtype", "shape", "device", "call_signature", "uniform"],
+      "properties": {
+        "member": {"type": "string"},
+        "format": {"type": "string"},
+        "count": {"type": "integer", "minimum": 1},
+        "keys": {"type": "array", "items": {"type": "string"}},
+        "dtype": {"type": "string"},
+        "shape": {"type": "array", "items": {"type": "integer"}},
+        "device": {"const": "cpu"},
+        "call_signature": {"type": "string"},
+        "uniform": {"type": "boolean"},
+        "layout": {"type": "string"},
+        "strides": {"type": "array", "items": {"type": "integer"}},
+        "storage_offset": {"type": "integer"},
+        "is_contiguous": {"type": "boolean"},
+        "per_key": {
+          "type": "object",
+          "additionalProperties": {"$ref": "#/$defs/tensor_layout"}
+        }
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"uniform": {"const": true}}, "required": ["uniform"]},
+          "then": {"required": ["layout", "strides", "storage_offset", "is_contiguous"]}
+        },
+        {
+          "if": {"properties": {"uniform": {"const": false}}, "required": ["uniform"]},
+          "then": {"required": ["per_key"]}
+        }
+      ]
+    }
+  }
+}

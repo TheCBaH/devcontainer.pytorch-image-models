@@ -10,18 +10,27 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      # For actions/attest-build-provenance@v2, below.
+      attestations: write
+      id-token: write
 
     steps:
       - name: checkout
         uses: actions/checkout@v7
         with:
           submodules: true
+          # check-history walks the first-parent tag history, which a shallow checkout
+          # cannot provide -- it fails loudly rather than silently skipping the check.
+          fetch-depth: 0
 
       - name: setup uv
         uses: astral-sh/setup-uv@v9.0.0
         with:
           python-version: '3.13'
           enable-cache: true
+
+      - name: check release-tier removals are recorded
+        run: make check-history
 
       # Restore-only: see hf-cache.yml for why a tag build cannot usefully save one. A miss
       # is not fatal, it just means the fetch step below does the full download.
@@ -42,13 +51,60 @@ jobs:
           HF_HOME: ${{ github.workspace }}/.hf-cache
         run: make models.fetch
 
-      - name: build release archives
+      # The one canonical DAG: pack every release-tier model (hard-stops here on any
+      # failure) -> generate manifest.json/catalogue.json/compat-report.json
+      # (schema-validated, repo/tag/commit always explicit -- never inferred from local git
+      # state) -> verify-release (byte-compares every embedded graph against the committed
+      # one, re-validates every document, writes checksums.txt last, only once everything
+      # above has passed).
+      - name: build, generate, and verify the release
         env:
           HF_HOME: ${{ github.workspace }}/.hf-cache
-        run: make release
+          RELEASE_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ github.ref_name }}
+          RELEASE_COMMIT: ${{ github.sha }}
+        run: make release.manifest
 
-      # images.zip first, since it is the one asset every consumer needs regardless of which
-      # model they pick.
+      # First invocation: re-hashes every listed asset, captures the verified path list (for
+      # attestation's subject-path) and checksums.txt's own sha256 (to pin the second
+      # invocation against). Both come back on stdout, paths first and the digest as the
+      # final `checksums_sha256=<digest>` line -- see cmd_release_assets's docstring for why
+      # that fixed shape lets this be split with plain shell.
+      - name: release assets (first pass)
+        id: assets_first
+        run: |
+          OUTPUT="$(make release.assets)"
+          PATHS="$(echo "$OUTPUT" | sed '$d')"
+          DIGEST="$(echo "$OUTPUT" | tail -n1 | cut -d= -f2)"
+          {
+            echo "paths<<PATHS_EOF"
+            echo "$PATHS"
+            echo "PATHS_EOF"
+            echo "checksums_sha256=$DIGEST"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: attest build provenance
+        uses: actions/attest-build-provenance@v2
+        with:
+          subject-path: ${{ steps.assets_first.outputs.paths }}
+
+      # Second, pinned invocation, immediately before publishing: fails if checksums.txt has
+      # changed at all since the first pass (ruling out a coordinated edit to an asset and
+      # its checksums.txt line, made consistently, between the two invocations -- two
+      # independently-passing rehashes alone would not catch that), and additionally
+      # re-verifies every manifest.json archive entry against the freshly-rehashed digests.
+      # This second pass's own path list, not the first's, is what gets published below.
+      - name: release assets (second pass, pinned)
+        id: assets_second
+        run: |
+          OUTPUT="$(make release.assets EXPECT_CHECKSUMS_SHA256=${{ steps.assets_first.outputs.checksums_sha256 }})"
+          PATHS="$(echo "$OUTPUT" | sed '$d')"
+          {
+            echo "paths<<PATHS_EOF"
+            echo "$PATHS"
+            echo "PATHS_EOF"
+          } >> "$GITHUB_OUTPUT"
+
       - name: create release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -56,4 +112,4 @@ jobs:
           gh release create "${{ github.ref_name }}" \
             --title "Models ${{ github.ref_name }}" \
             --generate-notes \
-            .build/*.zip
+            ${{ steps.assets_second.outputs.paths }}

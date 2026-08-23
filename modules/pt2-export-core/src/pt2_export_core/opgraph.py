@@ -12,6 +12,7 @@ opinion about which zoo (timm, transformers, ...) produced the program.
 """
 import contextlib
 import json
+import math
 import re
 
 # torch.export retains SymInt arguments for two structurally different things: tensor
@@ -134,9 +135,20 @@ def symint_arg_names(schema):
 
 
 def _plain(value):
-    """Coerce a schema argument value to something JSON/YAML can round-trip."""
+    """Coerce a schema argument value to something JSON/YAML can round-trip.
+
+    A non-finite float (real data: `vit_tiny_r_s16_p8_224`'s `aten.pad.default` carries
+    `value: -inf`) is mapped to a tagged object, `{"$nonfinite_float": "-inf"|"+inf"|"nan"}`,
+    never a bare string -- a bare `"-inf"` would be indistinguishable from a schema argument
+    whose genuine value happens to be that same text, silently merging two distinct operator
+    configurations under one canonical key. A plain Python float is JSON's own `Infinity`/
+    `-Infinity`/`NaN`, which `json.dumps()` emits by default but which is not valid JSON
+    (RFC 8259) -- the tag keeps every downstream consumer of this value on valid JSON.
+    """
     if isinstance(value, (list, tuple)):
         return [_plain(v) for v in value]
+    if isinstance(value, float) and not math.isfinite(value):
+        return {'$nonfinite_float': 'nan' if value != value else ('+inf' if value > 0 else '-inf')}
     if value is None or isinstance(value, (bool, int, float, str)):
         return value
     return str(value)  # torch.contiguous_format, torch.float32, ...
@@ -213,8 +225,42 @@ def canonical_config(config):
 
     Configurations themselves keep their schema argument order (`stride` before `padding`
     before `dilation`), which is how a human reads them; this is only the key.
+
+    `allow_nan=False` is defense in depth, not the primary fix: every value reaching here has
+    already gone through `_plain()`, which never returns a bare non-finite float, so this
+    should never actually trigger. It exists so a future caller that bypasses `_plain()` fails
+    loudly (an invalid-JSON `Infinity` token) instead of silently producing a key no consumer
+    downstream can parse as JSON.
     """
-    return json.dumps(config, sort_keys=True)
+    return json.dumps(config, sort_keys=True, allow_nan=False)
+
+
+def _reject_duplicate_keys(pairs):
+    """`object_pairs_hook` for `strict_json_loads`: fail on a repeated key at any nesting
+    level, rather than silently keeping only the last value the way `dict(pairs)` would."""
+    result = {}
+    for key, value in pairs:
+        if key in result:
+            raise ValueError(f'duplicate JSON object key: {key!r}')
+        result[key] = value
+    return result
+
+
+def _reject_nonfinite_constant(token):
+    raise ValueError(f'non-finite JSON constant {token!r} is not permitted')
+
+
+def strict_json_loads(data):
+    """`json.loads`, but rejecting exactly what the permissive default silently accepts:
+    non-finite constants (`NaN`, `Infinity`, `-Infinity` -- not valid RFC 8259 JSON, but
+    tolerated by Python's own parser) and a repeated object key at any nesting level (plain
+    `json.loads` silently keeps only the last value). Every document this pipeline reads back
+    -- a staged sidecar, a schema-validation input, a byte comparison against a committed
+    graph -- uses this instead of a bare `json.loads`, so a malformed or tampered document is
+    a loud failure at the parse boundary rather than a silently-accepted partial read.
+    """
+    return json.loads(data, parse_constant=_reject_nonfinite_constant,
+                       object_pairs_hook=_reject_duplicate_keys)
 
 
 def collect_ops(ep):

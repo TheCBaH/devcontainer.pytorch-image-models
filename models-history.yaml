@@ -1,0 +1,19 @@
+# Ledger of release-tier model IDs that were removed and have not returned as of the most
+# recent release tag. Checked by `scripts/models_history.py check` (`make check-history`):
+# a release-tier model present at the previous release tag but absent at the current commit
+# must have an entry here, or the check fails.
+#
+# Scope: release-tier removals only, checked against the *immediately preceding* release tag
+# only -- not the full selected pool, and not full history. The selected pool (~100 models)
+# reshuffles a meaningful fraction release over release as part of its coverage-optimization
+# search, and a model that disappears and later returns (confirmed real behavior between
+# v0.0.1 and v0.0.3: starnet_s050, test_convnext2) was never actually retired -- it needs no
+# entry, and any entry here for a name that is back in the current release tier is ignored by
+# manifest.json's `retired` section (see pt2_export_core.manifest.diff_retirements).
+#
+# Entry shape:
+#   <name>:
+#     removed_in: <tag it first became release-tier or fully absent as of, e.g. v0.0.4>
+#     reason: <free text -- weight cap, superseded by another id, dropped from the zoo, ...>
+#     migrate_to: <a current model id, or null if there is no direct replacement>
+models: {}

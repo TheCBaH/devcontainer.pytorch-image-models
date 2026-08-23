@@ -14,6 +14,9 @@ jobs:
         uses: actions/checkout@v7
         with:
           submodules: true
+          # check-history walks the first-parent tag history, which a shallow checkout
+          # cannot provide -- it fails loudly rather than silently skipping the check.
+          fetch-depth: 0
 
       - name: setup uv
         uses: astral-sh/setup-uv@v9.0.0
@@ -33,6 +36,12 @@ jobs:
       - name: verify graphs against ops-aten.yaml
         run: make models.verify
 
+      - name: check release-tier removals are recorded
+        run: make check-history
+
+      - name: static graph facts (op_facts.json)
+        run: make models.compat-static
+
       - name: check tree is unmodified
         run: make check-tree-clean
 
@@ -45,6 +54,7 @@ jobs:
         uses: actions/checkout@v7
         with:
           submodules: true
+          fetch-depth: 0
 
       - name: devcontainer
         uses: ./.github/workflows/actions/devcontainer
@@ -67,8 +77,16 @@ jobs:
       - name: verify graphs against ops-aten.yaml
         run: ${{ env.EXEC }} make models.verify
 
+      - name: check release-tier removals are recorded
+        run: ${{ env.EXEC }} make check-history
+
+      - name: static graph facts (op_facts.json)
+        run: ${{ env.EXEC }} make models.compat-static
+
       # Runs in the devcontainer only, where paths differ from the uv job's: if a graph ever
-      # picked up machine-specific state again, this is where it shows up, and readably.
+      # picked up machine-specific state again, this is where it shows up, and readably. Also
+      # covers op_facts.json: check_models.sh diffs every changed/untracked file under
+      # models/, not just model.json specifically.
       - name: check models
         run: ${{ env.EXEC }} make check-models
 

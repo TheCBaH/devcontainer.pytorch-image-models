@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/thecbah/devcontainer.pytorch-image-models/schemas/catalogue.schema.json",
+  "title": "catalogue",
+  "description": "Stable, browser-facing model catalogue: every selected model (including graph_only ones with no runnable archive), so a picker can be built from the producer's advertised inventory rather than an embedded default.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "scope", "default_model", "models"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "scope": {"const": "full"},
+    "default_model": {"type": "string", "description": "must resolve to a key in models -- checked by validate-release-set"},
+    "models": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["display_name", "aliases", "deprecated", "graph_json_url"],
+        "properties": {
+          "display_name": {"type": "string"},
+          "aliases": {"type": "array", "items": {"type": "string"}},
+          "deprecated": {"type": "boolean"},
+          "deprecated_migrate_to": {"type": ["string", "null"]},
+          "graph_json_url": {
+            "type": "string",
+            "format": "uri",
+            "description": "commit-SHA-addressed repository content URL -- the one URL in this schema that is genuinely immutable"
+          },
+          "roles": {"type": "array", "items": {"type": "string"}}
+        },
+        "if": {"properties": {"deprecated": {"const": true}}, "required": ["deprecated"]},
+        "then": {"required": ["deprecated_migrate_to"]}
+      }
+    }
+  }
+}

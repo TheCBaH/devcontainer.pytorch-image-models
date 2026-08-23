@@ -22,7 +22,10 @@ import sys
 from export_report import parse_existing, parse_existing_ops
 from exportlib import pretrained_info
 from pt2_export_core.catalog import CORE_BACKENDS
-from pt2_export_core.selection import build_candidates, load_popularity, read_overrides, render_manifest, select
+from pt2_export_core.selection import (
+    ROLE_OP_ALLOWLIST, build_candidates, load_popularity, read_overrides, render_manifest,
+    render_role_candidates, role_candidates, select,
+)
 
 
 def load_candidates(models_md, ops_aten, ops_core, ops_func):
@@ -85,14 +88,25 @@ def main():
     parser.add_argument('--release-max-weight', type=float, default=100.0,
                         help='per-model weight cap in MB for the release tier, which ships real '
                              'pretrained weights and so pays the size in every download')
+    parser.add_argument('--write-role-candidates', action='store_true',
+                        help='also write models-role-candidates.yaml: which models were the '
+                             'sole/first contributor of a coverage unit matching '
+                             '--role-allowlist (suggestion #6)')
+    parser.add_argument('--role-candidates-output',
+                        default=os.path.join(repo_root, 'models-role-candidates.yaml'))
+    parser.add_argument('--role-allowlist', nargs='+', default=sorted(ROLE_OP_ALLOWLIST),
+                        metavar='OP', help='op names worth flagging as a role candidate '
+                             '(default: a starter list of shape-edge-case ops -- adaptive '
+                             'pooling, padding, upsampling)')
     args = parser.parse_args()
 
     candidates = load_candidates(args.models_md, args.ops_aten, args.ops_core, args.ops_func)
     include, exclude = read_overrides(args.output)
     popularity = load_popularity(args.popularity)
 
+    role_units = {} if args.write_role_candidates else None
     selected = select(candidates, args.target, args.max_nodes, args.max_weight, include, set(exclude),
-                       popularity)
+                       popularity, role_units=role_units)
     text, summary = render_manifest(selected, candidates, args.target, args.max_nodes, args.max_weight,
                                      args.release_max_weight, include, exclude, popularity,
                                      pretrained_info=pretrained_info)
@@ -102,6 +116,12 @@ def main():
     print(f'Wrote {args.output}: {summary["models"]} models, {summary["op_configs_covered"]} op configs, '
           f'{summary["families_covered"]} families, {summary["release_models"]} releasable',
           file=sys.stderr)
+
+    if args.write_role_candidates:
+        candidates_doc = role_candidates(role_units, set(args.role_allowlist))
+        with open(args.role_candidates_output, 'w') as f:
+            f.write(render_role_candidates(candidates_doc))
+        print(f'Wrote {args.role_candidates_output}: {len(candidates_doc)} model(s)', file=sys.stderr)
 
 
 if __name__ == '__main__':

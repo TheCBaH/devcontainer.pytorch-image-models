@@ -264,6 +264,8 @@ def fmt_config(config):
             rendered = 'true' if value else 'false'
         elif value is None:
             rendered = 'none'
+        elif isinstance(value, dict) and '$nonfinite_float' in value:
+            rendered = value['$nonfinite_float']  # opgraph._plain()'s tagged non-finite shape
         else:
             rendered = str(value)
         parts.append(f'{key}={rendered}')

@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/thecbah/devcontainer.pytorch-image-models/schemas/manifest.schema.json",
+  "title": "manifest",
+  "description": "Signed, machine-readable release index: producer provenance, every release-tier model's archive digest/size, and explicit retirement/migration info. scope is always \"full\" -- a smoke-scope build is never published under this schema.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "producer", "scope", "selected_models", "release_models", "images", "models", "retired"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "scope": {"const": "full"},
+    "producer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repo", "tag", "commit", "commit_timestamp", "timm_version", "torch_version"],
+      "properties": {
+        "repo": {"type": "string"},
+        "tag": {"type": "string"},
+        "commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "commit_timestamp": {"type": "string", "format": "date-time"},
+        "timm_version": {"type": "string"},
+        "torch_version": {"type": "string"}
+      }
+    },
+    "selected_models": {"$ref": "#/$defs/population"},
+    "release_models": {"$ref": "#/$defs/population"},
+    "images": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["url", "sha256", "bytes"],
+      "properties": {
+        "url": {"type": "string", "format": "uri"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "bytes": {"type": "integer", "minimum": 0}
+      }
+    },
+    "models": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["status", "archive"],
+        "properties": {
+          "status": {"const": "current"},
+          "archive": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["url", "sha256", "bytes", "members"],
+            "properties": {
+              "url": {"type": "string", "format": "uri", "description": "tag-addressed, digest-verified -- not immutable, a tag is a movable ref"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+              "bytes": {"type": "integer", "minimum": 0},
+              "members": {"type": "array", "items": {"type": "string"}}
+            }
+          },
+          "roles": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "retired": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["removed_in", "reason", "migrate_to"],
+        "properties": {
+          "removed_in": {"type": "string"},
+          "reason": {"type": "string"},
+          "migrate_to": {"type": ["string", "null"]}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "population": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["count", "names"],
+      "properties": {
+        "count": {"type": "integer", "minimum": 0},
+        "names": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}

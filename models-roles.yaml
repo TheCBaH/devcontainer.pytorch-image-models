@@ -1,0 +1,10 @@
+# Hand-maintained: which models are kept specifically to exercise one edge-case operator
+# configuration -- e.g. adaptive pooling to [1,1] or [7,7] -- separate from a broad
+# interpreter/native-execution compatibility claim (suggestion #6). Review
+# models-role-candidates.yaml (`make models.role-candidates`, always regenerated) and copy in
+# whatever is worth labeling; nothing is merged into this file automatically.
+#
+# Entry shape:
+#   <name>:
+#     - <short role label>
+models: {}

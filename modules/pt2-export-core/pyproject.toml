@@ -5,6 +5,7 @@ description = "Domain-agnostic core for exporting model zoos to torch.export/PT2
 requires-python = ">=3.10"
 dependencies = [
         'huggingface-hub',
+        'jsonschema',
         'pyyaml',
 ]
 

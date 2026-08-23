@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/thecbah/devcontainer.pytorch-image-models/schemas/compat-report.schema.json",
+  "title": "compat-report",
+  "description": "Graph-vs-runnable compatibility classification per model: runnable, graph_only, unsupported, or unverified -- so a target-list alone is never mistaken for a whole-model execution claim. A scope: full report can never contain an unsupported model (a full-scope release hard-fails before publishing one).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "scope", "selected_models", "release_models", "backends", "models"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "scope": {"enum": ["full", "smoke"]},
+    "selected_models": {"$ref": "#/$defs/population"},
+    "release_models": {"$ref": "#/$defs/population"},
+    "attempted_models": {"$ref": "#/$defs/population"},
+    "backends": {
+      "type": "array",
+      "items": {"enum": ["interpreter", "aot_inductor_cpu"]},
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "models": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["classification", "graph", "backends"],
+        "properties": {
+          "classification": {"enum": ["runnable", "graph_only", "unsupported", "unverified"]},
+          "graph": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["histogram", "config_variants", "dtypes"],
+            "properties": {
+              "histogram": {"type": "object", "additionalProperties": {"type": "integer", "minimum": 1}},
+              "config_variants": {"type": "integer", "minimum": 0},
+              "dtypes": {"type": "array", "items": {"type": "string"}}
+            }
+          },
+          "backends": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["interpreter", "aot_inductor_cpu"],
+            "properties": {
+              "interpreter": {"$ref": "#/$defs/backend_result"},
+              "aot_inductor_cpu": {"$ref": "#/$defs/backend_result"}
+            }
+          }
+        }
+      }
+    }
+  },
+  "if": {"properties": {"scope": {"const": "smoke"}}, "required": ["scope"]},
+  "then": {"required": ["attempted_models"]},
+  "$defs": {
+    "population": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["count", "names"],
+      "properties": {
+        "count": {"type": "integer", "minimum": 0},
+        "names": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "backend_result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["result"],
+      "properties": {
+        "result": {"enum": ["passed", "failed", "not_attempted"]},
+        "reason": {"enum": ["not_release_tier", "outside_smoke_scope", "prior_backend_failed"]},
+        "first_unsupported": {"type": "string"},
+        "hint": {"type": "string"},
+        "error": {"type": "string"},
+        "environment": {"type": "object"}
+      },
+      "if": {"properties": {"result": {"const": "not_attempted"}}, "required": ["result"]},
+      "then": {"required": ["reason"]}
+    }
+  }
+}
