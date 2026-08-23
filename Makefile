@@ -51,7 +51,7 @@ DYNAMIC_TIMEOUT  ?= 60
 .PHONY: report report.ci report.exclusions report.dry-run check-tree-clean \
         models models.select models.popularity models.curve models.dry-run models.verify models.differences \
         models.fetch models.compat-static models.role-candidates download images release release.manifest \
-        release.assets release.dry-run check-history check-models
+        release.assets release.dry-run check-history check-models test
 
 # ── timm export report ───────────────────────────────────────────────────────
 
@@ -242,6 +242,18 @@ FORCE:
 		--workers 1 --only $*
 
 # ── CI helpers ────────────────────────────────────────────────────────────────
+
+# The repo's own pytest suite (scripts/tests + the pt2-export-core package's tests):
+# fast/pure-logic unit tests alongside a handful of real, small-model integration tests
+# (real subprocess workers, real tiny hub downloads) that exercise export_pt2.py's actual
+# pack/manifest/verify pipeline end to end. Was never wired into CI -- only the expensive,
+# tag-push-only `make release.manifest` run against the real release-tier set ever exercised
+# that pipeline for real, so a defect reachable from it (a bad models-selected.yaml entry, a
+# selection-eligibility bug) surfaced only when cutting a release, not on the commit that
+# introduced it. Runs on every commit/PR now (see build.yml) so this class of regression
+# fails fast instead.
+test:
+	uv run pytest scripts/tests modules/pt2-export-core/tests -q
 
 # A release-tier model removed since the previous release tag must be recorded in
 # models-history.yaml, or this fails naming it. First-parent only, and first-release-safe

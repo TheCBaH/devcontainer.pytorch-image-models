@@ -84,7 +84,10 @@ def test_roundtrip_memoryview_input():
 # ---------------------------------------------------------------------------- duplicates
 
 
+@pytest.mark.filterwarnings("ignore:Duplicate name:UserWarning")
 def test_duplicate_member_name_rejected_before_any_read(tmp_path):
+    # zipfile.writestr itself warns on the second write of a name this test writes on
+    # purpose, to build the fixture the assertion below actually exercises.
     path = tmp_path / 'dup.zip'
     with zipfile.ZipFile(path, 'w') as z:
         z.writestr('images/cat.jpg', b'one')

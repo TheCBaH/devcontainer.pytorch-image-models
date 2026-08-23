@@ -1,6 +1,7 @@
 import hashlib
 import json
 import os
+import warnings
 import zipfile
 
 import pytest
@@ -109,7 +110,10 @@ def test_read_images_archive_normalizes_and_hashes(tmp_path):
     assert samples == {'cat.jpg': 'images/cat.jpg', 'dog.png': 'images/dog.png'}
 
 
+@pytest.mark.filterwarnings("ignore:Duplicate name:UserWarning")
 def test_read_images_archive_rejects_duplicate_member(tmp_path):
+    # zipfile.writestr itself warns on the second write of a name this test writes on
+    # purpose, to build the fixture the assertion below actually exercises.
     path = tmp_path / 'images.zip'
     with zipfile.ZipFile(path, 'w') as z:
         z.writestr('images/cat.jpg', b'one')
@@ -160,7 +164,14 @@ def tiny_pt2(tmp_path_factory):
     """A real, fast .pt2 for a tiny timm test architecture, pretrained=False (no network)."""
     out_dir = tmp_path_factory.mktemp('tiny_pt2')
     pt2_path = str(out_dir / 'test_vit4.pt2')
-    export_pt2.worker_convert('test_vit4', pt2_path, False, 160, MODELS_SELECTED)
+    with warnings.catch_warnings():
+        # torch.export.save's pytree treespec serialization hits a deprecated isinstance
+        # check under Python 3.14 -- an upstream torch/Python-version mismatch in
+        # production code this fixture calls for real, not something this repo triggers or
+        # can fix. Scoped to this one call so any other FutureWarning still fails the suite.
+        warnings.filterwarnings('ignore', message=r'.*isinstance\(treespec, LeafSpec\).*',
+                                category=FutureWarning)
+        export_pt2.worker_convert('test_vit4', pt2_path, False, 160, MODELS_SELECTED)
     return pt2_path
 
 
@@ -229,7 +240,10 @@ def test_worker_pack_rejects_images_mismatch(tmp_path, tiny_pt2, tiny_images, ca
     assert not os.path.exists(output)
 
 
+@pytest.mark.filterwarnings("ignore:Duplicate name:UserWarning")
 def test_worker_pack_rejects_bad_model_archive_before_torch_export_load(tmp_path, tiny_images, monkeypatch, capsys):
+    # zipfile.writestr itself warns on the second write of a name this test writes on
+    # purpose, to build the fixture the assertion below actually exercises.
     images_dir, images_archive, images_sha256 = tiny_images
     bad_model = tmp_path / 'bad.pt2'
     with zipfile.ZipFile(bad_model, 'w') as z:
@@ -252,6 +266,10 @@ def test_worker_pack_rejects_bad_model_archive_before_torch_export_load(tmp_path
 # ---------------------------------------------------------------------------- worker_aoti_attempt
 
 
+@pytest.mark.filterwarnings(
+    r"ignore:`torch\.jit\.script_method` is not supported in Python 3\.14\+:DeprecationWarning")
+@pytest.mark.filterwarnings(
+    r"ignore:.*isinstance\(treespec, LeafSpec\).*:FutureWarning")
 def test_worker_aoti_attempt_matches_interpreter_output(tmp_path, tiny_pt2, tiny_images, capsys):
     images_dir, images_archive, images_sha256 = tiny_images
     release_zip = str(tmp_path / 'test_vit4.zip')
@@ -266,6 +284,10 @@ def test_worker_aoti_attempt_matches_interpreter_output(tmp_path, tiny_pt2, tiny
     assert 'error' not in result or result.get('error') is None
 
 
+@pytest.mark.filterwarnings(
+    r"ignore:`torch\.jit\.script_method` is not supported in Python 3\.14\+:DeprecationWarning")
+@pytest.mark.filterwarnings(
+    r"ignore:.*isinstance\(treespec, LeafSpec\).*:FutureWarning")
 def test_worker_aoti_attempt_records_failure_without_raising(tmp_path, tiny_pt2, tiny_images,
                                                               monkeypatch, capsys):
     images_dir, images_archive, images_sha256 = tiny_images

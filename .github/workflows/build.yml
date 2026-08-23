@@ -24,6 +24,9 @@ jobs:
           python-version: '3.13'
           enable-cache: true
 
+      - name: test
+        run: make test
+
       - name: report
         run: make report.ci
 
@@ -64,6 +67,9 @@ jobs:
 
       - name: setup
         run: echo 'EXEC=${{ steps.devcontainer.outputs.exec }}' >> $GITHUB_ENV
+
+      - name: test
+        run: ${{ env.EXEC }} make test
 
       - name: report
         run: ${{ env.EXEC }} make report.ci

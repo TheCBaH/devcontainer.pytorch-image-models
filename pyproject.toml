@@ -21,6 +21,9 @@ dev = [
         'expecttest',
 ]
 
+[tool.pytest.ini_options]
+filterwarnings = ["error"]
+
 [tool.uv]
 package = false
 
