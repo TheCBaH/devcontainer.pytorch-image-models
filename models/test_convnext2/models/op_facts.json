@@ -1,0 +1,302 @@
+{
+  "dialect": "functional_aten",
+  "model_json_sha256": "16d73e90717e2968225a02dffc651a1456c8ea569218b2def82b3c5ab21c6776",
+  "ops": [
+    [
+      "aten.adaptive_avg_pool2d.default",
+      {
+        "out_dtype": "f32",
+        "out_rank": 4,
+        "output_size": "[*2]"
+      },
+      1
+    ],
+    [
+      "aten.add.Tensor",
+      {
+        "alpha": 1,
+        "out_dtype": "f32",
+        "out_rank": 4
+      },
+      4
+    ],
+    [
+      "aten.clone.default",
+      {
+        "memory_format": null,
+        "out_dtype": "f32",
+        "out_rank": 2
+      },
+      1
+    ],
+    [
+      "aten.clone.default",
+      {
+        "memory_format": null,
+        "out_dtype": "f32",
+        "out_rank": 4
+      },
+      8
+    ],
+    [
+      "aten.conv2d.default",
+      {
+        "depthwise": false,
+        "dilation": [
+          1,
+          1
+        ],
+        "groups": 1,
+        "kernel": [
+          2,
+          2
+        ],
+        "out_dtype": "f32",
+        "out_rank": 4,
+        "padding": [
+          0,
+          0
+        ],
+        "stride": [
+          2,
+          2
+        ]
+      },
+      3
+    ],
+    [
+      "aten.conv2d.default",
+      {
+        "depthwise": false,
+        "dilation": [
+          1,
+          1
+        ],
+        "groups": 1,
+        "kernel": [
+          4,
+          4
+        ],
+        "out_dtype": "f32",
+        "out_rank": 4,
+        "padding": [
+          0,
+          0
+        ],
+        "stride": [
+          4,
+          4
+        ]
+      },
+      1
+    ],
+    [
+      "aten.conv2d.default",
+      {
+        "depthwise": true,
+        "dilation": [
+          1,
+          1
+        ],
+        "groups": 128,
+        "kernel": [
+          7,
+          7
+        ],
+        "out_dtype": "f32",
+        "out_rank": 4,
+        "padding": [
+          3,
+          3
+        ],
+        "stride": [
+          1,
+          1
+        ]
+      },
+      1
+    ],
+    [
+      "aten.conv2d.default",
+      {
+        "depthwise": true,
+        "dilation": [
+          1,
+          1
+        ],
+        "groups": 32,
+        "kernel": [
+          7,
+          7
+        ],
+        "out_dtype": "f32",
+        "out_rank": 4,
+        "padding": [
+          3,
+          3
+        ],
+        "stride": [
+          1,
+          1
+        ]
+      },
+      1
+    ],
+    [
+      "aten.conv2d.default",
+      {
+        "depthwise": true,
+        "dilation": [
+          1,
+          1
+        ],
+        "groups": 64,
+        "kernel": [
+          7,
+          7
+        ],
+        "out_dtype": "f32",
+        "out_rank": 4,
+        "padding": [
+          3,
+          3
+        ],
+        "stride": [
+          1,
+          1
+        ]
+      },
+      1
+    ],
+    [
+      "aten.conv2d.default",
+      {
+        "depthwise": true,
+        "dilation": [
+          1,
+          1
+        ],
+        "groups": 96,
+        "kernel": [
+          7,
+          7
+        ],
+        "out_dtype": "f32",
+        "out_rank": 4,
+        "padding": [
+          3,
+          3
+        ],
+        "stride": [
+          1,
+          1
+        ]
+      },
+      1
+    ],
+    [
+      "aten.gelu.default",
+      {
+        "approximate": "tanh",
+        "out_dtype": "f32",
+        "out_rank": 4
+      },
+      4
+    ],
+    [
+      "aten.layer_norm.default",
+      {
+        "cudnn_enable": false,
+        "eps": 1e-05,
+        "normalized_shape": "[*1]",
+        "out_dtype": "f32",
+        "out_rank": 4
+      },
+      9
+    ],
+    [
+      "aten.linear.default",
+      {
+        "out_dtype": "f32",
+        "out_rank": 2
+      },
+      1
+    ],
+    [
+      "aten.linear.default",
+      {
+        "out_dtype": "f32",
+        "out_rank": 4
+      },
+      8
+    ],
+    [
+      "aten.mul.Tensor",
+      {
+        "out_dtype": "f32",
+        "out_rank": 4
+      },
+      4
+    ],
+    [
+      "aten.permute.default",
+      {
+        "dims": [
+          0,
+          2,
+          3,
+          1
+        ],
+        "out_dtype": "f32",
+        "out_rank": 4
+      },
+      9
+    ],
+    [
+      "aten.permute.default",
+      {
+        "dims": [
+          0,
+          3,
+          1,
+          2
+        ],
+        "out_dtype": "f32",
+        "out_rank": 4
+      },
+      9
+    ],
+    [
+      "aten.view.default",
+      {
+        "out_dtype": "f32",
+        "out_rank": 2,
+        "size": "[*2]"
+      },
+      1
+    ],
+    [
+      "aten.view.default",
+      {
+        "out_dtype": "f32",
+        "out_rank": 4,
+        "size": "[*4]"
+      },
+      4
+    ]
+  ],
+  "schema_version": 1,
+  "schemas": {
+    "aten.adaptive_avg_pool2d.default": "adaptive_avg_pool2d(Tensor self, SymInt[2] output_size) -> Tensor",
+    "aten.add.Tensor": "add.Tensor(Tensor self, Tensor other, *, Scalar alpha=1) -> Tensor",
+    "aten.clone.default": "clone(Tensor self, *, MemoryFormat? memory_format=None) -> Tensor",
+    "aten.conv2d.default": "conv2d(Tensor input, Tensor weight, Tensor? bias=None, SymInt[2] stride=[1, 1], SymInt[2] padding=[0, 0], SymInt[2] dilation=[1, 1], SymInt groups=1) -> Tensor",
+    "aten.gelu.default": "gelu(Tensor self, *, str approximate=\"none\") -> Tensor",
+    "aten.layer_norm.default": "layer_norm(Tensor input, SymInt[] normalized_shape, Tensor? weight=None, Tensor? bias=None, float eps=1.0000000000000001e-05, bool cudnn_enable=True) -> Tensor",
+    "aten.linear.default": "linear(Tensor input, Tensor weight, Tensor? bias=None) -> Tensor",
+    "aten.mul.Tensor": "mul.Tensor(Tensor self, Tensor other) -> Tensor",
+    "aten.permute.default": "permute(Tensor(a) self, int[] dims) -> Tensor(a)",
+    "aten.view.default": "view(Tensor(a) self, SymInt[] size) -> Tensor(a)"
+  },
+  "torch_version": "2.13.0+cpu"
+}

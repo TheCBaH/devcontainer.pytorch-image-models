@@ -106,6 +106,15 @@ IMAGES_ARCHIVE_PROFILE = ZipProfile(
 )
 
 
+# max_members: a real .pt2 stores every parameter/buffer as its own zip member (plus a handful
+# of fixed metadata entries), so this scales with model parameter *count*, not weight_cap_mb --
+# rebuilding the actual selected set (100 models, mostly small conv nets with many individually-
+# small tensors) measured up to 1965 members (ghostnetv3_050/130's many repeated blocks), so 256
+# was rejecting legitimate archives outright. 4096 (matching IMAGES_ARCHIVE_PROFILE, itself many
+# small sample files) gives over 2x headroom above that observed real maximum.
+_PT2_MAX_MEMBERS = 4096
+
+
 def _pt2_profile(weight_cap_mb):
     """A PT2-scale profile from one weight-cap number in models-selected.yaml's `selection`
     block. `max_archive_bytes`/`max_total_uncompressed` sit comfortably above the declared
@@ -118,7 +127,7 @@ def _pt2_profile(weight_cap_mb):
     return ZipProfile(
         max_archive_bytes=cap_bytes * 2,
         max_central_directory_bytes=2 * 2**20,
-        max_members=256,
+        max_members=_PT2_MAX_MEMBERS,
         max_total_uncompressed=cap_bytes * 2,
         max_compression_ratio=_MAX_COMPRESSION_RATIO,
         max_member_bytes=cap_bytes * 2,
@@ -131,10 +140,21 @@ def _selection_weight_caps(models_selected_path):
         document = yaml.safe_load(f) or {}
     selection = document.get('selection') or {}
     try:
-        return selection['max_weight_mb'], selection['release_max_weight_mb']
+        max_weight_mb, release_max_weight_mb = (
+            selection['max_weight_mb'], selection['release_max_weight_mb'])
     except KeyError as e:
         raise SafeZipError(f'{models_selected_path}: selection.{e.args[0]} missing -- '
                             'cannot derive a PT2 zip profile without it') from None
+
+    # `models:` entries reach this weight_mb (the real pretrained checkpoint size) via an
+    # explicit `include`, which selection.select() lets bypass max_weight_mb entirely (an
+    # explicit choice outranks the heuristic filter) -- so the filter alone cannot be trusted
+    # to bound every selected model's actual size. Widening the cap here to the true observed
+    # max keeps that filter meaningful as a *selection* knob without also reshuffling which
+    # models get auto-selected, which changing max_weight_mb itself would do.
+    models = document.get('models') or {}
+    observed_max_mb = max((m.get('weight_mb', 0.0) for m in models.values()), default=0.0)
+    return max(max_weight_mb, observed_max_mb), release_max_weight_mb
 
 
 def release_pt2_profile(models_selected_path):
@@ -146,9 +166,10 @@ def release_pt2_profile(models_selected_path):
 
 
 def selected_pt2_profile(models_selected_path):
-    """Weight-scale caps for any selected model's .pt2, release-tier or not: derived from the
-    broader `selection.max_weight_mb`, so a legitimate graph-only model sized between the two
-    caps is never wrongly rejected by the tighter release-specific number.
+    """Weight-scale caps for any selected model's .pt2, release-tier or not: derived from
+    `selection.max_weight_mb` widened (if needed) to the largest weight_mb actually selected,
+    so a legitimate graph-only model sized between the two caps -- or a heavier model let in via
+    an explicit `include` -- is never wrongly rejected by a tighter, filter-only number.
     """
     selected_cap_mb, _ = _selection_weight_caps(models_selected_path)
     return _pt2_profile(selected_cap_mb)
