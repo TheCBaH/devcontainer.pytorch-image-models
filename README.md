@@ -219,6 +219,43 @@ appearing there unexpectedly therefore requires review.
 make models.differences   # re-record after a torch/timm bump, then review the diff
 ```
 
+## Precision (fp16/bf16) graphs
+
+[`models-fp16/`](models-fp16) and [`models-bf16/`](models-bf16) hold the same kind of
+committed, weight-free graph as `models/` above, but for a representative subset of the zoo
+under two low-precision policies each:
+
+```
+models-fp16/cast/<variant>/models/model.json      # model.to(dtype=torch.float16) + matching input
+models-fp16/autocast/<variant>/models/model.json   # torch.autocast('cpu', dtype=torch.float16) wrapper, fp32 model/input
+```
+
+(`models-bf16/` mirrors this with `torch.bfloat16`.) `cast` and `autocast` are genuinely
+different graphs, not two views of the same one — see [`precision.md`](precision.md) for what
+each policy actually does, and note that **autocast here is `torch.autocast('cpu', ...)`
+specifically**: it is backend-specific (different default dtype and eligible-op policy per
+`device_type`), and nothing here has been checked against `torch.autocast('cuda', ...)`.
+
+[`models-fp16.yaml`](models-fp16.yaml)/[`models-bf16.yaml`](models-bf16.yaml) pick which ~100
+models, the same way `models-selected.yaml` does (`pt2_export_core.selection`'s two-phase
+coverage algorithm — see "Which models, and why" above), just over a different pair of
+dialects: `ops-aten-{fp16,bf16}.yaml` (the cast dialect — meta-only, decides candidacy and
+per-model cost) folded together with `ops-func-autocast-{fp16,bf16}.yaml` (autocast —
+coverage only, since it only covers `report.precision.autocast`'s GFLOPs/weight-capped subset).
+
+```bash
+make models.select.fp16   # recompute models-fp16.yaml (seconds, offline)
+make models.select.bf16   # recompute models-bf16.yaml
+make models.fp16          # export the fp16 selection under both policies, refresh models-fp16/
+make models.bf16          # same, bf16
+```
+
+`mvitv2_tiny`'s autocast graph fails identically under both dtypes (`expected scalar type ...
+but found torch.float32` inside a `linear` call) -- the same mixed-dtype autocast-decomposition
+gap [`precision.md`](precision.md) documents at zoo scale; `cast` is unaffected.
+`models-fp16/autocast/`/`models-bf16/autocast/` therefore hold 99 of the 100 selected models,
+not 100.
+
 ## Releases
 
 Tagging `v*` publishes, per release-tier model, an archive holding

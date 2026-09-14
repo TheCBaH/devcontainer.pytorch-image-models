@@ -192,7 +192,8 @@ def test_cmd_build_forces_pretrained_for_sensitive_models(tmp_path, monkeypatch)
     monkeypatch.setattr(export_pt2, 'run_worker', fake_run_worker)
 
     args = _Args(manifest=str(manifest), models_dir=str(models_dir), build_dir=str(tmp_path / 'build'),
-                keep_pt2=False, workers=1, timeout=60, hf_home=None, max_res=224, limit=None)
+                keep_pt2=False, workers=1, timeout=60, hf_home=None, max_res=224, limit=None,
+                policy='fp32', dtype=None)
     export_pt2.cmd_build(args)
 
     assert '--pretrained' in calls['fbnetc_100']

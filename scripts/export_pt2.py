@@ -222,10 +222,18 @@ def _tensor_map_contract(tensors, *, member, call_signature, extra_fields=None):
 PRETRAINED_SENSITIVE_MODELS = {'fbnetc_100'}
 
 
-def worker_convert(name, output, pretrained, max_res, manifest):
-    """Export one model and write its .pt2. Runs in its own process (see `run_worker`)."""
+def worker_convert(name, output, pretrained, max_res, manifest, policy='fp32', dtype=None):
+    """Export one model and write its .pt2. Runs in its own process (see `run_worker`).
+
+    `policy` mirrors the two conversions `precision.md` documents: `cast` (`model.to(dtype=...)`
+    plus a matching input) and `autocast` (a `torch.autocast('cpu', dtype=...)` forward wrapper
+    around an otherwise-fp32 model/input -- CPU specifically; autocast's eligible-op set and
+    default dtype are backend-specific, see that file). `fp32` (the default) is the original,
+    unparametrized behavior, unchanged.
+    """
     import torch
     import timm
+    from export_precision_ops import _autocast_model_cls
 
     result = {'name': name, 'status': None, 'error': None}
     try:
@@ -234,6 +242,14 @@ def worker_convert(name, output, pretrained, max_res, manifest):
         model = timm.create_model(name, pretrained=pretrained).eval()
         input_size = resolved_input_size(model.default_cfg, max_res)
         example = torch.randn(1, *input_size)
+
+        if policy == 'cast':
+            torch_dtype = getattr(torch, dtype)
+            model = model.to(dtype=torch_dtype)
+            example = example.to(dtype=torch_dtype)
+        elif policy == 'autocast':
+            torch_dtype = getattr(torch, dtype)
+            model = _autocast_model_cls(torch)(model, torch_dtype)
 
         # Functional ATen: the empty table disables optional decompositions while the retrace
         # still functionalizes mutation. Composite operators such as conv2d, linear, and
@@ -538,7 +554,8 @@ def worker_aoti_attempt(name, pt2_path, release_zip_path, manifest):
 
 
 def cmd_convert(args):
-    worker_convert(args.name, args.output, args.pretrained, args.max_res, args.manifest)
+    worker_convert(args.name, args.output, args.pretrained, args.max_res, args.manifest,
+                   args.policy, args.dtype)
 
 
 def cmd_extract(args):
@@ -580,8 +597,11 @@ def cmd_build(args):
         # weights only for PRETRAINED_SENSITIVE_MODELS -- see its docstring -- so the
         # committed graph matches what cmd_release actually ships for those; everything else
         # stays on the cheap, download-free pretrained=False path.
-        convert_args = ['--manifest', args.manifest, '--max-res', args.max_res, 'convert', name,
-                         '--output', pt2]
+        convert_args = ['--manifest', args.manifest, '--max-res', args.max_res,
+                         '--policy', args.policy]
+        if args.dtype:
+            convert_args += ['--dtype', args.dtype]
+        convert_args += ['convert', name, '--output', pt2]
         if name in PRETRAINED_SENSITIVE_MODELS:
             convert_args.append('--pretrained')
         result = run_worker(
@@ -1039,6 +1059,13 @@ def main():
     parser.add_argument('--build-dir', default=os.path.join(repo_root, '.build'))
     parser.add_argument('--max-res', type=int, default=MAX_RES,
                         help='cap on the traced input resolution, matching the report')
+    parser.add_argument('--policy', default='fp32', choices=['fp32', 'cast', 'autocast'],
+                        help="precision policy for `build`/`convert`: fp32 (default, "
+                             "unchanged), cast (model.to(dtype=...) plus a matching input), or "
+                             "autocast (a torch.autocast('cpu', dtype=...) forward wrapper "
+                             "around an otherwise-fp32 model/input) -- see precision.md")
+    parser.add_argument('--dtype', default=None, choices=['float16', 'bfloat16'],
+                        help='required when --policy is cast or autocast')
     # `fetch` downloads and the workers read, in separate processes, so they have to name the
     # same directory or the fetch is invisible to the thing it exists to serve. Defaulting to
     # a path inside the repo (rather than the user's real cache) also means CI's actions/cache
@@ -1155,6 +1182,8 @@ def main():
     p.set_defaults(func=cmd_release_assets)
 
     args = parser.parse_args()
+    if args.policy != 'fp32' and not args.dtype:
+        parser.error('--dtype is required when --policy is cast or autocast')
     # Set before anything imports huggingface_hub, which reads it once at import time.
     os.environ['HF_HOME'] = os.path.abspath(args.hf_home)
     sys.exit(args.func(args) or 0)

@@ -58,7 +58,7 @@ def release_pipeline(tmp_path_factory):
 
     build_args = _Args(manifest=str(manifest_path), models_dir=str(models_dir),
                        build_dir=str(build_dir), max_res=160, workers=1, timeout=300,
-                       limit=None, keep_pt2=False, hf_home=hf_home)
+                       limit=None, keep_pt2=False, hf_home=hf_home, policy='fp32', dtype=None)
     assert export_pt2.cmd_build(build_args) == 0
 
     # cmd_fetch downloads for real, in-process (timm.create_model(pretrained=True) directly,

@@ -1,7 +1,9 @@
 ROOT          := $(CURDIR)
 SCRIPTS_DIR   := $(ROOT)/scripts
 REPORT_SCRIPT     := $(SCRIPTS_DIR)/export_report.py
+PRECISION_SCRIPT  := $(SCRIPTS_DIR)/export_precision_ops.py
 SELECT_SCRIPT     := $(SCRIPTS_DIR)/select_models.py
+SELECT_PRECISION_SCRIPT := $(SCRIPTS_DIR)/select_models_precision.py
 PT2_SCRIPT        := $(SCRIPTS_DIR)/export_pt2.py
 POPULARITY_SCRIPT := $(SCRIPTS_DIR)/fetch_popularity.py
 CURVE_SCRIPT      := $(SCRIPTS_DIR)/coverage_curve.py
@@ -47,9 +49,15 @@ DEFAULT_MODEL  ?= convit_tiny
 # the whole worker killed, losing that model's params, FLOPs and operators too.
 TIMEOUT          ?= 120
 DYNAMIC_TIMEOUT  ?= 60
+# Real CPU compute, not meta -- report.precision.autocast's own per-model budget.
+AUTOCAST_TIMEOUT ?= 180
 
-.PHONY: report report.ci report.exclusions report.dry-run check-tree-clean \
+.PHONY: report report.ci report.exclusions report.dry-run \
+        report.precision report.precision.ci report.precision.dry-run \
+        report.precision.autocast report.precision.autocast.ci report.precision.autocast.dry-run \
+        check-tree-clean \
         models models.select models.popularity models.curve models.dry-run models.verify models.differences \
+        models.select.fp16 models.select.bf16 models.fp16 models.bf16 \
         models.fetch models.fetch-sensitive models.compat-static models.role-candidates download images release \
         release.manifest release.assets release.dry-run check-history check-models test
 
@@ -90,6 +98,47 @@ report.dry-run:
 		--ops-aten-output $(ROOT)/.report-dry-run.aten.yaml --ops-aten-md $(ROOT)/.report-dry-run.aten.md \
 		--ops-func-output $(ROOT)/.report-dry-run.func.yaml --ops-func-md $(ROOT)/.report-dry-run.func.md \
 		--ops-core-prefix $(ROOT)/.report-dry-run.core
+
+# Regenerate ops-aten-fp16.*/ops-aten-bf16.*: the same undecomposed ATen dialect as ops-aten.*,
+# after model+input are cast to that dtype instead of fp32. Meta-device only, so it costs about
+# the same as one dialect of `report` (~1300 models, a few minutes), not two full report runs.
+# Autocast is a separate policy/target below: its dispatch never engages on the meta backend,
+# so it needs real CPU tensors and a capped model set instead.
+report.precision:
+	uv run python $(PRECISION_SCRIPT) --dtype float16 --timeout $(TIMEOUT)
+	uv run python $(PRECISION_SCRIPT) --dtype bfloat16 --timeout $(TIMEOUT)
+
+report.precision.ci:
+	$(MAKE) report.precision TIMEOUT=480
+
+# Quick smoke-test, throwaway paths, same rationale as report.dry-run.
+report.precision.dry-run:
+	uv run python $(PRECISION_SCRIPT) --dtype float16 --limit 20 --workers 4 \
+		--yaml-output $(ROOT)/.report-dry-run.aten-fp16.yaml --md-output $(ROOT)/.report-dry-run.aten-fp16.md
+	uv run python $(PRECISION_SCRIPT) --dtype bfloat16 --limit 20 --workers 4 \
+		--yaml-output $(ROOT)/.report-dry-run.aten-bf16.yaml --md-output $(ROOT)/.report-dry-run.aten-bf16.md
+
+# Regenerate ops-func-autocast-fp16.*/ops-func-autocast-bf16.*: the *functional* ATen dialect
+# (same as ops-func.md), for a torch.autocast('cpu', dtype=...) forward wrapper instead of a
+# direct cast -- autocast is captured as one opaque wrap_with_autocast node at the raw ATen
+# level, so functionalizing (an empty decomp table, no further lowering) is what unwraps it
+# into real per-operator dtypes. Real CPU tensors (autocast needs a real dispatch to do
+# anything), so restricted to models at/under 50 GFLOPs and 150MB fp32 weight from models.md --
+# see the script's own docstring and precision.md for why both caps matter, not just GFLOPs.
+report.precision.autocast:
+	uv run python $(PRECISION_SCRIPT) --dtype float16 --policy autocast --timeout $(AUTOCAST_TIMEOUT)
+	uv run python $(PRECISION_SCRIPT) --dtype bfloat16 --policy autocast --timeout $(AUTOCAST_TIMEOUT)
+
+report.precision.autocast.ci:
+	$(MAKE) report.precision.autocast AUTOCAST_TIMEOUT=600
+
+report.precision.autocast.dry-run:
+	uv run python $(PRECISION_SCRIPT) --dtype float16 --policy autocast --limit 20 --workers 4 \
+		--yaml-output $(ROOT)/.report-dry-run.func-autocast-fp16.yaml \
+		--md-output $(ROOT)/.report-dry-run.func-autocast-fp16.md
+	uv run python $(PRECISION_SCRIPT) --dtype bfloat16 --policy autocast --limit 20 --workers 4 \
+		--yaml-output $(ROOT)/.report-dry-run.func-autocast-bf16.yaml \
+		--md-output $(ROOT)/.report-dry-run.func-autocast-bf16.md
 
 # ── PT2 graphs ───────────────────────────────────────────────────────────────
 
@@ -137,6 +186,42 @@ models.curve:
 models:
 	uv run python $(PT2_SCRIPT) --manifest $(MANIFEST) --models-dir $(MODELS_DIR) \
 		--build-dir $(BUILD_DIR) build
+
+# ── Precision (fp16/bf16 cast + autocast) graphs ──────────────────────────────
+
+MANIFEST_FP16   := $(ROOT)/models-fp16.yaml
+MANIFEST_BF16   := $(ROOT)/models-bf16.yaml
+MODELS_FP16_DIR := $(ROOT)/models-fp16
+MODELS_BF16_DIR := $(ROOT)/models-bf16
+
+# Recompute which models get fp16/bf16 cast+autocast graphs, from the committed
+# ops-aten-<label>.yaml (the cast dialect -- decides candidacy and per-model cost) folded
+# together with ops-func-autocast-<label>.yaml (autocast -- coverage only, since it only
+# covers report.precision.autocast's GFLOPs/weight-capped subset). Same two-phase algorithm
+# as models.select, offline, seconds -- see scripts/select_models_precision.py.
+models.select.fp16:
+	uv run python $(SELECT_PRECISION_SCRIPT) --dtype float16 --models-md $(MODELS_MD) \
+		--popularity $(POPULARITY) --target $(TARGET) --output $(MANIFEST_FP16)
+
+models.select.bf16:
+	uv run python $(SELECT_PRECISION_SCRIPT) --dtype bfloat16 --models-md $(MODELS_MD) \
+		--popularity $(POPULARITY) --target $(TARGET) --output $(MANIFEST_BF16)
+
+# Export every models-fp16.yaml/models-bf16.yaml model under both policies and commit the JSON
+# parts of each .pt2 -- mirrors `models`, just rooted under models-fp16/<policy>/,
+# models-bf16/<policy>/ instead of models/, and passing export_pt2.py's --policy/--dtype (see
+# worker_convert and precision.md for what each policy does).
+models.fp16:
+	uv run python $(PT2_SCRIPT) --manifest $(MANIFEST_FP16) --models-dir $(MODELS_FP16_DIR)/cast \
+		--policy cast --dtype float16 --build-dir $(BUILD_DIR) build
+	uv run python $(PT2_SCRIPT) --manifest $(MANIFEST_FP16) --models-dir $(MODELS_FP16_DIR)/autocast \
+		--policy autocast --dtype float16 --build-dir $(BUILD_DIR) build
+
+models.bf16:
+	uv run python $(PT2_SCRIPT) --manifest $(MANIFEST_BF16) --models-dir $(MODELS_BF16_DIR)/cast \
+		--policy cast --dtype bfloat16 --build-dir $(BUILD_DIR) build
+	uv run python $(PT2_SCRIPT) --manifest $(MANIFEST_BF16) --models-dir $(MODELS_BF16_DIR)/autocast \
+		--policy autocast --dtype bfloat16 --build-dir $(BUILD_DIR) build
 
 # Smoke-test the graph pipeline on a handful of models, into a throwaway directory, so it
 # never leaves models/ half-regenerated.
