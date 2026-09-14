@@ -64,6 +64,7 @@ jobs:
   precision:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         dtype: [fp16, bf16]
     steps:
