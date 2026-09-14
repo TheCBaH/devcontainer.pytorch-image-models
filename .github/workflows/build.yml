@@ -58,6 +58,50 @@ jobs:
       - name: check tree is unmodified
         run: make check-tree-clean
 
+  # fp16/bf16 cast+autocast reports and graphs: a separate job (matrixed by dtype, so both run
+  # in parallel with each other and with the jobs above) instead of folded into `uv`, since this
+  # regeneration is otherwise the same cost class as `report.ci`+`models` a second time.
+  precision:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        dtype: [fp16, bf16]
+    steps:
+      - name: checkout
+        uses: actions/checkout@v7.0.1
+        with:
+          submodules: true
+
+      - name: setup uv
+        uses: astral-sh/setup-uv@v10.0.1
+        with:
+          python-version: '3.13'
+          enable-cache: true
+
+      - name: precision report
+        run: make report.precision.ci.${{ matrix.dtype }}
+
+      - name: autocast precision report
+        run: make report.precision.autocast.ci.${{ matrix.dtype }}
+
+      - name: select
+        run: make models.select.${{ matrix.dtype }}
+
+      # Restore-only, same rationale as the uv/devcontainer jobs' own hf-cache step: the
+      # fp16/bf16 manifests also carry fbnetc_100 (PRETRAINED_SENSITIVE_MODELS), which
+      # models.<dtype> below traces with real weights.
+      - name: huggingface cache
+        uses: ./.github/workflows/actions/hf-cache
+
+      - name: fetch pretrained-sensitive checkpoints
+        run: make models.fetch-sensitive
+
+      - name: models
+        run: make models.${{ matrix.dtype }}
+
+      - name: check tree is unmodified
+        run: make check-tree-clean
+
   devcontainer:
     runs-on: ubuntu-latest
     permissions:

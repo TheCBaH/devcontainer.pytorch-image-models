@@ -54,7 +54,10 @@ AUTOCAST_TIMEOUT ?= 180
 
 .PHONY: report report.ci report.exclusions report.dry-run \
         report.precision report.precision.ci report.precision.dry-run \
+        report.precision.fp16 report.precision.bf16 report.precision.ci.fp16 report.precision.ci.bf16 \
         report.precision.autocast report.precision.autocast.ci report.precision.autocast.dry-run \
+        report.precision.autocast.fp16 report.precision.autocast.bf16 \
+        report.precision.autocast.ci.fp16 report.precision.autocast.ci.bf16 \
         check-tree-clean \
         models models.select models.popularity models.curve models.dry-run models.verify models.differences \
         models.select.fp16 models.select.bf16 models.fp16 models.bf16 \
@@ -103,13 +106,23 @@ report.dry-run:
 # after model+input are cast to that dtype instead of fp32. Meta-device only, so it costs about
 # the same as one dialect of `report` (~1300 models, a few minutes), not two full report runs.
 # Autocast is a separate policy/target below: its dispatch never engages on the meta backend,
-# so it needs real CPU tensors and a capped model set instead.
-report.precision:
+# so it needs real CPU tensors and a capped model set instead. Split per dtype so CI can run
+# fp16 and bf16 as parallel jobs; report.precision(.ci) below just runs both, for local use.
+report.precision.fp16:
 	uv run python $(PRECISION_SCRIPT) --dtype float16 --timeout $(TIMEOUT)
+
+report.precision.bf16:
 	uv run python $(PRECISION_SCRIPT) --dtype bfloat16 --timeout $(TIMEOUT)
 
-report.precision.ci:
-	$(MAKE) report.precision TIMEOUT=480
+report.precision: report.precision.fp16 report.precision.bf16
+
+report.precision.ci.fp16:
+	$(MAKE) report.precision.fp16 TIMEOUT=480
+
+report.precision.ci.bf16:
+	$(MAKE) report.precision.bf16 TIMEOUT=480
+
+report.precision.ci: report.precision.ci.fp16 report.precision.ci.bf16
 
 # Quick smoke-test, throwaway paths, same rationale as report.dry-run.
 report.precision.dry-run:
@@ -125,12 +138,22 @@ report.precision.dry-run:
 # into real per-operator dtypes. Real CPU tensors (autocast needs a real dispatch to do
 # anything), so restricted to models at/under 50 GFLOPs and 150MB fp32 weight from models.md --
 # see the script's own docstring and precision.md for why both caps matter, not just GFLOPs.
-report.precision.autocast:
+# Split per dtype for the same reason as report.precision.fp16/bf16 above.
+report.precision.autocast.fp16:
 	uv run python $(PRECISION_SCRIPT) --dtype float16 --policy autocast --timeout $(AUTOCAST_TIMEOUT)
+
+report.precision.autocast.bf16:
 	uv run python $(PRECISION_SCRIPT) --dtype bfloat16 --policy autocast --timeout $(AUTOCAST_TIMEOUT)
 
-report.precision.autocast.ci:
-	$(MAKE) report.precision.autocast AUTOCAST_TIMEOUT=600
+report.precision.autocast: report.precision.autocast.fp16 report.precision.autocast.bf16
+
+report.precision.autocast.ci.fp16:
+	$(MAKE) report.precision.autocast.fp16 AUTOCAST_TIMEOUT=600
+
+report.precision.autocast.ci.bf16:
+	$(MAKE) report.precision.autocast.bf16 AUTOCAST_TIMEOUT=600
+
+report.precision.autocast.ci: report.precision.autocast.ci.fp16 report.precision.autocast.ci.bf16
 
 report.precision.autocast.dry-run:
 	uv run python $(PRECISION_SCRIPT) --dtype float16 --policy autocast --limit 20 --workers 4 \
