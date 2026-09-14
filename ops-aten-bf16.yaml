@@ -13588,6 +13588,19 @@ models:
     relu.default: {3: 18}
     relu_.default: {1: 55}
     sigmoid.default: {3: 18}
+  regnety_2560:
+    adaptive_avg_pool2d.default: {1: 1}
+    add.Tensor: {3: 27}
+    batch_norm.default: {5: 86}
+    conv2d.default: {1: 108, 2: 4, 18: 1, 39: 16, 40: 1, 77: 1, 78: 1, 101: 1, 122: 6, 123: 1}
+    dropout.default: {1: 1}
+    flatten.using_ints: {1: 1}
+    linear.default: {1: 1}
+    mean.dim: {11: 27}
+    mul.Tensor: {4: 27}
+    relu.default: {3: 27}
+    relu_.default: {1: 82}
+    sigmoid.default: {3: 27}
   regnety_320:
     adaptive_avg_pool2d.default: {1: 1}
     add.Tensor: {3: 20}
@@ -23911,7 +23924,6 @@ skipped:
     Caused by: (_export/non_strict_utils.py:1205 in __torch_function__)
 
     For more informat'
-  regnety_2560: exit -9
   vit_base_patch16_rope_mixed_224: expected scalar type torch.bfloat16 but found torch.float32
   vit_base_patch16_rope_mixed_ape_224: expected scalar type torch.bfloat16 but found torch.float32
   vit_large_patch16_rope_mixed_224: expected scalar type torch.bfloat16 but found torch.float32
