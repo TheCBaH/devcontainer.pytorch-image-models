@@ -27,3 +27,44 @@ models:
       contract.schema.json's minimum-1 constraint.
     migrate_to: null
 
+  maxxvitv2_nano_rw_256:
+    removed_in: v0.0.4
+    reason: >-
+      Coverage-optimization reshuffle after bumping modules/pytorch-image-models to e617d17:
+      the new families it adds (e.g. beit3_*, aimv2_*) claim (operator, configuration) units
+      more cheaply, pushing this out of the top 100. The maxxvit family has no other release
+      candidate this round; the model itself is untouched upstream and can return if coverage
+      shifts again.
+    migrate_to: null
+
+  mobilenet_edgetpu_v2_m:
+    removed_in: v0.0.4
+    reason: >-
+      Same coverage-optimization reshuffle as maxxvitv2_nano_rw_256. The mobilenet_edgetpu_v2
+      family has no other release candidate this round.
+    migrate_to: null
+
+  mobilenetv3_large_150d:
+    removed_in: v0.0.4
+    reason: >-
+      Same coverage-optimization reshuffle as maxxvitv2_nano_rw_256.
+    migrate_to: mobilenetv3_small_050
+
+  mobileone_s2:
+    removed_in: v0.0.4
+    reason: >-
+      Same coverage-optimization reshuffle as maxxvitv2_nano_rw_256.
+    migrate_to: mobileone_s3
+
+  repghostnet_130:
+    removed_in: v0.0.4
+    reason: >-
+      Same coverage-optimization reshuffle as maxxvitv2_nano_rw_256.
+    migrate_to: repghostnet_111
+
+  tf_mobilenetv3_small_100:
+    removed_in: v0.0.4
+    reason: >-
+      Same coverage-optimization reshuffle as maxxvitv2_nano_rw_256.
+    migrate_to: tf_mobilenetv3_small_minimal_100
+
