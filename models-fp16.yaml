@@ -24,9 +24,9 @@ selection:
   max_weight_mb: 150.0
   release_max_weight_mb: 150.0
   models: 100
-  op_configs_covered: 1258/1778
-  families_covered: 43/89
-  total_nodes: 31171
+  op_configs_covered: 1240/1803
+  families_covered: 44/92
+  total_nodes: 29771
   release_models: 78
 uncovered_op_configs:
 - 'aten._native_batch_norm_legit_no_training.default {"eps": 1e-05, "momentum": 0.1, "out_dtype": "f16",
@@ -35,13 +35,20 @@ uncovered_op_configs:
   "out_rank": 4}'
 - 'aten._unsafe_view.default {"out_dtype": "f16", "out_rank": 6, "size": "[*6]"}'
 - 'aten._unsafe_view.default {"out_dtype": "f32", "out_rank": 3, "size": "[*3]"}'
+- 'aten.add.Tensor {"alpha": 1, "out_dtype": "f16", "out_rank": 6}'
 - 'aten.add_.Tensor {"alpha": 1, "out_dtype": "f16", "out_rank": 3}'
+- 'aten.add_.Tensor {"alpha": 1, "out_dtype": "f32", "out_rank": 2}'
 - 'aten.addcmul.default {"out_dtype": "f16", "out_rank": 3, "value": 1}'
 - 'aten.addcmul.default {"out_dtype": "f32", "out_rank": 3, "value": 1}'
-- 'aten.alias.default {"out_dtype": "f32", "out_rank": 3}'
 - 'aten.alias.default {"out_dtype": "f32", "out_rank": 4}'
 - 'aten.arange.default {"dtype": "torch.float32", "end": 64, "out_dtype": "f32", "out_rank": 1}'
+- 'aten.arange.default {"dtype": "torch.int64", "end": 14, "out_dtype": "i64", "out_rank": 1}'
+- 'aten.arange.default {"dtype": "torch.int64", "end": 28, "out_dtype": "i64", "out_rank": 1}'
+- 'aten.arange.default {"dtype": "torch.int64", "end": 56, "out_dtype": "i64", "out_rank": 1}'
+- 'aten.arange.default {"dtype": "torch.int64", "end": 7, "out_dtype": "i64", "out_rank": 1}'
 - 'aten.arange.default {"dtype": null, "end": 32, "out_dtype": "i64", "out_rank": 1}'
+- 'aten.arange.start {"dtype": "torch.float32", "end": 32, "out_dtype": "f32", "out_rank": 1, "start":
+  0.5}'
 - 'aten.arange.start {"dtype": null, "end": 15, "out_dtype": "i64", "out_rank": 1, "start": 1}'
 - 'aten.arange.start {"dtype": null, "end": 25, "out_dtype": "i64", "out_rank": 1, "start": 1}'
 - 'aten.arange.start {"dtype": null, "end": 29, "out_dtype": "i64", "out_rank": 1, "start": 1}'
@@ -73,6 +80,8 @@ uncovered_op_configs:
 - 'aten.conv2d.default {"depthwise": false, "dilation": [1, 1], "groups": 1, "kernel": [12, 12], "out_dtype":
   "f16", "out_rank": 4, "padding": [0, 0], "stride": [12, 12]}'
 - 'aten.conv2d.default {"depthwise": false, "dilation": [1, 1], "groups": 1, "kernel": [14, 14], "out_dtype":
+  "f16", "out_rank": 4, "padding": [0, 0], "stride": [14, 14]}'
+- 'aten.conv2d.default {"depthwise": false, "dilation": [1, 1], "groups": 1, "kernel": [14, 14], "out_dtype":
   "f16", "out_rank": 4, "padding": [0, 0], "stride": [7, 7]}'
 - 'aten.conv2d.default {"depthwise": false, "dilation": [1, 1], "groups": 1, "kernel": [16, 16], "out_dtype":
   "f16", "out_rank": 4, "padding": [0, 0], "stride": [8, 8]}'
@@ -80,6 +89,8 @@ uncovered_op_configs:
   "f16", "out_rank": 4, "padding": [0, 0], "stride": [3, 3]}'
 - 'aten.conv2d.default {"depthwise": false, "dilation": [1, 1], "groups": 1, "kernel": [32, 32], "out_dtype":
   "f16", "out_rank": 4, "padding": [0, 0], "stride": [32, 32]}'
+- 'aten.conv2d.default {"depthwise": false, "dilation": [1, 1], "groups": 1, "kernel": [5, 5], "out_dtype":
+  "f16", "out_rank": 4, "padding": [2, 2], "stride": [2, 2]}'
 - 'aten.conv2d.default {"depthwise": false, "dilation": [1, 1], "groups": 1, "kernel": [6, 6], "out_dtype":
   "f16", "out_rank": 4, "padding": [2, 2], "stride": [2, 2]}'
 - 'aten.conv2d.default {"depthwise": false, "dilation": [1, 1], "groups": 1, "kernel": [7, 7], "out_dtype":
@@ -92,6 +103,14 @@ uncovered_op_configs:
   "f16", "out_rank": 4, "padding": [1, 1], "stride": [1, 1]}'
 - 'aten.conv2d.default {"depthwise": false, "dilation": [1, 1], "groups": 113, "kernel": [3, 3], "out_dtype":
   "f16", "out_rank": 4, "padding": [1, 1], "stride": [1, 1]}'
+- 'aten.conv2d.default {"depthwise": false, "dilation": [1, 1], "groups": 120, "kernel": [3, 3], "out_dtype":
+  "f16", "out_rank": 4, "padding": [1, 1], "stride": [1, 1]}'
+- 'aten.conv2d.default {"depthwise": false, "dilation": [1, 1], "groups": 120, "kernel": [3, 3], "out_dtype":
+  "f16", "out_rank": 4, "padding": [1, 1], "stride": [2, 2]}'
+- 'aten.conv2d.default {"depthwise": false, "dilation": [1, 1], "groups": 128, "kernel": [3, 3], "out_dtype":
+  "f16", "out_rank": 4, "padding": [1, 1], "stride": [1, 1]}'
+- 'aten.conv2d.default {"depthwise": false, "dilation": [1, 1], "groups": 128, "kernel": [3, 3], "out_dtype":
+  "f16", "out_rank": 4, "padding": [1, 1], "stride": [2, 2]}'
 - 'aten.conv2d.default {"depthwise": false, "dilation": [1, 1], "groups": 131, "kernel": [3, 3], "out_dtype":
   "f16", "out_rank": 4, "padding": [1, 1], "stride": [1, 1]}'
 - 'aten.conv2d.default {"depthwise": false, "dilation": [1, 1], "groups": 149, "kernel": [3, 3], "out_dtype":
@@ -101,9 +120,9 @@ uncovered_op_configs:
 - 'aten.conv2d.default {"depthwise": false, "dilation": [1, 1], "groups": 18, "kernel": [1, 1], "out_dtype":
   "f16", "out_rank": 4, "padding": [0, 0], "stride": [1, 1]}'
 - 'aten.conv2d.default {"depthwise": false, "dilation": [1, 1], "groups": 192, "kernel": [3, 3], "out_dtype":
+  "f16", "out_rank": 4, "padding": [1, 1], "stride": [1, 1]}'
+- 'aten.conv2d.default {"depthwise": false, "dilation": [1, 1], "groups": 192, "kernel": [3, 3], "out_dtype":
   "f16", "out_rank": 4, "padding": [1, 1], "stride": [2, 2]}'
-- 'aten.conv2d.default {"depthwise": false, "dilation": [1, 1], "groups": 2, "kernel": [1, 1], "out_dtype":
-  "f16", "out_rank": 4, "padding": [0, 0], "stride": [1, 1]}'
 - 'aten.conv2d.default {"depthwise": false, "dilation": [1, 1], "groups": 2, "kernel": [3, 3], "out_dtype":
   "f16", "out_rank": 4, "padding": [0, 0], "stride": [2, 2]}'
 - 'aten.conv2d.default {"depthwise": false, "dilation": [1, 1], "groups": 21, "kernel": [3, 3], "out_dtype":
@@ -114,11 +133,13 @@ uncovered_op_configs:
   "f16", "out_rank": 4, "padding": [1, 1], "stride": [1, 1]}'
 - 'aten.conv2d.default {"depthwise": false, "dilation": [1, 1], "groups": 25, "kernel": [3, 3], "out_dtype":
   "f16", "out_rank": 4, "padding": [1, 1], "stride": [2, 2]}'
+- 'aten.conv2d.default {"depthwise": false, "dilation": [1, 1], "groups": 264, "kernel": [3, 3], "out_dtype":
+  "f16", "out_rank": 4, "padding": [1, 1], "stride": [1, 1]}'
+- 'aten.conv2d.default {"depthwise": false, "dilation": [1, 1], "groups": 264, "kernel": [3, 3], "out_dtype":
+  "f16", "out_rank": 4, "padding": [1, 1], "stride": [2, 2]}'
 - 'aten.conv2d.default {"depthwise": false, "dilation": [1, 1], "groups": 27, "kernel": [3, 3], "out_dtype":
   "f16", "out_rank": 4, "padding": [1, 1], "stride": [1, 1]}'
 - 'aten.conv2d.default {"depthwise": false, "dilation": [1, 1], "groups": 27, "kernel": [3, 3], "out_dtype":
-  "f16", "out_rank": 4, "padding": [1, 1], "stride": [2, 2]}'
-- 'aten.conv2d.default {"depthwise": false, "dilation": [1, 1], "groups": 28, "kernel": [3, 3], "out_dtype":
   "f16", "out_rank": 4, "padding": [1, 1], "stride": [2, 2]}'
 - 'aten.conv2d.default {"depthwise": false, "dilation": [1, 1], "groups": 29, "kernel": [3, 3], "out_dtype":
   "f16", "out_rank": 4, "padding": [1, 1], "stride": [2, 2]}'
@@ -142,11 +163,17 @@ uncovered_op_configs:
   "f16", "out_rank": 4, "padding": [1, 1], "stride": [1, 1]}'
 - 'aten.conv2d.default {"depthwise": false, "dilation": [1, 1], "groups": 48, "kernel": [3, 3], "out_dtype":
   "f16", "out_rank": 4, "padding": [1, 1], "stride": [2, 2]}'
+- 'aten.conv2d.default {"depthwise": false, "dilation": [1, 1], "groups": 5, "kernel": [3, 3], "out_dtype":
+  "f16", "out_rank": 4, "padding": [1, 1], "stride": [1, 1]}'
 - 'aten.conv2d.default {"depthwise": false, "dilation": [1, 1], "groups": 50, "kernel": [3, 3], "out_dtype":
   "f16", "out_rank": 4, "padding": [1, 1], "stride": [1, 1]}'
 - 'aten.conv2d.default {"depthwise": false, "dilation": [1, 1], "groups": 50, "kernel": [3, 3], "out_dtype":
   "f16", "out_rank": 4, "padding": [1, 1], "stride": [2, 2]}'
 - 'aten.conv2d.default {"depthwise": false, "dilation": [1, 1], "groups": 512, "kernel": [3, 3], "out_dtype":
+  "f16", "out_rank": 4, "padding": [1, 1], "stride": [2, 2]}'
+- 'aten.conv2d.default {"depthwise": false, "dilation": [1, 1], "groups": 52, "kernel": [3, 3], "out_dtype":
+  "f16", "out_rank": 4, "padding": [1, 1], "stride": [1, 1]}'
+- 'aten.conv2d.default {"depthwise": false, "dilation": [1, 1], "groups": 52, "kernel": [3, 3], "out_dtype":
   "f16", "out_rank": 4, "padding": [1, 1], "stride": [2, 2]}'
 - 'aten.conv2d.default {"depthwise": false, "dilation": [1, 1], "groups": 54, "kernel": [3, 3], "out_dtype":
   "f16", "out_rank": 4, "padding": [1, 1], "stride": [1, 1]}'
@@ -157,6 +184,10 @@ uncovered_op_configs:
 - 'aten.conv2d.default {"depthwise": false, "dilation": [1, 1], "groups": 61, "kernel": [3, 3], "out_dtype":
   "f16", "out_rank": 4, "padding": [1, 1], "stride": [2, 2]}'
 - 'aten.conv2d.default {"depthwise": false, "dilation": [1, 1], "groups": 63, "kernel": [3, 3], "out_dtype":
+  "f16", "out_rank": 4, "padding": [1, 1], "stride": [2, 2]}'
+- 'aten.conv2d.default {"depthwise": false, "dilation": [1, 1], "groups": 64, "kernel": [3, 3], "out_dtype":
+  "f16", "out_rank": 4, "padding": [1, 1], "stride": [1, 1]}'
+- 'aten.conv2d.default {"depthwise": false, "dilation": [1, 1], "groups": 64, "kernel": [3, 3], "out_dtype":
   "f16", "out_rank": 4, "padding": [1, 1], "stride": [2, 2]}'
 - 'aten.conv2d.default {"depthwise": false, "dilation": [1, 1], "groups": 72, "kernel": [3, 3], "out_dtype":
   "f16", "out_rank": 4, "padding": [1, 1], "stride": [2, 2]}'
@@ -220,8 +251,12 @@ uncovered_op_configs:
   "f16", "out_rank": 4, "padding": [3, 3], "stride": [1, 1]}'
 - 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 1104, "kernel": [7, 7], "out_dtype":
   "f16", "out_rank": 4, "padding": [3, 3], "stride": [1, 1]}'
+- 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 112, "kernel": [2, 2], "out_dtype":
+  "f16", "out_rank": 4, "padding": [0, 0], "stride": [2, 2]}'
 - 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 1120, "kernel": [7, 7], "out_dtype":
   "f16", "out_rank": 4, "padding": [3, 3], "stride": [1, 1]}'
+- 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 1152, "kernel": [5, 5], "out_dtype":
+  "f16", "out_rank": 4, "padding": [2, 2], "stride": [2, 2]}'
 - 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 1152, "kernel": [7, 7], "out_dtype":
   "f16", "out_rank": 4, "padding": [3, 3], "stride": [1, 1]}'
 - 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 116, "kernel": [1, 1], "out_dtype":
@@ -252,8 +287,12 @@ uncovered_op_configs:
   "f16", "out_rank": 4, "padding": [3, 3], "stride": [1, 1]}'
 - 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 128, "kernel": [1, 11], "out_dtype":
   "f16", "out_rank": 4, "padding": [0, 5], "stride": [1, 1]}'
+- 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 128, "kernel": [1, 1], "out_dtype":
+  "f16", "out_rank": 4, "padding": [0, 0], "stride": [2, 2]}'
 - 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 128, "kernel": [11, 1], "out_dtype":
   "f16", "out_rank": 4, "padding": [5, 0], "stride": [1, 1]}'
+- 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 1280, "kernel": [2, 2], "out_dtype":
+  "f16", "out_rank": 4, "padding": [0, 0], "stride": [1, 1]}'
 - 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 1280, "kernel": [3, 3], "out_dtype":
   "f16", "out_rank": 4, "padding": [1, 1], "stride": [2, 2]}'
 - 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 1280, "kernel": [7, 7], "out_dtype":
@@ -318,6 +357,8 @@ uncovered_op_configs:
   "f16", "out_rank": 4, "padding": [3, 3], "stride": [2, 2]}'
 - 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 1536, "kernel": [1, 1], "out_dtype":
   "f16", "out_rank": 4, "padding": [0, 0], "stride": [1, 1]}'
+- 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 1536, "kernel": [2, 2], "out_dtype":
+  "f16", "out_rank": 4, "padding": [0, 0], "stride": [1, 1]}'
 - 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 1536, "kernel": [3, 3], "out_dtype":
   "f16", "out_rank": 4, "padding": [0, 0], "stride": [2, 2]}'
 - 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 1536, "kernel": [5, 5], "out_dtype":
@@ -340,6 +381,8 @@ uncovered_op_configs:
   "f16", "out_rank": 4, "padding": [0, 0], "stride": [1, 1]}'
 - 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 160, "kernel": [2, 2], "out_dtype":
   "f16", "out_rank": 4, "padding": [0, 0], "stride": [1, 1]}'
+- 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 160, "kernel": [2, 2], "out_dtype":
+  "f16", "out_rank": 4, "padding": [0, 0], "stride": [2, 2]}'
 - 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 160, "kernel": [7, 7], "out_dtype":
   "f16", "out_rank": 4, "padding": [3, 3], "stride": [2, 2]}'
 - 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 1640, "kernel": [7, 7], "out_dtype":
@@ -365,7 +408,7 @@ uncovered_op_configs:
 - 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 192, "kernel": [1, 1], "out_dtype":
   "f16", "out_rank": 4, "padding": [0, 0], "stride": [2, 2]}'
 - 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 192, "kernel": [2, 2], "out_dtype":
-  "f16", "out_rank": 4, "padding": [0, 0], "stride": [1, 1]}'
+  "f16", "out_rank": 4, "padding": [0, 0], "stride": [2, 2]}'
 - 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 192, "kernel": [9, 9], "out_dtype":
   "f16", "out_rank": 4, "padding": [4, 4], "stride": [2, 2]}'
 - 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 1920, "kernel": [3, 3], "out_dtype":
@@ -379,6 +422,8 @@ uncovered_op_configs:
 - 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 200, "kernel": [7, 7], "out_dtype":
   "f16", "out_rank": 4, "padding": [3, 3], "stride": [1, 1]}'
 - 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 2048, "kernel": [1, 1], "out_dtype":
+  "f16", "out_rank": 4, "padding": [0, 0], "stride": [1, 1]}'
+- 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 2048, "kernel": [2, 2], "out_dtype":
   "f16", "out_rank": 4, "padding": [0, 0], "stride": [1, 1]}'
 - 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 2048, "kernel": [3, 3], "out_dtype":
   "f16", "out_rank": 4, "padding": [0, 0], "stride": [2, 2]}'
@@ -400,6 +445,8 @@ uncovered_op_configs:
   "f16", "out_rank": 4, "padding": [1, 1], "stride": [1, 1]}'
 - 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 2208, "kernel": [5, 5], "out_dtype":
   "f16", "out_rank": 4, "padding": [2, 2], "stride": [1, 1]}'
+- 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 224, "kernel": [2, 2], "out_dtype":
+  "f16", "out_rank": 4, "padding": [0, 0], "stride": [1, 1]}'
 - 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 224, "kernel": [3, 3], "out_dtype":
   "f16", "out_rank": 4, "padding": [0, 0], "stride": [2, 2]}'
 - 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 224, "kernel": [5, 5], "out_dtype":
@@ -422,10 +469,10 @@ uncovered_op_configs:
   "f16", "out_rank": 4, "padding": [1, 1], "stride": [1, 1]}'
 - 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 2544, "kernel": [5, 5], "out_dtype":
   "f16", "out_rank": 4, "padding": [2, 2], "stride": [1, 1]}'
+- 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 256, "kernel": [1, 1], "out_dtype":
+  "f16", "out_rank": 4, "padding": [0, 0], "stride": [2, 2]}'
 - 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 256, "kernel": [2, 2], "out_dtype":
-  "f16", "out_rank": 4, "padding": [0, 0], "stride": [1, 1]}'
-- 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 256, "kernel": [5, 5], "out_dtype":
-  "f16", "out_rank": 4, "padding": [2, 2], "stride": [2, 2]}'
+  "f16", "out_rank": 4, "padding": [0, 0], "stride": [2, 2]}'
 - 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 256, "kernel": [9, 9], "out_dtype":
   "f16", "out_rank": 4, "padding": [4, 4], "stride": [1, 1]}'
 - 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 264, "kernel": [7, 7], "out_dtype":
@@ -484,6 +531,12 @@ uncovered_op_configs:
   "f16", "out_rank": 4, "padding": [5, 0], "stride": [1, 1]}'
 - 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 32, "kernel": [5, 5], "out_dtype":
   "f16", "out_rank": 4, "padding": [2, 2], "stride": [1, 1]}'
+- 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 320, "kernel": [1, 1], "out_dtype":
+  "f16", "out_rank": 4, "padding": [0, 0], "stride": [1, 1]}'
+- 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 320, "kernel": [1, 1], "out_dtype":
+  "f16", "out_rank": 4, "padding": [0, 0], "stride": [2, 2]}'
+- 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 320, "kernel": [2, 2], "out_dtype":
+  "f16", "out_rank": 4, "padding": [0, 0], "stride": [1, 1]}'
 - 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 320, "kernel": [3, 3], "out_dtype":
   "f16", "out_rank": 4, "padding": [0, 0], "stride": [2, 2]}'
 - 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 320, "kernel": [7, 7], "out_dtype":
@@ -524,6 +577,8 @@ uncovered_op_configs:
   "f16", "out_rank": 4, "padding": [0, 0], "stride": [1, 1]}'
 - 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 384, "kernel": [1, 1], "out_dtype":
   "f16", "out_rank": 4, "padding": [0, 0], "stride": [2, 2]}'
+- 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 384, "kernel": [2, 2], "out_dtype":
+  "f16", "out_rank": 4, "padding": [0, 0], "stride": [1, 1]}'
 - 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 384, "kernel": [3, 3], "out_dtype":
   "f16", "out_rank": 4, "padding": [0, 0], "stride": [2, 2]}'
 - 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 384, "kernel": [9, 9], "out_dtype":
@@ -598,6 +653,8 @@ uncovered_op_configs:
   "f16", "out_rank": 4, "padding": [3, 3], "stride": [1, 1]}'
 - 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 512, "kernel": [1, 1], "out_dtype":
   "f16", "out_rank": 4, "padding": [0, 0], "stride": [2, 2]}'
+- 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 512, "kernel": [2, 2], "out_dtype":
+  "f16", "out_rank": 4, "padding": [0, 0], "stride": [1, 1]}'
 - 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 512, "kernel": [7, 7], "out_dtype":
   "f16", "out_rank": 4, "padding": [3, 3], "stride": [2, 2]}'
 - 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 512, "kernel": [9, 9], "out_dtype":
@@ -670,6 +727,8 @@ uncovered_op_configs:
   "f16", "out_rank": 4, "padding": [5, 0], "stride": [1, 1]}'
 - 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 64, "kernel": [3, 3], "out_dtype":
   "f16", "out_rank": 4, "padding": [1, 1], "stride": [4, 4]}'
+- 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 640, "kernel": [1, 1], "out_dtype":
+  "f16", "out_rank": 4, "padding": [0, 0], "stride": [2, 2]}'
 - 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 640, "kernel": [3, 3], "out_dtype":
   "f16", "out_rank": 4, "padding": [0, 0], "stride": [2, 2]}'
 - 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 640, "kernel": [7, 7], "out_dtype":
@@ -728,6 +787,8 @@ uncovered_op_configs:
   "f16", "out_rank": 4, "padding": [3, 3], "stride": [2, 2]}'
 - 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 760, "kernel": [7, 7], "out_dtype":
   "f16", "out_rank": 4, "padding": [3, 3], "stride": [1, 1]}'
+- 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 768, "kernel": [1, 1], "out_dtype":
+  "f16", "out_rank": 4, "padding": [0, 0], "stride": [2, 2]}'
 - 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 768, "kernel": [3, 3], "out_dtype":
   "f16", "out_rank": 4, "padding": [0, 0], "stride": [2, 2]}'
 - 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 768, "kernel": [5, 5], "out_dtype":
@@ -804,6 +865,10 @@ uncovered_op_configs:
   "f16", "out_rank": 4, "padding": [3, 3], "stride": [1, 1]}'
 - 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 936, "kernel": [7, 7], "out_dtype":
   "f16", "out_rank": 4, "padding": [3, 3], "stride": [1, 1]}'
+- 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 96, "kernel": [1, 1], "out_dtype":
+  "f16", "out_rank": 4, "padding": [0, 0], "stride": [2, 2]}'
+- 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 96, "kernel": [3, 3], "out_dtype":
+  "f16", "out_rank": 4, "padding": [1, 1], "stride": [4, 4]}'
 - 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 96, "kernel": [5, 5], "out_dtype":
   "f16", "out_rank": 4, "padding": [0, 0], "stride": [2, 2]}'
 - 'aten.conv2d.default {"depthwise": true, "dilation": [1, 1], "groups": 96, "kernel": [7, 7], "out_dtype":
@@ -818,13 +883,21 @@ uncovered_op_configs:
   "f16", "out_rank": 4, "padding": [3, 3], "stride": [1, 1]}'
 - 'aten.conv2d.padding {"dilation": "[*2]", "groups": "*", "kernel": [7, 7], "out_dtype": "f16", "out_rank":
   4, "padding": "same", "stride": "[*2]"}'
+- 'aten.conv2d.padding {"dilation": "[*2]", "groups": "*", "kernel": [9, 9], "out_dtype": "f16", "out_rank":
+  4, "padding": "same", "stride": "[*2]"}'
 - 'aten.conv3d.default {"depthwise": false, "dilation": [1, 1, 1], "groups": 1, "kernel": [9, 9, 1], "out_dtype":
   "f16", "out_rank": 5, "padding": [4, 4, 0], "stride": [1, 1, 1]}'
-- 'aten.dropout.default {"out_dtype": "f16", "out_rank": 3, "p": 0.125, "train": false}'
+- 'aten.conv_transpose2d.input {"depthwise": false, "dilation": [1, 1], "groups": 1, "kernel": [3, 3],
+  "out_dtype": "f16", "out_rank": 4, "output_padding": [0, 0], "padding": [1, 1], "stride": [1, 1]}'
+- 'aten.conv_transpose2d.input {"depthwise": false, "dilation": [1, 1], "groups": 1, "kernel": [4, 4],
+  "out_dtype": "f16", "out_rank": 4, "output_padding": [0, 0], "padding": [1, 1], "stride": [2, 2]}'
+- 'aten.copy_.default {"non_blocking": false, "out_dtype": "f16", "out_rank": 4}'
 - 'aten.dropout_.default {"out_dtype": "f16", "out_rank": 3, "p": 0.0, "train": false}'
 - 'aten.dropout_.default {"out_dtype": "f16", "out_rank": 4, "p": 0.0, "train": false}'
 - 'aten.einsum.default {"equation": "bhwc,hkc->bhwk", "out_dtype": "f16", "out_rank": 4, "path": null}'
 - 'aten.einsum.default {"equation": "bhwc,wkc->bhwk", "out_dtype": "f16", "out_rank": 4, "path": null}'
+- 'aten.einsum.default {"equation": "byhwc,hkc->byhwk", "out_dtype": "f16", "out_rank": 5, "path": null}'
+- 'aten.einsum.default {"equation": "byhwc,wkc->byhwk", "out_dtype": "f16", "out_rank": 5, "path": null}'
 - 'aten.einsum.default {"equation": "nhw,ixh->nixw", "out_dtype": "f16", "out_rank": 4, "path": null}'
 - 'aten.einsum.default {"equation": "nhw,ixh->nixw", "out_dtype": "f32", "out_rank": 4, "path": null}'
 - 'aten.einsum.default {"equation": "nixw,jyw->nijxy", "out_dtype": "f16", "out_rank": 5, "path": null}'
@@ -907,7 +980,6 @@ uncovered_op_configs:
 - 'aten.permute.default {"dims": [3, 0, 1, 4, 2, 5], "out_dtype": "f16", "out_rank": 6}'
 - 'aten.pow.Scalar {"out_dtype": "f32", "out_rank": 1, "self": 10000}'
 - 'aten.pow.Tensor_Scalar {"exponent": 2, "out_dtype": "f16", "out_rank": 3}'
-- 'aten.relu.default {"out_dtype": "f16", "out_rank": 3}'
 - 'aten.repeat.default {"out_dtype": "f16", "out_rank": 4, "repeats": "[*4]"}'
 - 'aten.repeat.default {"out_dtype": "f32", "out_rank": 3, "repeats": "[*3]"}'
 - 'aten.reshape_as.default {"out_dtype": "f16", "out_rank": 3}'
@@ -944,10 +1016,16 @@ uncovered_op_configs:
   "out_dtype": "f32", "out_rank": 3}'
 - 'aten.to.dtype {"copy": false, "dtype": "torch.float32", "memory_format": null, "non_blocking": false,
   "out_dtype": "f32", "out_rank": 4}'
+- 'aten.to.dtype {"copy": false, "dtype": "torch.int64", "memory_format": null, "non_blocking": false,
+  "out_dtype": "i64", "out_rank": 2}'
 - 'aten.unbind.int {"dim": 0, "out_dtype": "f16", "out_rank": 3}'
 - 'aten.unfold.default {"dimension": 2, "out_dtype": "f16", "out_rank": 5, "size": 11, "step": 7}'
 - 'aten.unfold.default {"dimension": 3, "out_dtype": "f16", "out_rank": 6, "size": 11, "step": 7}'
+- 'aten.unsqueeze.default {"dim": -1, "out_dtype": "f16", "out_rank": 6}'
+- 'aten.unsqueeze.default {"dim": -1, "out_dtype": "i64", "out_rank": 2}'
+- 'aten.unsqueeze.default {"dim": -2, "out_dtype": "f16", "out_rank": 6}'
 - 'aten.unsqueeze.default {"dim": 0, "out_dtype": "f16", "out_rank": 3}'
+- 'aten.unsqueeze.default {"dim": 0, "out_dtype": "i64", "out_rank": 2}'
 - 'aten.unsqueeze.default {"dim": 1, "out_dtype": "f32", "out_rank": 2}'
 - 'aten.unsqueeze.default {"dim": 2, "out_dtype": "f16", "out_rank": 4}'
 - 'aten.unsqueeze.default {"dim": 3, "out_dtype": "f16", "out_rank": 4}'
@@ -964,8 +1042,6 @@ uncovered_op_configs:
 - 'aten.upsample_linear1d.vec {"align_corners": false, "out_dtype": "f32", "out_rank": 3, "output_size":
   "[*1]", "scale_factors": null}'
 - 'aten.upsample_nearest2d.vec {"out_dtype": "f16", "out_rank": 4, "output_size": "*", "scale_factors":
-  [2.0, 2.0]}'
-- 'aten.upsample_nearest2d.vec {"out_dtype": "f16", "out_rank": 4, "output_size": "*", "scale_factors":
   [4.0, 4.0]}'
 - 'aten.upsample_nearest2d.vec {"out_dtype": "f16", "out_rank": 4, "output_size": "*", "scale_factors":
   [8.0, 8.0]}'
@@ -974,7 +1050,8 @@ uncovered_op_configs:
 - 'aten.view.default {"out_dtype": "i64", "out_rank": 1, "size": "[*1]"}'
 - 'aten.zeros.default {"dtype": "torch.float16", "out_dtype": "f16", "out_rank": 3, "size": "[*3]"}'
 include: []
-exclude: []
+exclude:
+- mvitv2_tiny
 models:
   bat_resnext26ts:
     family: byobnet
@@ -996,16 +1073,6 @@ models:
     pretrained_tag: fb_in1k
     hf_hub_id: timm/convit_tiny.fb_in1k
     downloads: 2076
-  convmixer_1024_20_ks9_p14:
-    family: convmixer
-    phase: ops
-    nodes: 147
-    weight_mb: 93.3
-    resolution: 224x224
-    release: true
-    pretrained_tag: in1k
-    hf_hub_id: timm/convmixer_1024_20_ks9_p14.in1k
-    downloads: 197
   convnext_atto_rms:
     family: convnext
     phase: ops
@@ -1013,6 +1080,24 @@ models:
     weight_mb: 14.1
     resolution: 224x224
     release: false
+  cpubone_b0_bfrobust:
+    family: cpubone
+    phase: ops
+    nodes: 233
+    weight_mb: 39.7
+    resolution: 224x224
+    release: true
+    pretrained_tag: r224_in1k
+    hf_hub_id: timm/cpubone_b0_bfrobust.r224_in1k
+  cpubone_nano:
+    family: cpubone
+    phase: ops
+    nodes: 113
+    weight_mb: 24.9
+    resolution: 224x224
+    release: true
+    pretrained_tag: r224_in1k
+    hf_hub_id: timm/cpubone_nano.r224_in1k
   csatv2:
     family: csatv2
     phase: ops
@@ -1121,16 +1206,6 @@ models:
     pretrained_tag: ra_in1k
     hf_hub_id: timm/efficientnet_el.ra_in1k
     downloads: 154
-  efficientnet_es:
-    family: efficientnet
-    phase: ops
-    nodes: 144
-    weight_mb: 20.9
-    resolution: 224x224
-    release: true
-    pretrained_tag: ra_in1k
-    hf_hub_id: timm/efficientnet_es.ra_in1k
-    downloads: 227
   efficientnet_lite2:
     family: efficientnet
     phase: ops
@@ -1316,6 +1391,53 @@ models:
     weight_mb: 6.3
     resolution: 224x224
     release: false
+  lcnet_050:
+    family: mobilenetv3
+    phase: ops
+    nodes: 98
+    weight_mb: 7.2
+    resolution: 224x224
+    release: true
+    pretrained_tag: ra2_in1k
+    hf_hub_id: timm/lcnet_050.ra2_in1k
+    downloads: 8541
+  lcnet_075:
+    family: mobilenetv3
+    phase: ops
+    nodes: 98
+    weight_mb: 9.0
+    resolution: 224x224
+    release: true
+    pretrained_tag: ra2_in1k
+    hf_hub_id: timm/lcnet_075.ra2_in1k
+    downloads: 214
+  lcnetv2_base:
+    family: lcnetv2
+    phase: ops
+    nodes: 183
+    weight_mb: 25.7
+    resolution: 224x224
+    release: true
+    pretrained_tag: ssld_in1k
+    hf_hub_id: timm/lcnetv2_base.ssld_in1k
+  lcnetv2_large:
+    family: lcnetv2
+    phase: ops
+    nodes: 225
+    weight_mb: 40.5
+    resolution: 224x224
+    release: true
+    pretrained_tag: paddle_in1k
+    hf_hub_id: timm/lcnetv2_large.paddle_in1k
+  lcnetv2_small:
+    family: lcnetv2
+    phase: ops
+    nodes: 141
+    weight_mb: 15.8
+    resolution: 224x224
+    release: true
+    pretrained_tag: paddle_in1k
+    hf_hub_id: timm/lcnetv2_small.paddle_in1k
   legacy_seresnext26_32x4d:
     family: senet
     phase: ops
@@ -1378,16 +1500,16 @@ models:
     weight_mb: 27.3
     resolution: 224x224
     release: false
-  mobilenet_edgetpu_v2_m:
+  mobilenetv1_100:
     family: efficientnet
     phase: ops
-    nodes: 156
-    weight_mb: 32.5
+    nodes: 84
+    weight_mb: 16.2
     resolution: 224x224
     release: true
     pretrained_tag: ra4_e3600_r224_in1k
-    hf_hub_id: timm/mobilenet_edgetpu_v2_m.ra4_e3600_r224_in1k
-    downloads: 1286
+    hf_hub_id: timm/mobilenetv1_100.ra4_e3600_r224_in1k
+    downloads: 9751
   mobilenetv1_125:
     family: efficientnet
     phase: ops
@@ -1408,26 +1530,6 @@ models:
     pretrained_tag: e500_r224_in1k
     hf_hub_id: timm/mobilenetv4_conv_blur_medium.e500_r224_in1k
     downloads: 3780
-  mobileone_s2:
-    family: byobnet
-    phase: ops
-    nodes: 297
-    weight_mb: 30.4
-    resolution: 224x224
-    release: true
-    pretrained_tag: apple_in1k
-    hf_hub_id: timm/mobileone_s2.apple_in1k
-    downloads: 1744
-  mobileone_s3:
-    family: byobnet
-    phase: ops
-    nodes: 297
-    weight_mb: 39.2
-    resolution: 224x224
-    release: true
-    pretrained_tag: apple_in1k
-    hf_hub_id: timm/mobileone_s3.apple_in1k
-    downloads: 312
   mobilevitv2_175:
     family: mobilevit
     phase: ops
@@ -1438,16 +1540,6 @@ models:
     pretrained_tag: cvnets_in1k
     hf_hub_id: timm/mobilevitv2_175.cvnets_in1k
     downloads: 557
-  mvitv2_tiny:
-    family: mvitv2
-    phase: ops
-    nodes: 779
-    weight_mb: 92.2
-    resolution: 224x224
-    release: true
-    pretrained_tag: fb_in1k
-    hf_hub_id: timm/mvitv2_tiny.fb_in1k
-    downloads: 280
   nest_tiny:
     family: nest
     phase: ops
@@ -1548,26 +1640,6 @@ models:
     weight_mb: 27.4
     resolution: 224x224
     release: false
-  regnetz_040:
-    family: regnet
-    phase: ops
-    nodes: 424
-    weight_mb: 103.9
-    resolution: 224x224
-    release: true
-    pretrained_tag: ra3_in1k
-    hf_hub_id: timm/regnetz_040.ra3_in1k
-    downloads: 193
-  regnetz_d8:
-    family: byobnet
-    phase: ops
-    nodes: 373
-    weight_mb: 89.5
-    resolution: 224x224
-    release: true
-    pretrained_tag: ra3_in1k
-    hf_hub_id: timm/regnetz_d8.ra3_in1k
-    downloads: 1459
   repghostnet_058:
     family: repghost
     phase: ops
@@ -1766,16 +1838,6 @@ models:
     weight_mb: 1.7
     resolution: 160x160
     release: false
-  test_nfnet:
-    family: nfnet
-    phase: ops
-    nodes: 217
-    weight_mb: 1.5
-    resolution: 160x160
-    release: true
-    pretrained_tag: r160_in1k
-    hf_hub_id: timm/test_nfnet.r160_in1k
-    downloads: 416
   test_vit:
     family: vision_transformer
     phase: ops
@@ -1883,6 +1945,16 @@ models:
     pretrained_tag: lvd1689m
     hf_hub_id: timm/vit_small_patch16_dinov3_qkvb.lvd1689m
     downloads: 6879
+  vit_srelpos_medium_patch16_224:
+    family: vision_transformer_relpos
+    phase: ops
+    nodes: 259
+    weight_mb: 147.8
+    resolution: 224x224
+    release: true
+    pretrained_tag: sw_in1k
+    hf_hub_id: timm/vit_srelpos_medium_patch16_224.sw_in1k
+    downloads: 130
   vit_tiny_r_s16_p8_224:
     family: vision_transformer_hybrid
     phase: ops
