@@ -100,6 +100,17 @@ jobs:
       - name: models
         run: make models.${{ matrix.dtype }}
 
+      # TEMPORARY: fetch this runner's own regenerated autocast/ graphs so they can be committed
+      # as the source of truth -- autocast dispatch is architecture-sensitive (see the arm64
+      # probe job below), so only this x86_64 runner's own output belongs in the repo. Remove
+      # once landed.
+      - name: upload autocast graphs
+        uses: actions/upload-artifact@v4
+        with:
+          name: autocast-${{ matrix.dtype }}
+          path: models-${{ matrix.dtype }}/autocast
+          retention-days: 3
+
       - name: check tree is unmodified
         run: make check-tree-clean
 
