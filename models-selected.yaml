@@ -24,7 +24,7 @@ selection:
   max_weight_mb: 150.0
   release_max_weight_mb: 100.0
   models: 100
-  op_configs_covered: 2070/3125
+  op_configs_covered: 2070/3127
   families_covered: 41/92
   total_nodes: 29701
   release_models: 70
@@ -226,6 +226,8 @@ uncovered_op_configs:
 - 'aten.conv2d.default {"depthwise": false, "dilation": [1, 1], "groups": 27, "kernel": [3, 3], "out_dtype":
   "f32", "out_rank": 4, "padding": [1, 1], "stride": [1, 1]}'
 - 'aten.conv2d.default {"depthwise": false, "dilation": [1, 1], "groups": 27, "kernel": [3, 3], "out_dtype":
+  "f32", "out_rank": 4, "padding": [1, 1], "stride": [2, 2]}'
+- 'aten.conv2d.default {"depthwise": false, "dilation": [1, 1], "groups": 28, "kernel": [3, 3], "out_dtype":
   "f32", "out_rank": 4, "padding": [1, 1], "stride": [2, 2]}'
 - 'aten.conv2d.default {"depthwise": false, "dilation": [1, 1], "groups": 29, "kernel": [3, 3], "out_dtype":
   "f32", "out_rank": 4, "padding": [1, 1], "stride": [2, 2]}'
@@ -1009,6 +1011,8 @@ uncovered_op_configs:
 - 'aten.convolution.default {"depthwise": false, "dilation": [1, 1], "groups": 27, "kernel": [3, 3], "out_dtype":
   "f32", "out_rank": 4, "output_padding": [0, 0], "padding": [1, 1], "stride": [1, 1], "transposed": false}'
 - 'aten.convolution.default {"depthwise": false, "dilation": [1, 1], "groups": 27, "kernel": [3, 3], "out_dtype":
+  "f32", "out_rank": 4, "output_padding": [0, 0], "padding": [1, 1], "stride": [2, 2], "transposed": false}'
+- 'aten.convolution.default {"depthwise": false, "dilation": [1, 1], "groups": 28, "kernel": [3, 3], "out_dtype":
   "f32", "out_rank": 4, "output_padding": [0, 0], "padding": [1, 1], "stride": [2, 2], "transposed": false}'
 - 'aten.convolution.default {"depthwise": false, "dilation": [1, 1], "groups": 29, "kernel": [3, 3], "out_dtype":
   "f32", "out_rank": 4, "output_padding": [0, 0], "padding": [1, 1], "stride": [2, 2], "transposed": false}'
