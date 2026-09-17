@@ -24,7 +24,7 @@ selection:
   max_weight_mb: 150.0
   release_max_weight_mb: 150.0
   models: 100
-  op_configs_covered: 1240/1804
+  op_configs_covered: 1240/1803
   families_covered: 44/92
   total_nodes: 29771
   release_models: 78
@@ -140,8 +140,6 @@ uncovered_op_configs:
 - 'aten.conv2d.default {"depthwise": false, "dilation": [1, 1], "groups": 27, "kernel": [3, 3], "out_dtype":
   "bf16", "out_rank": 4, "padding": [1, 1], "stride": [1, 1]}'
 - 'aten.conv2d.default {"depthwise": false, "dilation": [1, 1], "groups": 27, "kernel": [3, 3], "out_dtype":
-  "bf16", "out_rank": 4, "padding": [1, 1], "stride": [2, 2]}'
-- 'aten.conv2d.default {"depthwise": false, "dilation": [1, 1], "groups": 28, "kernel": [3, 3], "out_dtype":
   "bf16", "out_rank": 4, "padding": [1, 1], "stride": [2, 2]}'
 - 'aten.conv2d.default {"depthwise": false, "dilation": [1, 1], "groups": 29, "kernel": [3, 3], "out_dtype":
   "bf16", "out_rank": 4, "padding": [1, 1], "stride": [2, 2]}'

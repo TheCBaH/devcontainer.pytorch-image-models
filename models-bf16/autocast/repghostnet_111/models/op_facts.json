@@ -1,6 +1,6 @@
 {
   "dialect": "functional_aten",
-  "model_json_sha256": "41d291bd9f4b38482439c5b246694080ce9e3b99c7218300af39503ed7dfd56e",
+  "model_json_sha256": "2ecc033e17f4e945eaec6cef3aad876d6fd020c169d890c6a799edd66964ae0b",
   "ops": [
     [
       "aten._native_batch_norm_legit_no_training.default",
