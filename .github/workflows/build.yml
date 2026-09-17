@@ -8,7 +8,7 @@ on:
 jobs:
 
   uv:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
     steps:
       - name: checkout
         uses: actions/checkout@v7.0.1
@@ -62,7 +62,7 @@ jobs:
   # in parallel with each other and with the jobs above) instead of folded into `uv`, since this
   # regeneration is otherwise the same cost class as `report.ci`+`models` a second time.
   precision:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
     strategy:
       fail-fast: false
       matrix:
@@ -104,7 +104,7 @@ jobs:
         run: make check-tree-clean
 
   devcontainer:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
     permissions:
       packages: write
     steps:
