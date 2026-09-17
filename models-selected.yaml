@@ -2078,7 +2078,7 @@ include:
 - mobilenetv4_conv_small_050
 - mobilenetv5_base
 - efficientnet_b0
-exclude: []
+exclude: [cpubone_nano, cpubone_s0]
 models:
   bat_resnext26ts:
     family: byobnet
