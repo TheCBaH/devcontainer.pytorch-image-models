@@ -9,12 +9,10 @@
 # device-independent, except that attention-result strides can change whether a reshape
 # becomes a view or clone + _unsafe_view. Any differences are pinned here for review.
 #
-# Values are `op=ops-func.yaml/graph`. 9 of 100 models differ.
+# Values are `op=ops-func.yaml/graph`. 7 of 100 models differ.
 
 models:
   convit_tiny: _to_copy.default=10/0
-  cpubone_nano: _unsafe_view.default=2/0 clone.default=5/3 view.default=5/7
-  cpubone_s0: _unsafe_view.default=3/0 clone.default=8/5 view.default=8/11
   fastvit_sa12: _unsafe_view.default=2/0 clone.default=29/27 view.default=7/9
   sam2_hiera_tiny: _unsafe_view.default=11/0 clone.default=44/33 view.default=55/66
   test_vit4: _unsafe_view.default=9/0 clone.default=38/29 view.default=10/19

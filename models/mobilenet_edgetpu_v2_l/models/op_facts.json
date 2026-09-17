@@ -1,6 +1,6 @@
 {
   "dialect": "functional_aten",
-  "model_json_sha256": "3c1fd387092edaeeac45c7502d9bda7d18877ca9f2b815428c2eeb0380e9ce25",
+  "model_json_sha256": "f6a410a7bafd47fa7742d13c6ca91e1c5425de6f748dc59928aabbacd03ce09f",
   "ops": [
     [
       "aten._native_batch_norm_legit_no_training.default",
@@ -10,7 +10,7 @@
         "out_dtype": "f32",
         "out_rank": 4
       },
-      19
+      53
     ],
     [
       "aten.adaptive_avg_pool2d.default",
@@ -28,24 +28,7 @@
         "out_dtype": "f32",
         "out_rank": 4
       },
-      9
-    ],
-    [
-      "aten.alias.default",
-      {
-        "out_dtype": "f32",
-        "out_rank": 4
-      },
-      3
-    ],
-    [
-      "aten.clone.default",
-      {
-        "memory_format": null,
-        "out_dtype": "f32",
-        "out_rank": 4
-      },
-      3
+      13
     ],
     [
       "aten.conv2d.default",
@@ -71,7 +54,7 @@
           1
         ]
       },
-      20
+      33
     ],
     [
       "aten.conv2d.default",
@@ -91,6 +74,58 @@
         "padding": [
           1,
           1
+        ],
+        "stride": [
+          1,
+          1
+        ]
+      },
+      1
+    ],
+    [
+      "aten.conv2d.default",
+      {
+        "depthwise": false,
+        "dilation": [
+          1,
+          1
+        ],
+        "groups": 1,
+        "kernel": [
+          3,
+          3
+        ],
+        "out_dtype": "f32",
+        "out_rank": 4,
+        "padding": [
+          1,
+          1
+        ],
+        "stride": [
+          2,
+          2
+        ]
+      },
+      3
+    ],
+    [
+      "aten.conv2d.default",
+      {
+        "depthwise": false,
+        "dilation": [
+          1,
+          1
+        ],
+        "groups": 1,
+        "kernel": [
+          7,
+          7
+        ],
+        "out_dtype": "f32",
+        "out_rank": 4,
+        "padding": [
+          3,
+          3
         ],
         "stride": [
           2,
@@ -109,32 +144,6 @@
         ],
         "groups": 2,
         "kernel": [
-          2,
-          2
-        ],
-        "out_dtype": "f32",
-        "out_rank": 4,
-        "padding": [
-          0,
-          0
-        ],
-        "stride": [
-          1,
-          1
-        ]
-      },
-      3
-    ],
-    [
-      "aten.conv2d.default",
-      {
-        "depthwise": false,
-        "dilation": [
-          1,
-          1
-        ],
-        "groups": 2,
-        "kernel": [
           3,
           3
         ],
@@ -145,30 +154,30 @@
           1
         ],
         "stride": [
-          2,
-          2
+          1,
+          1
         ]
       },
-      4
+      1
     ],
     [
       "aten.conv2d.default",
       {
-        "depthwise": true,
+        "depthwise": false,
         "dilation": [
           1,
           1
         ],
-        "groups": 192,
+        "groups": 3,
         "kernel": [
-          2,
-          2
+          3,
+          3
         ],
         "out_dtype": "f32",
         "out_rank": 4,
         "padding": [
-          0,
-          0
+          1,
+          1
         ],
         "stride": [
           1,
@@ -185,16 +194,68 @@
           1,
           1
         ],
-        "groups": 96,
+        "groups": 1024,
         "kernel": [
-          2,
-          2
+          3,
+          3
         ],
         "out_dtype": "f32",
         "out_rank": 4,
         "padding": [
-          0,
-          0
+          1,
+          1
+        ],
+        "stride": [
+          1,
+          1
+        ]
+      },
+      3
+    ],
+    [
+      "aten.conv2d.default",
+      {
+        "depthwise": true,
+        "dilation": [
+          1,
+          1
+        ],
+        "groups": 1536,
+        "kernel": [
+          3,
+          3
+        ],
+        "out_dtype": "f32",
+        "out_rank": 4,
+        "padding": [
+          1,
+          1
+        ],
+        "stride": [
+          1,
+          1
+        ]
+      },
+      1
+    ],
+    [
+      "aten.conv2d.default",
+      {
+        "depthwise": true,
+        "dilation": [
+          1,
+          1
+        ],
+        "groups": 1920,
+        "kernel": [
+          3,
+          3
+        ],
+        "out_dtype": "f32",
+        "out_rank": 4,
+        "padding": [
+          1,
+          1
         ],
         "stride": [
           2,
@@ -204,51 +265,82 @@
       1
     ],
     [
-      "aten.gelu.default",
+      "aten.conv2d.default",
       {
-        "approximate": "none",
+        "depthwise": true,
+        "dilation": [
+          1,
+          1
+        ],
+        "groups": 2048,
+        "kernel": [
+          3,
+          3
+        ],
         "out_dtype": "f32",
-        "out_rank": 4
+        "out_rank": 4,
+        "padding": [
+          1,
+          1
+        ],
+        "stride": [
+          1,
+          1
+        ]
+      },
+      1
+    ],
+    [
+      "aten.conv2d.default",
+      {
+        "depthwise": true,
+        "dilation": [
+          1,
+          1
+        ],
+        "groups": 768,
+        "kernel": [
+          3,
+          3
+        ],
+        "out_dtype": "f32",
+        "out_rank": 4,
+        "padding": [
+          1,
+          1
+        ],
+        "stride": [
+          1,
+          1
+        ]
       },
       3
     ],
     [
-      "aten.group_norm.default",
+      "aten.conv2d.default",
       {
-        "cudnn_enabled": false,
-        "eps": 1e-05,
-        "num_groups": 1,
+        "depthwise": true,
+        "dilation": [
+          1,
+          1
+        ],
+        "groups": 960,
+        "kernel": [
+          3,
+          3
+        ],
         "out_dtype": "f32",
-        "out_rank": 4
+        "out_rank": 4,
+        "padding": [
+          1,
+          1
+        ],
+        "stride": [
+          1,
+          1
+        ]
       },
-      6
-    ],
-    [
-      "aten.hardswish.default",
-      {
-        "out_dtype": "f32",
-        "out_rank": 2
-      },
-      1
-    ],
-    [
-      "aten.hardswish.default",
-      {
-        "out_dtype": "f32",
-        "out_rank": 4
-      },
-      9
-    ],
-    [
-      "aten.layer_norm.default",
-      {
-        "cudnn_enable": false,
-        "eps": 1e-05,
-        "normalized_shape": "[*1]",
-        "out_dtype": "f32",
-        "out_rank": 2
-      },
-      1
+      3
     ],
     [
       "aten.linear.default",
@@ -256,72 +348,15 @@
         "out_dtype": "f32",
         "out_rank": 2
       },
-      2
+      1
     ],
     [
-      "aten.pad.default",
+      "aten.relu.default",
       {
-        "mode": "constant",
-        "out_dtype": "f32",
-        "out_rank": 4,
-        "pad": [
-          1,
-          0,
-          1,
-          0
-        ],
-        "value": 0.0
-      },
-      5
-    ],
-    [
-      "aten.permute.default",
-      {
-        "dims": [
-          0,
-          1,
-          3,
-          2
-        ],
         "out_dtype": "f32",
         "out_rank": 4
       },
-      6
-    ],
-    [
-      "aten.scaled_dot_product_attention.default",
-      {
-        "dropout_p": 0.0,
-        "enable_gqa": false,
-        "is_causal": false,
-        "out_dtype": "f32",
-        "out_rank": 4,
-        "scale": null
-      },
-      3
-    ],
-    [
-      "aten.split.Tensor",
-      {
-        "dim": 3,
-        "out_dtype": "f32",
-        "out_rank": 4,
-        "split_size": "*"
-      },
-      3
-    ],
-    [
-      "aten.upsample_nearest2d.vec",
-      {
-        "out_dtype": "f32",
-        "out_rank": 4,
-        "output_size": "*",
-        "scale_factors": [
-          2.0,
-          2.0
-        ]
-      },
-      1
+      34
     ],
     [
       "aten.view.default",
@@ -331,15 +366,6 @@
         "size": "[*2]"
       },
       1
-    ],
-    [
-      "aten.view.default",
-      {
-        "out_dtype": "f32",
-        "out_rank": 4,
-        "size": "[*4]"
-      },
-      6
     ]
   ],
   "schema_version": 1,
@@ -347,19 +373,9 @@
     "aten._native_batch_norm_legit_no_training.default": "_native_batch_norm_legit_no_training(Tensor input, Tensor? weight, Tensor? bias, Tensor running_mean, Tensor running_var, float momentum, float eps) -> (Tensor, Tensor, Tensor)",
     "aten.adaptive_avg_pool2d.default": "adaptive_avg_pool2d(Tensor self, SymInt[2] output_size) -> Tensor",
     "aten.add.Tensor": "add.Tensor(Tensor self, Tensor other, *, Scalar alpha=1) -> Tensor",
-    "aten.alias.default": "alias(Tensor(a) self) -> Tensor(a)",
-    "aten.clone.default": "clone(Tensor self, *, MemoryFormat? memory_format=None) -> Tensor",
     "aten.conv2d.default": "conv2d(Tensor input, Tensor weight, Tensor? bias=None, SymInt[2] stride=[1, 1], SymInt[2] padding=[0, 0], SymInt[2] dilation=[1, 1], SymInt groups=1) -> Tensor",
-    "aten.gelu.default": "gelu(Tensor self, *, str approximate=\"none\") -> Tensor",
-    "aten.group_norm.default": "group_norm(Tensor input, int num_groups, Tensor? weight=None, Tensor? bias=None, float eps=1.0000000000000001e-05, bool cudnn_enabled=True) -> Tensor",
-    "aten.hardswish.default": "hardswish(Tensor self) -> Tensor",
-    "aten.layer_norm.default": "layer_norm(Tensor input, SymInt[] normalized_shape, Tensor? weight=None, Tensor? bias=None, float eps=1.0000000000000001e-05, bool cudnn_enable=True) -> Tensor",
     "aten.linear.default": "linear(Tensor input, Tensor weight, Tensor? bias=None) -> Tensor",
-    "aten.pad.default": "pad(Tensor self, SymInt[] pad, str mode=\"constant\", float? value=None) -> Tensor",
-    "aten.permute.default": "permute(Tensor(a) self, int[] dims) -> Tensor(a)",
-    "aten.scaled_dot_product_attention.default": "scaled_dot_product_attention(Tensor query, Tensor key, Tensor value, Tensor? attn_mask=None, float dropout_p=0., bool is_causal=False, *, float? scale=None, bool enable_gqa=False) -> Tensor",
-    "aten.split.Tensor": "split.Tensor(Tensor(a -> *) self, SymInt split_size, int dim=0) -> Tensor(a)[]",
-    "aten.upsample_nearest2d.vec": "upsample_nearest2d.vec(Tensor input, SymInt[]? output_size, float[]? scale_factors) -> Tensor",
+    "aten.relu.default": "relu(Tensor self) -> Tensor",
     "aten.view.default": "view(Tensor(a) self, SymInt[] size) -> Tensor(a)"
   },
   "torch_version": "2.13.0+cpu"
