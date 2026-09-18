@@ -55,31 +55,6 @@ jobs:
       - name: static graph facts (op_facts.json)
         run: make models.compat-static
 
-      # TEMPORARY: fetch this runner's own regenerated fp32 selection/report/models after
-      # excluding cpubone_nano/cpubone_s0 (arm64-only release-time inference crash, see
-      # scripts/export_pt2.py's real-image verification), so the reshuffled content can be
-      # committed as-is instead of hand-reconciled. if: always() to capture it even if
-      # check-history/check-tree-clean above already failed. Remove once landed.
-      - name: upload regenerated fp32 selection
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: fp32-selection
-          path: |
-            models/
-            models-selected.yaml
-            models.md
-            ops-aten.yaml
-            ops-aten.md
-            ops-func.yaml
-            ops-func.md
-            ops-core-meta.yaml
-            ops-core-meta.md
-            ops-core-cpu.yaml
-            ops-core-cpu.md
-            graph-differences.yaml
-          retention-days: 3
-
       - name: check tree is unmodified
         run: make check-tree-clean
 
