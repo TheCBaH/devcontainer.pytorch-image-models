@@ -266,8 +266,10 @@ def cmd_check_values(args):
     tensor bit for bit against the pinned checkpoint -- the check that timm's load-time
     checkpoint filter does not transform what the map says to copy verbatim.
 
-    Each model downloads into its own scratch cache, deleted before the next: all of them
-    together are several GB."""
+    With HF_HOME set, downloads go to (and are reused from) that cache. Without it each model
+    downloads into its own scratch cache, deleted before the next: all of them together are
+    several GB."""
+    import contextlib
     import tempfile
 
     import timm
@@ -285,7 +287,9 @@ def cmd_check_values(args):
             with open(path) as f:
                 document = json.load(f)
             source = document['source']
-            with tempfile.TemporaryDirectory(prefix='weights_map_') as cache:
+            shared = os.environ.get('HF_HOME')
+            with (contextlib.nullcontext() if shared else
+                  tempfile.TemporaryDirectory(prefix='weights_map_')) as cache:
                 checkpoint = load_file(hf_hub_download(source['repo_id'], source['filename'],
                                                        revision=source['revision'], cache_dir=cache))
                 model = timm.create_model(name, pretrained=True, cache_dir=cache)

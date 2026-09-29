@@ -106,6 +106,46 @@ jobs:
       - name: check tree is unmodified
         run: make check-tree-clean
 
+  # Every mapped checkpoint against timm's own pretrained load. Needs only the committed maps
+  # and uv.lock's timm, so it runs alongside the jobs above. Its own cache, not the release
+  # tier's: it covers every mapped model at its pinned revision (~3.5 GB), not just release
+  # ones at whatever `main` was when they were fetched. Only main saves -- a branch's entry
+  # would land in a scope nothing else reads, and cost quota for it.
+  weights:
+    runs-on: ubuntu-24.04-arm
+    env:
+      HF_HOME: ${{ github.workspace }}/.hf-cache
+    steps:
+      - name: checkout
+        uses: actions/checkout@v7.0.1
+        with:
+          submodules: true
+
+      - name: setup uv
+        uses: astral-sh/setup-uv@v10.2.0
+        with:
+          python-version: '3.13'
+          enable-cache: true
+
+      - name: huggingface cache
+        id: hf
+        uses: ./.github/workflows/actions/hf-cache
+        with:
+          key-prefix: hfw
+          hash-files: |
+            models*/**/safetensors.json
+            uv.lock
+
+      - name: check mapped tensors against timm's pretrained load
+        run: make models.weights.check-values
+
+      - name: save huggingface cache
+        if: always() && github.ref == 'refs/heads/main' && steps.hf.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v6.1.0
+        with:
+          path: .hf-cache
+          key: ${{ steps.hf.outputs.key }}
+
   devcontainer:
     runs-on: ubuntu-24.04-arm
     permissions:

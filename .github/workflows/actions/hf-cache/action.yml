@@ -9,6 +9,16 @@ inputs:
   path:
     description: Where the cache is materialized. Must match HF_HOME in the steps that follow.
     default: .hf-cache
+  key-prefix:
+    description: >
+      Cache name; distinct prefixes are distinct caches. Keep any one from being a prefix of
+      another's `<prefix>-<os>-`, or restore-keys would cross-restore them.
+    default: hf
+  hash-files:
+    description: Newline-separated globs whose contents decide the exact key.
+    default: |
+      models-selected.yaml
+      uv.lock
   save:
     description: >
       'true' to write the cache back on a miss, 'false' to restore only. Tag builds must not
@@ -20,6 +30,9 @@ outputs:
   cache-hit:
     description: "'true' when the exact key was found, so no fetch is needed."
     value: ${{ steps.restore.outputs.cache-hit || steps.cache.outputs.cache-hit }}
+  key:
+    description: The exact key, for a caller that saves with actions/cache/save itself.
+    value: ${{ steps.restore.outputs.cache-primary-key || steps.cache.outputs.cache-primary-key }}
 
 runs:
   using: composite
@@ -32,8 +45,8 @@ runs:
       uses: actions/cache/restore@v6.1.0
       with:
         path: ${{ inputs.path }}
-        key: hf-${{ runner.os }}-${{ hashFiles('models-selected.yaml', 'uv.lock') }}
-        restore-keys: hf-${{ runner.os }}-
+        key: ${{ inputs.key-prefix }}-${{ runner.os }}-${{ hashFiles(inputs.hash-files) }}
+        restore-keys: ${{ inputs.key-prefix }}-${{ runner.os }}-
 
     - name: cache huggingface
       if: inputs.save == 'true'
@@ -41,5 +54,5 @@ runs:
       uses: actions/cache@v6.1.0
       with:
         path: ${{ inputs.path }}
-        key: hf-${{ runner.os }}-${{ hashFiles('models-selected.yaml', 'uv.lock') }}
-        restore-keys: hf-${{ runner.os }}-
+        key: ${{ inputs.key-prefix }}-${{ runner.os }}-${{ hashFiles(inputs.hash-files) }}
+        restore-keys: ${{ inputs.key-prefix }}-${{ runner.os }}-

@@ -242,7 +242,7 @@ graph in `models-fp16/` and `models-bf16/` as well.
 make models.weights                                # regenerate (network, headers only)
 make models.weights WEIGHTS_REFRESH=--refresh      # ...also moving pinned revisions to latest
 make models.weights.verify                         # offline: every map still fits its graph (CI)
-make models.weights.check-values                   # downloads: timm's own load == mapped tensors
+make models.weights.check-values                   # downloads (reuses $HF_HOME): timm's own load == mapped tensors (CI)
 ```
 
 ## Precision (fp16/bf16) graphs
