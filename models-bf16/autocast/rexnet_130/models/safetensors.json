@@ -1,0 +1,3007 @@
+{
+  "schema_version": 1,
+  "source": {
+    "filename": "model.safetensors",
+    "repo_id": "timm/rexnet_130.nav_in1k",
+    "revision": "3a16ec74a1ed549d312f03f12d2c9c75daeaa799",
+    "sha256": "762cc31cdae85ac8a5650a2988560f227dea4b0cfa3f42f9e5c97d6174535e78",
+    "size": 30484086,
+    "url": "https://huggingface.co/timm/rexnet_130.nav_in1k/resolve/3a16ec74a1ed549d312f03f12d2c9c75daeaa799/model.safetensors"
+  },
+  "tensors": {
+    "model.features.0.conv_dw.bn.bias": {
+      "dtype": "F32",
+      "key": "features.0.conv_dw.bn.bias",
+      "shape": [
+        42
+      ]
+    },
+    "model.features.0.conv_dw.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.0.conv_dw.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.0.conv_dw.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.0.conv_dw.bn.running_mean",
+      "shape": [
+        42
+      ]
+    },
+    "model.features.0.conv_dw.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.0.conv_dw.bn.running_var",
+      "shape": [
+        42
+      ]
+    },
+    "model.features.0.conv_dw.bn.weight": {
+      "dtype": "F32",
+      "key": "features.0.conv_dw.bn.weight",
+      "shape": [
+        42
+      ]
+    },
+    "model.features.0.conv_dw.conv.weight": {
+      "dtype": "F32",
+      "key": "features.0.conv_dw.conv.weight",
+      "shape": [
+        42,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.features.0.conv_pwl.bn.bias": {
+      "dtype": "F32",
+      "key": "features.0.conv_pwl.bn.bias",
+      "shape": [
+        21
+      ]
+    },
+    "model.features.0.conv_pwl.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.0.conv_pwl.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.0.conv_pwl.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.0.conv_pwl.bn.running_mean",
+      "shape": [
+        21
+      ]
+    },
+    "model.features.0.conv_pwl.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.0.conv_pwl.bn.running_var",
+      "shape": [
+        21
+      ]
+    },
+    "model.features.0.conv_pwl.bn.weight": {
+      "dtype": "F32",
+      "key": "features.0.conv_pwl.bn.weight",
+      "shape": [
+        21
+      ]
+    },
+    "model.features.0.conv_pwl.conv.weight": {
+      "dtype": "F32",
+      "key": "features.0.conv_pwl.conv.weight",
+      "shape": [
+        21,
+        42,
+        1,
+        1
+      ]
+    },
+    "model.features.1.conv_dw.bn.bias": {
+      "dtype": "F32",
+      "key": "features.1.conv_dw.bn.bias",
+      "shape": [
+        126
+      ]
+    },
+    "model.features.1.conv_dw.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.1.conv_dw.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.1.conv_dw.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.1.conv_dw.bn.running_mean",
+      "shape": [
+        126
+      ]
+    },
+    "model.features.1.conv_dw.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.1.conv_dw.bn.running_var",
+      "shape": [
+        126
+      ]
+    },
+    "model.features.1.conv_dw.bn.weight": {
+      "dtype": "F32",
+      "key": "features.1.conv_dw.bn.weight",
+      "shape": [
+        126
+      ]
+    },
+    "model.features.1.conv_dw.conv.weight": {
+      "dtype": "F32",
+      "key": "features.1.conv_dw.conv.weight",
+      "shape": [
+        126,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.features.1.conv_exp.bn.bias": {
+      "dtype": "F32",
+      "key": "features.1.conv_exp.bn.bias",
+      "shape": [
+        126
+      ]
+    },
+    "model.features.1.conv_exp.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.1.conv_exp.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.1.conv_exp.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.1.conv_exp.bn.running_mean",
+      "shape": [
+        126
+      ]
+    },
+    "model.features.1.conv_exp.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.1.conv_exp.bn.running_var",
+      "shape": [
+        126
+      ]
+    },
+    "model.features.1.conv_exp.bn.weight": {
+      "dtype": "F32",
+      "key": "features.1.conv_exp.bn.weight",
+      "shape": [
+        126
+      ]
+    },
+    "model.features.1.conv_exp.conv.weight": {
+      "dtype": "F32",
+      "key": "features.1.conv_exp.conv.weight",
+      "shape": [
+        126,
+        21,
+        1,
+        1
+      ]
+    },
+    "model.features.1.conv_pwl.bn.bias": {
+      "dtype": "F32",
+      "key": "features.1.conv_pwl.bn.bias",
+      "shape": [
+        35
+      ]
+    },
+    "model.features.1.conv_pwl.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.1.conv_pwl.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.1.conv_pwl.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.1.conv_pwl.bn.running_mean",
+      "shape": [
+        35
+      ]
+    },
+    "model.features.1.conv_pwl.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.1.conv_pwl.bn.running_var",
+      "shape": [
+        35
+      ]
+    },
+    "model.features.1.conv_pwl.bn.weight": {
+      "dtype": "F32",
+      "key": "features.1.conv_pwl.bn.weight",
+      "shape": [
+        35
+      ]
+    },
+    "model.features.1.conv_pwl.conv.weight": {
+      "dtype": "F32",
+      "key": "features.1.conv_pwl.conv.weight",
+      "shape": [
+        35,
+        126,
+        1,
+        1
+      ]
+    },
+    "model.features.10.conv_dw.bn.bias": {
+      "dtype": "F32",
+      "key": "features.10.conv_dw.bn.bias",
+      "shape": [
+        912
+      ]
+    },
+    "model.features.10.conv_dw.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.10.conv_dw.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.10.conv_dw.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.10.conv_dw.bn.running_mean",
+      "shape": [
+        912
+      ]
+    },
+    "model.features.10.conv_dw.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.10.conv_dw.bn.running_var",
+      "shape": [
+        912
+      ]
+    },
+    "model.features.10.conv_dw.bn.weight": {
+      "dtype": "F32",
+      "key": "features.10.conv_dw.bn.weight",
+      "shape": [
+        912
+      ]
+    },
+    "model.features.10.conv_dw.conv.weight": {
+      "dtype": "F32",
+      "key": "features.10.conv_dw.conv.weight",
+      "shape": [
+        912,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.features.10.conv_exp.bn.bias": {
+      "dtype": "F32",
+      "key": "features.10.conv_exp.bn.bias",
+      "shape": [
+        912
+      ]
+    },
+    "model.features.10.conv_exp.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.10.conv_exp.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.10.conv_exp.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.10.conv_exp.bn.running_mean",
+      "shape": [
+        912
+      ]
+    },
+    "model.features.10.conv_exp.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.10.conv_exp.bn.running_var",
+      "shape": [
+        912
+      ]
+    },
+    "model.features.10.conv_exp.bn.weight": {
+      "dtype": "F32",
+      "key": "features.10.conv_exp.bn.weight",
+      "shape": [
+        912
+      ]
+    },
+    "model.features.10.conv_exp.conv.weight": {
+      "dtype": "F32",
+      "key": "features.10.conv_exp.conv.weight",
+      "shape": [
+        912,
+        152,
+        1,
+        1
+      ]
+    },
+    "model.features.10.conv_pwl.bn.bias": {
+      "dtype": "F32",
+      "key": "features.10.conv_pwl.bn.bias",
+      "shape": [
+        167
+      ]
+    },
+    "model.features.10.conv_pwl.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.10.conv_pwl.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.10.conv_pwl.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.10.conv_pwl.bn.running_mean",
+      "shape": [
+        167
+      ]
+    },
+    "model.features.10.conv_pwl.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.10.conv_pwl.bn.running_var",
+      "shape": [
+        167
+      ]
+    },
+    "model.features.10.conv_pwl.bn.weight": {
+      "dtype": "F32",
+      "key": "features.10.conv_pwl.bn.weight",
+      "shape": [
+        167
+      ]
+    },
+    "model.features.10.conv_pwl.conv.weight": {
+      "dtype": "F32",
+      "key": "features.10.conv_pwl.conv.weight",
+      "shape": [
+        167,
+        912,
+        1,
+        1
+      ]
+    },
+    "model.features.10.se.bn.bias": {
+      "dtype": "F32",
+      "key": "features.10.se.bn.bias",
+      "shape": [
+        76
+      ]
+    },
+    "model.features.10.se.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.10.se.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.10.se.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.10.se.bn.running_mean",
+      "shape": [
+        76
+      ]
+    },
+    "model.features.10.se.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.10.se.bn.running_var",
+      "shape": [
+        76
+      ]
+    },
+    "model.features.10.se.bn.weight": {
+      "dtype": "F32",
+      "key": "features.10.se.bn.weight",
+      "shape": [
+        76
+      ]
+    },
+    "model.features.10.se.fc1.bias": {
+      "dtype": "F32",
+      "key": "features.10.se.fc1.bias",
+      "shape": [
+        76
+      ]
+    },
+    "model.features.10.se.fc1.weight": {
+      "dtype": "F32",
+      "key": "features.10.se.fc1.weight",
+      "shape": [
+        76,
+        912,
+        1,
+        1
+      ]
+    },
+    "model.features.10.se.fc2.bias": {
+      "dtype": "F32",
+      "key": "features.10.se.fc2.bias",
+      "shape": [
+        912
+      ]
+    },
+    "model.features.10.se.fc2.weight": {
+      "dtype": "F32",
+      "key": "features.10.se.fc2.weight",
+      "shape": [
+        912,
+        76,
+        1,
+        1
+      ]
+    },
+    "model.features.11.conv_dw.bn.bias": {
+      "dtype": "F32",
+      "key": "features.11.conv_dw.bn.bias",
+      "shape": [
+        1002
+      ]
+    },
+    "model.features.11.conv_dw.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.11.conv_dw.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.11.conv_dw.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.11.conv_dw.bn.running_mean",
+      "shape": [
+        1002
+      ]
+    },
+    "model.features.11.conv_dw.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.11.conv_dw.bn.running_var",
+      "shape": [
+        1002
+      ]
+    },
+    "model.features.11.conv_dw.bn.weight": {
+      "dtype": "F32",
+      "key": "features.11.conv_dw.bn.weight",
+      "shape": [
+        1002
+      ]
+    },
+    "model.features.11.conv_dw.conv.weight": {
+      "dtype": "F32",
+      "key": "features.11.conv_dw.conv.weight",
+      "shape": [
+        1002,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.features.11.conv_exp.bn.bias": {
+      "dtype": "F32",
+      "key": "features.11.conv_exp.bn.bias",
+      "shape": [
+        1002
+      ]
+    },
+    "model.features.11.conv_exp.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.11.conv_exp.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.11.conv_exp.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.11.conv_exp.bn.running_mean",
+      "shape": [
+        1002
+      ]
+    },
+    "model.features.11.conv_exp.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.11.conv_exp.bn.running_var",
+      "shape": [
+        1002
+      ]
+    },
+    "model.features.11.conv_exp.bn.weight": {
+      "dtype": "F32",
+      "key": "features.11.conv_exp.bn.weight",
+      "shape": [
+        1002
+      ]
+    },
+    "model.features.11.conv_exp.conv.weight": {
+      "dtype": "F32",
+      "key": "features.11.conv_exp.conv.weight",
+      "shape": [
+        1002,
+        167,
+        1,
+        1
+      ]
+    },
+    "model.features.11.conv_pwl.bn.bias": {
+      "dtype": "F32",
+      "key": "features.11.conv_pwl.bn.bias",
+      "shape": [
+        182
+      ]
+    },
+    "model.features.11.conv_pwl.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.11.conv_pwl.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.11.conv_pwl.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.11.conv_pwl.bn.running_mean",
+      "shape": [
+        182
+      ]
+    },
+    "model.features.11.conv_pwl.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.11.conv_pwl.bn.running_var",
+      "shape": [
+        182
+      ]
+    },
+    "model.features.11.conv_pwl.bn.weight": {
+      "dtype": "F32",
+      "key": "features.11.conv_pwl.bn.weight",
+      "shape": [
+        182
+      ]
+    },
+    "model.features.11.conv_pwl.conv.weight": {
+      "dtype": "F32",
+      "key": "features.11.conv_pwl.conv.weight",
+      "shape": [
+        182,
+        1002,
+        1,
+        1
+      ]
+    },
+    "model.features.11.se.bn.bias": {
+      "dtype": "F32",
+      "key": "features.11.se.bn.bias",
+      "shape": [
+        83
+      ]
+    },
+    "model.features.11.se.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.11.se.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.11.se.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.11.se.bn.running_mean",
+      "shape": [
+        83
+      ]
+    },
+    "model.features.11.se.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.11.se.bn.running_var",
+      "shape": [
+        83
+      ]
+    },
+    "model.features.11.se.bn.weight": {
+      "dtype": "F32",
+      "key": "features.11.se.bn.weight",
+      "shape": [
+        83
+      ]
+    },
+    "model.features.11.se.fc1.bias": {
+      "dtype": "F32",
+      "key": "features.11.se.fc1.bias",
+      "shape": [
+        83
+      ]
+    },
+    "model.features.11.se.fc1.weight": {
+      "dtype": "F32",
+      "key": "features.11.se.fc1.weight",
+      "shape": [
+        83,
+        1002,
+        1,
+        1
+      ]
+    },
+    "model.features.11.se.fc2.bias": {
+      "dtype": "F32",
+      "key": "features.11.se.fc2.bias",
+      "shape": [
+        1002
+      ]
+    },
+    "model.features.11.se.fc2.weight": {
+      "dtype": "F32",
+      "key": "features.11.se.fc2.weight",
+      "shape": [
+        1002,
+        83,
+        1,
+        1
+      ]
+    },
+    "model.features.12.conv_dw.bn.bias": {
+      "dtype": "F32",
+      "key": "features.12.conv_dw.bn.bias",
+      "shape": [
+        1092
+      ]
+    },
+    "model.features.12.conv_dw.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.12.conv_dw.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.12.conv_dw.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.12.conv_dw.bn.running_mean",
+      "shape": [
+        1092
+      ]
+    },
+    "model.features.12.conv_dw.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.12.conv_dw.bn.running_var",
+      "shape": [
+        1092
+      ]
+    },
+    "model.features.12.conv_dw.bn.weight": {
+      "dtype": "F32",
+      "key": "features.12.conv_dw.bn.weight",
+      "shape": [
+        1092
+      ]
+    },
+    "model.features.12.conv_dw.conv.weight": {
+      "dtype": "F32",
+      "key": "features.12.conv_dw.conv.weight",
+      "shape": [
+        1092,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.features.12.conv_exp.bn.bias": {
+      "dtype": "F32",
+      "key": "features.12.conv_exp.bn.bias",
+      "shape": [
+        1092
+      ]
+    },
+    "model.features.12.conv_exp.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.12.conv_exp.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.12.conv_exp.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.12.conv_exp.bn.running_mean",
+      "shape": [
+        1092
+      ]
+    },
+    "model.features.12.conv_exp.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.12.conv_exp.bn.running_var",
+      "shape": [
+        1092
+      ]
+    },
+    "model.features.12.conv_exp.bn.weight": {
+      "dtype": "F32",
+      "key": "features.12.conv_exp.bn.weight",
+      "shape": [
+        1092
+      ]
+    },
+    "model.features.12.conv_exp.conv.weight": {
+      "dtype": "F32",
+      "key": "features.12.conv_exp.conv.weight",
+      "shape": [
+        1092,
+        182,
+        1,
+        1
+      ]
+    },
+    "model.features.12.conv_pwl.bn.bias": {
+      "dtype": "F32",
+      "key": "features.12.conv_pwl.bn.bias",
+      "shape": [
+        196
+      ]
+    },
+    "model.features.12.conv_pwl.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.12.conv_pwl.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.12.conv_pwl.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.12.conv_pwl.bn.running_mean",
+      "shape": [
+        196
+      ]
+    },
+    "model.features.12.conv_pwl.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.12.conv_pwl.bn.running_var",
+      "shape": [
+        196
+      ]
+    },
+    "model.features.12.conv_pwl.bn.weight": {
+      "dtype": "F32",
+      "key": "features.12.conv_pwl.bn.weight",
+      "shape": [
+        196
+      ]
+    },
+    "model.features.12.conv_pwl.conv.weight": {
+      "dtype": "F32",
+      "key": "features.12.conv_pwl.conv.weight",
+      "shape": [
+        196,
+        1092,
+        1,
+        1
+      ]
+    },
+    "model.features.12.se.bn.bias": {
+      "dtype": "F32",
+      "key": "features.12.se.bn.bias",
+      "shape": [
+        91
+      ]
+    },
+    "model.features.12.se.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.12.se.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.12.se.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.12.se.bn.running_mean",
+      "shape": [
+        91
+      ]
+    },
+    "model.features.12.se.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.12.se.bn.running_var",
+      "shape": [
+        91
+      ]
+    },
+    "model.features.12.se.bn.weight": {
+      "dtype": "F32",
+      "key": "features.12.se.bn.weight",
+      "shape": [
+        91
+      ]
+    },
+    "model.features.12.se.fc1.bias": {
+      "dtype": "F32",
+      "key": "features.12.se.fc1.bias",
+      "shape": [
+        91
+      ]
+    },
+    "model.features.12.se.fc1.weight": {
+      "dtype": "F32",
+      "key": "features.12.se.fc1.weight",
+      "shape": [
+        91,
+        1092,
+        1,
+        1
+      ]
+    },
+    "model.features.12.se.fc2.bias": {
+      "dtype": "F32",
+      "key": "features.12.se.fc2.bias",
+      "shape": [
+        1092
+      ]
+    },
+    "model.features.12.se.fc2.weight": {
+      "dtype": "F32",
+      "key": "features.12.se.fc2.weight",
+      "shape": [
+        1092,
+        91,
+        1,
+        1
+      ]
+    },
+    "model.features.13.conv_dw.bn.bias": {
+      "dtype": "F32",
+      "key": "features.13.conv_dw.bn.bias",
+      "shape": [
+        1176
+      ]
+    },
+    "model.features.13.conv_dw.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.13.conv_dw.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.13.conv_dw.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.13.conv_dw.bn.running_mean",
+      "shape": [
+        1176
+      ]
+    },
+    "model.features.13.conv_dw.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.13.conv_dw.bn.running_var",
+      "shape": [
+        1176
+      ]
+    },
+    "model.features.13.conv_dw.bn.weight": {
+      "dtype": "F32",
+      "key": "features.13.conv_dw.bn.weight",
+      "shape": [
+        1176
+      ]
+    },
+    "model.features.13.conv_dw.conv.weight": {
+      "dtype": "F32",
+      "key": "features.13.conv_dw.conv.weight",
+      "shape": [
+        1176,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.features.13.conv_exp.bn.bias": {
+      "dtype": "F32",
+      "key": "features.13.conv_exp.bn.bias",
+      "shape": [
+        1176
+      ]
+    },
+    "model.features.13.conv_exp.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.13.conv_exp.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.13.conv_exp.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.13.conv_exp.bn.running_mean",
+      "shape": [
+        1176
+      ]
+    },
+    "model.features.13.conv_exp.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.13.conv_exp.bn.running_var",
+      "shape": [
+        1176
+      ]
+    },
+    "model.features.13.conv_exp.bn.weight": {
+      "dtype": "F32",
+      "key": "features.13.conv_exp.bn.weight",
+      "shape": [
+        1176
+      ]
+    },
+    "model.features.13.conv_exp.conv.weight": {
+      "dtype": "F32",
+      "key": "features.13.conv_exp.conv.weight",
+      "shape": [
+        1176,
+        196,
+        1,
+        1
+      ]
+    },
+    "model.features.13.conv_pwl.bn.bias": {
+      "dtype": "F32",
+      "key": "features.13.conv_pwl.bn.bias",
+      "shape": [
+        211
+      ]
+    },
+    "model.features.13.conv_pwl.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.13.conv_pwl.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.13.conv_pwl.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.13.conv_pwl.bn.running_mean",
+      "shape": [
+        211
+      ]
+    },
+    "model.features.13.conv_pwl.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.13.conv_pwl.bn.running_var",
+      "shape": [
+        211
+      ]
+    },
+    "model.features.13.conv_pwl.bn.weight": {
+      "dtype": "F32",
+      "key": "features.13.conv_pwl.bn.weight",
+      "shape": [
+        211
+      ]
+    },
+    "model.features.13.conv_pwl.conv.weight": {
+      "dtype": "F32",
+      "key": "features.13.conv_pwl.conv.weight",
+      "shape": [
+        211,
+        1176,
+        1,
+        1
+      ]
+    },
+    "model.features.13.se.bn.bias": {
+      "dtype": "F32",
+      "key": "features.13.se.bn.bias",
+      "shape": [
+        98
+      ]
+    },
+    "model.features.13.se.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.13.se.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.13.se.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.13.se.bn.running_mean",
+      "shape": [
+        98
+      ]
+    },
+    "model.features.13.se.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.13.se.bn.running_var",
+      "shape": [
+        98
+      ]
+    },
+    "model.features.13.se.bn.weight": {
+      "dtype": "F32",
+      "key": "features.13.se.bn.weight",
+      "shape": [
+        98
+      ]
+    },
+    "model.features.13.se.fc1.bias": {
+      "dtype": "F32",
+      "key": "features.13.se.fc1.bias",
+      "shape": [
+        98
+      ]
+    },
+    "model.features.13.se.fc1.weight": {
+      "dtype": "F32",
+      "key": "features.13.se.fc1.weight",
+      "shape": [
+        98,
+        1176,
+        1,
+        1
+      ]
+    },
+    "model.features.13.se.fc2.bias": {
+      "dtype": "F32",
+      "key": "features.13.se.fc2.bias",
+      "shape": [
+        1176
+      ]
+    },
+    "model.features.13.se.fc2.weight": {
+      "dtype": "F32",
+      "key": "features.13.se.fc2.weight",
+      "shape": [
+        1176,
+        98,
+        1,
+        1
+      ]
+    },
+    "model.features.14.conv_dw.bn.bias": {
+      "dtype": "F32",
+      "key": "features.14.conv_dw.bn.bias",
+      "shape": [
+        1266
+      ]
+    },
+    "model.features.14.conv_dw.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.14.conv_dw.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.14.conv_dw.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.14.conv_dw.bn.running_mean",
+      "shape": [
+        1266
+      ]
+    },
+    "model.features.14.conv_dw.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.14.conv_dw.bn.running_var",
+      "shape": [
+        1266
+      ]
+    },
+    "model.features.14.conv_dw.bn.weight": {
+      "dtype": "F32",
+      "key": "features.14.conv_dw.bn.weight",
+      "shape": [
+        1266
+      ]
+    },
+    "model.features.14.conv_dw.conv.weight": {
+      "dtype": "F32",
+      "key": "features.14.conv_dw.conv.weight",
+      "shape": [
+        1266,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.features.14.conv_exp.bn.bias": {
+      "dtype": "F32",
+      "key": "features.14.conv_exp.bn.bias",
+      "shape": [
+        1266
+      ]
+    },
+    "model.features.14.conv_exp.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.14.conv_exp.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.14.conv_exp.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.14.conv_exp.bn.running_mean",
+      "shape": [
+        1266
+      ]
+    },
+    "model.features.14.conv_exp.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.14.conv_exp.bn.running_var",
+      "shape": [
+        1266
+      ]
+    },
+    "model.features.14.conv_exp.bn.weight": {
+      "dtype": "F32",
+      "key": "features.14.conv_exp.bn.weight",
+      "shape": [
+        1266
+      ]
+    },
+    "model.features.14.conv_exp.conv.weight": {
+      "dtype": "F32",
+      "key": "features.14.conv_exp.conv.weight",
+      "shape": [
+        1266,
+        211,
+        1,
+        1
+      ]
+    },
+    "model.features.14.conv_pwl.bn.bias": {
+      "dtype": "F32",
+      "key": "features.14.conv_pwl.bn.bias",
+      "shape": [
+        226
+      ]
+    },
+    "model.features.14.conv_pwl.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.14.conv_pwl.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.14.conv_pwl.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.14.conv_pwl.bn.running_mean",
+      "shape": [
+        226
+      ]
+    },
+    "model.features.14.conv_pwl.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.14.conv_pwl.bn.running_var",
+      "shape": [
+        226
+      ]
+    },
+    "model.features.14.conv_pwl.bn.weight": {
+      "dtype": "F32",
+      "key": "features.14.conv_pwl.bn.weight",
+      "shape": [
+        226
+      ]
+    },
+    "model.features.14.conv_pwl.conv.weight": {
+      "dtype": "F32",
+      "key": "features.14.conv_pwl.conv.weight",
+      "shape": [
+        226,
+        1266,
+        1,
+        1
+      ]
+    },
+    "model.features.14.se.bn.bias": {
+      "dtype": "F32",
+      "key": "features.14.se.bn.bias",
+      "shape": [
+        105
+      ]
+    },
+    "model.features.14.se.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.14.se.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.14.se.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.14.se.bn.running_mean",
+      "shape": [
+        105
+      ]
+    },
+    "model.features.14.se.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.14.se.bn.running_var",
+      "shape": [
+        105
+      ]
+    },
+    "model.features.14.se.bn.weight": {
+      "dtype": "F32",
+      "key": "features.14.se.bn.weight",
+      "shape": [
+        105
+      ]
+    },
+    "model.features.14.se.fc1.bias": {
+      "dtype": "F32",
+      "key": "features.14.se.fc1.bias",
+      "shape": [
+        105
+      ]
+    },
+    "model.features.14.se.fc1.weight": {
+      "dtype": "F32",
+      "key": "features.14.se.fc1.weight",
+      "shape": [
+        105,
+        1266,
+        1,
+        1
+      ]
+    },
+    "model.features.14.se.fc2.bias": {
+      "dtype": "F32",
+      "key": "features.14.se.fc2.bias",
+      "shape": [
+        1266
+      ]
+    },
+    "model.features.14.se.fc2.weight": {
+      "dtype": "F32",
+      "key": "features.14.se.fc2.weight",
+      "shape": [
+        1266,
+        105,
+        1,
+        1
+      ]
+    },
+    "model.features.15.conv_dw.bn.bias": {
+      "dtype": "F32",
+      "key": "features.15.conv_dw.bn.bias",
+      "shape": [
+        1356
+      ]
+    },
+    "model.features.15.conv_dw.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.15.conv_dw.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.15.conv_dw.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.15.conv_dw.bn.running_mean",
+      "shape": [
+        1356
+      ]
+    },
+    "model.features.15.conv_dw.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.15.conv_dw.bn.running_var",
+      "shape": [
+        1356
+      ]
+    },
+    "model.features.15.conv_dw.bn.weight": {
+      "dtype": "F32",
+      "key": "features.15.conv_dw.bn.weight",
+      "shape": [
+        1356
+      ]
+    },
+    "model.features.15.conv_dw.conv.weight": {
+      "dtype": "F32",
+      "key": "features.15.conv_dw.conv.weight",
+      "shape": [
+        1356,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.features.15.conv_exp.bn.bias": {
+      "dtype": "F32",
+      "key": "features.15.conv_exp.bn.bias",
+      "shape": [
+        1356
+      ]
+    },
+    "model.features.15.conv_exp.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.15.conv_exp.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.15.conv_exp.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.15.conv_exp.bn.running_mean",
+      "shape": [
+        1356
+      ]
+    },
+    "model.features.15.conv_exp.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.15.conv_exp.bn.running_var",
+      "shape": [
+        1356
+      ]
+    },
+    "model.features.15.conv_exp.bn.weight": {
+      "dtype": "F32",
+      "key": "features.15.conv_exp.bn.weight",
+      "shape": [
+        1356
+      ]
+    },
+    "model.features.15.conv_exp.conv.weight": {
+      "dtype": "F32",
+      "key": "features.15.conv_exp.conv.weight",
+      "shape": [
+        1356,
+        226,
+        1,
+        1
+      ]
+    },
+    "model.features.15.conv_pwl.bn.bias": {
+      "dtype": "F32",
+      "key": "features.15.conv_pwl.bn.bias",
+      "shape": [
+        240
+      ]
+    },
+    "model.features.15.conv_pwl.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.15.conv_pwl.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.15.conv_pwl.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.15.conv_pwl.bn.running_mean",
+      "shape": [
+        240
+      ]
+    },
+    "model.features.15.conv_pwl.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.15.conv_pwl.bn.running_var",
+      "shape": [
+        240
+      ]
+    },
+    "model.features.15.conv_pwl.bn.weight": {
+      "dtype": "F32",
+      "key": "features.15.conv_pwl.bn.weight",
+      "shape": [
+        240
+      ]
+    },
+    "model.features.15.conv_pwl.conv.weight": {
+      "dtype": "F32",
+      "key": "features.15.conv_pwl.conv.weight",
+      "shape": [
+        240,
+        1356,
+        1,
+        1
+      ]
+    },
+    "model.features.15.se.bn.bias": {
+      "dtype": "F32",
+      "key": "features.15.se.bn.bias",
+      "shape": [
+        113
+      ]
+    },
+    "model.features.15.se.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.15.se.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.15.se.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.15.se.bn.running_mean",
+      "shape": [
+        113
+      ]
+    },
+    "model.features.15.se.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.15.se.bn.running_var",
+      "shape": [
+        113
+      ]
+    },
+    "model.features.15.se.bn.weight": {
+      "dtype": "F32",
+      "key": "features.15.se.bn.weight",
+      "shape": [
+        113
+      ]
+    },
+    "model.features.15.se.fc1.bias": {
+      "dtype": "F32",
+      "key": "features.15.se.fc1.bias",
+      "shape": [
+        113
+      ]
+    },
+    "model.features.15.se.fc1.weight": {
+      "dtype": "F32",
+      "key": "features.15.se.fc1.weight",
+      "shape": [
+        113,
+        1356,
+        1,
+        1
+      ]
+    },
+    "model.features.15.se.fc2.bias": {
+      "dtype": "F32",
+      "key": "features.15.se.fc2.bias",
+      "shape": [
+        1356
+      ]
+    },
+    "model.features.15.se.fc2.weight": {
+      "dtype": "F32",
+      "key": "features.15.se.fc2.weight",
+      "shape": [
+        1356,
+        113,
+        1,
+        1
+      ]
+    },
+    "model.features.16.bn.bias": {
+      "dtype": "F32",
+      "key": "features.16.bn.bias",
+      "shape": [
+        1664
+      ]
+    },
+    "model.features.16.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.16.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.16.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.16.bn.running_mean",
+      "shape": [
+        1664
+      ]
+    },
+    "model.features.16.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.16.bn.running_var",
+      "shape": [
+        1664
+      ]
+    },
+    "model.features.16.bn.weight": {
+      "dtype": "F32",
+      "key": "features.16.bn.weight",
+      "shape": [
+        1664
+      ]
+    },
+    "model.features.16.conv.weight": {
+      "dtype": "F32",
+      "key": "features.16.conv.weight",
+      "shape": [
+        1664,
+        240,
+        1,
+        1
+      ]
+    },
+    "model.features.2.conv_dw.bn.bias": {
+      "dtype": "F32",
+      "key": "features.2.conv_dw.bn.bias",
+      "shape": [
+        210
+      ]
+    },
+    "model.features.2.conv_dw.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.2.conv_dw.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.2.conv_dw.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.2.conv_dw.bn.running_mean",
+      "shape": [
+        210
+      ]
+    },
+    "model.features.2.conv_dw.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.2.conv_dw.bn.running_var",
+      "shape": [
+        210
+      ]
+    },
+    "model.features.2.conv_dw.bn.weight": {
+      "dtype": "F32",
+      "key": "features.2.conv_dw.bn.weight",
+      "shape": [
+        210
+      ]
+    },
+    "model.features.2.conv_dw.conv.weight": {
+      "dtype": "F32",
+      "key": "features.2.conv_dw.conv.weight",
+      "shape": [
+        210,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.features.2.conv_exp.bn.bias": {
+      "dtype": "F32",
+      "key": "features.2.conv_exp.bn.bias",
+      "shape": [
+        210
+      ]
+    },
+    "model.features.2.conv_exp.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.2.conv_exp.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.2.conv_exp.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.2.conv_exp.bn.running_mean",
+      "shape": [
+        210
+      ]
+    },
+    "model.features.2.conv_exp.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.2.conv_exp.bn.running_var",
+      "shape": [
+        210
+      ]
+    },
+    "model.features.2.conv_exp.bn.weight": {
+      "dtype": "F32",
+      "key": "features.2.conv_exp.bn.weight",
+      "shape": [
+        210
+      ]
+    },
+    "model.features.2.conv_exp.conv.weight": {
+      "dtype": "F32",
+      "key": "features.2.conv_exp.conv.weight",
+      "shape": [
+        210,
+        35,
+        1,
+        1
+      ]
+    },
+    "model.features.2.conv_pwl.bn.bias": {
+      "dtype": "F32",
+      "key": "features.2.conv_pwl.bn.bias",
+      "shape": [
+        50
+      ]
+    },
+    "model.features.2.conv_pwl.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.2.conv_pwl.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.2.conv_pwl.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.2.conv_pwl.bn.running_mean",
+      "shape": [
+        50
+      ]
+    },
+    "model.features.2.conv_pwl.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.2.conv_pwl.bn.running_var",
+      "shape": [
+        50
+      ]
+    },
+    "model.features.2.conv_pwl.bn.weight": {
+      "dtype": "F32",
+      "key": "features.2.conv_pwl.bn.weight",
+      "shape": [
+        50
+      ]
+    },
+    "model.features.2.conv_pwl.conv.weight": {
+      "dtype": "F32",
+      "key": "features.2.conv_pwl.conv.weight",
+      "shape": [
+        50,
+        210,
+        1,
+        1
+      ]
+    },
+    "model.features.3.conv_dw.bn.bias": {
+      "dtype": "F32",
+      "key": "features.3.conv_dw.bn.bias",
+      "shape": [
+        300
+      ]
+    },
+    "model.features.3.conv_dw.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.3.conv_dw.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.3.conv_dw.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.3.conv_dw.bn.running_mean",
+      "shape": [
+        300
+      ]
+    },
+    "model.features.3.conv_dw.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.3.conv_dw.bn.running_var",
+      "shape": [
+        300
+      ]
+    },
+    "model.features.3.conv_dw.bn.weight": {
+      "dtype": "F32",
+      "key": "features.3.conv_dw.bn.weight",
+      "shape": [
+        300
+      ]
+    },
+    "model.features.3.conv_dw.conv.weight": {
+      "dtype": "F32",
+      "key": "features.3.conv_dw.conv.weight",
+      "shape": [
+        300,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.features.3.conv_exp.bn.bias": {
+      "dtype": "F32",
+      "key": "features.3.conv_exp.bn.bias",
+      "shape": [
+        300
+      ]
+    },
+    "model.features.3.conv_exp.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.3.conv_exp.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.3.conv_exp.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.3.conv_exp.bn.running_mean",
+      "shape": [
+        300
+      ]
+    },
+    "model.features.3.conv_exp.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.3.conv_exp.bn.running_var",
+      "shape": [
+        300
+      ]
+    },
+    "model.features.3.conv_exp.bn.weight": {
+      "dtype": "F32",
+      "key": "features.3.conv_exp.bn.weight",
+      "shape": [
+        300
+      ]
+    },
+    "model.features.3.conv_exp.conv.weight": {
+      "dtype": "F32",
+      "key": "features.3.conv_exp.conv.weight",
+      "shape": [
+        300,
+        50,
+        1,
+        1
+      ]
+    },
+    "model.features.3.conv_pwl.bn.bias": {
+      "dtype": "F32",
+      "key": "features.3.conv_pwl.bn.bias",
+      "shape": [
+        65
+      ]
+    },
+    "model.features.3.conv_pwl.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.3.conv_pwl.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.3.conv_pwl.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.3.conv_pwl.bn.running_mean",
+      "shape": [
+        65
+      ]
+    },
+    "model.features.3.conv_pwl.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.3.conv_pwl.bn.running_var",
+      "shape": [
+        65
+      ]
+    },
+    "model.features.3.conv_pwl.bn.weight": {
+      "dtype": "F32",
+      "key": "features.3.conv_pwl.bn.weight",
+      "shape": [
+        65
+      ]
+    },
+    "model.features.3.conv_pwl.conv.weight": {
+      "dtype": "F32",
+      "key": "features.3.conv_pwl.conv.weight",
+      "shape": [
+        65,
+        300,
+        1,
+        1
+      ]
+    },
+    "model.features.3.se.bn.bias": {
+      "dtype": "F32",
+      "key": "features.3.se.bn.bias",
+      "shape": [
+        25
+      ]
+    },
+    "model.features.3.se.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.3.se.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.3.se.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.3.se.bn.running_mean",
+      "shape": [
+        25
+      ]
+    },
+    "model.features.3.se.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.3.se.bn.running_var",
+      "shape": [
+        25
+      ]
+    },
+    "model.features.3.se.bn.weight": {
+      "dtype": "F32",
+      "key": "features.3.se.bn.weight",
+      "shape": [
+        25
+      ]
+    },
+    "model.features.3.se.fc1.bias": {
+      "dtype": "F32",
+      "key": "features.3.se.fc1.bias",
+      "shape": [
+        25
+      ]
+    },
+    "model.features.3.se.fc1.weight": {
+      "dtype": "F32",
+      "key": "features.3.se.fc1.weight",
+      "shape": [
+        25,
+        300,
+        1,
+        1
+      ]
+    },
+    "model.features.3.se.fc2.bias": {
+      "dtype": "F32",
+      "key": "features.3.se.fc2.bias",
+      "shape": [
+        300
+      ]
+    },
+    "model.features.3.se.fc2.weight": {
+      "dtype": "F32",
+      "key": "features.3.se.fc2.weight",
+      "shape": [
+        300,
+        25,
+        1,
+        1
+      ]
+    },
+    "model.features.4.conv_dw.bn.bias": {
+      "dtype": "F32",
+      "key": "features.4.conv_dw.bn.bias",
+      "shape": [
+        390
+      ]
+    },
+    "model.features.4.conv_dw.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.4.conv_dw.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.4.conv_dw.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.4.conv_dw.bn.running_mean",
+      "shape": [
+        390
+      ]
+    },
+    "model.features.4.conv_dw.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.4.conv_dw.bn.running_var",
+      "shape": [
+        390
+      ]
+    },
+    "model.features.4.conv_dw.bn.weight": {
+      "dtype": "F32",
+      "key": "features.4.conv_dw.bn.weight",
+      "shape": [
+        390
+      ]
+    },
+    "model.features.4.conv_dw.conv.weight": {
+      "dtype": "F32",
+      "key": "features.4.conv_dw.conv.weight",
+      "shape": [
+        390,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.features.4.conv_exp.bn.bias": {
+      "dtype": "F32",
+      "key": "features.4.conv_exp.bn.bias",
+      "shape": [
+        390
+      ]
+    },
+    "model.features.4.conv_exp.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.4.conv_exp.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.4.conv_exp.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.4.conv_exp.bn.running_mean",
+      "shape": [
+        390
+      ]
+    },
+    "model.features.4.conv_exp.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.4.conv_exp.bn.running_var",
+      "shape": [
+        390
+      ]
+    },
+    "model.features.4.conv_exp.bn.weight": {
+      "dtype": "F32",
+      "key": "features.4.conv_exp.bn.weight",
+      "shape": [
+        390
+      ]
+    },
+    "model.features.4.conv_exp.conv.weight": {
+      "dtype": "F32",
+      "key": "features.4.conv_exp.conv.weight",
+      "shape": [
+        390,
+        65,
+        1,
+        1
+      ]
+    },
+    "model.features.4.conv_pwl.bn.bias": {
+      "dtype": "F32",
+      "key": "features.4.conv_pwl.bn.bias",
+      "shape": [
+        79
+      ]
+    },
+    "model.features.4.conv_pwl.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.4.conv_pwl.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.4.conv_pwl.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.4.conv_pwl.bn.running_mean",
+      "shape": [
+        79
+      ]
+    },
+    "model.features.4.conv_pwl.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.4.conv_pwl.bn.running_var",
+      "shape": [
+        79
+      ]
+    },
+    "model.features.4.conv_pwl.bn.weight": {
+      "dtype": "F32",
+      "key": "features.4.conv_pwl.bn.weight",
+      "shape": [
+        79
+      ]
+    },
+    "model.features.4.conv_pwl.conv.weight": {
+      "dtype": "F32",
+      "key": "features.4.conv_pwl.conv.weight",
+      "shape": [
+        79,
+        390,
+        1,
+        1
+      ]
+    },
+    "model.features.4.se.bn.bias": {
+      "dtype": "F32",
+      "key": "features.4.se.bn.bias",
+      "shape": [
+        32
+      ]
+    },
+    "model.features.4.se.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.4.se.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.4.se.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.4.se.bn.running_mean",
+      "shape": [
+        32
+      ]
+    },
+    "model.features.4.se.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.4.se.bn.running_var",
+      "shape": [
+        32
+      ]
+    },
+    "model.features.4.se.bn.weight": {
+      "dtype": "F32",
+      "key": "features.4.se.bn.weight",
+      "shape": [
+        32
+      ]
+    },
+    "model.features.4.se.fc1.bias": {
+      "dtype": "F32",
+      "key": "features.4.se.fc1.bias",
+      "shape": [
+        32
+      ]
+    },
+    "model.features.4.se.fc1.weight": {
+      "dtype": "F32",
+      "key": "features.4.se.fc1.weight",
+      "shape": [
+        32,
+        390,
+        1,
+        1
+      ]
+    },
+    "model.features.4.se.fc2.bias": {
+      "dtype": "F32",
+      "key": "features.4.se.fc2.bias",
+      "shape": [
+        390
+      ]
+    },
+    "model.features.4.se.fc2.weight": {
+      "dtype": "F32",
+      "key": "features.4.se.fc2.weight",
+      "shape": [
+        390,
+        32,
+        1,
+        1
+      ]
+    },
+    "model.features.5.conv_dw.bn.bias": {
+      "dtype": "F32",
+      "key": "features.5.conv_dw.bn.bias",
+      "shape": [
+        474
+      ]
+    },
+    "model.features.5.conv_dw.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.5.conv_dw.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.5.conv_dw.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.5.conv_dw.bn.running_mean",
+      "shape": [
+        474
+      ]
+    },
+    "model.features.5.conv_dw.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.5.conv_dw.bn.running_var",
+      "shape": [
+        474
+      ]
+    },
+    "model.features.5.conv_dw.bn.weight": {
+      "dtype": "F32",
+      "key": "features.5.conv_dw.bn.weight",
+      "shape": [
+        474
+      ]
+    },
+    "model.features.5.conv_dw.conv.weight": {
+      "dtype": "F32",
+      "key": "features.5.conv_dw.conv.weight",
+      "shape": [
+        474,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.features.5.conv_exp.bn.bias": {
+      "dtype": "F32",
+      "key": "features.5.conv_exp.bn.bias",
+      "shape": [
+        474
+      ]
+    },
+    "model.features.5.conv_exp.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.5.conv_exp.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.5.conv_exp.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.5.conv_exp.bn.running_mean",
+      "shape": [
+        474
+      ]
+    },
+    "model.features.5.conv_exp.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.5.conv_exp.bn.running_var",
+      "shape": [
+        474
+      ]
+    },
+    "model.features.5.conv_exp.bn.weight": {
+      "dtype": "F32",
+      "key": "features.5.conv_exp.bn.weight",
+      "shape": [
+        474
+      ]
+    },
+    "model.features.5.conv_exp.conv.weight": {
+      "dtype": "F32",
+      "key": "features.5.conv_exp.conv.weight",
+      "shape": [
+        474,
+        79,
+        1,
+        1
+      ]
+    },
+    "model.features.5.conv_pwl.bn.bias": {
+      "dtype": "F32",
+      "key": "features.5.conv_pwl.bn.bias",
+      "shape": [
+        94
+      ]
+    },
+    "model.features.5.conv_pwl.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.5.conv_pwl.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.5.conv_pwl.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.5.conv_pwl.bn.running_mean",
+      "shape": [
+        94
+      ]
+    },
+    "model.features.5.conv_pwl.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.5.conv_pwl.bn.running_var",
+      "shape": [
+        94
+      ]
+    },
+    "model.features.5.conv_pwl.bn.weight": {
+      "dtype": "F32",
+      "key": "features.5.conv_pwl.bn.weight",
+      "shape": [
+        94
+      ]
+    },
+    "model.features.5.conv_pwl.conv.weight": {
+      "dtype": "F32",
+      "key": "features.5.conv_pwl.conv.weight",
+      "shape": [
+        94,
+        474,
+        1,
+        1
+      ]
+    },
+    "model.features.5.se.bn.bias": {
+      "dtype": "F32",
+      "key": "features.5.se.bn.bias",
+      "shape": [
+        39
+      ]
+    },
+    "model.features.5.se.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.5.se.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.5.se.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.5.se.bn.running_mean",
+      "shape": [
+        39
+      ]
+    },
+    "model.features.5.se.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.5.se.bn.running_var",
+      "shape": [
+        39
+      ]
+    },
+    "model.features.5.se.bn.weight": {
+      "dtype": "F32",
+      "key": "features.5.se.bn.weight",
+      "shape": [
+        39
+      ]
+    },
+    "model.features.5.se.fc1.bias": {
+      "dtype": "F32",
+      "key": "features.5.se.fc1.bias",
+      "shape": [
+        39
+      ]
+    },
+    "model.features.5.se.fc1.weight": {
+      "dtype": "F32",
+      "key": "features.5.se.fc1.weight",
+      "shape": [
+        39,
+        474,
+        1,
+        1
+      ]
+    },
+    "model.features.5.se.fc2.bias": {
+      "dtype": "F32",
+      "key": "features.5.se.fc2.bias",
+      "shape": [
+        474
+      ]
+    },
+    "model.features.5.se.fc2.weight": {
+      "dtype": "F32",
+      "key": "features.5.se.fc2.weight",
+      "shape": [
+        474,
+        39,
+        1,
+        1
+      ]
+    },
+    "model.features.6.conv_dw.bn.bias": {
+      "dtype": "F32",
+      "key": "features.6.conv_dw.bn.bias",
+      "shape": [
+        564
+      ]
+    },
+    "model.features.6.conv_dw.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.6.conv_dw.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.6.conv_dw.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.6.conv_dw.bn.running_mean",
+      "shape": [
+        564
+      ]
+    },
+    "model.features.6.conv_dw.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.6.conv_dw.bn.running_var",
+      "shape": [
+        564
+      ]
+    },
+    "model.features.6.conv_dw.bn.weight": {
+      "dtype": "F32",
+      "key": "features.6.conv_dw.bn.weight",
+      "shape": [
+        564
+      ]
+    },
+    "model.features.6.conv_dw.conv.weight": {
+      "dtype": "F32",
+      "key": "features.6.conv_dw.conv.weight",
+      "shape": [
+        564,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.features.6.conv_exp.bn.bias": {
+      "dtype": "F32",
+      "key": "features.6.conv_exp.bn.bias",
+      "shape": [
+        564
+      ]
+    },
+    "model.features.6.conv_exp.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.6.conv_exp.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.6.conv_exp.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.6.conv_exp.bn.running_mean",
+      "shape": [
+        564
+      ]
+    },
+    "model.features.6.conv_exp.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.6.conv_exp.bn.running_var",
+      "shape": [
+        564
+      ]
+    },
+    "model.features.6.conv_exp.bn.weight": {
+      "dtype": "F32",
+      "key": "features.6.conv_exp.bn.weight",
+      "shape": [
+        564
+      ]
+    },
+    "model.features.6.conv_exp.conv.weight": {
+      "dtype": "F32",
+      "key": "features.6.conv_exp.conv.weight",
+      "shape": [
+        564,
+        94,
+        1,
+        1
+      ]
+    },
+    "model.features.6.conv_pwl.bn.bias": {
+      "dtype": "F32",
+      "key": "features.6.conv_pwl.bn.bias",
+      "shape": [
+        109
+      ]
+    },
+    "model.features.6.conv_pwl.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.6.conv_pwl.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.6.conv_pwl.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.6.conv_pwl.bn.running_mean",
+      "shape": [
+        109
+      ]
+    },
+    "model.features.6.conv_pwl.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.6.conv_pwl.bn.running_var",
+      "shape": [
+        109
+      ]
+    },
+    "model.features.6.conv_pwl.bn.weight": {
+      "dtype": "F32",
+      "key": "features.6.conv_pwl.bn.weight",
+      "shape": [
+        109
+      ]
+    },
+    "model.features.6.conv_pwl.conv.weight": {
+      "dtype": "F32",
+      "key": "features.6.conv_pwl.conv.weight",
+      "shape": [
+        109,
+        564,
+        1,
+        1
+      ]
+    },
+    "model.features.6.se.bn.bias": {
+      "dtype": "F32",
+      "key": "features.6.se.bn.bias",
+      "shape": [
+        47
+      ]
+    },
+    "model.features.6.se.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.6.se.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.6.se.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.6.se.bn.running_mean",
+      "shape": [
+        47
+      ]
+    },
+    "model.features.6.se.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.6.se.bn.running_var",
+      "shape": [
+        47
+      ]
+    },
+    "model.features.6.se.bn.weight": {
+      "dtype": "F32",
+      "key": "features.6.se.bn.weight",
+      "shape": [
+        47
+      ]
+    },
+    "model.features.6.se.fc1.bias": {
+      "dtype": "F32",
+      "key": "features.6.se.fc1.bias",
+      "shape": [
+        47
+      ]
+    },
+    "model.features.6.se.fc1.weight": {
+      "dtype": "F32",
+      "key": "features.6.se.fc1.weight",
+      "shape": [
+        47,
+        564,
+        1,
+        1
+      ]
+    },
+    "model.features.6.se.fc2.bias": {
+      "dtype": "F32",
+      "key": "features.6.se.fc2.bias",
+      "shape": [
+        564
+      ]
+    },
+    "model.features.6.se.fc2.weight": {
+      "dtype": "F32",
+      "key": "features.6.se.fc2.weight",
+      "shape": [
+        564,
+        47,
+        1,
+        1
+      ]
+    },
+    "model.features.7.conv_dw.bn.bias": {
+      "dtype": "F32",
+      "key": "features.7.conv_dw.bn.bias",
+      "shape": [
+        654
+      ]
+    },
+    "model.features.7.conv_dw.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.7.conv_dw.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.7.conv_dw.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.7.conv_dw.bn.running_mean",
+      "shape": [
+        654
+      ]
+    },
+    "model.features.7.conv_dw.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.7.conv_dw.bn.running_var",
+      "shape": [
+        654
+      ]
+    },
+    "model.features.7.conv_dw.bn.weight": {
+      "dtype": "F32",
+      "key": "features.7.conv_dw.bn.weight",
+      "shape": [
+        654
+      ]
+    },
+    "model.features.7.conv_dw.conv.weight": {
+      "dtype": "F32",
+      "key": "features.7.conv_dw.conv.weight",
+      "shape": [
+        654,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.features.7.conv_exp.bn.bias": {
+      "dtype": "F32",
+      "key": "features.7.conv_exp.bn.bias",
+      "shape": [
+        654
+      ]
+    },
+    "model.features.7.conv_exp.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.7.conv_exp.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.7.conv_exp.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.7.conv_exp.bn.running_mean",
+      "shape": [
+        654
+      ]
+    },
+    "model.features.7.conv_exp.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.7.conv_exp.bn.running_var",
+      "shape": [
+        654
+      ]
+    },
+    "model.features.7.conv_exp.bn.weight": {
+      "dtype": "F32",
+      "key": "features.7.conv_exp.bn.weight",
+      "shape": [
+        654
+      ]
+    },
+    "model.features.7.conv_exp.conv.weight": {
+      "dtype": "F32",
+      "key": "features.7.conv_exp.conv.weight",
+      "shape": [
+        654,
+        109,
+        1,
+        1
+      ]
+    },
+    "model.features.7.conv_pwl.bn.bias": {
+      "dtype": "F32",
+      "key": "features.7.conv_pwl.bn.bias",
+      "shape": [
+        123
+      ]
+    },
+    "model.features.7.conv_pwl.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.7.conv_pwl.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.7.conv_pwl.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.7.conv_pwl.bn.running_mean",
+      "shape": [
+        123
+      ]
+    },
+    "model.features.7.conv_pwl.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.7.conv_pwl.bn.running_var",
+      "shape": [
+        123
+      ]
+    },
+    "model.features.7.conv_pwl.bn.weight": {
+      "dtype": "F32",
+      "key": "features.7.conv_pwl.bn.weight",
+      "shape": [
+        123
+      ]
+    },
+    "model.features.7.conv_pwl.conv.weight": {
+      "dtype": "F32",
+      "key": "features.7.conv_pwl.conv.weight",
+      "shape": [
+        123,
+        654,
+        1,
+        1
+      ]
+    },
+    "model.features.7.se.bn.bias": {
+      "dtype": "F32",
+      "key": "features.7.se.bn.bias",
+      "shape": [
+        54
+      ]
+    },
+    "model.features.7.se.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.7.se.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.7.se.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.7.se.bn.running_mean",
+      "shape": [
+        54
+      ]
+    },
+    "model.features.7.se.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.7.se.bn.running_var",
+      "shape": [
+        54
+      ]
+    },
+    "model.features.7.se.bn.weight": {
+      "dtype": "F32",
+      "key": "features.7.se.bn.weight",
+      "shape": [
+        54
+      ]
+    },
+    "model.features.7.se.fc1.bias": {
+      "dtype": "F32",
+      "key": "features.7.se.fc1.bias",
+      "shape": [
+        54
+      ]
+    },
+    "model.features.7.se.fc1.weight": {
+      "dtype": "F32",
+      "key": "features.7.se.fc1.weight",
+      "shape": [
+        54,
+        654,
+        1,
+        1
+      ]
+    },
+    "model.features.7.se.fc2.bias": {
+      "dtype": "F32",
+      "key": "features.7.se.fc2.bias",
+      "shape": [
+        654
+      ]
+    },
+    "model.features.7.se.fc2.weight": {
+      "dtype": "F32",
+      "key": "features.7.se.fc2.weight",
+      "shape": [
+        654,
+        54,
+        1,
+        1
+      ]
+    },
+    "model.features.8.conv_dw.bn.bias": {
+      "dtype": "F32",
+      "key": "features.8.conv_dw.bn.bias",
+      "shape": [
+        738
+      ]
+    },
+    "model.features.8.conv_dw.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.8.conv_dw.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.8.conv_dw.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.8.conv_dw.bn.running_mean",
+      "shape": [
+        738
+      ]
+    },
+    "model.features.8.conv_dw.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.8.conv_dw.bn.running_var",
+      "shape": [
+        738
+      ]
+    },
+    "model.features.8.conv_dw.bn.weight": {
+      "dtype": "F32",
+      "key": "features.8.conv_dw.bn.weight",
+      "shape": [
+        738
+      ]
+    },
+    "model.features.8.conv_dw.conv.weight": {
+      "dtype": "F32",
+      "key": "features.8.conv_dw.conv.weight",
+      "shape": [
+        738,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.features.8.conv_exp.bn.bias": {
+      "dtype": "F32",
+      "key": "features.8.conv_exp.bn.bias",
+      "shape": [
+        738
+      ]
+    },
+    "model.features.8.conv_exp.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.8.conv_exp.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.8.conv_exp.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.8.conv_exp.bn.running_mean",
+      "shape": [
+        738
+      ]
+    },
+    "model.features.8.conv_exp.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.8.conv_exp.bn.running_var",
+      "shape": [
+        738
+      ]
+    },
+    "model.features.8.conv_exp.bn.weight": {
+      "dtype": "F32",
+      "key": "features.8.conv_exp.bn.weight",
+      "shape": [
+        738
+      ]
+    },
+    "model.features.8.conv_exp.conv.weight": {
+      "dtype": "F32",
+      "key": "features.8.conv_exp.conv.weight",
+      "shape": [
+        738,
+        123,
+        1,
+        1
+      ]
+    },
+    "model.features.8.conv_pwl.bn.bias": {
+      "dtype": "F32",
+      "key": "features.8.conv_pwl.bn.bias",
+      "shape": [
+        138
+      ]
+    },
+    "model.features.8.conv_pwl.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.8.conv_pwl.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.8.conv_pwl.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.8.conv_pwl.bn.running_mean",
+      "shape": [
+        138
+      ]
+    },
+    "model.features.8.conv_pwl.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.8.conv_pwl.bn.running_var",
+      "shape": [
+        138
+      ]
+    },
+    "model.features.8.conv_pwl.bn.weight": {
+      "dtype": "F32",
+      "key": "features.8.conv_pwl.bn.weight",
+      "shape": [
+        138
+      ]
+    },
+    "model.features.8.conv_pwl.conv.weight": {
+      "dtype": "F32",
+      "key": "features.8.conv_pwl.conv.weight",
+      "shape": [
+        138,
+        738,
+        1,
+        1
+      ]
+    },
+    "model.features.8.se.bn.bias": {
+      "dtype": "F32",
+      "key": "features.8.se.bn.bias",
+      "shape": [
+        61
+      ]
+    },
+    "model.features.8.se.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.8.se.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.8.se.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.8.se.bn.running_mean",
+      "shape": [
+        61
+      ]
+    },
+    "model.features.8.se.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.8.se.bn.running_var",
+      "shape": [
+        61
+      ]
+    },
+    "model.features.8.se.bn.weight": {
+      "dtype": "F32",
+      "key": "features.8.se.bn.weight",
+      "shape": [
+        61
+      ]
+    },
+    "model.features.8.se.fc1.bias": {
+      "dtype": "F32",
+      "key": "features.8.se.fc1.bias",
+      "shape": [
+        61
+      ]
+    },
+    "model.features.8.se.fc1.weight": {
+      "dtype": "F32",
+      "key": "features.8.se.fc1.weight",
+      "shape": [
+        61,
+        738,
+        1,
+        1
+      ]
+    },
+    "model.features.8.se.fc2.bias": {
+      "dtype": "F32",
+      "key": "features.8.se.fc2.bias",
+      "shape": [
+        738
+      ]
+    },
+    "model.features.8.se.fc2.weight": {
+      "dtype": "F32",
+      "key": "features.8.se.fc2.weight",
+      "shape": [
+        738,
+        61,
+        1,
+        1
+      ]
+    },
+    "model.features.9.conv_dw.bn.bias": {
+      "dtype": "F32",
+      "key": "features.9.conv_dw.bn.bias",
+      "shape": [
+        828
+      ]
+    },
+    "model.features.9.conv_dw.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.9.conv_dw.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.9.conv_dw.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.9.conv_dw.bn.running_mean",
+      "shape": [
+        828
+      ]
+    },
+    "model.features.9.conv_dw.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.9.conv_dw.bn.running_var",
+      "shape": [
+        828
+      ]
+    },
+    "model.features.9.conv_dw.bn.weight": {
+      "dtype": "F32",
+      "key": "features.9.conv_dw.bn.weight",
+      "shape": [
+        828
+      ]
+    },
+    "model.features.9.conv_dw.conv.weight": {
+      "dtype": "F32",
+      "key": "features.9.conv_dw.conv.weight",
+      "shape": [
+        828,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.features.9.conv_exp.bn.bias": {
+      "dtype": "F32",
+      "key": "features.9.conv_exp.bn.bias",
+      "shape": [
+        828
+      ]
+    },
+    "model.features.9.conv_exp.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.9.conv_exp.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.9.conv_exp.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.9.conv_exp.bn.running_mean",
+      "shape": [
+        828
+      ]
+    },
+    "model.features.9.conv_exp.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.9.conv_exp.bn.running_var",
+      "shape": [
+        828
+      ]
+    },
+    "model.features.9.conv_exp.bn.weight": {
+      "dtype": "F32",
+      "key": "features.9.conv_exp.bn.weight",
+      "shape": [
+        828
+      ]
+    },
+    "model.features.9.conv_exp.conv.weight": {
+      "dtype": "F32",
+      "key": "features.9.conv_exp.conv.weight",
+      "shape": [
+        828,
+        138,
+        1,
+        1
+      ]
+    },
+    "model.features.9.conv_pwl.bn.bias": {
+      "dtype": "F32",
+      "key": "features.9.conv_pwl.bn.bias",
+      "shape": [
+        152
+      ]
+    },
+    "model.features.9.conv_pwl.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.9.conv_pwl.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.9.conv_pwl.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.9.conv_pwl.bn.running_mean",
+      "shape": [
+        152
+      ]
+    },
+    "model.features.9.conv_pwl.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.9.conv_pwl.bn.running_var",
+      "shape": [
+        152
+      ]
+    },
+    "model.features.9.conv_pwl.bn.weight": {
+      "dtype": "F32",
+      "key": "features.9.conv_pwl.bn.weight",
+      "shape": [
+        152
+      ]
+    },
+    "model.features.9.conv_pwl.conv.weight": {
+      "dtype": "F32",
+      "key": "features.9.conv_pwl.conv.weight",
+      "shape": [
+        152,
+        828,
+        1,
+        1
+      ]
+    },
+    "model.features.9.se.bn.bias": {
+      "dtype": "F32",
+      "key": "features.9.se.bn.bias",
+      "shape": [
+        69
+      ]
+    },
+    "model.features.9.se.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.9.se.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.features.9.se.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.9.se.bn.running_mean",
+      "shape": [
+        69
+      ]
+    },
+    "model.features.9.se.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.9.se.bn.running_var",
+      "shape": [
+        69
+      ]
+    },
+    "model.features.9.se.bn.weight": {
+      "dtype": "F32",
+      "key": "features.9.se.bn.weight",
+      "shape": [
+        69
+      ]
+    },
+    "model.features.9.se.fc1.bias": {
+      "dtype": "F32",
+      "key": "features.9.se.fc1.bias",
+      "shape": [
+        69
+      ]
+    },
+    "model.features.9.se.fc1.weight": {
+      "dtype": "F32",
+      "key": "features.9.se.fc1.weight",
+      "shape": [
+        69,
+        828,
+        1,
+        1
+      ]
+    },
+    "model.features.9.se.fc2.bias": {
+      "dtype": "F32",
+      "key": "features.9.se.fc2.bias",
+      "shape": [
+        828
+      ]
+    },
+    "model.features.9.se.fc2.weight": {
+      "dtype": "F32",
+      "key": "features.9.se.fc2.weight",
+      "shape": [
+        828,
+        69,
+        1,
+        1
+      ]
+    },
+    "model.head.fc.bias": {
+      "dtype": "F32",
+      "key": "head.fc.bias",
+      "shape": [
+        1000
+      ]
+    },
+    "model.head.fc.weight": {
+      "dtype": "F32",
+      "key": "head.fc.weight",
+      "shape": [
+        1000,
+        1664
+      ]
+    },
+    "model.stem.bn.bias": {
+      "dtype": "F32",
+      "key": "stem.bn.bias",
+      "shape": [
+        42
+      ]
+    },
+    "model.stem.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stem.bn.num_batches_tracked",
+      "shape": []
+    },
+    "model.stem.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stem.bn.running_mean",
+      "shape": [
+        42
+      ]
+    },
+    "model.stem.bn.running_var": {
+      "dtype": "F32",
+      "key": "stem.bn.running_var",
+      "shape": [
+        42
+      ]
+    },
+    "model.stem.bn.weight": {
+      "dtype": "F32",
+      "key": "stem.bn.weight",
+      "shape": [
+        42
+      ]
+    },
+    "model.stem.conv.weight": {
+      "dtype": "F32",
+      "key": "stem.conv.weight",
+      "shape": [
+        42,
+        3,
+        3,
+        3
+      ]
+    }
+  },
+  "unmapped": []
+}

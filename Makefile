@@ -7,6 +7,7 @@ SELECT_PRECISION_SCRIPT := $(SCRIPTS_DIR)/select_models_precision.py
 PT2_SCRIPT        := $(SCRIPTS_DIR)/export_pt2.py
 POPULARITY_SCRIPT := $(SCRIPTS_DIR)/fetch_popularity.py
 CURVE_SCRIPT      := $(SCRIPTS_DIR)/coverage_curve.py
+WEIGHTS_SCRIPT    := $(SCRIPTS_DIR)/weights_map.py
 MODELS_MD     := $(ROOT)/models.md
 # The published dialect and the functionalized one each get a single cross-reference, both being
 # fixed before dispatch; core ATen gets one per backend, because that decomposition runs after
@@ -62,6 +63,7 @@ AUTOCAST_TIMEOUT ?= 180
         models models.select models.popularity models.curve models.dry-run models.verify models.differences \
         models.select.fp16 models.select.bf16 models.fp16 models.bf16 \
         models.fetch models.fetch-sensitive models.compat-static models.role-candidates download images release \
+        models.weights models.weights.verify models.weights.check-values \
         release.manifest release.assets release.dry-run check-history check-models test
 
 # ── timm export report ───────────────────────────────────────────────────────
@@ -271,6 +273,27 @@ models.differences:
 # no release context. Catches a stale/missing sidecar independently of a full release build.
 models.compat-static:
 	uv run python $(PT2_SCRIPT) --manifest $(MANIFEST) --models-dir $(MODELS_DIR) compat-static
+
+# models/<name>/models/safetensors.json, in every graph tree: the Hub checkpoint (pinned
+# revision, URL, sha256) each graph's weights come from, and which tensor feeds which --
+# under the autocast wrapper's `model.` prefix, for the autocast graphs.
+# `models.weights` needs the network (seconds: headers only, no weight download) and keeps
+# already-pinned revisions -- pass WEIGHTS_REFRESH=--refresh to move them. `verify` is offline.
+# `check-values` downloads every checkpoint to prove timm's own pretrained load matches.
+WEIGHTS_TREES = --tree $(MANIFEST) $(MODELS_DIR) \
+	--tree $(MANIFEST_FP16) $(MODELS_FP16_DIR)/cast \
+	--tree $(MANIFEST_FP16) $(MODELS_FP16_DIR)/autocast model. \
+	--tree $(MANIFEST_BF16) $(MODELS_BF16_DIR)/cast \
+	--tree $(MANIFEST_BF16) $(MODELS_BF16_DIR)/autocast model.
+
+models.weights:
+	uv run python $(WEIGHTS_SCRIPT) build $(WEIGHTS_TREES) $(WEIGHTS_REFRESH)
+
+models.weights.verify:
+	uv run python $(WEIGHTS_SCRIPT) verify $(WEIGHTS_TREES)
+
+models.weights.check-values:
+	uv run python $(WEIGHTS_SCRIPT) check-values $(WEIGHTS_TREES)
 
 # ── Release ──────────────────────────────────────────────────────────────────
 

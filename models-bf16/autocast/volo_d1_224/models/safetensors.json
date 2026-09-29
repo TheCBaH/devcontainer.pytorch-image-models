@@ -1,0 +1,1936 @@
+{
+  "schema_version": 1,
+  "source": {
+    "filename": "model.safetensors",
+    "repo_id": "timm/volo_d1_224.sail_in1k",
+    "revision": "0d1b31899ae4cb562932c62d1d8820c1d796a4f1",
+    "sha256": "a432582dab6517beba7f420fb72837d03d0a8cc2db85a607097db79e418c0bb9",
+    "size": 106554196,
+    "url": "https://huggingface.co/timm/volo_d1_224.sail_in1k/resolve/0d1b31899ae4cb562932c62d1d8820c1d796a4f1/model.safetensors"
+  },
+  "tensors": {
+    "model.aux_head.bias": {
+      "dtype": "F32",
+      "key": "aux_head.bias",
+      "shape": [
+        1000
+      ]
+    },
+    "model.aux_head.weight": {
+      "dtype": "F32",
+      "key": "aux_head.weight",
+      "shape": [
+        1000,
+        384
+      ]
+    },
+    "model.cls_token": {
+      "dtype": "F32",
+      "key": "cls_token",
+      "shape": [
+        1,
+        1,
+        384
+      ]
+    },
+    "model.head.bias": {
+      "dtype": "F32",
+      "key": "head.bias",
+      "shape": [
+        1000
+      ]
+    },
+    "model.head.weight": {
+      "dtype": "F32",
+      "key": "head.weight",
+      "shape": [
+        1000,
+        384
+      ]
+    },
+    "model.network.0.0.attn.attn.bias": {
+      "dtype": "F32",
+      "key": "network.0.0.attn.attn.bias",
+      "shape": [
+        486
+      ]
+    },
+    "model.network.0.0.attn.attn.weight": {
+      "dtype": "F32",
+      "key": "network.0.0.attn.attn.weight",
+      "shape": [
+        486,
+        192
+      ]
+    },
+    "model.network.0.0.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "network.0.0.attn.proj.bias",
+      "shape": [
+        192
+      ]
+    },
+    "model.network.0.0.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "network.0.0.attn.proj.weight",
+      "shape": [
+        192,
+        192
+      ]
+    },
+    "model.network.0.0.attn.v.weight": {
+      "dtype": "F32",
+      "key": "network.0.0.attn.v.weight",
+      "shape": [
+        192,
+        192
+      ]
+    },
+    "model.network.0.0.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "network.0.0.mlp.fc1.bias",
+      "shape": [
+        576
+      ]
+    },
+    "model.network.0.0.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "network.0.0.mlp.fc1.weight",
+      "shape": [
+        576,
+        192
+      ]
+    },
+    "model.network.0.0.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "network.0.0.mlp.fc2.bias",
+      "shape": [
+        192
+      ]
+    },
+    "model.network.0.0.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "network.0.0.mlp.fc2.weight",
+      "shape": [
+        192,
+        576
+      ]
+    },
+    "model.network.0.0.norm1.bias": {
+      "dtype": "F32",
+      "key": "network.0.0.norm1.bias",
+      "shape": [
+        192
+      ]
+    },
+    "model.network.0.0.norm1.weight": {
+      "dtype": "F32",
+      "key": "network.0.0.norm1.weight",
+      "shape": [
+        192
+      ]
+    },
+    "model.network.0.0.norm2.bias": {
+      "dtype": "F32",
+      "key": "network.0.0.norm2.bias",
+      "shape": [
+        192
+      ]
+    },
+    "model.network.0.0.norm2.weight": {
+      "dtype": "F32",
+      "key": "network.0.0.norm2.weight",
+      "shape": [
+        192
+      ]
+    },
+    "model.network.0.1.attn.attn.bias": {
+      "dtype": "F32",
+      "key": "network.0.1.attn.attn.bias",
+      "shape": [
+        486
+      ]
+    },
+    "model.network.0.1.attn.attn.weight": {
+      "dtype": "F32",
+      "key": "network.0.1.attn.attn.weight",
+      "shape": [
+        486,
+        192
+      ]
+    },
+    "model.network.0.1.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "network.0.1.attn.proj.bias",
+      "shape": [
+        192
+      ]
+    },
+    "model.network.0.1.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "network.0.1.attn.proj.weight",
+      "shape": [
+        192,
+        192
+      ]
+    },
+    "model.network.0.1.attn.v.weight": {
+      "dtype": "F32",
+      "key": "network.0.1.attn.v.weight",
+      "shape": [
+        192,
+        192
+      ]
+    },
+    "model.network.0.1.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "network.0.1.mlp.fc1.bias",
+      "shape": [
+        576
+      ]
+    },
+    "model.network.0.1.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "network.0.1.mlp.fc1.weight",
+      "shape": [
+        576,
+        192
+      ]
+    },
+    "model.network.0.1.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "network.0.1.mlp.fc2.bias",
+      "shape": [
+        192
+      ]
+    },
+    "model.network.0.1.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "network.0.1.mlp.fc2.weight",
+      "shape": [
+        192,
+        576
+      ]
+    },
+    "model.network.0.1.norm1.bias": {
+      "dtype": "F32",
+      "key": "network.0.1.norm1.bias",
+      "shape": [
+        192
+      ]
+    },
+    "model.network.0.1.norm1.weight": {
+      "dtype": "F32",
+      "key": "network.0.1.norm1.weight",
+      "shape": [
+        192
+      ]
+    },
+    "model.network.0.1.norm2.bias": {
+      "dtype": "F32",
+      "key": "network.0.1.norm2.bias",
+      "shape": [
+        192
+      ]
+    },
+    "model.network.0.1.norm2.weight": {
+      "dtype": "F32",
+      "key": "network.0.1.norm2.weight",
+      "shape": [
+        192
+      ]
+    },
+    "model.network.0.2.attn.attn.bias": {
+      "dtype": "F32",
+      "key": "network.0.2.attn.attn.bias",
+      "shape": [
+        486
+      ]
+    },
+    "model.network.0.2.attn.attn.weight": {
+      "dtype": "F32",
+      "key": "network.0.2.attn.attn.weight",
+      "shape": [
+        486,
+        192
+      ]
+    },
+    "model.network.0.2.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "network.0.2.attn.proj.bias",
+      "shape": [
+        192
+      ]
+    },
+    "model.network.0.2.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "network.0.2.attn.proj.weight",
+      "shape": [
+        192,
+        192
+      ]
+    },
+    "model.network.0.2.attn.v.weight": {
+      "dtype": "F32",
+      "key": "network.0.2.attn.v.weight",
+      "shape": [
+        192,
+        192
+      ]
+    },
+    "model.network.0.2.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "network.0.2.mlp.fc1.bias",
+      "shape": [
+        576
+      ]
+    },
+    "model.network.0.2.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "network.0.2.mlp.fc1.weight",
+      "shape": [
+        576,
+        192
+      ]
+    },
+    "model.network.0.2.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "network.0.2.mlp.fc2.bias",
+      "shape": [
+        192
+      ]
+    },
+    "model.network.0.2.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "network.0.2.mlp.fc2.weight",
+      "shape": [
+        192,
+        576
+      ]
+    },
+    "model.network.0.2.norm1.bias": {
+      "dtype": "F32",
+      "key": "network.0.2.norm1.bias",
+      "shape": [
+        192
+      ]
+    },
+    "model.network.0.2.norm1.weight": {
+      "dtype": "F32",
+      "key": "network.0.2.norm1.weight",
+      "shape": [
+        192
+      ]
+    },
+    "model.network.0.2.norm2.bias": {
+      "dtype": "F32",
+      "key": "network.0.2.norm2.bias",
+      "shape": [
+        192
+      ]
+    },
+    "model.network.0.2.norm2.weight": {
+      "dtype": "F32",
+      "key": "network.0.2.norm2.weight",
+      "shape": [
+        192
+      ]
+    },
+    "model.network.0.3.attn.attn.bias": {
+      "dtype": "F32",
+      "key": "network.0.3.attn.attn.bias",
+      "shape": [
+        486
+      ]
+    },
+    "model.network.0.3.attn.attn.weight": {
+      "dtype": "F32",
+      "key": "network.0.3.attn.attn.weight",
+      "shape": [
+        486,
+        192
+      ]
+    },
+    "model.network.0.3.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "network.0.3.attn.proj.bias",
+      "shape": [
+        192
+      ]
+    },
+    "model.network.0.3.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "network.0.3.attn.proj.weight",
+      "shape": [
+        192,
+        192
+      ]
+    },
+    "model.network.0.3.attn.v.weight": {
+      "dtype": "F32",
+      "key": "network.0.3.attn.v.weight",
+      "shape": [
+        192,
+        192
+      ]
+    },
+    "model.network.0.3.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "network.0.3.mlp.fc1.bias",
+      "shape": [
+        576
+      ]
+    },
+    "model.network.0.3.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "network.0.3.mlp.fc1.weight",
+      "shape": [
+        576,
+        192
+      ]
+    },
+    "model.network.0.3.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "network.0.3.mlp.fc2.bias",
+      "shape": [
+        192
+      ]
+    },
+    "model.network.0.3.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "network.0.3.mlp.fc2.weight",
+      "shape": [
+        192,
+        576
+      ]
+    },
+    "model.network.0.3.norm1.bias": {
+      "dtype": "F32",
+      "key": "network.0.3.norm1.bias",
+      "shape": [
+        192
+      ]
+    },
+    "model.network.0.3.norm1.weight": {
+      "dtype": "F32",
+      "key": "network.0.3.norm1.weight",
+      "shape": [
+        192
+      ]
+    },
+    "model.network.0.3.norm2.bias": {
+      "dtype": "F32",
+      "key": "network.0.3.norm2.bias",
+      "shape": [
+        192
+      ]
+    },
+    "model.network.0.3.norm2.weight": {
+      "dtype": "F32",
+      "key": "network.0.3.norm2.weight",
+      "shape": [
+        192
+      ]
+    },
+    "model.network.1.proj.bias": {
+      "dtype": "F32",
+      "key": "network.1.proj.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.1.proj.weight": {
+      "dtype": "F32",
+      "key": "network.1.proj.weight",
+      "shape": [
+        384,
+        192,
+        2,
+        2
+      ]
+    },
+    "model.network.2.0.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "network.2.0.attn.proj.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.2.0.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "network.2.0.attn.proj.weight",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "model.network.2.0.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "network.2.0.attn.qkv.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.network.2.0.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "network.2.0.mlp.fc1.bias",
+      "shape": [
+        1152
+      ]
+    },
+    "model.network.2.0.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "network.2.0.mlp.fc1.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.network.2.0.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "network.2.0.mlp.fc2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.2.0.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "network.2.0.mlp.fc2.weight",
+      "shape": [
+        384,
+        1152
+      ]
+    },
+    "model.network.2.0.norm1.bias": {
+      "dtype": "F32",
+      "key": "network.2.0.norm1.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.2.0.norm1.weight": {
+      "dtype": "F32",
+      "key": "network.2.0.norm1.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.2.0.norm2.bias": {
+      "dtype": "F32",
+      "key": "network.2.0.norm2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.2.0.norm2.weight": {
+      "dtype": "F32",
+      "key": "network.2.0.norm2.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.2.1.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "network.2.1.attn.proj.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.2.1.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "network.2.1.attn.proj.weight",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "model.network.2.1.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "network.2.1.attn.qkv.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.network.2.1.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "network.2.1.mlp.fc1.bias",
+      "shape": [
+        1152
+      ]
+    },
+    "model.network.2.1.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "network.2.1.mlp.fc1.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.network.2.1.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "network.2.1.mlp.fc2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.2.1.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "network.2.1.mlp.fc2.weight",
+      "shape": [
+        384,
+        1152
+      ]
+    },
+    "model.network.2.1.norm1.bias": {
+      "dtype": "F32",
+      "key": "network.2.1.norm1.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.2.1.norm1.weight": {
+      "dtype": "F32",
+      "key": "network.2.1.norm1.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.2.1.norm2.bias": {
+      "dtype": "F32",
+      "key": "network.2.1.norm2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.2.1.norm2.weight": {
+      "dtype": "F32",
+      "key": "network.2.1.norm2.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.2.2.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "network.2.2.attn.proj.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.2.2.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "network.2.2.attn.proj.weight",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "model.network.2.2.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "network.2.2.attn.qkv.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.network.2.2.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "network.2.2.mlp.fc1.bias",
+      "shape": [
+        1152
+      ]
+    },
+    "model.network.2.2.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "network.2.2.mlp.fc1.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.network.2.2.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "network.2.2.mlp.fc2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.2.2.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "network.2.2.mlp.fc2.weight",
+      "shape": [
+        384,
+        1152
+      ]
+    },
+    "model.network.2.2.norm1.bias": {
+      "dtype": "F32",
+      "key": "network.2.2.norm1.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.2.2.norm1.weight": {
+      "dtype": "F32",
+      "key": "network.2.2.norm1.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.2.2.norm2.bias": {
+      "dtype": "F32",
+      "key": "network.2.2.norm2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.2.2.norm2.weight": {
+      "dtype": "F32",
+      "key": "network.2.2.norm2.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.2.3.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "network.2.3.attn.proj.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.2.3.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "network.2.3.attn.proj.weight",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "model.network.2.3.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "network.2.3.attn.qkv.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.network.2.3.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "network.2.3.mlp.fc1.bias",
+      "shape": [
+        1152
+      ]
+    },
+    "model.network.2.3.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "network.2.3.mlp.fc1.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.network.2.3.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "network.2.3.mlp.fc2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.2.3.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "network.2.3.mlp.fc2.weight",
+      "shape": [
+        384,
+        1152
+      ]
+    },
+    "model.network.2.3.norm1.bias": {
+      "dtype": "F32",
+      "key": "network.2.3.norm1.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.2.3.norm1.weight": {
+      "dtype": "F32",
+      "key": "network.2.3.norm1.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.2.3.norm2.bias": {
+      "dtype": "F32",
+      "key": "network.2.3.norm2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.2.3.norm2.weight": {
+      "dtype": "F32",
+      "key": "network.2.3.norm2.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.3.0.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "network.3.0.attn.proj.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.3.0.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "network.3.0.attn.proj.weight",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "model.network.3.0.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "network.3.0.attn.qkv.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.network.3.0.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "network.3.0.mlp.fc1.bias",
+      "shape": [
+        1152
+      ]
+    },
+    "model.network.3.0.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "network.3.0.mlp.fc1.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.network.3.0.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "network.3.0.mlp.fc2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.3.0.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "network.3.0.mlp.fc2.weight",
+      "shape": [
+        384,
+        1152
+      ]
+    },
+    "model.network.3.0.norm1.bias": {
+      "dtype": "F32",
+      "key": "network.3.0.norm1.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.3.0.norm1.weight": {
+      "dtype": "F32",
+      "key": "network.3.0.norm1.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.3.0.norm2.bias": {
+      "dtype": "F32",
+      "key": "network.3.0.norm2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.3.0.norm2.weight": {
+      "dtype": "F32",
+      "key": "network.3.0.norm2.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.3.1.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "network.3.1.attn.proj.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.3.1.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "network.3.1.attn.proj.weight",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "model.network.3.1.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "network.3.1.attn.qkv.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.network.3.1.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "network.3.1.mlp.fc1.bias",
+      "shape": [
+        1152
+      ]
+    },
+    "model.network.3.1.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "network.3.1.mlp.fc1.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.network.3.1.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "network.3.1.mlp.fc2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.3.1.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "network.3.1.mlp.fc2.weight",
+      "shape": [
+        384,
+        1152
+      ]
+    },
+    "model.network.3.1.norm1.bias": {
+      "dtype": "F32",
+      "key": "network.3.1.norm1.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.3.1.norm1.weight": {
+      "dtype": "F32",
+      "key": "network.3.1.norm1.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.3.1.norm2.bias": {
+      "dtype": "F32",
+      "key": "network.3.1.norm2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.3.1.norm2.weight": {
+      "dtype": "F32",
+      "key": "network.3.1.norm2.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.3.2.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "network.3.2.attn.proj.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.3.2.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "network.3.2.attn.proj.weight",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "model.network.3.2.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "network.3.2.attn.qkv.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.network.3.2.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "network.3.2.mlp.fc1.bias",
+      "shape": [
+        1152
+      ]
+    },
+    "model.network.3.2.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "network.3.2.mlp.fc1.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.network.3.2.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "network.3.2.mlp.fc2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.3.2.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "network.3.2.mlp.fc2.weight",
+      "shape": [
+        384,
+        1152
+      ]
+    },
+    "model.network.3.2.norm1.bias": {
+      "dtype": "F32",
+      "key": "network.3.2.norm1.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.3.2.norm1.weight": {
+      "dtype": "F32",
+      "key": "network.3.2.norm1.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.3.2.norm2.bias": {
+      "dtype": "F32",
+      "key": "network.3.2.norm2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.3.2.norm2.weight": {
+      "dtype": "F32",
+      "key": "network.3.2.norm2.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.3.3.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "network.3.3.attn.proj.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.3.3.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "network.3.3.attn.proj.weight",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "model.network.3.3.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "network.3.3.attn.qkv.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.network.3.3.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "network.3.3.mlp.fc1.bias",
+      "shape": [
+        1152
+      ]
+    },
+    "model.network.3.3.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "network.3.3.mlp.fc1.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.network.3.3.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "network.3.3.mlp.fc2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.3.3.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "network.3.3.mlp.fc2.weight",
+      "shape": [
+        384,
+        1152
+      ]
+    },
+    "model.network.3.3.norm1.bias": {
+      "dtype": "F32",
+      "key": "network.3.3.norm1.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.3.3.norm1.weight": {
+      "dtype": "F32",
+      "key": "network.3.3.norm1.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.3.3.norm2.bias": {
+      "dtype": "F32",
+      "key": "network.3.3.norm2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.3.3.norm2.weight": {
+      "dtype": "F32",
+      "key": "network.3.3.norm2.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.3.4.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "network.3.4.attn.proj.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.3.4.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "network.3.4.attn.proj.weight",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "model.network.3.4.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "network.3.4.attn.qkv.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.network.3.4.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "network.3.4.mlp.fc1.bias",
+      "shape": [
+        1152
+      ]
+    },
+    "model.network.3.4.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "network.3.4.mlp.fc1.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.network.3.4.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "network.3.4.mlp.fc2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.3.4.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "network.3.4.mlp.fc2.weight",
+      "shape": [
+        384,
+        1152
+      ]
+    },
+    "model.network.3.4.norm1.bias": {
+      "dtype": "F32",
+      "key": "network.3.4.norm1.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.3.4.norm1.weight": {
+      "dtype": "F32",
+      "key": "network.3.4.norm1.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.3.4.norm2.bias": {
+      "dtype": "F32",
+      "key": "network.3.4.norm2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.3.4.norm2.weight": {
+      "dtype": "F32",
+      "key": "network.3.4.norm2.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.3.5.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "network.3.5.attn.proj.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.3.5.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "network.3.5.attn.proj.weight",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "model.network.3.5.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "network.3.5.attn.qkv.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.network.3.5.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "network.3.5.mlp.fc1.bias",
+      "shape": [
+        1152
+      ]
+    },
+    "model.network.3.5.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "network.3.5.mlp.fc1.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.network.3.5.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "network.3.5.mlp.fc2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.3.5.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "network.3.5.mlp.fc2.weight",
+      "shape": [
+        384,
+        1152
+      ]
+    },
+    "model.network.3.5.norm1.bias": {
+      "dtype": "F32",
+      "key": "network.3.5.norm1.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.3.5.norm1.weight": {
+      "dtype": "F32",
+      "key": "network.3.5.norm1.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.3.5.norm2.bias": {
+      "dtype": "F32",
+      "key": "network.3.5.norm2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.3.5.norm2.weight": {
+      "dtype": "F32",
+      "key": "network.3.5.norm2.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.3.6.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "network.3.6.attn.proj.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.3.6.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "network.3.6.attn.proj.weight",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "model.network.3.6.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "network.3.6.attn.qkv.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.network.3.6.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "network.3.6.mlp.fc1.bias",
+      "shape": [
+        1152
+      ]
+    },
+    "model.network.3.6.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "network.3.6.mlp.fc1.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.network.3.6.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "network.3.6.mlp.fc2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.3.6.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "network.3.6.mlp.fc2.weight",
+      "shape": [
+        384,
+        1152
+      ]
+    },
+    "model.network.3.6.norm1.bias": {
+      "dtype": "F32",
+      "key": "network.3.6.norm1.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.3.6.norm1.weight": {
+      "dtype": "F32",
+      "key": "network.3.6.norm1.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.3.6.norm2.bias": {
+      "dtype": "F32",
+      "key": "network.3.6.norm2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.3.6.norm2.weight": {
+      "dtype": "F32",
+      "key": "network.3.6.norm2.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.3.7.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "network.3.7.attn.proj.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.3.7.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "network.3.7.attn.proj.weight",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "model.network.3.7.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "network.3.7.attn.qkv.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.network.3.7.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "network.3.7.mlp.fc1.bias",
+      "shape": [
+        1152
+      ]
+    },
+    "model.network.3.7.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "network.3.7.mlp.fc1.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.network.3.7.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "network.3.7.mlp.fc2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.3.7.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "network.3.7.mlp.fc2.weight",
+      "shape": [
+        384,
+        1152
+      ]
+    },
+    "model.network.3.7.norm1.bias": {
+      "dtype": "F32",
+      "key": "network.3.7.norm1.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.3.7.norm1.weight": {
+      "dtype": "F32",
+      "key": "network.3.7.norm1.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.3.7.norm2.bias": {
+      "dtype": "F32",
+      "key": "network.3.7.norm2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.3.7.norm2.weight": {
+      "dtype": "F32",
+      "key": "network.3.7.norm2.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.4.0.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "network.4.0.attn.proj.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.4.0.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "network.4.0.attn.proj.weight",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "model.network.4.0.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "network.4.0.attn.qkv.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.network.4.0.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "network.4.0.mlp.fc1.bias",
+      "shape": [
+        1152
+      ]
+    },
+    "model.network.4.0.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "network.4.0.mlp.fc1.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.network.4.0.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "network.4.0.mlp.fc2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.4.0.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "network.4.0.mlp.fc2.weight",
+      "shape": [
+        384,
+        1152
+      ]
+    },
+    "model.network.4.0.norm1.bias": {
+      "dtype": "F32",
+      "key": "network.4.0.norm1.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.4.0.norm1.weight": {
+      "dtype": "F32",
+      "key": "network.4.0.norm1.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.4.0.norm2.bias": {
+      "dtype": "F32",
+      "key": "network.4.0.norm2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.4.0.norm2.weight": {
+      "dtype": "F32",
+      "key": "network.4.0.norm2.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.4.1.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "network.4.1.attn.proj.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.4.1.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "network.4.1.attn.proj.weight",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "model.network.4.1.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "network.4.1.attn.qkv.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.network.4.1.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "network.4.1.mlp.fc1.bias",
+      "shape": [
+        1152
+      ]
+    },
+    "model.network.4.1.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "network.4.1.mlp.fc1.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.network.4.1.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "network.4.1.mlp.fc2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.4.1.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "network.4.1.mlp.fc2.weight",
+      "shape": [
+        384,
+        1152
+      ]
+    },
+    "model.network.4.1.norm1.bias": {
+      "dtype": "F32",
+      "key": "network.4.1.norm1.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.4.1.norm1.weight": {
+      "dtype": "F32",
+      "key": "network.4.1.norm1.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.4.1.norm2.bias": {
+      "dtype": "F32",
+      "key": "network.4.1.norm2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.network.4.1.norm2.weight": {
+      "dtype": "F32",
+      "key": "network.4.1.norm2.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.norm.bias": {
+      "dtype": "F32",
+      "key": "norm.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.norm.weight": {
+      "dtype": "F32",
+      "key": "norm.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.patch_embed.conv.0.weight": {
+      "dtype": "F32",
+      "key": "patch_embed.conv.0.weight",
+      "shape": [
+        64,
+        3,
+        7,
+        7
+      ]
+    },
+    "model.patch_embed.conv.1.bias": {
+      "dtype": "F32",
+      "key": "patch_embed.conv.1.bias",
+      "shape": [
+        64
+      ]
+    },
+    "model.patch_embed.conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "patch_embed.conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.patch_embed.conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "patch_embed.conv.1.running_mean",
+      "shape": [
+        64
+      ]
+    },
+    "model.patch_embed.conv.1.running_var": {
+      "dtype": "F32",
+      "key": "patch_embed.conv.1.running_var",
+      "shape": [
+        64
+      ]
+    },
+    "model.patch_embed.conv.1.weight": {
+      "dtype": "F32",
+      "key": "patch_embed.conv.1.weight",
+      "shape": [
+        64
+      ]
+    },
+    "model.patch_embed.conv.3.weight": {
+      "dtype": "F32",
+      "key": "patch_embed.conv.3.weight",
+      "shape": [
+        64,
+        64,
+        3,
+        3
+      ]
+    },
+    "model.patch_embed.conv.4.bias": {
+      "dtype": "F32",
+      "key": "patch_embed.conv.4.bias",
+      "shape": [
+        64
+      ]
+    },
+    "model.patch_embed.conv.4.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "patch_embed.conv.4.num_batches_tracked",
+      "shape": []
+    },
+    "model.patch_embed.conv.4.running_mean": {
+      "dtype": "F32",
+      "key": "patch_embed.conv.4.running_mean",
+      "shape": [
+        64
+      ]
+    },
+    "model.patch_embed.conv.4.running_var": {
+      "dtype": "F32",
+      "key": "patch_embed.conv.4.running_var",
+      "shape": [
+        64
+      ]
+    },
+    "model.patch_embed.conv.4.weight": {
+      "dtype": "F32",
+      "key": "patch_embed.conv.4.weight",
+      "shape": [
+        64
+      ]
+    },
+    "model.patch_embed.conv.6.weight": {
+      "dtype": "F32",
+      "key": "patch_embed.conv.6.weight",
+      "shape": [
+        64,
+        64,
+        3,
+        3
+      ]
+    },
+    "model.patch_embed.conv.7.bias": {
+      "dtype": "F32",
+      "key": "patch_embed.conv.7.bias",
+      "shape": [
+        64
+      ]
+    },
+    "model.patch_embed.conv.7.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "patch_embed.conv.7.num_batches_tracked",
+      "shape": []
+    },
+    "model.patch_embed.conv.7.running_mean": {
+      "dtype": "F32",
+      "key": "patch_embed.conv.7.running_mean",
+      "shape": [
+        64
+      ]
+    },
+    "model.patch_embed.conv.7.running_var": {
+      "dtype": "F32",
+      "key": "patch_embed.conv.7.running_var",
+      "shape": [
+        64
+      ]
+    },
+    "model.patch_embed.conv.7.weight": {
+      "dtype": "F32",
+      "key": "patch_embed.conv.7.weight",
+      "shape": [
+        64
+      ]
+    },
+    "model.patch_embed.proj.bias": {
+      "dtype": "F32",
+      "key": "patch_embed.proj.bias",
+      "shape": [
+        192
+      ]
+    },
+    "model.patch_embed.proj.weight": {
+      "dtype": "F32",
+      "key": "patch_embed.proj.weight",
+      "shape": [
+        192,
+        64,
+        4,
+        4
+      ]
+    },
+    "model.pos_embed": {
+      "dtype": "F32",
+      "key": "pos_embed",
+      "shape": [
+        1,
+        14,
+        14,
+        384
+      ]
+    },
+    "model.post_network.0.attn.kv.weight": {
+      "dtype": "F32",
+      "key": "post_network.0.attn.kv.weight",
+      "shape": [
+        768,
+        384
+      ]
+    },
+    "model.post_network.0.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "post_network.0.attn.proj.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.post_network.0.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "post_network.0.attn.proj.weight",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "model.post_network.0.attn.q.weight": {
+      "dtype": "F32",
+      "key": "post_network.0.attn.q.weight",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "model.post_network.0.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "post_network.0.mlp.fc1.bias",
+      "shape": [
+        1152
+      ]
+    },
+    "model.post_network.0.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "post_network.0.mlp.fc1.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.post_network.0.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "post_network.0.mlp.fc2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.post_network.0.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "post_network.0.mlp.fc2.weight",
+      "shape": [
+        384,
+        1152
+      ]
+    },
+    "model.post_network.0.norm1.bias": {
+      "dtype": "F32",
+      "key": "post_network.0.norm1.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.post_network.0.norm1.weight": {
+      "dtype": "F32",
+      "key": "post_network.0.norm1.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.post_network.0.norm2.bias": {
+      "dtype": "F32",
+      "key": "post_network.0.norm2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.post_network.0.norm2.weight": {
+      "dtype": "F32",
+      "key": "post_network.0.norm2.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.post_network.1.attn.kv.weight": {
+      "dtype": "F32",
+      "key": "post_network.1.attn.kv.weight",
+      "shape": [
+        768,
+        384
+      ]
+    },
+    "model.post_network.1.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "post_network.1.attn.proj.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.post_network.1.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "post_network.1.attn.proj.weight",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "model.post_network.1.attn.q.weight": {
+      "dtype": "F32",
+      "key": "post_network.1.attn.q.weight",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "model.post_network.1.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "post_network.1.mlp.fc1.bias",
+      "shape": [
+        1152
+      ]
+    },
+    "model.post_network.1.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "post_network.1.mlp.fc1.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.post_network.1.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "post_network.1.mlp.fc2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.post_network.1.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "post_network.1.mlp.fc2.weight",
+      "shape": [
+        384,
+        1152
+      ]
+    },
+    "model.post_network.1.norm1.bias": {
+      "dtype": "F32",
+      "key": "post_network.1.norm1.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.post_network.1.norm1.weight": {
+      "dtype": "F32",
+      "key": "post_network.1.norm1.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.post_network.1.norm2.bias": {
+      "dtype": "F32",
+      "key": "post_network.1.norm2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.post_network.1.norm2.weight": {
+      "dtype": "F32",
+      "key": "post_network.1.norm2.weight",
+      "shape": [
+        384
+      ]
+    }
+  },
+  "unmapped": []
+}

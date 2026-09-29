@@ -1,0 +1,3007 @@
+{
+  "schema_version": 1,
+  "source": {
+    "filename": "model.safetensors",
+    "repo_id": "timm/rexnetr_200.sw_in12k_ft_in1k",
+    "revision": "511091d83c0288c5a25dd582117b4d24f7baeb71",
+    "sha256": "d92c098c499b8482bc824bec5c4c79acb47d82c54aa48285e5b3c39118f3e8fc",
+    "size": 66463248,
+    "url": "https://huggingface.co/timm/rexnetr_200.sw_in12k_ft_in1k/resolve/511091d83c0288c5a25dd582117b4d24f7baeb71/model.safetensors"
+  },
+  "tensors": {
+    "features.0.conv_dw.bn.bias": {
+      "dtype": "F32",
+      "key": "features.0.conv_dw.bn.bias",
+      "shape": [
+        64
+      ]
+    },
+    "features.0.conv_dw.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.0.conv_dw.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.0.conv_dw.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.0.conv_dw.bn.running_mean",
+      "shape": [
+        64
+      ]
+    },
+    "features.0.conv_dw.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.0.conv_dw.bn.running_var",
+      "shape": [
+        64
+      ]
+    },
+    "features.0.conv_dw.bn.weight": {
+      "dtype": "F32",
+      "key": "features.0.conv_dw.bn.weight",
+      "shape": [
+        64
+      ]
+    },
+    "features.0.conv_dw.conv.weight": {
+      "dtype": "F32",
+      "key": "features.0.conv_dw.conv.weight",
+      "shape": [
+        64,
+        1,
+        3,
+        3
+      ]
+    },
+    "features.0.conv_pwl.bn.bias": {
+      "dtype": "F32",
+      "key": "features.0.conv_pwl.bn.bias",
+      "shape": [
+        32
+      ]
+    },
+    "features.0.conv_pwl.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.0.conv_pwl.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.0.conv_pwl.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.0.conv_pwl.bn.running_mean",
+      "shape": [
+        32
+      ]
+    },
+    "features.0.conv_pwl.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.0.conv_pwl.bn.running_var",
+      "shape": [
+        32
+      ]
+    },
+    "features.0.conv_pwl.bn.weight": {
+      "dtype": "F32",
+      "key": "features.0.conv_pwl.bn.weight",
+      "shape": [
+        32
+      ]
+    },
+    "features.0.conv_pwl.conv.weight": {
+      "dtype": "F32",
+      "key": "features.0.conv_pwl.conv.weight",
+      "shape": [
+        32,
+        64,
+        1,
+        1
+      ]
+    },
+    "features.1.conv_dw.bn.bias": {
+      "dtype": "F32",
+      "key": "features.1.conv_dw.bn.bias",
+      "shape": [
+        192
+      ]
+    },
+    "features.1.conv_dw.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.1.conv_dw.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.1.conv_dw.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.1.conv_dw.bn.running_mean",
+      "shape": [
+        192
+      ]
+    },
+    "features.1.conv_dw.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.1.conv_dw.bn.running_var",
+      "shape": [
+        192
+      ]
+    },
+    "features.1.conv_dw.bn.weight": {
+      "dtype": "F32",
+      "key": "features.1.conv_dw.bn.weight",
+      "shape": [
+        192
+      ]
+    },
+    "features.1.conv_dw.conv.weight": {
+      "dtype": "F32",
+      "key": "features.1.conv_dw.conv.weight",
+      "shape": [
+        192,
+        1,
+        3,
+        3
+      ]
+    },
+    "features.1.conv_exp.bn.bias": {
+      "dtype": "F32",
+      "key": "features.1.conv_exp.bn.bias",
+      "shape": [
+        192
+      ]
+    },
+    "features.1.conv_exp.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.1.conv_exp.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.1.conv_exp.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.1.conv_exp.bn.running_mean",
+      "shape": [
+        192
+      ]
+    },
+    "features.1.conv_exp.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.1.conv_exp.bn.running_var",
+      "shape": [
+        192
+      ]
+    },
+    "features.1.conv_exp.bn.weight": {
+      "dtype": "F32",
+      "key": "features.1.conv_exp.bn.weight",
+      "shape": [
+        192
+      ]
+    },
+    "features.1.conv_exp.conv.weight": {
+      "dtype": "F32",
+      "key": "features.1.conv_exp.conv.weight",
+      "shape": [
+        192,
+        32,
+        1,
+        1
+      ]
+    },
+    "features.1.conv_pwl.bn.bias": {
+      "dtype": "F32",
+      "key": "features.1.conv_pwl.bn.bias",
+      "shape": [
+        56
+      ]
+    },
+    "features.1.conv_pwl.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.1.conv_pwl.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.1.conv_pwl.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.1.conv_pwl.bn.running_mean",
+      "shape": [
+        56
+      ]
+    },
+    "features.1.conv_pwl.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.1.conv_pwl.bn.running_var",
+      "shape": [
+        56
+      ]
+    },
+    "features.1.conv_pwl.bn.weight": {
+      "dtype": "F32",
+      "key": "features.1.conv_pwl.bn.weight",
+      "shape": [
+        56
+      ]
+    },
+    "features.1.conv_pwl.conv.weight": {
+      "dtype": "F32",
+      "key": "features.1.conv_pwl.conv.weight",
+      "shape": [
+        56,
+        192,
+        1,
+        1
+      ]
+    },
+    "features.10.conv_dw.bn.bias": {
+      "dtype": "F32",
+      "key": "features.10.conv_dw.bn.bias",
+      "shape": [
+        1392
+      ]
+    },
+    "features.10.conv_dw.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.10.conv_dw.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.10.conv_dw.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.10.conv_dw.bn.running_mean",
+      "shape": [
+        1392
+      ]
+    },
+    "features.10.conv_dw.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.10.conv_dw.bn.running_var",
+      "shape": [
+        1392
+      ]
+    },
+    "features.10.conv_dw.bn.weight": {
+      "dtype": "F32",
+      "key": "features.10.conv_dw.bn.weight",
+      "shape": [
+        1392
+      ]
+    },
+    "features.10.conv_dw.conv.weight": {
+      "dtype": "F32",
+      "key": "features.10.conv_dw.conv.weight",
+      "shape": [
+        1392,
+        1,
+        3,
+        3
+      ]
+    },
+    "features.10.conv_exp.bn.bias": {
+      "dtype": "F32",
+      "key": "features.10.conv_exp.bn.bias",
+      "shape": [
+        1392
+      ]
+    },
+    "features.10.conv_exp.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.10.conv_exp.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.10.conv_exp.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.10.conv_exp.bn.running_mean",
+      "shape": [
+        1392
+      ]
+    },
+    "features.10.conv_exp.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.10.conv_exp.bn.running_var",
+      "shape": [
+        1392
+      ]
+    },
+    "features.10.conv_exp.bn.weight": {
+      "dtype": "F32",
+      "key": "features.10.conv_exp.bn.weight",
+      "shape": [
+        1392
+      ]
+    },
+    "features.10.conv_exp.conv.weight": {
+      "dtype": "F32",
+      "key": "features.10.conv_exp.conv.weight",
+      "shape": [
+        1392,
+        232,
+        1,
+        1
+      ]
+    },
+    "features.10.conv_pwl.bn.bias": {
+      "dtype": "F32",
+      "key": "features.10.conv_pwl.bn.bias",
+      "shape": [
+        256
+      ]
+    },
+    "features.10.conv_pwl.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.10.conv_pwl.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.10.conv_pwl.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.10.conv_pwl.bn.running_mean",
+      "shape": [
+        256
+      ]
+    },
+    "features.10.conv_pwl.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.10.conv_pwl.bn.running_var",
+      "shape": [
+        256
+      ]
+    },
+    "features.10.conv_pwl.bn.weight": {
+      "dtype": "F32",
+      "key": "features.10.conv_pwl.bn.weight",
+      "shape": [
+        256
+      ]
+    },
+    "features.10.conv_pwl.conv.weight": {
+      "dtype": "F32",
+      "key": "features.10.conv_pwl.conv.weight",
+      "shape": [
+        256,
+        1392,
+        1,
+        1
+      ]
+    },
+    "features.10.se.bn.bias": {
+      "dtype": "F32",
+      "key": "features.10.se.bn.bias",
+      "shape": [
+        120
+      ]
+    },
+    "features.10.se.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.10.se.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.10.se.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.10.se.bn.running_mean",
+      "shape": [
+        120
+      ]
+    },
+    "features.10.se.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.10.se.bn.running_var",
+      "shape": [
+        120
+      ]
+    },
+    "features.10.se.bn.weight": {
+      "dtype": "F32",
+      "key": "features.10.se.bn.weight",
+      "shape": [
+        120
+      ]
+    },
+    "features.10.se.fc1.bias": {
+      "dtype": "F32",
+      "key": "features.10.se.fc1.bias",
+      "shape": [
+        120
+      ]
+    },
+    "features.10.se.fc1.weight": {
+      "dtype": "F32",
+      "key": "features.10.se.fc1.weight",
+      "shape": [
+        120,
+        1392,
+        1,
+        1
+      ]
+    },
+    "features.10.se.fc2.bias": {
+      "dtype": "F32",
+      "key": "features.10.se.fc2.bias",
+      "shape": [
+        1392
+      ]
+    },
+    "features.10.se.fc2.weight": {
+      "dtype": "F32",
+      "key": "features.10.se.fc2.weight",
+      "shape": [
+        1392,
+        120,
+        1,
+        1
+      ]
+    },
+    "features.11.conv_dw.bn.bias": {
+      "dtype": "F32",
+      "key": "features.11.conv_dw.bn.bias",
+      "shape": [
+        1536
+      ]
+    },
+    "features.11.conv_dw.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.11.conv_dw.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.11.conv_dw.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.11.conv_dw.bn.running_mean",
+      "shape": [
+        1536
+      ]
+    },
+    "features.11.conv_dw.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.11.conv_dw.bn.running_var",
+      "shape": [
+        1536
+      ]
+    },
+    "features.11.conv_dw.bn.weight": {
+      "dtype": "F32",
+      "key": "features.11.conv_dw.bn.weight",
+      "shape": [
+        1536
+      ]
+    },
+    "features.11.conv_dw.conv.weight": {
+      "dtype": "F32",
+      "key": "features.11.conv_dw.conv.weight",
+      "shape": [
+        1536,
+        1,
+        3,
+        3
+      ]
+    },
+    "features.11.conv_exp.bn.bias": {
+      "dtype": "F32",
+      "key": "features.11.conv_exp.bn.bias",
+      "shape": [
+        1536
+      ]
+    },
+    "features.11.conv_exp.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.11.conv_exp.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.11.conv_exp.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.11.conv_exp.bn.running_mean",
+      "shape": [
+        1536
+      ]
+    },
+    "features.11.conv_exp.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.11.conv_exp.bn.running_var",
+      "shape": [
+        1536
+      ]
+    },
+    "features.11.conv_exp.bn.weight": {
+      "dtype": "F32",
+      "key": "features.11.conv_exp.bn.weight",
+      "shape": [
+        1536
+      ]
+    },
+    "features.11.conv_exp.conv.weight": {
+      "dtype": "F32",
+      "key": "features.11.conv_exp.conv.weight",
+      "shape": [
+        1536,
+        256,
+        1,
+        1
+      ]
+    },
+    "features.11.conv_pwl.bn.bias": {
+      "dtype": "F32",
+      "key": "features.11.conv_pwl.bn.bias",
+      "shape": [
+        280
+      ]
+    },
+    "features.11.conv_pwl.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.11.conv_pwl.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.11.conv_pwl.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.11.conv_pwl.bn.running_mean",
+      "shape": [
+        280
+      ]
+    },
+    "features.11.conv_pwl.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.11.conv_pwl.bn.running_var",
+      "shape": [
+        280
+      ]
+    },
+    "features.11.conv_pwl.bn.weight": {
+      "dtype": "F32",
+      "key": "features.11.conv_pwl.bn.weight",
+      "shape": [
+        280
+      ]
+    },
+    "features.11.conv_pwl.conv.weight": {
+      "dtype": "F32",
+      "key": "features.11.conv_pwl.conv.weight",
+      "shape": [
+        280,
+        1536,
+        1,
+        1
+      ]
+    },
+    "features.11.se.bn.bias": {
+      "dtype": "F32",
+      "key": "features.11.se.bn.bias",
+      "shape": [
+        128
+      ]
+    },
+    "features.11.se.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.11.se.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.11.se.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.11.se.bn.running_mean",
+      "shape": [
+        128
+      ]
+    },
+    "features.11.se.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.11.se.bn.running_var",
+      "shape": [
+        128
+      ]
+    },
+    "features.11.se.bn.weight": {
+      "dtype": "F32",
+      "key": "features.11.se.bn.weight",
+      "shape": [
+        128
+      ]
+    },
+    "features.11.se.fc1.bias": {
+      "dtype": "F32",
+      "key": "features.11.se.fc1.bias",
+      "shape": [
+        128
+      ]
+    },
+    "features.11.se.fc1.weight": {
+      "dtype": "F32",
+      "key": "features.11.se.fc1.weight",
+      "shape": [
+        128,
+        1536,
+        1,
+        1
+      ]
+    },
+    "features.11.se.fc2.bias": {
+      "dtype": "F32",
+      "key": "features.11.se.fc2.bias",
+      "shape": [
+        1536
+      ]
+    },
+    "features.11.se.fc2.weight": {
+      "dtype": "F32",
+      "key": "features.11.se.fc2.weight",
+      "shape": [
+        1536,
+        128,
+        1,
+        1
+      ]
+    },
+    "features.12.conv_dw.bn.bias": {
+      "dtype": "F32",
+      "key": "features.12.conv_dw.bn.bias",
+      "shape": [
+        1680
+      ]
+    },
+    "features.12.conv_dw.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.12.conv_dw.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.12.conv_dw.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.12.conv_dw.bn.running_mean",
+      "shape": [
+        1680
+      ]
+    },
+    "features.12.conv_dw.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.12.conv_dw.bn.running_var",
+      "shape": [
+        1680
+      ]
+    },
+    "features.12.conv_dw.bn.weight": {
+      "dtype": "F32",
+      "key": "features.12.conv_dw.bn.weight",
+      "shape": [
+        1680
+      ]
+    },
+    "features.12.conv_dw.conv.weight": {
+      "dtype": "F32",
+      "key": "features.12.conv_dw.conv.weight",
+      "shape": [
+        1680,
+        1,
+        3,
+        3
+      ]
+    },
+    "features.12.conv_exp.bn.bias": {
+      "dtype": "F32",
+      "key": "features.12.conv_exp.bn.bias",
+      "shape": [
+        1680
+      ]
+    },
+    "features.12.conv_exp.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.12.conv_exp.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.12.conv_exp.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.12.conv_exp.bn.running_mean",
+      "shape": [
+        1680
+      ]
+    },
+    "features.12.conv_exp.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.12.conv_exp.bn.running_var",
+      "shape": [
+        1680
+      ]
+    },
+    "features.12.conv_exp.bn.weight": {
+      "dtype": "F32",
+      "key": "features.12.conv_exp.bn.weight",
+      "shape": [
+        1680
+      ]
+    },
+    "features.12.conv_exp.conv.weight": {
+      "dtype": "F32",
+      "key": "features.12.conv_exp.conv.weight",
+      "shape": [
+        1680,
+        280,
+        1,
+        1
+      ]
+    },
+    "features.12.conv_pwl.bn.bias": {
+      "dtype": "F32",
+      "key": "features.12.conv_pwl.bn.bias",
+      "shape": [
+        304
+      ]
+    },
+    "features.12.conv_pwl.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.12.conv_pwl.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.12.conv_pwl.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.12.conv_pwl.bn.running_mean",
+      "shape": [
+        304
+      ]
+    },
+    "features.12.conv_pwl.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.12.conv_pwl.bn.running_var",
+      "shape": [
+        304
+      ]
+    },
+    "features.12.conv_pwl.bn.weight": {
+      "dtype": "F32",
+      "key": "features.12.conv_pwl.bn.weight",
+      "shape": [
+        304
+      ]
+    },
+    "features.12.conv_pwl.conv.weight": {
+      "dtype": "F32",
+      "key": "features.12.conv_pwl.conv.weight",
+      "shape": [
+        304,
+        1680,
+        1,
+        1
+      ]
+    },
+    "features.12.se.bn.bias": {
+      "dtype": "F32",
+      "key": "features.12.se.bn.bias",
+      "shape": [
+        144
+      ]
+    },
+    "features.12.se.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.12.se.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.12.se.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.12.se.bn.running_mean",
+      "shape": [
+        144
+      ]
+    },
+    "features.12.se.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.12.se.bn.running_var",
+      "shape": [
+        144
+      ]
+    },
+    "features.12.se.bn.weight": {
+      "dtype": "F32",
+      "key": "features.12.se.bn.weight",
+      "shape": [
+        144
+      ]
+    },
+    "features.12.se.fc1.bias": {
+      "dtype": "F32",
+      "key": "features.12.se.fc1.bias",
+      "shape": [
+        144
+      ]
+    },
+    "features.12.se.fc1.weight": {
+      "dtype": "F32",
+      "key": "features.12.se.fc1.weight",
+      "shape": [
+        144,
+        1680,
+        1,
+        1
+      ]
+    },
+    "features.12.se.fc2.bias": {
+      "dtype": "F32",
+      "key": "features.12.se.fc2.bias",
+      "shape": [
+        1680
+      ]
+    },
+    "features.12.se.fc2.weight": {
+      "dtype": "F32",
+      "key": "features.12.se.fc2.weight",
+      "shape": [
+        1680,
+        144,
+        1,
+        1
+      ]
+    },
+    "features.13.conv_dw.bn.bias": {
+      "dtype": "F32",
+      "key": "features.13.conv_dw.bn.bias",
+      "shape": [
+        1824
+      ]
+    },
+    "features.13.conv_dw.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.13.conv_dw.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.13.conv_dw.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.13.conv_dw.bn.running_mean",
+      "shape": [
+        1824
+      ]
+    },
+    "features.13.conv_dw.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.13.conv_dw.bn.running_var",
+      "shape": [
+        1824
+      ]
+    },
+    "features.13.conv_dw.bn.weight": {
+      "dtype": "F32",
+      "key": "features.13.conv_dw.bn.weight",
+      "shape": [
+        1824
+      ]
+    },
+    "features.13.conv_dw.conv.weight": {
+      "dtype": "F32",
+      "key": "features.13.conv_dw.conv.weight",
+      "shape": [
+        1824,
+        1,
+        3,
+        3
+      ]
+    },
+    "features.13.conv_exp.bn.bias": {
+      "dtype": "F32",
+      "key": "features.13.conv_exp.bn.bias",
+      "shape": [
+        1824
+      ]
+    },
+    "features.13.conv_exp.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.13.conv_exp.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.13.conv_exp.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.13.conv_exp.bn.running_mean",
+      "shape": [
+        1824
+      ]
+    },
+    "features.13.conv_exp.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.13.conv_exp.bn.running_var",
+      "shape": [
+        1824
+      ]
+    },
+    "features.13.conv_exp.bn.weight": {
+      "dtype": "F32",
+      "key": "features.13.conv_exp.bn.weight",
+      "shape": [
+        1824
+      ]
+    },
+    "features.13.conv_exp.conv.weight": {
+      "dtype": "F32",
+      "key": "features.13.conv_exp.conv.weight",
+      "shape": [
+        1824,
+        304,
+        1,
+        1
+      ]
+    },
+    "features.13.conv_pwl.bn.bias": {
+      "dtype": "F32",
+      "key": "features.13.conv_pwl.bn.bias",
+      "shape": [
+        328
+      ]
+    },
+    "features.13.conv_pwl.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.13.conv_pwl.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.13.conv_pwl.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.13.conv_pwl.bn.running_mean",
+      "shape": [
+        328
+      ]
+    },
+    "features.13.conv_pwl.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.13.conv_pwl.bn.running_var",
+      "shape": [
+        328
+      ]
+    },
+    "features.13.conv_pwl.bn.weight": {
+      "dtype": "F32",
+      "key": "features.13.conv_pwl.bn.weight",
+      "shape": [
+        328
+      ]
+    },
+    "features.13.conv_pwl.conv.weight": {
+      "dtype": "F32",
+      "key": "features.13.conv_pwl.conv.weight",
+      "shape": [
+        328,
+        1824,
+        1,
+        1
+      ]
+    },
+    "features.13.se.bn.bias": {
+      "dtype": "F32",
+      "key": "features.13.se.bn.bias",
+      "shape": [
+        152
+      ]
+    },
+    "features.13.se.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.13.se.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.13.se.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.13.se.bn.running_mean",
+      "shape": [
+        152
+      ]
+    },
+    "features.13.se.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.13.se.bn.running_var",
+      "shape": [
+        152
+      ]
+    },
+    "features.13.se.bn.weight": {
+      "dtype": "F32",
+      "key": "features.13.se.bn.weight",
+      "shape": [
+        152
+      ]
+    },
+    "features.13.se.fc1.bias": {
+      "dtype": "F32",
+      "key": "features.13.se.fc1.bias",
+      "shape": [
+        152
+      ]
+    },
+    "features.13.se.fc1.weight": {
+      "dtype": "F32",
+      "key": "features.13.se.fc1.weight",
+      "shape": [
+        152,
+        1824,
+        1,
+        1
+      ]
+    },
+    "features.13.se.fc2.bias": {
+      "dtype": "F32",
+      "key": "features.13.se.fc2.bias",
+      "shape": [
+        1824
+      ]
+    },
+    "features.13.se.fc2.weight": {
+      "dtype": "F32",
+      "key": "features.13.se.fc2.weight",
+      "shape": [
+        1824,
+        152,
+        1,
+        1
+      ]
+    },
+    "features.14.conv_dw.bn.bias": {
+      "dtype": "F32",
+      "key": "features.14.conv_dw.bn.bias",
+      "shape": [
+        1968
+      ]
+    },
+    "features.14.conv_dw.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.14.conv_dw.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.14.conv_dw.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.14.conv_dw.bn.running_mean",
+      "shape": [
+        1968
+      ]
+    },
+    "features.14.conv_dw.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.14.conv_dw.bn.running_var",
+      "shape": [
+        1968
+      ]
+    },
+    "features.14.conv_dw.bn.weight": {
+      "dtype": "F32",
+      "key": "features.14.conv_dw.bn.weight",
+      "shape": [
+        1968
+      ]
+    },
+    "features.14.conv_dw.conv.weight": {
+      "dtype": "F32",
+      "key": "features.14.conv_dw.conv.weight",
+      "shape": [
+        1968,
+        1,
+        3,
+        3
+      ]
+    },
+    "features.14.conv_exp.bn.bias": {
+      "dtype": "F32",
+      "key": "features.14.conv_exp.bn.bias",
+      "shape": [
+        1968
+      ]
+    },
+    "features.14.conv_exp.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.14.conv_exp.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.14.conv_exp.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.14.conv_exp.bn.running_mean",
+      "shape": [
+        1968
+      ]
+    },
+    "features.14.conv_exp.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.14.conv_exp.bn.running_var",
+      "shape": [
+        1968
+      ]
+    },
+    "features.14.conv_exp.bn.weight": {
+      "dtype": "F32",
+      "key": "features.14.conv_exp.bn.weight",
+      "shape": [
+        1968
+      ]
+    },
+    "features.14.conv_exp.conv.weight": {
+      "dtype": "F32",
+      "key": "features.14.conv_exp.conv.weight",
+      "shape": [
+        1968,
+        328,
+        1,
+        1
+      ]
+    },
+    "features.14.conv_pwl.bn.bias": {
+      "dtype": "F32",
+      "key": "features.14.conv_pwl.bn.bias",
+      "shape": [
+        344
+      ]
+    },
+    "features.14.conv_pwl.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.14.conv_pwl.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.14.conv_pwl.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.14.conv_pwl.bn.running_mean",
+      "shape": [
+        344
+      ]
+    },
+    "features.14.conv_pwl.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.14.conv_pwl.bn.running_var",
+      "shape": [
+        344
+      ]
+    },
+    "features.14.conv_pwl.bn.weight": {
+      "dtype": "F32",
+      "key": "features.14.conv_pwl.bn.weight",
+      "shape": [
+        344
+      ]
+    },
+    "features.14.conv_pwl.conv.weight": {
+      "dtype": "F32",
+      "key": "features.14.conv_pwl.conv.weight",
+      "shape": [
+        344,
+        1968,
+        1,
+        1
+      ]
+    },
+    "features.14.se.bn.bias": {
+      "dtype": "F32",
+      "key": "features.14.se.bn.bias",
+      "shape": [
+        168
+      ]
+    },
+    "features.14.se.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.14.se.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.14.se.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.14.se.bn.running_mean",
+      "shape": [
+        168
+      ]
+    },
+    "features.14.se.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.14.se.bn.running_var",
+      "shape": [
+        168
+      ]
+    },
+    "features.14.se.bn.weight": {
+      "dtype": "F32",
+      "key": "features.14.se.bn.weight",
+      "shape": [
+        168
+      ]
+    },
+    "features.14.se.fc1.bias": {
+      "dtype": "F32",
+      "key": "features.14.se.fc1.bias",
+      "shape": [
+        168
+      ]
+    },
+    "features.14.se.fc1.weight": {
+      "dtype": "F32",
+      "key": "features.14.se.fc1.weight",
+      "shape": [
+        168,
+        1968,
+        1,
+        1
+      ]
+    },
+    "features.14.se.fc2.bias": {
+      "dtype": "F32",
+      "key": "features.14.se.fc2.bias",
+      "shape": [
+        1968
+      ]
+    },
+    "features.14.se.fc2.weight": {
+      "dtype": "F32",
+      "key": "features.14.se.fc2.weight",
+      "shape": [
+        1968,
+        168,
+        1,
+        1
+      ]
+    },
+    "features.15.conv_dw.bn.bias": {
+      "dtype": "F32",
+      "key": "features.15.conv_dw.bn.bias",
+      "shape": [
+        2064
+      ]
+    },
+    "features.15.conv_dw.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.15.conv_dw.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.15.conv_dw.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.15.conv_dw.bn.running_mean",
+      "shape": [
+        2064
+      ]
+    },
+    "features.15.conv_dw.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.15.conv_dw.bn.running_var",
+      "shape": [
+        2064
+      ]
+    },
+    "features.15.conv_dw.bn.weight": {
+      "dtype": "F32",
+      "key": "features.15.conv_dw.bn.weight",
+      "shape": [
+        2064
+      ]
+    },
+    "features.15.conv_dw.conv.weight": {
+      "dtype": "F32",
+      "key": "features.15.conv_dw.conv.weight",
+      "shape": [
+        2064,
+        1,
+        3,
+        3
+      ]
+    },
+    "features.15.conv_exp.bn.bias": {
+      "dtype": "F32",
+      "key": "features.15.conv_exp.bn.bias",
+      "shape": [
+        2064
+      ]
+    },
+    "features.15.conv_exp.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.15.conv_exp.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.15.conv_exp.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.15.conv_exp.bn.running_mean",
+      "shape": [
+        2064
+      ]
+    },
+    "features.15.conv_exp.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.15.conv_exp.bn.running_var",
+      "shape": [
+        2064
+      ]
+    },
+    "features.15.conv_exp.bn.weight": {
+      "dtype": "F32",
+      "key": "features.15.conv_exp.bn.weight",
+      "shape": [
+        2064
+      ]
+    },
+    "features.15.conv_exp.conv.weight": {
+      "dtype": "F32",
+      "key": "features.15.conv_exp.conv.weight",
+      "shape": [
+        2064,
+        344,
+        1,
+        1
+      ]
+    },
+    "features.15.conv_pwl.bn.bias": {
+      "dtype": "F32",
+      "key": "features.15.conv_pwl.bn.bias",
+      "shape": [
+        368
+      ]
+    },
+    "features.15.conv_pwl.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.15.conv_pwl.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.15.conv_pwl.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.15.conv_pwl.bn.running_mean",
+      "shape": [
+        368
+      ]
+    },
+    "features.15.conv_pwl.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.15.conv_pwl.bn.running_var",
+      "shape": [
+        368
+      ]
+    },
+    "features.15.conv_pwl.bn.weight": {
+      "dtype": "F32",
+      "key": "features.15.conv_pwl.bn.weight",
+      "shape": [
+        368
+      ]
+    },
+    "features.15.conv_pwl.conv.weight": {
+      "dtype": "F32",
+      "key": "features.15.conv_pwl.conv.weight",
+      "shape": [
+        368,
+        2064,
+        1,
+        1
+      ]
+    },
+    "features.15.se.bn.bias": {
+      "dtype": "F32",
+      "key": "features.15.se.bn.bias",
+      "shape": [
+        176
+      ]
+    },
+    "features.15.se.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.15.se.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.15.se.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.15.se.bn.running_mean",
+      "shape": [
+        176
+      ]
+    },
+    "features.15.se.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.15.se.bn.running_var",
+      "shape": [
+        176
+      ]
+    },
+    "features.15.se.bn.weight": {
+      "dtype": "F32",
+      "key": "features.15.se.bn.weight",
+      "shape": [
+        176
+      ]
+    },
+    "features.15.se.fc1.bias": {
+      "dtype": "F32",
+      "key": "features.15.se.fc1.bias",
+      "shape": [
+        176
+      ]
+    },
+    "features.15.se.fc1.weight": {
+      "dtype": "F32",
+      "key": "features.15.se.fc1.weight",
+      "shape": [
+        176,
+        2064,
+        1,
+        1
+      ]
+    },
+    "features.15.se.fc2.bias": {
+      "dtype": "F32",
+      "key": "features.15.se.fc2.bias",
+      "shape": [
+        2064
+      ]
+    },
+    "features.15.se.fc2.weight": {
+      "dtype": "F32",
+      "key": "features.15.se.fc2.weight",
+      "shape": [
+        2064,
+        176,
+        1,
+        1
+      ]
+    },
+    "features.16.bn.bias": {
+      "dtype": "F32",
+      "key": "features.16.bn.bias",
+      "shape": [
+        2560
+      ]
+    },
+    "features.16.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.16.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.16.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.16.bn.running_mean",
+      "shape": [
+        2560
+      ]
+    },
+    "features.16.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.16.bn.running_var",
+      "shape": [
+        2560
+      ]
+    },
+    "features.16.bn.weight": {
+      "dtype": "F32",
+      "key": "features.16.bn.weight",
+      "shape": [
+        2560
+      ]
+    },
+    "features.16.conv.weight": {
+      "dtype": "F32",
+      "key": "features.16.conv.weight",
+      "shape": [
+        2560,
+        368,
+        1,
+        1
+      ]
+    },
+    "features.2.conv_dw.bn.bias": {
+      "dtype": "F32",
+      "key": "features.2.conv_dw.bn.bias",
+      "shape": [
+        336
+      ]
+    },
+    "features.2.conv_dw.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.2.conv_dw.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.2.conv_dw.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.2.conv_dw.bn.running_mean",
+      "shape": [
+        336
+      ]
+    },
+    "features.2.conv_dw.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.2.conv_dw.bn.running_var",
+      "shape": [
+        336
+      ]
+    },
+    "features.2.conv_dw.bn.weight": {
+      "dtype": "F32",
+      "key": "features.2.conv_dw.bn.weight",
+      "shape": [
+        336
+      ]
+    },
+    "features.2.conv_dw.conv.weight": {
+      "dtype": "F32",
+      "key": "features.2.conv_dw.conv.weight",
+      "shape": [
+        336,
+        1,
+        3,
+        3
+      ]
+    },
+    "features.2.conv_exp.bn.bias": {
+      "dtype": "F32",
+      "key": "features.2.conv_exp.bn.bias",
+      "shape": [
+        336
+      ]
+    },
+    "features.2.conv_exp.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.2.conv_exp.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.2.conv_exp.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.2.conv_exp.bn.running_mean",
+      "shape": [
+        336
+      ]
+    },
+    "features.2.conv_exp.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.2.conv_exp.bn.running_var",
+      "shape": [
+        336
+      ]
+    },
+    "features.2.conv_exp.bn.weight": {
+      "dtype": "F32",
+      "key": "features.2.conv_exp.bn.weight",
+      "shape": [
+        336
+      ]
+    },
+    "features.2.conv_exp.conv.weight": {
+      "dtype": "F32",
+      "key": "features.2.conv_exp.conv.weight",
+      "shape": [
+        336,
+        56,
+        1,
+        1
+      ]
+    },
+    "features.2.conv_pwl.bn.bias": {
+      "dtype": "F32",
+      "key": "features.2.conv_pwl.bn.bias",
+      "shape": [
+        80
+      ]
+    },
+    "features.2.conv_pwl.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.2.conv_pwl.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.2.conv_pwl.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.2.conv_pwl.bn.running_mean",
+      "shape": [
+        80
+      ]
+    },
+    "features.2.conv_pwl.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.2.conv_pwl.bn.running_var",
+      "shape": [
+        80
+      ]
+    },
+    "features.2.conv_pwl.bn.weight": {
+      "dtype": "F32",
+      "key": "features.2.conv_pwl.bn.weight",
+      "shape": [
+        80
+      ]
+    },
+    "features.2.conv_pwl.conv.weight": {
+      "dtype": "F32",
+      "key": "features.2.conv_pwl.conv.weight",
+      "shape": [
+        80,
+        336,
+        1,
+        1
+      ]
+    },
+    "features.3.conv_dw.bn.bias": {
+      "dtype": "F32",
+      "key": "features.3.conv_dw.bn.bias",
+      "shape": [
+        480
+      ]
+    },
+    "features.3.conv_dw.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.3.conv_dw.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.3.conv_dw.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.3.conv_dw.bn.running_mean",
+      "shape": [
+        480
+      ]
+    },
+    "features.3.conv_dw.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.3.conv_dw.bn.running_var",
+      "shape": [
+        480
+      ]
+    },
+    "features.3.conv_dw.bn.weight": {
+      "dtype": "F32",
+      "key": "features.3.conv_dw.bn.weight",
+      "shape": [
+        480
+      ]
+    },
+    "features.3.conv_dw.conv.weight": {
+      "dtype": "F32",
+      "key": "features.3.conv_dw.conv.weight",
+      "shape": [
+        480,
+        1,
+        3,
+        3
+      ]
+    },
+    "features.3.conv_exp.bn.bias": {
+      "dtype": "F32",
+      "key": "features.3.conv_exp.bn.bias",
+      "shape": [
+        480
+      ]
+    },
+    "features.3.conv_exp.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.3.conv_exp.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.3.conv_exp.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.3.conv_exp.bn.running_mean",
+      "shape": [
+        480
+      ]
+    },
+    "features.3.conv_exp.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.3.conv_exp.bn.running_var",
+      "shape": [
+        480
+      ]
+    },
+    "features.3.conv_exp.bn.weight": {
+      "dtype": "F32",
+      "key": "features.3.conv_exp.bn.weight",
+      "shape": [
+        480
+      ]
+    },
+    "features.3.conv_exp.conv.weight": {
+      "dtype": "F32",
+      "key": "features.3.conv_exp.conv.weight",
+      "shape": [
+        480,
+        80,
+        1,
+        1
+      ]
+    },
+    "features.3.conv_pwl.bn.bias": {
+      "dtype": "F32",
+      "key": "features.3.conv_pwl.bn.bias",
+      "shape": [
+        104
+      ]
+    },
+    "features.3.conv_pwl.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.3.conv_pwl.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.3.conv_pwl.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.3.conv_pwl.bn.running_mean",
+      "shape": [
+        104
+      ]
+    },
+    "features.3.conv_pwl.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.3.conv_pwl.bn.running_var",
+      "shape": [
+        104
+      ]
+    },
+    "features.3.conv_pwl.bn.weight": {
+      "dtype": "F32",
+      "key": "features.3.conv_pwl.bn.weight",
+      "shape": [
+        104
+      ]
+    },
+    "features.3.conv_pwl.conv.weight": {
+      "dtype": "F32",
+      "key": "features.3.conv_pwl.conv.weight",
+      "shape": [
+        104,
+        480,
+        1,
+        1
+      ]
+    },
+    "features.3.se.bn.bias": {
+      "dtype": "F32",
+      "key": "features.3.se.bn.bias",
+      "shape": [
+        40
+      ]
+    },
+    "features.3.se.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.3.se.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.3.se.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.3.se.bn.running_mean",
+      "shape": [
+        40
+      ]
+    },
+    "features.3.se.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.3.se.bn.running_var",
+      "shape": [
+        40
+      ]
+    },
+    "features.3.se.bn.weight": {
+      "dtype": "F32",
+      "key": "features.3.se.bn.weight",
+      "shape": [
+        40
+      ]
+    },
+    "features.3.se.fc1.bias": {
+      "dtype": "F32",
+      "key": "features.3.se.fc1.bias",
+      "shape": [
+        40
+      ]
+    },
+    "features.3.se.fc1.weight": {
+      "dtype": "F32",
+      "key": "features.3.se.fc1.weight",
+      "shape": [
+        40,
+        480,
+        1,
+        1
+      ]
+    },
+    "features.3.se.fc2.bias": {
+      "dtype": "F32",
+      "key": "features.3.se.fc2.bias",
+      "shape": [
+        480
+      ]
+    },
+    "features.3.se.fc2.weight": {
+      "dtype": "F32",
+      "key": "features.3.se.fc2.weight",
+      "shape": [
+        480,
+        40,
+        1,
+        1
+      ]
+    },
+    "features.4.conv_dw.bn.bias": {
+      "dtype": "F32",
+      "key": "features.4.conv_dw.bn.bias",
+      "shape": [
+        624
+      ]
+    },
+    "features.4.conv_dw.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.4.conv_dw.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.4.conv_dw.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.4.conv_dw.bn.running_mean",
+      "shape": [
+        624
+      ]
+    },
+    "features.4.conv_dw.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.4.conv_dw.bn.running_var",
+      "shape": [
+        624
+      ]
+    },
+    "features.4.conv_dw.bn.weight": {
+      "dtype": "F32",
+      "key": "features.4.conv_dw.bn.weight",
+      "shape": [
+        624
+      ]
+    },
+    "features.4.conv_dw.conv.weight": {
+      "dtype": "F32",
+      "key": "features.4.conv_dw.conv.weight",
+      "shape": [
+        624,
+        1,
+        3,
+        3
+      ]
+    },
+    "features.4.conv_exp.bn.bias": {
+      "dtype": "F32",
+      "key": "features.4.conv_exp.bn.bias",
+      "shape": [
+        624
+      ]
+    },
+    "features.4.conv_exp.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.4.conv_exp.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.4.conv_exp.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.4.conv_exp.bn.running_mean",
+      "shape": [
+        624
+      ]
+    },
+    "features.4.conv_exp.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.4.conv_exp.bn.running_var",
+      "shape": [
+        624
+      ]
+    },
+    "features.4.conv_exp.bn.weight": {
+      "dtype": "F32",
+      "key": "features.4.conv_exp.bn.weight",
+      "shape": [
+        624
+      ]
+    },
+    "features.4.conv_exp.conv.weight": {
+      "dtype": "F32",
+      "key": "features.4.conv_exp.conv.weight",
+      "shape": [
+        624,
+        104,
+        1,
+        1
+      ]
+    },
+    "features.4.conv_pwl.bn.bias": {
+      "dtype": "F32",
+      "key": "features.4.conv_pwl.bn.bias",
+      "shape": [
+        120
+      ]
+    },
+    "features.4.conv_pwl.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.4.conv_pwl.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.4.conv_pwl.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.4.conv_pwl.bn.running_mean",
+      "shape": [
+        120
+      ]
+    },
+    "features.4.conv_pwl.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.4.conv_pwl.bn.running_var",
+      "shape": [
+        120
+      ]
+    },
+    "features.4.conv_pwl.bn.weight": {
+      "dtype": "F32",
+      "key": "features.4.conv_pwl.bn.weight",
+      "shape": [
+        120
+      ]
+    },
+    "features.4.conv_pwl.conv.weight": {
+      "dtype": "F32",
+      "key": "features.4.conv_pwl.conv.weight",
+      "shape": [
+        120,
+        624,
+        1,
+        1
+      ]
+    },
+    "features.4.se.bn.bias": {
+      "dtype": "F32",
+      "key": "features.4.se.bn.bias",
+      "shape": [
+        56
+      ]
+    },
+    "features.4.se.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.4.se.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.4.se.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.4.se.bn.running_mean",
+      "shape": [
+        56
+      ]
+    },
+    "features.4.se.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.4.se.bn.running_var",
+      "shape": [
+        56
+      ]
+    },
+    "features.4.se.bn.weight": {
+      "dtype": "F32",
+      "key": "features.4.se.bn.weight",
+      "shape": [
+        56
+      ]
+    },
+    "features.4.se.fc1.bias": {
+      "dtype": "F32",
+      "key": "features.4.se.fc1.bias",
+      "shape": [
+        56
+      ]
+    },
+    "features.4.se.fc1.weight": {
+      "dtype": "F32",
+      "key": "features.4.se.fc1.weight",
+      "shape": [
+        56,
+        624,
+        1,
+        1
+      ]
+    },
+    "features.4.se.fc2.bias": {
+      "dtype": "F32",
+      "key": "features.4.se.fc2.bias",
+      "shape": [
+        624
+      ]
+    },
+    "features.4.se.fc2.weight": {
+      "dtype": "F32",
+      "key": "features.4.se.fc2.weight",
+      "shape": [
+        624,
+        56,
+        1,
+        1
+      ]
+    },
+    "features.5.conv_dw.bn.bias": {
+      "dtype": "F32",
+      "key": "features.5.conv_dw.bn.bias",
+      "shape": [
+        720
+      ]
+    },
+    "features.5.conv_dw.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.5.conv_dw.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.5.conv_dw.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.5.conv_dw.bn.running_mean",
+      "shape": [
+        720
+      ]
+    },
+    "features.5.conv_dw.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.5.conv_dw.bn.running_var",
+      "shape": [
+        720
+      ]
+    },
+    "features.5.conv_dw.bn.weight": {
+      "dtype": "F32",
+      "key": "features.5.conv_dw.bn.weight",
+      "shape": [
+        720
+      ]
+    },
+    "features.5.conv_dw.conv.weight": {
+      "dtype": "F32",
+      "key": "features.5.conv_dw.conv.weight",
+      "shape": [
+        720,
+        1,
+        3,
+        3
+      ]
+    },
+    "features.5.conv_exp.bn.bias": {
+      "dtype": "F32",
+      "key": "features.5.conv_exp.bn.bias",
+      "shape": [
+        720
+      ]
+    },
+    "features.5.conv_exp.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.5.conv_exp.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.5.conv_exp.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.5.conv_exp.bn.running_mean",
+      "shape": [
+        720
+      ]
+    },
+    "features.5.conv_exp.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.5.conv_exp.bn.running_var",
+      "shape": [
+        720
+      ]
+    },
+    "features.5.conv_exp.bn.weight": {
+      "dtype": "F32",
+      "key": "features.5.conv_exp.bn.weight",
+      "shape": [
+        720
+      ]
+    },
+    "features.5.conv_exp.conv.weight": {
+      "dtype": "F32",
+      "key": "features.5.conv_exp.conv.weight",
+      "shape": [
+        720,
+        120,
+        1,
+        1
+      ]
+    },
+    "features.5.conv_pwl.bn.bias": {
+      "dtype": "F32",
+      "key": "features.5.conv_pwl.bn.bias",
+      "shape": [
+        144
+      ]
+    },
+    "features.5.conv_pwl.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.5.conv_pwl.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.5.conv_pwl.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.5.conv_pwl.bn.running_mean",
+      "shape": [
+        144
+      ]
+    },
+    "features.5.conv_pwl.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.5.conv_pwl.bn.running_var",
+      "shape": [
+        144
+      ]
+    },
+    "features.5.conv_pwl.bn.weight": {
+      "dtype": "F32",
+      "key": "features.5.conv_pwl.bn.weight",
+      "shape": [
+        144
+      ]
+    },
+    "features.5.conv_pwl.conv.weight": {
+      "dtype": "F32",
+      "key": "features.5.conv_pwl.conv.weight",
+      "shape": [
+        144,
+        720,
+        1,
+        1
+      ]
+    },
+    "features.5.se.bn.bias": {
+      "dtype": "F32",
+      "key": "features.5.se.bn.bias",
+      "shape": [
+        64
+      ]
+    },
+    "features.5.se.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.5.se.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.5.se.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.5.se.bn.running_mean",
+      "shape": [
+        64
+      ]
+    },
+    "features.5.se.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.5.se.bn.running_var",
+      "shape": [
+        64
+      ]
+    },
+    "features.5.se.bn.weight": {
+      "dtype": "F32",
+      "key": "features.5.se.bn.weight",
+      "shape": [
+        64
+      ]
+    },
+    "features.5.se.fc1.bias": {
+      "dtype": "F32",
+      "key": "features.5.se.fc1.bias",
+      "shape": [
+        64
+      ]
+    },
+    "features.5.se.fc1.weight": {
+      "dtype": "F32",
+      "key": "features.5.se.fc1.weight",
+      "shape": [
+        64,
+        720,
+        1,
+        1
+      ]
+    },
+    "features.5.se.fc2.bias": {
+      "dtype": "F32",
+      "key": "features.5.se.fc2.bias",
+      "shape": [
+        720
+      ]
+    },
+    "features.5.se.fc2.weight": {
+      "dtype": "F32",
+      "key": "features.5.se.fc2.weight",
+      "shape": [
+        720,
+        64,
+        1,
+        1
+      ]
+    },
+    "features.6.conv_dw.bn.bias": {
+      "dtype": "F32",
+      "key": "features.6.conv_dw.bn.bias",
+      "shape": [
+        864
+      ]
+    },
+    "features.6.conv_dw.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.6.conv_dw.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.6.conv_dw.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.6.conv_dw.bn.running_mean",
+      "shape": [
+        864
+      ]
+    },
+    "features.6.conv_dw.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.6.conv_dw.bn.running_var",
+      "shape": [
+        864
+      ]
+    },
+    "features.6.conv_dw.bn.weight": {
+      "dtype": "F32",
+      "key": "features.6.conv_dw.bn.weight",
+      "shape": [
+        864
+      ]
+    },
+    "features.6.conv_dw.conv.weight": {
+      "dtype": "F32",
+      "key": "features.6.conv_dw.conv.weight",
+      "shape": [
+        864,
+        1,
+        3,
+        3
+      ]
+    },
+    "features.6.conv_exp.bn.bias": {
+      "dtype": "F32",
+      "key": "features.6.conv_exp.bn.bias",
+      "shape": [
+        864
+      ]
+    },
+    "features.6.conv_exp.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.6.conv_exp.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.6.conv_exp.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.6.conv_exp.bn.running_mean",
+      "shape": [
+        864
+      ]
+    },
+    "features.6.conv_exp.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.6.conv_exp.bn.running_var",
+      "shape": [
+        864
+      ]
+    },
+    "features.6.conv_exp.bn.weight": {
+      "dtype": "F32",
+      "key": "features.6.conv_exp.bn.weight",
+      "shape": [
+        864
+      ]
+    },
+    "features.6.conv_exp.conv.weight": {
+      "dtype": "F32",
+      "key": "features.6.conv_exp.conv.weight",
+      "shape": [
+        864,
+        144,
+        1,
+        1
+      ]
+    },
+    "features.6.conv_pwl.bn.bias": {
+      "dtype": "F32",
+      "key": "features.6.conv_pwl.bn.bias",
+      "shape": [
+        168
+      ]
+    },
+    "features.6.conv_pwl.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.6.conv_pwl.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.6.conv_pwl.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.6.conv_pwl.bn.running_mean",
+      "shape": [
+        168
+      ]
+    },
+    "features.6.conv_pwl.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.6.conv_pwl.bn.running_var",
+      "shape": [
+        168
+      ]
+    },
+    "features.6.conv_pwl.bn.weight": {
+      "dtype": "F32",
+      "key": "features.6.conv_pwl.bn.weight",
+      "shape": [
+        168
+      ]
+    },
+    "features.6.conv_pwl.conv.weight": {
+      "dtype": "F32",
+      "key": "features.6.conv_pwl.conv.weight",
+      "shape": [
+        168,
+        864,
+        1,
+        1
+      ]
+    },
+    "features.6.se.bn.bias": {
+      "dtype": "F32",
+      "key": "features.6.se.bn.bias",
+      "shape": [
+        72
+      ]
+    },
+    "features.6.se.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.6.se.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.6.se.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.6.se.bn.running_mean",
+      "shape": [
+        72
+      ]
+    },
+    "features.6.se.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.6.se.bn.running_var",
+      "shape": [
+        72
+      ]
+    },
+    "features.6.se.bn.weight": {
+      "dtype": "F32",
+      "key": "features.6.se.bn.weight",
+      "shape": [
+        72
+      ]
+    },
+    "features.6.se.fc1.bias": {
+      "dtype": "F32",
+      "key": "features.6.se.fc1.bias",
+      "shape": [
+        72
+      ]
+    },
+    "features.6.se.fc1.weight": {
+      "dtype": "F32",
+      "key": "features.6.se.fc1.weight",
+      "shape": [
+        72,
+        864,
+        1,
+        1
+      ]
+    },
+    "features.6.se.fc2.bias": {
+      "dtype": "F32",
+      "key": "features.6.se.fc2.bias",
+      "shape": [
+        864
+      ]
+    },
+    "features.6.se.fc2.weight": {
+      "dtype": "F32",
+      "key": "features.6.se.fc2.weight",
+      "shape": [
+        864,
+        72,
+        1,
+        1
+      ]
+    },
+    "features.7.conv_dw.bn.bias": {
+      "dtype": "F32",
+      "key": "features.7.conv_dw.bn.bias",
+      "shape": [
+        1008
+      ]
+    },
+    "features.7.conv_dw.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.7.conv_dw.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.7.conv_dw.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.7.conv_dw.bn.running_mean",
+      "shape": [
+        1008
+      ]
+    },
+    "features.7.conv_dw.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.7.conv_dw.bn.running_var",
+      "shape": [
+        1008
+      ]
+    },
+    "features.7.conv_dw.bn.weight": {
+      "dtype": "F32",
+      "key": "features.7.conv_dw.bn.weight",
+      "shape": [
+        1008
+      ]
+    },
+    "features.7.conv_dw.conv.weight": {
+      "dtype": "F32",
+      "key": "features.7.conv_dw.conv.weight",
+      "shape": [
+        1008,
+        1,
+        3,
+        3
+      ]
+    },
+    "features.7.conv_exp.bn.bias": {
+      "dtype": "F32",
+      "key": "features.7.conv_exp.bn.bias",
+      "shape": [
+        1008
+      ]
+    },
+    "features.7.conv_exp.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.7.conv_exp.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.7.conv_exp.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.7.conv_exp.bn.running_mean",
+      "shape": [
+        1008
+      ]
+    },
+    "features.7.conv_exp.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.7.conv_exp.bn.running_var",
+      "shape": [
+        1008
+      ]
+    },
+    "features.7.conv_exp.bn.weight": {
+      "dtype": "F32",
+      "key": "features.7.conv_exp.bn.weight",
+      "shape": [
+        1008
+      ]
+    },
+    "features.7.conv_exp.conv.weight": {
+      "dtype": "F32",
+      "key": "features.7.conv_exp.conv.weight",
+      "shape": [
+        1008,
+        168,
+        1,
+        1
+      ]
+    },
+    "features.7.conv_pwl.bn.bias": {
+      "dtype": "F32",
+      "key": "features.7.conv_pwl.bn.bias",
+      "shape": [
+        192
+      ]
+    },
+    "features.7.conv_pwl.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.7.conv_pwl.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.7.conv_pwl.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.7.conv_pwl.bn.running_mean",
+      "shape": [
+        192
+      ]
+    },
+    "features.7.conv_pwl.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.7.conv_pwl.bn.running_var",
+      "shape": [
+        192
+      ]
+    },
+    "features.7.conv_pwl.bn.weight": {
+      "dtype": "F32",
+      "key": "features.7.conv_pwl.bn.weight",
+      "shape": [
+        192
+      ]
+    },
+    "features.7.conv_pwl.conv.weight": {
+      "dtype": "F32",
+      "key": "features.7.conv_pwl.conv.weight",
+      "shape": [
+        192,
+        1008,
+        1,
+        1
+      ]
+    },
+    "features.7.se.bn.bias": {
+      "dtype": "F32",
+      "key": "features.7.se.bn.bias",
+      "shape": [
+        88
+      ]
+    },
+    "features.7.se.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.7.se.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.7.se.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.7.se.bn.running_mean",
+      "shape": [
+        88
+      ]
+    },
+    "features.7.se.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.7.se.bn.running_var",
+      "shape": [
+        88
+      ]
+    },
+    "features.7.se.bn.weight": {
+      "dtype": "F32",
+      "key": "features.7.se.bn.weight",
+      "shape": [
+        88
+      ]
+    },
+    "features.7.se.fc1.bias": {
+      "dtype": "F32",
+      "key": "features.7.se.fc1.bias",
+      "shape": [
+        88
+      ]
+    },
+    "features.7.se.fc1.weight": {
+      "dtype": "F32",
+      "key": "features.7.se.fc1.weight",
+      "shape": [
+        88,
+        1008,
+        1,
+        1
+      ]
+    },
+    "features.7.se.fc2.bias": {
+      "dtype": "F32",
+      "key": "features.7.se.fc2.bias",
+      "shape": [
+        1008
+      ]
+    },
+    "features.7.se.fc2.weight": {
+      "dtype": "F32",
+      "key": "features.7.se.fc2.weight",
+      "shape": [
+        1008,
+        88,
+        1,
+        1
+      ]
+    },
+    "features.8.conv_dw.bn.bias": {
+      "dtype": "F32",
+      "key": "features.8.conv_dw.bn.bias",
+      "shape": [
+        1152
+      ]
+    },
+    "features.8.conv_dw.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.8.conv_dw.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.8.conv_dw.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.8.conv_dw.bn.running_mean",
+      "shape": [
+        1152
+      ]
+    },
+    "features.8.conv_dw.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.8.conv_dw.bn.running_var",
+      "shape": [
+        1152
+      ]
+    },
+    "features.8.conv_dw.bn.weight": {
+      "dtype": "F32",
+      "key": "features.8.conv_dw.bn.weight",
+      "shape": [
+        1152
+      ]
+    },
+    "features.8.conv_dw.conv.weight": {
+      "dtype": "F32",
+      "key": "features.8.conv_dw.conv.weight",
+      "shape": [
+        1152,
+        1,
+        3,
+        3
+      ]
+    },
+    "features.8.conv_exp.bn.bias": {
+      "dtype": "F32",
+      "key": "features.8.conv_exp.bn.bias",
+      "shape": [
+        1152
+      ]
+    },
+    "features.8.conv_exp.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.8.conv_exp.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.8.conv_exp.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.8.conv_exp.bn.running_mean",
+      "shape": [
+        1152
+      ]
+    },
+    "features.8.conv_exp.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.8.conv_exp.bn.running_var",
+      "shape": [
+        1152
+      ]
+    },
+    "features.8.conv_exp.bn.weight": {
+      "dtype": "F32",
+      "key": "features.8.conv_exp.bn.weight",
+      "shape": [
+        1152
+      ]
+    },
+    "features.8.conv_exp.conv.weight": {
+      "dtype": "F32",
+      "key": "features.8.conv_exp.conv.weight",
+      "shape": [
+        1152,
+        192,
+        1,
+        1
+      ]
+    },
+    "features.8.conv_pwl.bn.bias": {
+      "dtype": "F32",
+      "key": "features.8.conv_pwl.bn.bias",
+      "shape": [
+        216
+      ]
+    },
+    "features.8.conv_pwl.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.8.conv_pwl.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.8.conv_pwl.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.8.conv_pwl.bn.running_mean",
+      "shape": [
+        216
+      ]
+    },
+    "features.8.conv_pwl.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.8.conv_pwl.bn.running_var",
+      "shape": [
+        216
+      ]
+    },
+    "features.8.conv_pwl.bn.weight": {
+      "dtype": "F32",
+      "key": "features.8.conv_pwl.bn.weight",
+      "shape": [
+        216
+      ]
+    },
+    "features.8.conv_pwl.conv.weight": {
+      "dtype": "F32",
+      "key": "features.8.conv_pwl.conv.weight",
+      "shape": [
+        216,
+        1152,
+        1,
+        1
+      ]
+    },
+    "features.8.se.bn.bias": {
+      "dtype": "F32",
+      "key": "features.8.se.bn.bias",
+      "shape": [
+        96
+      ]
+    },
+    "features.8.se.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.8.se.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.8.se.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.8.se.bn.running_mean",
+      "shape": [
+        96
+      ]
+    },
+    "features.8.se.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.8.se.bn.running_var",
+      "shape": [
+        96
+      ]
+    },
+    "features.8.se.bn.weight": {
+      "dtype": "F32",
+      "key": "features.8.se.bn.weight",
+      "shape": [
+        96
+      ]
+    },
+    "features.8.se.fc1.bias": {
+      "dtype": "F32",
+      "key": "features.8.se.fc1.bias",
+      "shape": [
+        96
+      ]
+    },
+    "features.8.se.fc1.weight": {
+      "dtype": "F32",
+      "key": "features.8.se.fc1.weight",
+      "shape": [
+        96,
+        1152,
+        1,
+        1
+      ]
+    },
+    "features.8.se.fc2.bias": {
+      "dtype": "F32",
+      "key": "features.8.se.fc2.bias",
+      "shape": [
+        1152
+      ]
+    },
+    "features.8.se.fc2.weight": {
+      "dtype": "F32",
+      "key": "features.8.se.fc2.weight",
+      "shape": [
+        1152,
+        96,
+        1,
+        1
+      ]
+    },
+    "features.9.conv_dw.bn.bias": {
+      "dtype": "F32",
+      "key": "features.9.conv_dw.bn.bias",
+      "shape": [
+        1296
+      ]
+    },
+    "features.9.conv_dw.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.9.conv_dw.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.9.conv_dw.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.9.conv_dw.bn.running_mean",
+      "shape": [
+        1296
+      ]
+    },
+    "features.9.conv_dw.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.9.conv_dw.bn.running_var",
+      "shape": [
+        1296
+      ]
+    },
+    "features.9.conv_dw.bn.weight": {
+      "dtype": "F32",
+      "key": "features.9.conv_dw.bn.weight",
+      "shape": [
+        1296
+      ]
+    },
+    "features.9.conv_dw.conv.weight": {
+      "dtype": "F32",
+      "key": "features.9.conv_dw.conv.weight",
+      "shape": [
+        1296,
+        1,
+        3,
+        3
+      ]
+    },
+    "features.9.conv_exp.bn.bias": {
+      "dtype": "F32",
+      "key": "features.9.conv_exp.bn.bias",
+      "shape": [
+        1296
+      ]
+    },
+    "features.9.conv_exp.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.9.conv_exp.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.9.conv_exp.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.9.conv_exp.bn.running_mean",
+      "shape": [
+        1296
+      ]
+    },
+    "features.9.conv_exp.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.9.conv_exp.bn.running_var",
+      "shape": [
+        1296
+      ]
+    },
+    "features.9.conv_exp.bn.weight": {
+      "dtype": "F32",
+      "key": "features.9.conv_exp.bn.weight",
+      "shape": [
+        1296
+      ]
+    },
+    "features.9.conv_exp.conv.weight": {
+      "dtype": "F32",
+      "key": "features.9.conv_exp.conv.weight",
+      "shape": [
+        1296,
+        216,
+        1,
+        1
+      ]
+    },
+    "features.9.conv_pwl.bn.bias": {
+      "dtype": "F32",
+      "key": "features.9.conv_pwl.bn.bias",
+      "shape": [
+        232
+      ]
+    },
+    "features.9.conv_pwl.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.9.conv_pwl.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.9.conv_pwl.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.9.conv_pwl.bn.running_mean",
+      "shape": [
+        232
+      ]
+    },
+    "features.9.conv_pwl.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.9.conv_pwl.bn.running_var",
+      "shape": [
+        232
+      ]
+    },
+    "features.9.conv_pwl.bn.weight": {
+      "dtype": "F32",
+      "key": "features.9.conv_pwl.bn.weight",
+      "shape": [
+        232
+      ]
+    },
+    "features.9.conv_pwl.conv.weight": {
+      "dtype": "F32",
+      "key": "features.9.conv_pwl.conv.weight",
+      "shape": [
+        232,
+        1296,
+        1,
+        1
+      ]
+    },
+    "features.9.se.bn.bias": {
+      "dtype": "F32",
+      "key": "features.9.se.bn.bias",
+      "shape": [
+        112
+      ]
+    },
+    "features.9.se.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "features.9.se.bn.num_batches_tracked",
+      "shape": []
+    },
+    "features.9.se.bn.running_mean": {
+      "dtype": "F32",
+      "key": "features.9.se.bn.running_mean",
+      "shape": [
+        112
+      ]
+    },
+    "features.9.se.bn.running_var": {
+      "dtype": "F32",
+      "key": "features.9.se.bn.running_var",
+      "shape": [
+        112
+      ]
+    },
+    "features.9.se.bn.weight": {
+      "dtype": "F32",
+      "key": "features.9.se.bn.weight",
+      "shape": [
+        112
+      ]
+    },
+    "features.9.se.fc1.bias": {
+      "dtype": "F32",
+      "key": "features.9.se.fc1.bias",
+      "shape": [
+        112
+      ]
+    },
+    "features.9.se.fc1.weight": {
+      "dtype": "F32",
+      "key": "features.9.se.fc1.weight",
+      "shape": [
+        112,
+        1296,
+        1,
+        1
+      ]
+    },
+    "features.9.se.fc2.bias": {
+      "dtype": "F32",
+      "key": "features.9.se.fc2.bias",
+      "shape": [
+        1296
+      ]
+    },
+    "features.9.se.fc2.weight": {
+      "dtype": "F32",
+      "key": "features.9.se.fc2.weight",
+      "shape": [
+        1296,
+        112,
+        1,
+        1
+      ]
+    },
+    "head.fc.bias": {
+      "dtype": "F32",
+      "key": "head.fc.bias",
+      "shape": [
+        1000
+      ]
+    },
+    "head.fc.weight": {
+      "dtype": "F32",
+      "key": "head.fc.weight",
+      "shape": [
+        1000,
+        2560
+      ]
+    },
+    "stem.bn.bias": {
+      "dtype": "F32",
+      "key": "stem.bn.bias",
+      "shape": [
+        64
+      ]
+    },
+    "stem.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stem.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stem.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stem.bn.running_mean",
+      "shape": [
+        64
+      ]
+    },
+    "stem.bn.running_var": {
+      "dtype": "F32",
+      "key": "stem.bn.running_var",
+      "shape": [
+        64
+      ]
+    },
+    "stem.bn.weight": {
+      "dtype": "F32",
+      "key": "stem.bn.weight",
+      "shape": [
+        64
+      ]
+    },
+    "stem.conv.weight": {
+      "dtype": "F32",
+      "key": "stem.conv.weight",
+      "shape": [
+        64,
+        3,
+        3,
+        3
+      ]
+    }
+  },
+  "unmapped": []
+}

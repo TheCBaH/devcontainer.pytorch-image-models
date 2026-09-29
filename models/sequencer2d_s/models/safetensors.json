@@ -1,0 +1,3585 @@
+{
+  "schema_version": 1,
+  "source": {
+    "filename": "model.safetensors",
+    "repo_id": "timm/sequencer2d_s.in1k",
+    "revision": "2daa6ecf486800c6181817571323289414b54820",
+    "sha256": "ef70ff18ff4f615c53009fde2ffe2f00e47376858d6da329fca2017baaffa946",
+    "size": 110661010,
+    "url": "https://huggingface.co/timm/sequencer2d_s.in1k/resolve/2daa6ecf486800c6181817571323289414b54820/model.safetensors"
+  },
+  "tensors": {
+    "head.fc.bias": {
+      "dtype": "F32",
+      "key": "head.fc.bias",
+      "shape": [
+        1000
+      ]
+    },
+    "head.fc.weight": {
+      "dtype": "F32",
+      "key": "head.fc.weight",
+      "shape": [
+        1000,
+        384
+      ]
+    },
+    "norm.bias": {
+      "dtype": "F32",
+      "key": "norm.bias",
+      "shape": [
+        384
+      ]
+    },
+    "norm.weight": {
+      "dtype": "F32",
+      "key": "norm.weight",
+      "shape": [
+        384
+      ]
+    },
+    "stages.0.blocks.0.mlp_channels.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.mlp_channels.fc1.bias",
+      "shape": [
+        576
+      ]
+    },
+    "stages.0.blocks.0.mlp_channels.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.mlp_channels.fc1.weight",
+      "shape": [
+        576,
+        192
+      ]
+    },
+    "stages.0.blocks.0.mlp_channels.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.mlp_channels.fc2.bias",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.0.mlp_channels.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.mlp_channels.fc2.weight",
+      "shape": [
+        192,
+        576
+      ]
+    },
+    "stages.0.blocks.0.norm1.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.norm1.bias",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.0.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.norm1.weight",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.0.norm2.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.norm2.bias",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.0.norm2.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.norm2.weight",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.0.rnn_tokens.fc.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.rnn_tokens.fc.bias",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.0.rnn_tokens.fc.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.rnn_tokens.fc.weight",
+      "shape": [
+        192,
+        192
+      ]
+    },
+    "stages.0.blocks.0.rnn_tokens.rnn_h.bias_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.rnn_tokens.rnn_h.bias_hh_l0",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.0.rnn_tokens.rnn_h.bias_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.rnn_tokens.rnn_h.bias_hh_l0_reverse",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.0.rnn_tokens.rnn_h.bias_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.rnn_tokens.rnn_h.bias_ih_l0",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.0.rnn_tokens.rnn_h.bias_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.rnn_tokens.rnn_h.bias_ih_l0_reverse",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.0.rnn_tokens.rnn_h.weight_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.rnn_tokens.rnn_h.weight_hh_l0",
+      "shape": [
+        192,
+        48
+      ]
+    },
+    "stages.0.blocks.0.rnn_tokens.rnn_h.weight_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.rnn_tokens.rnn_h.weight_hh_l0_reverse",
+      "shape": [
+        192,
+        48
+      ]
+    },
+    "stages.0.blocks.0.rnn_tokens.rnn_h.weight_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.rnn_tokens.rnn_h.weight_ih_l0",
+      "shape": [
+        192,
+        192
+      ]
+    },
+    "stages.0.blocks.0.rnn_tokens.rnn_h.weight_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.rnn_tokens.rnn_h.weight_ih_l0_reverse",
+      "shape": [
+        192,
+        192
+      ]
+    },
+    "stages.0.blocks.0.rnn_tokens.rnn_v.bias_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.rnn_tokens.rnn_v.bias_hh_l0",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.0.rnn_tokens.rnn_v.bias_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.rnn_tokens.rnn_v.bias_hh_l0_reverse",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.0.rnn_tokens.rnn_v.bias_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.rnn_tokens.rnn_v.bias_ih_l0",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.0.rnn_tokens.rnn_v.bias_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.rnn_tokens.rnn_v.bias_ih_l0_reverse",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.0.rnn_tokens.rnn_v.weight_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.rnn_tokens.rnn_v.weight_hh_l0",
+      "shape": [
+        192,
+        48
+      ]
+    },
+    "stages.0.blocks.0.rnn_tokens.rnn_v.weight_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.rnn_tokens.rnn_v.weight_hh_l0_reverse",
+      "shape": [
+        192,
+        48
+      ]
+    },
+    "stages.0.blocks.0.rnn_tokens.rnn_v.weight_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.rnn_tokens.rnn_v.weight_ih_l0",
+      "shape": [
+        192,
+        192
+      ]
+    },
+    "stages.0.blocks.0.rnn_tokens.rnn_v.weight_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.rnn_tokens.rnn_v.weight_ih_l0_reverse",
+      "shape": [
+        192,
+        192
+      ]
+    },
+    "stages.0.blocks.1.mlp_channels.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.mlp_channels.fc1.bias",
+      "shape": [
+        576
+      ]
+    },
+    "stages.0.blocks.1.mlp_channels.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.mlp_channels.fc1.weight",
+      "shape": [
+        576,
+        192
+      ]
+    },
+    "stages.0.blocks.1.mlp_channels.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.mlp_channels.fc2.bias",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.1.mlp_channels.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.mlp_channels.fc2.weight",
+      "shape": [
+        192,
+        576
+      ]
+    },
+    "stages.0.blocks.1.norm1.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.norm1.bias",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.1.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.norm1.weight",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.1.norm2.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.norm2.bias",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.1.norm2.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.norm2.weight",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.1.rnn_tokens.fc.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.rnn_tokens.fc.bias",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.1.rnn_tokens.fc.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.rnn_tokens.fc.weight",
+      "shape": [
+        192,
+        192
+      ]
+    },
+    "stages.0.blocks.1.rnn_tokens.rnn_h.bias_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.rnn_tokens.rnn_h.bias_hh_l0",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.1.rnn_tokens.rnn_h.bias_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.rnn_tokens.rnn_h.bias_hh_l0_reverse",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.1.rnn_tokens.rnn_h.bias_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.rnn_tokens.rnn_h.bias_ih_l0",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.1.rnn_tokens.rnn_h.bias_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.rnn_tokens.rnn_h.bias_ih_l0_reverse",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.1.rnn_tokens.rnn_h.weight_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.rnn_tokens.rnn_h.weight_hh_l0",
+      "shape": [
+        192,
+        48
+      ]
+    },
+    "stages.0.blocks.1.rnn_tokens.rnn_h.weight_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.rnn_tokens.rnn_h.weight_hh_l0_reverse",
+      "shape": [
+        192,
+        48
+      ]
+    },
+    "stages.0.blocks.1.rnn_tokens.rnn_h.weight_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.rnn_tokens.rnn_h.weight_ih_l0",
+      "shape": [
+        192,
+        192
+      ]
+    },
+    "stages.0.blocks.1.rnn_tokens.rnn_h.weight_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.rnn_tokens.rnn_h.weight_ih_l0_reverse",
+      "shape": [
+        192,
+        192
+      ]
+    },
+    "stages.0.blocks.1.rnn_tokens.rnn_v.bias_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.rnn_tokens.rnn_v.bias_hh_l0",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.1.rnn_tokens.rnn_v.bias_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.rnn_tokens.rnn_v.bias_hh_l0_reverse",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.1.rnn_tokens.rnn_v.bias_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.rnn_tokens.rnn_v.bias_ih_l0",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.1.rnn_tokens.rnn_v.bias_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.rnn_tokens.rnn_v.bias_ih_l0_reverse",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.1.rnn_tokens.rnn_v.weight_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.rnn_tokens.rnn_v.weight_hh_l0",
+      "shape": [
+        192,
+        48
+      ]
+    },
+    "stages.0.blocks.1.rnn_tokens.rnn_v.weight_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.rnn_tokens.rnn_v.weight_hh_l0_reverse",
+      "shape": [
+        192,
+        48
+      ]
+    },
+    "stages.0.blocks.1.rnn_tokens.rnn_v.weight_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.rnn_tokens.rnn_v.weight_ih_l0",
+      "shape": [
+        192,
+        192
+      ]
+    },
+    "stages.0.blocks.1.rnn_tokens.rnn_v.weight_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.rnn_tokens.rnn_v.weight_ih_l0_reverse",
+      "shape": [
+        192,
+        192
+      ]
+    },
+    "stages.0.blocks.2.mlp_channels.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.mlp_channels.fc1.bias",
+      "shape": [
+        576
+      ]
+    },
+    "stages.0.blocks.2.mlp_channels.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.mlp_channels.fc1.weight",
+      "shape": [
+        576,
+        192
+      ]
+    },
+    "stages.0.blocks.2.mlp_channels.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.mlp_channels.fc2.bias",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.2.mlp_channels.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.mlp_channels.fc2.weight",
+      "shape": [
+        192,
+        576
+      ]
+    },
+    "stages.0.blocks.2.norm1.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.norm1.bias",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.2.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.norm1.weight",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.2.norm2.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.norm2.bias",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.2.norm2.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.norm2.weight",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.2.rnn_tokens.fc.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.rnn_tokens.fc.bias",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.2.rnn_tokens.fc.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.rnn_tokens.fc.weight",
+      "shape": [
+        192,
+        192
+      ]
+    },
+    "stages.0.blocks.2.rnn_tokens.rnn_h.bias_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.rnn_tokens.rnn_h.bias_hh_l0",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.2.rnn_tokens.rnn_h.bias_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.rnn_tokens.rnn_h.bias_hh_l0_reverse",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.2.rnn_tokens.rnn_h.bias_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.rnn_tokens.rnn_h.bias_ih_l0",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.2.rnn_tokens.rnn_h.bias_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.rnn_tokens.rnn_h.bias_ih_l0_reverse",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.2.rnn_tokens.rnn_h.weight_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.rnn_tokens.rnn_h.weight_hh_l0",
+      "shape": [
+        192,
+        48
+      ]
+    },
+    "stages.0.blocks.2.rnn_tokens.rnn_h.weight_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.rnn_tokens.rnn_h.weight_hh_l0_reverse",
+      "shape": [
+        192,
+        48
+      ]
+    },
+    "stages.0.blocks.2.rnn_tokens.rnn_h.weight_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.rnn_tokens.rnn_h.weight_ih_l0",
+      "shape": [
+        192,
+        192
+      ]
+    },
+    "stages.0.blocks.2.rnn_tokens.rnn_h.weight_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.rnn_tokens.rnn_h.weight_ih_l0_reverse",
+      "shape": [
+        192,
+        192
+      ]
+    },
+    "stages.0.blocks.2.rnn_tokens.rnn_v.bias_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.rnn_tokens.rnn_v.bias_hh_l0",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.2.rnn_tokens.rnn_v.bias_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.rnn_tokens.rnn_v.bias_hh_l0_reverse",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.2.rnn_tokens.rnn_v.bias_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.rnn_tokens.rnn_v.bias_ih_l0",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.2.rnn_tokens.rnn_v.bias_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.rnn_tokens.rnn_v.bias_ih_l0_reverse",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.2.rnn_tokens.rnn_v.weight_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.rnn_tokens.rnn_v.weight_hh_l0",
+      "shape": [
+        192,
+        48
+      ]
+    },
+    "stages.0.blocks.2.rnn_tokens.rnn_v.weight_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.rnn_tokens.rnn_v.weight_hh_l0_reverse",
+      "shape": [
+        192,
+        48
+      ]
+    },
+    "stages.0.blocks.2.rnn_tokens.rnn_v.weight_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.rnn_tokens.rnn_v.weight_ih_l0",
+      "shape": [
+        192,
+        192
+      ]
+    },
+    "stages.0.blocks.2.rnn_tokens.rnn_v.weight_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.rnn_tokens.rnn_v.weight_ih_l0_reverse",
+      "shape": [
+        192,
+        192
+      ]
+    },
+    "stages.0.blocks.3.mlp_channels.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.3.mlp_channels.fc1.bias",
+      "shape": [
+        576
+      ]
+    },
+    "stages.0.blocks.3.mlp_channels.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.3.mlp_channels.fc1.weight",
+      "shape": [
+        576,
+        192
+      ]
+    },
+    "stages.0.blocks.3.mlp_channels.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.3.mlp_channels.fc2.bias",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.3.mlp_channels.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.3.mlp_channels.fc2.weight",
+      "shape": [
+        192,
+        576
+      ]
+    },
+    "stages.0.blocks.3.norm1.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.3.norm1.bias",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.3.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.3.norm1.weight",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.3.norm2.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.3.norm2.bias",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.3.norm2.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.3.norm2.weight",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.3.rnn_tokens.fc.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.3.rnn_tokens.fc.bias",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.3.rnn_tokens.fc.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.3.rnn_tokens.fc.weight",
+      "shape": [
+        192,
+        192
+      ]
+    },
+    "stages.0.blocks.3.rnn_tokens.rnn_h.bias_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.3.rnn_tokens.rnn_h.bias_hh_l0",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.3.rnn_tokens.rnn_h.bias_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.3.rnn_tokens.rnn_h.bias_hh_l0_reverse",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.3.rnn_tokens.rnn_h.bias_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.3.rnn_tokens.rnn_h.bias_ih_l0",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.3.rnn_tokens.rnn_h.bias_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.3.rnn_tokens.rnn_h.bias_ih_l0_reverse",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.3.rnn_tokens.rnn_h.weight_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.3.rnn_tokens.rnn_h.weight_hh_l0",
+      "shape": [
+        192,
+        48
+      ]
+    },
+    "stages.0.blocks.3.rnn_tokens.rnn_h.weight_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.3.rnn_tokens.rnn_h.weight_hh_l0_reverse",
+      "shape": [
+        192,
+        48
+      ]
+    },
+    "stages.0.blocks.3.rnn_tokens.rnn_h.weight_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.3.rnn_tokens.rnn_h.weight_ih_l0",
+      "shape": [
+        192,
+        192
+      ]
+    },
+    "stages.0.blocks.3.rnn_tokens.rnn_h.weight_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.3.rnn_tokens.rnn_h.weight_ih_l0_reverse",
+      "shape": [
+        192,
+        192
+      ]
+    },
+    "stages.0.blocks.3.rnn_tokens.rnn_v.bias_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.3.rnn_tokens.rnn_v.bias_hh_l0",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.3.rnn_tokens.rnn_v.bias_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.3.rnn_tokens.rnn_v.bias_hh_l0_reverse",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.3.rnn_tokens.rnn_v.bias_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.3.rnn_tokens.rnn_v.bias_ih_l0",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.3.rnn_tokens.rnn_v.bias_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.3.rnn_tokens.rnn_v.bias_ih_l0_reverse",
+      "shape": [
+        192
+      ]
+    },
+    "stages.0.blocks.3.rnn_tokens.rnn_v.weight_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.3.rnn_tokens.rnn_v.weight_hh_l0",
+      "shape": [
+        192,
+        48
+      ]
+    },
+    "stages.0.blocks.3.rnn_tokens.rnn_v.weight_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.3.rnn_tokens.rnn_v.weight_hh_l0_reverse",
+      "shape": [
+        192,
+        48
+      ]
+    },
+    "stages.0.blocks.3.rnn_tokens.rnn_v.weight_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.3.rnn_tokens.rnn_v.weight_ih_l0",
+      "shape": [
+        192,
+        192
+      ]
+    },
+    "stages.0.blocks.3.rnn_tokens.rnn_v.weight_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.3.rnn_tokens.rnn_v.weight_ih_l0_reverse",
+      "shape": [
+        192,
+        192
+      ]
+    },
+    "stages.1.blocks.0.mlp_channels.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.mlp_channels.fc1.bias",
+      "shape": [
+        1152
+      ]
+    },
+    "stages.1.blocks.0.mlp_channels.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.mlp_channels.fc1.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "stages.1.blocks.0.mlp_channels.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.mlp_channels.fc2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.1.blocks.0.mlp_channels.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.mlp_channels.fc2.weight",
+      "shape": [
+        384,
+        1152
+      ]
+    },
+    "stages.1.blocks.0.norm1.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.norm1.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.1.blocks.0.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.norm1.weight",
+      "shape": [
+        384
+      ]
+    },
+    "stages.1.blocks.0.norm2.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.norm2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.1.blocks.0.norm2.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.norm2.weight",
+      "shape": [
+        384
+      ]
+    },
+    "stages.1.blocks.0.rnn_tokens.fc.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.rnn_tokens.fc.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.1.blocks.0.rnn_tokens.fc.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.rnn_tokens.fc.weight",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.1.blocks.0.rnn_tokens.rnn_h.bias_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.rnn_tokens.rnn_h.bias_hh_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.1.blocks.0.rnn_tokens.rnn_h.bias_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.rnn_tokens.rnn_h.bias_hh_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.1.blocks.0.rnn_tokens.rnn_h.bias_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.rnn_tokens.rnn_h.bias_ih_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.1.blocks.0.rnn_tokens.rnn_h.bias_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.rnn_tokens.rnn_h.bias_ih_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.1.blocks.0.rnn_tokens.rnn_h.weight_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.rnn_tokens.rnn_h.weight_hh_l0",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.1.blocks.0.rnn_tokens.rnn_h.weight_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.rnn_tokens.rnn_h.weight_hh_l0_reverse",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.1.blocks.0.rnn_tokens.rnn_h.weight_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.rnn_tokens.rnn_h.weight_ih_l0",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.1.blocks.0.rnn_tokens.rnn_h.weight_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.rnn_tokens.rnn_h.weight_ih_l0_reverse",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.1.blocks.0.rnn_tokens.rnn_v.bias_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.rnn_tokens.rnn_v.bias_hh_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.1.blocks.0.rnn_tokens.rnn_v.bias_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.rnn_tokens.rnn_v.bias_hh_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.1.blocks.0.rnn_tokens.rnn_v.bias_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.rnn_tokens.rnn_v.bias_ih_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.1.blocks.0.rnn_tokens.rnn_v.bias_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.rnn_tokens.rnn_v.bias_ih_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.1.blocks.0.rnn_tokens.rnn_v.weight_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.rnn_tokens.rnn_v.weight_hh_l0",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.1.blocks.0.rnn_tokens.rnn_v.weight_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.rnn_tokens.rnn_v.weight_hh_l0_reverse",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.1.blocks.0.rnn_tokens.rnn_v.weight_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.rnn_tokens.rnn_v.weight_ih_l0",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.1.blocks.0.rnn_tokens.rnn_v.weight_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.rnn_tokens.rnn_v.weight_ih_l0_reverse",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.1.blocks.1.mlp_channels.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.mlp_channels.fc1.bias",
+      "shape": [
+        1152
+      ]
+    },
+    "stages.1.blocks.1.mlp_channels.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.mlp_channels.fc1.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "stages.1.blocks.1.mlp_channels.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.mlp_channels.fc2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.1.blocks.1.mlp_channels.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.mlp_channels.fc2.weight",
+      "shape": [
+        384,
+        1152
+      ]
+    },
+    "stages.1.blocks.1.norm1.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.norm1.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.1.blocks.1.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.norm1.weight",
+      "shape": [
+        384
+      ]
+    },
+    "stages.1.blocks.1.norm2.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.norm2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.1.blocks.1.norm2.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.norm2.weight",
+      "shape": [
+        384
+      ]
+    },
+    "stages.1.blocks.1.rnn_tokens.fc.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.rnn_tokens.fc.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.1.blocks.1.rnn_tokens.fc.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.rnn_tokens.fc.weight",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.1.blocks.1.rnn_tokens.rnn_h.bias_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.rnn_tokens.rnn_h.bias_hh_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.1.blocks.1.rnn_tokens.rnn_h.bias_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.rnn_tokens.rnn_h.bias_hh_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.1.blocks.1.rnn_tokens.rnn_h.bias_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.rnn_tokens.rnn_h.bias_ih_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.1.blocks.1.rnn_tokens.rnn_h.bias_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.rnn_tokens.rnn_h.bias_ih_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.1.blocks.1.rnn_tokens.rnn_h.weight_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.rnn_tokens.rnn_h.weight_hh_l0",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.1.blocks.1.rnn_tokens.rnn_h.weight_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.rnn_tokens.rnn_h.weight_hh_l0_reverse",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.1.blocks.1.rnn_tokens.rnn_h.weight_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.rnn_tokens.rnn_h.weight_ih_l0",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.1.blocks.1.rnn_tokens.rnn_h.weight_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.rnn_tokens.rnn_h.weight_ih_l0_reverse",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.1.blocks.1.rnn_tokens.rnn_v.bias_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.rnn_tokens.rnn_v.bias_hh_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.1.blocks.1.rnn_tokens.rnn_v.bias_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.rnn_tokens.rnn_v.bias_hh_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.1.blocks.1.rnn_tokens.rnn_v.bias_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.rnn_tokens.rnn_v.bias_ih_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.1.blocks.1.rnn_tokens.rnn_v.bias_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.rnn_tokens.rnn_v.bias_ih_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.1.blocks.1.rnn_tokens.rnn_v.weight_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.rnn_tokens.rnn_v.weight_hh_l0",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.1.blocks.1.rnn_tokens.rnn_v.weight_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.rnn_tokens.rnn_v.weight_hh_l0_reverse",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.1.blocks.1.rnn_tokens.rnn_v.weight_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.rnn_tokens.rnn_v.weight_ih_l0",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.1.blocks.1.rnn_tokens.rnn_v.weight_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.rnn_tokens.rnn_v.weight_ih_l0_reverse",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.1.blocks.2.mlp_channels.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.mlp_channels.fc1.bias",
+      "shape": [
+        1152
+      ]
+    },
+    "stages.1.blocks.2.mlp_channels.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.mlp_channels.fc1.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "stages.1.blocks.2.mlp_channels.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.mlp_channels.fc2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.1.blocks.2.mlp_channels.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.mlp_channels.fc2.weight",
+      "shape": [
+        384,
+        1152
+      ]
+    },
+    "stages.1.blocks.2.norm1.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.norm1.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.1.blocks.2.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.norm1.weight",
+      "shape": [
+        384
+      ]
+    },
+    "stages.1.blocks.2.norm2.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.norm2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.1.blocks.2.norm2.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.norm2.weight",
+      "shape": [
+        384
+      ]
+    },
+    "stages.1.blocks.2.rnn_tokens.fc.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.rnn_tokens.fc.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.1.blocks.2.rnn_tokens.fc.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.rnn_tokens.fc.weight",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.1.blocks.2.rnn_tokens.rnn_h.bias_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.rnn_tokens.rnn_h.bias_hh_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.1.blocks.2.rnn_tokens.rnn_h.bias_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.rnn_tokens.rnn_h.bias_hh_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.1.blocks.2.rnn_tokens.rnn_h.bias_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.rnn_tokens.rnn_h.bias_ih_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.1.blocks.2.rnn_tokens.rnn_h.bias_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.rnn_tokens.rnn_h.bias_ih_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.1.blocks.2.rnn_tokens.rnn_h.weight_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.rnn_tokens.rnn_h.weight_hh_l0",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.1.blocks.2.rnn_tokens.rnn_h.weight_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.rnn_tokens.rnn_h.weight_hh_l0_reverse",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.1.blocks.2.rnn_tokens.rnn_h.weight_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.rnn_tokens.rnn_h.weight_ih_l0",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.1.blocks.2.rnn_tokens.rnn_h.weight_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.rnn_tokens.rnn_h.weight_ih_l0_reverse",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.1.blocks.2.rnn_tokens.rnn_v.bias_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.rnn_tokens.rnn_v.bias_hh_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.1.blocks.2.rnn_tokens.rnn_v.bias_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.rnn_tokens.rnn_v.bias_hh_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.1.blocks.2.rnn_tokens.rnn_v.bias_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.rnn_tokens.rnn_v.bias_ih_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.1.blocks.2.rnn_tokens.rnn_v.bias_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.rnn_tokens.rnn_v.bias_ih_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.1.blocks.2.rnn_tokens.rnn_v.weight_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.rnn_tokens.rnn_v.weight_hh_l0",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.1.blocks.2.rnn_tokens.rnn_v.weight_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.rnn_tokens.rnn_v.weight_hh_l0_reverse",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.1.blocks.2.rnn_tokens.rnn_v.weight_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.rnn_tokens.rnn_v.weight_ih_l0",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.1.blocks.2.rnn_tokens.rnn_v.weight_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.rnn_tokens.rnn_v.weight_ih_l0_reverse",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.1.downsample.down.bias": {
+      "dtype": "F32",
+      "key": "stages.1.downsample.down.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.1.downsample.down.weight": {
+      "dtype": "F32",
+      "key": "stages.1.downsample.down.weight",
+      "shape": [
+        384,
+        192,
+        2,
+        2
+      ]
+    },
+    "stages.2.blocks.0.mlp_channels.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.mlp_channels.fc1.bias",
+      "shape": [
+        1152
+      ]
+    },
+    "stages.2.blocks.0.mlp_channels.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.mlp_channels.fc1.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "stages.2.blocks.0.mlp_channels.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.mlp_channels.fc2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.0.mlp_channels.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.mlp_channels.fc2.weight",
+      "shape": [
+        384,
+        1152
+      ]
+    },
+    "stages.2.blocks.0.norm1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.norm1.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.0.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.norm1.weight",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.0.norm2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.norm2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.0.norm2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.norm2.weight",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.0.rnn_tokens.fc.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.rnn_tokens.fc.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.0.rnn_tokens.fc.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.rnn_tokens.fc.weight",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.2.blocks.0.rnn_tokens.rnn_h.bias_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.rnn_tokens.rnn_h.bias_hh_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.0.rnn_tokens.rnn_h.bias_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.rnn_tokens.rnn_h.bias_hh_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.0.rnn_tokens.rnn_h.bias_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.rnn_tokens.rnn_h.bias_ih_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.0.rnn_tokens.rnn_h.bias_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.rnn_tokens.rnn_h.bias_ih_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.0.rnn_tokens.rnn_h.weight_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.rnn_tokens.rnn_h.weight_hh_l0",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.2.blocks.0.rnn_tokens.rnn_h.weight_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.rnn_tokens.rnn_h.weight_hh_l0_reverse",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.2.blocks.0.rnn_tokens.rnn_h.weight_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.rnn_tokens.rnn_h.weight_ih_l0",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.2.blocks.0.rnn_tokens.rnn_h.weight_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.rnn_tokens.rnn_h.weight_ih_l0_reverse",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.2.blocks.0.rnn_tokens.rnn_v.bias_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.rnn_tokens.rnn_v.bias_hh_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.0.rnn_tokens.rnn_v.bias_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.rnn_tokens.rnn_v.bias_hh_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.0.rnn_tokens.rnn_v.bias_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.rnn_tokens.rnn_v.bias_ih_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.0.rnn_tokens.rnn_v.bias_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.rnn_tokens.rnn_v.bias_ih_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.0.rnn_tokens.rnn_v.weight_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.rnn_tokens.rnn_v.weight_hh_l0",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.2.blocks.0.rnn_tokens.rnn_v.weight_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.rnn_tokens.rnn_v.weight_hh_l0_reverse",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.2.blocks.0.rnn_tokens.rnn_v.weight_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.rnn_tokens.rnn_v.weight_ih_l0",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.2.blocks.0.rnn_tokens.rnn_v.weight_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.rnn_tokens.rnn_v.weight_ih_l0_reverse",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.2.blocks.1.mlp_channels.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.mlp_channels.fc1.bias",
+      "shape": [
+        1152
+      ]
+    },
+    "stages.2.blocks.1.mlp_channels.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.mlp_channels.fc1.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "stages.2.blocks.1.mlp_channels.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.mlp_channels.fc2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.1.mlp_channels.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.mlp_channels.fc2.weight",
+      "shape": [
+        384,
+        1152
+      ]
+    },
+    "stages.2.blocks.1.norm1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.norm1.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.1.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.norm1.weight",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.1.norm2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.norm2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.1.norm2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.norm2.weight",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.1.rnn_tokens.fc.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.rnn_tokens.fc.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.1.rnn_tokens.fc.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.rnn_tokens.fc.weight",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.2.blocks.1.rnn_tokens.rnn_h.bias_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.rnn_tokens.rnn_h.bias_hh_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.1.rnn_tokens.rnn_h.bias_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.rnn_tokens.rnn_h.bias_hh_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.1.rnn_tokens.rnn_h.bias_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.rnn_tokens.rnn_h.bias_ih_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.1.rnn_tokens.rnn_h.bias_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.rnn_tokens.rnn_h.bias_ih_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.1.rnn_tokens.rnn_h.weight_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.rnn_tokens.rnn_h.weight_hh_l0",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.2.blocks.1.rnn_tokens.rnn_h.weight_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.rnn_tokens.rnn_h.weight_hh_l0_reverse",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.2.blocks.1.rnn_tokens.rnn_h.weight_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.rnn_tokens.rnn_h.weight_ih_l0",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.2.blocks.1.rnn_tokens.rnn_h.weight_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.rnn_tokens.rnn_h.weight_ih_l0_reverse",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.2.blocks.1.rnn_tokens.rnn_v.bias_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.rnn_tokens.rnn_v.bias_hh_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.1.rnn_tokens.rnn_v.bias_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.rnn_tokens.rnn_v.bias_hh_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.1.rnn_tokens.rnn_v.bias_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.rnn_tokens.rnn_v.bias_ih_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.1.rnn_tokens.rnn_v.bias_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.rnn_tokens.rnn_v.bias_ih_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.1.rnn_tokens.rnn_v.weight_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.rnn_tokens.rnn_v.weight_hh_l0",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.2.blocks.1.rnn_tokens.rnn_v.weight_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.rnn_tokens.rnn_v.weight_hh_l0_reverse",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.2.blocks.1.rnn_tokens.rnn_v.weight_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.rnn_tokens.rnn_v.weight_ih_l0",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.2.blocks.1.rnn_tokens.rnn_v.weight_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.rnn_tokens.rnn_v.weight_ih_l0_reverse",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.2.blocks.2.mlp_channels.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.mlp_channels.fc1.bias",
+      "shape": [
+        1152
+      ]
+    },
+    "stages.2.blocks.2.mlp_channels.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.mlp_channels.fc1.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "stages.2.blocks.2.mlp_channels.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.mlp_channels.fc2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.2.mlp_channels.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.mlp_channels.fc2.weight",
+      "shape": [
+        384,
+        1152
+      ]
+    },
+    "stages.2.blocks.2.norm1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.norm1.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.2.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.norm1.weight",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.2.norm2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.norm2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.2.norm2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.norm2.weight",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.2.rnn_tokens.fc.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.rnn_tokens.fc.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.2.rnn_tokens.fc.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.rnn_tokens.fc.weight",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.2.blocks.2.rnn_tokens.rnn_h.bias_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.rnn_tokens.rnn_h.bias_hh_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.2.rnn_tokens.rnn_h.bias_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.rnn_tokens.rnn_h.bias_hh_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.2.rnn_tokens.rnn_h.bias_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.rnn_tokens.rnn_h.bias_ih_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.2.rnn_tokens.rnn_h.bias_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.rnn_tokens.rnn_h.bias_ih_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.2.rnn_tokens.rnn_h.weight_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.rnn_tokens.rnn_h.weight_hh_l0",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.2.blocks.2.rnn_tokens.rnn_h.weight_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.rnn_tokens.rnn_h.weight_hh_l0_reverse",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.2.blocks.2.rnn_tokens.rnn_h.weight_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.rnn_tokens.rnn_h.weight_ih_l0",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.2.blocks.2.rnn_tokens.rnn_h.weight_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.rnn_tokens.rnn_h.weight_ih_l0_reverse",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.2.blocks.2.rnn_tokens.rnn_v.bias_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.rnn_tokens.rnn_v.bias_hh_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.2.rnn_tokens.rnn_v.bias_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.rnn_tokens.rnn_v.bias_hh_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.2.rnn_tokens.rnn_v.bias_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.rnn_tokens.rnn_v.bias_ih_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.2.rnn_tokens.rnn_v.bias_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.rnn_tokens.rnn_v.bias_ih_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.2.rnn_tokens.rnn_v.weight_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.rnn_tokens.rnn_v.weight_hh_l0",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.2.blocks.2.rnn_tokens.rnn_v.weight_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.rnn_tokens.rnn_v.weight_hh_l0_reverse",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.2.blocks.2.rnn_tokens.rnn_v.weight_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.rnn_tokens.rnn_v.weight_ih_l0",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.2.blocks.2.rnn_tokens.rnn_v.weight_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.rnn_tokens.rnn_v.weight_ih_l0_reverse",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.2.blocks.3.mlp_channels.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.mlp_channels.fc1.bias",
+      "shape": [
+        1152
+      ]
+    },
+    "stages.2.blocks.3.mlp_channels.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.mlp_channels.fc1.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "stages.2.blocks.3.mlp_channels.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.mlp_channels.fc2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.3.mlp_channels.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.mlp_channels.fc2.weight",
+      "shape": [
+        384,
+        1152
+      ]
+    },
+    "stages.2.blocks.3.norm1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.norm1.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.3.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.norm1.weight",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.3.norm2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.norm2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.3.norm2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.norm2.weight",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.3.rnn_tokens.fc.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.rnn_tokens.fc.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.3.rnn_tokens.fc.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.rnn_tokens.fc.weight",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.2.blocks.3.rnn_tokens.rnn_h.bias_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.rnn_tokens.rnn_h.bias_hh_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.3.rnn_tokens.rnn_h.bias_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.rnn_tokens.rnn_h.bias_hh_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.3.rnn_tokens.rnn_h.bias_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.rnn_tokens.rnn_h.bias_ih_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.3.rnn_tokens.rnn_h.bias_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.rnn_tokens.rnn_h.bias_ih_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.3.rnn_tokens.rnn_h.weight_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.rnn_tokens.rnn_h.weight_hh_l0",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.2.blocks.3.rnn_tokens.rnn_h.weight_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.rnn_tokens.rnn_h.weight_hh_l0_reverse",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.2.blocks.3.rnn_tokens.rnn_h.weight_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.rnn_tokens.rnn_h.weight_ih_l0",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.2.blocks.3.rnn_tokens.rnn_h.weight_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.rnn_tokens.rnn_h.weight_ih_l0_reverse",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.2.blocks.3.rnn_tokens.rnn_v.bias_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.rnn_tokens.rnn_v.bias_hh_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.3.rnn_tokens.rnn_v.bias_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.rnn_tokens.rnn_v.bias_hh_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.3.rnn_tokens.rnn_v.bias_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.rnn_tokens.rnn_v.bias_ih_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.3.rnn_tokens.rnn_v.bias_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.rnn_tokens.rnn_v.bias_ih_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.3.rnn_tokens.rnn_v.weight_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.rnn_tokens.rnn_v.weight_hh_l0",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.2.blocks.3.rnn_tokens.rnn_v.weight_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.rnn_tokens.rnn_v.weight_hh_l0_reverse",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.2.blocks.3.rnn_tokens.rnn_v.weight_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.rnn_tokens.rnn_v.weight_ih_l0",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.2.blocks.3.rnn_tokens.rnn_v.weight_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.rnn_tokens.rnn_v.weight_ih_l0_reverse",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.2.blocks.4.mlp_channels.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.mlp_channels.fc1.bias",
+      "shape": [
+        1152
+      ]
+    },
+    "stages.2.blocks.4.mlp_channels.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.mlp_channels.fc1.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "stages.2.blocks.4.mlp_channels.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.mlp_channels.fc2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.4.mlp_channels.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.mlp_channels.fc2.weight",
+      "shape": [
+        384,
+        1152
+      ]
+    },
+    "stages.2.blocks.4.norm1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.norm1.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.4.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.norm1.weight",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.4.norm2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.norm2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.4.norm2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.norm2.weight",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.4.rnn_tokens.fc.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.rnn_tokens.fc.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.4.rnn_tokens.fc.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.rnn_tokens.fc.weight",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.2.blocks.4.rnn_tokens.rnn_h.bias_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.rnn_tokens.rnn_h.bias_hh_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.4.rnn_tokens.rnn_h.bias_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.rnn_tokens.rnn_h.bias_hh_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.4.rnn_tokens.rnn_h.bias_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.rnn_tokens.rnn_h.bias_ih_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.4.rnn_tokens.rnn_h.bias_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.rnn_tokens.rnn_h.bias_ih_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.4.rnn_tokens.rnn_h.weight_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.rnn_tokens.rnn_h.weight_hh_l0",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.2.blocks.4.rnn_tokens.rnn_h.weight_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.rnn_tokens.rnn_h.weight_hh_l0_reverse",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.2.blocks.4.rnn_tokens.rnn_h.weight_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.rnn_tokens.rnn_h.weight_ih_l0",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.2.blocks.4.rnn_tokens.rnn_h.weight_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.rnn_tokens.rnn_h.weight_ih_l0_reverse",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.2.blocks.4.rnn_tokens.rnn_v.bias_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.rnn_tokens.rnn_v.bias_hh_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.4.rnn_tokens.rnn_v.bias_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.rnn_tokens.rnn_v.bias_hh_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.4.rnn_tokens.rnn_v.bias_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.rnn_tokens.rnn_v.bias_ih_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.4.rnn_tokens.rnn_v.bias_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.rnn_tokens.rnn_v.bias_ih_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.4.rnn_tokens.rnn_v.weight_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.rnn_tokens.rnn_v.weight_hh_l0",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.2.blocks.4.rnn_tokens.rnn_v.weight_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.rnn_tokens.rnn_v.weight_hh_l0_reverse",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.2.blocks.4.rnn_tokens.rnn_v.weight_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.rnn_tokens.rnn_v.weight_ih_l0",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.2.blocks.4.rnn_tokens.rnn_v.weight_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.rnn_tokens.rnn_v.weight_ih_l0_reverse",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.2.blocks.5.mlp_channels.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.mlp_channels.fc1.bias",
+      "shape": [
+        1152
+      ]
+    },
+    "stages.2.blocks.5.mlp_channels.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.mlp_channels.fc1.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "stages.2.blocks.5.mlp_channels.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.mlp_channels.fc2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.5.mlp_channels.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.mlp_channels.fc2.weight",
+      "shape": [
+        384,
+        1152
+      ]
+    },
+    "stages.2.blocks.5.norm1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.norm1.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.5.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.norm1.weight",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.5.norm2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.norm2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.5.norm2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.norm2.weight",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.5.rnn_tokens.fc.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.rnn_tokens.fc.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.5.rnn_tokens.fc.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.rnn_tokens.fc.weight",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.2.blocks.5.rnn_tokens.rnn_h.bias_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.rnn_tokens.rnn_h.bias_hh_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.5.rnn_tokens.rnn_h.bias_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.rnn_tokens.rnn_h.bias_hh_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.5.rnn_tokens.rnn_h.bias_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.rnn_tokens.rnn_h.bias_ih_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.5.rnn_tokens.rnn_h.bias_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.rnn_tokens.rnn_h.bias_ih_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.5.rnn_tokens.rnn_h.weight_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.rnn_tokens.rnn_h.weight_hh_l0",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.2.blocks.5.rnn_tokens.rnn_h.weight_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.rnn_tokens.rnn_h.weight_hh_l0_reverse",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.2.blocks.5.rnn_tokens.rnn_h.weight_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.rnn_tokens.rnn_h.weight_ih_l0",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.2.blocks.5.rnn_tokens.rnn_h.weight_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.rnn_tokens.rnn_h.weight_ih_l0_reverse",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.2.blocks.5.rnn_tokens.rnn_v.bias_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.rnn_tokens.rnn_v.bias_hh_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.5.rnn_tokens.rnn_v.bias_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.rnn_tokens.rnn_v.bias_hh_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.5.rnn_tokens.rnn_v.bias_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.rnn_tokens.rnn_v.bias_ih_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.5.rnn_tokens.rnn_v.bias_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.rnn_tokens.rnn_v.bias_ih_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.5.rnn_tokens.rnn_v.weight_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.rnn_tokens.rnn_v.weight_hh_l0",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.2.blocks.5.rnn_tokens.rnn_v.weight_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.rnn_tokens.rnn_v.weight_hh_l0_reverse",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.2.blocks.5.rnn_tokens.rnn_v.weight_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.rnn_tokens.rnn_v.weight_ih_l0",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.2.blocks.5.rnn_tokens.rnn_v.weight_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.rnn_tokens.rnn_v.weight_ih_l0_reverse",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.2.blocks.6.mlp_channels.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.6.mlp_channels.fc1.bias",
+      "shape": [
+        1152
+      ]
+    },
+    "stages.2.blocks.6.mlp_channels.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.6.mlp_channels.fc1.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "stages.2.blocks.6.mlp_channels.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.6.mlp_channels.fc2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.6.mlp_channels.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.6.mlp_channels.fc2.weight",
+      "shape": [
+        384,
+        1152
+      ]
+    },
+    "stages.2.blocks.6.norm1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.6.norm1.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.6.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.6.norm1.weight",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.6.norm2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.6.norm2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.6.norm2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.6.norm2.weight",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.6.rnn_tokens.fc.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.6.rnn_tokens.fc.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.6.rnn_tokens.fc.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.6.rnn_tokens.fc.weight",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.2.blocks.6.rnn_tokens.rnn_h.bias_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.6.rnn_tokens.rnn_h.bias_hh_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.6.rnn_tokens.rnn_h.bias_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.6.rnn_tokens.rnn_h.bias_hh_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.6.rnn_tokens.rnn_h.bias_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.6.rnn_tokens.rnn_h.bias_ih_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.6.rnn_tokens.rnn_h.bias_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.6.rnn_tokens.rnn_h.bias_ih_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.6.rnn_tokens.rnn_h.weight_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.6.rnn_tokens.rnn_h.weight_hh_l0",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.2.blocks.6.rnn_tokens.rnn_h.weight_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.6.rnn_tokens.rnn_h.weight_hh_l0_reverse",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.2.blocks.6.rnn_tokens.rnn_h.weight_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.6.rnn_tokens.rnn_h.weight_ih_l0",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.2.blocks.6.rnn_tokens.rnn_h.weight_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.6.rnn_tokens.rnn_h.weight_ih_l0_reverse",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.2.blocks.6.rnn_tokens.rnn_v.bias_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.6.rnn_tokens.rnn_v.bias_hh_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.6.rnn_tokens.rnn_v.bias_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.6.rnn_tokens.rnn_v.bias_hh_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.6.rnn_tokens.rnn_v.bias_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.6.rnn_tokens.rnn_v.bias_ih_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.6.rnn_tokens.rnn_v.bias_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.6.rnn_tokens.rnn_v.bias_ih_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.6.rnn_tokens.rnn_v.weight_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.6.rnn_tokens.rnn_v.weight_hh_l0",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.2.blocks.6.rnn_tokens.rnn_v.weight_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.6.rnn_tokens.rnn_v.weight_hh_l0_reverse",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.2.blocks.6.rnn_tokens.rnn_v.weight_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.6.rnn_tokens.rnn_v.weight_ih_l0",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.2.blocks.6.rnn_tokens.rnn_v.weight_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.6.rnn_tokens.rnn_v.weight_ih_l0_reverse",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.2.blocks.7.mlp_channels.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.7.mlp_channels.fc1.bias",
+      "shape": [
+        1152
+      ]
+    },
+    "stages.2.blocks.7.mlp_channels.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.7.mlp_channels.fc1.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "stages.2.blocks.7.mlp_channels.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.7.mlp_channels.fc2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.7.mlp_channels.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.7.mlp_channels.fc2.weight",
+      "shape": [
+        384,
+        1152
+      ]
+    },
+    "stages.2.blocks.7.norm1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.7.norm1.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.7.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.7.norm1.weight",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.7.norm2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.7.norm2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.7.norm2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.7.norm2.weight",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.7.rnn_tokens.fc.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.7.rnn_tokens.fc.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.7.rnn_tokens.fc.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.7.rnn_tokens.fc.weight",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.2.blocks.7.rnn_tokens.rnn_h.bias_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.7.rnn_tokens.rnn_h.bias_hh_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.7.rnn_tokens.rnn_h.bias_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.7.rnn_tokens.rnn_h.bias_hh_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.7.rnn_tokens.rnn_h.bias_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.7.rnn_tokens.rnn_h.bias_ih_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.7.rnn_tokens.rnn_h.bias_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.7.rnn_tokens.rnn_h.bias_ih_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.7.rnn_tokens.rnn_h.weight_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.7.rnn_tokens.rnn_h.weight_hh_l0",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.2.blocks.7.rnn_tokens.rnn_h.weight_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.7.rnn_tokens.rnn_h.weight_hh_l0_reverse",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.2.blocks.7.rnn_tokens.rnn_h.weight_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.7.rnn_tokens.rnn_h.weight_ih_l0",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.2.blocks.7.rnn_tokens.rnn_h.weight_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.7.rnn_tokens.rnn_h.weight_ih_l0_reverse",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.2.blocks.7.rnn_tokens.rnn_v.bias_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.7.rnn_tokens.rnn_v.bias_hh_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.7.rnn_tokens.rnn_v.bias_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.7.rnn_tokens.rnn_v.bias_hh_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.7.rnn_tokens.rnn_v.bias_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.7.rnn_tokens.rnn_v.bias_ih_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.7.rnn_tokens.rnn_v.bias_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.7.rnn_tokens.rnn_v.bias_ih_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.blocks.7.rnn_tokens.rnn_v.weight_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.7.rnn_tokens.rnn_v.weight_hh_l0",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.2.blocks.7.rnn_tokens.rnn_v.weight_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.7.rnn_tokens.rnn_v.weight_hh_l0_reverse",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.2.blocks.7.rnn_tokens.rnn_v.weight_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.7.rnn_tokens.rnn_v.weight_ih_l0",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.2.blocks.7.rnn_tokens.rnn_v.weight_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.7.rnn_tokens.rnn_v.weight_ih_l0_reverse",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.2.downsample.down.bias": {
+      "dtype": "F32",
+      "key": "stages.2.downsample.down.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.downsample.down.weight": {
+      "dtype": "F32",
+      "key": "stages.2.downsample.down.weight",
+      "shape": [
+        384,
+        384,
+        1,
+        1
+      ]
+    },
+    "stages.3.blocks.0.mlp_channels.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.mlp_channels.fc1.bias",
+      "shape": [
+        1152
+      ]
+    },
+    "stages.3.blocks.0.mlp_channels.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.mlp_channels.fc1.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "stages.3.blocks.0.mlp_channels.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.mlp_channels.fc2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.3.blocks.0.mlp_channels.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.mlp_channels.fc2.weight",
+      "shape": [
+        384,
+        1152
+      ]
+    },
+    "stages.3.blocks.0.norm1.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.norm1.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.3.blocks.0.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.norm1.weight",
+      "shape": [
+        384
+      ]
+    },
+    "stages.3.blocks.0.norm2.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.norm2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.3.blocks.0.norm2.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.norm2.weight",
+      "shape": [
+        384
+      ]
+    },
+    "stages.3.blocks.0.rnn_tokens.fc.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.rnn_tokens.fc.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.3.blocks.0.rnn_tokens.fc.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.rnn_tokens.fc.weight",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.3.blocks.0.rnn_tokens.rnn_h.bias_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.rnn_tokens.rnn_h.bias_hh_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.3.blocks.0.rnn_tokens.rnn_h.bias_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.rnn_tokens.rnn_h.bias_hh_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.3.blocks.0.rnn_tokens.rnn_h.bias_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.rnn_tokens.rnn_h.bias_ih_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.3.blocks.0.rnn_tokens.rnn_h.bias_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.rnn_tokens.rnn_h.bias_ih_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.3.blocks.0.rnn_tokens.rnn_h.weight_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.rnn_tokens.rnn_h.weight_hh_l0",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.3.blocks.0.rnn_tokens.rnn_h.weight_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.rnn_tokens.rnn_h.weight_hh_l0_reverse",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.3.blocks.0.rnn_tokens.rnn_h.weight_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.rnn_tokens.rnn_h.weight_ih_l0",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.3.blocks.0.rnn_tokens.rnn_h.weight_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.rnn_tokens.rnn_h.weight_ih_l0_reverse",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.3.blocks.0.rnn_tokens.rnn_v.bias_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.rnn_tokens.rnn_v.bias_hh_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.3.blocks.0.rnn_tokens.rnn_v.bias_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.rnn_tokens.rnn_v.bias_hh_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.3.blocks.0.rnn_tokens.rnn_v.bias_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.rnn_tokens.rnn_v.bias_ih_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.3.blocks.0.rnn_tokens.rnn_v.bias_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.rnn_tokens.rnn_v.bias_ih_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.3.blocks.0.rnn_tokens.rnn_v.weight_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.rnn_tokens.rnn_v.weight_hh_l0",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.3.blocks.0.rnn_tokens.rnn_v.weight_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.rnn_tokens.rnn_v.weight_hh_l0_reverse",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.3.blocks.0.rnn_tokens.rnn_v.weight_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.rnn_tokens.rnn_v.weight_ih_l0",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.3.blocks.0.rnn_tokens.rnn_v.weight_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.rnn_tokens.rnn_v.weight_ih_l0_reverse",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.3.blocks.1.mlp_channels.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.mlp_channels.fc1.bias",
+      "shape": [
+        1152
+      ]
+    },
+    "stages.3.blocks.1.mlp_channels.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.mlp_channels.fc1.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "stages.3.blocks.1.mlp_channels.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.mlp_channels.fc2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.3.blocks.1.mlp_channels.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.mlp_channels.fc2.weight",
+      "shape": [
+        384,
+        1152
+      ]
+    },
+    "stages.3.blocks.1.norm1.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.norm1.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.3.blocks.1.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.norm1.weight",
+      "shape": [
+        384
+      ]
+    },
+    "stages.3.blocks.1.norm2.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.norm2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.3.blocks.1.norm2.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.norm2.weight",
+      "shape": [
+        384
+      ]
+    },
+    "stages.3.blocks.1.rnn_tokens.fc.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.rnn_tokens.fc.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.3.blocks.1.rnn_tokens.fc.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.rnn_tokens.fc.weight",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.3.blocks.1.rnn_tokens.rnn_h.bias_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.rnn_tokens.rnn_h.bias_hh_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.3.blocks.1.rnn_tokens.rnn_h.bias_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.rnn_tokens.rnn_h.bias_hh_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.3.blocks.1.rnn_tokens.rnn_h.bias_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.rnn_tokens.rnn_h.bias_ih_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.3.blocks.1.rnn_tokens.rnn_h.bias_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.rnn_tokens.rnn_h.bias_ih_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.3.blocks.1.rnn_tokens.rnn_h.weight_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.rnn_tokens.rnn_h.weight_hh_l0",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.3.blocks.1.rnn_tokens.rnn_h.weight_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.rnn_tokens.rnn_h.weight_hh_l0_reverse",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.3.blocks.1.rnn_tokens.rnn_h.weight_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.rnn_tokens.rnn_h.weight_ih_l0",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.3.blocks.1.rnn_tokens.rnn_h.weight_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.rnn_tokens.rnn_h.weight_ih_l0_reverse",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.3.blocks.1.rnn_tokens.rnn_v.bias_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.rnn_tokens.rnn_v.bias_hh_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.3.blocks.1.rnn_tokens.rnn_v.bias_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.rnn_tokens.rnn_v.bias_hh_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.3.blocks.1.rnn_tokens.rnn_v.bias_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.rnn_tokens.rnn_v.bias_ih_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.3.blocks.1.rnn_tokens.rnn_v.bias_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.rnn_tokens.rnn_v.bias_ih_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.3.blocks.1.rnn_tokens.rnn_v.weight_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.rnn_tokens.rnn_v.weight_hh_l0",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.3.blocks.1.rnn_tokens.rnn_v.weight_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.rnn_tokens.rnn_v.weight_hh_l0_reverse",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.3.blocks.1.rnn_tokens.rnn_v.weight_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.rnn_tokens.rnn_v.weight_ih_l0",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.3.blocks.1.rnn_tokens.rnn_v.weight_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.rnn_tokens.rnn_v.weight_ih_l0_reverse",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.3.blocks.2.mlp_channels.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.2.mlp_channels.fc1.bias",
+      "shape": [
+        1152
+      ]
+    },
+    "stages.3.blocks.2.mlp_channels.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.2.mlp_channels.fc1.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "stages.3.blocks.2.mlp_channels.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.2.mlp_channels.fc2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.3.blocks.2.mlp_channels.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.2.mlp_channels.fc2.weight",
+      "shape": [
+        384,
+        1152
+      ]
+    },
+    "stages.3.blocks.2.norm1.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.2.norm1.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.3.blocks.2.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.2.norm1.weight",
+      "shape": [
+        384
+      ]
+    },
+    "stages.3.blocks.2.norm2.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.2.norm2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.3.blocks.2.norm2.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.2.norm2.weight",
+      "shape": [
+        384
+      ]
+    },
+    "stages.3.blocks.2.rnn_tokens.fc.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.2.rnn_tokens.fc.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.3.blocks.2.rnn_tokens.fc.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.2.rnn_tokens.fc.weight",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.3.blocks.2.rnn_tokens.rnn_h.bias_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.2.rnn_tokens.rnn_h.bias_hh_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.3.blocks.2.rnn_tokens.rnn_h.bias_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.2.rnn_tokens.rnn_h.bias_hh_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.3.blocks.2.rnn_tokens.rnn_h.bias_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.2.rnn_tokens.rnn_h.bias_ih_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.3.blocks.2.rnn_tokens.rnn_h.bias_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.2.rnn_tokens.rnn_h.bias_ih_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.3.blocks.2.rnn_tokens.rnn_h.weight_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.2.rnn_tokens.rnn_h.weight_hh_l0",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.3.blocks.2.rnn_tokens.rnn_h.weight_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.2.rnn_tokens.rnn_h.weight_hh_l0_reverse",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.3.blocks.2.rnn_tokens.rnn_h.weight_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.2.rnn_tokens.rnn_h.weight_ih_l0",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.3.blocks.2.rnn_tokens.rnn_h.weight_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.2.rnn_tokens.rnn_h.weight_ih_l0_reverse",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.3.blocks.2.rnn_tokens.rnn_v.bias_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.2.rnn_tokens.rnn_v.bias_hh_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.3.blocks.2.rnn_tokens.rnn_v.bias_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.2.rnn_tokens.rnn_v.bias_hh_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.3.blocks.2.rnn_tokens.rnn_v.bias_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.2.rnn_tokens.rnn_v.bias_ih_l0",
+      "shape": [
+        384
+      ]
+    },
+    "stages.3.blocks.2.rnn_tokens.rnn_v.bias_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.2.rnn_tokens.rnn_v.bias_ih_l0_reverse",
+      "shape": [
+        384
+      ]
+    },
+    "stages.3.blocks.2.rnn_tokens.rnn_v.weight_hh_l0": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.2.rnn_tokens.rnn_v.weight_hh_l0",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.3.blocks.2.rnn_tokens.rnn_v.weight_hh_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.2.rnn_tokens.rnn_v.weight_hh_l0_reverse",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "stages.3.blocks.2.rnn_tokens.rnn_v.weight_ih_l0": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.2.rnn_tokens.rnn_v.weight_ih_l0",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.3.blocks.2.rnn_tokens.rnn_v.weight_ih_l0_reverse": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.2.rnn_tokens.rnn_v.weight_ih_l0_reverse",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "stages.3.downsample.down.bias": {
+      "dtype": "F32",
+      "key": "stages.3.downsample.down.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.3.downsample.down.weight": {
+      "dtype": "F32",
+      "key": "stages.3.downsample.down.weight",
+      "shape": [
+        384,
+        384,
+        1,
+        1
+      ]
+    },
+    "stem.proj.bias": {
+      "dtype": "F32",
+      "key": "stem.proj.bias",
+      "shape": [
+        192
+      ]
+    },
+    "stem.proj.weight": {
+      "dtype": "F32",
+      "key": "stem.proj.weight",
+      "shape": [
+        192,
+        3,
+        7,
+        7
+      ]
+    }
+  },
+  "unmapped": []
+}

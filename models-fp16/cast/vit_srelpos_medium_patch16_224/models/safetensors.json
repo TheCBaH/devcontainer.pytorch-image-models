@@ -1,0 +1,1233 @@
+{
+  "schema_version": 1,
+  "source": {
+    "filename": "model.safetensors",
+    "repo_id": "timm/vit_srelpos_medium_patch16_224.sw_in1k",
+    "revision": "e4f27a867eea4353adf1f7382af8dc5c7e3ba48f",
+    "sha256": "8930ed7c04283abe3bef6c35457b9d1eca410739960c95a37a4296a21aee4832",
+    "size": 154958622,
+    "url": "https://huggingface.co/timm/vit_srelpos_medium_patch16_224.sw_in1k/resolve/e4f27a867eea4353adf1f7382af8dc5c7e3ba48f/model.safetensors"
+  },
+  "tensors": {
+    "blocks.0.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "blocks.0.attn.proj.bias",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.0.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "blocks.0.attn.proj.weight",
+      "shape": [
+        512,
+        512
+      ]
+    },
+    "blocks.0.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "blocks.0.attn.qkv.weight",
+      "shape": [
+        1536,
+        512
+      ]
+    },
+    "blocks.0.ls1.gamma": {
+      "dtype": "F32",
+      "key": "blocks.0.ls1.gamma",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.0.ls2.gamma": {
+      "dtype": "F32",
+      "key": "blocks.0.ls2.gamma",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.0.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "blocks.0.mlp.fc1.bias",
+      "shape": [
+        2048
+      ]
+    },
+    "blocks.0.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "blocks.0.mlp.fc1.weight",
+      "shape": [
+        2048,
+        512
+      ]
+    },
+    "blocks.0.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "blocks.0.mlp.fc2.bias",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.0.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "blocks.0.mlp.fc2.weight",
+      "shape": [
+        512,
+        2048
+      ]
+    },
+    "blocks.0.norm1.bias": {
+      "dtype": "F32",
+      "key": "blocks.0.norm1.bias",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.0.norm1.weight": {
+      "dtype": "F32",
+      "key": "blocks.0.norm1.weight",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.0.norm2.bias": {
+      "dtype": "F32",
+      "key": "blocks.0.norm2.bias",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.0.norm2.weight": {
+      "dtype": "F32",
+      "key": "blocks.0.norm2.weight",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.1.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "blocks.1.attn.proj.bias",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.1.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "blocks.1.attn.proj.weight",
+      "shape": [
+        512,
+        512
+      ]
+    },
+    "blocks.1.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "blocks.1.attn.qkv.weight",
+      "shape": [
+        1536,
+        512
+      ]
+    },
+    "blocks.1.ls1.gamma": {
+      "dtype": "F32",
+      "key": "blocks.1.ls1.gamma",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.1.ls2.gamma": {
+      "dtype": "F32",
+      "key": "blocks.1.ls2.gamma",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.1.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "blocks.1.mlp.fc1.bias",
+      "shape": [
+        2048
+      ]
+    },
+    "blocks.1.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "blocks.1.mlp.fc1.weight",
+      "shape": [
+        2048,
+        512
+      ]
+    },
+    "blocks.1.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "blocks.1.mlp.fc2.bias",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.1.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "blocks.1.mlp.fc2.weight",
+      "shape": [
+        512,
+        2048
+      ]
+    },
+    "blocks.1.norm1.bias": {
+      "dtype": "F32",
+      "key": "blocks.1.norm1.bias",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.1.norm1.weight": {
+      "dtype": "F32",
+      "key": "blocks.1.norm1.weight",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.1.norm2.bias": {
+      "dtype": "F32",
+      "key": "blocks.1.norm2.bias",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.1.norm2.weight": {
+      "dtype": "F32",
+      "key": "blocks.1.norm2.weight",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.10.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "blocks.10.attn.proj.bias",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.10.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "blocks.10.attn.proj.weight",
+      "shape": [
+        512,
+        512
+      ]
+    },
+    "blocks.10.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "blocks.10.attn.qkv.weight",
+      "shape": [
+        1536,
+        512
+      ]
+    },
+    "blocks.10.ls1.gamma": {
+      "dtype": "F32",
+      "key": "blocks.10.ls1.gamma",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.10.ls2.gamma": {
+      "dtype": "F32",
+      "key": "blocks.10.ls2.gamma",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.10.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "blocks.10.mlp.fc1.bias",
+      "shape": [
+        2048
+      ]
+    },
+    "blocks.10.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "blocks.10.mlp.fc1.weight",
+      "shape": [
+        2048,
+        512
+      ]
+    },
+    "blocks.10.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "blocks.10.mlp.fc2.bias",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.10.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "blocks.10.mlp.fc2.weight",
+      "shape": [
+        512,
+        2048
+      ]
+    },
+    "blocks.10.norm1.bias": {
+      "dtype": "F32",
+      "key": "blocks.10.norm1.bias",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.10.norm1.weight": {
+      "dtype": "F32",
+      "key": "blocks.10.norm1.weight",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.10.norm2.bias": {
+      "dtype": "F32",
+      "key": "blocks.10.norm2.bias",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.10.norm2.weight": {
+      "dtype": "F32",
+      "key": "blocks.10.norm2.weight",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.11.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "blocks.11.attn.proj.bias",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.11.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "blocks.11.attn.proj.weight",
+      "shape": [
+        512,
+        512
+      ]
+    },
+    "blocks.11.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "blocks.11.attn.qkv.weight",
+      "shape": [
+        1536,
+        512
+      ]
+    },
+    "blocks.11.ls1.gamma": {
+      "dtype": "F32",
+      "key": "blocks.11.ls1.gamma",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.11.ls2.gamma": {
+      "dtype": "F32",
+      "key": "blocks.11.ls2.gamma",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.11.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "blocks.11.mlp.fc1.bias",
+      "shape": [
+        2048
+      ]
+    },
+    "blocks.11.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "blocks.11.mlp.fc1.weight",
+      "shape": [
+        2048,
+        512
+      ]
+    },
+    "blocks.11.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "blocks.11.mlp.fc2.bias",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.11.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "blocks.11.mlp.fc2.weight",
+      "shape": [
+        512,
+        2048
+      ]
+    },
+    "blocks.11.norm1.bias": {
+      "dtype": "F32",
+      "key": "blocks.11.norm1.bias",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.11.norm1.weight": {
+      "dtype": "F32",
+      "key": "blocks.11.norm1.weight",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.11.norm2.bias": {
+      "dtype": "F32",
+      "key": "blocks.11.norm2.bias",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.11.norm2.weight": {
+      "dtype": "F32",
+      "key": "blocks.11.norm2.weight",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.2.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "blocks.2.attn.proj.bias",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.2.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "blocks.2.attn.proj.weight",
+      "shape": [
+        512,
+        512
+      ]
+    },
+    "blocks.2.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "blocks.2.attn.qkv.weight",
+      "shape": [
+        1536,
+        512
+      ]
+    },
+    "blocks.2.ls1.gamma": {
+      "dtype": "F32",
+      "key": "blocks.2.ls1.gamma",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.2.ls2.gamma": {
+      "dtype": "F32",
+      "key": "blocks.2.ls2.gamma",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.2.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "blocks.2.mlp.fc1.bias",
+      "shape": [
+        2048
+      ]
+    },
+    "blocks.2.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "blocks.2.mlp.fc1.weight",
+      "shape": [
+        2048,
+        512
+      ]
+    },
+    "blocks.2.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "blocks.2.mlp.fc2.bias",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.2.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "blocks.2.mlp.fc2.weight",
+      "shape": [
+        512,
+        2048
+      ]
+    },
+    "blocks.2.norm1.bias": {
+      "dtype": "F32",
+      "key": "blocks.2.norm1.bias",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.2.norm1.weight": {
+      "dtype": "F32",
+      "key": "blocks.2.norm1.weight",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.2.norm2.bias": {
+      "dtype": "F32",
+      "key": "blocks.2.norm2.bias",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.2.norm2.weight": {
+      "dtype": "F32",
+      "key": "blocks.2.norm2.weight",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.3.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "blocks.3.attn.proj.bias",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.3.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.attn.proj.weight",
+      "shape": [
+        512,
+        512
+      ]
+    },
+    "blocks.3.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.attn.qkv.weight",
+      "shape": [
+        1536,
+        512
+      ]
+    },
+    "blocks.3.ls1.gamma": {
+      "dtype": "F32",
+      "key": "blocks.3.ls1.gamma",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.3.ls2.gamma": {
+      "dtype": "F32",
+      "key": "blocks.3.ls2.gamma",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.3.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "blocks.3.mlp.fc1.bias",
+      "shape": [
+        2048
+      ]
+    },
+    "blocks.3.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.mlp.fc1.weight",
+      "shape": [
+        2048,
+        512
+      ]
+    },
+    "blocks.3.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "blocks.3.mlp.fc2.bias",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.3.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.mlp.fc2.weight",
+      "shape": [
+        512,
+        2048
+      ]
+    },
+    "blocks.3.norm1.bias": {
+      "dtype": "F32",
+      "key": "blocks.3.norm1.bias",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.3.norm1.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.norm1.weight",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.3.norm2.bias": {
+      "dtype": "F32",
+      "key": "blocks.3.norm2.bias",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.3.norm2.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.norm2.weight",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.4.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "blocks.4.attn.proj.bias",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.4.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "blocks.4.attn.proj.weight",
+      "shape": [
+        512,
+        512
+      ]
+    },
+    "blocks.4.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "blocks.4.attn.qkv.weight",
+      "shape": [
+        1536,
+        512
+      ]
+    },
+    "blocks.4.ls1.gamma": {
+      "dtype": "F32",
+      "key": "blocks.4.ls1.gamma",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.4.ls2.gamma": {
+      "dtype": "F32",
+      "key": "blocks.4.ls2.gamma",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.4.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "blocks.4.mlp.fc1.bias",
+      "shape": [
+        2048
+      ]
+    },
+    "blocks.4.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "blocks.4.mlp.fc1.weight",
+      "shape": [
+        2048,
+        512
+      ]
+    },
+    "blocks.4.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "blocks.4.mlp.fc2.bias",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.4.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "blocks.4.mlp.fc2.weight",
+      "shape": [
+        512,
+        2048
+      ]
+    },
+    "blocks.4.norm1.bias": {
+      "dtype": "F32",
+      "key": "blocks.4.norm1.bias",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.4.norm1.weight": {
+      "dtype": "F32",
+      "key": "blocks.4.norm1.weight",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.4.norm2.bias": {
+      "dtype": "F32",
+      "key": "blocks.4.norm2.bias",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.4.norm2.weight": {
+      "dtype": "F32",
+      "key": "blocks.4.norm2.weight",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.5.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "blocks.5.attn.proj.bias",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.5.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "blocks.5.attn.proj.weight",
+      "shape": [
+        512,
+        512
+      ]
+    },
+    "blocks.5.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "blocks.5.attn.qkv.weight",
+      "shape": [
+        1536,
+        512
+      ]
+    },
+    "blocks.5.ls1.gamma": {
+      "dtype": "F32",
+      "key": "blocks.5.ls1.gamma",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.5.ls2.gamma": {
+      "dtype": "F32",
+      "key": "blocks.5.ls2.gamma",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.5.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "blocks.5.mlp.fc1.bias",
+      "shape": [
+        2048
+      ]
+    },
+    "blocks.5.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "blocks.5.mlp.fc1.weight",
+      "shape": [
+        2048,
+        512
+      ]
+    },
+    "blocks.5.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "blocks.5.mlp.fc2.bias",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.5.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "blocks.5.mlp.fc2.weight",
+      "shape": [
+        512,
+        2048
+      ]
+    },
+    "blocks.5.norm1.bias": {
+      "dtype": "F32",
+      "key": "blocks.5.norm1.bias",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.5.norm1.weight": {
+      "dtype": "F32",
+      "key": "blocks.5.norm1.weight",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.5.norm2.bias": {
+      "dtype": "F32",
+      "key": "blocks.5.norm2.bias",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.5.norm2.weight": {
+      "dtype": "F32",
+      "key": "blocks.5.norm2.weight",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.6.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.attn.proj.bias",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.6.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.attn.proj.weight",
+      "shape": [
+        512,
+        512
+      ]
+    },
+    "blocks.6.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.attn.qkv.weight",
+      "shape": [
+        1536,
+        512
+      ]
+    },
+    "blocks.6.ls1.gamma": {
+      "dtype": "F32",
+      "key": "blocks.6.ls1.gamma",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.6.ls2.gamma": {
+      "dtype": "F32",
+      "key": "blocks.6.ls2.gamma",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.6.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.mlp.fc1.bias",
+      "shape": [
+        2048
+      ]
+    },
+    "blocks.6.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.mlp.fc1.weight",
+      "shape": [
+        2048,
+        512
+      ]
+    },
+    "blocks.6.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.mlp.fc2.bias",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.6.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.mlp.fc2.weight",
+      "shape": [
+        512,
+        2048
+      ]
+    },
+    "blocks.6.norm1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.norm1.bias",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.6.norm1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.norm1.weight",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.6.norm2.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.norm2.bias",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.6.norm2.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.norm2.weight",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.7.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "blocks.7.attn.proj.bias",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.7.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.attn.proj.weight",
+      "shape": [
+        512,
+        512
+      ]
+    },
+    "blocks.7.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.attn.qkv.weight",
+      "shape": [
+        1536,
+        512
+      ]
+    },
+    "blocks.7.ls1.gamma": {
+      "dtype": "F32",
+      "key": "blocks.7.ls1.gamma",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.7.ls2.gamma": {
+      "dtype": "F32",
+      "key": "blocks.7.ls2.gamma",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.7.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "blocks.7.mlp.fc1.bias",
+      "shape": [
+        2048
+      ]
+    },
+    "blocks.7.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.mlp.fc1.weight",
+      "shape": [
+        2048,
+        512
+      ]
+    },
+    "blocks.7.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "blocks.7.mlp.fc2.bias",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.7.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.mlp.fc2.weight",
+      "shape": [
+        512,
+        2048
+      ]
+    },
+    "blocks.7.norm1.bias": {
+      "dtype": "F32",
+      "key": "blocks.7.norm1.bias",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.7.norm1.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.norm1.weight",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.7.norm2.bias": {
+      "dtype": "F32",
+      "key": "blocks.7.norm2.bias",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.7.norm2.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.norm2.weight",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.8.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.attn.proj.bias",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.8.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.attn.proj.weight",
+      "shape": [
+        512,
+        512
+      ]
+    },
+    "blocks.8.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.attn.qkv.weight",
+      "shape": [
+        1536,
+        512
+      ]
+    },
+    "blocks.8.ls1.gamma": {
+      "dtype": "F32",
+      "key": "blocks.8.ls1.gamma",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.8.ls2.gamma": {
+      "dtype": "F32",
+      "key": "blocks.8.ls2.gamma",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.8.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.mlp.fc1.bias",
+      "shape": [
+        2048
+      ]
+    },
+    "blocks.8.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.mlp.fc1.weight",
+      "shape": [
+        2048,
+        512
+      ]
+    },
+    "blocks.8.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.mlp.fc2.bias",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.8.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.mlp.fc2.weight",
+      "shape": [
+        512,
+        2048
+      ]
+    },
+    "blocks.8.norm1.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.norm1.bias",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.8.norm1.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.norm1.weight",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.8.norm2.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.norm2.bias",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.8.norm2.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.norm2.weight",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.9.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "blocks.9.attn.proj.bias",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.9.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "blocks.9.attn.proj.weight",
+      "shape": [
+        512,
+        512
+      ]
+    },
+    "blocks.9.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "blocks.9.attn.qkv.weight",
+      "shape": [
+        1536,
+        512
+      ]
+    },
+    "blocks.9.ls1.gamma": {
+      "dtype": "F32",
+      "key": "blocks.9.ls1.gamma",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.9.ls2.gamma": {
+      "dtype": "F32",
+      "key": "blocks.9.ls2.gamma",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.9.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "blocks.9.mlp.fc1.bias",
+      "shape": [
+        2048
+      ]
+    },
+    "blocks.9.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "blocks.9.mlp.fc1.weight",
+      "shape": [
+        2048,
+        512
+      ]
+    },
+    "blocks.9.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "blocks.9.mlp.fc2.bias",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.9.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "blocks.9.mlp.fc2.weight",
+      "shape": [
+        512,
+        2048
+      ]
+    },
+    "blocks.9.norm1.bias": {
+      "dtype": "F32",
+      "key": "blocks.9.norm1.bias",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.9.norm1.weight": {
+      "dtype": "F32",
+      "key": "blocks.9.norm1.weight",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.9.norm2.bias": {
+      "dtype": "F32",
+      "key": "blocks.9.norm2.bias",
+      "shape": [
+        512
+      ]
+    },
+    "blocks.9.norm2.weight": {
+      "dtype": "F32",
+      "key": "blocks.9.norm2.weight",
+      "shape": [
+        512
+      ]
+    },
+    "head.bias": {
+      "dtype": "F32",
+      "key": "head.bias",
+      "shape": [
+        1000
+      ]
+    },
+    "head.weight": {
+      "dtype": "F32",
+      "key": "head.weight",
+      "shape": [
+        1000,
+        512
+      ]
+    },
+    "norm.bias": {
+      "dtype": "F32",
+      "key": "norm.bias",
+      "shape": [
+        512
+      ]
+    },
+    "norm.weight": {
+      "dtype": "F32",
+      "key": "norm.weight",
+      "shape": [
+        512
+      ]
+    },
+    "patch_embed.proj.bias": {
+      "dtype": "F32",
+      "key": "patch_embed.proj.bias",
+      "shape": [
+        512
+      ]
+    },
+    "patch_embed.proj.weight": {
+      "dtype": "F32",
+      "key": "patch_embed.proj.weight",
+      "shape": [
+        512,
+        3,
+        16,
+        16
+      ]
+    },
+    "shared_rel_pos.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "shared_rel_pos.mlp.fc1.bias",
+      "shape": [
+        512
+      ]
+    },
+    "shared_rel_pos.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "shared_rel_pos.mlp.fc1.weight",
+      "shape": [
+        512,
+        2
+      ]
+    },
+    "shared_rel_pos.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "shared_rel_pos.mlp.fc2.bias",
+      "shape": [
+        8
+      ]
+    },
+    "shared_rel_pos.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "shared_rel_pos.mlp.fc2.weight",
+      "shape": [
+        8,
+        512
+      ]
+    }
+  },
+  "unmapped": [
+    "shared_rel_pos.rel_coords_log",
+    "shared_rel_pos.relative_position_index"
+  ]
+}

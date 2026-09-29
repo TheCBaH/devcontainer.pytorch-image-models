@@ -1,0 +1,4780 @@
+{
+  "schema_version": 1,
+  "source": {
+    "filename": "model.safetensors",
+    "repo_id": "timm/repghostnet_058.in1k",
+    "revision": "edefd85dd1c7ca3dfed046499e0184cda3adb78c",
+    "sha256": "f4c02da20947575e1e7751001ea6abd35a846fd2ddf2f726a053e07629ba1406",
+    "size": 10334808,
+    "url": "https://huggingface.co/timm/repghostnet_058.in1k/resolve/edefd85dd1c7ca3dfed046499e0184cda3adb78c/model.safetensors"
+  },
+  "tensors": {
+    "blocks.0.0.ghost1.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.0.0.ghost1.cheap_operation.0.weight",
+      "shape": [
+        8,
+        1,
+        3,
+        3
+      ]
+    },
+    "blocks.0.0.ghost1.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.0.0.ghost1.cheap_operation.1.bias",
+      "shape": [
+        8
+      ]
+    },
+    "blocks.0.0.ghost1.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.0.0.ghost1.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.0.0.ghost1.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.0.0.ghost1.cheap_operation.1.running_mean",
+      "shape": [
+        8
+      ]
+    },
+    "blocks.0.0.ghost1.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.0.0.ghost1.cheap_operation.1.running_var",
+      "shape": [
+        8
+      ]
+    },
+    "blocks.0.0.ghost1.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.0.0.ghost1.cheap_operation.1.weight",
+      "shape": [
+        8
+      ]
+    },
+    "blocks.0.0.ghost1.fusion_bn.0.bias": {
+      "dtype": "F32",
+      "key": "blocks.0.0.ghost1.fusion_bn.0.bias",
+      "shape": [
+        8
+      ]
+    },
+    "blocks.0.0.ghost1.fusion_bn.0.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.0.0.ghost1.fusion_bn.0.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.0.0.ghost1.fusion_bn.0.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.0.0.ghost1.fusion_bn.0.running_mean",
+      "shape": [
+        8
+      ]
+    },
+    "blocks.0.0.ghost1.fusion_bn.0.running_var": {
+      "dtype": "F32",
+      "key": "blocks.0.0.ghost1.fusion_bn.0.running_var",
+      "shape": [
+        8
+      ]
+    },
+    "blocks.0.0.ghost1.fusion_bn.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.0.0.ghost1.fusion_bn.0.weight",
+      "shape": [
+        8
+      ]
+    },
+    "blocks.0.0.ghost1.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.0.0.ghost1.primary_conv.0.weight",
+      "shape": [
+        8,
+        12,
+        1,
+        1
+      ]
+    },
+    "blocks.0.0.ghost1.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.0.0.ghost1.primary_conv.1.bias",
+      "shape": [
+        8
+      ]
+    },
+    "blocks.0.0.ghost1.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.0.0.ghost1.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.0.0.ghost1.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.0.0.ghost1.primary_conv.1.running_mean",
+      "shape": [
+        8
+      ]
+    },
+    "blocks.0.0.ghost1.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.0.0.ghost1.primary_conv.1.running_var",
+      "shape": [
+        8
+      ]
+    },
+    "blocks.0.0.ghost1.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.0.0.ghost1.primary_conv.1.weight",
+      "shape": [
+        8
+      ]
+    },
+    "blocks.0.0.ghost2.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.0.0.ghost2.cheap_operation.0.weight",
+      "shape": [
+        12,
+        1,
+        3,
+        3
+      ]
+    },
+    "blocks.0.0.ghost2.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.0.0.ghost2.cheap_operation.1.bias",
+      "shape": [
+        12
+      ]
+    },
+    "blocks.0.0.ghost2.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.0.0.ghost2.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.0.0.ghost2.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.0.0.ghost2.cheap_operation.1.running_mean",
+      "shape": [
+        12
+      ]
+    },
+    "blocks.0.0.ghost2.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.0.0.ghost2.cheap_operation.1.running_var",
+      "shape": [
+        12
+      ]
+    },
+    "blocks.0.0.ghost2.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.0.0.ghost2.cheap_operation.1.weight",
+      "shape": [
+        12
+      ]
+    },
+    "blocks.0.0.ghost2.fusion_bn.0.bias": {
+      "dtype": "F32",
+      "key": "blocks.0.0.ghost2.fusion_bn.0.bias",
+      "shape": [
+        12
+      ]
+    },
+    "blocks.0.0.ghost2.fusion_bn.0.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.0.0.ghost2.fusion_bn.0.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.0.0.ghost2.fusion_bn.0.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.0.0.ghost2.fusion_bn.0.running_mean",
+      "shape": [
+        12
+      ]
+    },
+    "blocks.0.0.ghost2.fusion_bn.0.running_var": {
+      "dtype": "F32",
+      "key": "blocks.0.0.ghost2.fusion_bn.0.running_var",
+      "shape": [
+        12
+      ]
+    },
+    "blocks.0.0.ghost2.fusion_bn.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.0.0.ghost2.fusion_bn.0.weight",
+      "shape": [
+        12
+      ]
+    },
+    "blocks.0.0.ghost2.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.0.0.ghost2.primary_conv.0.weight",
+      "shape": [
+        12,
+        8,
+        1,
+        1
+      ]
+    },
+    "blocks.0.0.ghost2.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.0.0.ghost2.primary_conv.1.bias",
+      "shape": [
+        12
+      ]
+    },
+    "blocks.0.0.ghost2.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.0.0.ghost2.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.0.0.ghost2.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.0.0.ghost2.primary_conv.1.running_mean",
+      "shape": [
+        12
+      ]
+    },
+    "blocks.0.0.ghost2.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.0.0.ghost2.primary_conv.1.running_var",
+      "shape": [
+        12
+      ]
+    },
+    "blocks.0.0.ghost2.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.0.0.ghost2.primary_conv.1.weight",
+      "shape": [
+        12
+      ]
+    },
+    "blocks.1.0.bn_dw.bias": {
+      "dtype": "F32",
+      "key": "blocks.1.0.bn_dw.bias",
+      "shape": [
+        16
+      ]
+    },
+    "blocks.1.0.bn_dw.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.1.0.bn_dw.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.1.0.bn_dw.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.1.0.bn_dw.running_mean",
+      "shape": [
+        16
+      ]
+    },
+    "blocks.1.0.bn_dw.running_var": {
+      "dtype": "F32",
+      "key": "blocks.1.0.bn_dw.running_var",
+      "shape": [
+        16
+      ]
+    },
+    "blocks.1.0.bn_dw.weight": {
+      "dtype": "F32",
+      "key": "blocks.1.0.bn_dw.weight",
+      "shape": [
+        16
+      ]
+    },
+    "blocks.1.0.conv_dw.weight": {
+      "dtype": "F32",
+      "key": "blocks.1.0.conv_dw.weight",
+      "shape": [
+        16,
+        1,
+        3,
+        3
+      ]
+    },
+    "blocks.1.0.ghost1.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.1.0.ghost1.cheap_operation.0.weight",
+      "shape": [
+        16,
+        1,
+        3,
+        3
+      ]
+    },
+    "blocks.1.0.ghost1.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.1.0.ghost1.cheap_operation.1.bias",
+      "shape": [
+        16
+      ]
+    },
+    "blocks.1.0.ghost1.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.1.0.ghost1.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.1.0.ghost1.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.1.0.ghost1.cheap_operation.1.running_mean",
+      "shape": [
+        16
+      ]
+    },
+    "blocks.1.0.ghost1.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.1.0.ghost1.cheap_operation.1.running_var",
+      "shape": [
+        16
+      ]
+    },
+    "blocks.1.0.ghost1.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.1.0.ghost1.cheap_operation.1.weight",
+      "shape": [
+        16
+      ]
+    },
+    "blocks.1.0.ghost1.fusion_bn.0.bias": {
+      "dtype": "F32",
+      "key": "blocks.1.0.ghost1.fusion_bn.0.bias",
+      "shape": [
+        16
+      ]
+    },
+    "blocks.1.0.ghost1.fusion_bn.0.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.1.0.ghost1.fusion_bn.0.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.1.0.ghost1.fusion_bn.0.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.1.0.ghost1.fusion_bn.0.running_mean",
+      "shape": [
+        16
+      ]
+    },
+    "blocks.1.0.ghost1.fusion_bn.0.running_var": {
+      "dtype": "F32",
+      "key": "blocks.1.0.ghost1.fusion_bn.0.running_var",
+      "shape": [
+        16
+      ]
+    },
+    "blocks.1.0.ghost1.fusion_bn.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.1.0.ghost1.fusion_bn.0.weight",
+      "shape": [
+        16
+      ]
+    },
+    "blocks.1.0.ghost1.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.1.0.ghost1.primary_conv.0.weight",
+      "shape": [
+        16,
+        12,
+        1,
+        1
+      ]
+    },
+    "blocks.1.0.ghost1.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.1.0.ghost1.primary_conv.1.bias",
+      "shape": [
+        16
+      ]
+    },
+    "blocks.1.0.ghost1.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.1.0.ghost1.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.1.0.ghost1.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.1.0.ghost1.primary_conv.1.running_mean",
+      "shape": [
+        16
+      ]
+    },
+    "blocks.1.0.ghost1.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.1.0.ghost1.primary_conv.1.running_var",
+      "shape": [
+        16
+      ]
+    },
+    "blocks.1.0.ghost1.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.1.0.ghost1.primary_conv.1.weight",
+      "shape": [
+        16
+      ]
+    },
+    "blocks.1.0.ghost2.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.1.0.ghost2.cheap_operation.0.weight",
+      "shape": [
+        16,
+        1,
+        3,
+        3
+      ]
+    },
+    "blocks.1.0.ghost2.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.1.0.ghost2.cheap_operation.1.bias",
+      "shape": [
+        16
+      ]
+    },
+    "blocks.1.0.ghost2.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.1.0.ghost2.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.1.0.ghost2.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.1.0.ghost2.cheap_operation.1.running_mean",
+      "shape": [
+        16
+      ]
+    },
+    "blocks.1.0.ghost2.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.1.0.ghost2.cheap_operation.1.running_var",
+      "shape": [
+        16
+      ]
+    },
+    "blocks.1.0.ghost2.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.1.0.ghost2.cheap_operation.1.weight",
+      "shape": [
+        16
+      ]
+    },
+    "blocks.1.0.ghost2.fusion_bn.0.bias": {
+      "dtype": "F32",
+      "key": "blocks.1.0.ghost2.fusion_bn.0.bias",
+      "shape": [
+        16
+      ]
+    },
+    "blocks.1.0.ghost2.fusion_bn.0.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.1.0.ghost2.fusion_bn.0.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.1.0.ghost2.fusion_bn.0.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.1.0.ghost2.fusion_bn.0.running_mean",
+      "shape": [
+        16
+      ]
+    },
+    "blocks.1.0.ghost2.fusion_bn.0.running_var": {
+      "dtype": "F32",
+      "key": "blocks.1.0.ghost2.fusion_bn.0.running_var",
+      "shape": [
+        16
+      ]
+    },
+    "blocks.1.0.ghost2.fusion_bn.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.1.0.ghost2.fusion_bn.0.weight",
+      "shape": [
+        16
+      ]
+    },
+    "blocks.1.0.ghost2.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.1.0.ghost2.primary_conv.0.weight",
+      "shape": [
+        16,
+        16,
+        1,
+        1
+      ]
+    },
+    "blocks.1.0.ghost2.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.1.0.ghost2.primary_conv.1.bias",
+      "shape": [
+        16
+      ]
+    },
+    "blocks.1.0.ghost2.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.1.0.ghost2.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.1.0.ghost2.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.1.0.ghost2.primary_conv.1.running_mean",
+      "shape": [
+        16
+      ]
+    },
+    "blocks.1.0.ghost2.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.1.0.ghost2.primary_conv.1.running_var",
+      "shape": [
+        16
+      ]
+    },
+    "blocks.1.0.ghost2.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.1.0.ghost2.primary_conv.1.weight",
+      "shape": [
+        16
+      ]
+    },
+    "blocks.1.0.shortcut.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.1.0.shortcut.0.weight",
+      "shape": [
+        12,
+        1,
+        3,
+        3
+      ]
+    },
+    "blocks.1.0.shortcut.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.1.0.shortcut.1.bias",
+      "shape": [
+        12
+      ]
+    },
+    "blocks.1.0.shortcut.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.1.0.shortcut.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.1.0.shortcut.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.1.0.shortcut.1.running_mean",
+      "shape": [
+        12
+      ]
+    },
+    "blocks.1.0.shortcut.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.1.0.shortcut.1.running_var",
+      "shape": [
+        12
+      ]
+    },
+    "blocks.1.0.shortcut.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.1.0.shortcut.1.weight",
+      "shape": [
+        12
+      ]
+    },
+    "blocks.1.0.shortcut.2.weight": {
+      "dtype": "F32",
+      "key": "blocks.1.0.shortcut.2.weight",
+      "shape": [
+        16,
+        12,
+        1,
+        1
+      ]
+    },
+    "blocks.1.0.shortcut.3.bias": {
+      "dtype": "F32",
+      "key": "blocks.1.0.shortcut.3.bias",
+      "shape": [
+        16
+      ]
+    },
+    "blocks.1.0.shortcut.3.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.1.0.shortcut.3.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.1.0.shortcut.3.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.1.0.shortcut.3.running_mean",
+      "shape": [
+        16
+      ]
+    },
+    "blocks.1.0.shortcut.3.running_var": {
+      "dtype": "F32",
+      "key": "blocks.1.0.shortcut.3.running_var",
+      "shape": [
+        16
+      ]
+    },
+    "blocks.1.0.shortcut.3.weight": {
+      "dtype": "F32",
+      "key": "blocks.1.0.shortcut.3.weight",
+      "shape": [
+        16
+      ]
+    },
+    "blocks.2.0.ghost1.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost1.cheap_operation.0.weight",
+      "shape": [
+        20,
+        1,
+        3,
+        3
+      ]
+    },
+    "blocks.2.0.ghost1.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost1.cheap_operation.1.bias",
+      "shape": [
+        20
+      ]
+    },
+    "blocks.2.0.ghost1.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.2.0.ghost1.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.2.0.ghost1.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost1.cheap_operation.1.running_mean",
+      "shape": [
+        20
+      ]
+    },
+    "blocks.2.0.ghost1.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost1.cheap_operation.1.running_var",
+      "shape": [
+        20
+      ]
+    },
+    "blocks.2.0.ghost1.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost1.cheap_operation.1.weight",
+      "shape": [
+        20
+      ]
+    },
+    "blocks.2.0.ghost1.fusion_bn.0.bias": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost1.fusion_bn.0.bias",
+      "shape": [
+        20
+      ]
+    },
+    "blocks.2.0.ghost1.fusion_bn.0.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.2.0.ghost1.fusion_bn.0.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.2.0.ghost1.fusion_bn.0.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost1.fusion_bn.0.running_mean",
+      "shape": [
+        20
+      ]
+    },
+    "blocks.2.0.ghost1.fusion_bn.0.running_var": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost1.fusion_bn.0.running_var",
+      "shape": [
+        20
+      ]
+    },
+    "blocks.2.0.ghost1.fusion_bn.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost1.fusion_bn.0.weight",
+      "shape": [
+        20
+      ]
+    },
+    "blocks.2.0.ghost1.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost1.primary_conv.0.weight",
+      "shape": [
+        20,
+        16,
+        1,
+        1
+      ]
+    },
+    "blocks.2.0.ghost1.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost1.primary_conv.1.bias",
+      "shape": [
+        20
+      ]
+    },
+    "blocks.2.0.ghost1.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.2.0.ghost1.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.2.0.ghost1.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost1.primary_conv.1.running_mean",
+      "shape": [
+        20
+      ]
+    },
+    "blocks.2.0.ghost1.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost1.primary_conv.1.running_var",
+      "shape": [
+        20
+      ]
+    },
+    "blocks.2.0.ghost1.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost1.primary_conv.1.weight",
+      "shape": [
+        20
+      ]
+    },
+    "blocks.2.0.ghost2.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost2.cheap_operation.0.weight",
+      "shape": [
+        16,
+        1,
+        3,
+        3
+      ]
+    },
+    "blocks.2.0.ghost2.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost2.cheap_operation.1.bias",
+      "shape": [
+        16
+      ]
+    },
+    "blocks.2.0.ghost2.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.2.0.ghost2.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.2.0.ghost2.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost2.cheap_operation.1.running_mean",
+      "shape": [
+        16
+      ]
+    },
+    "blocks.2.0.ghost2.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost2.cheap_operation.1.running_var",
+      "shape": [
+        16
+      ]
+    },
+    "blocks.2.0.ghost2.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost2.cheap_operation.1.weight",
+      "shape": [
+        16
+      ]
+    },
+    "blocks.2.0.ghost2.fusion_bn.0.bias": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost2.fusion_bn.0.bias",
+      "shape": [
+        16
+      ]
+    },
+    "blocks.2.0.ghost2.fusion_bn.0.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.2.0.ghost2.fusion_bn.0.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.2.0.ghost2.fusion_bn.0.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost2.fusion_bn.0.running_mean",
+      "shape": [
+        16
+      ]
+    },
+    "blocks.2.0.ghost2.fusion_bn.0.running_var": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost2.fusion_bn.0.running_var",
+      "shape": [
+        16
+      ]
+    },
+    "blocks.2.0.ghost2.fusion_bn.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost2.fusion_bn.0.weight",
+      "shape": [
+        16
+      ]
+    },
+    "blocks.2.0.ghost2.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost2.primary_conv.0.weight",
+      "shape": [
+        16,
+        20,
+        1,
+        1
+      ]
+    },
+    "blocks.2.0.ghost2.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost2.primary_conv.1.bias",
+      "shape": [
+        16
+      ]
+    },
+    "blocks.2.0.ghost2.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.2.0.ghost2.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.2.0.ghost2.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost2.primary_conv.1.running_mean",
+      "shape": [
+        16
+      ]
+    },
+    "blocks.2.0.ghost2.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost2.primary_conv.1.running_var",
+      "shape": [
+        16
+      ]
+    },
+    "blocks.2.0.ghost2.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost2.primary_conv.1.weight",
+      "shape": [
+        16
+      ]
+    },
+    "blocks.3.0.bn_dw.bias": {
+      "dtype": "F32",
+      "key": "blocks.3.0.bn_dw.bias",
+      "shape": [
+        20
+      ]
+    },
+    "blocks.3.0.bn_dw.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.3.0.bn_dw.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.3.0.bn_dw.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.3.0.bn_dw.running_mean",
+      "shape": [
+        20
+      ]
+    },
+    "blocks.3.0.bn_dw.running_var": {
+      "dtype": "F32",
+      "key": "blocks.3.0.bn_dw.running_var",
+      "shape": [
+        20
+      ]
+    },
+    "blocks.3.0.bn_dw.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.0.bn_dw.weight",
+      "shape": [
+        20
+      ]
+    },
+    "blocks.3.0.conv_dw.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.0.conv_dw.weight",
+      "shape": [
+        20,
+        1,
+        5,
+        5
+      ]
+    },
+    "blocks.3.0.ghost1.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost1.cheap_operation.0.weight",
+      "shape": [
+        20,
+        1,
+        3,
+        3
+      ]
+    },
+    "blocks.3.0.ghost1.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost1.cheap_operation.1.bias",
+      "shape": [
+        20
+      ]
+    },
+    "blocks.3.0.ghost1.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.3.0.ghost1.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.3.0.ghost1.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost1.cheap_operation.1.running_mean",
+      "shape": [
+        20
+      ]
+    },
+    "blocks.3.0.ghost1.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost1.cheap_operation.1.running_var",
+      "shape": [
+        20
+      ]
+    },
+    "blocks.3.0.ghost1.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost1.cheap_operation.1.weight",
+      "shape": [
+        20
+      ]
+    },
+    "blocks.3.0.ghost1.fusion_bn.0.bias": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost1.fusion_bn.0.bias",
+      "shape": [
+        20
+      ]
+    },
+    "blocks.3.0.ghost1.fusion_bn.0.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.3.0.ghost1.fusion_bn.0.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.3.0.ghost1.fusion_bn.0.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost1.fusion_bn.0.running_mean",
+      "shape": [
+        20
+      ]
+    },
+    "blocks.3.0.ghost1.fusion_bn.0.running_var": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost1.fusion_bn.0.running_var",
+      "shape": [
+        20
+      ]
+    },
+    "blocks.3.0.ghost1.fusion_bn.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost1.fusion_bn.0.weight",
+      "shape": [
+        20
+      ]
+    },
+    "blocks.3.0.ghost1.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost1.primary_conv.0.weight",
+      "shape": [
+        20,
+        16,
+        1,
+        1
+      ]
+    },
+    "blocks.3.0.ghost1.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost1.primary_conv.1.bias",
+      "shape": [
+        20
+      ]
+    },
+    "blocks.3.0.ghost1.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.3.0.ghost1.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.3.0.ghost1.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost1.primary_conv.1.running_mean",
+      "shape": [
+        20
+      ]
+    },
+    "blocks.3.0.ghost1.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost1.primary_conv.1.running_var",
+      "shape": [
+        20
+      ]
+    },
+    "blocks.3.0.ghost1.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost1.primary_conv.1.weight",
+      "shape": [
+        20
+      ]
+    },
+    "blocks.3.0.ghost2.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost2.cheap_operation.0.weight",
+      "shape": [
+        24,
+        1,
+        3,
+        3
+      ]
+    },
+    "blocks.3.0.ghost2.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost2.cheap_operation.1.bias",
+      "shape": [
+        24
+      ]
+    },
+    "blocks.3.0.ghost2.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.3.0.ghost2.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.3.0.ghost2.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost2.cheap_operation.1.running_mean",
+      "shape": [
+        24
+      ]
+    },
+    "blocks.3.0.ghost2.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost2.cheap_operation.1.running_var",
+      "shape": [
+        24
+      ]
+    },
+    "blocks.3.0.ghost2.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost2.cheap_operation.1.weight",
+      "shape": [
+        24
+      ]
+    },
+    "blocks.3.0.ghost2.fusion_bn.0.bias": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost2.fusion_bn.0.bias",
+      "shape": [
+        24
+      ]
+    },
+    "blocks.3.0.ghost2.fusion_bn.0.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.3.0.ghost2.fusion_bn.0.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.3.0.ghost2.fusion_bn.0.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost2.fusion_bn.0.running_mean",
+      "shape": [
+        24
+      ]
+    },
+    "blocks.3.0.ghost2.fusion_bn.0.running_var": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost2.fusion_bn.0.running_var",
+      "shape": [
+        24
+      ]
+    },
+    "blocks.3.0.ghost2.fusion_bn.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost2.fusion_bn.0.weight",
+      "shape": [
+        24
+      ]
+    },
+    "blocks.3.0.ghost2.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost2.primary_conv.0.weight",
+      "shape": [
+        24,
+        20,
+        1,
+        1
+      ]
+    },
+    "blocks.3.0.ghost2.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost2.primary_conv.1.bias",
+      "shape": [
+        24
+      ]
+    },
+    "blocks.3.0.ghost2.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.3.0.ghost2.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.3.0.ghost2.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost2.primary_conv.1.running_mean",
+      "shape": [
+        24
+      ]
+    },
+    "blocks.3.0.ghost2.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost2.primary_conv.1.running_var",
+      "shape": [
+        24
+      ]
+    },
+    "blocks.3.0.ghost2.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost2.primary_conv.1.weight",
+      "shape": [
+        24
+      ]
+    },
+    "blocks.3.0.se.conv_expand.bias": {
+      "dtype": "F32",
+      "key": "blocks.3.0.se.conv_expand.bias",
+      "shape": [
+        20
+      ]
+    },
+    "blocks.3.0.se.conv_expand.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.0.se.conv_expand.weight",
+      "shape": [
+        20,
+        8,
+        1,
+        1
+      ]
+    },
+    "blocks.3.0.se.conv_reduce.bias": {
+      "dtype": "F32",
+      "key": "blocks.3.0.se.conv_reduce.bias",
+      "shape": [
+        8
+      ]
+    },
+    "blocks.3.0.se.conv_reduce.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.0.se.conv_reduce.weight",
+      "shape": [
+        8,
+        20,
+        1,
+        1
+      ]
+    },
+    "blocks.3.0.shortcut.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.0.shortcut.0.weight",
+      "shape": [
+        16,
+        1,
+        5,
+        5
+      ]
+    },
+    "blocks.3.0.shortcut.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.3.0.shortcut.1.bias",
+      "shape": [
+        16
+      ]
+    },
+    "blocks.3.0.shortcut.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.3.0.shortcut.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.3.0.shortcut.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.3.0.shortcut.1.running_mean",
+      "shape": [
+        16
+      ]
+    },
+    "blocks.3.0.shortcut.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.3.0.shortcut.1.running_var",
+      "shape": [
+        16
+      ]
+    },
+    "blocks.3.0.shortcut.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.0.shortcut.1.weight",
+      "shape": [
+        16
+      ]
+    },
+    "blocks.3.0.shortcut.2.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.0.shortcut.2.weight",
+      "shape": [
+        24,
+        16,
+        1,
+        1
+      ]
+    },
+    "blocks.3.0.shortcut.3.bias": {
+      "dtype": "F32",
+      "key": "blocks.3.0.shortcut.3.bias",
+      "shape": [
+        24
+      ]
+    },
+    "blocks.3.0.shortcut.3.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.3.0.shortcut.3.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.3.0.shortcut.3.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.3.0.shortcut.3.running_mean",
+      "shape": [
+        24
+      ]
+    },
+    "blocks.3.0.shortcut.3.running_var": {
+      "dtype": "F32",
+      "key": "blocks.3.0.shortcut.3.running_var",
+      "shape": [
+        24
+      ]
+    },
+    "blocks.3.0.shortcut.3.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.0.shortcut.3.weight",
+      "shape": [
+        24
+      ]
+    },
+    "blocks.4.0.ghost1.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost1.cheap_operation.0.weight",
+      "shape": [
+        36,
+        1,
+        3,
+        3
+      ]
+    },
+    "blocks.4.0.ghost1.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost1.cheap_operation.1.bias",
+      "shape": [
+        36
+      ]
+    },
+    "blocks.4.0.ghost1.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.4.0.ghost1.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.4.0.ghost1.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost1.cheap_operation.1.running_mean",
+      "shape": [
+        36
+      ]
+    },
+    "blocks.4.0.ghost1.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost1.cheap_operation.1.running_var",
+      "shape": [
+        36
+      ]
+    },
+    "blocks.4.0.ghost1.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost1.cheap_operation.1.weight",
+      "shape": [
+        36
+      ]
+    },
+    "blocks.4.0.ghost1.fusion_bn.0.bias": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost1.fusion_bn.0.bias",
+      "shape": [
+        36
+      ]
+    },
+    "blocks.4.0.ghost1.fusion_bn.0.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.4.0.ghost1.fusion_bn.0.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.4.0.ghost1.fusion_bn.0.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost1.fusion_bn.0.running_mean",
+      "shape": [
+        36
+      ]
+    },
+    "blocks.4.0.ghost1.fusion_bn.0.running_var": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost1.fusion_bn.0.running_var",
+      "shape": [
+        36
+      ]
+    },
+    "blocks.4.0.ghost1.fusion_bn.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost1.fusion_bn.0.weight",
+      "shape": [
+        36
+      ]
+    },
+    "blocks.4.0.ghost1.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost1.primary_conv.0.weight",
+      "shape": [
+        36,
+        24,
+        1,
+        1
+      ]
+    },
+    "blocks.4.0.ghost1.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost1.primary_conv.1.bias",
+      "shape": [
+        36
+      ]
+    },
+    "blocks.4.0.ghost1.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.4.0.ghost1.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.4.0.ghost1.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost1.primary_conv.1.running_mean",
+      "shape": [
+        36
+      ]
+    },
+    "blocks.4.0.ghost1.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost1.primary_conv.1.running_var",
+      "shape": [
+        36
+      ]
+    },
+    "blocks.4.0.ghost1.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost1.primary_conv.1.weight",
+      "shape": [
+        36
+      ]
+    },
+    "blocks.4.0.ghost2.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost2.cheap_operation.0.weight",
+      "shape": [
+        24,
+        1,
+        3,
+        3
+      ]
+    },
+    "blocks.4.0.ghost2.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost2.cheap_operation.1.bias",
+      "shape": [
+        24
+      ]
+    },
+    "blocks.4.0.ghost2.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.4.0.ghost2.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.4.0.ghost2.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost2.cheap_operation.1.running_mean",
+      "shape": [
+        24
+      ]
+    },
+    "blocks.4.0.ghost2.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost2.cheap_operation.1.running_var",
+      "shape": [
+        24
+      ]
+    },
+    "blocks.4.0.ghost2.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost2.cheap_operation.1.weight",
+      "shape": [
+        24
+      ]
+    },
+    "blocks.4.0.ghost2.fusion_bn.0.bias": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost2.fusion_bn.0.bias",
+      "shape": [
+        24
+      ]
+    },
+    "blocks.4.0.ghost2.fusion_bn.0.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.4.0.ghost2.fusion_bn.0.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.4.0.ghost2.fusion_bn.0.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost2.fusion_bn.0.running_mean",
+      "shape": [
+        24
+      ]
+    },
+    "blocks.4.0.ghost2.fusion_bn.0.running_var": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost2.fusion_bn.0.running_var",
+      "shape": [
+        24
+      ]
+    },
+    "blocks.4.0.ghost2.fusion_bn.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost2.fusion_bn.0.weight",
+      "shape": [
+        24
+      ]
+    },
+    "blocks.4.0.ghost2.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost2.primary_conv.0.weight",
+      "shape": [
+        24,
+        36,
+        1,
+        1
+      ]
+    },
+    "blocks.4.0.ghost2.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost2.primary_conv.1.bias",
+      "shape": [
+        24
+      ]
+    },
+    "blocks.4.0.ghost2.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.4.0.ghost2.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.4.0.ghost2.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost2.primary_conv.1.running_mean",
+      "shape": [
+        24
+      ]
+    },
+    "blocks.4.0.ghost2.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost2.primary_conv.1.running_var",
+      "shape": [
+        24
+      ]
+    },
+    "blocks.4.0.ghost2.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost2.primary_conv.1.weight",
+      "shape": [
+        24
+      ]
+    },
+    "blocks.4.0.se.conv_expand.bias": {
+      "dtype": "F32",
+      "key": "blocks.4.0.se.conv_expand.bias",
+      "shape": [
+        36
+      ]
+    },
+    "blocks.4.0.se.conv_expand.weight": {
+      "dtype": "F32",
+      "key": "blocks.4.0.se.conv_expand.weight",
+      "shape": [
+        36,
+        12,
+        1,
+        1
+      ]
+    },
+    "blocks.4.0.se.conv_reduce.bias": {
+      "dtype": "F32",
+      "key": "blocks.4.0.se.conv_reduce.bias",
+      "shape": [
+        12
+      ]
+    },
+    "blocks.4.0.se.conv_reduce.weight": {
+      "dtype": "F32",
+      "key": "blocks.4.0.se.conv_reduce.weight",
+      "shape": [
+        12,
+        36,
+        1,
+        1
+      ]
+    },
+    "blocks.5.0.bn_dw.bias": {
+      "dtype": "F32",
+      "key": "blocks.5.0.bn_dw.bias",
+      "shape": [
+        68
+      ]
+    },
+    "blocks.5.0.bn_dw.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.5.0.bn_dw.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.5.0.bn_dw.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.5.0.bn_dw.running_mean",
+      "shape": [
+        68
+      ]
+    },
+    "blocks.5.0.bn_dw.running_var": {
+      "dtype": "F32",
+      "key": "blocks.5.0.bn_dw.running_var",
+      "shape": [
+        68
+      ]
+    },
+    "blocks.5.0.bn_dw.weight": {
+      "dtype": "F32",
+      "key": "blocks.5.0.bn_dw.weight",
+      "shape": [
+        68
+      ]
+    },
+    "blocks.5.0.conv_dw.weight": {
+      "dtype": "F32",
+      "key": "blocks.5.0.conv_dw.weight",
+      "shape": [
+        68,
+        1,
+        3,
+        3
+      ]
+    },
+    "blocks.5.0.ghost1.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost1.cheap_operation.0.weight",
+      "shape": [
+        68,
+        1,
+        3,
+        3
+      ]
+    },
+    "blocks.5.0.ghost1.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost1.cheap_operation.1.bias",
+      "shape": [
+        68
+      ]
+    },
+    "blocks.5.0.ghost1.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.5.0.ghost1.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.5.0.ghost1.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost1.cheap_operation.1.running_mean",
+      "shape": [
+        68
+      ]
+    },
+    "blocks.5.0.ghost1.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost1.cheap_operation.1.running_var",
+      "shape": [
+        68
+      ]
+    },
+    "blocks.5.0.ghost1.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost1.cheap_operation.1.weight",
+      "shape": [
+        68
+      ]
+    },
+    "blocks.5.0.ghost1.fusion_bn.0.bias": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost1.fusion_bn.0.bias",
+      "shape": [
+        68
+      ]
+    },
+    "blocks.5.0.ghost1.fusion_bn.0.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.5.0.ghost1.fusion_bn.0.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.5.0.ghost1.fusion_bn.0.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost1.fusion_bn.0.running_mean",
+      "shape": [
+        68
+      ]
+    },
+    "blocks.5.0.ghost1.fusion_bn.0.running_var": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost1.fusion_bn.0.running_var",
+      "shape": [
+        68
+      ]
+    },
+    "blocks.5.0.ghost1.fusion_bn.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost1.fusion_bn.0.weight",
+      "shape": [
+        68
+      ]
+    },
+    "blocks.5.0.ghost1.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost1.primary_conv.0.weight",
+      "shape": [
+        68,
+        24,
+        1,
+        1
+      ]
+    },
+    "blocks.5.0.ghost1.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost1.primary_conv.1.bias",
+      "shape": [
+        68
+      ]
+    },
+    "blocks.5.0.ghost1.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.5.0.ghost1.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.5.0.ghost1.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost1.primary_conv.1.running_mean",
+      "shape": [
+        68
+      ]
+    },
+    "blocks.5.0.ghost1.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost1.primary_conv.1.running_var",
+      "shape": [
+        68
+      ]
+    },
+    "blocks.5.0.ghost1.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost1.primary_conv.1.weight",
+      "shape": [
+        68
+      ]
+    },
+    "blocks.5.0.ghost2.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost2.cheap_operation.0.weight",
+      "shape": [
+        48,
+        1,
+        3,
+        3
+      ]
+    },
+    "blocks.5.0.ghost2.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost2.cheap_operation.1.bias",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.5.0.ghost2.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.5.0.ghost2.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.5.0.ghost2.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost2.cheap_operation.1.running_mean",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.5.0.ghost2.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost2.cheap_operation.1.running_var",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.5.0.ghost2.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost2.cheap_operation.1.weight",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.5.0.ghost2.fusion_bn.0.bias": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost2.fusion_bn.0.bias",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.5.0.ghost2.fusion_bn.0.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.5.0.ghost2.fusion_bn.0.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.5.0.ghost2.fusion_bn.0.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost2.fusion_bn.0.running_mean",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.5.0.ghost2.fusion_bn.0.running_var": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost2.fusion_bn.0.running_var",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.5.0.ghost2.fusion_bn.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost2.fusion_bn.0.weight",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.5.0.ghost2.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost2.primary_conv.0.weight",
+      "shape": [
+        48,
+        68,
+        1,
+        1
+      ]
+    },
+    "blocks.5.0.ghost2.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost2.primary_conv.1.bias",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.5.0.ghost2.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.5.0.ghost2.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.5.0.ghost2.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost2.primary_conv.1.running_mean",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.5.0.ghost2.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost2.primary_conv.1.running_var",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.5.0.ghost2.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost2.primary_conv.1.weight",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.5.0.shortcut.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.5.0.shortcut.0.weight",
+      "shape": [
+        24,
+        1,
+        3,
+        3
+      ]
+    },
+    "blocks.5.0.shortcut.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.5.0.shortcut.1.bias",
+      "shape": [
+        24
+      ]
+    },
+    "blocks.5.0.shortcut.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.5.0.shortcut.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.5.0.shortcut.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.5.0.shortcut.1.running_mean",
+      "shape": [
+        24
+      ]
+    },
+    "blocks.5.0.shortcut.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.5.0.shortcut.1.running_var",
+      "shape": [
+        24
+      ]
+    },
+    "blocks.5.0.shortcut.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.5.0.shortcut.1.weight",
+      "shape": [
+        24
+      ]
+    },
+    "blocks.5.0.shortcut.2.weight": {
+      "dtype": "F32",
+      "key": "blocks.5.0.shortcut.2.weight",
+      "shape": [
+        48,
+        24,
+        1,
+        1
+      ]
+    },
+    "blocks.5.0.shortcut.3.bias": {
+      "dtype": "F32",
+      "key": "blocks.5.0.shortcut.3.bias",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.5.0.shortcut.3.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.5.0.shortcut.3.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.5.0.shortcut.3.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.5.0.shortcut.3.running_mean",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.5.0.shortcut.3.running_var": {
+      "dtype": "F32",
+      "key": "blocks.5.0.shortcut.3.running_var",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.5.0.shortcut.3.weight": {
+      "dtype": "F32",
+      "key": "blocks.5.0.shortcut.3.weight",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.6.0.ghost1.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost1.cheap_operation.0.weight",
+      "shape": [
+        56,
+        1,
+        3,
+        3
+      ]
+    },
+    "blocks.6.0.ghost1.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost1.cheap_operation.1.bias",
+      "shape": [
+        56
+      ]
+    },
+    "blocks.6.0.ghost1.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.0.ghost1.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.6.0.ghost1.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost1.cheap_operation.1.running_mean",
+      "shape": [
+        56
+      ]
+    },
+    "blocks.6.0.ghost1.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost1.cheap_operation.1.running_var",
+      "shape": [
+        56
+      ]
+    },
+    "blocks.6.0.ghost1.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost1.cheap_operation.1.weight",
+      "shape": [
+        56
+      ]
+    },
+    "blocks.6.0.ghost1.fusion_bn.0.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost1.fusion_bn.0.bias",
+      "shape": [
+        56
+      ]
+    },
+    "blocks.6.0.ghost1.fusion_bn.0.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.0.ghost1.fusion_bn.0.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.6.0.ghost1.fusion_bn.0.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost1.fusion_bn.0.running_mean",
+      "shape": [
+        56
+      ]
+    },
+    "blocks.6.0.ghost1.fusion_bn.0.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost1.fusion_bn.0.running_var",
+      "shape": [
+        56
+      ]
+    },
+    "blocks.6.0.ghost1.fusion_bn.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost1.fusion_bn.0.weight",
+      "shape": [
+        56
+      ]
+    },
+    "blocks.6.0.ghost1.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost1.primary_conv.0.weight",
+      "shape": [
+        56,
+        48,
+        1,
+        1
+      ]
+    },
+    "blocks.6.0.ghost1.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost1.primary_conv.1.bias",
+      "shape": [
+        56
+      ]
+    },
+    "blocks.6.0.ghost1.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.0.ghost1.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.6.0.ghost1.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost1.primary_conv.1.running_mean",
+      "shape": [
+        56
+      ]
+    },
+    "blocks.6.0.ghost1.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost1.primary_conv.1.running_var",
+      "shape": [
+        56
+      ]
+    },
+    "blocks.6.0.ghost1.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost1.primary_conv.1.weight",
+      "shape": [
+        56
+      ]
+    },
+    "blocks.6.0.ghost2.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost2.cheap_operation.0.weight",
+      "shape": [
+        48,
+        1,
+        3,
+        3
+      ]
+    },
+    "blocks.6.0.ghost2.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost2.cheap_operation.1.bias",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.6.0.ghost2.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.0.ghost2.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.6.0.ghost2.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost2.cheap_operation.1.running_mean",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.6.0.ghost2.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost2.cheap_operation.1.running_var",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.6.0.ghost2.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost2.cheap_operation.1.weight",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.6.0.ghost2.fusion_bn.0.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost2.fusion_bn.0.bias",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.6.0.ghost2.fusion_bn.0.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.0.ghost2.fusion_bn.0.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.6.0.ghost2.fusion_bn.0.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost2.fusion_bn.0.running_mean",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.6.0.ghost2.fusion_bn.0.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost2.fusion_bn.0.running_var",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.6.0.ghost2.fusion_bn.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost2.fusion_bn.0.weight",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.6.0.ghost2.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost2.primary_conv.0.weight",
+      "shape": [
+        48,
+        56,
+        1,
+        1
+      ]
+    },
+    "blocks.6.0.ghost2.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost2.primary_conv.1.bias",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.6.0.ghost2.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.0.ghost2.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.6.0.ghost2.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost2.primary_conv.1.running_mean",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.6.0.ghost2.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost2.primary_conv.1.running_var",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.6.0.ghost2.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost2.primary_conv.1.weight",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.6.1.ghost1.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost1.cheap_operation.0.weight",
+      "shape": [
+        68,
+        1,
+        3,
+        3
+      ]
+    },
+    "blocks.6.1.ghost1.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost1.cheap_operation.1.bias",
+      "shape": [
+        68
+      ]
+    },
+    "blocks.6.1.ghost1.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.1.ghost1.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.6.1.ghost1.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost1.cheap_operation.1.running_mean",
+      "shape": [
+        68
+      ]
+    },
+    "blocks.6.1.ghost1.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost1.cheap_operation.1.running_var",
+      "shape": [
+        68
+      ]
+    },
+    "blocks.6.1.ghost1.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost1.cheap_operation.1.weight",
+      "shape": [
+        68
+      ]
+    },
+    "blocks.6.1.ghost1.fusion_bn.0.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost1.fusion_bn.0.bias",
+      "shape": [
+        68
+      ]
+    },
+    "blocks.6.1.ghost1.fusion_bn.0.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.1.ghost1.fusion_bn.0.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.6.1.ghost1.fusion_bn.0.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost1.fusion_bn.0.running_mean",
+      "shape": [
+        68
+      ]
+    },
+    "blocks.6.1.ghost1.fusion_bn.0.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost1.fusion_bn.0.running_var",
+      "shape": [
+        68
+      ]
+    },
+    "blocks.6.1.ghost1.fusion_bn.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost1.fusion_bn.0.weight",
+      "shape": [
+        68
+      ]
+    },
+    "blocks.6.1.ghost1.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost1.primary_conv.0.weight",
+      "shape": [
+        68,
+        48,
+        1,
+        1
+      ]
+    },
+    "blocks.6.1.ghost1.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost1.primary_conv.1.bias",
+      "shape": [
+        68
+      ]
+    },
+    "blocks.6.1.ghost1.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.1.ghost1.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.6.1.ghost1.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost1.primary_conv.1.running_mean",
+      "shape": [
+        68
+      ]
+    },
+    "blocks.6.1.ghost1.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost1.primary_conv.1.running_var",
+      "shape": [
+        68
+      ]
+    },
+    "blocks.6.1.ghost1.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost1.primary_conv.1.weight",
+      "shape": [
+        68
+      ]
+    },
+    "blocks.6.1.ghost2.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost2.cheap_operation.0.weight",
+      "shape": [
+        48,
+        1,
+        3,
+        3
+      ]
+    },
+    "blocks.6.1.ghost2.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost2.cheap_operation.1.bias",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.6.1.ghost2.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.1.ghost2.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.6.1.ghost2.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost2.cheap_operation.1.running_mean",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.6.1.ghost2.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost2.cheap_operation.1.running_var",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.6.1.ghost2.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost2.cheap_operation.1.weight",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.6.1.ghost2.fusion_bn.0.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost2.fusion_bn.0.bias",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.6.1.ghost2.fusion_bn.0.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.1.ghost2.fusion_bn.0.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.6.1.ghost2.fusion_bn.0.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost2.fusion_bn.0.running_mean",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.6.1.ghost2.fusion_bn.0.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost2.fusion_bn.0.running_var",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.6.1.ghost2.fusion_bn.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost2.fusion_bn.0.weight",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.6.1.ghost2.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost2.primary_conv.0.weight",
+      "shape": [
+        48,
+        68,
+        1,
+        1
+      ]
+    },
+    "blocks.6.1.ghost2.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost2.primary_conv.1.bias",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.6.1.ghost2.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.1.ghost2.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.6.1.ghost2.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost2.primary_conv.1.running_mean",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.6.1.ghost2.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost2.primary_conv.1.running_var",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.6.1.ghost2.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost2.primary_conv.1.weight",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.6.2.ghost1.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost1.cheap_operation.0.weight",
+      "shape": [
+        68,
+        1,
+        3,
+        3
+      ]
+    },
+    "blocks.6.2.ghost1.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost1.cheap_operation.1.bias",
+      "shape": [
+        68
+      ]
+    },
+    "blocks.6.2.ghost1.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.2.ghost1.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.6.2.ghost1.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost1.cheap_operation.1.running_mean",
+      "shape": [
+        68
+      ]
+    },
+    "blocks.6.2.ghost1.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost1.cheap_operation.1.running_var",
+      "shape": [
+        68
+      ]
+    },
+    "blocks.6.2.ghost1.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost1.cheap_operation.1.weight",
+      "shape": [
+        68
+      ]
+    },
+    "blocks.6.2.ghost1.fusion_bn.0.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost1.fusion_bn.0.bias",
+      "shape": [
+        68
+      ]
+    },
+    "blocks.6.2.ghost1.fusion_bn.0.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.2.ghost1.fusion_bn.0.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.6.2.ghost1.fusion_bn.0.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost1.fusion_bn.0.running_mean",
+      "shape": [
+        68
+      ]
+    },
+    "blocks.6.2.ghost1.fusion_bn.0.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost1.fusion_bn.0.running_var",
+      "shape": [
+        68
+      ]
+    },
+    "blocks.6.2.ghost1.fusion_bn.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost1.fusion_bn.0.weight",
+      "shape": [
+        68
+      ]
+    },
+    "blocks.6.2.ghost1.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost1.primary_conv.0.weight",
+      "shape": [
+        68,
+        48,
+        1,
+        1
+      ]
+    },
+    "blocks.6.2.ghost1.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost1.primary_conv.1.bias",
+      "shape": [
+        68
+      ]
+    },
+    "blocks.6.2.ghost1.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.2.ghost1.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.6.2.ghost1.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost1.primary_conv.1.running_mean",
+      "shape": [
+        68
+      ]
+    },
+    "blocks.6.2.ghost1.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost1.primary_conv.1.running_var",
+      "shape": [
+        68
+      ]
+    },
+    "blocks.6.2.ghost1.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost1.primary_conv.1.weight",
+      "shape": [
+        68
+      ]
+    },
+    "blocks.6.2.ghost2.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost2.cheap_operation.0.weight",
+      "shape": [
+        48,
+        1,
+        3,
+        3
+      ]
+    },
+    "blocks.6.2.ghost2.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost2.cheap_operation.1.bias",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.6.2.ghost2.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.2.ghost2.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.6.2.ghost2.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost2.cheap_operation.1.running_mean",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.6.2.ghost2.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost2.cheap_operation.1.running_var",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.6.2.ghost2.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost2.cheap_operation.1.weight",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.6.2.ghost2.fusion_bn.0.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost2.fusion_bn.0.bias",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.6.2.ghost2.fusion_bn.0.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.2.ghost2.fusion_bn.0.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.6.2.ghost2.fusion_bn.0.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost2.fusion_bn.0.running_mean",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.6.2.ghost2.fusion_bn.0.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost2.fusion_bn.0.running_var",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.6.2.ghost2.fusion_bn.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost2.fusion_bn.0.weight",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.6.2.ghost2.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost2.primary_conv.0.weight",
+      "shape": [
+        48,
+        68,
+        1,
+        1
+      ]
+    },
+    "blocks.6.2.ghost2.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost2.primary_conv.1.bias",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.6.2.ghost2.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.2.ghost2.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.6.2.ghost2.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost2.primary_conv.1.running_mean",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.6.2.ghost2.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost2.primary_conv.1.running_var",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.6.2.ghost2.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost2.primary_conv.1.weight",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.6.3.ghost1.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost1.cheap_operation.0.weight",
+      "shape": [
+        140,
+        1,
+        3,
+        3
+      ]
+    },
+    "blocks.6.3.ghost1.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost1.cheap_operation.1.bias",
+      "shape": [
+        140
+      ]
+    },
+    "blocks.6.3.ghost1.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.3.ghost1.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.6.3.ghost1.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost1.cheap_operation.1.running_mean",
+      "shape": [
+        140
+      ]
+    },
+    "blocks.6.3.ghost1.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost1.cheap_operation.1.running_var",
+      "shape": [
+        140
+      ]
+    },
+    "blocks.6.3.ghost1.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost1.cheap_operation.1.weight",
+      "shape": [
+        140
+      ]
+    },
+    "blocks.6.3.ghost1.fusion_bn.0.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost1.fusion_bn.0.bias",
+      "shape": [
+        140
+      ]
+    },
+    "blocks.6.3.ghost1.fusion_bn.0.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.3.ghost1.fusion_bn.0.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.6.3.ghost1.fusion_bn.0.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost1.fusion_bn.0.running_mean",
+      "shape": [
+        140
+      ]
+    },
+    "blocks.6.3.ghost1.fusion_bn.0.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost1.fusion_bn.0.running_var",
+      "shape": [
+        140
+      ]
+    },
+    "blocks.6.3.ghost1.fusion_bn.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost1.fusion_bn.0.weight",
+      "shape": [
+        140
+      ]
+    },
+    "blocks.6.3.ghost1.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost1.primary_conv.0.weight",
+      "shape": [
+        140,
+        48,
+        1,
+        1
+      ]
+    },
+    "blocks.6.3.ghost1.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost1.primary_conv.1.bias",
+      "shape": [
+        140
+      ]
+    },
+    "blocks.6.3.ghost1.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.3.ghost1.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.6.3.ghost1.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost1.primary_conv.1.running_mean",
+      "shape": [
+        140
+      ]
+    },
+    "blocks.6.3.ghost1.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost1.primary_conv.1.running_var",
+      "shape": [
+        140
+      ]
+    },
+    "blocks.6.3.ghost1.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost1.primary_conv.1.weight",
+      "shape": [
+        140
+      ]
+    },
+    "blocks.6.3.ghost2.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost2.cheap_operation.0.weight",
+      "shape": [
+        64,
+        1,
+        3,
+        3
+      ]
+    },
+    "blocks.6.3.ghost2.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost2.cheap_operation.1.bias",
+      "shape": [
+        64
+      ]
+    },
+    "blocks.6.3.ghost2.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.3.ghost2.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.6.3.ghost2.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost2.cheap_operation.1.running_mean",
+      "shape": [
+        64
+      ]
+    },
+    "blocks.6.3.ghost2.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost2.cheap_operation.1.running_var",
+      "shape": [
+        64
+      ]
+    },
+    "blocks.6.3.ghost2.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost2.cheap_operation.1.weight",
+      "shape": [
+        64
+      ]
+    },
+    "blocks.6.3.ghost2.fusion_bn.0.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost2.fusion_bn.0.bias",
+      "shape": [
+        64
+      ]
+    },
+    "blocks.6.3.ghost2.fusion_bn.0.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.3.ghost2.fusion_bn.0.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.6.3.ghost2.fusion_bn.0.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost2.fusion_bn.0.running_mean",
+      "shape": [
+        64
+      ]
+    },
+    "blocks.6.3.ghost2.fusion_bn.0.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost2.fusion_bn.0.running_var",
+      "shape": [
+        64
+      ]
+    },
+    "blocks.6.3.ghost2.fusion_bn.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost2.fusion_bn.0.weight",
+      "shape": [
+        64
+      ]
+    },
+    "blocks.6.3.ghost2.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost2.primary_conv.0.weight",
+      "shape": [
+        64,
+        140,
+        1,
+        1
+      ]
+    },
+    "blocks.6.3.ghost2.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost2.primary_conv.1.bias",
+      "shape": [
+        64
+      ]
+    },
+    "blocks.6.3.ghost2.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.3.ghost2.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.6.3.ghost2.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost2.primary_conv.1.running_mean",
+      "shape": [
+        64
+      ]
+    },
+    "blocks.6.3.ghost2.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost2.primary_conv.1.running_var",
+      "shape": [
+        64
+      ]
+    },
+    "blocks.6.3.ghost2.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost2.primary_conv.1.weight",
+      "shape": [
+        64
+      ]
+    },
+    "blocks.6.3.se.conv_expand.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.3.se.conv_expand.bias",
+      "shape": [
+        140
+      ]
+    },
+    "blocks.6.3.se.conv_expand.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.3.se.conv_expand.weight",
+      "shape": [
+        140,
+        36,
+        1,
+        1
+      ]
+    },
+    "blocks.6.3.se.conv_reduce.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.3.se.conv_reduce.bias",
+      "shape": [
+        36
+      ]
+    },
+    "blocks.6.3.se.conv_reduce.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.3.se.conv_reduce.weight",
+      "shape": [
+        36,
+        140,
+        1,
+        1
+      ]
+    },
+    "blocks.6.3.shortcut.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.3.shortcut.0.weight",
+      "shape": [
+        48,
+        1,
+        3,
+        3
+      ]
+    },
+    "blocks.6.3.shortcut.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.3.shortcut.1.bias",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.6.3.shortcut.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.3.shortcut.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.6.3.shortcut.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.3.shortcut.1.running_mean",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.6.3.shortcut.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.3.shortcut.1.running_var",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.6.3.shortcut.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.3.shortcut.1.weight",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.6.3.shortcut.2.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.3.shortcut.2.weight",
+      "shape": [
+        64,
+        48,
+        1,
+        1
+      ]
+    },
+    "blocks.6.3.shortcut.3.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.3.shortcut.3.bias",
+      "shape": [
+        64
+      ]
+    },
+    "blocks.6.3.shortcut.3.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.3.shortcut.3.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.6.3.shortcut.3.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.3.shortcut.3.running_mean",
+      "shape": [
+        64
+      ]
+    },
+    "blocks.6.3.shortcut.3.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.3.shortcut.3.running_var",
+      "shape": [
+        64
+      ]
+    },
+    "blocks.6.3.shortcut.3.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.3.shortcut.3.weight",
+      "shape": [
+        64
+      ]
+    },
+    "blocks.6.4.ghost1.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost1.cheap_operation.0.weight",
+      "shape": [
+        196,
+        1,
+        3,
+        3
+      ]
+    },
+    "blocks.6.4.ghost1.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost1.cheap_operation.1.bias",
+      "shape": [
+        196
+      ]
+    },
+    "blocks.6.4.ghost1.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.4.ghost1.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.6.4.ghost1.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost1.cheap_operation.1.running_mean",
+      "shape": [
+        196
+      ]
+    },
+    "blocks.6.4.ghost1.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost1.cheap_operation.1.running_var",
+      "shape": [
+        196
+      ]
+    },
+    "blocks.6.4.ghost1.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost1.cheap_operation.1.weight",
+      "shape": [
+        196
+      ]
+    },
+    "blocks.6.4.ghost1.fusion_bn.0.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost1.fusion_bn.0.bias",
+      "shape": [
+        196
+      ]
+    },
+    "blocks.6.4.ghost1.fusion_bn.0.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.4.ghost1.fusion_bn.0.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.6.4.ghost1.fusion_bn.0.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost1.fusion_bn.0.running_mean",
+      "shape": [
+        196
+      ]
+    },
+    "blocks.6.4.ghost1.fusion_bn.0.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost1.fusion_bn.0.running_var",
+      "shape": [
+        196
+      ]
+    },
+    "blocks.6.4.ghost1.fusion_bn.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost1.fusion_bn.0.weight",
+      "shape": [
+        196
+      ]
+    },
+    "blocks.6.4.ghost1.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost1.primary_conv.0.weight",
+      "shape": [
+        196,
+        64,
+        1,
+        1
+      ]
+    },
+    "blocks.6.4.ghost1.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost1.primary_conv.1.bias",
+      "shape": [
+        196
+      ]
+    },
+    "blocks.6.4.ghost1.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.4.ghost1.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.6.4.ghost1.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost1.primary_conv.1.running_mean",
+      "shape": [
+        196
+      ]
+    },
+    "blocks.6.4.ghost1.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost1.primary_conv.1.running_var",
+      "shape": [
+        196
+      ]
+    },
+    "blocks.6.4.ghost1.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost1.primary_conv.1.weight",
+      "shape": [
+        196
+      ]
+    },
+    "blocks.6.4.ghost2.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost2.cheap_operation.0.weight",
+      "shape": [
+        64,
+        1,
+        3,
+        3
+      ]
+    },
+    "blocks.6.4.ghost2.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost2.cheap_operation.1.bias",
+      "shape": [
+        64
+      ]
+    },
+    "blocks.6.4.ghost2.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.4.ghost2.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.6.4.ghost2.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost2.cheap_operation.1.running_mean",
+      "shape": [
+        64
+      ]
+    },
+    "blocks.6.4.ghost2.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost2.cheap_operation.1.running_var",
+      "shape": [
+        64
+      ]
+    },
+    "blocks.6.4.ghost2.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost2.cheap_operation.1.weight",
+      "shape": [
+        64
+      ]
+    },
+    "blocks.6.4.ghost2.fusion_bn.0.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost2.fusion_bn.0.bias",
+      "shape": [
+        64
+      ]
+    },
+    "blocks.6.4.ghost2.fusion_bn.0.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.4.ghost2.fusion_bn.0.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.6.4.ghost2.fusion_bn.0.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost2.fusion_bn.0.running_mean",
+      "shape": [
+        64
+      ]
+    },
+    "blocks.6.4.ghost2.fusion_bn.0.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost2.fusion_bn.0.running_var",
+      "shape": [
+        64
+      ]
+    },
+    "blocks.6.4.ghost2.fusion_bn.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost2.fusion_bn.0.weight",
+      "shape": [
+        64
+      ]
+    },
+    "blocks.6.4.ghost2.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost2.primary_conv.0.weight",
+      "shape": [
+        64,
+        196,
+        1,
+        1
+      ]
+    },
+    "blocks.6.4.ghost2.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost2.primary_conv.1.bias",
+      "shape": [
+        64
+      ]
+    },
+    "blocks.6.4.ghost2.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.4.ghost2.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.6.4.ghost2.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost2.primary_conv.1.running_mean",
+      "shape": [
+        64
+      ]
+    },
+    "blocks.6.4.ghost2.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost2.primary_conv.1.running_var",
+      "shape": [
+        64
+      ]
+    },
+    "blocks.6.4.ghost2.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost2.primary_conv.1.weight",
+      "shape": [
+        64
+      ]
+    },
+    "blocks.6.4.se.conv_expand.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.4.se.conv_expand.bias",
+      "shape": [
+        196
+      ]
+    },
+    "blocks.6.4.se.conv_expand.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.4.se.conv_expand.weight",
+      "shape": [
+        196,
+        48,
+        1,
+        1
+      ]
+    },
+    "blocks.6.4.se.conv_reduce.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.4.se.conv_reduce.bias",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.6.4.se.conv_reduce.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.4.se.conv_reduce.weight",
+      "shape": [
+        48,
+        196,
+        1,
+        1
+      ]
+    },
+    "blocks.7.0.bn_dw.bias": {
+      "dtype": "F32",
+      "key": "blocks.7.0.bn_dw.bias",
+      "shape": [
+        196
+      ]
+    },
+    "blocks.7.0.bn_dw.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.7.0.bn_dw.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.7.0.bn_dw.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.7.0.bn_dw.running_mean",
+      "shape": [
+        196
+      ]
+    },
+    "blocks.7.0.bn_dw.running_var": {
+      "dtype": "F32",
+      "key": "blocks.7.0.bn_dw.running_var",
+      "shape": [
+        196
+      ]
+    },
+    "blocks.7.0.bn_dw.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.0.bn_dw.weight",
+      "shape": [
+        196
+      ]
+    },
+    "blocks.7.0.conv_dw.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.0.conv_dw.weight",
+      "shape": [
+        196,
+        1,
+        5,
+        5
+      ]
+    },
+    "blocks.7.0.ghost1.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost1.cheap_operation.0.weight",
+      "shape": [
+        196,
+        1,
+        3,
+        3
+      ]
+    },
+    "blocks.7.0.ghost1.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost1.cheap_operation.1.bias",
+      "shape": [
+        196
+      ]
+    },
+    "blocks.7.0.ghost1.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.7.0.ghost1.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.7.0.ghost1.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost1.cheap_operation.1.running_mean",
+      "shape": [
+        196
+      ]
+    },
+    "blocks.7.0.ghost1.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost1.cheap_operation.1.running_var",
+      "shape": [
+        196
+      ]
+    },
+    "blocks.7.0.ghost1.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost1.cheap_operation.1.weight",
+      "shape": [
+        196
+      ]
+    },
+    "blocks.7.0.ghost1.fusion_bn.0.bias": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost1.fusion_bn.0.bias",
+      "shape": [
+        196
+      ]
+    },
+    "blocks.7.0.ghost1.fusion_bn.0.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.7.0.ghost1.fusion_bn.0.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.7.0.ghost1.fusion_bn.0.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost1.fusion_bn.0.running_mean",
+      "shape": [
+        196
+      ]
+    },
+    "blocks.7.0.ghost1.fusion_bn.0.running_var": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost1.fusion_bn.0.running_var",
+      "shape": [
+        196
+      ]
+    },
+    "blocks.7.0.ghost1.fusion_bn.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost1.fusion_bn.0.weight",
+      "shape": [
+        196
+      ]
+    },
+    "blocks.7.0.ghost1.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost1.primary_conv.0.weight",
+      "shape": [
+        196,
+        64,
+        1,
+        1
+      ]
+    },
+    "blocks.7.0.ghost1.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost1.primary_conv.1.bias",
+      "shape": [
+        196
+      ]
+    },
+    "blocks.7.0.ghost1.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.7.0.ghost1.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.7.0.ghost1.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost1.primary_conv.1.running_mean",
+      "shape": [
+        196
+      ]
+    },
+    "blocks.7.0.ghost1.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost1.primary_conv.1.running_var",
+      "shape": [
+        196
+      ]
+    },
+    "blocks.7.0.ghost1.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost1.primary_conv.1.weight",
+      "shape": [
+        196
+      ]
+    },
+    "blocks.7.0.ghost2.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost2.cheap_operation.0.weight",
+      "shape": [
+        92,
+        1,
+        3,
+        3
+      ]
+    },
+    "blocks.7.0.ghost2.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost2.cheap_operation.1.bias",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.7.0.ghost2.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.7.0.ghost2.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.7.0.ghost2.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost2.cheap_operation.1.running_mean",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.7.0.ghost2.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost2.cheap_operation.1.running_var",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.7.0.ghost2.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost2.cheap_operation.1.weight",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.7.0.ghost2.fusion_bn.0.bias": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost2.fusion_bn.0.bias",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.7.0.ghost2.fusion_bn.0.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.7.0.ghost2.fusion_bn.0.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.7.0.ghost2.fusion_bn.0.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost2.fusion_bn.0.running_mean",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.7.0.ghost2.fusion_bn.0.running_var": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost2.fusion_bn.0.running_var",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.7.0.ghost2.fusion_bn.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost2.fusion_bn.0.weight",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.7.0.ghost2.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost2.primary_conv.0.weight",
+      "shape": [
+        92,
+        196,
+        1,
+        1
+      ]
+    },
+    "blocks.7.0.ghost2.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost2.primary_conv.1.bias",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.7.0.ghost2.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.7.0.ghost2.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.7.0.ghost2.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost2.primary_conv.1.running_mean",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.7.0.ghost2.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost2.primary_conv.1.running_var",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.7.0.ghost2.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost2.primary_conv.1.weight",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.7.0.se.conv_expand.bias": {
+      "dtype": "F32",
+      "key": "blocks.7.0.se.conv_expand.bias",
+      "shape": [
+        196
+      ]
+    },
+    "blocks.7.0.se.conv_expand.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.0.se.conv_expand.weight",
+      "shape": [
+        196,
+        48,
+        1,
+        1
+      ]
+    },
+    "blocks.7.0.se.conv_reduce.bias": {
+      "dtype": "F32",
+      "key": "blocks.7.0.se.conv_reduce.bias",
+      "shape": [
+        48
+      ]
+    },
+    "blocks.7.0.se.conv_reduce.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.0.se.conv_reduce.weight",
+      "shape": [
+        48,
+        196,
+        1,
+        1
+      ]
+    },
+    "blocks.7.0.shortcut.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.0.shortcut.0.weight",
+      "shape": [
+        64,
+        1,
+        5,
+        5
+      ]
+    },
+    "blocks.7.0.shortcut.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.7.0.shortcut.1.bias",
+      "shape": [
+        64
+      ]
+    },
+    "blocks.7.0.shortcut.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.7.0.shortcut.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.7.0.shortcut.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.7.0.shortcut.1.running_mean",
+      "shape": [
+        64
+      ]
+    },
+    "blocks.7.0.shortcut.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.7.0.shortcut.1.running_var",
+      "shape": [
+        64
+      ]
+    },
+    "blocks.7.0.shortcut.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.0.shortcut.1.weight",
+      "shape": [
+        64
+      ]
+    },
+    "blocks.7.0.shortcut.2.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.0.shortcut.2.weight",
+      "shape": [
+        92,
+        64,
+        1,
+        1
+      ]
+    },
+    "blocks.7.0.shortcut.3.bias": {
+      "dtype": "F32",
+      "key": "blocks.7.0.shortcut.3.bias",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.7.0.shortcut.3.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.7.0.shortcut.3.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.7.0.shortcut.3.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.7.0.shortcut.3.running_mean",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.7.0.shortcut.3.running_var": {
+      "dtype": "F32",
+      "key": "blocks.7.0.shortcut.3.running_var",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.7.0.shortcut.3.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.0.shortcut.3.weight",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.8.0.ghost1.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost1.cheap_operation.0.weight",
+      "shape": [
+        280,
+        1,
+        3,
+        3
+      ]
+    },
+    "blocks.8.0.ghost1.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost1.cheap_operation.1.bias",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.0.ghost1.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.0.ghost1.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.8.0.ghost1.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost1.cheap_operation.1.running_mean",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.0.ghost1.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost1.cheap_operation.1.running_var",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.0.ghost1.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost1.cheap_operation.1.weight",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.0.ghost1.fusion_bn.0.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost1.fusion_bn.0.bias",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.0.ghost1.fusion_bn.0.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.0.ghost1.fusion_bn.0.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.8.0.ghost1.fusion_bn.0.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost1.fusion_bn.0.running_mean",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.0.ghost1.fusion_bn.0.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost1.fusion_bn.0.running_var",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.0.ghost1.fusion_bn.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost1.fusion_bn.0.weight",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.0.ghost1.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost1.primary_conv.0.weight",
+      "shape": [
+        280,
+        92,
+        1,
+        1
+      ]
+    },
+    "blocks.8.0.ghost1.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost1.primary_conv.1.bias",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.0.ghost1.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.0.ghost1.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.8.0.ghost1.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost1.primary_conv.1.running_mean",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.0.ghost1.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost1.primary_conv.1.running_var",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.0.ghost1.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost1.primary_conv.1.weight",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.0.ghost2.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost2.cheap_operation.0.weight",
+      "shape": [
+        92,
+        1,
+        3,
+        3
+      ]
+    },
+    "blocks.8.0.ghost2.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost2.cheap_operation.1.bias",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.8.0.ghost2.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.0.ghost2.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.8.0.ghost2.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost2.cheap_operation.1.running_mean",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.8.0.ghost2.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost2.cheap_operation.1.running_var",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.8.0.ghost2.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost2.cheap_operation.1.weight",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.8.0.ghost2.fusion_bn.0.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost2.fusion_bn.0.bias",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.8.0.ghost2.fusion_bn.0.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.0.ghost2.fusion_bn.0.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.8.0.ghost2.fusion_bn.0.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost2.fusion_bn.0.running_mean",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.8.0.ghost2.fusion_bn.0.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost2.fusion_bn.0.running_var",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.8.0.ghost2.fusion_bn.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost2.fusion_bn.0.weight",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.8.0.ghost2.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost2.primary_conv.0.weight",
+      "shape": [
+        92,
+        280,
+        1,
+        1
+      ]
+    },
+    "blocks.8.0.ghost2.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost2.primary_conv.1.bias",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.8.0.ghost2.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.0.ghost2.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.8.0.ghost2.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost2.primary_conv.1.running_mean",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.8.0.ghost2.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost2.primary_conv.1.running_var",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.8.0.ghost2.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost2.primary_conv.1.weight",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.8.1.ghost1.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost1.cheap_operation.0.weight",
+      "shape": [
+        280,
+        1,
+        3,
+        3
+      ]
+    },
+    "blocks.8.1.ghost1.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost1.cheap_operation.1.bias",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.1.ghost1.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.1.ghost1.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.8.1.ghost1.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost1.cheap_operation.1.running_mean",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.1.ghost1.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost1.cheap_operation.1.running_var",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.1.ghost1.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost1.cheap_operation.1.weight",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.1.ghost1.fusion_bn.0.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost1.fusion_bn.0.bias",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.1.ghost1.fusion_bn.0.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.1.ghost1.fusion_bn.0.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.8.1.ghost1.fusion_bn.0.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost1.fusion_bn.0.running_mean",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.1.ghost1.fusion_bn.0.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost1.fusion_bn.0.running_var",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.1.ghost1.fusion_bn.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost1.fusion_bn.0.weight",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.1.ghost1.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost1.primary_conv.0.weight",
+      "shape": [
+        280,
+        92,
+        1,
+        1
+      ]
+    },
+    "blocks.8.1.ghost1.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost1.primary_conv.1.bias",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.1.ghost1.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.1.ghost1.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.8.1.ghost1.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost1.primary_conv.1.running_mean",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.1.ghost1.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost1.primary_conv.1.running_var",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.1.ghost1.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost1.primary_conv.1.weight",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.1.ghost2.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost2.cheap_operation.0.weight",
+      "shape": [
+        92,
+        1,
+        3,
+        3
+      ]
+    },
+    "blocks.8.1.ghost2.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost2.cheap_operation.1.bias",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.8.1.ghost2.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.1.ghost2.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.8.1.ghost2.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost2.cheap_operation.1.running_mean",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.8.1.ghost2.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost2.cheap_operation.1.running_var",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.8.1.ghost2.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost2.cheap_operation.1.weight",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.8.1.ghost2.fusion_bn.0.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost2.fusion_bn.0.bias",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.8.1.ghost2.fusion_bn.0.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.1.ghost2.fusion_bn.0.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.8.1.ghost2.fusion_bn.0.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost2.fusion_bn.0.running_mean",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.8.1.ghost2.fusion_bn.0.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost2.fusion_bn.0.running_var",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.8.1.ghost2.fusion_bn.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost2.fusion_bn.0.weight",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.8.1.ghost2.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost2.primary_conv.0.weight",
+      "shape": [
+        92,
+        280,
+        1,
+        1
+      ]
+    },
+    "blocks.8.1.ghost2.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost2.primary_conv.1.bias",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.8.1.ghost2.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.1.ghost2.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.8.1.ghost2.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost2.primary_conv.1.running_mean",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.8.1.ghost2.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost2.primary_conv.1.running_var",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.8.1.ghost2.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost2.primary_conv.1.weight",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.8.1.se.conv_expand.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.1.se.conv_expand.bias",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.1.se.conv_expand.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.1.se.conv_expand.weight",
+      "shape": [
+        280,
+        72,
+        1,
+        1
+      ]
+    },
+    "blocks.8.1.se.conv_reduce.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.1.se.conv_reduce.bias",
+      "shape": [
+        72
+      ]
+    },
+    "blocks.8.1.se.conv_reduce.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.1.se.conv_reduce.weight",
+      "shape": [
+        72,
+        280,
+        1,
+        1
+      ]
+    },
+    "blocks.8.2.ghost1.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost1.cheap_operation.0.weight",
+      "shape": [
+        280,
+        1,
+        3,
+        3
+      ]
+    },
+    "blocks.8.2.ghost1.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost1.cheap_operation.1.bias",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.2.ghost1.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.2.ghost1.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.8.2.ghost1.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost1.cheap_operation.1.running_mean",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.2.ghost1.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost1.cheap_operation.1.running_var",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.2.ghost1.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost1.cheap_operation.1.weight",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.2.ghost1.fusion_bn.0.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost1.fusion_bn.0.bias",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.2.ghost1.fusion_bn.0.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.2.ghost1.fusion_bn.0.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.8.2.ghost1.fusion_bn.0.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost1.fusion_bn.0.running_mean",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.2.ghost1.fusion_bn.0.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost1.fusion_bn.0.running_var",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.2.ghost1.fusion_bn.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost1.fusion_bn.0.weight",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.2.ghost1.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost1.primary_conv.0.weight",
+      "shape": [
+        280,
+        92,
+        1,
+        1
+      ]
+    },
+    "blocks.8.2.ghost1.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost1.primary_conv.1.bias",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.2.ghost1.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.2.ghost1.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.8.2.ghost1.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost1.primary_conv.1.running_mean",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.2.ghost1.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost1.primary_conv.1.running_var",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.2.ghost1.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost1.primary_conv.1.weight",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.2.ghost2.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost2.cheap_operation.0.weight",
+      "shape": [
+        92,
+        1,
+        3,
+        3
+      ]
+    },
+    "blocks.8.2.ghost2.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost2.cheap_operation.1.bias",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.8.2.ghost2.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.2.ghost2.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.8.2.ghost2.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost2.cheap_operation.1.running_mean",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.8.2.ghost2.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost2.cheap_operation.1.running_var",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.8.2.ghost2.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost2.cheap_operation.1.weight",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.8.2.ghost2.fusion_bn.0.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost2.fusion_bn.0.bias",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.8.2.ghost2.fusion_bn.0.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.2.ghost2.fusion_bn.0.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.8.2.ghost2.fusion_bn.0.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost2.fusion_bn.0.running_mean",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.8.2.ghost2.fusion_bn.0.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost2.fusion_bn.0.running_var",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.8.2.ghost2.fusion_bn.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost2.fusion_bn.0.weight",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.8.2.ghost2.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost2.primary_conv.0.weight",
+      "shape": [
+        92,
+        280,
+        1,
+        1
+      ]
+    },
+    "blocks.8.2.ghost2.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost2.primary_conv.1.bias",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.8.2.ghost2.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.2.ghost2.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.8.2.ghost2.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost2.primary_conv.1.running_mean",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.8.2.ghost2.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost2.primary_conv.1.running_var",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.8.2.ghost2.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost2.primary_conv.1.weight",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.8.3.ghost1.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost1.cheap_operation.0.weight",
+      "shape": [
+        280,
+        1,
+        3,
+        3
+      ]
+    },
+    "blocks.8.3.ghost1.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost1.cheap_operation.1.bias",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.3.ghost1.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.3.ghost1.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.8.3.ghost1.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost1.cheap_operation.1.running_mean",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.3.ghost1.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost1.cheap_operation.1.running_var",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.3.ghost1.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost1.cheap_operation.1.weight",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.3.ghost1.fusion_bn.0.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost1.fusion_bn.0.bias",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.3.ghost1.fusion_bn.0.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.3.ghost1.fusion_bn.0.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.8.3.ghost1.fusion_bn.0.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost1.fusion_bn.0.running_mean",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.3.ghost1.fusion_bn.0.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost1.fusion_bn.0.running_var",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.3.ghost1.fusion_bn.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost1.fusion_bn.0.weight",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.3.ghost1.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost1.primary_conv.0.weight",
+      "shape": [
+        280,
+        92,
+        1,
+        1
+      ]
+    },
+    "blocks.8.3.ghost1.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost1.primary_conv.1.bias",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.3.ghost1.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.3.ghost1.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.8.3.ghost1.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost1.primary_conv.1.running_mean",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.3.ghost1.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost1.primary_conv.1.running_var",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.3.ghost1.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost1.primary_conv.1.weight",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.3.ghost2.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost2.cheap_operation.0.weight",
+      "shape": [
+        92,
+        1,
+        3,
+        3
+      ]
+    },
+    "blocks.8.3.ghost2.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost2.cheap_operation.1.bias",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.8.3.ghost2.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.3.ghost2.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.8.3.ghost2.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost2.cheap_operation.1.running_mean",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.8.3.ghost2.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost2.cheap_operation.1.running_var",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.8.3.ghost2.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost2.cheap_operation.1.weight",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.8.3.ghost2.fusion_bn.0.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost2.fusion_bn.0.bias",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.8.3.ghost2.fusion_bn.0.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.3.ghost2.fusion_bn.0.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.8.3.ghost2.fusion_bn.0.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost2.fusion_bn.0.running_mean",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.8.3.ghost2.fusion_bn.0.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost2.fusion_bn.0.running_var",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.8.3.ghost2.fusion_bn.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost2.fusion_bn.0.weight",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.8.3.ghost2.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost2.primary_conv.0.weight",
+      "shape": [
+        92,
+        280,
+        1,
+        1
+      ]
+    },
+    "blocks.8.3.ghost2.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost2.primary_conv.1.bias",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.8.3.ghost2.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.3.ghost2.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.8.3.ghost2.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost2.primary_conv.1.running_mean",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.8.3.ghost2.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost2.primary_conv.1.running_var",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.8.3.ghost2.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost2.primary_conv.1.weight",
+      "shape": [
+        92
+      ]
+    },
+    "blocks.8.3.se.conv_expand.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.3.se.conv_expand.bias",
+      "shape": [
+        280
+      ]
+    },
+    "blocks.8.3.se.conv_expand.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.3.se.conv_expand.weight",
+      "shape": [
+        280,
+        72,
+        1,
+        1
+      ]
+    },
+    "blocks.8.3.se.conv_reduce.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.3.se.conv_reduce.bias",
+      "shape": [
+        72
+      ]
+    },
+    "blocks.8.3.se.conv_reduce.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.3.se.conv_reduce.weight",
+      "shape": [
+        72,
+        280,
+        1,
+        1
+      ]
+    },
+    "blocks.9.0.bn1.bias": {
+      "dtype": "F32",
+      "key": "blocks.9.0.bn1.bias",
+      "shape": [
+        556
+      ]
+    },
+    "blocks.9.0.bn1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.9.0.bn1.num_batches_tracked",
+      "shape": []
+    },
+    "blocks.9.0.bn1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.9.0.bn1.running_mean",
+      "shape": [
+        556
+      ]
+    },
+    "blocks.9.0.bn1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.9.0.bn1.running_var",
+      "shape": [
+        556
+      ]
+    },
+    "blocks.9.0.bn1.weight": {
+      "dtype": "F32",
+      "key": "blocks.9.0.bn1.weight",
+      "shape": [
+        556
+      ]
+    },
+    "blocks.9.0.conv.weight": {
+      "dtype": "F32",
+      "key": "blocks.9.0.conv.weight",
+      "shape": [
+        556,
+        92,
+        1,
+        1
+      ]
+    },
+    "bn1.bias": {
+      "dtype": "F32",
+      "key": "bn1.bias",
+      "shape": [
+        12
+      ]
+    },
+    "bn1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "bn1.num_batches_tracked",
+      "shape": []
+    },
+    "bn1.running_mean": {
+      "dtype": "F32",
+      "key": "bn1.running_mean",
+      "shape": [
+        12
+      ]
+    },
+    "bn1.running_var": {
+      "dtype": "F32",
+      "key": "bn1.running_var",
+      "shape": [
+        12
+      ]
+    },
+    "bn1.weight": {
+      "dtype": "F32",
+      "key": "bn1.weight",
+      "shape": [
+        12
+      ]
+    },
+    "classifier.bias": {
+      "dtype": "F32",
+      "key": "classifier.bias",
+      "shape": [
+        1000
+      ]
+    },
+    "classifier.weight": {
+      "dtype": "F32",
+      "key": "classifier.weight",
+      "shape": [
+        1000,
+        1280
+      ]
+    },
+    "conv_head.bias": {
+      "dtype": "F32",
+      "key": "conv_head.bias",
+      "shape": [
+        1280
+      ]
+    },
+    "conv_head.weight": {
+      "dtype": "F32",
+      "key": "conv_head.weight",
+      "shape": [
+        1280,
+        556,
+        1,
+        1
+      ]
+    },
+    "conv_stem.weight": {
+      "dtype": "F32",
+      "key": "conv_stem.weight",
+      "shape": [
+        12,
+        3,
+        3,
+        3
+      ]
+    }
+  },
+  "unmapped": []
+}

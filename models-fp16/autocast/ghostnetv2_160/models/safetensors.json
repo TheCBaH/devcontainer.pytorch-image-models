@@ -1,0 +1,5530 @@
+{
+  "schema_version": 1,
+  "source": {
+    "filename": "model.safetensors",
+    "repo_id": "timm/ghostnetv2_160.in1k",
+    "revision": "2137db49b5a4f7120bfe4d5eb24dd49aa3f5089c",
+    "sha256": "5689754c9da78256bcc25d91e0acdac2ebbd8c00c8e26204ac5cff97f5530ce8",
+    "size": 50051736,
+    "url": "https://huggingface.co/timm/ghostnetv2_160.in1k/resolve/2137db49b5a4f7120bfe4d5eb24dd49aa3f5089c/model.safetensors"
+  },
+  "tensors": {
+    "model.blocks.0.0.ghost1.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.0.0.ghost1.cheap_operation.0.weight",
+      "shape": [
+        12,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.blocks.0.0.ghost1.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.0.0.ghost1.cheap_operation.1.bias",
+      "shape": [
+        12
+      ]
+    },
+    "model.blocks.0.0.ghost1.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.0.0.ghost1.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.0.0.ghost1.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.0.0.ghost1.cheap_operation.1.running_mean",
+      "shape": [
+        12
+      ]
+    },
+    "model.blocks.0.0.ghost1.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.0.0.ghost1.cheap_operation.1.running_var",
+      "shape": [
+        12
+      ]
+    },
+    "model.blocks.0.0.ghost1.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.0.0.ghost1.cheap_operation.1.weight",
+      "shape": [
+        12
+      ]
+    },
+    "model.blocks.0.0.ghost1.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.0.0.ghost1.primary_conv.0.weight",
+      "shape": [
+        12,
+        24,
+        1,
+        1
+      ]
+    },
+    "model.blocks.0.0.ghost1.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.0.0.ghost1.primary_conv.1.bias",
+      "shape": [
+        12
+      ]
+    },
+    "model.blocks.0.0.ghost1.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.0.0.ghost1.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.0.0.ghost1.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.0.0.ghost1.primary_conv.1.running_mean",
+      "shape": [
+        12
+      ]
+    },
+    "model.blocks.0.0.ghost1.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.0.0.ghost1.primary_conv.1.running_var",
+      "shape": [
+        12
+      ]
+    },
+    "model.blocks.0.0.ghost1.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.0.0.ghost1.primary_conv.1.weight",
+      "shape": [
+        12
+      ]
+    },
+    "model.blocks.0.0.ghost2.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.0.0.ghost2.cheap_operation.0.weight",
+      "shape": [
+        12,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.blocks.0.0.ghost2.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.0.0.ghost2.cheap_operation.1.bias",
+      "shape": [
+        12
+      ]
+    },
+    "model.blocks.0.0.ghost2.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.0.0.ghost2.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.0.0.ghost2.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.0.0.ghost2.cheap_operation.1.running_mean",
+      "shape": [
+        12
+      ]
+    },
+    "model.blocks.0.0.ghost2.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.0.0.ghost2.cheap_operation.1.running_var",
+      "shape": [
+        12
+      ]
+    },
+    "model.blocks.0.0.ghost2.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.0.0.ghost2.cheap_operation.1.weight",
+      "shape": [
+        12
+      ]
+    },
+    "model.blocks.0.0.ghost2.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.0.0.ghost2.primary_conv.0.weight",
+      "shape": [
+        12,
+        24,
+        1,
+        1
+      ]
+    },
+    "model.blocks.0.0.ghost2.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.0.0.ghost2.primary_conv.1.bias",
+      "shape": [
+        12
+      ]
+    },
+    "model.blocks.0.0.ghost2.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.0.0.ghost2.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.0.0.ghost2.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.0.0.ghost2.primary_conv.1.running_mean",
+      "shape": [
+        12
+      ]
+    },
+    "model.blocks.0.0.ghost2.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.0.0.ghost2.primary_conv.1.running_var",
+      "shape": [
+        12
+      ]
+    },
+    "model.blocks.0.0.ghost2.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.0.0.ghost2.primary_conv.1.weight",
+      "shape": [
+        12
+      ]
+    },
+    "model.blocks.1.0.bn_dw.bias": {
+      "dtype": "F32",
+      "key": "blocks.1.0.bn_dw.bias",
+      "shape": [
+        76
+      ]
+    },
+    "model.blocks.1.0.bn_dw.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.1.0.bn_dw.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.1.0.bn_dw.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.1.0.bn_dw.running_mean",
+      "shape": [
+        76
+      ]
+    },
+    "model.blocks.1.0.bn_dw.running_var": {
+      "dtype": "F32",
+      "key": "blocks.1.0.bn_dw.running_var",
+      "shape": [
+        76
+      ]
+    },
+    "model.blocks.1.0.bn_dw.weight": {
+      "dtype": "F32",
+      "key": "blocks.1.0.bn_dw.weight",
+      "shape": [
+        76
+      ]
+    },
+    "model.blocks.1.0.conv_dw.weight": {
+      "dtype": "F32",
+      "key": "blocks.1.0.conv_dw.weight",
+      "shape": [
+        76,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.blocks.1.0.ghost1.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.1.0.ghost1.cheap_operation.0.weight",
+      "shape": [
+        38,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.blocks.1.0.ghost1.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.1.0.ghost1.cheap_operation.1.bias",
+      "shape": [
+        38
+      ]
+    },
+    "model.blocks.1.0.ghost1.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.1.0.ghost1.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.1.0.ghost1.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.1.0.ghost1.cheap_operation.1.running_mean",
+      "shape": [
+        38
+      ]
+    },
+    "model.blocks.1.0.ghost1.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.1.0.ghost1.cheap_operation.1.running_var",
+      "shape": [
+        38
+      ]
+    },
+    "model.blocks.1.0.ghost1.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.1.0.ghost1.cheap_operation.1.weight",
+      "shape": [
+        38
+      ]
+    },
+    "model.blocks.1.0.ghost1.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.1.0.ghost1.primary_conv.0.weight",
+      "shape": [
+        38,
+        24,
+        1,
+        1
+      ]
+    },
+    "model.blocks.1.0.ghost1.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.1.0.ghost1.primary_conv.1.bias",
+      "shape": [
+        38
+      ]
+    },
+    "model.blocks.1.0.ghost1.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.1.0.ghost1.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.1.0.ghost1.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.1.0.ghost1.primary_conv.1.running_mean",
+      "shape": [
+        38
+      ]
+    },
+    "model.blocks.1.0.ghost1.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.1.0.ghost1.primary_conv.1.running_var",
+      "shape": [
+        38
+      ]
+    },
+    "model.blocks.1.0.ghost1.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.1.0.ghost1.primary_conv.1.weight",
+      "shape": [
+        38
+      ]
+    },
+    "model.blocks.1.0.ghost2.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.1.0.ghost2.cheap_operation.0.weight",
+      "shape": [
+        20,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.blocks.1.0.ghost2.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.1.0.ghost2.cheap_operation.1.bias",
+      "shape": [
+        20
+      ]
+    },
+    "model.blocks.1.0.ghost2.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.1.0.ghost2.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.1.0.ghost2.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.1.0.ghost2.cheap_operation.1.running_mean",
+      "shape": [
+        20
+      ]
+    },
+    "model.blocks.1.0.ghost2.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.1.0.ghost2.cheap_operation.1.running_var",
+      "shape": [
+        20
+      ]
+    },
+    "model.blocks.1.0.ghost2.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.1.0.ghost2.cheap_operation.1.weight",
+      "shape": [
+        20
+      ]
+    },
+    "model.blocks.1.0.ghost2.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.1.0.ghost2.primary_conv.0.weight",
+      "shape": [
+        20,
+        76,
+        1,
+        1
+      ]
+    },
+    "model.blocks.1.0.ghost2.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.1.0.ghost2.primary_conv.1.bias",
+      "shape": [
+        20
+      ]
+    },
+    "model.blocks.1.0.ghost2.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.1.0.ghost2.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.1.0.ghost2.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.1.0.ghost2.primary_conv.1.running_mean",
+      "shape": [
+        20
+      ]
+    },
+    "model.blocks.1.0.ghost2.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.1.0.ghost2.primary_conv.1.running_var",
+      "shape": [
+        20
+      ]
+    },
+    "model.blocks.1.0.ghost2.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.1.0.ghost2.primary_conv.1.weight",
+      "shape": [
+        20
+      ]
+    },
+    "model.blocks.1.0.shortcut.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.1.0.shortcut.0.weight",
+      "shape": [
+        24,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.blocks.1.0.shortcut.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.1.0.shortcut.1.bias",
+      "shape": [
+        24
+      ]
+    },
+    "model.blocks.1.0.shortcut.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.1.0.shortcut.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.1.0.shortcut.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.1.0.shortcut.1.running_mean",
+      "shape": [
+        24
+      ]
+    },
+    "model.blocks.1.0.shortcut.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.1.0.shortcut.1.running_var",
+      "shape": [
+        24
+      ]
+    },
+    "model.blocks.1.0.shortcut.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.1.0.shortcut.1.weight",
+      "shape": [
+        24
+      ]
+    },
+    "model.blocks.1.0.shortcut.2.weight": {
+      "dtype": "F32",
+      "key": "blocks.1.0.shortcut.2.weight",
+      "shape": [
+        40,
+        24,
+        1,
+        1
+      ]
+    },
+    "model.blocks.1.0.shortcut.3.bias": {
+      "dtype": "F32",
+      "key": "blocks.1.0.shortcut.3.bias",
+      "shape": [
+        40
+      ]
+    },
+    "model.blocks.1.0.shortcut.3.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.1.0.shortcut.3.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.1.0.shortcut.3.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.1.0.shortcut.3.running_mean",
+      "shape": [
+        40
+      ]
+    },
+    "model.blocks.1.0.shortcut.3.running_var": {
+      "dtype": "F32",
+      "key": "blocks.1.0.shortcut.3.running_var",
+      "shape": [
+        40
+      ]
+    },
+    "model.blocks.1.0.shortcut.3.weight": {
+      "dtype": "F32",
+      "key": "blocks.1.0.shortcut.3.weight",
+      "shape": [
+        40
+      ]
+    },
+    "model.blocks.2.0.ghost1.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost1.cheap_operation.0.weight",
+      "shape": [
+        58,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.blocks.2.0.ghost1.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost1.cheap_operation.1.bias",
+      "shape": [
+        58
+      ]
+    },
+    "model.blocks.2.0.ghost1.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.2.0.ghost1.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.2.0.ghost1.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost1.cheap_operation.1.running_mean",
+      "shape": [
+        58
+      ]
+    },
+    "model.blocks.2.0.ghost1.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost1.cheap_operation.1.running_var",
+      "shape": [
+        58
+      ]
+    },
+    "model.blocks.2.0.ghost1.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost1.cheap_operation.1.weight",
+      "shape": [
+        58
+      ]
+    },
+    "model.blocks.2.0.ghost1.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost1.primary_conv.0.weight",
+      "shape": [
+        58,
+        40,
+        1,
+        1
+      ]
+    },
+    "model.blocks.2.0.ghost1.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost1.primary_conv.1.bias",
+      "shape": [
+        58
+      ]
+    },
+    "model.blocks.2.0.ghost1.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.2.0.ghost1.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.2.0.ghost1.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost1.primary_conv.1.running_mean",
+      "shape": [
+        58
+      ]
+    },
+    "model.blocks.2.0.ghost1.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost1.primary_conv.1.running_var",
+      "shape": [
+        58
+      ]
+    },
+    "model.blocks.2.0.ghost1.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost1.primary_conv.1.weight",
+      "shape": [
+        58
+      ]
+    },
+    "model.blocks.2.0.ghost1.short_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost1.short_conv.0.weight",
+      "shape": [
+        116,
+        40,
+        1,
+        1
+      ]
+    },
+    "model.blocks.2.0.ghost1.short_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost1.short_conv.1.bias",
+      "shape": [
+        116
+      ]
+    },
+    "model.blocks.2.0.ghost1.short_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.2.0.ghost1.short_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.2.0.ghost1.short_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost1.short_conv.1.running_mean",
+      "shape": [
+        116
+      ]
+    },
+    "model.blocks.2.0.ghost1.short_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost1.short_conv.1.running_var",
+      "shape": [
+        116
+      ]
+    },
+    "model.blocks.2.0.ghost1.short_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost1.short_conv.1.weight",
+      "shape": [
+        116
+      ]
+    },
+    "model.blocks.2.0.ghost1.short_conv.2.weight": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost1.short_conv.2.weight",
+      "shape": [
+        116,
+        1,
+        1,
+        5
+      ]
+    },
+    "model.blocks.2.0.ghost1.short_conv.3.bias": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost1.short_conv.3.bias",
+      "shape": [
+        116
+      ]
+    },
+    "model.blocks.2.0.ghost1.short_conv.3.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.2.0.ghost1.short_conv.3.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.2.0.ghost1.short_conv.3.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost1.short_conv.3.running_mean",
+      "shape": [
+        116
+      ]
+    },
+    "model.blocks.2.0.ghost1.short_conv.3.running_var": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost1.short_conv.3.running_var",
+      "shape": [
+        116
+      ]
+    },
+    "model.blocks.2.0.ghost1.short_conv.3.weight": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost1.short_conv.3.weight",
+      "shape": [
+        116
+      ]
+    },
+    "model.blocks.2.0.ghost1.short_conv.4.weight": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost1.short_conv.4.weight",
+      "shape": [
+        116,
+        1,
+        5,
+        1
+      ]
+    },
+    "model.blocks.2.0.ghost1.short_conv.5.bias": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost1.short_conv.5.bias",
+      "shape": [
+        116
+      ]
+    },
+    "model.blocks.2.0.ghost1.short_conv.5.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.2.0.ghost1.short_conv.5.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.2.0.ghost1.short_conv.5.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost1.short_conv.5.running_mean",
+      "shape": [
+        116
+      ]
+    },
+    "model.blocks.2.0.ghost1.short_conv.5.running_var": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost1.short_conv.5.running_var",
+      "shape": [
+        116
+      ]
+    },
+    "model.blocks.2.0.ghost1.short_conv.5.weight": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost1.short_conv.5.weight",
+      "shape": [
+        116
+      ]
+    },
+    "model.blocks.2.0.ghost2.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost2.cheap_operation.0.weight",
+      "shape": [
+        20,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.blocks.2.0.ghost2.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost2.cheap_operation.1.bias",
+      "shape": [
+        20
+      ]
+    },
+    "model.blocks.2.0.ghost2.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.2.0.ghost2.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.2.0.ghost2.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost2.cheap_operation.1.running_mean",
+      "shape": [
+        20
+      ]
+    },
+    "model.blocks.2.0.ghost2.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost2.cheap_operation.1.running_var",
+      "shape": [
+        20
+      ]
+    },
+    "model.blocks.2.0.ghost2.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost2.cheap_operation.1.weight",
+      "shape": [
+        20
+      ]
+    },
+    "model.blocks.2.0.ghost2.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost2.primary_conv.0.weight",
+      "shape": [
+        20,
+        116,
+        1,
+        1
+      ]
+    },
+    "model.blocks.2.0.ghost2.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost2.primary_conv.1.bias",
+      "shape": [
+        20
+      ]
+    },
+    "model.blocks.2.0.ghost2.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.2.0.ghost2.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.2.0.ghost2.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost2.primary_conv.1.running_mean",
+      "shape": [
+        20
+      ]
+    },
+    "model.blocks.2.0.ghost2.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost2.primary_conv.1.running_var",
+      "shape": [
+        20
+      ]
+    },
+    "model.blocks.2.0.ghost2.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.2.0.ghost2.primary_conv.1.weight",
+      "shape": [
+        20
+      ]
+    },
+    "model.blocks.3.0.bn_dw.bias": {
+      "dtype": "F32",
+      "key": "blocks.3.0.bn_dw.bias",
+      "shape": [
+        116
+      ]
+    },
+    "model.blocks.3.0.bn_dw.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.3.0.bn_dw.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.3.0.bn_dw.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.3.0.bn_dw.running_mean",
+      "shape": [
+        116
+      ]
+    },
+    "model.blocks.3.0.bn_dw.running_var": {
+      "dtype": "F32",
+      "key": "blocks.3.0.bn_dw.running_var",
+      "shape": [
+        116
+      ]
+    },
+    "model.blocks.3.0.bn_dw.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.0.bn_dw.weight",
+      "shape": [
+        116
+      ]
+    },
+    "model.blocks.3.0.conv_dw.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.0.conv_dw.weight",
+      "shape": [
+        116,
+        1,
+        5,
+        5
+      ]
+    },
+    "model.blocks.3.0.ghost1.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost1.cheap_operation.0.weight",
+      "shape": [
+        58,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.blocks.3.0.ghost1.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost1.cheap_operation.1.bias",
+      "shape": [
+        58
+      ]
+    },
+    "model.blocks.3.0.ghost1.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.3.0.ghost1.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.3.0.ghost1.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost1.cheap_operation.1.running_mean",
+      "shape": [
+        58
+      ]
+    },
+    "model.blocks.3.0.ghost1.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost1.cheap_operation.1.running_var",
+      "shape": [
+        58
+      ]
+    },
+    "model.blocks.3.0.ghost1.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost1.cheap_operation.1.weight",
+      "shape": [
+        58
+      ]
+    },
+    "model.blocks.3.0.ghost1.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost1.primary_conv.0.weight",
+      "shape": [
+        58,
+        40,
+        1,
+        1
+      ]
+    },
+    "model.blocks.3.0.ghost1.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost1.primary_conv.1.bias",
+      "shape": [
+        58
+      ]
+    },
+    "model.blocks.3.0.ghost1.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.3.0.ghost1.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.3.0.ghost1.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost1.primary_conv.1.running_mean",
+      "shape": [
+        58
+      ]
+    },
+    "model.blocks.3.0.ghost1.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost1.primary_conv.1.running_var",
+      "shape": [
+        58
+      ]
+    },
+    "model.blocks.3.0.ghost1.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost1.primary_conv.1.weight",
+      "shape": [
+        58
+      ]
+    },
+    "model.blocks.3.0.ghost1.short_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost1.short_conv.0.weight",
+      "shape": [
+        116,
+        40,
+        1,
+        1
+      ]
+    },
+    "model.blocks.3.0.ghost1.short_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost1.short_conv.1.bias",
+      "shape": [
+        116
+      ]
+    },
+    "model.blocks.3.0.ghost1.short_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.3.0.ghost1.short_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.3.0.ghost1.short_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost1.short_conv.1.running_mean",
+      "shape": [
+        116
+      ]
+    },
+    "model.blocks.3.0.ghost1.short_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost1.short_conv.1.running_var",
+      "shape": [
+        116
+      ]
+    },
+    "model.blocks.3.0.ghost1.short_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost1.short_conv.1.weight",
+      "shape": [
+        116
+      ]
+    },
+    "model.blocks.3.0.ghost1.short_conv.2.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost1.short_conv.2.weight",
+      "shape": [
+        116,
+        1,
+        1,
+        5
+      ]
+    },
+    "model.blocks.3.0.ghost1.short_conv.3.bias": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost1.short_conv.3.bias",
+      "shape": [
+        116
+      ]
+    },
+    "model.blocks.3.0.ghost1.short_conv.3.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.3.0.ghost1.short_conv.3.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.3.0.ghost1.short_conv.3.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost1.short_conv.3.running_mean",
+      "shape": [
+        116
+      ]
+    },
+    "model.blocks.3.0.ghost1.short_conv.3.running_var": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost1.short_conv.3.running_var",
+      "shape": [
+        116
+      ]
+    },
+    "model.blocks.3.0.ghost1.short_conv.3.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost1.short_conv.3.weight",
+      "shape": [
+        116
+      ]
+    },
+    "model.blocks.3.0.ghost1.short_conv.4.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost1.short_conv.4.weight",
+      "shape": [
+        116,
+        1,
+        5,
+        1
+      ]
+    },
+    "model.blocks.3.0.ghost1.short_conv.5.bias": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost1.short_conv.5.bias",
+      "shape": [
+        116
+      ]
+    },
+    "model.blocks.3.0.ghost1.short_conv.5.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.3.0.ghost1.short_conv.5.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.3.0.ghost1.short_conv.5.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost1.short_conv.5.running_mean",
+      "shape": [
+        116
+      ]
+    },
+    "model.blocks.3.0.ghost1.short_conv.5.running_var": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost1.short_conv.5.running_var",
+      "shape": [
+        116
+      ]
+    },
+    "model.blocks.3.0.ghost1.short_conv.5.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost1.short_conv.5.weight",
+      "shape": [
+        116
+      ]
+    },
+    "model.blocks.3.0.ghost2.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost2.cheap_operation.0.weight",
+      "shape": [
+        32,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.blocks.3.0.ghost2.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost2.cheap_operation.1.bias",
+      "shape": [
+        32
+      ]
+    },
+    "model.blocks.3.0.ghost2.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.3.0.ghost2.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.3.0.ghost2.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost2.cheap_operation.1.running_mean",
+      "shape": [
+        32
+      ]
+    },
+    "model.blocks.3.0.ghost2.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost2.cheap_operation.1.running_var",
+      "shape": [
+        32
+      ]
+    },
+    "model.blocks.3.0.ghost2.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost2.cheap_operation.1.weight",
+      "shape": [
+        32
+      ]
+    },
+    "model.blocks.3.0.ghost2.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost2.primary_conv.0.weight",
+      "shape": [
+        32,
+        116,
+        1,
+        1
+      ]
+    },
+    "model.blocks.3.0.ghost2.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost2.primary_conv.1.bias",
+      "shape": [
+        32
+      ]
+    },
+    "model.blocks.3.0.ghost2.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.3.0.ghost2.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.3.0.ghost2.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost2.primary_conv.1.running_mean",
+      "shape": [
+        32
+      ]
+    },
+    "model.blocks.3.0.ghost2.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost2.primary_conv.1.running_var",
+      "shape": [
+        32
+      ]
+    },
+    "model.blocks.3.0.ghost2.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.0.ghost2.primary_conv.1.weight",
+      "shape": [
+        32
+      ]
+    },
+    "model.blocks.3.0.se.conv_expand.bias": {
+      "dtype": "F32",
+      "key": "blocks.3.0.se.conv_expand.bias",
+      "shape": [
+        116
+      ]
+    },
+    "model.blocks.3.0.se.conv_expand.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.0.se.conv_expand.weight",
+      "shape": [
+        116,
+        28,
+        1,
+        1
+      ]
+    },
+    "model.blocks.3.0.se.conv_reduce.bias": {
+      "dtype": "F32",
+      "key": "blocks.3.0.se.conv_reduce.bias",
+      "shape": [
+        28
+      ]
+    },
+    "model.blocks.3.0.se.conv_reduce.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.0.se.conv_reduce.weight",
+      "shape": [
+        28,
+        116,
+        1,
+        1
+      ]
+    },
+    "model.blocks.3.0.shortcut.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.0.shortcut.0.weight",
+      "shape": [
+        40,
+        1,
+        5,
+        5
+      ]
+    },
+    "model.blocks.3.0.shortcut.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.3.0.shortcut.1.bias",
+      "shape": [
+        40
+      ]
+    },
+    "model.blocks.3.0.shortcut.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.3.0.shortcut.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.3.0.shortcut.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.3.0.shortcut.1.running_mean",
+      "shape": [
+        40
+      ]
+    },
+    "model.blocks.3.0.shortcut.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.3.0.shortcut.1.running_var",
+      "shape": [
+        40
+      ]
+    },
+    "model.blocks.3.0.shortcut.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.0.shortcut.1.weight",
+      "shape": [
+        40
+      ]
+    },
+    "model.blocks.3.0.shortcut.2.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.0.shortcut.2.weight",
+      "shape": [
+        64,
+        40,
+        1,
+        1
+      ]
+    },
+    "model.blocks.3.0.shortcut.3.bias": {
+      "dtype": "F32",
+      "key": "blocks.3.0.shortcut.3.bias",
+      "shape": [
+        64
+      ]
+    },
+    "model.blocks.3.0.shortcut.3.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.3.0.shortcut.3.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.3.0.shortcut.3.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.3.0.shortcut.3.running_mean",
+      "shape": [
+        64
+      ]
+    },
+    "model.blocks.3.0.shortcut.3.running_var": {
+      "dtype": "F32",
+      "key": "blocks.3.0.shortcut.3.running_var",
+      "shape": [
+        64
+      ]
+    },
+    "model.blocks.3.0.shortcut.3.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.0.shortcut.3.weight",
+      "shape": [
+        64
+      ]
+    },
+    "model.blocks.4.0.ghost1.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost1.cheap_operation.0.weight",
+      "shape": [
+        96,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.blocks.4.0.ghost1.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost1.cheap_operation.1.bias",
+      "shape": [
+        96
+      ]
+    },
+    "model.blocks.4.0.ghost1.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.4.0.ghost1.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.4.0.ghost1.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost1.cheap_operation.1.running_mean",
+      "shape": [
+        96
+      ]
+    },
+    "model.blocks.4.0.ghost1.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost1.cheap_operation.1.running_var",
+      "shape": [
+        96
+      ]
+    },
+    "model.blocks.4.0.ghost1.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost1.cheap_operation.1.weight",
+      "shape": [
+        96
+      ]
+    },
+    "model.blocks.4.0.ghost1.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost1.primary_conv.0.weight",
+      "shape": [
+        96,
+        64,
+        1,
+        1
+      ]
+    },
+    "model.blocks.4.0.ghost1.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost1.primary_conv.1.bias",
+      "shape": [
+        96
+      ]
+    },
+    "model.blocks.4.0.ghost1.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.4.0.ghost1.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.4.0.ghost1.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost1.primary_conv.1.running_mean",
+      "shape": [
+        96
+      ]
+    },
+    "model.blocks.4.0.ghost1.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost1.primary_conv.1.running_var",
+      "shape": [
+        96
+      ]
+    },
+    "model.blocks.4.0.ghost1.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost1.primary_conv.1.weight",
+      "shape": [
+        96
+      ]
+    },
+    "model.blocks.4.0.ghost1.short_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost1.short_conv.0.weight",
+      "shape": [
+        192,
+        64,
+        1,
+        1
+      ]
+    },
+    "model.blocks.4.0.ghost1.short_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost1.short_conv.1.bias",
+      "shape": [
+        192
+      ]
+    },
+    "model.blocks.4.0.ghost1.short_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.4.0.ghost1.short_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.4.0.ghost1.short_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost1.short_conv.1.running_mean",
+      "shape": [
+        192
+      ]
+    },
+    "model.blocks.4.0.ghost1.short_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost1.short_conv.1.running_var",
+      "shape": [
+        192
+      ]
+    },
+    "model.blocks.4.0.ghost1.short_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost1.short_conv.1.weight",
+      "shape": [
+        192
+      ]
+    },
+    "model.blocks.4.0.ghost1.short_conv.2.weight": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost1.short_conv.2.weight",
+      "shape": [
+        192,
+        1,
+        1,
+        5
+      ]
+    },
+    "model.blocks.4.0.ghost1.short_conv.3.bias": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost1.short_conv.3.bias",
+      "shape": [
+        192
+      ]
+    },
+    "model.blocks.4.0.ghost1.short_conv.3.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.4.0.ghost1.short_conv.3.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.4.0.ghost1.short_conv.3.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost1.short_conv.3.running_mean",
+      "shape": [
+        192
+      ]
+    },
+    "model.blocks.4.0.ghost1.short_conv.3.running_var": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost1.short_conv.3.running_var",
+      "shape": [
+        192
+      ]
+    },
+    "model.blocks.4.0.ghost1.short_conv.3.weight": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost1.short_conv.3.weight",
+      "shape": [
+        192
+      ]
+    },
+    "model.blocks.4.0.ghost1.short_conv.4.weight": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost1.short_conv.4.weight",
+      "shape": [
+        192,
+        1,
+        5,
+        1
+      ]
+    },
+    "model.blocks.4.0.ghost1.short_conv.5.bias": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost1.short_conv.5.bias",
+      "shape": [
+        192
+      ]
+    },
+    "model.blocks.4.0.ghost1.short_conv.5.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.4.0.ghost1.short_conv.5.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.4.0.ghost1.short_conv.5.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost1.short_conv.5.running_mean",
+      "shape": [
+        192
+      ]
+    },
+    "model.blocks.4.0.ghost1.short_conv.5.running_var": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost1.short_conv.5.running_var",
+      "shape": [
+        192
+      ]
+    },
+    "model.blocks.4.0.ghost1.short_conv.5.weight": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost1.short_conv.5.weight",
+      "shape": [
+        192
+      ]
+    },
+    "model.blocks.4.0.ghost2.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost2.cheap_operation.0.weight",
+      "shape": [
+        32,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.blocks.4.0.ghost2.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost2.cheap_operation.1.bias",
+      "shape": [
+        32
+      ]
+    },
+    "model.blocks.4.0.ghost2.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.4.0.ghost2.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.4.0.ghost2.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost2.cheap_operation.1.running_mean",
+      "shape": [
+        32
+      ]
+    },
+    "model.blocks.4.0.ghost2.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost2.cheap_operation.1.running_var",
+      "shape": [
+        32
+      ]
+    },
+    "model.blocks.4.0.ghost2.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost2.cheap_operation.1.weight",
+      "shape": [
+        32
+      ]
+    },
+    "model.blocks.4.0.ghost2.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost2.primary_conv.0.weight",
+      "shape": [
+        32,
+        192,
+        1,
+        1
+      ]
+    },
+    "model.blocks.4.0.ghost2.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost2.primary_conv.1.bias",
+      "shape": [
+        32
+      ]
+    },
+    "model.blocks.4.0.ghost2.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.4.0.ghost2.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.4.0.ghost2.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost2.primary_conv.1.running_mean",
+      "shape": [
+        32
+      ]
+    },
+    "model.blocks.4.0.ghost2.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost2.primary_conv.1.running_var",
+      "shape": [
+        32
+      ]
+    },
+    "model.blocks.4.0.ghost2.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.4.0.ghost2.primary_conv.1.weight",
+      "shape": [
+        32
+      ]
+    },
+    "model.blocks.4.0.se.conv_expand.bias": {
+      "dtype": "F32",
+      "key": "blocks.4.0.se.conv_expand.bias",
+      "shape": [
+        192
+      ]
+    },
+    "model.blocks.4.0.se.conv_expand.weight": {
+      "dtype": "F32",
+      "key": "blocks.4.0.se.conv_expand.weight",
+      "shape": [
+        192,
+        48,
+        1,
+        1
+      ]
+    },
+    "model.blocks.4.0.se.conv_reduce.bias": {
+      "dtype": "F32",
+      "key": "blocks.4.0.se.conv_reduce.bias",
+      "shape": [
+        48
+      ]
+    },
+    "model.blocks.4.0.se.conv_reduce.weight": {
+      "dtype": "F32",
+      "key": "blocks.4.0.se.conv_reduce.weight",
+      "shape": [
+        48,
+        192,
+        1,
+        1
+      ]
+    },
+    "model.blocks.5.0.bn_dw.bias": {
+      "dtype": "F32",
+      "key": "blocks.5.0.bn_dw.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.5.0.bn_dw.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.5.0.bn_dw.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.5.0.bn_dw.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.5.0.bn_dw.running_mean",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.5.0.bn_dw.running_var": {
+      "dtype": "F32",
+      "key": "blocks.5.0.bn_dw.running_var",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.5.0.bn_dw.weight": {
+      "dtype": "F32",
+      "key": "blocks.5.0.bn_dw.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.5.0.conv_dw.weight": {
+      "dtype": "F32",
+      "key": "blocks.5.0.conv_dw.weight",
+      "shape": [
+        384,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.blocks.5.0.ghost1.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost1.cheap_operation.0.weight",
+      "shape": [
+        192,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.blocks.5.0.ghost1.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost1.cheap_operation.1.bias",
+      "shape": [
+        192
+      ]
+    },
+    "model.blocks.5.0.ghost1.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.5.0.ghost1.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.5.0.ghost1.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost1.cheap_operation.1.running_mean",
+      "shape": [
+        192
+      ]
+    },
+    "model.blocks.5.0.ghost1.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost1.cheap_operation.1.running_var",
+      "shape": [
+        192
+      ]
+    },
+    "model.blocks.5.0.ghost1.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost1.cheap_operation.1.weight",
+      "shape": [
+        192
+      ]
+    },
+    "model.blocks.5.0.ghost1.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost1.primary_conv.0.weight",
+      "shape": [
+        192,
+        64,
+        1,
+        1
+      ]
+    },
+    "model.blocks.5.0.ghost1.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost1.primary_conv.1.bias",
+      "shape": [
+        192
+      ]
+    },
+    "model.blocks.5.0.ghost1.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.5.0.ghost1.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.5.0.ghost1.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost1.primary_conv.1.running_mean",
+      "shape": [
+        192
+      ]
+    },
+    "model.blocks.5.0.ghost1.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost1.primary_conv.1.running_var",
+      "shape": [
+        192
+      ]
+    },
+    "model.blocks.5.0.ghost1.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost1.primary_conv.1.weight",
+      "shape": [
+        192
+      ]
+    },
+    "model.blocks.5.0.ghost1.short_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost1.short_conv.0.weight",
+      "shape": [
+        384,
+        64,
+        1,
+        1
+      ]
+    },
+    "model.blocks.5.0.ghost1.short_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost1.short_conv.1.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.5.0.ghost1.short_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.5.0.ghost1.short_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.5.0.ghost1.short_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost1.short_conv.1.running_mean",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.5.0.ghost1.short_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost1.short_conv.1.running_var",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.5.0.ghost1.short_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost1.short_conv.1.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.5.0.ghost1.short_conv.2.weight": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost1.short_conv.2.weight",
+      "shape": [
+        384,
+        1,
+        1,
+        5
+      ]
+    },
+    "model.blocks.5.0.ghost1.short_conv.3.bias": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost1.short_conv.3.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.5.0.ghost1.short_conv.3.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.5.0.ghost1.short_conv.3.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.5.0.ghost1.short_conv.3.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost1.short_conv.3.running_mean",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.5.0.ghost1.short_conv.3.running_var": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost1.short_conv.3.running_var",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.5.0.ghost1.short_conv.3.weight": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost1.short_conv.3.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.5.0.ghost1.short_conv.4.weight": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost1.short_conv.4.weight",
+      "shape": [
+        384,
+        1,
+        5,
+        1
+      ]
+    },
+    "model.blocks.5.0.ghost1.short_conv.5.bias": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost1.short_conv.5.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.5.0.ghost1.short_conv.5.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.5.0.ghost1.short_conv.5.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.5.0.ghost1.short_conv.5.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost1.short_conv.5.running_mean",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.5.0.ghost1.short_conv.5.running_var": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost1.short_conv.5.running_var",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.5.0.ghost1.short_conv.5.weight": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost1.short_conv.5.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.5.0.ghost2.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost2.cheap_operation.0.weight",
+      "shape": [
+        64,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.blocks.5.0.ghost2.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost2.cheap_operation.1.bias",
+      "shape": [
+        64
+      ]
+    },
+    "model.blocks.5.0.ghost2.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.5.0.ghost2.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.5.0.ghost2.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost2.cheap_operation.1.running_mean",
+      "shape": [
+        64
+      ]
+    },
+    "model.blocks.5.0.ghost2.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost2.cheap_operation.1.running_var",
+      "shape": [
+        64
+      ]
+    },
+    "model.blocks.5.0.ghost2.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost2.cheap_operation.1.weight",
+      "shape": [
+        64
+      ]
+    },
+    "model.blocks.5.0.ghost2.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost2.primary_conv.0.weight",
+      "shape": [
+        64,
+        384,
+        1,
+        1
+      ]
+    },
+    "model.blocks.5.0.ghost2.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost2.primary_conv.1.bias",
+      "shape": [
+        64
+      ]
+    },
+    "model.blocks.5.0.ghost2.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.5.0.ghost2.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.5.0.ghost2.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost2.primary_conv.1.running_mean",
+      "shape": [
+        64
+      ]
+    },
+    "model.blocks.5.0.ghost2.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost2.primary_conv.1.running_var",
+      "shape": [
+        64
+      ]
+    },
+    "model.blocks.5.0.ghost2.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.5.0.ghost2.primary_conv.1.weight",
+      "shape": [
+        64
+      ]
+    },
+    "model.blocks.5.0.shortcut.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.5.0.shortcut.0.weight",
+      "shape": [
+        64,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.blocks.5.0.shortcut.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.5.0.shortcut.1.bias",
+      "shape": [
+        64
+      ]
+    },
+    "model.blocks.5.0.shortcut.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.5.0.shortcut.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.5.0.shortcut.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.5.0.shortcut.1.running_mean",
+      "shape": [
+        64
+      ]
+    },
+    "model.blocks.5.0.shortcut.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.5.0.shortcut.1.running_var",
+      "shape": [
+        64
+      ]
+    },
+    "model.blocks.5.0.shortcut.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.5.0.shortcut.1.weight",
+      "shape": [
+        64
+      ]
+    },
+    "model.blocks.5.0.shortcut.2.weight": {
+      "dtype": "F32",
+      "key": "blocks.5.0.shortcut.2.weight",
+      "shape": [
+        128,
+        64,
+        1,
+        1
+      ]
+    },
+    "model.blocks.5.0.shortcut.3.bias": {
+      "dtype": "F32",
+      "key": "blocks.5.0.shortcut.3.bias",
+      "shape": [
+        128
+      ]
+    },
+    "model.blocks.5.0.shortcut.3.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.5.0.shortcut.3.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.5.0.shortcut.3.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.5.0.shortcut.3.running_mean",
+      "shape": [
+        128
+      ]
+    },
+    "model.blocks.5.0.shortcut.3.running_var": {
+      "dtype": "F32",
+      "key": "blocks.5.0.shortcut.3.running_var",
+      "shape": [
+        128
+      ]
+    },
+    "model.blocks.5.0.shortcut.3.weight": {
+      "dtype": "F32",
+      "key": "blocks.5.0.shortcut.3.weight",
+      "shape": [
+        128
+      ]
+    },
+    "model.blocks.6.0.ghost1.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost1.cheap_operation.0.weight",
+      "shape": [
+        160,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.blocks.6.0.ghost1.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost1.cheap_operation.1.bias",
+      "shape": [
+        160
+      ]
+    },
+    "model.blocks.6.0.ghost1.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.0.ghost1.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.6.0.ghost1.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost1.cheap_operation.1.running_mean",
+      "shape": [
+        160
+      ]
+    },
+    "model.blocks.6.0.ghost1.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost1.cheap_operation.1.running_var",
+      "shape": [
+        160
+      ]
+    },
+    "model.blocks.6.0.ghost1.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost1.cheap_operation.1.weight",
+      "shape": [
+        160
+      ]
+    },
+    "model.blocks.6.0.ghost1.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost1.primary_conv.0.weight",
+      "shape": [
+        160,
+        128,
+        1,
+        1
+      ]
+    },
+    "model.blocks.6.0.ghost1.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost1.primary_conv.1.bias",
+      "shape": [
+        160
+      ]
+    },
+    "model.blocks.6.0.ghost1.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.0.ghost1.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.6.0.ghost1.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost1.primary_conv.1.running_mean",
+      "shape": [
+        160
+      ]
+    },
+    "model.blocks.6.0.ghost1.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost1.primary_conv.1.running_var",
+      "shape": [
+        160
+      ]
+    },
+    "model.blocks.6.0.ghost1.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost1.primary_conv.1.weight",
+      "shape": [
+        160
+      ]
+    },
+    "model.blocks.6.0.ghost1.short_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost1.short_conv.0.weight",
+      "shape": [
+        320,
+        128,
+        1,
+        1
+      ]
+    },
+    "model.blocks.6.0.ghost1.short_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost1.short_conv.1.bias",
+      "shape": [
+        320
+      ]
+    },
+    "model.blocks.6.0.ghost1.short_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.0.ghost1.short_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.6.0.ghost1.short_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost1.short_conv.1.running_mean",
+      "shape": [
+        320
+      ]
+    },
+    "model.blocks.6.0.ghost1.short_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost1.short_conv.1.running_var",
+      "shape": [
+        320
+      ]
+    },
+    "model.blocks.6.0.ghost1.short_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost1.short_conv.1.weight",
+      "shape": [
+        320
+      ]
+    },
+    "model.blocks.6.0.ghost1.short_conv.2.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost1.short_conv.2.weight",
+      "shape": [
+        320,
+        1,
+        1,
+        5
+      ]
+    },
+    "model.blocks.6.0.ghost1.short_conv.3.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost1.short_conv.3.bias",
+      "shape": [
+        320
+      ]
+    },
+    "model.blocks.6.0.ghost1.short_conv.3.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.0.ghost1.short_conv.3.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.6.0.ghost1.short_conv.3.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost1.short_conv.3.running_mean",
+      "shape": [
+        320
+      ]
+    },
+    "model.blocks.6.0.ghost1.short_conv.3.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost1.short_conv.3.running_var",
+      "shape": [
+        320
+      ]
+    },
+    "model.blocks.6.0.ghost1.short_conv.3.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost1.short_conv.3.weight",
+      "shape": [
+        320
+      ]
+    },
+    "model.blocks.6.0.ghost1.short_conv.4.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost1.short_conv.4.weight",
+      "shape": [
+        320,
+        1,
+        5,
+        1
+      ]
+    },
+    "model.blocks.6.0.ghost1.short_conv.5.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost1.short_conv.5.bias",
+      "shape": [
+        320
+      ]
+    },
+    "model.blocks.6.0.ghost1.short_conv.5.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.0.ghost1.short_conv.5.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.6.0.ghost1.short_conv.5.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost1.short_conv.5.running_mean",
+      "shape": [
+        320
+      ]
+    },
+    "model.blocks.6.0.ghost1.short_conv.5.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost1.short_conv.5.running_var",
+      "shape": [
+        320
+      ]
+    },
+    "model.blocks.6.0.ghost1.short_conv.5.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost1.short_conv.5.weight",
+      "shape": [
+        320
+      ]
+    },
+    "model.blocks.6.0.ghost2.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost2.cheap_operation.0.weight",
+      "shape": [
+        64,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.blocks.6.0.ghost2.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost2.cheap_operation.1.bias",
+      "shape": [
+        64
+      ]
+    },
+    "model.blocks.6.0.ghost2.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.0.ghost2.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.6.0.ghost2.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost2.cheap_operation.1.running_mean",
+      "shape": [
+        64
+      ]
+    },
+    "model.blocks.6.0.ghost2.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost2.cheap_operation.1.running_var",
+      "shape": [
+        64
+      ]
+    },
+    "model.blocks.6.0.ghost2.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost2.cheap_operation.1.weight",
+      "shape": [
+        64
+      ]
+    },
+    "model.blocks.6.0.ghost2.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost2.primary_conv.0.weight",
+      "shape": [
+        64,
+        320,
+        1,
+        1
+      ]
+    },
+    "model.blocks.6.0.ghost2.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost2.primary_conv.1.bias",
+      "shape": [
+        64
+      ]
+    },
+    "model.blocks.6.0.ghost2.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.0.ghost2.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.6.0.ghost2.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost2.primary_conv.1.running_mean",
+      "shape": [
+        64
+      ]
+    },
+    "model.blocks.6.0.ghost2.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost2.primary_conv.1.running_var",
+      "shape": [
+        64
+      ]
+    },
+    "model.blocks.6.0.ghost2.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.0.ghost2.primary_conv.1.weight",
+      "shape": [
+        64
+      ]
+    },
+    "model.blocks.6.1.ghost1.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost1.cheap_operation.0.weight",
+      "shape": [
+        148,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.blocks.6.1.ghost1.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost1.cheap_operation.1.bias",
+      "shape": [
+        148
+      ]
+    },
+    "model.blocks.6.1.ghost1.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.1.ghost1.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.6.1.ghost1.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost1.cheap_operation.1.running_mean",
+      "shape": [
+        148
+      ]
+    },
+    "model.blocks.6.1.ghost1.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost1.cheap_operation.1.running_var",
+      "shape": [
+        148
+      ]
+    },
+    "model.blocks.6.1.ghost1.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost1.cheap_operation.1.weight",
+      "shape": [
+        148
+      ]
+    },
+    "model.blocks.6.1.ghost1.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost1.primary_conv.0.weight",
+      "shape": [
+        148,
+        128,
+        1,
+        1
+      ]
+    },
+    "model.blocks.6.1.ghost1.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost1.primary_conv.1.bias",
+      "shape": [
+        148
+      ]
+    },
+    "model.blocks.6.1.ghost1.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.1.ghost1.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.6.1.ghost1.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost1.primary_conv.1.running_mean",
+      "shape": [
+        148
+      ]
+    },
+    "model.blocks.6.1.ghost1.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost1.primary_conv.1.running_var",
+      "shape": [
+        148
+      ]
+    },
+    "model.blocks.6.1.ghost1.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost1.primary_conv.1.weight",
+      "shape": [
+        148
+      ]
+    },
+    "model.blocks.6.1.ghost1.short_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost1.short_conv.0.weight",
+      "shape": [
+        296,
+        128,
+        1,
+        1
+      ]
+    },
+    "model.blocks.6.1.ghost1.short_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost1.short_conv.1.bias",
+      "shape": [
+        296
+      ]
+    },
+    "model.blocks.6.1.ghost1.short_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.1.ghost1.short_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.6.1.ghost1.short_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost1.short_conv.1.running_mean",
+      "shape": [
+        296
+      ]
+    },
+    "model.blocks.6.1.ghost1.short_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost1.short_conv.1.running_var",
+      "shape": [
+        296
+      ]
+    },
+    "model.blocks.6.1.ghost1.short_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost1.short_conv.1.weight",
+      "shape": [
+        296
+      ]
+    },
+    "model.blocks.6.1.ghost1.short_conv.2.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost1.short_conv.2.weight",
+      "shape": [
+        296,
+        1,
+        1,
+        5
+      ]
+    },
+    "model.blocks.6.1.ghost1.short_conv.3.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost1.short_conv.3.bias",
+      "shape": [
+        296
+      ]
+    },
+    "model.blocks.6.1.ghost1.short_conv.3.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.1.ghost1.short_conv.3.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.6.1.ghost1.short_conv.3.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost1.short_conv.3.running_mean",
+      "shape": [
+        296
+      ]
+    },
+    "model.blocks.6.1.ghost1.short_conv.3.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost1.short_conv.3.running_var",
+      "shape": [
+        296
+      ]
+    },
+    "model.blocks.6.1.ghost1.short_conv.3.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost1.short_conv.3.weight",
+      "shape": [
+        296
+      ]
+    },
+    "model.blocks.6.1.ghost1.short_conv.4.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost1.short_conv.4.weight",
+      "shape": [
+        296,
+        1,
+        5,
+        1
+      ]
+    },
+    "model.blocks.6.1.ghost1.short_conv.5.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost1.short_conv.5.bias",
+      "shape": [
+        296
+      ]
+    },
+    "model.blocks.6.1.ghost1.short_conv.5.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.1.ghost1.short_conv.5.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.6.1.ghost1.short_conv.5.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost1.short_conv.5.running_mean",
+      "shape": [
+        296
+      ]
+    },
+    "model.blocks.6.1.ghost1.short_conv.5.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost1.short_conv.5.running_var",
+      "shape": [
+        296
+      ]
+    },
+    "model.blocks.6.1.ghost1.short_conv.5.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost1.short_conv.5.weight",
+      "shape": [
+        296
+      ]
+    },
+    "model.blocks.6.1.ghost2.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost2.cheap_operation.0.weight",
+      "shape": [
+        64,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.blocks.6.1.ghost2.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost2.cheap_operation.1.bias",
+      "shape": [
+        64
+      ]
+    },
+    "model.blocks.6.1.ghost2.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.1.ghost2.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.6.1.ghost2.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost2.cheap_operation.1.running_mean",
+      "shape": [
+        64
+      ]
+    },
+    "model.blocks.6.1.ghost2.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost2.cheap_operation.1.running_var",
+      "shape": [
+        64
+      ]
+    },
+    "model.blocks.6.1.ghost2.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost2.cheap_operation.1.weight",
+      "shape": [
+        64
+      ]
+    },
+    "model.blocks.6.1.ghost2.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost2.primary_conv.0.weight",
+      "shape": [
+        64,
+        296,
+        1,
+        1
+      ]
+    },
+    "model.blocks.6.1.ghost2.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost2.primary_conv.1.bias",
+      "shape": [
+        64
+      ]
+    },
+    "model.blocks.6.1.ghost2.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.1.ghost2.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.6.1.ghost2.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost2.primary_conv.1.running_mean",
+      "shape": [
+        64
+      ]
+    },
+    "model.blocks.6.1.ghost2.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost2.primary_conv.1.running_var",
+      "shape": [
+        64
+      ]
+    },
+    "model.blocks.6.1.ghost2.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.1.ghost2.primary_conv.1.weight",
+      "shape": [
+        64
+      ]
+    },
+    "model.blocks.6.2.ghost1.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost1.cheap_operation.0.weight",
+      "shape": [
+        148,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.blocks.6.2.ghost1.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost1.cheap_operation.1.bias",
+      "shape": [
+        148
+      ]
+    },
+    "model.blocks.6.2.ghost1.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.2.ghost1.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.6.2.ghost1.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost1.cheap_operation.1.running_mean",
+      "shape": [
+        148
+      ]
+    },
+    "model.blocks.6.2.ghost1.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost1.cheap_operation.1.running_var",
+      "shape": [
+        148
+      ]
+    },
+    "model.blocks.6.2.ghost1.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost1.cheap_operation.1.weight",
+      "shape": [
+        148
+      ]
+    },
+    "model.blocks.6.2.ghost1.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost1.primary_conv.0.weight",
+      "shape": [
+        148,
+        128,
+        1,
+        1
+      ]
+    },
+    "model.blocks.6.2.ghost1.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost1.primary_conv.1.bias",
+      "shape": [
+        148
+      ]
+    },
+    "model.blocks.6.2.ghost1.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.2.ghost1.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.6.2.ghost1.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost1.primary_conv.1.running_mean",
+      "shape": [
+        148
+      ]
+    },
+    "model.blocks.6.2.ghost1.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost1.primary_conv.1.running_var",
+      "shape": [
+        148
+      ]
+    },
+    "model.blocks.6.2.ghost1.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost1.primary_conv.1.weight",
+      "shape": [
+        148
+      ]
+    },
+    "model.blocks.6.2.ghost1.short_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost1.short_conv.0.weight",
+      "shape": [
+        296,
+        128,
+        1,
+        1
+      ]
+    },
+    "model.blocks.6.2.ghost1.short_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost1.short_conv.1.bias",
+      "shape": [
+        296
+      ]
+    },
+    "model.blocks.6.2.ghost1.short_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.2.ghost1.short_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.6.2.ghost1.short_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost1.short_conv.1.running_mean",
+      "shape": [
+        296
+      ]
+    },
+    "model.blocks.6.2.ghost1.short_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost1.short_conv.1.running_var",
+      "shape": [
+        296
+      ]
+    },
+    "model.blocks.6.2.ghost1.short_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost1.short_conv.1.weight",
+      "shape": [
+        296
+      ]
+    },
+    "model.blocks.6.2.ghost1.short_conv.2.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost1.short_conv.2.weight",
+      "shape": [
+        296,
+        1,
+        1,
+        5
+      ]
+    },
+    "model.blocks.6.2.ghost1.short_conv.3.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost1.short_conv.3.bias",
+      "shape": [
+        296
+      ]
+    },
+    "model.blocks.6.2.ghost1.short_conv.3.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.2.ghost1.short_conv.3.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.6.2.ghost1.short_conv.3.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost1.short_conv.3.running_mean",
+      "shape": [
+        296
+      ]
+    },
+    "model.blocks.6.2.ghost1.short_conv.3.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost1.short_conv.3.running_var",
+      "shape": [
+        296
+      ]
+    },
+    "model.blocks.6.2.ghost1.short_conv.3.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost1.short_conv.3.weight",
+      "shape": [
+        296
+      ]
+    },
+    "model.blocks.6.2.ghost1.short_conv.4.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost1.short_conv.4.weight",
+      "shape": [
+        296,
+        1,
+        5,
+        1
+      ]
+    },
+    "model.blocks.6.2.ghost1.short_conv.5.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost1.short_conv.5.bias",
+      "shape": [
+        296
+      ]
+    },
+    "model.blocks.6.2.ghost1.short_conv.5.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.2.ghost1.short_conv.5.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.6.2.ghost1.short_conv.5.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost1.short_conv.5.running_mean",
+      "shape": [
+        296
+      ]
+    },
+    "model.blocks.6.2.ghost1.short_conv.5.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost1.short_conv.5.running_var",
+      "shape": [
+        296
+      ]
+    },
+    "model.blocks.6.2.ghost1.short_conv.5.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost1.short_conv.5.weight",
+      "shape": [
+        296
+      ]
+    },
+    "model.blocks.6.2.ghost2.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost2.cheap_operation.0.weight",
+      "shape": [
+        64,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.blocks.6.2.ghost2.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost2.cheap_operation.1.bias",
+      "shape": [
+        64
+      ]
+    },
+    "model.blocks.6.2.ghost2.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.2.ghost2.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.6.2.ghost2.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost2.cheap_operation.1.running_mean",
+      "shape": [
+        64
+      ]
+    },
+    "model.blocks.6.2.ghost2.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost2.cheap_operation.1.running_var",
+      "shape": [
+        64
+      ]
+    },
+    "model.blocks.6.2.ghost2.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost2.cheap_operation.1.weight",
+      "shape": [
+        64
+      ]
+    },
+    "model.blocks.6.2.ghost2.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost2.primary_conv.0.weight",
+      "shape": [
+        64,
+        296,
+        1,
+        1
+      ]
+    },
+    "model.blocks.6.2.ghost2.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost2.primary_conv.1.bias",
+      "shape": [
+        64
+      ]
+    },
+    "model.blocks.6.2.ghost2.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.2.ghost2.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.6.2.ghost2.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost2.primary_conv.1.running_mean",
+      "shape": [
+        64
+      ]
+    },
+    "model.blocks.6.2.ghost2.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost2.primary_conv.1.running_var",
+      "shape": [
+        64
+      ]
+    },
+    "model.blocks.6.2.ghost2.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.2.ghost2.primary_conv.1.weight",
+      "shape": [
+        64
+      ]
+    },
+    "model.blocks.6.3.ghost1.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost1.cheap_operation.0.weight",
+      "shape": [
+        384,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.blocks.6.3.ghost1.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost1.cheap_operation.1.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.6.3.ghost1.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.3.ghost1.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.6.3.ghost1.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost1.cheap_operation.1.running_mean",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.6.3.ghost1.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost1.cheap_operation.1.running_var",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.6.3.ghost1.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost1.cheap_operation.1.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.6.3.ghost1.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost1.primary_conv.0.weight",
+      "shape": [
+        384,
+        128,
+        1,
+        1
+      ]
+    },
+    "model.blocks.6.3.ghost1.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost1.primary_conv.1.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.6.3.ghost1.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.3.ghost1.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.6.3.ghost1.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost1.primary_conv.1.running_mean",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.6.3.ghost1.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost1.primary_conv.1.running_var",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.6.3.ghost1.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost1.primary_conv.1.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.6.3.ghost1.short_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost1.short_conv.0.weight",
+      "shape": [
+        768,
+        128,
+        1,
+        1
+      ]
+    },
+    "model.blocks.6.3.ghost1.short_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost1.short_conv.1.bias",
+      "shape": [
+        768
+      ]
+    },
+    "model.blocks.6.3.ghost1.short_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.3.ghost1.short_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.6.3.ghost1.short_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost1.short_conv.1.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "model.blocks.6.3.ghost1.short_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost1.short_conv.1.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "model.blocks.6.3.ghost1.short_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost1.short_conv.1.weight",
+      "shape": [
+        768
+      ]
+    },
+    "model.blocks.6.3.ghost1.short_conv.2.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost1.short_conv.2.weight",
+      "shape": [
+        768,
+        1,
+        1,
+        5
+      ]
+    },
+    "model.blocks.6.3.ghost1.short_conv.3.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost1.short_conv.3.bias",
+      "shape": [
+        768
+      ]
+    },
+    "model.blocks.6.3.ghost1.short_conv.3.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.3.ghost1.short_conv.3.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.6.3.ghost1.short_conv.3.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost1.short_conv.3.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "model.blocks.6.3.ghost1.short_conv.3.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost1.short_conv.3.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "model.blocks.6.3.ghost1.short_conv.3.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost1.short_conv.3.weight",
+      "shape": [
+        768
+      ]
+    },
+    "model.blocks.6.3.ghost1.short_conv.4.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost1.short_conv.4.weight",
+      "shape": [
+        768,
+        1,
+        5,
+        1
+      ]
+    },
+    "model.blocks.6.3.ghost1.short_conv.5.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost1.short_conv.5.bias",
+      "shape": [
+        768
+      ]
+    },
+    "model.blocks.6.3.ghost1.short_conv.5.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.3.ghost1.short_conv.5.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.6.3.ghost1.short_conv.5.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost1.short_conv.5.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "model.blocks.6.3.ghost1.short_conv.5.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost1.short_conv.5.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "model.blocks.6.3.ghost1.short_conv.5.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost1.short_conv.5.weight",
+      "shape": [
+        768
+      ]
+    },
+    "model.blocks.6.3.ghost2.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost2.cheap_operation.0.weight",
+      "shape": [
+        90,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.blocks.6.3.ghost2.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost2.cheap_operation.1.bias",
+      "shape": [
+        90
+      ]
+    },
+    "model.blocks.6.3.ghost2.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.3.ghost2.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.6.3.ghost2.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost2.cheap_operation.1.running_mean",
+      "shape": [
+        90
+      ]
+    },
+    "model.blocks.6.3.ghost2.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost2.cheap_operation.1.running_var",
+      "shape": [
+        90
+      ]
+    },
+    "model.blocks.6.3.ghost2.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost2.cheap_operation.1.weight",
+      "shape": [
+        90
+      ]
+    },
+    "model.blocks.6.3.ghost2.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost2.primary_conv.0.weight",
+      "shape": [
+        90,
+        768,
+        1,
+        1
+      ]
+    },
+    "model.blocks.6.3.ghost2.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost2.primary_conv.1.bias",
+      "shape": [
+        90
+      ]
+    },
+    "model.blocks.6.3.ghost2.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.3.ghost2.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.6.3.ghost2.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost2.primary_conv.1.running_mean",
+      "shape": [
+        90
+      ]
+    },
+    "model.blocks.6.3.ghost2.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost2.primary_conv.1.running_var",
+      "shape": [
+        90
+      ]
+    },
+    "model.blocks.6.3.ghost2.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.3.ghost2.primary_conv.1.weight",
+      "shape": [
+        90
+      ]
+    },
+    "model.blocks.6.3.se.conv_expand.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.3.se.conv_expand.bias",
+      "shape": [
+        768
+      ]
+    },
+    "model.blocks.6.3.se.conv_expand.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.3.se.conv_expand.weight",
+      "shape": [
+        768,
+        192,
+        1,
+        1
+      ]
+    },
+    "model.blocks.6.3.se.conv_reduce.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.3.se.conv_reduce.bias",
+      "shape": [
+        192
+      ]
+    },
+    "model.blocks.6.3.se.conv_reduce.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.3.se.conv_reduce.weight",
+      "shape": [
+        192,
+        768,
+        1,
+        1
+      ]
+    },
+    "model.blocks.6.3.shortcut.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.3.shortcut.0.weight",
+      "shape": [
+        128,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.blocks.6.3.shortcut.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.3.shortcut.1.bias",
+      "shape": [
+        128
+      ]
+    },
+    "model.blocks.6.3.shortcut.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.3.shortcut.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.6.3.shortcut.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.3.shortcut.1.running_mean",
+      "shape": [
+        128
+      ]
+    },
+    "model.blocks.6.3.shortcut.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.3.shortcut.1.running_var",
+      "shape": [
+        128
+      ]
+    },
+    "model.blocks.6.3.shortcut.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.3.shortcut.1.weight",
+      "shape": [
+        128
+      ]
+    },
+    "model.blocks.6.3.shortcut.2.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.3.shortcut.2.weight",
+      "shape": [
+        180,
+        128,
+        1,
+        1
+      ]
+    },
+    "model.blocks.6.3.shortcut.3.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.3.shortcut.3.bias",
+      "shape": [
+        180
+      ]
+    },
+    "model.blocks.6.3.shortcut.3.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.3.shortcut.3.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.6.3.shortcut.3.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.3.shortcut.3.running_mean",
+      "shape": [
+        180
+      ]
+    },
+    "model.blocks.6.3.shortcut.3.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.3.shortcut.3.running_var",
+      "shape": [
+        180
+      ]
+    },
+    "model.blocks.6.3.shortcut.3.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.3.shortcut.3.weight",
+      "shape": [
+        180
+      ]
+    },
+    "model.blocks.6.4.ghost1.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost1.cheap_operation.0.weight",
+      "shape": [
+        538,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.blocks.6.4.ghost1.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost1.cheap_operation.1.bias",
+      "shape": [
+        538
+      ]
+    },
+    "model.blocks.6.4.ghost1.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.4.ghost1.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.6.4.ghost1.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost1.cheap_operation.1.running_mean",
+      "shape": [
+        538
+      ]
+    },
+    "model.blocks.6.4.ghost1.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost1.cheap_operation.1.running_var",
+      "shape": [
+        538
+      ]
+    },
+    "model.blocks.6.4.ghost1.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost1.cheap_operation.1.weight",
+      "shape": [
+        538
+      ]
+    },
+    "model.blocks.6.4.ghost1.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost1.primary_conv.0.weight",
+      "shape": [
+        538,
+        180,
+        1,
+        1
+      ]
+    },
+    "model.blocks.6.4.ghost1.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost1.primary_conv.1.bias",
+      "shape": [
+        538
+      ]
+    },
+    "model.blocks.6.4.ghost1.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.4.ghost1.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.6.4.ghost1.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost1.primary_conv.1.running_mean",
+      "shape": [
+        538
+      ]
+    },
+    "model.blocks.6.4.ghost1.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost1.primary_conv.1.running_var",
+      "shape": [
+        538
+      ]
+    },
+    "model.blocks.6.4.ghost1.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost1.primary_conv.1.weight",
+      "shape": [
+        538
+      ]
+    },
+    "model.blocks.6.4.ghost1.short_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost1.short_conv.0.weight",
+      "shape": [
+        1076,
+        180,
+        1,
+        1
+      ]
+    },
+    "model.blocks.6.4.ghost1.short_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost1.short_conv.1.bias",
+      "shape": [
+        1076
+      ]
+    },
+    "model.blocks.6.4.ghost1.short_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.4.ghost1.short_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.6.4.ghost1.short_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost1.short_conv.1.running_mean",
+      "shape": [
+        1076
+      ]
+    },
+    "model.blocks.6.4.ghost1.short_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost1.short_conv.1.running_var",
+      "shape": [
+        1076
+      ]
+    },
+    "model.blocks.6.4.ghost1.short_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost1.short_conv.1.weight",
+      "shape": [
+        1076
+      ]
+    },
+    "model.blocks.6.4.ghost1.short_conv.2.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost1.short_conv.2.weight",
+      "shape": [
+        1076,
+        1,
+        1,
+        5
+      ]
+    },
+    "model.blocks.6.4.ghost1.short_conv.3.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost1.short_conv.3.bias",
+      "shape": [
+        1076
+      ]
+    },
+    "model.blocks.6.4.ghost1.short_conv.3.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.4.ghost1.short_conv.3.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.6.4.ghost1.short_conv.3.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost1.short_conv.3.running_mean",
+      "shape": [
+        1076
+      ]
+    },
+    "model.blocks.6.4.ghost1.short_conv.3.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost1.short_conv.3.running_var",
+      "shape": [
+        1076
+      ]
+    },
+    "model.blocks.6.4.ghost1.short_conv.3.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost1.short_conv.3.weight",
+      "shape": [
+        1076
+      ]
+    },
+    "model.blocks.6.4.ghost1.short_conv.4.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost1.short_conv.4.weight",
+      "shape": [
+        1076,
+        1,
+        5,
+        1
+      ]
+    },
+    "model.blocks.6.4.ghost1.short_conv.5.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost1.short_conv.5.bias",
+      "shape": [
+        1076
+      ]
+    },
+    "model.blocks.6.4.ghost1.short_conv.5.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.4.ghost1.short_conv.5.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.6.4.ghost1.short_conv.5.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost1.short_conv.5.running_mean",
+      "shape": [
+        1076
+      ]
+    },
+    "model.blocks.6.4.ghost1.short_conv.5.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost1.short_conv.5.running_var",
+      "shape": [
+        1076
+      ]
+    },
+    "model.blocks.6.4.ghost1.short_conv.5.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost1.short_conv.5.weight",
+      "shape": [
+        1076
+      ]
+    },
+    "model.blocks.6.4.ghost2.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost2.cheap_operation.0.weight",
+      "shape": [
+        90,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.blocks.6.4.ghost2.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost2.cheap_operation.1.bias",
+      "shape": [
+        90
+      ]
+    },
+    "model.blocks.6.4.ghost2.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.4.ghost2.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.6.4.ghost2.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost2.cheap_operation.1.running_mean",
+      "shape": [
+        90
+      ]
+    },
+    "model.blocks.6.4.ghost2.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost2.cheap_operation.1.running_var",
+      "shape": [
+        90
+      ]
+    },
+    "model.blocks.6.4.ghost2.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost2.cheap_operation.1.weight",
+      "shape": [
+        90
+      ]
+    },
+    "model.blocks.6.4.ghost2.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost2.primary_conv.0.weight",
+      "shape": [
+        90,
+        1076,
+        1,
+        1
+      ]
+    },
+    "model.blocks.6.4.ghost2.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost2.primary_conv.1.bias",
+      "shape": [
+        90
+      ]
+    },
+    "model.blocks.6.4.ghost2.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.6.4.ghost2.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.6.4.ghost2.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost2.primary_conv.1.running_mean",
+      "shape": [
+        90
+      ]
+    },
+    "model.blocks.6.4.ghost2.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost2.primary_conv.1.running_var",
+      "shape": [
+        90
+      ]
+    },
+    "model.blocks.6.4.ghost2.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.4.ghost2.primary_conv.1.weight",
+      "shape": [
+        90
+      ]
+    },
+    "model.blocks.6.4.se.conv_expand.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.4.se.conv_expand.bias",
+      "shape": [
+        1076
+      ]
+    },
+    "model.blocks.6.4.se.conv_expand.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.4.se.conv_expand.weight",
+      "shape": [
+        1076,
+        268,
+        1,
+        1
+      ]
+    },
+    "model.blocks.6.4.se.conv_reduce.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.4.se.conv_reduce.bias",
+      "shape": [
+        268
+      ]
+    },
+    "model.blocks.6.4.se.conv_reduce.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.4.se.conv_reduce.weight",
+      "shape": [
+        268,
+        1076,
+        1,
+        1
+      ]
+    },
+    "model.blocks.7.0.bn_dw.bias": {
+      "dtype": "F32",
+      "key": "blocks.7.0.bn_dw.bias",
+      "shape": [
+        1076
+      ]
+    },
+    "model.blocks.7.0.bn_dw.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.7.0.bn_dw.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.7.0.bn_dw.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.7.0.bn_dw.running_mean",
+      "shape": [
+        1076
+      ]
+    },
+    "model.blocks.7.0.bn_dw.running_var": {
+      "dtype": "F32",
+      "key": "blocks.7.0.bn_dw.running_var",
+      "shape": [
+        1076
+      ]
+    },
+    "model.blocks.7.0.bn_dw.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.0.bn_dw.weight",
+      "shape": [
+        1076
+      ]
+    },
+    "model.blocks.7.0.conv_dw.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.0.conv_dw.weight",
+      "shape": [
+        1076,
+        1,
+        5,
+        5
+      ]
+    },
+    "model.blocks.7.0.ghost1.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost1.cheap_operation.0.weight",
+      "shape": [
+        538,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.blocks.7.0.ghost1.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost1.cheap_operation.1.bias",
+      "shape": [
+        538
+      ]
+    },
+    "model.blocks.7.0.ghost1.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.7.0.ghost1.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.7.0.ghost1.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost1.cheap_operation.1.running_mean",
+      "shape": [
+        538
+      ]
+    },
+    "model.blocks.7.0.ghost1.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost1.cheap_operation.1.running_var",
+      "shape": [
+        538
+      ]
+    },
+    "model.blocks.7.0.ghost1.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost1.cheap_operation.1.weight",
+      "shape": [
+        538
+      ]
+    },
+    "model.blocks.7.0.ghost1.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost1.primary_conv.0.weight",
+      "shape": [
+        538,
+        180,
+        1,
+        1
+      ]
+    },
+    "model.blocks.7.0.ghost1.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost1.primary_conv.1.bias",
+      "shape": [
+        538
+      ]
+    },
+    "model.blocks.7.0.ghost1.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.7.0.ghost1.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.7.0.ghost1.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost1.primary_conv.1.running_mean",
+      "shape": [
+        538
+      ]
+    },
+    "model.blocks.7.0.ghost1.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost1.primary_conv.1.running_var",
+      "shape": [
+        538
+      ]
+    },
+    "model.blocks.7.0.ghost1.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost1.primary_conv.1.weight",
+      "shape": [
+        538
+      ]
+    },
+    "model.blocks.7.0.ghost1.short_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost1.short_conv.0.weight",
+      "shape": [
+        1076,
+        180,
+        1,
+        1
+      ]
+    },
+    "model.blocks.7.0.ghost1.short_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost1.short_conv.1.bias",
+      "shape": [
+        1076
+      ]
+    },
+    "model.blocks.7.0.ghost1.short_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.7.0.ghost1.short_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.7.0.ghost1.short_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost1.short_conv.1.running_mean",
+      "shape": [
+        1076
+      ]
+    },
+    "model.blocks.7.0.ghost1.short_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost1.short_conv.1.running_var",
+      "shape": [
+        1076
+      ]
+    },
+    "model.blocks.7.0.ghost1.short_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost1.short_conv.1.weight",
+      "shape": [
+        1076
+      ]
+    },
+    "model.blocks.7.0.ghost1.short_conv.2.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost1.short_conv.2.weight",
+      "shape": [
+        1076,
+        1,
+        1,
+        5
+      ]
+    },
+    "model.blocks.7.0.ghost1.short_conv.3.bias": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost1.short_conv.3.bias",
+      "shape": [
+        1076
+      ]
+    },
+    "model.blocks.7.0.ghost1.short_conv.3.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.7.0.ghost1.short_conv.3.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.7.0.ghost1.short_conv.3.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost1.short_conv.3.running_mean",
+      "shape": [
+        1076
+      ]
+    },
+    "model.blocks.7.0.ghost1.short_conv.3.running_var": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost1.short_conv.3.running_var",
+      "shape": [
+        1076
+      ]
+    },
+    "model.blocks.7.0.ghost1.short_conv.3.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost1.short_conv.3.weight",
+      "shape": [
+        1076
+      ]
+    },
+    "model.blocks.7.0.ghost1.short_conv.4.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost1.short_conv.4.weight",
+      "shape": [
+        1076,
+        1,
+        5,
+        1
+      ]
+    },
+    "model.blocks.7.0.ghost1.short_conv.5.bias": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost1.short_conv.5.bias",
+      "shape": [
+        1076
+      ]
+    },
+    "model.blocks.7.0.ghost1.short_conv.5.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.7.0.ghost1.short_conv.5.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.7.0.ghost1.short_conv.5.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost1.short_conv.5.running_mean",
+      "shape": [
+        1076
+      ]
+    },
+    "model.blocks.7.0.ghost1.short_conv.5.running_var": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost1.short_conv.5.running_var",
+      "shape": [
+        1076
+      ]
+    },
+    "model.blocks.7.0.ghost1.short_conv.5.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost1.short_conv.5.weight",
+      "shape": [
+        1076
+      ]
+    },
+    "model.blocks.7.0.ghost2.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost2.cheap_operation.0.weight",
+      "shape": [
+        128,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.blocks.7.0.ghost2.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost2.cheap_operation.1.bias",
+      "shape": [
+        128
+      ]
+    },
+    "model.blocks.7.0.ghost2.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.7.0.ghost2.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.7.0.ghost2.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost2.cheap_operation.1.running_mean",
+      "shape": [
+        128
+      ]
+    },
+    "model.blocks.7.0.ghost2.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost2.cheap_operation.1.running_var",
+      "shape": [
+        128
+      ]
+    },
+    "model.blocks.7.0.ghost2.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost2.cheap_operation.1.weight",
+      "shape": [
+        128
+      ]
+    },
+    "model.blocks.7.0.ghost2.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost2.primary_conv.0.weight",
+      "shape": [
+        128,
+        1076,
+        1,
+        1
+      ]
+    },
+    "model.blocks.7.0.ghost2.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost2.primary_conv.1.bias",
+      "shape": [
+        128
+      ]
+    },
+    "model.blocks.7.0.ghost2.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.7.0.ghost2.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.7.0.ghost2.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost2.primary_conv.1.running_mean",
+      "shape": [
+        128
+      ]
+    },
+    "model.blocks.7.0.ghost2.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost2.primary_conv.1.running_var",
+      "shape": [
+        128
+      ]
+    },
+    "model.blocks.7.0.ghost2.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.0.ghost2.primary_conv.1.weight",
+      "shape": [
+        128
+      ]
+    },
+    "model.blocks.7.0.se.conv_expand.bias": {
+      "dtype": "F32",
+      "key": "blocks.7.0.se.conv_expand.bias",
+      "shape": [
+        1076
+      ]
+    },
+    "model.blocks.7.0.se.conv_expand.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.0.se.conv_expand.weight",
+      "shape": [
+        1076,
+        268,
+        1,
+        1
+      ]
+    },
+    "model.blocks.7.0.se.conv_reduce.bias": {
+      "dtype": "F32",
+      "key": "blocks.7.0.se.conv_reduce.bias",
+      "shape": [
+        268
+      ]
+    },
+    "model.blocks.7.0.se.conv_reduce.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.0.se.conv_reduce.weight",
+      "shape": [
+        268,
+        1076,
+        1,
+        1
+      ]
+    },
+    "model.blocks.7.0.shortcut.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.0.shortcut.0.weight",
+      "shape": [
+        180,
+        1,
+        5,
+        5
+      ]
+    },
+    "model.blocks.7.0.shortcut.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.7.0.shortcut.1.bias",
+      "shape": [
+        180
+      ]
+    },
+    "model.blocks.7.0.shortcut.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.7.0.shortcut.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.7.0.shortcut.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.7.0.shortcut.1.running_mean",
+      "shape": [
+        180
+      ]
+    },
+    "model.blocks.7.0.shortcut.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.7.0.shortcut.1.running_var",
+      "shape": [
+        180
+      ]
+    },
+    "model.blocks.7.0.shortcut.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.0.shortcut.1.weight",
+      "shape": [
+        180
+      ]
+    },
+    "model.blocks.7.0.shortcut.2.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.0.shortcut.2.weight",
+      "shape": [
+        256,
+        180,
+        1,
+        1
+      ]
+    },
+    "model.blocks.7.0.shortcut.3.bias": {
+      "dtype": "F32",
+      "key": "blocks.7.0.shortcut.3.bias",
+      "shape": [
+        256
+      ]
+    },
+    "model.blocks.7.0.shortcut.3.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.7.0.shortcut.3.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.7.0.shortcut.3.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.7.0.shortcut.3.running_mean",
+      "shape": [
+        256
+      ]
+    },
+    "model.blocks.7.0.shortcut.3.running_var": {
+      "dtype": "F32",
+      "key": "blocks.7.0.shortcut.3.running_var",
+      "shape": [
+        256
+      ]
+    },
+    "model.blocks.7.0.shortcut.3.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.0.shortcut.3.weight",
+      "shape": [
+        256
+      ]
+    },
+    "model.blocks.8.0.ghost1.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost1.cheap_operation.0.weight",
+      "shape": [
+        768,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.blocks.8.0.ghost1.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost1.cheap_operation.1.bias",
+      "shape": [
+        768
+      ]
+    },
+    "model.blocks.8.0.ghost1.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.0.ghost1.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.8.0.ghost1.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost1.cheap_operation.1.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "model.blocks.8.0.ghost1.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost1.cheap_operation.1.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "model.blocks.8.0.ghost1.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost1.cheap_operation.1.weight",
+      "shape": [
+        768
+      ]
+    },
+    "model.blocks.8.0.ghost1.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost1.primary_conv.0.weight",
+      "shape": [
+        768,
+        256,
+        1,
+        1
+      ]
+    },
+    "model.blocks.8.0.ghost1.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost1.primary_conv.1.bias",
+      "shape": [
+        768
+      ]
+    },
+    "model.blocks.8.0.ghost1.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.0.ghost1.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.8.0.ghost1.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost1.primary_conv.1.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "model.blocks.8.0.ghost1.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost1.primary_conv.1.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "model.blocks.8.0.ghost1.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost1.primary_conv.1.weight",
+      "shape": [
+        768
+      ]
+    },
+    "model.blocks.8.0.ghost1.short_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost1.short_conv.0.weight",
+      "shape": [
+        1536,
+        256,
+        1,
+        1
+      ]
+    },
+    "model.blocks.8.0.ghost1.short_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost1.short_conv.1.bias",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.0.ghost1.short_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.0.ghost1.short_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.8.0.ghost1.short_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost1.short_conv.1.running_mean",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.0.ghost1.short_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost1.short_conv.1.running_var",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.0.ghost1.short_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost1.short_conv.1.weight",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.0.ghost1.short_conv.2.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost1.short_conv.2.weight",
+      "shape": [
+        1536,
+        1,
+        1,
+        5
+      ]
+    },
+    "model.blocks.8.0.ghost1.short_conv.3.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost1.short_conv.3.bias",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.0.ghost1.short_conv.3.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.0.ghost1.short_conv.3.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.8.0.ghost1.short_conv.3.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost1.short_conv.3.running_mean",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.0.ghost1.short_conv.3.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost1.short_conv.3.running_var",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.0.ghost1.short_conv.3.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost1.short_conv.3.weight",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.0.ghost1.short_conv.4.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost1.short_conv.4.weight",
+      "shape": [
+        1536,
+        1,
+        5,
+        1
+      ]
+    },
+    "model.blocks.8.0.ghost1.short_conv.5.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost1.short_conv.5.bias",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.0.ghost1.short_conv.5.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.0.ghost1.short_conv.5.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.8.0.ghost1.short_conv.5.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost1.short_conv.5.running_mean",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.0.ghost1.short_conv.5.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost1.short_conv.5.running_var",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.0.ghost1.short_conv.5.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost1.short_conv.5.weight",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.0.ghost2.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost2.cheap_operation.0.weight",
+      "shape": [
+        128,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.blocks.8.0.ghost2.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost2.cheap_operation.1.bias",
+      "shape": [
+        128
+      ]
+    },
+    "model.blocks.8.0.ghost2.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.0.ghost2.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.8.0.ghost2.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost2.cheap_operation.1.running_mean",
+      "shape": [
+        128
+      ]
+    },
+    "model.blocks.8.0.ghost2.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost2.cheap_operation.1.running_var",
+      "shape": [
+        128
+      ]
+    },
+    "model.blocks.8.0.ghost2.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost2.cheap_operation.1.weight",
+      "shape": [
+        128
+      ]
+    },
+    "model.blocks.8.0.ghost2.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost2.primary_conv.0.weight",
+      "shape": [
+        128,
+        1536,
+        1,
+        1
+      ]
+    },
+    "model.blocks.8.0.ghost2.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost2.primary_conv.1.bias",
+      "shape": [
+        128
+      ]
+    },
+    "model.blocks.8.0.ghost2.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.0.ghost2.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.8.0.ghost2.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost2.primary_conv.1.running_mean",
+      "shape": [
+        128
+      ]
+    },
+    "model.blocks.8.0.ghost2.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost2.primary_conv.1.running_var",
+      "shape": [
+        128
+      ]
+    },
+    "model.blocks.8.0.ghost2.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.0.ghost2.primary_conv.1.weight",
+      "shape": [
+        128
+      ]
+    },
+    "model.blocks.8.1.ghost1.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost1.cheap_operation.0.weight",
+      "shape": [
+        768,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.blocks.8.1.ghost1.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost1.cheap_operation.1.bias",
+      "shape": [
+        768
+      ]
+    },
+    "model.blocks.8.1.ghost1.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.1.ghost1.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.8.1.ghost1.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost1.cheap_operation.1.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "model.blocks.8.1.ghost1.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost1.cheap_operation.1.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "model.blocks.8.1.ghost1.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost1.cheap_operation.1.weight",
+      "shape": [
+        768
+      ]
+    },
+    "model.blocks.8.1.ghost1.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost1.primary_conv.0.weight",
+      "shape": [
+        768,
+        256,
+        1,
+        1
+      ]
+    },
+    "model.blocks.8.1.ghost1.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost1.primary_conv.1.bias",
+      "shape": [
+        768
+      ]
+    },
+    "model.blocks.8.1.ghost1.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.1.ghost1.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.8.1.ghost1.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost1.primary_conv.1.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "model.blocks.8.1.ghost1.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost1.primary_conv.1.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "model.blocks.8.1.ghost1.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost1.primary_conv.1.weight",
+      "shape": [
+        768
+      ]
+    },
+    "model.blocks.8.1.ghost1.short_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost1.short_conv.0.weight",
+      "shape": [
+        1536,
+        256,
+        1,
+        1
+      ]
+    },
+    "model.blocks.8.1.ghost1.short_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost1.short_conv.1.bias",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.1.ghost1.short_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.1.ghost1.short_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.8.1.ghost1.short_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost1.short_conv.1.running_mean",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.1.ghost1.short_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost1.short_conv.1.running_var",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.1.ghost1.short_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost1.short_conv.1.weight",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.1.ghost1.short_conv.2.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost1.short_conv.2.weight",
+      "shape": [
+        1536,
+        1,
+        1,
+        5
+      ]
+    },
+    "model.blocks.8.1.ghost1.short_conv.3.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost1.short_conv.3.bias",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.1.ghost1.short_conv.3.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.1.ghost1.short_conv.3.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.8.1.ghost1.short_conv.3.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost1.short_conv.3.running_mean",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.1.ghost1.short_conv.3.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost1.short_conv.3.running_var",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.1.ghost1.short_conv.3.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost1.short_conv.3.weight",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.1.ghost1.short_conv.4.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost1.short_conv.4.weight",
+      "shape": [
+        1536,
+        1,
+        5,
+        1
+      ]
+    },
+    "model.blocks.8.1.ghost1.short_conv.5.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost1.short_conv.5.bias",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.1.ghost1.short_conv.5.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.1.ghost1.short_conv.5.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.8.1.ghost1.short_conv.5.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost1.short_conv.5.running_mean",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.1.ghost1.short_conv.5.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost1.short_conv.5.running_var",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.1.ghost1.short_conv.5.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost1.short_conv.5.weight",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.1.ghost2.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost2.cheap_operation.0.weight",
+      "shape": [
+        128,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.blocks.8.1.ghost2.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost2.cheap_operation.1.bias",
+      "shape": [
+        128
+      ]
+    },
+    "model.blocks.8.1.ghost2.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.1.ghost2.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.8.1.ghost2.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost2.cheap_operation.1.running_mean",
+      "shape": [
+        128
+      ]
+    },
+    "model.blocks.8.1.ghost2.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost2.cheap_operation.1.running_var",
+      "shape": [
+        128
+      ]
+    },
+    "model.blocks.8.1.ghost2.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost2.cheap_operation.1.weight",
+      "shape": [
+        128
+      ]
+    },
+    "model.blocks.8.1.ghost2.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost2.primary_conv.0.weight",
+      "shape": [
+        128,
+        1536,
+        1,
+        1
+      ]
+    },
+    "model.blocks.8.1.ghost2.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost2.primary_conv.1.bias",
+      "shape": [
+        128
+      ]
+    },
+    "model.blocks.8.1.ghost2.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.1.ghost2.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.8.1.ghost2.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost2.primary_conv.1.running_mean",
+      "shape": [
+        128
+      ]
+    },
+    "model.blocks.8.1.ghost2.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost2.primary_conv.1.running_var",
+      "shape": [
+        128
+      ]
+    },
+    "model.blocks.8.1.ghost2.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.1.ghost2.primary_conv.1.weight",
+      "shape": [
+        128
+      ]
+    },
+    "model.blocks.8.1.se.conv_expand.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.1.se.conv_expand.bias",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.1.se.conv_expand.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.1.se.conv_expand.weight",
+      "shape": [
+        1536,
+        384,
+        1,
+        1
+      ]
+    },
+    "model.blocks.8.1.se.conv_reduce.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.1.se.conv_reduce.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.8.1.se.conv_reduce.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.1.se.conv_reduce.weight",
+      "shape": [
+        384,
+        1536,
+        1,
+        1
+      ]
+    },
+    "model.blocks.8.2.ghost1.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost1.cheap_operation.0.weight",
+      "shape": [
+        768,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.blocks.8.2.ghost1.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost1.cheap_operation.1.bias",
+      "shape": [
+        768
+      ]
+    },
+    "model.blocks.8.2.ghost1.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.2.ghost1.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.8.2.ghost1.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost1.cheap_operation.1.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "model.blocks.8.2.ghost1.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost1.cheap_operation.1.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "model.blocks.8.2.ghost1.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost1.cheap_operation.1.weight",
+      "shape": [
+        768
+      ]
+    },
+    "model.blocks.8.2.ghost1.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost1.primary_conv.0.weight",
+      "shape": [
+        768,
+        256,
+        1,
+        1
+      ]
+    },
+    "model.blocks.8.2.ghost1.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost1.primary_conv.1.bias",
+      "shape": [
+        768
+      ]
+    },
+    "model.blocks.8.2.ghost1.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.2.ghost1.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.8.2.ghost1.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost1.primary_conv.1.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "model.blocks.8.2.ghost1.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost1.primary_conv.1.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "model.blocks.8.2.ghost1.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost1.primary_conv.1.weight",
+      "shape": [
+        768
+      ]
+    },
+    "model.blocks.8.2.ghost1.short_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost1.short_conv.0.weight",
+      "shape": [
+        1536,
+        256,
+        1,
+        1
+      ]
+    },
+    "model.blocks.8.2.ghost1.short_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost1.short_conv.1.bias",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.2.ghost1.short_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.2.ghost1.short_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.8.2.ghost1.short_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost1.short_conv.1.running_mean",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.2.ghost1.short_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost1.short_conv.1.running_var",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.2.ghost1.short_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost1.short_conv.1.weight",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.2.ghost1.short_conv.2.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost1.short_conv.2.weight",
+      "shape": [
+        1536,
+        1,
+        1,
+        5
+      ]
+    },
+    "model.blocks.8.2.ghost1.short_conv.3.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost1.short_conv.3.bias",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.2.ghost1.short_conv.3.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.2.ghost1.short_conv.3.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.8.2.ghost1.short_conv.3.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost1.short_conv.3.running_mean",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.2.ghost1.short_conv.3.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost1.short_conv.3.running_var",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.2.ghost1.short_conv.3.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost1.short_conv.3.weight",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.2.ghost1.short_conv.4.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost1.short_conv.4.weight",
+      "shape": [
+        1536,
+        1,
+        5,
+        1
+      ]
+    },
+    "model.blocks.8.2.ghost1.short_conv.5.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost1.short_conv.5.bias",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.2.ghost1.short_conv.5.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.2.ghost1.short_conv.5.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.8.2.ghost1.short_conv.5.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost1.short_conv.5.running_mean",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.2.ghost1.short_conv.5.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost1.short_conv.5.running_var",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.2.ghost1.short_conv.5.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost1.short_conv.5.weight",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.2.ghost2.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost2.cheap_operation.0.weight",
+      "shape": [
+        128,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.blocks.8.2.ghost2.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost2.cheap_operation.1.bias",
+      "shape": [
+        128
+      ]
+    },
+    "model.blocks.8.2.ghost2.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.2.ghost2.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.8.2.ghost2.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost2.cheap_operation.1.running_mean",
+      "shape": [
+        128
+      ]
+    },
+    "model.blocks.8.2.ghost2.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost2.cheap_operation.1.running_var",
+      "shape": [
+        128
+      ]
+    },
+    "model.blocks.8.2.ghost2.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost2.cheap_operation.1.weight",
+      "shape": [
+        128
+      ]
+    },
+    "model.blocks.8.2.ghost2.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost2.primary_conv.0.weight",
+      "shape": [
+        128,
+        1536,
+        1,
+        1
+      ]
+    },
+    "model.blocks.8.2.ghost2.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost2.primary_conv.1.bias",
+      "shape": [
+        128
+      ]
+    },
+    "model.blocks.8.2.ghost2.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.2.ghost2.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.8.2.ghost2.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost2.primary_conv.1.running_mean",
+      "shape": [
+        128
+      ]
+    },
+    "model.blocks.8.2.ghost2.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost2.primary_conv.1.running_var",
+      "shape": [
+        128
+      ]
+    },
+    "model.blocks.8.2.ghost2.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.2.ghost2.primary_conv.1.weight",
+      "shape": [
+        128
+      ]
+    },
+    "model.blocks.8.3.ghost1.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost1.cheap_operation.0.weight",
+      "shape": [
+        768,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.blocks.8.3.ghost1.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost1.cheap_operation.1.bias",
+      "shape": [
+        768
+      ]
+    },
+    "model.blocks.8.3.ghost1.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.3.ghost1.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.8.3.ghost1.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost1.cheap_operation.1.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "model.blocks.8.3.ghost1.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost1.cheap_operation.1.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "model.blocks.8.3.ghost1.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost1.cheap_operation.1.weight",
+      "shape": [
+        768
+      ]
+    },
+    "model.blocks.8.3.ghost1.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost1.primary_conv.0.weight",
+      "shape": [
+        768,
+        256,
+        1,
+        1
+      ]
+    },
+    "model.blocks.8.3.ghost1.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost1.primary_conv.1.bias",
+      "shape": [
+        768
+      ]
+    },
+    "model.blocks.8.3.ghost1.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.3.ghost1.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.8.3.ghost1.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost1.primary_conv.1.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "model.blocks.8.3.ghost1.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost1.primary_conv.1.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "model.blocks.8.3.ghost1.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost1.primary_conv.1.weight",
+      "shape": [
+        768
+      ]
+    },
+    "model.blocks.8.3.ghost1.short_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost1.short_conv.0.weight",
+      "shape": [
+        1536,
+        256,
+        1,
+        1
+      ]
+    },
+    "model.blocks.8.3.ghost1.short_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost1.short_conv.1.bias",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.3.ghost1.short_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.3.ghost1.short_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.8.3.ghost1.short_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost1.short_conv.1.running_mean",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.3.ghost1.short_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost1.short_conv.1.running_var",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.3.ghost1.short_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost1.short_conv.1.weight",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.3.ghost1.short_conv.2.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost1.short_conv.2.weight",
+      "shape": [
+        1536,
+        1,
+        1,
+        5
+      ]
+    },
+    "model.blocks.8.3.ghost1.short_conv.3.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost1.short_conv.3.bias",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.3.ghost1.short_conv.3.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.3.ghost1.short_conv.3.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.8.3.ghost1.short_conv.3.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost1.short_conv.3.running_mean",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.3.ghost1.short_conv.3.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost1.short_conv.3.running_var",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.3.ghost1.short_conv.3.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost1.short_conv.3.weight",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.3.ghost1.short_conv.4.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost1.short_conv.4.weight",
+      "shape": [
+        1536,
+        1,
+        5,
+        1
+      ]
+    },
+    "model.blocks.8.3.ghost1.short_conv.5.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost1.short_conv.5.bias",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.3.ghost1.short_conv.5.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.3.ghost1.short_conv.5.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.8.3.ghost1.short_conv.5.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost1.short_conv.5.running_mean",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.3.ghost1.short_conv.5.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost1.short_conv.5.running_var",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.3.ghost1.short_conv.5.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost1.short_conv.5.weight",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.3.ghost2.cheap_operation.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost2.cheap_operation.0.weight",
+      "shape": [
+        128,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.blocks.8.3.ghost2.cheap_operation.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost2.cheap_operation.1.bias",
+      "shape": [
+        128
+      ]
+    },
+    "model.blocks.8.3.ghost2.cheap_operation.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.3.ghost2.cheap_operation.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.8.3.ghost2.cheap_operation.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost2.cheap_operation.1.running_mean",
+      "shape": [
+        128
+      ]
+    },
+    "model.blocks.8.3.ghost2.cheap_operation.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost2.cheap_operation.1.running_var",
+      "shape": [
+        128
+      ]
+    },
+    "model.blocks.8.3.ghost2.cheap_operation.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost2.cheap_operation.1.weight",
+      "shape": [
+        128
+      ]
+    },
+    "model.blocks.8.3.ghost2.primary_conv.0.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost2.primary_conv.0.weight",
+      "shape": [
+        128,
+        1536,
+        1,
+        1
+      ]
+    },
+    "model.blocks.8.3.ghost2.primary_conv.1.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost2.primary_conv.1.bias",
+      "shape": [
+        128
+      ]
+    },
+    "model.blocks.8.3.ghost2.primary_conv.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.8.3.ghost2.primary_conv.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.8.3.ghost2.primary_conv.1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost2.primary_conv.1.running_mean",
+      "shape": [
+        128
+      ]
+    },
+    "model.blocks.8.3.ghost2.primary_conv.1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost2.primary_conv.1.running_var",
+      "shape": [
+        128
+      ]
+    },
+    "model.blocks.8.3.ghost2.primary_conv.1.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.3.ghost2.primary_conv.1.weight",
+      "shape": [
+        128
+      ]
+    },
+    "model.blocks.8.3.se.conv_expand.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.3.se.conv_expand.bias",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.3.se.conv_expand.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.3.se.conv_expand.weight",
+      "shape": [
+        1536,
+        384,
+        1,
+        1
+      ]
+    },
+    "model.blocks.8.3.se.conv_reduce.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.3.se.conv_reduce.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.8.3.se.conv_reduce.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.3.se.conv_reduce.weight",
+      "shape": [
+        384,
+        1536,
+        1,
+        1
+      ]
+    },
+    "model.blocks.9.0.bn1.bias": {
+      "dtype": "F32",
+      "key": "blocks.9.0.bn1.bias",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.9.0.bn1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "blocks.9.0.bn1.num_batches_tracked",
+      "shape": []
+    },
+    "model.blocks.9.0.bn1.running_mean": {
+      "dtype": "F32",
+      "key": "blocks.9.0.bn1.running_mean",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.9.0.bn1.running_var": {
+      "dtype": "F32",
+      "key": "blocks.9.0.bn1.running_var",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.9.0.bn1.weight": {
+      "dtype": "F32",
+      "key": "blocks.9.0.bn1.weight",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.9.0.conv.weight": {
+      "dtype": "F32",
+      "key": "blocks.9.0.conv.weight",
+      "shape": [
+        1536,
+        256,
+        1,
+        1
+      ]
+    },
+    "model.bn1.bias": {
+      "dtype": "F32",
+      "key": "bn1.bias",
+      "shape": [
+        24
+      ]
+    },
+    "model.bn1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "bn1.num_batches_tracked",
+      "shape": []
+    },
+    "model.bn1.running_mean": {
+      "dtype": "F32",
+      "key": "bn1.running_mean",
+      "shape": [
+        24
+      ]
+    },
+    "model.bn1.running_var": {
+      "dtype": "F32",
+      "key": "bn1.running_var",
+      "shape": [
+        24
+      ]
+    },
+    "model.bn1.weight": {
+      "dtype": "F32",
+      "key": "bn1.weight",
+      "shape": [
+        24
+      ]
+    },
+    "model.classifier.bias": {
+      "dtype": "F32",
+      "key": "classifier.bias",
+      "shape": [
+        1000
+      ]
+    },
+    "model.classifier.weight": {
+      "dtype": "F32",
+      "key": "classifier.weight",
+      "shape": [
+        1000,
+        1280
+      ]
+    },
+    "model.conv_head.bias": {
+      "dtype": "F32",
+      "key": "conv_head.bias",
+      "shape": [
+        1280
+      ]
+    },
+    "model.conv_head.weight": {
+      "dtype": "F32",
+      "key": "conv_head.weight",
+      "shape": [
+        1280,
+        1536,
+        1,
+        1
+      ]
+    },
+    "model.conv_stem.weight": {
+      "dtype": "F32",
+      "key": "conv_stem.weight",
+      "shape": [
+        24,
+        3,
+        3,
+        3
+      ]
+    }
+  },
+  "unmapped": []
+}

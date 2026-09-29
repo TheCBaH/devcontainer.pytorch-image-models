@@ -48,6 +48,7 @@ from pt2_export_core.archive import (
 from pt2_export_core.harness import cpu_count, run_pool, run_worker
 
 import models_history
+from weights_map import WEIGHTS_MAP
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SCHEMAS_DIR = os.path.join(REPO_ROOT, 'schemas')
@@ -104,6 +105,15 @@ def _stage_op_facts(building_dir, convert_result):
 
     with open(os.path.join(building_dir, 'models', 'op_facts.json'), 'wb') as f:
         f.write(op_facts_bytes)
+
+
+def _carry_over_weights_map(models_dir, name, staged_dir):
+    """Keep models/<name>/models/safetensors.json across a rebuild. It needs the network to
+    produce, so `make models.weights` writes it and `make models.weights.verify` catches it
+    going stale -- not something an offline rebuild can regenerate or should drop."""
+    live = os.path.join(models_dir, name, WEIGHTS_MAP)
+    if os.path.exists(live):
+        shutil.copyfile(live, os.path.join(staged_dir, WEIGHTS_MAP))
 
 
 def _swap_into_place(models_dir, name, staged_dir):
@@ -616,6 +626,7 @@ def cmd_build(args):
                 extract(pt2, os.path.basename(building), args.models_dir,
                         selected_pt2_profile(args.manifest))
                 _stage_op_facts(building, result)
+                _carry_over_weights_map(args.models_dir, name, building)
                 _swap_into_place(args.models_dir, name, building)
             except Exception as e:
                 if os.path.isdir(building):

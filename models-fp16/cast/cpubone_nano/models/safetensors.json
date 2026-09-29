@@ -1,0 +1,1156 @@
+{
+  "schema_version": 1,
+  "source": {
+    "filename": "model.safetensors",
+    "repo_id": "timm/cpubone_nano.r224_in1k",
+    "revision": "c29eab819abe06f3c49196dc8508d1cc7e8a2cfa",
+    "sha256": "0356e7967532d4c8be58a006a701d78e9350ac745744b5084173c797d59fdecf",
+    "size": 26140072,
+    "url": "https://huggingface.co/timm/cpubone_nano.r224_in1k/resolve/c29eab819abe06f3c49196dc8508d1cc7e8a2cfa/model.safetensors"
+  },
+  "tensors": {
+    "head.classifier.linear.bias": {
+      "dtype": "F32",
+      "key": "head.classifier.linear.bias",
+      "shape": [
+        1000
+      ]
+    },
+    "head.classifier.linear.weight": {
+      "dtype": "F32",
+      "key": "head.classifier.linear.weight",
+      "shape": [
+        1000,
+        1600
+      ]
+    },
+    "head.in_conv.conv.weight": {
+      "dtype": "F32",
+      "key": "head.in_conv.conv.weight",
+      "shape": [
+        1536,
+        192,
+        1,
+        1
+      ]
+    },
+    "head.in_conv.norm.bias": {
+      "dtype": "F32",
+      "key": "head.in_conv.norm.bias",
+      "shape": [
+        1536
+      ]
+    },
+    "head.in_conv.norm.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "head.in_conv.norm.num_batches_tracked",
+      "shape": []
+    },
+    "head.in_conv.norm.running_mean": {
+      "dtype": "F32",
+      "key": "head.in_conv.norm.running_mean",
+      "shape": [
+        1536
+      ]
+    },
+    "head.in_conv.norm.running_var": {
+      "dtype": "F32",
+      "key": "head.in_conv.norm.running_var",
+      "shape": [
+        1536
+      ]
+    },
+    "head.in_conv.norm.weight": {
+      "dtype": "F32",
+      "key": "head.in_conv.norm.weight",
+      "shape": [
+        1536
+      ]
+    },
+    "head.pre_classifier.linear.weight": {
+      "dtype": "F32",
+      "key": "head.pre_classifier.linear.weight",
+      "shape": [
+        1600,
+        1536
+      ]
+    },
+    "head.pre_classifier.norm.bias": {
+      "dtype": "F32",
+      "key": "head.pre_classifier.norm.bias",
+      "shape": [
+        1600
+      ]
+    },
+    "head.pre_classifier.norm.weight": {
+      "dtype": "F32",
+      "key": "head.pre_classifier.norm.weight",
+      "shape": [
+        1600
+      ]
+    },
+    "stages.0.0.main.point_conv.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.0.0.main.point_conv.conv.weight",
+      "shape": [
+        24,
+        48,
+        1,
+        1
+      ]
+    },
+    "stages.0.0.main.point_conv.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.0.0.main.point_conv.norm.bias",
+      "shape": [
+        24
+      ]
+    },
+    "stages.0.0.main.point_conv.norm.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.0.0.main.point_conv.norm.num_batches_tracked",
+      "shape": []
+    },
+    "stages.0.0.main.point_conv.norm.running_mean": {
+      "dtype": "F32",
+      "key": "stages.0.0.main.point_conv.norm.running_mean",
+      "shape": [
+        24
+      ]
+    },
+    "stages.0.0.main.point_conv.norm.running_var": {
+      "dtype": "F32",
+      "key": "stages.0.0.main.point_conv.norm.running_var",
+      "shape": [
+        24
+      ]
+    },
+    "stages.0.0.main.point_conv.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.0.0.main.point_conv.norm.weight",
+      "shape": [
+        24
+      ]
+    },
+    "stages.0.0.main.spatial_conv.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.0.0.main.spatial_conv.conv.weight",
+      "shape": [
+        48,
+        6,
+        3,
+        3
+      ]
+    },
+    "stages.0.0.main.spatial_conv.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.0.0.main.spatial_conv.norm.bias",
+      "shape": [
+        48
+      ]
+    },
+    "stages.0.0.main.spatial_conv.norm.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.0.0.main.spatial_conv.norm.num_batches_tracked",
+      "shape": []
+    },
+    "stages.0.0.main.spatial_conv.norm.running_mean": {
+      "dtype": "F32",
+      "key": "stages.0.0.main.spatial_conv.norm.running_mean",
+      "shape": [
+        48
+      ]
+    },
+    "stages.0.0.main.spatial_conv.norm.running_var": {
+      "dtype": "F32",
+      "key": "stages.0.0.main.spatial_conv.norm.running_var",
+      "shape": [
+        48
+      ]
+    },
+    "stages.0.0.main.spatial_conv.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.0.0.main.spatial_conv.norm.weight",
+      "shape": [
+        48
+      ]
+    },
+    "stages.1.0.main.point_conv.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.1.0.main.point_conv.conv.weight",
+      "shape": [
+        48,
+        96,
+        1,
+        1
+      ]
+    },
+    "stages.1.0.main.point_conv.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.1.0.main.point_conv.norm.bias",
+      "shape": [
+        48
+      ]
+    },
+    "stages.1.0.main.point_conv.norm.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.1.0.main.point_conv.norm.num_batches_tracked",
+      "shape": []
+    },
+    "stages.1.0.main.point_conv.norm.running_mean": {
+      "dtype": "F32",
+      "key": "stages.1.0.main.point_conv.norm.running_mean",
+      "shape": [
+        48
+      ]
+    },
+    "stages.1.0.main.point_conv.norm.running_var": {
+      "dtype": "F32",
+      "key": "stages.1.0.main.point_conv.norm.running_var",
+      "shape": [
+        48
+      ]
+    },
+    "stages.1.0.main.point_conv.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.1.0.main.point_conv.norm.weight",
+      "shape": [
+        48
+      ]
+    },
+    "stages.1.0.main.spatial_conv.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.1.0.main.spatial_conv.conv.weight",
+      "shape": [
+        96,
+        12,
+        3,
+        3
+      ]
+    },
+    "stages.1.0.main.spatial_conv.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.1.0.main.spatial_conv.norm.bias",
+      "shape": [
+        96
+      ]
+    },
+    "stages.1.0.main.spatial_conv.norm.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.1.0.main.spatial_conv.norm.num_batches_tracked",
+      "shape": []
+    },
+    "stages.1.0.main.spatial_conv.norm.running_mean": {
+      "dtype": "F32",
+      "key": "stages.1.0.main.spatial_conv.norm.running_mean",
+      "shape": [
+        96
+      ]
+    },
+    "stages.1.0.main.spatial_conv.norm.running_var": {
+      "dtype": "F32",
+      "key": "stages.1.0.main.spatial_conv.norm.running_var",
+      "shape": [
+        96
+      ]
+    },
+    "stages.1.0.main.spatial_conv.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.1.0.main.spatial_conv.norm.weight",
+      "shape": [
+        96
+      ]
+    },
+    "stages.2.0.main.point_conv.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.0.main.point_conv.conv.weight",
+      "shape": [
+        96,
+        192,
+        1,
+        1
+      ]
+    },
+    "stages.2.0.main.point_conv.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.2.0.main.point_conv.norm.bias",
+      "shape": [
+        96
+      ]
+    },
+    "stages.2.0.main.point_conv.norm.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.0.main.point_conv.norm.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.0.main.point_conv.norm.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.0.main.point_conv.norm.running_mean",
+      "shape": [
+        96
+      ]
+    },
+    "stages.2.0.main.point_conv.norm.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.0.main.point_conv.norm.running_var",
+      "shape": [
+        96
+      ]
+    },
+    "stages.2.0.main.point_conv.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.2.0.main.point_conv.norm.weight",
+      "shape": [
+        96
+      ]
+    },
+    "stages.2.0.main.spatial_conv.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.0.main.spatial_conv.conv.weight",
+      "shape": [
+        192,
+        24,
+        3,
+        3
+      ]
+    },
+    "stages.2.0.main.spatial_conv.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.2.0.main.spatial_conv.norm.bias",
+      "shape": [
+        192
+      ]
+    },
+    "stages.2.0.main.spatial_conv.norm.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.0.main.spatial_conv.norm.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.0.main.spatial_conv.norm.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.0.main.spatial_conv.norm.running_mean",
+      "shape": [
+        192
+      ]
+    },
+    "stages.2.0.main.spatial_conv.norm.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.0.main.spatial_conv.norm.running_var",
+      "shape": [
+        192
+      ]
+    },
+    "stages.2.0.main.spatial_conv.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.2.0.main.spatial_conv.norm.weight",
+      "shape": [
+        192
+      ]
+    },
+    "stages.2.1.total.0.0.main.0.bias": {
+      "dtype": "F32",
+      "key": "stages.2.1.total.0.0.main.0.bias",
+      "shape": [
+        96
+      ]
+    },
+    "stages.2.1.total.0.0.main.0.weight": {
+      "dtype": "F32",
+      "key": "stages.2.1.total.0.0.main.0.weight",
+      "shape": [
+        96
+      ]
+    },
+    "stages.2.1.total.0.0.main.1.conv_proj.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.1.total.0.0.main.1.conv_proj.conv.weight",
+      "shape": [
+        96,
+        1,
+        2,
+        2
+      ]
+    },
+    "stages.2.1.total.0.0.main.1.conv_proj.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.2.1.total.0.0.main.1.conv_proj.norm.bias",
+      "shape": [
+        96
+      ]
+    },
+    "stages.2.1.total.0.0.main.1.conv_proj.norm.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.1.total.0.0.main.1.conv_proj.norm.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.1.total.0.0.main.1.conv_proj.norm.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.1.total.0.0.main.1.conv_proj.norm.running_mean",
+      "shape": [
+        96
+      ]
+    },
+    "stages.2.1.total.0.0.main.1.conv_proj.norm.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.1.total.0.0.main.1.conv_proj.norm.running_var",
+      "shape": [
+        96
+      ]
+    },
+    "stages.2.1.total.0.0.main.1.conv_proj.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.2.1.total.0.0.main.1.conv_proj.norm.weight",
+      "shape": [
+        96
+      ]
+    },
+    "stages.2.1.total.0.0.main.1.pwise.weight": {
+      "dtype": "F32",
+      "key": "stages.2.1.total.0.0.main.1.pwise.weight",
+      "shape": [
+        144,
+        96,
+        1,
+        1
+      ]
+    },
+    "stages.2.1.total.0.0.main.1.upsampling.0.bias": {
+      "dtype": "F32",
+      "key": "stages.2.1.total.0.0.main.1.upsampling.0.bias",
+      "shape": [
+        96
+      ]
+    },
+    "stages.2.1.total.0.0.main.1.upsampling.0.weight": {
+      "dtype": "F32",
+      "key": "stages.2.1.total.0.0.main.1.upsampling.0.weight",
+      "shape": [
+        96,
+        48,
+        1,
+        1
+      ]
+    },
+    "stages.2.1.total.0.1.main.0.bias": {
+      "dtype": "F32",
+      "key": "stages.2.1.total.0.1.main.0.bias",
+      "shape": [
+        96
+      ]
+    },
+    "stages.2.1.total.0.1.main.0.weight": {
+      "dtype": "F32",
+      "key": "stages.2.1.total.0.1.main.0.weight",
+      "shape": [
+        96
+      ]
+    },
+    "stages.2.1.total.0.1.main.1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.1.total.0.1.main.1.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.1.total.0.1.main.1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.1.total.0.1.main.1.weight",
+      "shape": [
+        384,
+        96,
+        1,
+        1
+      ]
+    },
+    "stages.2.1.total.0.1.main.3.bias": {
+      "dtype": "F32",
+      "key": "stages.2.1.total.0.1.main.3.bias",
+      "shape": [
+        96
+      ]
+    },
+    "stages.2.1.total.0.1.main.3.weight": {
+      "dtype": "F32",
+      "key": "stages.2.1.total.0.1.main.3.weight",
+      "shape": [
+        96,
+        384,
+        1,
+        1
+      ]
+    },
+    "stages.2.1.total.1.main.point_conv.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.1.total.1.main.point_conv.conv.weight",
+      "shape": [
+        96,
+        384,
+        1,
+        1
+      ]
+    },
+    "stages.2.1.total.1.main.point_conv.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.2.1.total.1.main.point_conv.norm.bias",
+      "shape": [
+        96
+      ]
+    },
+    "stages.2.1.total.1.main.point_conv.norm.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.1.total.1.main.point_conv.norm.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.1.total.1.main.point_conv.norm.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.1.total.1.main.point_conv.norm.running_mean",
+      "shape": [
+        96
+      ]
+    },
+    "stages.2.1.total.1.main.point_conv.norm.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.1.total.1.main.point_conv.norm.running_var",
+      "shape": [
+        96
+      ]
+    },
+    "stages.2.1.total.1.main.point_conv.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.2.1.total.1.main.point_conv.norm.weight",
+      "shape": [
+        96
+      ]
+    },
+    "stages.2.1.total.1.main.spatial_conv.conv.1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.1.total.1.main.spatial_conv.conv.1.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.1.total.1.main.spatial_conv.conv.1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.1.total.1.main.spatial_conv.conv.1.weight",
+      "shape": [
+        384,
+        48,
+        2,
+        2
+      ]
+    },
+    "stages.2.1.total.1.main.spatial_conv.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.2.1.total.1.main.spatial_conv.norm.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.1.total.1.main.spatial_conv.norm.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.1.total.1.main.spatial_conv.norm.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.1.total.1.main.spatial_conv.norm.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.1.total.1.main.spatial_conv.norm.running_mean",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.1.total.1.main.spatial_conv.norm.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.1.total.1.main.spatial_conv.norm.running_var",
+      "shape": [
+        384
+      ]
+    },
+    "stages.2.1.total.1.main.spatial_conv.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.2.1.total.1.main.spatial_conv.norm.weight",
+      "shape": [
+        384
+      ]
+    },
+    "stages.3.0.main.point_conv.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.3.0.main.point_conv.conv.weight",
+      "shape": [
+        192,
+        384,
+        1,
+        1
+      ]
+    },
+    "stages.3.0.main.point_conv.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.3.0.main.point_conv.norm.bias",
+      "shape": [
+        192
+      ]
+    },
+    "stages.3.0.main.point_conv.norm.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.3.0.main.point_conv.norm.num_batches_tracked",
+      "shape": []
+    },
+    "stages.3.0.main.point_conv.norm.running_mean": {
+      "dtype": "F32",
+      "key": "stages.3.0.main.point_conv.norm.running_mean",
+      "shape": [
+        192
+      ]
+    },
+    "stages.3.0.main.point_conv.norm.running_var": {
+      "dtype": "F32",
+      "key": "stages.3.0.main.point_conv.norm.running_var",
+      "shape": [
+        192
+      ]
+    },
+    "stages.3.0.main.point_conv.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.3.0.main.point_conv.norm.weight",
+      "shape": [
+        192
+      ]
+    },
+    "stages.3.0.main.spatial_conv.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.3.0.main.spatial_conv.conv.weight",
+      "shape": [
+        384,
+        48,
+        3,
+        3
+      ]
+    },
+    "stages.3.0.main.spatial_conv.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.3.0.main.spatial_conv.norm.bias",
+      "shape": [
+        384
+      ]
+    },
+    "stages.3.0.main.spatial_conv.norm.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.3.0.main.spatial_conv.norm.num_batches_tracked",
+      "shape": []
+    },
+    "stages.3.0.main.spatial_conv.norm.running_mean": {
+      "dtype": "F32",
+      "key": "stages.3.0.main.spatial_conv.norm.running_mean",
+      "shape": [
+        384
+      ]
+    },
+    "stages.3.0.main.spatial_conv.norm.running_var": {
+      "dtype": "F32",
+      "key": "stages.3.0.main.spatial_conv.norm.running_var",
+      "shape": [
+        384
+      ]
+    },
+    "stages.3.0.main.spatial_conv.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.3.0.main.spatial_conv.norm.weight",
+      "shape": [
+        384
+      ]
+    },
+    "stages.3.1.total.0.0.main.0.bias": {
+      "dtype": "F32",
+      "key": "stages.3.1.total.0.0.main.0.bias",
+      "shape": [
+        192
+      ]
+    },
+    "stages.3.1.total.0.0.main.0.weight": {
+      "dtype": "F32",
+      "key": "stages.3.1.total.0.0.main.0.weight",
+      "shape": [
+        192
+      ]
+    },
+    "stages.3.1.total.0.0.main.1.conv_proj.conv.1.weight": {
+      "dtype": "F32",
+      "key": "stages.3.1.total.0.0.main.1.conv_proj.conv.1.weight",
+      "shape": [
+        192,
+        1,
+        2,
+        2
+      ]
+    },
+    "stages.3.1.total.0.0.main.1.conv_proj.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.3.1.total.0.0.main.1.conv_proj.norm.bias",
+      "shape": [
+        192
+      ]
+    },
+    "stages.3.1.total.0.0.main.1.conv_proj.norm.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.3.1.total.0.0.main.1.conv_proj.norm.num_batches_tracked",
+      "shape": []
+    },
+    "stages.3.1.total.0.0.main.1.conv_proj.norm.running_mean": {
+      "dtype": "F32",
+      "key": "stages.3.1.total.0.0.main.1.conv_proj.norm.running_mean",
+      "shape": [
+        192
+      ]
+    },
+    "stages.3.1.total.0.0.main.1.conv_proj.norm.running_var": {
+      "dtype": "F32",
+      "key": "stages.3.1.total.0.0.main.1.conv_proj.norm.running_var",
+      "shape": [
+        192
+      ]
+    },
+    "stages.3.1.total.0.0.main.1.conv_proj.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.3.1.total.0.0.main.1.conv_proj.norm.weight",
+      "shape": [
+        192
+      ]
+    },
+    "stages.3.1.total.0.0.main.1.pwise.weight": {
+      "dtype": "F32",
+      "key": "stages.3.1.total.0.0.main.1.pwise.weight",
+      "shape": [
+        288,
+        192,
+        1,
+        1
+      ]
+    },
+    "stages.3.1.total.0.0.main.1.upsampling.0.bias": {
+      "dtype": "F32",
+      "key": "stages.3.1.total.0.0.main.1.upsampling.0.bias",
+      "shape": [
+        192
+      ]
+    },
+    "stages.3.1.total.0.0.main.1.upsampling.0.weight": {
+      "dtype": "F32",
+      "key": "stages.3.1.total.0.0.main.1.upsampling.0.weight",
+      "shape": [
+        192,
+        96,
+        1,
+        1
+      ]
+    },
+    "stages.3.1.total.0.1.main.0.bias": {
+      "dtype": "F32",
+      "key": "stages.3.1.total.0.1.main.0.bias",
+      "shape": [
+        192
+      ]
+    },
+    "stages.3.1.total.0.1.main.0.weight": {
+      "dtype": "F32",
+      "key": "stages.3.1.total.0.1.main.0.weight",
+      "shape": [
+        192
+      ]
+    },
+    "stages.3.1.total.0.1.main.1.bias": {
+      "dtype": "F32",
+      "key": "stages.3.1.total.0.1.main.1.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.3.1.total.0.1.main.1.weight": {
+      "dtype": "F32",
+      "key": "stages.3.1.total.0.1.main.1.weight",
+      "shape": [
+        768,
+        192,
+        1,
+        1
+      ]
+    },
+    "stages.3.1.total.0.1.main.3.bias": {
+      "dtype": "F32",
+      "key": "stages.3.1.total.0.1.main.3.bias",
+      "shape": [
+        192
+      ]
+    },
+    "stages.3.1.total.0.1.main.3.weight": {
+      "dtype": "F32",
+      "key": "stages.3.1.total.0.1.main.3.weight",
+      "shape": [
+        192,
+        768,
+        1,
+        1
+      ]
+    },
+    "stages.3.1.total.1.main.point_conv.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.3.1.total.1.main.point_conv.conv.weight",
+      "shape": [
+        192,
+        768,
+        1,
+        1
+      ]
+    },
+    "stages.3.1.total.1.main.point_conv.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.3.1.total.1.main.point_conv.norm.bias",
+      "shape": [
+        192
+      ]
+    },
+    "stages.3.1.total.1.main.point_conv.norm.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.3.1.total.1.main.point_conv.norm.num_batches_tracked",
+      "shape": []
+    },
+    "stages.3.1.total.1.main.point_conv.norm.running_mean": {
+      "dtype": "F32",
+      "key": "stages.3.1.total.1.main.point_conv.norm.running_mean",
+      "shape": [
+        192
+      ]
+    },
+    "stages.3.1.total.1.main.point_conv.norm.running_var": {
+      "dtype": "F32",
+      "key": "stages.3.1.total.1.main.point_conv.norm.running_var",
+      "shape": [
+        192
+      ]
+    },
+    "stages.3.1.total.1.main.point_conv.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.3.1.total.1.main.point_conv.norm.weight",
+      "shape": [
+        192
+      ]
+    },
+    "stages.3.1.total.1.main.spatial_conv.conv.1.bias": {
+      "dtype": "F32",
+      "key": "stages.3.1.total.1.main.spatial_conv.conv.1.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.3.1.total.1.main.spatial_conv.conv.1.weight": {
+      "dtype": "F32",
+      "key": "stages.3.1.total.1.main.spatial_conv.conv.1.weight",
+      "shape": [
+        768,
+        96,
+        2,
+        2
+      ]
+    },
+    "stages.3.1.total.1.main.spatial_conv.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.3.1.total.1.main.spatial_conv.norm.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.3.1.total.1.main.spatial_conv.norm.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.3.1.total.1.main.spatial_conv.norm.num_batches_tracked",
+      "shape": []
+    },
+    "stages.3.1.total.1.main.spatial_conv.norm.running_mean": {
+      "dtype": "F32",
+      "key": "stages.3.1.total.1.main.spatial_conv.norm.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.3.1.total.1.main.spatial_conv.norm.running_var": {
+      "dtype": "F32",
+      "key": "stages.3.1.total.1.main.spatial_conv.norm.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.3.1.total.1.main.spatial_conv.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.3.1.total.1.main.spatial_conv.norm.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stages.3.2.total.0.0.main.0.bias": {
+      "dtype": "F32",
+      "key": "stages.3.2.total.0.0.main.0.bias",
+      "shape": [
+        192
+      ]
+    },
+    "stages.3.2.total.0.0.main.0.weight": {
+      "dtype": "F32",
+      "key": "stages.3.2.total.0.0.main.0.weight",
+      "shape": [
+        192
+      ]
+    },
+    "stages.3.2.total.0.0.main.1.conv_proj.conv.1.weight": {
+      "dtype": "F32",
+      "key": "stages.3.2.total.0.0.main.1.conv_proj.conv.1.weight",
+      "shape": [
+        192,
+        1,
+        2,
+        2
+      ]
+    },
+    "stages.3.2.total.0.0.main.1.conv_proj.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.3.2.total.0.0.main.1.conv_proj.norm.bias",
+      "shape": [
+        192
+      ]
+    },
+    "stages.3.2.total.0.0.main.1.conv_proj.norm.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.3.2.total.0.0.main.1.conv_proj.norm.num_batches_tracked",
+      "shape": []
+    },
+    "stages.3.2.total.0.0.main.1.conv_proj.norm.running_mean": {
+      "dtype": "F32",
+      "key": "stages.3.2.total.0.0.main.1.conv_proj.norm.running_mean",
+      "shape": [
+        192
+      ]
+    },
+    "stages.3.2.total.0.0.main.1.conv_proj.norm.running_var": {
+      "dtype": "F32",
+      "key": "stages.3.2.total.0.0.main.1.conv_proj.norm.running_var",
+      "shape": [
+        192
+      ]
+    },
+    "stages.3.2.total.0.0.main.1.conv_proj.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.3.2.total.0.0.main.1.conv_proj.norm.weight",
+      "shape": [
+        192
+      ]
+    },
+    "stages.3.2.total.0.0.main.1.pwise.weight": {
+      "dtype": "F32",
+      "key": "stages.3.2.total.0.0.main.1.pwise.weight",
+      "shape": [
+        288,
+        192,
+        1,
+        1
+      ]
+    },
+    "stages.3.2.total.0.0.main.1.upsampling.0.bias": {
+      "dtype": "F32",
+      "key": "stages.3.2.total.0.0.main.1.upsampling.0.bias",
+      "shape": [
+        192
+      ]
+    },
+    "stages.3.2.total.0.0.main.1.upsampling.0.weight": {
+      "dtype": "F32",
+      "key": "stages.3.2.total.0.0.main.1.upsampling.0.weight",
+      "shape": [
+        192,
+        96,
+        1,
+        1
+      ]
+    },
+    "stages.3.2.total.0.1.main.0.bias": {
+      "dtype": "F32",
+      "key": "stages.3.2.total.0.1.main.0.bias",
+      "shape": [
+        192
+      ]
+    },
+    "stages.3.2.total.0.1.main.0.weight": {
+      "dtype": "F32",
+      "key": "stages.3.2.total.0.1.main.0.weight",
+      "shape": [
+        192
+      ]
+    },
+    "stages.3.2.total.0.1.main.1.bias": {
+      "dtype": "F32",
+      "key": "stages.3.2.total.0.1.main.1.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.3.2.total.0.1.main.1.weight": {
+      "dtype": "F32",
+      "key": "stages.3.2.total.0.1.main.1.weight",
+      "shape": [
+        768,
+        192,
+        1,
+        1
+      ]
+    },
+    "stages.3.2.total.0.1.main.3.bias": {
+      "dtype": "F32",
+      "key": "stages.3.2.total.0.1.main.3.bias",
+      "shape": [
+        192
+      ]
+    },
+    "stages.3.2.total.0.1.main.3.weight": {
+      "dtype": "F32",
+      "key": "stages.3.2.total.0.1.main.3.weight",
+      "shape": [
+        192,
+        768,
+        1,
+        1
+      ]
+    },
+    "stages.3.2.total.1.main.point_conv.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.3.2.total.1.main.point_conv.conv.weight",
+      "shape": [
+        192,
+        768,
+        1,
+        1
+      ]
+    },
+    "stages.3.2.total.1.main.point_conv.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.3.2.total.1.main.point_conv.norm.bias",
+      "shape": [
+        192
+      ]
+    },
+    "stages.3.2.total.1.main.point_conv.norm.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.3.2.total.1.main.point_conv.norm.num_batches_tracked",
+      "shape": []
+    },
+    "stages.3.2.total.1.main.point_conv.norm.running_mean": {
+      "dtype": "F32",
+      "key": "stages.3.2.total.1.main.point_conv.norm.running_mean",
+      "shape": [
+        192
+      ]
+    },
+    "stages.3.2.total.1.main.point_conv.norm.running_var": {
+      "dtype": "F32",
+      "key": "stages.3.2.total.1.main.point_conv.norm.running_var",
+      "shape": [
+        192
+      ]
+    },
+    "stages.3.2.total.1.main.point_conv.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.3.2.total.1.main.point_conv.norm.weight",
+      "shape": [
+        192
+      ]
+    },
+    "stages.3.2.total.1.main.spatial_conv.conv.1.bias": {
+      "dtype": "F32",
+      "key": "stages.3.2.total.1.main.spatial_conv.conv.1.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.3.2.total.1.main.spatial_conv.conv.1.weight": {
+      "dtype": "F32",
+      "key": "stages.3.2.total.1.main.spatial_conv.conv.1.weight",
+      "shape": [
+        768,
+        96,
+        2,
+        2
+      ]
+    },
+    "stages.3.2.total.1.main.spatial_conv.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.3.2.total.1.main.spatial_conv.norm.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.3.2.total.1.main.spatial_conv.norm.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.3.2.total.1.main.spatial_conv.norm.num_batches_tracked",
+      "shape": []
+    },
+    "stages.3.2.total.1.main.spatial_conv.norm.running_mean": {
+      "dtype": "F32",
+      "key": "stages.3.2.total.1.main.spatial_conv.norm.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.3.2.total.1.main.spatial_conv.norm.running_var": {
+      "dtype": "F32",
+      "key": "stages.3.2.total.1.main.spatial_conv.norm.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.3.2.total.1.main.spatial_conv.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.3.2.total.1.main.spatial_conv.norm.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stem.0.conv.weight": {
+      "dtype": "F32",
+      "key": "stem.0.conv.weight",
+      "shape": [
+        12,
+        3,
+        3,
+        3
+      ]
+    },
+    "stem.0.norm.bias": {
+      "dtype": "F32",
+      "key": "stem.0.norm.bias",
+      "shape": [
+        12
+      ]
+    },
+    "stem.0.norm.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stem.0.norm.num_batches_tracked",
+      "shape": []
+    },
+    "stem.0.norm.running_mean": {
+      "dtype": "F32",
+      "key": "stem.0.norm.running_mean",
+      "shape": [
+        12
+      ]
+    },
+    "stem.0.norm.running_var": {
+      "dtype": "F32",
+      "key": "stem.0.norm.running_var",
+      "shape": [
+        12
+      ]
+    },
+    "stem.0.norm.weight": {
+      "dtype": "F32",
+      "key": "stem.0.norm.weight",
+      "shape": [
+        12
+      ]
+    }
+  },
+  "unmapped": []
+}

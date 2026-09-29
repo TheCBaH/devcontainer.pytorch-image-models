@@ -1,0 +1,827 @@
+{
+  "schema_version": 1,
+  "source": {
+    "filename": "model.safetensors",
+    "repo_id": "timm/poolformerv2_s12.sail_in1k",
+    "revision": "0cc8631ab60a1c10553a24ae574d8ec8b717ea0f",
+    "sha256": "0f1e5c59789a111a9b039d3644be574a5189e0b7a56f2e308b85fd260e988a4f",
+    "size": 47577156,
+    "url": "https://huggingface.co/timm/poolformerv2_s12.sail_in1k/resolve/0cc8631ab60a1c10553a24ae574d8ec8b717ea0f/model.safetensors"
+  },
+  "tensors": {
+    "model.head.fc.bias": {
+      "dtype": "F32",
+      "key": "head.fc.bias",
+      "shape": [
+        1000
+      ]
+    },
+    "model.head.fc.weight": {
+      "dtype": "F32",
+      "key": "head.fc.weight",
+      "shape": [
+        1000,
+        512
+      ]
+    },
+    "model.head.norm.bias": {
+      "dtype": "F32",
+      "key": "head.norm.bias",
+      "shape": [
+        512
+      ]
+    },
+    "model.head.norm.weight": {
+      "dtype": "F32",
+      "key": "head.norm.weight",
+      "shape": [
+        512
+      ]
+    },
+    "model.stages.0.blocks.0.mlp.act.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.mlp.act.bias",
+      "shape": [
+        1
+      ]
+    },
+    "model.stages.0.blocks.0.mlp.act.scale": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.mlp.act.scale",
+      "shape": [
+        1
+      ]
+    },
+    "model.stages.0.blocks.0.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.mlp.fc1.weight",
+      "shape": [
+        256,
+        64,
+        1,
+        1
+      ]
+    },
+    "model.stages.0.blocks.0.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.mlp.fc2.weight",
+      "shape": [
+        64,
+        256,
+        1,
+        1
+      ]
+    },
+    "model.stages.0.blocks.0.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.norm1.weight",
+      "shape": [
+        64
+      ]
+    },
+    "model.stages.0.blocks.0.norm2.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.norm2.weight",
+      "shape": [
+        64
+      ]
+    },
+    "model.stages.0.blocks.1.mlp.act.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.mlp.act.bias",
+      "shape": [
+        1
+      ]
+    },
+    "model.stages.0.blocks.1.mlp.act.scale": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.mlp.act.scale",
+      "shape": [
+        1
+      ]
+    },
+    "model.stages.0.blocks.1.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.mlp.fc1.weight",
+      "shape": [
+        256,
+        64,
+        1,
+        1
+      ]
+    },
+    "model.stages.0.blocks.1.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.mlp.fc2.weight",
+      "shape": [
+        64,
+        256,
+        1,
+        1
+      ]
+    },
+    "model.stages.0.blocks.1.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.norm1.weight",
+      "shape": [
+        64
+      ]
+    },
+    "model.stages.0.blocks.1.norm2.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.norm2.weight",
+      "shape": [
+        64
+      ]
+    },
+    "model.stages.1.blocks.0.mlp.act.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.mlp.act.bias",
+      "shape": [
+        1
+      ]
+    },
+    "model.stages.1.blocks.0.mlp.act.scale": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.mlp.act.scale",
+      "shape": [
+        1
+      ]
+    },
+    "model.stages.1.blocks.0.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.mlp.fc1.weight",
+      "shape": [
+        512,
+        128,
+        1,
+        1
+      ]
+    },
+    "model.stages.1.blocks.0.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.mlp.fc2.weight",
+      "shape": [
+        128,
+        512,
+        1,
+        1
+      ]
+    },
+    "model.stages.1.blocks.0.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.norm1.weight",
+      "shape": [
+        128
+      ]
+    },
+    "model.stages.1.blocks.0.norm2.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.norm2.weight",
+      "shape": [
+        128
+      ]
+    },
+    "model.stages.1.blocks.1.mlp.act.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.mlp.act.bias",
+      "shape": [
+        1
+      ]
+    },
+    "model.stages.1.blocks.1.mlp.act.scale": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.mlp.act.scale",
+      "shape": [
+        1
+      ]
+    },
+    "model.stages.1.blocks.1.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.mlp.fc1.weight",
+      "shape": [
+        512,
+        128,
+        1,
+        1
+      ]
+    },
+    "model.stages.1.blocks.1.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.mlp.fc2.weight",
+      "shape": [
+        128,
+        512,
+        1,
+        1
+      ]
+    },
+    "model.stages.1.blocks.1.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.norm1.weight",
+      "shape": [
+        128
+      ]
+    },
+    "model.stages.1.blocks.1.norm2.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.norm2.weight",
+      "shape": [
+        128
+      ]
+    },
+    "model.stages.1.downsample.conv.bias": {
+      "dtype": "F32",
+      "key": "stages.1.downsample.conv.bias",
+      "shape": [
+        128
+      ]
+    },
+    "model.stages.1.downsample.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.1.downsample.conv.weight",
+      "shape": [
+        128,
+        64,
+        3,
+        3
+      ]
+    },
+    "model.stages.1.downsample.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.1.downsample.norm.weight",
+      "shape": [
+        64
+      ]
+    },
+    "model.stages.2.blocks.0.mlp.act.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.mlp.act.bias",
+      "shape": [
+        1
+      ]
+    },
+    "model.stages.2.blocks.0.mlp.act.scale": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.mlp.act.scale",
+      "shape": [
+        1
+      ]
+    },
+    "model.stages.2.blocks.0.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.mlp.fc1.weight",
+      "shape": [
+        1280,
+        320,
+        1,
+        1
+      ]
+    },
+    "model.stages.2.blocks.0.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.mlp.fc2.weight",
+      "shape": [
+        320,
+        1280,
+        1,
+        1
+      ]
+    },
+    "model.stages.2.blocks.0.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.norm1.weight",
+      "shape": [
+        320
+      ]
+    },
+    "model.stages.2.blocks.0.norm2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.norm2.weight",
+      "shape": [
+        320
+      ]
+    },
+    "model.stages.2.blocks.0.res_scale1.scale": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.res_scale1.scale",
+      "shape": [
+        320
+      ]
+    },
+    "model.stages.2.blocks.0.res_scale2.scale": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.res_scale2.scale",
+      "shape": [
+        320
+      ]
+    },
+    "model.stages.2.blocks.1.mlp.act.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.mlp.act.bias",
+      "shape": [
+        1
+      ]
+    },
+    "model.stages.2.blocks.1.mlp.act.scale": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.mlp.act.scale",
+      "shape": [
+        1
+      ]
+    },
+    "model.stages.2.blocks.1.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.mlp.fc1.weight",
+      "shape": [
+        1280,
+        320,
+        1,
+        1
+      ]
+    },
+    "model.stages.2.blocks.1.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.mlp.fc2.weight",
+      "shape": [
+        320,
+        1280,
+        1,
+        1
+      ]
+    },
+    "model.stages.2.blocks.1.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.norm1.weight",
+      "shape": [
+        320
+      ]
+    },
+    "model.stages.2.blocks.1.norm2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.norm2.weight",
+      "shape": [
+        320
+      ]
+    },
+    "model.stages.2.blocks.1.res_scale1.scale": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.res_scale1.scale",
+      "shape": [
+        320
+      ]
+    },
+    "model.stages.2.blocks.1.res_scale2.scale": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.res_scale2.scale",
+      "shape": [
+        320
+      ]
+    },
+    "model.stages.2.blocks.2.mlp.act.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.mlp.act.bias",
+      "shape": [
+        1
+      ]
+    },
+    "model.stages.2.blocks.2.mlp.act.scale": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.mlp.act.scale",
+      "shape": [
+        1
+      ]
+    },
+    "model.stages.2.blocks.2.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.mlp.fc1.weight",
+      "shape": [
+        1280,
+        320,
+        1,
+        1
+      ]
+    },
+    "model.stages.2.blocks.2.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.mlp.fc2.weight",
+      "shape": [
+        320,
+        1280,
+        1,
+        1
+      ]
+    },
+    "model.stages.2.blocks.2.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.norm1.weight",
+      "shape": [
+        320
+      ]
+    },
+    "model.stages.2.blocks.2.norm2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.norm2.weight",
+      "shape": [
+        320
+      ]
+    },
+    "model.stages.2.blocks.2.res_scale1.scale": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.res_scale1.scale",
+      "shape": [
+        320
+      ]
+    },
+    "model.stages.2.blocks.2.res_scale2.scale": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.res_scale2.scale",
+      "shape": [
+        320
+      ]
+    },
+    "model.stages.2.blocks.3.mlp.act.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.mlp.act.bias",
+      "shape": [
+        1
+      ]
+    },
+    "model.stages.2.blocks.3.mlp.act.scale": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.mlp.act.scale",
+      "shape": [
+        1
+      ]
+    },
+    "model.stages.2.blocks.3.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.mlp.fc1.weight",
+      "shape": [
+        1280,
+        320,
+        1,
+        1
+      ]
+    },
+    "model.stages.2.blocks.3.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.mlp.fc2.weight",
+      "shape": [
+        320,
+        1280,
+        1,
+        1
+      ]
+    },
+    "model.stages.2.blocks.3.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.norm1.weight",
+      "shape": [
+        320
+      ]
+    },
+    "model.stages.2.blocks.3.norm2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.norm2.weight",
+      "shape": [
+        320
+      ]
+    },
+    "model.stages.2.blocks.3.res_scale1.scale": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.res_scale1.scale",
+      "shape": [
+        320
+      ]
+    },
+    "model.stages.2.blocks.3.res_scale2.scale": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.res_scale2.scale",
+      "shape": [
+        320
+      ]
+    },
+    "model.stages.2.blocks.4.mlp.act.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.mlp.act.bias",
+      "shape": [
+        1
+      ]
+    },
+    "model.stages.2.blocks.4.mlp.act.scale": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.mlp.act.scale",
+      "shape": [
+        1
+      ]
+    },
+    "model.stages.2.blocks.4.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.mlp.fc1.weight",
+      "shape": [
+        1280,
+        320,
+        1,
+        1
+      ]
+    },
+    "model.stages.2.blocks.4.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.mlp.fc2.weight",
+      "shape": [
+        320,
+        1280,
+        1,
+        1
+      ]
+    },
+    "model.stages.2.blocks.4.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.norm1.weight",
+      "shape": [
+        320
+      ]
+    },
+    "model.stages.2.blocks.4.norm2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.norm2.weight",
+      "shape": [
+        320
+      ]
+    },
+    "model.stages.2.blocks.4.res_scale1.scale": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.res_scale1.scale",
+      "shape": [
+        320
+      ]
+    },
+    "model.stages.2.blocks.4.res_scale2.scale": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.res_scale2.scale",
+      "shape": [
+        320
+      ]
+    },
+    "model.stages.2.blocks.5.mlp.act.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.mlp.act.bias",
+      "shape": [
+        1
+      ]
+    },
+    "model.stages.2.blocks.5.mlp.act.scale": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.mlp.act.scale",
+      "shape": [
+        1
+      ]
+    },
+    "model.stages.2.blocks.5.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.mlp.fc1.weight",
+      "shape": [
+        1280,
+        320,
+        1,
+        1
+      ]
+    },
+    "model.stages.2.blocks.5.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.mlp.fc2.weight",
+      "shape": [
+        320,
+        1280,
+        1,
+        1
+      ]
+    },
+    "model.stages.2.blocks.5.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.norm1.weight",
+      "shape": [
+        320
+      ]
+    },
+    "model.stages.2.blocks.5.norm2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.norm2.weight",
+      "shape": [
+        320
+      ]
+    },
+    "model.stages.2.blocks.5.res_scale1.scale": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.res_scale1.scale",
+      "shape": [
+        320
+      ]
+    },
+    "model.stages.2.blocks.5.res_scale2.scale": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.res_scale2.scale",
+      "shape": [
+        320
+      ]
+    },
+    "model.stages.2.downsample.conv.bias": {
+      "dtype": "F32",
+      "key": "stages.2.downsample.conv.bias",
+      "shape": [
+        320
+      ]
+    },
+    "model.stages.2.downsample.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.downsample.conv.weight",
+      "shape": [
+        320,
+        128,
+        3,
+        3
+      ]
+    },
+    "model.stages.2.downsample.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.2.downsample.norm.weight",
+      "shape": [
+        128
+      ]
+    },
+    "model.stages.3.blocks.0.mlp.act.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.mlp.act.bias",
+      "shape": [
+        1
+      ]
+    },
+    "model.stages.3.blocks.0.mlp.act.scale": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.mlp.act.scale",
+      "shape": [
+        1
+      ]
+    },
+    "model.stages.3.blocks.0.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.mlp.fc1.weight",
+      "shape": [
+        2048,
+        512,
+        1,
+        1
+      ]
+    },
+    "model.stages.3.blocks.0.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.mlp.fc2.weight",
+      "shape": [
+        512,
+        2048,
+        1,
+        1
+      ]
+    },
+    "model.stages.3.blocks.0.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.norm1.weight",
+      "shape": [
+        512
+      ]
+    },
+    "model.stages.3.blocks.0.norm2.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.norm2.weight",
+      "shape": [
+        512
+      ]
+    },
+    "model.stages.3.blocks.0.res_scale1.scale": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.res_scale1.scale",
+      "shape": [
+        512
+      ]
+    },
+    "model.stages.3.blocks.0.res_scale2.scale": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.res_scale2.scale",
+      "shape": [
+        512
+      ]
+    },
+    "model.stages.3.blocks.1.mlp.act.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.mlp.act.bias",
+      "shape": [
+        1
+      ]
+    },
+    "model.stages.3.blocks.1.mlp.act.scale": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.mlp.act.scale",
+      "shape": [
+        1
+      ]
+    },
+    "model.stages.3.blocks.1.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.mlp.fc1.weight",
+      "shape": [
+        2048,
+        512,
+        1,
+        1
+      ]
+    },
+    "model.stages.3.blocks.1.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.mlp.fc2.weight",
+      "shape": [
+        512,
+        2048,
+        1,
+        1
+      ]
+    },
+    "model.stages.3.blocks.1.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.norm1.weight",
+      "shape": [
+        512
+      ]
+    },
+    "model.stages.3.blocks.1.norm2.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.norm2.weight",
+      "shape": [
+        512
+      ]
+    },
+    "model.stages.3.blocks.1.res_scale1.scale": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.res_scale1.scale",
+      "shape": [
+        512
+      ]
+    },
+    "model.stages.3.blocks.1.res_scale2.scale": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.res_scale2.scale",
+      "shape": [
+        512
+      ]
+    },
+    "model.stages.3.downsample.conv.bias": {
+      "dtype": "F32",
+      "key": "stages.3.downsample.conv.bias",
+      "shape": [
+        512
+      ]
+    },
+    "model.stages.3.downsample.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.3.downsample.conv.weight",
+      "shape": [
+        512,
+        320,
+        3,
+        3
+      ]
+    },
+    "model.stages.3.downsample.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.3.downsample.norm.weight",
+      "shape": [
+        320
+      ]
+    },
+    "model.stem.conv.bias": {
+      "dtype": "F32",
+      "key": "stem.conv.bias",
+      "shape": [
+        64
+      ]
+    },
+    "model.stem.conv.weight": {
+      "dtype": "F32",
+      "key": "stem.conv.weight",
+      "shape": [
+        64,
+        3,
+        7,
+        7
+      ]
+    },
+    "model.stem.norm.weight": {
+      "dtype": "F32",
+      "key": "stem.norm.weight",
+      "shape": [
+        64
+      ]
+    }
+  },
+  "unmapped": []
+}

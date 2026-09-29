@@ -1,0 +1,1385 @@
+{
+  "schema_version": 1,
+  "source": {
+    "filename": "model.safetensors",
+    "repo_id": "timm/vit_small_patch16_dinov3_qkvb.lvd1689m",
+    "revision": "2c7705788ac282557562465d6443606664a55f05",
+    "sha256": "71aedea5ea914657b8fd641beadbd97c012f87e3116d4d081eb143aa520ab53c",
+    "size": 86401352,
+    "url": "https://huggingface.co/timm/vit_small_patch16_dinov3_qkvb.lvd1689m/resolve/2c7705788ac282557562465d6443606664a55f05/model.safetensors"
+  },
+  "tensors": {
+    "model.blocks.0.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "blocks.0.attn.proj.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.0.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "blocks.0.attn.proj.weight",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "model.blocks.0.attn.q_bias": {
+      "dtype": "F32",
+      "key": "blocks.0.attn.q_bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.0.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "blocks.0.attn.qkv.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.blocks.0.attn.v_bias": {
+      "dtype": "F32",
+      "key": "blocks.0.attn.v_bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.0.gamma_1": {
+      "dtype": "F32",
+      "key": "blocks.0.gamma_1",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.0.gamma_2": {
+      "dtype": "F32",
+      "key": "blocks.0.gamma_2",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.0.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "blocks.0.mlp.fc1.bias",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.0.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "blocks.0.mlp.fc1.weight",
+      "shape": [
+        1536,
+        384
+      ]
+    },
+    "model.blocks.0.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "blocks.0.mlp.fc2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.0.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "blocks.0.mlp.fc2.weight",
+      "shape": [
+        384,
+        1536
+      ]
+    },
+    "model.blocks.0.norm1.bias": {
+      "dtype": "F32",
+      "key": "blocks.0.norm1.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.0.norm1.weight": {
+      "dtype": "F32",
+      "key": "blocks.0.norm1.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.0.norm2.bias": {
+      "dtype": "F32",
+      "key": "blocks.0.norm2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.0.norm2.weight": {
+      "dtype": "F32",
+      "key": "blocks.0.norm2.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.1.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "blocks.1.attn.proj.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.1.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "blocks.1.attn.proj.weight",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "model.blocks.1.attn.q_bias": {
+      "dtype": "F32",
+      "key": "blocks.1.attn.q_bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.1.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "blocks.1.attn.qkv.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.blocks.1.attn.v_bias": {
+      "dtype": "F32",
+      "key": "blocks.1.attn.v_bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.1.gamma_1": {
+      "dtype": "F32",
+      "key": "blocks.1.gamma_1",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.1.gamma_2": {
+      "dtype": "F32",
+      "key": "blocks.1.gamma_2",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.1.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "blocks.1.mlp.fc1.bias",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.1.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "blocks.1.mlp.fc1.weight",
+      "shape": [
+        1536,
+        384
+      ]
+    },
+    "model.blocks.1.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "blocks.1.mlp.fc2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.1.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "blocks.1.mlp.fc2.weight",
+      "shape": [
+        384,
+        1536
+      ]
+    },
+    "model.blocks.1.norm1.bias": {
+      "dtype": "F32",
+      "key": "blocks.1.norm1.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.1.norm1.weight": {
+      "dtype": "F32",
+      "key": "blocks.1.norm1.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.1.norm2.bias": {
+      "dtype": "F32",
+      "key": "blocks.1.norm2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.1.norm2.weight": {
+      "dtype": "F32",
+      "key": "blocks.1.norm2.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.10.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "blocks.10.attn.proj.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.10.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "blocks.10.attn.proj.weight",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "model.blocks.10.attn.q_bias": {
+      "dtype": "F32",
+      "key": "blocks.10.attn.q_bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.10.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "blocks.10.attn.qkv.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.blocks.10.attn.v_bias": {
+      "dtype": "F32",
+      "key": "blocks.10.attn.v_bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.10.gamma_1": {
+      "dtype": "F32",
+      "key": "blocks.10.gamma_1",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.10.gamma_2": {
+      "dtype": "F32",
+      "key": "blocks.10.gamma_2",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.10.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "blocks.10.mlp.fc1.bias",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.10.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "blocks.10.mlp.fc1.weight",
+      "shape": [
+        1536,
+        384
+      ]
+    },
+    "model.blocks.10.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "blocks.10.mlp.fc2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.10.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "blocks.10.mlp.fc2.weight",
+      "shape": [
+        384,
+        1536
+      ]
+    },
+    "model.blocks.10.norm1.bias": {
+      "dtype": "F32",
+      "key": "blocks.10.norm1.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.10.norm1.weight": {
+      "dtype": "F32",
+      "key": "blocks.10.norm1.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.10.norm2.bias": {
+      "dtype": "F32",
+      "key": "blocks.10.norm2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.10.norm2.weight": {
+      "dtype": "F32",
+      "key": "blocks.10.norm2.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.11.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "blocks.11.attn.proj.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.11.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "blocks.11.attn.proj.weight",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "model.blocks.11.attn.q_bias": {
+      "dtype": "F32",
+      "key": "blocks.11.attn.q_bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.11.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "blocks.11.attn.qkv.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.blocks.11.attn.v_bias": {
+      "dtype": "F32",
+      "key": "blocks.11.attn.v_bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.11.gamma_1": {
+      "dtype": "F32",
+      "key": "blocks.11.gamma_1",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.11.gamma_2": {
+      "dtype": "F32",
+      "key": "blocks.11.gamma_2",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.11.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "blocks.11.mlp.fc1.bias",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.11.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "blocks.11.mlp.fc1.weight",
+      "shape": [
+        1536,
+        384
+      ]
+    },
+    "model.blocks.11.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "blocks.11.mlp.fc2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.11.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "blocks.11.mlp.fc2.weight",
+      "shape": [
+        384,
+        1536
+      ]
+    },
+    "model.blocks.11.norm1.bias": {
+      "dtype": "F32",
+      "key": "blocks.11.norm1.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.11.norm1.weight": {
+      "dtype": "F32",
+      "key": "blocks.11.norm1.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.11.norm2.bias": {
+      "dtype": "F32",
+      "key": "blocks.11.norm2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.11.norm2.weight": {
+      "dtype": "F32",
+      "key": "blocks.11.norm2.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.2.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "blocks.2.attn.proj.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.2.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "blocks.2.attn.proj.weight",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "model.blocks.2.attn.q_bias": {
+      "dtype": "F32",
+      "key": "blocks.2.attn.q_bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.2.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "blocks.2.attn.qkv.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.blocks.2.attn.v_bias": {
+      "dtype": "F32",
+      "key": "blocks.2.attn.v_bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.2.gamma_1": {
+      "dtype": "F32",
+      "key": "blocks.2.gamma_1",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.2.gamma_2": {
+      "dtype": "F32",
+      "key": "blocks.2.gamma_2",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.2.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "blocks.2.mlp.fc1.bias",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.2.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "blocks.2.mlp.fc1.weight",
+      "shape": [
+        1536,
+        384
+      ]
+    },
+    "model.blocks.2.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "blocks.2.mlp.fc2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.2.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "blocks.2.mlp.fc2.weight",
+      "shape": [
+        384,
+        1536
+      ]
+    },
+    "model.blocks.2.norm1.bias": {
+      "dtype": "F32",
+      "key": "blocks.2.norm1.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.2.norm1.weight": {
+      "dtype": "F32",
+      "key": "blocks.2.norm1.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.2.norm2.bias": {
+      "dtype": "F32",
+      "key": "blocks.2.norm2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.2.norm2.weight": {
+      "dtype": "F32",
+      "key": "blocks.2.norm2.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.3.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "blocks.3.attn.proj.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.3.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.attn.proj.weight",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "model.blocks.3.attn.q_bias": {
+      "dtype": "F32",
+      "key": "blocks.3.attn.q_bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.3.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.attn.qkv.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.blocks.3.attn.v_bias": {
+      "dtype": "F32",
+      "key": "blocks.3.attn.v_bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.3.gamma_1": {
+      "dtype": "F32",
+      "key": "blocks.3.gamma_1",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.3.gamma_2": {
+      "dtype": "F32",
+      "key": "blocks.3.gamma_2",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.3.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "blocks.3.mlp.fc1.bias",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.3.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.mlp.fc1.weight",
+      "shape": [
+        1536,
+        384
+      ]
+    },
+    "model.blocks.3.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "blocks.3.mlp.fc2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.3.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.mlp.fc2.weight",
+      "shape": [
+        384,
+        1536
+      ]
+    },
+    "model.blocks.3.norm1.bias": {
+      "dtype": "F32",
+      "key": "blocks.3.norm1.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.3.norm1.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.norm1.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.3.norm2.bias": {
+      "dtype": "F32",
+      "key": "blocks.3.norm2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.3.norm2.weight": {
+      "dtype": "F32",
+      "key": "blocks.3.norm2.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.4.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "blocks.4.attn.proj.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.4.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "blocks.4.attn.proj.weight",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "model.blocks.4.attn.q_bias": {
+      "dtype": "F32",
+      "key": "blocks.4.attn.q_bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.4.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "blocks.4.attn.qkv.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.blocks.4.attn.v_bias": {
+      "dtype": "F32",
+      "key": "blocks.4.attn.v_bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.4.gamma_1": {
+      "dtype": "F32",
+      "key": "blocks.4.gamma_1",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.4.gamma_2": {
+      "dtype": "F32",
+      "key": "blocks.4.gamma_2",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.4.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "blocks.4.mlp.fc1.bias",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.4.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "blocks.4.mlp.fc1.weight",
+      "shape": [
+        1536,
+        384
+      ]
+    },
+    "model.blocks.4.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "blocks.4.mlp.fc2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.4.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "blocks.4.mlp.fc2.weight",
+      "shape": [
+        384,
+        1536
+      ]
+    },
+    "model.blocks.4.norm1.bias": {
+      "dtype": "F32",
+      "key": "blocks.4.norm1.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.4.norm1.weight": {
+      "dtype": "F32",
+      "key": "blocks.4.norm1.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.4.norm2.bias": {
+      "dtype": "F32",
+      "key": "blocks.4.norm2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.4.norm2.weight": {
+      "dtype": "F32",
+      "key": "blocks.4.norm2.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.5.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "blocks.5.attn.proj.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.5.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "blocks.5.attn.proj.weight",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "model.blocks.5.attn.q_bias": {
+      "dtype": "F32",
+      "key": "blocks.5.attn.q_bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.5.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "blocks.5.attn.qkv.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.blocks.5.attn.v_bias": {
+      "dtype": "F32",
+      "key": "blocks.5.attn.v_bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.5.gamma_1": {
+      "dtype": "F32",
+      "key": "blocks.5.gamma_1",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.5.gamma_2": {
+      "dtype": "F32",
+      "key": "blocks.5.gamma_2",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.5.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "blocks.5.mlp.fc1.bias",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.5.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "blocks.5.mlp.fc1.weight",
+      "shape": [
+        1536,
+        384
+      ]
+    },
+    "model.blocks.5.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "blocks.5.mlp.fc2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.5.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "blocks.5.mlp.fc2.weight",
+      "shape": [
+        384,
+        1536
+      ]
+    },
+    "model.blocks.5.norm1.bias": {
+      "dtype": "F32",
+      "key": "blocks.5.norm1.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.5.norm1.weight": {
+      "dtype": "F32",
+      "key": "blocks.5.norm1.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.5.norm2.bias": {
+      "dtype": "F32",
+      "key": "blocks.5.norm2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.5.norm2.weight": {
+      "dtype": "F32",
+      "key": "blocks.5.norm2.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.6.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.attn.proj.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.6.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.attn.proj.weight",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "model.blocks.6.attn.q_bias": {
+      "dtype": "F32",
+      "key": "blocks.6.attn.q_bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.6.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.attn.qkv.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.blocks.6.attn.v_bias": {
+      "dtype": "F32",
+      "key": "blocks.6.attn.v_bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.6.gamma_1": {
+      "dtype": "F32",
+      "key": "blocks.6.gamma_1",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.6.gamma_2": {
+      "dtype": "F32",
+      "key": "blocks.6.gamma_2",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.6.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.mlp.fc1.bias",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.6.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.mlp.fc1.weight",
+      "shape": [
+        1536,
+        384
+      ]
+    },
+    "model.blocks.6.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.mlp.fc2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.6.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.mlp.fc2.weight",
+      "shape": [
+        384,
+        1536
+      ]
+    },
+    "model.blocks.6.norm1.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.norm1.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.6.norm1.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.norm1.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.6.norm2.bias": {
+      "dtype": "F32",
+      "key": "blocks.6.norm2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.6.norm2.weight": {
+      "dtype": "F32",
+      "key": "blocks.6.norm2.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.7.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "blocks.7.attn.proj.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.7.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.attn.proj.weight",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "model.blocks.7.attn.q_bias": {
+      "dtype": "F32",
+      "key": "blocks.7.attn.q_bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.7.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.attn.qkv.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.blocks.7.attn.v_bias": {
+      "dtype": "F32",
+      "key": "blocks.7.attn.v_bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.7.gamma_1": {
+      "dtype": "F32",
+      "key": "blocks.7.gamma_1",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.7.gamma_2": {
+      "dtype": "F32",
+      "key": "blocks.7.gamma_2",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.7.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "blocks.7.mlp.fc1.bias",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.7.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.mlp.fc1.weight",
+      "shape": [
+        1536,
+        384
+      ]
+    },
+    "model.blocks.7.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "blocks.7.mlp.fc2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.7.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.mlp.fc2.weight",
+      "shape": [
+        384,
+        1536
+      ]
+    },
+    "model.blocks.7.norm1.bias": {
+      "dtype": "F32",
+      "key": "blocks.7.norm1.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.7.norm1.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.norm1.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.7.norm2.bias": {
+      "dtype": "F32",
+      "key": "blocks.7.norm2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.7.norm2.weight": {
+      "dtype": "F32",
+      "key": "blocks.7.norm2.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.8.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.attn.proj.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.8.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.attn.proj.weight",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "model.blocks.8.attn.q_bias": {
+      "dtype": "F32",
+      "key": "blocks.8.attn.q_bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.8.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.attn.qkv.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.blocks.8.attn.v_bias": {
+      "dtype": "F32",
+      "key": "blocks.8.attn.v_bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.8.gamma_1": {
+      "dtype": "F32",
+      "key": "blocks.8.gamma_1",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.8.gamma_2": {
+      "dtype": "F32",
+      "key": "blocks.8.gamma_2",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.8.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.mlp.fc1.bias",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.8.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.mlp.fc1.weight",
+      "shape": [
+        1536,
+        384
+      ]
+    },
+    "model.blocks.8.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.mlp.fc2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.8.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.mlp.fc2.weight",
+      "shape": [
+        384,
+        1536
+      ]
+    },
+    "model.blocks.8.norm1.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.norm1.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.8.norm1.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.norm1.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.8.norm2.bias": {
+      "dtype": "F32",
+      "key": "blocks.8.norm2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.8.norm2.weight": {
+      "dtype": "F32",
+      "key": "blocks.8.norm2.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.9.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "blocks.9.attn.proj.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.9.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "blocks.9.attn.proj.weight",
+      "shape": [
+        384,
+        384
+      ]
+    },
+    "model.blocks.9.attn.q_bias": {
+      "dtype": "F32",
+      "key": "blocks.9.attn.q_bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.9.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "blocks.9.attn.qkv.weight",
+      "shape": [
+        1152,
+        384
+      ]
+    },
+    "model.blocks.9.attn.v_bias": {
+      "dtype": "F32",
+      "key": "blocks.9.attn.v_bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.9.gamma_1": {
+      "dtype": "F32",
+      "key": "blocks.9.gamma_1",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.9.gamma_2": {
+      "dtype": "F32",
+      "key": "blocks.9.gamma_2",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.9.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "blocks.9.mlp.fc1.bias",
+      "shape": [
+        1536
+      ]
+    },
+    "model.blocks.9.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "blocks.9.mlp.fc1.weight",
+      "shape": [
+        1536,
+        384
+      ]
+    },
+    "model.blocks.9.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "blocks.9.mlp.fc2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.9.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "blocks.9.mlp.fc2.weight",
+      "shape": [
+        384,
+        1536
+      ]
+    },
+    "model.blocks.9.norm1.bias": {
+      "dtype": "F32",
+      "key": "blocks.9.norm1.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.9.norm1.weight": {
+      "dtype": "F32",
+      "key": "blocks.9.norm1.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.9.norm2.bias": {
+      "dtype": "F32",
+      "key": "blocks.9.norm2.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.blocks.9.norm2.weight": {
+      "dtype": "F32",
+      "key": "blocks.9.norm2.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.cls_token": {
+      "dtype": "F32",
+      "key": "cls_token",
+      "shape": [
+        1,
+        1,
+        384
+      ]
+    },
+    "model.norm.bias": {
+      "dtype": "F32",
+      "key": "norm.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.norm.weight": {
+      "dtype": "F32",
+      "key": "norm.weight",
+      "shape": [
+        384
+      ]
+    },
+    "model.patch_embed.proj.bias": {
+      "dtype": "F32",
+      "key": "patch_embed.proj.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.patch_embed.proj.weight": {
+      "dtype": "F32",
+      "key": "patch_embed.proj.weight",
+      "shape": [
+        384,
+        3,
+        16,
+        16
+      ]
+    },
+    "model.reg_token": {
+      "dtype": "F32",
+      "key": "reg_token",
+      "shape": [
+        1,
+        4,
+        384
+      ]
+    }
+  },
+  "unmapped": [
+    "model.blocks.0.attn.k_bias",
+    "model.blocks.1.attn.k_bias",
+    "model.blocks.10.attn.k_bias",
+    "model.blocks.11.attn.k_bias",
+    "model.blocks.2.attn.k_bias",
+    "model.blocks.3.attn.k_bias",
+    "model.blocks.4.attn.k_bias",
+    "model.blocks.5.attn.k_bias",
+    "model.blocks.6.attn.k_bias",
+    "model.blocks.7.attn.k_bias",
+    "model.blocks.8.attn.k_bias",
+    "model.blocks.9.attn.k_bias",
+    "model.rope.periods"
+  ]
+}

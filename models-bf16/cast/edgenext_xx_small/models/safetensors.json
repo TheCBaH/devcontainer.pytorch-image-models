@@ -1,0 +1,1231 @@
+{
+  "schema_version": 1,
+  "source": {
+    "filename": "model.safetensors",
+    "repo_id": "timm/edgenext_xx_small.in1k",
+    "revision": "e10d04b6e70f33cfb54ebd4bce2ede078f4c9ba2",
+    "sha256": "73c3aa9ed636622ddd270c9fd52f206ed1b5b46ba86ad1cb2ec508f4558da9e9",
+    "size": 5324082,
+    "url": "https://huggingface.co/timm/edgenext_xx_small.in1k/resolve/e10d04b6e70f33cfb54ebd4bce2ede078f4c9ba2/model.safetensors"
+  },
+  "tensors": {
+    "head.fc.bias": {
+      "dtype": "F32",
+      "key": "head.fc.bias",
+      "shape": [
+        1000
+      ]
+    },
+    "head.fc.weight": {
+      "dtype": "F32",
+      "key": "head.fc.weight",
+      "shape": [
+        1000,
+        168
+      ]
+    },
+    "head.norm.bias": {
+      "dtype": "F32",
+      "key": "head.norm.bias",
+      "shape": [
+        168
+      ]
+    },
+    "head.norm.weight": {
+      "dtype": "F32",
+      "key": "head.norm.weight",
+      "shape": [
+        168
+      ]
+    },
+    "stages.0.blocks.0.conv_dw.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.conv_dw.bias",
+      "shape": [
+        24
+      ]
+    },
+    "stages.0.blocks.0.conv_dw.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.conv_dw.weight",
+      "shape": [
+        24,
+        1,
+        3,
+        3
+      ]
+    },
+    "stages.0.blocks.0.gamma": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.gamma",
+      "shape": [
+        24
+      ]
+    },
+    "stages.0.blocks.0.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.mlp.fc1.bias",
+      "shape": [
+        96
+      ]
+    },
+    "stages.0.blocks.0.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.mlp.fc1.weight",
+      "shape": [
+        96,
+        24
+      ]
+    },
+    "stages.0.blocks.0.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.mlp.fc2.bias",
+      "shape": [
+        24
+      ]
+    },
+    "stages.0.blocks.0.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.mlp.fc2.weight",
+      "shape": [
+        24,
+        96
+      ]
+    },
+    "stages.0.blocks.0.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.norm.bias",
+      "shape": [
+        24
+      ]
+    },
+    "stages.0.blocks.0.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.norm.weight",
+      "shape": [
+        24
+      ]
+    },
+    "stages.0.blocks.1.conv_dw.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.conv_dw.bias",
+      "shape": [
+        24
+      ]
+    },
+    "stages.0.blocks.1.conv_dw.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.conv_dw.weight",
+      "shape": [
+        24,
+        1,
+        3,
+        3
+      ]
+    },
+    "stages.0.blocks.1.gamma": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.gamma",
+      "shape": [
+        24
+      ]
+    },
+    "stages.0.blocks.1.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.mlp.fc1.bias",
+      "shape": [
+        96
+      ]
+    },
+    "stages.0.blocks.1.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.mlp.fc1.weight",
+      "shape": [
+        96,
+        24
+      ]
+    },
+    "stages.0.blocks.1.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.mlp.fc2.bias",
+      "shape": [
+        24
+      ]
+    },
+    "stages.0.blocks.1.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.mlp.fc2.weight",
+      "shape": [
+        24,
+        96
+      ]
+    },
+    "stages.0.blocks.1.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.norm.bias",
+      "shape": [
+        24
+      ]
+    },
+    "stages.0.blocks.1.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.norm.weight",
+      "shape": [
+        24
+      ]
+    },
+    "stages.1.blocks.0.conv_dw.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.conv_dw.bias",
+      "shape": [
+        48
+      ]
+    },
+    "stages.1.blocks.0.conv_dw.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.conv_dw.weight",
+      "shape": [
+        48,
+        1,
+        5,
+        5
+      ]
+    },
+    "stages.1.blocks.0.gamma": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.gamma",
+      "shape": [
+        48
+      ]
+    },
+    "stages.1.blocks.0.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.mlp.fc1.bias",
+      "shape": [
+        192
+      ]
+    },
+    "stages.1.blocks.0.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.mlp.fc1.weight",
+      "shape": [
+        192,
+        48
+      ]
+    },
+    "stages.1.blocks.0.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.mlp.fc2.bias",
+      "shape": [
+        48
+      ]
+    },
+    "stages.1.blocks.0.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.mlp.fc2.weight",
+      "shape": [
+        48,
+        192
+      ]
+    },
+    "stages.1.blocks.0.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.norm.bias",
+      "shape": [
+        48
+      ]
+    },
+    "stages.1.blocks.0.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.norm.weight",
+      "shape": [
+        48
+      ]
+    },
+    "stages.1.blocks.1.convs.0.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.convs.0.bias",
+      "shape": [
+        24
+      ]
+    },
+    "stages.1.blocks.1.convs.0.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.convs.0.weight",
+      "shape": [
+        24,
+        1,
+        3,
+        3
+      ]
+    },
+    "stages.1.blocks.1.gamma": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.gamma",
+      "shape": [
+        48
+      ]
+    },
+    "stages.1.blocks.1.gamma_xca": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.gamma_xca",
+      "shape": [
+        48
+      ]
+    },
+    "stages.1.blocks.1.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.mlp.fc1.bias",
+      "shape": [
+        192
+      ]
+    },
+    "stages.1.blocks.1.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.mlp.fc1.weight",
+      "shape": [
+        192,
+        48
+      ]
+    },
+    "stages.1.blocks.1.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.mlp.fc2.bias",
+      "shape": [
+        48
+      ]
+    },
+    "stages.1.blocks.1.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.mlp.fc2.weight",
+      "shape": [
+        48,
+        192
+      ]
+    },
+    "stages.1.blocks.1.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.norm.bias",
+      "shape": [
+        48
+      ]
+    },
+    "stages.1.blocks.1.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.norm.weight",
+      "shape": [
+        48
+      ]
+    },
+    "stages.1.blocks.1.norm_xca.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.norm_xca.bias",
+      "shape": [
+        48
+      ]
+    },
+    "stages.1.blocks.1.norm_xca.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.norm_xca.weight",
+      "shape": [
+        48
+      ]
+    },
+    "stages.1.blocks.1.pos_embd.token_projection.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.pos_embd.token_projection.bias",
+      "shape": [
+        48
+      ]
+    },
+    "stages.1.blocks.1.pos_embd.token_projection.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.pos_embd.token_projection.weight",
+      "shape": [
+        48,
+        64,
+        1,
+        1
+      ]
+    },
+    "stages.1.blocks.1.xca.proj.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.xca.proj.bias",
+      "shape": [
+        48
+      ]
+    },
+    "stages.1.blocks.1.xca.proj.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.xca.proj.weight",
+      "shape": [
+        48,
+        48
+      ]
+    },
+    "stages.1.blocks.1.xca.qkv.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.xca.qkv.bias",
+      "shape": [
+        144
+      ]
+    },
+    "stages.1.blocks.1.xca.qkv.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.xca.qkv.weight",
+      "shape": [
+        144,
+        48
+      ]
+    },
+    "stages.1.blocks.1.xca.temperature": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.xca.temperature",
+      "shape": [
+        4,
+        1,
+        1
+      ]
+    },
+    "stages.1.downsample.0.bias": {
+      "dtype": "F32",
+      "key": "stages.1.downsample.0.bias",
+      "shape": [
+        24
+      ]
+    },
+    "stages.1.downsample.0.weight": {
+      "dtype": "F32",
+      "key": "stages.1.downsample.0.weight",
+      "shape": [
+        24
+      ]
+    },
+    "stages.1.downsample.1.bias": {
+      "dtype": "F32",
+      "key": "stages.1.downsample.1.bias",
+      "shape": [
+        48
+      ]
+    },
+    "stages.1.downsample.1.weight": {
+      "dtype": "F32",
+      "key": "stages.1.downsample.1.weight",
+      "shape": [
+        48,
+        24,
+        2,
+        2
+      ]
+    },
+    "stages.2.blocks.0.conv_dw.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.conv_dw.bias",
+      "shape": [
+        88
+      ]
+    },
+    "stages.2.blocks.0.conv_dw.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.conv_dw.weight",
+      "shape": [
+        88,
+        1,
+        7,
+        7
+      ]
+    },
+    "stages.2.blocks.0.gamma": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.gamma",
+      "shape": [
+        88
+      ]
+    },
+    "stages.2.blocks.0.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.mlp.fc1.bias",
+      "shape": [
+        352
+      ]
+    },
+    "stages.2.blocks.0.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.mlp.fc1.weight",
+      "shape": [
+        352,
+        88
+      ]
+    },
+    "stages.2.blocks.0.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.mlp.fc2.bias",
+      "shape": [
+        88
+      ]
+    },
+    "stages.2.blocks.0.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.mlp.fc2.weight",
+      "shape": [
+        88,
+        352
+      ]
+    },
+    "stages.2.blocks.0.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.norm.bias",
+      "shape": [
+        88
+      ]
+    },
+    "stages.2.blocks.0.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.norm.weight",
+      "shape": [
+        88
+      ]
+    },
+    "stages.2.blocks.1.conv_dw.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.conv_dw.bias",
+      "shape": [
+        88
+      ]
+    },
+    "stages.2.blocks.1.conv_dw.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.conv_dw.weight",
+      "shape": [
+        88,
+        1,
+        7,
+        7
+      ]
+    },
+    "stages.2.blocks.1.gamma": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.gamma",
+      "shape": [
+        88
+      ]
+    },
+    "stages.2.blocks.1.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.mlp.fc1.bias",
+      "shape": [
+        352
+      ]
+    },
+    "stages.2.blocks.1.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.mlp.fc1.weight",
+      "shape": [
+        352,
+        88
+      ]
+    },
+    "stages.2.blocks.1.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.mlp.fc2.bias",
+      "shape": [
+        88
+      ]
+    },
+    "stages.2.blocks.1.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.mlp.fc2.weight",
+      "shape": [
+        88,
+        352
+      ]
+    },
+    "stages.2.blocks.1.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.norm.bias",
+      "shape": [
+        88
+      ]
+    },
+    "stages.2.blocks.1.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.norm.weight",
+      "shape": [
+        88
+      ]
+    },
+    "stages.2.blocks.2.conv_dw.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.conv_dw.bias",
+      "shape": [
+        88
+      ]
+    },
+    "stages.2.blocks.2.conv_dw.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.conv_dw.weight",
+      "shape": [
+        88,
+        1,
+        7,
+        7
+      ]
+    },
+    "stages.2.blocks.2.gamma": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.gamma",
+      "shape": [
+        88
+      ]
+    },
+    "stages.2.blocks.2.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.mlp.fc1.bias",
+      "shape": [
+        352
+      ]
+    },
+    "stages.2.blocks.2.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.mlp.fc1.weight",
+      "shape": [
+        352,
+        88
+      ]
+    },
+    "stages.2.blocks.2.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.mlp.fc2.bias",
+      "shape": [
+        88
+      ]
+    },
+    "stages.2.blocks.2.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.mlp.fc2.weight",
+      "shape": [
+        88,
+        352
+      ]
+    },
+    "stages.2.blocks.2.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.norm.bias",
+      "shape": [
+        88
+      ]
+    },
+    "stages.2.blocks.2.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.norm.weight",
+      "shape": [
+        88
+      ]
+    },
+    "stages.2.blocks.3.conv_dw.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.conv_dw.bias",
+      "shape": [
+        88
+      ]
+    },
+    "stages.2.blocks.3.conv_dw.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.conv_dw.weight",
+      "shape": [
+        88,
+        1,
+        7,
+        7
+      ]
+    },
+    "stages.2.blocks.3.gamma": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.gamma",
+      "shape": [
+        88
+      ]
+    },
+    "stages.2.blocks.3.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.mlp.fc1.bias",
+      "shape": [
+        352
+      ]
+    },
+    "stages.2.blocks.3.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.mlp.fc1.weight",
+      "shape": [
+        352,
+        88
+      ]
+    },
+    "stages.2.blocks.3.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.mlp.fc2.bias",
+      "shape": [
+        88
+      ]
+    },
+    "stages.2.blocks.3.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.mlp.fc2.weight",
+      "shape": [
+        88,
+        352
+      ]
+    },
+    "stages.2.blocks.3.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.norm.bias",
+      "shape": [
+        88
+      ]
+    },
+    "stages.2.blocks.3.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.norm.weight",
+      "shape": [
+        88
+      ]
+    },
+    "stages.2.blocks.4.conv_dw.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.conv_dw.bias",
+      "shape": [
+        88
+      ]
+    },
+    "stages.2.blocks.4.conv_dw.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.conv_dw.weight",
+      "shape": [
+        88,
+        1,
+        7,
+        7
+      ]
+    },
+    "stages.2.blocks.4.gamma": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.gamma",
+      "shape": [
+        88
+      ]
+    },
+    "stages.2.blocks.4.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.mlp.fc1.bias",
+      "shape": [
+        352
+      ]
+    },
+    "stages.2.blocks.4.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.mlp.fc1.weight",
+      "shape": [
+        352,
+        88
+      ]
+    },
+    "stages.2.blocks.4.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.mlp.fc2.bias",
+      "shape": [
+        88
+      ]
+    },
+    "stages.2.blocks.4.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.mlp.fc2.weight",
+      "shape": [
+        88,
+        352
+      ]
+    },
+    "stages.2.blocks.4.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.norm.bias",
+      "shape": [
+        88
+      ]
+    },
+    "stages.2.blocks.4.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.norm.weight",
+      "shape": [
+        88
+      ]
+    },
+    "stages.2.blocks.5.convs.0.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.convs.0.bias",
+      "shape": [
+        30
+      ]
+    },
+    "stages.2.blocks.5.convs.0.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.convs.0.weight",
+      "shape": [
+        30,
+        1,
+        3,
+        3
+      ]
+    },
+    "stages.2.blocks.5.convs.1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.convs.1.bias",
+      "shape": [
+        30
+      ]
+    },
+    "stages.2.blocks.5.convs.1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.convs.1.weight",
+      "shape": [
+        30,
+        1,
+        3,
+        3
+      ]
+    },
+    "stages.2.blocks.5.gamma": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.gamma",
+      "shape": [
+        88
+      ]
+    },
+    "stages.2.blocks.5.gamma_xca": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.gamma_xca",
+      "shape": [
+        88
+      ]
+    },
+    "stages.2.blocks.5.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.mlp.fc1.bias",
+      "shape": [
+        352
+      ]
+    },
+    "stages.2.blocks.5.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.mlp.fc1.weight",
+      "shape": [
+        352,
+        88
+      ]
+    },
+    "stages.2.blocks.5.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.mlp.fc2.bias",
+      "shape": [
+        88
+      ]
+    },
+    "stages.2.blocks.5.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.mlp.fc2.weight",
+      "shape": [
+        88,
+        352
+      ]
+    },
+    "stages.2.blocks.5.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.norm.bias",
+      "shape": [
+        88
+      ]
+    },
+    "stages.2.blocks.5.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.norm.weight",
+      "shape": [
+        88
+      ]
+    },
+    "stages.2.blocks.5.norm_xca.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.norm_xca.bias",
+      "shape": [
+        88
+      ]
+    },
+    "stages.2.blocks.5.norm_xca.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.norm_xca.weight",
+      "shape": [
+        88
+      ]
+    },
+    "stages.2.blocks.5.xca.proj.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.xca.proj.bias",
+      "shape": [
+        88
+      ]
+    },
+    "stages.2.blocks.5.xca.proj.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.xca.proj.weight",
+      "shape": [
+        88,
+        88
+      ]
+    },
+    "stages.2.blocks.5.xca.qkv.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.xca.qkv.bias",
+      "shape": [
+        264
+      ]
+    },
+    "stages.2.blocks.5.xca.qkv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.xca.qkv.weight",
+      "shape": [
+        264,
+        88
+      ]
+    },
+    "stages.2.blocks.5.xca.temperature": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.xca.temperature",
+      "shape": [
+        4,
+        1,
+        1
+      ]
+    },
+    "stages.2.downsample.0.bias": {
+      "dtype": "F32",
+      "key": "stages.2.downsample.0.bias",
+      "shape": [
+        48
+      ]
+    },
+    "stages.2.downsample.0.weight": {
+      "dtype": "F32",
+      "key": "stages.2.downsample.0.weight",
+      "shape": [
+        48
+      ]
+    },
+    "stages.2.downsample.1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.downsample.1.bias",
+      "shape": [
+        88
+      ]
+    },
+    "stages.2.downsample.1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.downsample.1.weight",
+      "shape": [
+        88,
+        48,
+        2,
+        2
+      ]
+    },
+    "stages.3.blocks.0.conv_dw.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.conv_dw.bias",
+      "shape": [
+        168
+      ]
+    },
+    "stages.3.blocks.0.conv_dw.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.conv_dw.weight",
+      "shape": [
+        168,
+        1,
+        9,
+        9
+      ]
+    },
+    "stages.3.blocks.0.gamma": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.gamma",
+      "shape": [
+        168
+      ]
+    },
+    "stages.3.blocks.0.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.mlp.fc1.bias",
+      "shape": [
+        672
+      ]
+    },
+    "stages.3.blocks.0.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.mlp.fc1.weight",
+      "shape": [
+        672,
+        168
+      ]
+    },
+    "stages.3.blocks.0.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.mlp.fc2.bias",
+      "shape": [
+        168
+      ]
+    },
+    "stages.3.blocks.0.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.mlp.fc2.weight",
+      "shape": [
+        168,
+        672
+      ]
+    },
+    "stages.3.blocks.0.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.norm.bias",
+      "shape": [
+        168
+      ]
+    },
+    "stages.3.blocks.0.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.norm.weight",
+      "shape": [
+        168
+      ]
+    },
+    "stages.3.blocks.1.convs.0.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.convs.0.bias",
+      "shape": [
+        42
+      ]
+    },
+    "stages.3.blocks.1.convs.0.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.convs.0.weight",
+      "shape": [
+        42,
+        1,
+        3,
+        3
+      ]
+    },
+    "stages.3.blocks.1.convs.1.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.convs.1.bias",
+      "shape": [
+        42
+      ]
+    },
+    "stages.3.blocks.1.convs.1.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.convs.1.weight",
+      "shape": [
+        42,
+        1,
+        3,
+        3
+      ]
+    },
+    "stages.3.blocks.1.convs.2.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.convs.2.bias",
+      "shape": [
+        42
+      ]
+    },
+    "stages.3.blocks.1.convs.2.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.convs.2.weight",
+      "shape": [
+        42,
+        1,
+        3,
+        3
+      ]
+    },
+    "stages.3.blocks.1.gamma": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.gamma",
+      "shape": [
+        168
+      ]
+    },
+    "stages.3.blocks.1.gamma_xca": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.gamma_xca",
+      "shape": [
+        168
+      ]
+    },
+    "stages.3.blocks.1.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.mlp.fc1.bias",
+      "shape": [
+        672
+      ]
+    },
+    "stages.3.blocks.1.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.mlp.fc1.weight",
+      "shape": [
+        672,
+        168
+      ]
+    },
+    "stages.3.blocks.1.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.mlp.fc2.bias",
+      "shape": [
+        168
+      ]
+    },
+    "stages.3.blocks.1.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.mlp.fc2.weight",
+      "shape": [
+        168,
+        672
+      ]
+    },
+    "stages.3.blocks.1.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.norm.bias",
+      "shape": [
+        168
+      ]
+    },
+    "stages.3.blocks.1.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.norm.weight",
+      "shape": [
+        168
+      ]
+    },
+    "stages.3.blocks.1.norm_xca.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.norm_xca.bias",
+      "shape": [
+        168
+      ]
+    },
+    "stages.3.blocks.1.norm_xca.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.norm_xca.weight",
+      "shape": [
+        168
+      ]
+    },
+    "stages.3.blocks.1.xca.proj.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.xca.proj.bias",
+      "shape": [
+        168
+      ]
+    },
+    "stages.3.blocks.1.xca.proj.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.xca.proj.weight",
+      "shape": [
+        168,
+        168
+      ]
+    },
+    "stages.3.blocks.1.xca.qkv.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.xca.qkv.bias",
+      "shape": [
+        504
+      ]
+    },
+    "stages.3.blocks.1.xca.qkv.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.xca.qkv.weight",
+      "shape": [
+        504,
+        168
+      ]
+    },
+    "stages.3.blocks.1.xca.temperature": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.xca.temperature",
+      "shape": [
+        4,
+        1,
+        1
+      ]
+    },
+    "stages.3.downsample.0.bias": {
+      "dtype": "F32",
+      "key": "stages.3.downsample.0.bias",
+      "shape": [
+        88
+      ]
+    },
+    "stages.3.downsample.0.weight": {
+      "dtype": "F32",
+      "key": "stages.3.downsample.0.weight",
+      "shape": [
+        88
+      ]
+    },
+    "stages.3.downsample.1.bias": {
+      "dtype": "F32",
+      "key": "stages.3.downsample.1.bias",
+      "shape": [
+        168
+      ]
+    },
+    "stages.3.downsample.1.weight": {
+      "dtype": "F32",
+      "key": "stages.3.downsample.1.weight",
+      "shape": [
+        168,
+        88,
+        2,
+        2
+      ]
+    },
+    "stem.0.bias": {
+      "dtype": "F32",
+      "key": "stem.0.bias",
+      "shape": [
+        24
+      ]
+    },
+    "stem.0.weight": {
+      "dtype": "F32",
+      "key": "stem.0.weight",
+      "shape": [
+        24,
+        3,
+        4,
+        4
+      ]
+    },
+    "stem.1.bias": {
+      "dtype": "F32",
+      "key": "stem.1.bias",
+      "shape": [
+        24
+      ]
+    },
+    "stem.1.weight": {
+      "dtype": "F32",
+      "key": "stem.1.weight",
+      "shape": [
+        24
+      ]
+    }
+  },
+  "unmapped": []
+}

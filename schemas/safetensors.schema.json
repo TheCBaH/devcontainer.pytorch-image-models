@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/thecbah/devcontainer.pytorch-image-models/schemas/safetensors.schema.json",
+  "title": "safetensors",
+  "description": "Where one committed graph's weights live on the HuggingFace Hub, and which checkpoint tensor feeds each graph tensor. Written beside models/<name>/models/model.json by scripts/weights_map.py.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "source", "tensors", "unmapped"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repo_id", "revision", "filename", "url", "sha256", "size"],
+      "properties": {
+        "repo_id": {"type": "string", "pattern": "^[^/]+/[^/]+$"},
+        "revision": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "filename": {"type": "string"},
+        "url": {"type": "string", "format": "uri"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "size": {"type": "integer", "minimum": 0}
+      }
+    },
+    "tensors": {
+      "description": "Keyed by the graph's tensor name (model_weights_config.json / model_constants_config.json).",
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["key", "dtype", "shape"],
+        "properties": {
+          "key": {"type": "string", "description": "tensor name inside the safetensors file"},
+          "dtype": {"enum": ["BOOL", "U8", "I8", "I16", "I32", "I64", "F16", "BF16", "F32", "F64"]},
+          "shape": {"type": "array", "items": {"type": "integer", "minimum": 0}}
+        }
+      }
+    },
+    "unmapped": {
+      "description": "Graph constants the checkpoint does not carry: computed by the model itself.",
+      "type": "array",
+      "items": {"type": "string"}
+    }
+  }
+}

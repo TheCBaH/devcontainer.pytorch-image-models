@@ -130,9 +130,11 @@ straight out of each model's `.pt2` archive:
 ```
 models/<variant>/models/model.json                      # the exported graph
 models/<variant>/data/weights/model_weights_config.json # tensor name -> blob, shape, dtype
+models/<variant>/models/safetensors.json                # where the pretrained weights are
 ```
 
-The weight blobs are not committed — they are large and reproducible from timm at any time.
+The weight blobs are not committed — they are large and reproducible from timm at any time,
+and `safetensors.json` says where to get them (see below).
 What is committed is the part that describes the architecture: every ATen node, its arguments,
 its shapes and dtypes, and which `nn.Module` it came from. `stack_trace` is dropped before
 saving, because it is a third of the file and the only part carrying absolute filesystem paths.
@@ -217,6 +219,30 @@ appearing there unexpectedly therefore requires review.
 
 ```bash
 make models.differences   # re-record after a torch/timm bump, then review the diff
+```
+
+### Pretrained weights for a graph
+
+`model_weights_config.json` names every weight by its `state_dict` key, and timm's checkpoints on
+the HuggingFace Hub use the same keys, so a graph can be run with real weights without timm.
+`models/<variant>/models/safetensors.json` records, for every model with a Hub checkpoint:
+
+- `source`: the repo, a pinned `revision`, the download `url`, and the file's `sha256`/`size`;
+- `tensors`: graph tensor name -> the safetensors `key` feeding it, with the checkpoint's own
+  `dtype`/`shape` (fp32 even for a `cast` graph, whose weights are that cast to fp16/bf16);
+- `unmapped`: graph constants no checkpoint carries — non-persistent buffers such as an attention
+  mask or a blur filter, which the model computes itself.
+
+A model gets the file only if every graph weight maps to a same-shaped checkpoint tensor; one
+that the manifest gives a Hub source but that cannot be mapped is listed, with the reason, in
+[`safetensors-unmapped.yaml`](safetensors-unmapped.yaml). The same file sits beside every
+graph in `models-fp16/` and `models-bf16/` as well.
+
+```bash
+make models.weights                                # regenerate (network, headers only)
+make models.weights WEIGHTS_REFRESH=--refresh      # ...also moving pinned revisions to latest
+make models.weights.verify                         # offline: every map still fits its graph (CI)
+make models.weights.check-values                   # downloads: timm's own load == mapped tensors
 ```
 
 ## Precision (fp16/bf16) graphs

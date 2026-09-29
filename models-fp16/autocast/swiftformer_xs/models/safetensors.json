@@ -1,0 +1,2427 @@
+{
+  "schema_version": 1,
+  "source": {
+    "filename": "model.safetensors",
+    "repo_id": "timm/swiftformer_xs.dist_in1k",
+    "revision": "ac0196f198e58c82183a67f5f5c0952421b3e6ac",
+    "sha256": "c0dfb2e99069ece07b691ff470f5dafed98716d90be738369828693c3bf2071c",
+    "size": 13957760,
+    "url": "https://huggingface.co/timm/swiftformer_xs.dist_in1k/resolve/ac0196f198e58c82183a67f5f5c0952421b3e6ac/model.safetensors"
+  },
+  "tensors": {
+    "model.head.bias": {
+      "dtype": "F32",
+      "key": "head.bias",
+      "shape": [
+        1000
+      ]
+    },
+    "model.head.weight": {
+      "dtype": "F32",
+      "key": "head.weight",
+      "shape": [
+        1000,
+        220
+      ]
+    },
+    "model.head_dist.bias": {
+      "dtype": "F32",
+      "key": "head_dist.bias",
+      "shape": [
+        1000
+      ]
+    },
+    "model.head_dist.weight": {
+      "dtype": "F32",
+      "key": "head_dist.weight",
+      "shape": [
+        1000,
+        220
+      ]
+    },
+    "model.norm.bias": {
+      "dtype": "F32",
+      "key": "norm.bias",
+      "shape": [
+        220
+      ]
+    },
+    "model.norm.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "norm.num_batches_tracked",
+      "shape": []
+    },
+    "model.norm.running_mean": {
+      "dtype": "F32",
+      "key": "norm.running_mean",
+      "shape": [
+        220
+      ]
+    },
+    "model.norm.running_var": {
+      "dtype": "F32",
+      "key": "norm.running_var",
+      "shape": [
+        220
+      ]
+    },
+    "model.norm.weight": {
+      "dtype": "F32",
+      "key": "norm.weight",
+      "shape": [
+        220
+      ]
+    },
+    "model.stages.0.blocks.0.dwconv.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.dwconv.bias",
+      "shape": [
+        48
+      ]
+    },
+    "model.stages.0.blocks.0.dwconv.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.dwconv.weight",
+      "shape": [
+        48,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.stages.0.blocks.0.layer_scale.gamma": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.layer_scale.gamma",
+      "shape": [
+        48,
+        1,
+        1
+      ]
+    },
+    "model.stages.0.blocks.0.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.norm.bias",
+      "shape": [
+        48
+      ]
+    },
+    "model.stages.0.blocks.0.norm.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.0.blocks.0.norm.num_batches_tracked",
+      "shape": []
+    },
+    "model.stages.0.blocks.0.norm.running_mean": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.norm.running_mean",
+      "shape": [
+        48
+      ]
+    },
+    "model.stages.0.blocks.0.norm.running_var": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.norm.running_var",
+      "shape": [
+        48
+      ]
+    },
+    "model.stages.0.blocks.0.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.norm.weight",
+      "shape": [
+        48
+      ]
+    },
+    "model.stages.0.blocks.0.pwconv1.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.pwconv1.bias",
+      "shape": [
+        192
+      ]
+    },
+    "model.stages.0.blocks.0.pwconv1.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.pwconv1.weight",
+      "shape": [
+        192,
+        48,
+        1,
+        1
+      ]
+    },
+    "model.stages.0.blocks.0.pwconv2.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.pwconv2.bias",
+      "shape": [
+        48
+      ]
+    },
+    "model.stages.0.blocks.0.pwconv2.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.pwconv2.weight",
+      "shape": [
+        48,
+        192,
+        1,
+        1
+      ]
+    },
+    "model.stages.0.blocks.1.dwconv.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.dwconv.bias",
+      "shape": [
+        48
+      ]
+    },
+    "model.stages.0.blocks.1.dwconv.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.dwconv.weight",
+      "shape": [
+        48,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.stages.0.blocks.1.layer_scale.gamma": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.layer_scale.gamma",
+      "shape": [
+        48,
+        1,
+        1
+      ]
+    },
+    "model.stages.0.blocks.1.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.norm.bias",
+      "shape": [
+        48
+      ]
+    },
+    "model.stages.0.blocks.1.norm.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.0.blocks.1.norm.num_batches_tracked",
+      "shape": []
+    },
+    "model.stages.0.blocks.1.norm.running_mean": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.norm.running_mean",
+      "shape": [
+        48
+      ]
+    },
+    "model.stages.0.blocks.1.norm.running_var": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.norm.running_var",
+      "shape": [
+        48
+      ]
+    },
+    "model.stages.0.blocks.1.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.norm.weight",
+      "shape": [
+        48
+      ]
+    },
+    "model.stages.0.blocks.1.pwconv1.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.pwconv1.bias",
+      "shape": [
+        192
+      ]
+    },
+    "model.stages.0.blocks.1.pwconv1.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.pwconv1.weight",
+      "shape": [
+        192,
+        48,
+        1,
+        1
+      ]
+    },
+    "model.stages.0.blocks.1.pwconv2.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.pwconv2.bias",
+      "shape": [
+        48
+      ]
+    },
+    "model.stages.0.blocks.1.pwconv2.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.1.pwconv2.weight",
+      "shape": [
+        48,
+        192,
+        1,
+        1
+      ]
+    },
+    "model.stages.0.blocks.2.attn.final.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.attn.final.bias",
+      "shape": [
+        48
+      ]
+    },
+    "model.stages.0.blocks.2.attn.final.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.attn.final.weight",
+      "shape": [
+        48,
+        48
+      ]
+    },
+    "model.stages.0.blocks.2.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.attn.proj.bias",
+      "shape": [
+        48
+      ]
+    },
+    "model.stages.0.blocks.2.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.attn.proj.weight",
+      "shape": [
+        48,
+        48
+      ]
+    },
+    "model.stages.0.blocks.2.attn.to_key.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.attn.to_key.bias",
+      "shape": [
+        48
+      ]
+    },
+    "model.stages.0.blocks.2.attn.to_key.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.attn.to_key.weight",
+      "shape": [
+        48,
+        48
+      ]
+    },
+    "model.stages.0.blocks.2.attn.to_query.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.attn.to_query.bias",
+      "shape": [
+        48
+      ]
+    },
+    "model.stages.0.blocks.2.attn.to_query.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.attn.to_query.weight",
+      "shape": [
+        48,
+        48
+      ]
+    },
+    "model.stages.0.blocks.2.attn.w_g": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.attn.w_g",
+      "shape": [
+        48,
+        1
+      ]
+    },
+    "model.stages.0.blocks.2.layer_scale_1.gamma": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.layer_scale_1.gamma",
+      "shape": [
+        48,
+        1,
+        1
+      ]
+    },
+    "model.stages.0.blocks.2.layer_scale_2.gamma": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.layer_scale_2.gamma",
+      "shape": [
+        48,
+        1,
+        1
+      ]
+    },
+    "model.stages.0.blocks.2.linear.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.linear.fc1.bias",
+      "shape": [
+        192
+      ]
+    },
+    "model.stages.0.blocks.2.linear.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.linear.fc1.weight",
+      "shape": [
+        192,
+        48,
+        1,
+        1
+      ]
+    },
+    "model.stages.0.blocks.2.linear.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.linear.fc2.bias",
+      "shape": [
+        48
+      ]
+    },
+    "model.stages.0.blocks.2.linear.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.linear.fc2.weight",
+      "shape": [
+        48,
+        192,
+        1,
+        1
+      ]
+    },
+    "model.stages.0.blocks.2.linear.norm1.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.linear.norm1.bias",
+      "shape": [
+        48
+      ]
+    },
+    "model.stages.0.blocks.2.linear.norm1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.0.blocks.2.linear.norm1.num_batches_tracked",
+      "shape": []
+    },
+    "model.stages.0.blocks.2.linear.norm1.running_mean": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.linear.norm1.running_mean",
+      "shape": [
+        48
+      ]
+    },
+    "model.stages.0.blocks.2.linear.norm1.running_var": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.linear.norm1.running_var",
+      "shape": [
+        48
+      ]
+    },
+    "model.stages.0.blocks.2.linear.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.linear.norm1.weight",
+      "shape": [
+        48
+      ]
+    },
+    "model.stages.0.blocks.2.local_representation.dwconv.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.local_representation.dwconv.bias",
+      "shape": [
+        48
+      ]
+    },
+    "model.stages.0.blocks.2.local_representation.dwconv.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.local_representation.dwconv.weight",
+      "shape": [
+        48,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.stages.0.blocks.2.local_representation.layer_scale.gamma": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.local_representation.layer_scale.gamma",
+      "shape": [
+        48,
+        1,
+        1
+      ]
+    },
+    "model.stages.0.blocks.2.local_representation.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.local_representation.norm.bias",
+      "shape": [
+        48
+      ]
+    },
+    "model.stages.0.blocks.2.local_representation.norm.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.0.blocks.2.local_representation.norm.num_batches_tracked",
+      "shape": []
+    },
+    "model.stages.0.blocks.2.local_representation.norm.running_mean": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.local_representation.norm.running_mean",
+      "shape": [
+        48
+      ]
+    },
+    "model.stages.0.blocks.2.local_representation.norm.running_var": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.local_representation.norm.running_var",
+      "shape": [
+        48
+      ]
+    },
+    "model.stages.0.blocks.2.local_representation.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.local_representation.norm.weight",
+      "shape": [
+        48
+      ]
+    },
+    "model.stages.0.blocks.2.local_representation.pwconv1.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.local_representation.pwconv1.bias",
+      "shape": [
+        48
+      ]
+    },
+    "model.stages.0.blocks.2.local_representation.pwconv1.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.local_representation.pwconv1.weight",
+      "shape": [
+        48,
+        48,
+        1,
+        1
+      ]
+    },
+    "model.stages.0.blocks.2.local_representation.pwconv2.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.local_representation.pwconv2.bias",
+      "shape": [
+        48
+      ]
+    },
+    "model.stages.0.blocks.2.local_representation.pwconv2.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.2.local_representation.pwconv2.weight",
+      "shape": [
+        48,
+        48,
+        1,
+        1
+      ]
+    },
+    "model.stages.1.blocks.0.dwconv.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.dwconv.bias",
+      "shape": [
+        56
+      ]
+    },
+    "model.stages.1.blocks.0.dwconv.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.dwconv.weight",
+      "shape": [
+        56,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.stages.1.blocks.0.layer_scale.gamma": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.layer_scale.gamma",
+      "shape": [
+        56,
+        1,
+        1
+      ]
+    },
+    "model.stages.1.blocks.0.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.norm.bias",
+      "shape": [
+        56
+      ]
+    },
+    "model.stages.1.blocks.0.norm.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.1.blocks.0.norm.num_batches_tracked",
+      "shape": []
+    },
+    "model.stages.1.blocks.0.norm.running_mean": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.norm.running_mean",
+      "shape": [
+        56
+      ]
+    },
+    "model.stages.1.blocks.0.norm.running_var": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.norm.running_var",
+      "shape": [
+        56
+      ]
+    },
+    "model.stages.1.blocks.0.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.norm.weight",
+      "shape": [
+        56
+      ]
+    },
+    "model.stages.1.blocks.0.pwconv1.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.pwconv1.bias",
+      "shape": [
+        224
+      ]
+    },
+    "model.stages.1.blocks.0.pwconv1.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.pwconv1.weight",
+      "shape": [
+        224,
+        56,
+        1,
+        1
+      ]
+    },
+    "model.stages.1.blocks.0.pwconv2.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.pwconv2.bias",
+      "shape": [
+        56
+      ]
+    },
+    "model.stages.1.blocks.0.pwconv2.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.pwconv2.weight",
+      "shape": [
+        56,
+        224,
+        1,
+        1
+      ]
+    },
+    "model.stages.1.blocks.1.dwconv.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.dwconv.bias",
+      "shape": [
+        56
+      ]
+    },
+    "model.stages.1.blocks.1.dwconv.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.dwconv.weight",
+      "shape": [
+        56,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.stages.1.blocks.1.layer_scale.gamma": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.layer_scale.gamma",
+      "shape": [
+        56,
+        1,
+        1
+      ]
+    },
+    "model.stages.1.blocks.1.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.norm.bias",
+      "shape": [
+        56
+      ]
+    },
+    "model.stages.1.blocks.1.norm.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.1.blocks.1.norm.num_batches_tracked",
+      "shape": []
+    },
+    "model.stages.1.blocks.1.norm.running_mean": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.norm.running_mean",
+      "shape": [
+        56
+      ]
+    },
+    "model.stages.1.blocks.1.norm.running_var": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.norm.running_var",
+      "shape": [
+        56
+      ]
+    },
+    "model.stages.1.blocks.1.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.norm.weight",
+      "shape": [
+        56
+      ]
+    },
+    "model.stages.1.blocks.1.pwconv1.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.pwconv1.bias",
+      "shape": [
+        224
+      ]
+    },
+    "model.stages.1.blocks.1.pwconv1.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.pwconv1.weight",
+      "shape": [
+        224,
+        56,
+        1,
+        1
+      ]
+    },
+    "model.stages.1.blocks.1.pwconv2.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.pwconv2.bias",
+      "shape": [
+        56
+      ]
+    },
+    "model.stages.1.blocks.1.pwconv2.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.1.pwconv2.weight",
+      "shape": [
+        56,
+        224,
+        1,
+        1
+      ]
+    },
+    "model.stages.1.blocks.2.attn.final.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.attn.final.bias",
+      "shape": [
+        56
+      ]
+    },
+    "model.stages.1.blocks.2.attn.final.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.attn.final.weight",
+      "shape": [
+        56,
+        56
+      ]
+    },
+    "model.stages.1.blocks.2.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.attn.proj.bias",
+      "shape": [
+        56
+      ]
+    },
+    "model.stages.1.blocks.2.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.attn.proj.weight",
+      "shape": [
+        56,
+        56
+      ]
+    },
+    "model.stages.1.blocks.2.attn.to_key.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.attn.to_key.bias",
+      "shape": [
+        56
+      ]
+    },
+    "model.stages.1.blocks.2.attn.to_key.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.attn.to_key.weight",
+      "shape": [
+        56,
+        56
+      ]
+    },
+    "model.stages.1.blocks.2.attn.to_query.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.attn.to_query.bias",
+      "shape": [
+        56
+      ]
+    },
+    "model.stages.1.blocks.2.attn.to_query.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.attn.to_query.weight",
+      "shape": [
+        56,
+        56
+      ]
+    },
+    "model.stages.1.blocks.2.attn.w_g": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.attn.w_g",
+      "shape": [
+        56,
+        1
+      ]
+    },
+    "model.stages.1.blocks.2.layer_scale_1.gamma": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.layer_scale_1.gamma",
+      "shape": [
+        56,
+        1,
+        1
+      ]
+    },
+    "model.stages.1.blocks.2.layer_scale_2.gamma": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.layer_scale_2.gamma",
+      "shape": [
+        56,
+        1,
+        1
+      ]
+    },
+    "model.stages.1.blocks.2.linear.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.linear.fc1.bias",
+      "shape": [
+        224
+      ]
+    },
+    "model.stages.1.blocks.2.linear.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.linear.fc1.weight",
+      "shape": [
+        224,
+        56,
+        1,
+        1
+      ]
+    },
+    "model.stages.1.blocks.2.linear.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.linear.fc2.bias",
+      "shape": [
+        56
+      ]
+    },
+    "model.stages.1.blocks.2.linear.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.linear.fc2.weight",
+      "shape": [
+        56,
+        224,
+        1,
+        1
+      ]
+    },
+    "model.stages.1.blocks.2.linear.norm1.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.linear.norm1.bias",
+      "shape": [
+        56
+      ]
+    },
+    "model.stages.1.blocks.2.linear.norm1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.1.blocks.2.linear.norm1.num_batches_tracked",
+      "shape": []
+    },
+    "model.stages.1.blocks.2.linear.norm1.running_mean": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.linear.norm1.running_mean",
+      "shape": [
+        56
+      ]
+    },
+    "model.stages.1.blocks.2.linear.norm1.running_var": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.linear.norm1.running_var",
+      "shape": [
+        56
+      ]
+    },
+    "model.stages.1.blocks.2.linear.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.linear.norm1.weight",
+      "shape": [
+        56
+      ]
+    },
+    "model.stages.1.blocks.2.local_representation.dwconv.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.local_representation.dwconv.bias",
+      "shape": [
+        56
+      ]
+    },
+    "model.stages.1.blocks.2.local_representation.dwconv.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.local_representation.dwconv.weight",
+      "shape": [
+        56,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.stages.1.blocks.2.local_representation.layer_scale.gamma": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.local_representation.layer_scale.gamma",
+      "shape": [
+        56,
+        1,
+        1
+      ]
+    },
+    "model.stages.1.blocks.2.local_representation.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.local_representation.norm.bias",
+      "shape": [
+        56
+      ]
+    },
+    "model.stages.1.blocks.2.local_representation.norm.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.1.blocks.2.local_representation.norm.num_batches_tracked",
+      "shape": []
+    },
+    "model.stages.1.blocks.2.local_representation.norm.running_mean": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.local_representation.norm.running_mean",
+      "shape": [
+        56
+      ]
+    },
+    "model.stages.1.blocks.2.local_representation.norm.running_var": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.local_representation.norm.running_var",
+      "shape": [
+        56
+      ]
+    },
+    "model.stages.1.blocks.2.local_representation.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.local_representation.norm.weight",
+      "shape": [
+        56
+      ]
+    },
+    "model.stages.1.blocks.2.local_representation.pwconv1.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.local_representation.pwconv1.bias",
+      "shape": [
+        56
+      ]
+    },
+    "model.stages.1.blocks.2.local_representation.pwconv1.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.local_representation.pwconv1.weight",
+      "shape": [
+        56,
+        56,
+        1,
+        1
+      ]
+    },
+    "model.stages.1.blocks.2.local_representation.pwconv2.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.local_representation.pwconv2.bias",
+      "shape": [
+        56
+      ]
+    },
+    "model.stages.1.blocks.2.local_representation.pwconv2.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.2.local_representation.pwconv2.weight",
+      "shape": [
+        56,
+        56,
+        1,
+        1
+      ]
+    },
+    "model.stages.1.downsample.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.1.downsample.norm.bias",
+      "shape": [
+        56
+      ]
+    },
+    "model.stages.1.downsample.norm.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.1.downsample.norm.num_batches_tracked",
+      "shape": []
+    },
+    "model.stages.1.downsample.norm.running_mean": {
+      "dtype": "F32",
+      "key": "stages.1.downsample.norm.running_mean",
+      "shape": [
+        56
+      ]
+    },
+    "model.stages.1.downsample.norm.running_var": {
+      "dtype": "F32",
+      "key": "stages.1.downsample.norm.running_var",
+      "shape": [
+        56
+      ]
+    },
+    "model.stages.1.downsample.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.1.downsample.norm.weight",
+      "shape": [
+        56
+      ]
+    },
+    "model.stages.1.downsample.proj.bias": {
+      "dtype": "F32",
+      "key": "stages.1.downsample.proj.bias",
+      "shape": [
+        56
+      ]
+    },
+    "model.stages.1.downsample.proj.weight": {
+      "dtype": "F32",
+      "key": "stages.1.downsample.proj.weight",
+      "shape": [
+        56,
+        48,
+        3,
+        3
+      ]
+    },
+    "model.stages.2.blocks.0.dwconv.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.dwconv.bias",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.blocks.0.dwconv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.dwconv.weight",
+      "shape": [
+        112,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.stages.2.blocks.0.layer_scale.gamma": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.layer_scale.gamma",
+      "shape": [
+        112,
+        1,
+        1
+      ]
+    },
+    "model.stages.2.blocks.0.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.norm.bias",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.blocks.0.norm.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.blocks.0.norm.num_batches_tracked",
+      "shape": []
+    },
+    "model.stages.2.blocks.0.norm.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.norm.running_mean",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.blocks.0.norm.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.norm.running_var",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.blocks.0.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.norm.weight",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.blocks.0.pwconv1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.pwconv1.bias",
+      "shape": [
+        448
+      ]
+    },
+    "model.stages.2.blocks.0.pwconv1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.pwconv1.weight",
+      "shape": [
+        448,
+        112,
+        1,
+        1
+      ]
+    },
+    "model.stages.2.blocks.0.pwconv2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.pwconv2.bias",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.blocks.0.pwconv2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.pwconv2.weight",
+      "shape": [
+        112,
+        448,
+        1,
+        1
+      ]
+    },
+    "model.stages.2.blocks.1.dwconv.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.dwconv.bias",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.blocks.1.dwconv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.dwconv.weight",
+      "shape": [
+        112,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.stages.2.blocks.1.layer_scale.gamma": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.layer_scale.gamma",
+      "shape": [
+        112,
+        1,
+        1
+      ]
+    },
+    "model.stages.2.blocks.1.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.norm.bias",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.blocks.1.norm.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.blocks.1.norm.num_batches_tracked",
+      "shape": []
+    },
+    "model.stages.2.blocks.1.norm.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.norm.running_mean",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.blocks.1.norm.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.norm.running_var",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.blocks.1.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.norm.weight",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.blocks.1.pwconv1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.pwconv1.bias",
+      "shape": [
+        448
+      ]
+    },
+    "model.stages.2.blocks.1.pwconv1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.pwconv1.weight",
+      "shape": [
+        448,
+        112,
+        1,
+        1
+      ]
+    },
+    "model.stages.2.blocks.1.pwconv2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.pwconv2.bias",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.blocks.1.pwconv2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.1.pwconv2.weight",
+      "shape": [
+        112,
+        448,
+        1,
+        1
+      ]
+    },
+    "model.stages.2.blocks.2.dwconv.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.dwconv.bias",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.blocks.2.dwconv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.dwconv.weight",
+      "shape": [
+        112,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.stages.2.blocks.2.layer_scale.gamma": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.layer_scale.gamma",
+      "shape": [
+        112,
+        1,
+        1
+      ]
+    },
+    "model.stages.2.blocks.2.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.norm.bias",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.blocks.2.norm.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.blocks.2.norm.num_batches_tracked",
+      "shape": []
+    },
+    "model.stages.2.blocks.2.norm.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.norm.running_mean",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.blocks.2.norm.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.norm.running_var",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.blocks.2.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.norm.weight",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.blocks.2.pwconv1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.pwconv1.bias",
+      "shape": [
+        448
+      ]
+    },
+    "model.stages.2.blocks.2.pwconv1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.pwconv1.weight",
+      "shape": [
+        448,
+        112,
+        1,
+        1
+      ]
+    },
+    "model.stages.2.blocks.2.pwconv2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.pwconv2.bias",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.blocks.2.pwconv2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.2.pwconv2.weight",
+      "shape": [
+        112,
+        448,
+        1,
+        1
+      ]
+    },
+    "model.stages.2.blocks.3.dwconv.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.dwconv.bias",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.blocks.3.dwconv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.dwconv.weight",
+      "shape": [
+        112,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.stages.2.blocks.3.layer_scale.gamma": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.layer_scale.gamma",
+      "shape": [
+        112,
+        1,
+        1
+      ]
+    },
+    "model.stages.2.blocks.3.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.norm.bias",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.blocks.3.norm.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.blocks.3.norm.num_batches_tracked",
+      "shape": []
+    },
+    "model.stages.2.blocks.3.norm.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.norm.running_mean",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.blocks.3.norm.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.norm.running_var",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.blocks.3.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.norm.weight",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.blocks.3.pwconv1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.pwconv1.bias",
+      "shape": [
+        448
+      ]
+    },
+    "model.stages.2.blocks.3.pwconv1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.pwconv1.weight",
+      "shape": [
+        448,
+        112,
+        1,
+        1
+      ]
+    },
+    "model.stages.2.blocks.3.pwconv2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.pwconv2.bias",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.blocks.3.pwconv2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.3.pwconv2.weight",
+      "shape": [
+        112,
+        448,
+        1,
+        1
+      ]
+    },
+    "model.stages.2.blocks.4.dwconv.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.dwconv.bias",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.blocks.4.dwconv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.dwconv.weight",
+      "shape": [
+        112,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.stages.2.blocks.4.layer_scale.gamma": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.layer_scale.gamma",
+      "shape": [
+        112,
+        1,
+        1
+      ]
+    },
+    "model.stages.2.blocks.4.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.norm.bias",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.blocks.4.norm.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.blocks.4.norm.num_batches_tracked",
+      "shape": []
+    },
+    "model.stages.2.blocks.4.norm.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.norm.running_mean",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.blocks.4.norm.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.norm.running_var",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.blocks.4.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.norm.weight",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.blocks.4.pwconv1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.pwconv1.bias",
+      "shape": [
+        448
+      ]
+    },
+    "model.stages.2.blocks.4.pwconv1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.pwconv1.weight",
+      "shape": [
+        448,
+        112,
+        1,
+        1
+      ]
+    },
+    "model.stages.2.blocks.4.pwconv2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.pwconv2.bias",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.blocks.4.pwconv2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.4.pwconv2.weight",
+      "shape": [
+        112,
+        448,
+        1,
+        1
+      ]
+    },
+    "model.stages.2.blocks.5.attn.final.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.attn.final.bias",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.blocks.5.attn.final.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.attn.final.weight",
+      "shape": [
+        112,
+        112
+      ]
+    },
+    "model.stages.2.blocks.5.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.attn.proj.bias",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.blocks.5.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.attn.proj.weight",
+      "shape": [
+        112,
+        112
+      ]
+    },
+    "model.stages.2.blocks.5.attn.to_key.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.attn.to_key.bias",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.blocks.5.attn.to_key.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.attn.to_key.weight",
+      "shape": [
+        112,
+        112
+      ]
+    },
+    "model.stages.2.blocks.5.attn.to_query.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.attn.to_query.bias",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.blocks.5.attn.to_query.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.attn.to_query.weight",
+      "shape": [
+        112,
+        112
+      ]
+    },
+    "model.stages.2.blocks.5.attn.w_g": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.attn.w_g",
+      "shape": [
+        112,
+        1
+      ]
+    },
+    "model.stages.2.blocks.5.layer_scale_1.gamma": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.layer_scale_1.gamma",
+      "shape": [
+        112,
+        1,
+        1
+      ]
+    },
+    "model.stages.2.blocks.5.layer_scale_2.gamma": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.layer_scale_2.gamma",
+      "shape": [
+        112,
+        1,
+        1
+      ]
+    },
+    "model.stages.2.blocks.5.linear.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.linear.fc1.bias",
+      "shape": [
+        448
+      ]
+    },
+    "model.stages.2.blocks.5.linear.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.linear.fc1.weight",
+      "shape": [
+        448,
+        112,
+        1,
+        1
+      ]
+    },
+    "model.stages.2.blocks.5.linear.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.linear.fc2.bias",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.blocks.5.linear.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.linear.fc2.weight",
+      "shape": [
+        112,
+        448,
+        1,
+        1
+      ]
+    },
+    "model.stages.2.blocks.5.linear.norm1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.linear.norm1.bias",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.blocks.5.linear.norm1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.blocks.5.linear.norm1.num_batches_tracked",
+      "shape": []
+    },
+    "model.stages.2.blocks.5.linear.norm1.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.linear.norm1.running_mean",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.blocks.5.linear.norm1.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.linear.norm1.running_var",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.blocks.5.linear.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.linear.norm1.weight",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.blocks.5.local_representation.dwconv.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.local_representation.dwconv.bias",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.blocks.5.local_representation.dwconv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.local_representation.dwconv.weight",
+      "shape": [
+        112,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.stages.2.blocks.5.local_representation.layer_scale.gamma": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.local_representation.layer_scale.gamma",
+      "shape": [
+        112,
+        1,
+        1
+      ]
+    },
+    "model.stages.2.blocks.5.local_representation.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.local_representation.norm.bias",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.blocks.5.local_representation.norm.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.blocks.5.local_representation.norm.num_batches_tracked",
+      "shape": []
+    },
+    "model.stages.2.blocks.5.local_representation.norm.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.local_representation.norm.running_mean",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.blocks.5.local_representation.norm.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.local_representation.norm.running_var",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.blocks.5.local_representation.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.local_representation.norm.weight",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.blocks.5.local_representation.pwconv1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.local_representation.pwconv1.bias",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.blocks.5.local_representation.pwconv1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.local_representation.pwconv1.weight",
+      "shape": [
+        112,
+        112,
+        1,
+        1
+      ]
+    },
+    "model.stages.2.blocks.5.local_representation.pwconv2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.local_representation.pwconv2.bias",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.blocks.5.local_representation.pwconv2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.5.local_representation.pwconv2.weight",
+      "shape": [
+        112,
+        112,
+        1,
+        1
+      ]
+    },
+    "model.stages.2.downsample.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.2.downsample.norm.bias",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.downsample.norm.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.downsample.norm.num_batches_tracked",
+      "shape": []
+    },
+    "model.stages.2.downsample.norm.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.downsample.norm.running_mean",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.downsample.norm.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.downsample.norm.running_var",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.downsample.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.2.downsample.norm.weight",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.downsample.proj.bias": {
+      "dtype": "F32",
+      "key": "stages.2.downsample.proj.bias",
+      "shape": [
+        112
+      ]
+    },
+    "model.stages.2.downsample.proj.weight": {
+      "dtype": "F32",
+      "key": "stages.2.downsample.proj.weight",
+      "shape": [
+        112,
+        56,
+        3,
+        3
+      ]
+    },
+    "model.stages.3.blocks.0.dwconv.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.dwconv.bias",
+      "shape": [
+        220
+      ]
+    },
+    "model.stages.3.blocks.0.dwconv.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.dwconv.weight",
+      "shape": [
+        220,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.stages.3.blocks.0.layer_scale.gamma": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.layer_scale.gamma",
+      "shape": [
+        220,
+        1,
+        1
+      ]
+    },
+    "model.stages.3.blocks.0.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.norm.bias",
+      "shape": [
+        220
+      ]
+    },
+    "model.stages.3.blocks.0.norm.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.3.blocks.0.norm.num_batches_tracked",
+      "shape": []
+    },
+    "model.stages.3.blocks.0.norm.running_mean": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.norm.running_mean",
+      "shape": [
+        220
+      ]
+    },
+    "model.stages.3.blocks.0.norm.running_var": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.norm.running_var",
+      "shape": [
+        220
+      ]
+    },
+    "model.stages.3.blocks.0.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.norm.weight",
+      "shape": [
+        220
+      ]
+    },
+    "model.stages.3.blocks.0.pwconv1.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.pwconv1.bias",
+      "shape": [
+        880
+      ]
+    },
+    "model.stages.3.blocks.0.pwconv1.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.pwconv1.weight",
+      "shape": [
+        880,
+        220,
+        1,
+        1
+      ]
+    },
+    "model.stages.3.blocks.0.pwconv2.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.pwconv2.bias",
+      "shape": [
+        220
+      ]
+    },
+    "model.stages.3.blocks.0.pwconv2.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.pwconv2.weight",
+      "shape": [
+        220,
+        880,
+        1,
+        1
+      ]
+    },
+    "model.stages.3.blocks.1.dwconv.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.dwconv.bias",
+      "shape": [
+        220
+      ]
+    },
+    "model.stages.3.blocks.1.dwconv.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.dwconv.weight",
+      "shape": [
+        220,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.stages.3.blocks.1.layer_scale.gamma": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.layer_scale.gamma",
+      "shape": [
+        220,
+        1,
+        1
+      ]
+    },
+    "model.stages.3.blocks.1.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.norm.bias",
+      "shape": [
+        220
+      ]
+    },
+    "model.stages.3.blocks.1.norm.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.3.blocks.1.norm.num_batches_tracked",
+      "shape": []
+    },
+    "model.stages.3.blocks.1.norm.running_mean": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.norm.running_mean",
+      "shape": [
+        220
+      ]
+    },
+    "model.stages.3.blocks.1.norm.running_var": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.norm.running_var",
+      "shape": [
+        220
+      ]
+    },
+    "model.stages.3.blocks.1.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.norm.weight",
+      "shape": [
+        220
+      ]
+    },
+    "model.stages.3.blocks.1.pwconv1.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.pwconv1.bias",
+      "shape": [
+        880
+      ]
+    },
+    "model.stages.3.blocks.1.pwconv1.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.pwconv1.weight",
+      "shape": [
+        880,
+        220,
+        1,
+        1
+      ]
+    },
+    "model.stages.3.blocks.1.pwconv2.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.pwconv2.bias",
+      "shape": [
+        220
+      ]
+    },
+    "model.stages.3.blocks.1.pwconv2.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.1.pwconv2.weight",
+      "shape": [
+        220,
+        880,
+        1,
+        1
+      ]
+    },
+    "model.stages.3.blocks.2.dwconv.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.2.dwconv.bias",
+      "shape": [
+        220
+      ]
+    },
+    "model.stages.3.blocks.2.dwconv.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.2.dwconv.weight",
+      "shape": [
+        220,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.stages.3.blocks.2.layer_scale.gamma": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.2.layer_scale.gamma",
+      "shape": [
+        220,
+        1,
+        1
+      ]
+    },
+    "model.stages.3.blocks.2.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.2.norm.bias",
+      "shape": [
+        220
+      ]
+    },
+    "model.stages.3.blocks.2.norm.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.3.blocks.2.norm.num_batches_tracked",
+      "shape": []
+    },
+    "model.stages.3.blocks.2.norm.running_mean": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.2.norm.running_mean",
+      "shape": [
+        220
+      ]
+    },
+    "model.stages.3.blocks.2.norm.running_var": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.2.norm.running_var",
+      "shape": [
+        220
+      ]
+    },
+    "model.stages.3.blocks.2.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.2.norm.weight",
+      "shape": [
+        220
+      ]
+    },
+    "model.stages.3.blocks.2.pwconv1.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.2.pwconv1.bias",
+      "shape": [
+        880
+      ]
+    },
+    "model.stages.3.blocks.2.pwconv1.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.2.pwconv1.weight",
+      "shape": [
+        880,
+        220,
+        1,
+        1
+      ]
+    },
+    "model.stages.3.blocks.2.pwconv2.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.2.pwconv2.bias",
+      "shape": [
+        220
+      ]
+    },
+    "model.stages.3.blocks.2.pwconv2.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.2.pwconv2.weight",
+      "shape": [
+        220,
+        880,
+        1,
+        1
+      ]
+    },
+    "model.stages.3.blocks.3.attn.final.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.3.attn.final.bias",
+      "shape": [
+        220
+      ]
+    },
+    "model.stages.3.blocks.3.attn.final.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.3.attn.final.weight",
+      "shape": [
+        220,
+        220
+      ]
+    },
+    "model.stages.3.blocks.3.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.3.attn.proj.bias",
+      "shape": [
+        220
+      ]
+    },
+    "model.stages.3.blocks.3.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.3.attn.proj.weight",
+      "shape": [
+        220,
+        220
+      ]
+    },
+    "model.stages.3.blocks.3.attn.to_key.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.3.attn.to_key.bias",
+      "shape": [
+        220
+      ]
+    },
+    "model.stages.3.blocks.3.attn.to_key.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.3.attn.to_key.weight",
+      "shape": [
+        220,
+        220
+      ]
+    },
+    "model.stages.3.blocks.3.attn.to_query.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.3.attn.to_query.bias",
+      "shape": [
+        220
+      ]
+    },
+    "model.stages.3.blocks.3.attn.to_query.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.3.attn.to_query.weight",
+      "shape": [
+        220,
+        220
+      ]
+    },
+    "model.stages.3.blocks.3.attn.w_g": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.3.attn.w_g",
+      "shape": [
+        220,
+        1
+      ]
+    },
+    "model.stages.3.blocks.3.layer_scale_1.gamma": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.3.layer_scale_1.gamma",
+      "shape": [
+        220,
+        1,
+        1
+      ]
+    },
+    "model.stages.3.blocks.3.layer_scale_2.gamma": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.3.layer_scale_2.gamma",
+      "shape": [
+        220,
+        1,
+        1
+      ]
+    },
+    "model.stages.3.blocks.3.linear.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.3.linear.fc1.bias",
+      "shape": [
+        880
+      ]
+    },
+    "model.stages.3.blocks.3.linear.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.3.linear.fc1.weight",
+      "shape": [
+        880,
+        220,
+        1,
+        1
+      ]
+    },
+    "model.stages.3.blocks.3.linear.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.3.linear.fc2.bias",
+      "shape": [
+        220
+      ]
+    },
+    "model.stages.3.blocks.3.linear.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.3.linear.fc2.weight",
+      "shape": [
+        220,
+        880,
+        1,
+        1
+      ]
+    },
+    "model.stages.3.blocks.3.linear.norm1.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.3.linear.norm1.bias",
+      "shape": [
+        220
+      ]
+    },
+    "model.stages.3.blocks.3.linear.norm1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.3.blocks.3.linear.norm1.num_batches_tracked",
+      "shape": []
+    },
+    "model.stages.3.blocks.3.linear.norm1.running_mean": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.3.linear.norm1.running_mean",
+      "shape": [
+        220
+      ]
+    },
+    "model.stages.3.blocks.3.linear.norm1.running_var": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.3.linear.norm1.running_var",
+      "shape": [
+        220
+      ]
+    },
+    "model.stages.3.blocks.3.linear.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.3.linear.norm1.weight",
+      "shape": [
+        220
+      ]
+    },
+    "model.stages.3.blocks.3.local_representation.dwconv.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.3.local_representation.dwconv.bias",
+      "shape": [
+        220
+      ]
+    },
+    "model.stages.3.blocks.3.local_representation.dwconv.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.3.local_representation.dwconv.weight",
+      "shape": [
+        220,
+        1,
+        3,
+        3
+      ]
+    },
+    "model.stages.3.blocks.3.local_representation.layer_scale.gamma": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.3.local_representation.layer_scale.gamma",
+      "shape": [
+        220,
+        1,
+        1
+      ]
+    },
+    "model.stages.3.blocks.3.local_representation.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.3.local_representation.norm.bias",
+      "shape": [
+        220
+      ]
+    },
+    "model.stages.3.blocks.3.local_representation.norm.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.3.blocks.3.local_representation.norm.num_batches_tracked",
+      "shape": []
+    },
+    "model.stages.3.blocks.3.local_representation.norm.running_mean": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.3.local_representation.norm.running_mean",
+      "shape": [
+        220
+      ]
+    },
+    "model.stages.3.blocks.3.local_representation.norm.running_var": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.3.local_representation.norm.running_var",
+      "shape": [
+        220
+      ]
+    },
+    "model.stages.3.blocks.3.local_representation.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.3.local_representation.norm.weight",
+      "shape": [
+        220
+      ]
+    },
+    "model.stages.3.blocks.3.local_representation.pwconv1.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.3.local_representation.pwconv1.bias",
+      "shape": [
+        220
+      ]
+    },
+    "model.stages.3.blocks.3.local_representation.pwconv1.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.3.local_representation.pwconv1.weight",
+      "shape": [
+        220,
+        220,
+        1,
+        1
+      ]
+    },
+    "model.stages.3.blocks.3.local_representation.pwconv2.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.3.local_representation.pwconv2.bias",
+      "shape": [
+        220
+      ]
+    },
+    "model.stages.3.blocks.3.local_representation.pwconv2.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.3.local_representation.pwconv2.weight",
+      "shape": [
+        220,
+        220,
+        1,
+        1
+      ]
+    },
+    "model.stages.3.downsample.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.3.downsample.norm.bias",
+      "shape": [
+        220
+      ]
+    },
+    "model.stages.3.downsample.norm.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.3.downsample.norm.num_batches_tracked",
+      "shape": []
+    },
+    "model.stages.3.downsample.norm.running_mean": {
+      "dtype": "F32",
+      "key": "stages.3.downsample.norm.running_mean",
+      "shape": [
+        220
+      ]
+    },
+    "model.stages.3.downsample.norm.running_var": {
+      "dtype": "F32",
+      "key": "stages.3.downsample.norm.running_var",
+      "shape": [
+        220
+      ]
+    },
+    "model.stages.3.downsample.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.3.downsample.norm.weight",
+      "shape": [
+        220
+      ]
+    },
+    "model.stages.3.downsample.proj.bias": {
+      "dtype": "F32",
+      "key": "stages.3.downsample.proj.bias",
+      "shape": [
+        220
+      ]
+    },
+    "model.stages.3.downsample.proj.weight": {
+      "dtype": "F32",
+      "key": "stages.3.downsample.proj.weight",
+      "shape": [
+        220,
+        112,
+        3,
+        3
+      ]
+    },
+    "model.stem.0.bias": {
+      "dtype": "F32",
+      "key": "stem.0.bias",
+      "shape": [
+        24
+      ]
+    },
+    "model.stem.0.weight": {
+      "dtype": "F32",
+      "key": "stem.0.weight",
+      "shape": [
+        24,
+        3,
+        3,
+        3
+      ]
+    },
+    "model.stem.1.bias": {
+      "dtype": "F32",
+      "key": "stem.1.bias",
+      "shape": [
+        24
+      ]
+    },
+    "model.stem.1.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stem.1.num_batches_tracked",
+      "shape": []
+    },
+    "model.stem.1.running_mean": {
+      "dtype": "F32",
+      "key": "stem.1.running_mean",
+      "shape": [
+        24
+      ]
+    },
+    "model.stem.1.running_var": {
+      "dtype": "F32",
+      "key": "stem.1.running_var",
+      "shape": [
+        24
+      ]
+    },
+    "model.stem.1.weight": {
+      "dtype": "F32",
+      "key": "stem.1.weight",
+      "shape": [
+        24
+      ]
+    },
+    "model.stem.3.bias": {
+      "dtype": "F32",
+      "key": "stem.3.bias",
+      "shape": [
+        48
+      ]
+    },
+    "model.stem.3.weight": {
+      "dtype": "F32",
+      "key": "stem.3.weight",
+      "shape": [
+        48,
+        24,
+        3,
+        3
+      ]
+    },
+    "model.stem.4.bias": {
+      "dtype": "F32",
+      "key": "stem.4.bias",
+      "shape": [
+        48
+      ]
+    },
+    "model.stem.4.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stem.4.num_batches_tracked",
+      "shape": []
+    },
+    "model.stem.4.running_mean": {
+      "dtype": "F32",
+      "key": "stem.4.running_mean",
+      "shape": [
+        48
+      ]
+    },
+    "model.stem.4.running_var": {
+      "dtype": "F32",
+      "key": "stem.4.running_var",
+      "shape": [
+        48
+      ]
+    },
+    "model.stem.4.weight": {
+      "dtype": "F32",
+      "key": "stem.4.weight",
+      "shape": [
+        48
+      ]
+    }
+  },
+  "unmapped": []
+}

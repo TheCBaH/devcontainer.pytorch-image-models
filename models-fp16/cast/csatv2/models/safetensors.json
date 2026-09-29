@@ -1,0 +1,3043 @@
+{
+  "schema_version": 1,
+  "source": {
+    "filename": "model.safetensors",
+    "repo_id": "timm/csatv2.r512_in1k",
+    "revision": "1c4b606e8ceed8ced0bfb6f30b881bdbd8849d8a",
+    "sha256": "45b1d4c50fc3e0d378f386b0cbd07f3f8685affd17db2e02489b2fd4c8bf43e2",
+    "size": 44451568,
+    "url": "https://huggingface.co/timm/csatv2.r512_in1k/resolve/1c4b606e8ceed8ced0bfb6f30b881bdbd8849d8a/model.safetensors"
+  },
+  "tensors": {
+    "head.fc.bias": {
+      "dtype": "F32",
+      "key": "head.fc.bias",
+      "shape": [
+        1000
+      ]
+    },
+    "head.fc.weight": {
+      "dtype": "F32",
+      "key": "head.fc.weight",
+      "shape": [
+        1000,
+        386
+      ]
+    },
+    "head.norm.bias": {
+      "dtype": "F32",
+      "key": "head.norm.bias",
+      "shape": [
+        386
+      ]
+    },
+    "head.norm.weight": {
+      "dtype": "F32",
+      "key": "head.norm.weight",
+      "shape": [
+        386
+      ]
+    },
+    "stages.0.0.attn.attn.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.0.0.attn.attn.mlp.fc1.bias",
+      "shape": [
+        4
+      ]
+    },
+    "stages.0.0.attn.attn.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.0.0.attn.attn.mlp.fc1.weight",
+      "shape": [
+        4,
+        1
+      ]
+    },
+    "stages.0.0.attn.attn.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.0.0.attn.attn.mlp.fc2.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.0.0.attn.attn.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.0.0.attn.attn.mlp.fc2.weight",
+      "shape": [
+        1,
+        4
+      ]
+    },
+    "stages.0.0.attn.attn.norm1.bias": {
+      "dtype": "F32",
+      "key": "stages.0.0.attn.attn.norm1.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.0.0.attn.attn.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.0.0.attn.attn.norm1.weight",
+      "shape": [
+        1
+      ]
+    },
+    "stages.0.0.attn.attn.norm2.bias": {
+      "dtype": "F32",
+      "key": "stages.0.0.attn.attn.norm2.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.0.0.attn.attn.norm2.weight": {
+      "dtype": "F32",
+      "key": "stages.0.0.attn.attn.norm2.weight",
+      "shape": [
+        1
+      ]
+    },
+    "stages.0.0.attn.attn.pos_embed.proj.bias": {
+      "dtype": "F32",
+      "key": "stages.0.0.attn.attn.pos_embed.proj.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.0.0.attn.attn.pos_embed.proj.weight": {
+      "dtype": "F32",
+      "key": "stages.0.0.attn.attn.pos_embed.proj.weight",
+      "shape": [
+        1,
+        1,
+        3,
+        3
+      ]
+    },
+    "stages.0.0.attn.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "stages.0.0.attn.attn.qkv.weight",
+      "shape": [
+        3,
+        1
+      ]
+    },
+    "stages.0.0.attn.conv.bias": {
+      "dtype": "F32",
+      "key": "stages.0.0.attn.conv.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.0.0.attn.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.0.0.attn.conv.weight",
+      "shape": [
+        1,
+        2,
+        7,
+        7
+      ]
+    },
+    "stages.0.0.dwconv.bias": {
+      "dtype": "F32",
+      "key": "stages.0.0.dwconv.bias",
+      "shape": [
+        32
+      ]
+    },
+    "stages.0.0.dwconv.weight": {
+      "dtype": "F32",
+      "key": "stages.0.0.dwconv.weight",
+      "shape": [
+        32,
+        1,
+        7,
+        7
+      ]
+    },
+    "stages.0.0.grn.bias": {
+      "dtype": "F32",
+      "key": "stages.0.0.grn.bias",
+      "shape": [
+        128
+      ]
+    },
+    "stages.0.0.grn.weight": {
+      "dtype": "F32",
+      "key": "stages.0.0.grn.weight",
+      "shape": [
+        128
+      ]
+    },
+    "stages.0.0.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.0.0.norm.bias",
+      "shape": [
+        32
+      ]
+    },
+    "stages.0.0.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.0.0.norm.weight",
+      "shape": [
+        32
+      ]
+    },
+    "stages.0.0.pwconv1.bias": {
+      "dtype": "F32",
+      "key": "stages.0.0.pwconv1.bias",
+      "shape": [
+        128
+      ]
+    },
+    "stages.0.0.pwconv1.weight": {
+      "dtype": "F32",
+      "key": "stages.0.0.pwconv1.weight",
+      "shape": [
+        128,
+        32
+      ]
+    },
+    "stages.0.0.pwconv2.bias": {
+      "dtype": "F32",
+      "key": "stages.0.0.pwconv2.bias",
+      "shape": [
+        32
+      ]
+    },
+    "stages.0.0.pwconv2.weight": {
+      "dtype": "F32",
+      "key": "stages.0.0.pwconv2.weight",
+      "shape": [
+        32,
+        128
+      ]
+    },
+    "stages.0.1.attn.attn.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.0.1.attn.attn.mlp.fc1.bias",
+      "shape": [
+        4
+      ]
+    },
+    "stages.0.1.attn.attn.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.0.1.attn.attn.mlp.fc1.weight",
+      "shape": [
+        4,
+        1
+      ]
+    },
+    "stages.0.1.attn.attn.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.0.1.attn.attn.mlp.fc2.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.0.1.attn.attn.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.0.1.attn.attn.mlp.fc2.weight",
+      "shape": [
+        1,
+        4
+      ]
+    },
+    "stages.0.1.attn.attn.norm1.bias": {
+      "dtype": "F32",
+      "key": "stages.0.1.attn.attn.norm1.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.0.1.attn.attn.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.0.1.attn.attn.norm1.weight",
+      "shape": [
+        1
+      ]
+    },
+    "stages.0.1.attn.attn.norm2.bias": {
+      "dtype": "F32",
+      "key": "stages.0.1.attn.attn.norm2.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.0.1.attn.attn.norm2.weight": {
+      "dtype": "F32",
+      "key": "stages.0.1.attn.attn.norm2.weight",
+      "shape": [
+        1
+      ]
+    },
+    "stages.0.1.attn.attn.pos_embed.proj.bias": {
+      "dtype": "F32",
+      "key": "stages.0.1.attn.attn.pos_embed.proj.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.0.1.attn.attn.pos_embed.proj.weight": {
+      "dtype": "F32",
+      "key": "stages.0.1.attn.attn.pos_embed.proj.weight",
+      "shape": [
+        1,
+        1,
+        3,
+        3
+      ]
+    },
+    "stages.0.1.attn.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "stages.0.1.attn.attn.qkv.weight",
+      "shape": [
+        3,
+        1
+      ]
+    },
+    "stages.0.1.attn.conv.bias": {
+      "dtype": "F32",
+      "key": "stages.0.1.attn.conv.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.0.1.attn.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.0.1.attn.conv.weight",
+      "shape": [
+        1,
+        2,
+        7,
+        7
+      ]
+    },
+    "stages.0.1.dwconv.bias": {
+      "dtype": "F32",
+      "key": "stages.0.1.dwconv.bias",
+      "shape": [
+        32
+      ]
+    },
+    "stages.0.1.dwconv.weight": {
+      "dtype": "F32",
+      "key": "stages.0.1.dwconv.weight",
+      "shape": [
+        32,
+        1,
+        7,
+        7
+      ]
+    },
+    "stages.0.1.grn.bias": {
+      "dtype": "F32",
+      "key": "stages.0.1.grn.bias",
+      "shape": [
+        128
+      ]
+    },
+    "stages.0.1.grn.weight": {
+      "dtype": "F32",
+      "key": "stages.0.1.grn.weight",
+      "shape": [
+        128
+      ]
+    },
+    "stages.0.1.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.0.1.norm.bias",
+      "shape": [
+        32
+      ]
+    },
+    "stages.0.1.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.0.1.norm.weight",
+      "shape": [
+        32
+      ]
+    },
+    "stages.0.1.pwconv1.bias": {
+      "dtype": "F32",
+      "key": "stages.0.1.pwconv1.bias",
+      "shape": [
+        128
+      ]
+    },
+    "stages.0.1.pwconv1.weight": {
+      "dtype": "F32",
+      "key": "stages.0.1.pwconv1.weight",
+      "shape": [
+        128,
+        32
+      ]
+    },
+    "stages.0.1.pwconv2.bias": {
+      "dtype": "F32",
+      "key": "stages.0.1.pwconv2.bias",
+      "shape": [
+        32
+      ]
+    },
+    "stages.0.1.pwconv2.weight": {
+      "dtype": "F32",
+      "key": "stages.0.1.pwconv2.weight",
+      "shape": [
+        32,
+        128
+      ]
+    },
+    "stages.0.2.bias": {
+      "dtype": "F32",
+      "key": "stages.0.2.bias",
+      "shape": [
+        32
+      ]
+    },
+    "stages.0.2.weight": {
+      "dtype": "F32",
+      "key": "stages.0.2.weight",
+      "shape": [
+        32
+      ]
+    },
+    "stages.1.0.bias": {
+      "dtype": "F32",
+      "key": "stages.1.0.bias",
+      "shape": [
+        72
+      ]
+    },
+    "stages.1.0.weight": {
+      "dtype": "F32",
+      "key": "stages.1.0.weight",
+      "shape": [
+        72,
+        32,
+        2,
+        2
+      ]
+    },
+    "stages.1.1.attn.attn.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.1.1.attn.attn.mlp.fc1.bias",
+      "shape": [
+        4
+      ]
+    },
+    "stages.1.1.attn.attn.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.1.1.attn.attn.mlp.fc1.weight",
+      "shape": [
+        4,
+        1
+      ]
+    },
+    "stages.1.1.attn.attn.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.1.1.attn.attn.mlp.fc2.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.1.1.attn.attn.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.1.1.attn.attn.mlp.fc2.weight",
+      "shape": [
+        1,
+        4
+      ]
+    },
+    "stages.1.1.attn.attn.norm1.bias": {
+      "dtype": "F32",
+      "key": "stages.1.1.attn.attn.norm1.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.1.1.attn.attn.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.1.1.attn.attn.norm1.weight",
+      "shape": [
+        1
+      ]
+    },
+    "stages.1.1.attn.attn.norm2.bias": {
+      "dtype": "F32",
+      "key": "stages.1.1.attn.attn.norm2.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.1.1.attn.attn.norm2.weight": {
+      "dtype": "F32",
+      "key": "stages.1.1.attn.attn.norm2.weight",
+      "shape": [
+        1
+      ]
+    },
+    "stages.1.1.attn.attn.pos_embed.proj.bias": {
+      "dtype": "F32",
+      "key": "stages.1.1.attn.attn.pos_embed.proj.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.1.1.attn.attn.pos_embed.proj.weight": {
+      "dtype": "F32",
+      "key": "stages.1.1.attn.attn.pos_embed.proj.weight",
+      "shape": [
+        1,
+        1,
+        3,
+        3
+      ]
+    },
+    "stages.1.1.attn.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "stages.1.1.attn.attn.qkv.weight",
+      "shape": [
+        3,
+        1
+      ]
+    },
+    "stages.1.1.attn.conv.bias": {
+      "dtype": "F32",
+      "key": "stages.1.1.attn.conv.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.1.1.attn.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.1.1.attn.conv.weight",
+      "shape": [
+        1,
+        2,
+        7,
+        7
+      ]
+    },
+    "stages.1.1.dwconv.bias": {
+      "dtype": "F32",
+      "key": "stages.1.1.dwconv.bias",
+      "shape": [
+        72
+      ]
+    },
+    "stages.1.1.dwconv.weight": {
+      "dtype": "F32",
+      "key": "stages.1.1.dwconv.weight",
+      "shape": [
+        72,
+        1,
+        7,
+        7
+      ]
+    },
+    "stages.1.1.grn.bias": {
+      "dtype": "F32",
+      "key": "stages.1.1.grn.bias",
+      "shape": [
+        288
+      ]
+    },
+    "stages.1.1.grn.weight": {
+      "dtype": "F32",
+      "key": "stages.1.1.grn.weight",
+      "shape": [
+        288
+      ]
+    },
+    "stages.1.1.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.1.1.norm.bias",
+      "shape": [
+        72
+      ]
+    },
+    "stages.1.1.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.1.1.norm.weight",
+      "shape": [
+        72
+      ]
+    },
+    "stages.1.1.pwconv1.bias": {
+      "dtype": "F32",
+      "key": "stages.1.1.pwconv1.bias",
+      "shape": [
+        288
+      ]
+    },
+    "stages.1.1.pwconv1.weight": {
+      "dtype": "F32",
+      "key": "stages.1.1.pwconv1.weight",
+      "shape": [
+        288,
+        72
+      ]
+    },
+    "stages.1.1.pwconv2.bias": {
+      "dtype": "F32",
+      "key": "stages.1.1.pwconv2.bias",
+      "shape": [
+        72
+      ]
+    },
+    "stages.1.1.pwconv2.weight": {
+      "dtype": "F32",
+      "key": "stages.1.1.pwconv2.weight",
+      "shape": [
+        72,
+        288
+      ]
+    },
+    "stages.1.2.attn.attn.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.1.2.attn.attn.mlp.fc1.bias",
+      "shape": [
+        4
+      ]
+    },
+    "stages.1.2.attn.attn.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.1.2.attn.attn.mlp.fc1.weight",
+      "shape": [
+        4,
+        1
+      ]
+    },
+    "stages.1.2.attn.attn.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.1.2.attn.attn.mlp.fc2.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.1.2.attn.attn.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.1.2.attn.attn.mlp.fc2.weight",
+      "shape": [
+        1,
+        4
+      ]
+    },
+    "stages.1.2.attn.attn.norm1.bias": {
+      "dtype": "F32",
+      "key": "stages.1.2.attn.attn.norm1.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.1.2.attn.attn.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.1.2.attn.attn.norm1.weight",
+      "shape": [
+        1
+      ]
+    },
+    "stages.1.2.attn.attn.norm2.bias": {
+      "dtype": "F32",
+      "key": "stages.1.2.attn.attn.norm2.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.1.2.attn.attn.norm2.weight": {
+      "dtype": "F32",
+      "key": "stages.1.2.attn.attn.norm2.weight",
+      "shape": [
+        1
+      ]
+    },
+    "stages.1.2.attn.attn.pos_embed.proj.bias": {
+      "dtype": "F32",
+      "key": "stages.1.2.attn.attn.pos_embed.proj.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.1.2.attn.attn.pos_embed.proj.weight": {
+      "dtype": "F32",
+      "key": "stages.1.2.attn.attn.pos_embed.proj.weight",
+      "shape": [
+        1,
+        1,
+        3,
+        3
+      ]
+    },
+    "stages.1.2.attn.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "stages.1.2.attn.attn.qkv.weight",
+      "shape": [
+        3,
+        1
+      ]
+    },
+    "stages.1.2.attn.conv.bias": {
+      "dtype": "F32",
+      "key": "stages.1.2.attn.conv.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.1.2.attn.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.1.2.attn.conv.weight",
+      "shape": [
+        1,
+        2,
+        7,
+        7
+      ]
+    },
+    "stages.1.2.dwconv.bias": {
+      "dtype": "F32",
+      "key": "stages.1.2.dwconv.bias",
+      "shape": [
+        72
+      ]
+    },
+    "stages.1.2.dwconv.weight": {
+      "dtype": "F32",
+      "key": "stages.1.2.dwconv.weight",
+      "shape": [
+        72,
+        1,
+        7,
+        7
+      ]
+    },
+    "stages.1.2.grn.bias": {
+      "dtype": "F32",
+      "key": "stages.1.2.grn.bias",
+      "shape": [
+        288
+      ]
+    },
+    "stages.1.2.grn.weight": {
+      "dtype": "F32",
+      "key": "stages.1.2.grn.weight",
+      "shape": [
+        288
+      ]
+    },
+    "stages.1.2.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.1.2.norm.bias",
+      "shape": [
+        72
+      ]
+    },
+    "stages.1.2.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.1.2.norm.weight",
+      "shape": [
+        72
+      ]
+    },
+    "stages.1.2.pwconv1.bias": {
+      "dtype": "F32",
+      "key": "stages.1.2.pwconv1.bias",
+      "shape": [
+        288
+      ]
+    },
+    "stages.1.2.pwconv1.weight": {
+      "dtype": "F32",
+      "key": "stages.1.2.pwconv1.weight",
+      "shape": [
+        288,
+        72
+      ]
+    },
+    "stages.1.2.pwconv2.bias": {
+      "dtype": "F32",
+      "key": "stages.1.2.pwconv2.bias",
+      "shape": [
+        72
+      ]
+    },
+    "stages.1.2.pwconv2.weight": {
+      "dtype": "F32",
+      "key": "stages.1.2.pwconv2.weight",
+      "shape": [
+        72,
+        288
+      ]
+    },
+    "stages.1.3.bias": {
+      "dtype": "F32",
+      "key": "stages.1.3.bias",
+      "shape": [
+        72
+      ]
+    },
+    "stages.1.3.weight": {
+      "dtype": "F32",
+      "key": "stages.1.3.weight",
+      "shape": [
+        72
+      ]
+    },
+    "stages.2.0.bias": {
+      "dtype": "F32",
+      "key": "stages.2.0.bias",
+      "shape": [
+        168
+      ]
+    },
+    "stages.2.0.weight": {
+      "dtype": "F32",
+      "key": "stages.2.0.weight",
+      "shape": [
+        168,
+        72,
+        2,
+        2
+      ]
+    },
+    "stages.2.1.attn.attn.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.1.attn.attn.mlp.fc1.bias",
+      "shape": [
+        4
+      ]
+    },
+    "stages.2.1.attn.attn.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.1.attn.attn.mlp.fc1.weight",
+      "shape": [
+        4,
+        1
+      ]
+    },
+    "stages.2.1.attn.attn.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.1.attn.attn.mlp.fc2.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.2.1.attn.attn.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.1.attn.attn.mlp.fc2.weight",
+      "shape": [
+        1,
+        4
+      ]
+    },
+    "stages.2.1.attn.attn.norm1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.1.attn.attn.norm1.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.2.1.attn.attn.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.1.attn.attn.norm1.weight",
+      "shape": [
+        1
+      ]
+    },
+    "stages.2.1.attn.attn.norm2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.1.attn.attn.norm2.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.2.1.attn.attn.norm2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.1.attn.attn.norm2.weight",
+      "shape": [
+        1
+      ]
+    },
+    "stages.2.1.attn.attn.pos_embed.proj.bias": {
+      "dtype": "F32",
+      "key": "stages.2.1.attn.attn.pos_embed.proj.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.2.1.attn.attn.pos_embed.proj.weight": {
+      "dtype": "F32",
+      "key": "stages.2.1.attn.attn.pos_embed.proj.weight",
+      "shape": [
+        1,
+        1,
+        3,
+        3
+      ]
+    },
+    "stages.2.1.attn.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.1.attn.attn.qkv.weight",
+      "shape": [
+        3,
+        1
+      ]
+    },
+    "stages.2.1.attn.conv.bias": {
+      "dtype": "F32",
+      "key": "stages.2.1.attn.conv.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.2.1.attn.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.1.attn.conv.weight",
+      "shape": [
+        1,
+        2,
+        7,
+        7
+      ]
+    },
+    "stages.2.1.dwconv.bias": {
+      "dtype": "F32",
+      "key": "stages.2.1.dwconv.bias",
+      "shape": [
+        168
+      ]
+    },
+    "stages.2.1.dwconv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.1.dwconv.weight",
+      "shape": [
+        168,
+        1,
+        7,
+        7
+      ]
+    },
+    "stages.2.1.grn.bias": {
+      "dtype": "F32",
+      "key": "stages.2.1.grn.bias",
+      "shape": [
+        672
+      ]
+    },
+    "stages.2.1.grn.weight": {
+      "dtype": "F32",
+      "key": "stages.2.1.grn.weight",
+      "shape": [
+        672
+      ]
+    },
+    "stages.2.1.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.2.1.norm.bias",
+      "shape": [
+        168
+      ]
+    },
+    "stages.2.1.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.2.1.norm.weight",
+      "shape": [
+        168
+      ]
+    },
+    "stages.2.1.pwconv1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.1.pwconv1.bias",
+      "shape": [
+        672
+      ]
+    },
+    "stages.2.1.pwconv1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.1.pwconv1.weight",
+      "shape": [
+        672,
+        168
+      ]
+    },
+    "stages.2.1.pwconv2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.1.pwconv2.bias",
+      "shape": [
+        168
+      ]
+    },
+    "stages.2.1.pwconv2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.1.pwconv2.weight",
+      "shape": [
+        168,
+        672
+      ]
+    },
+    "stages.2.2.attn.attn.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.2.attn.attn.mlp.fc1.bias",
+      "shape": [
+        4
+      ]
+    },
+    "stages.2.2.attn.attn.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.2.attn.attn.mlp.fc1.weight",
+      "shape": [
+        4,
+        1
+      ]
+    },
+    "stages.2.2.attn.attn.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.2.attn.attn.mlp.fc2.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.2.2.attn.attn.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.2.attn.attn.mlp.fc2.weight",
+      "shape": [
+        1,
+        4
+      ]
+    },
+    "stages.2.2.attn.attn.norm1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.2.attn.attn.norm1.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.2.2.attn.attn.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.2.attn.attn.norm1.weight",
+      "shape": [
+        1
+      ]
+    },
+    "stages.2.2.attn.attn.norm2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.2.attn.attn.norm2.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.2.2.attn.attn.norm2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.2.attn.attn.norm2.weight",
+      "shape": [
+        1
+      ]
+    },
+    "stages.2.2.attn.attn.pos_embed.proj.bias": {
+      "dtype": "F32",
+      "key": "stages.2.2.attn.attn.pos_embed.proj.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.2.2.attn.attn.pos_embed.proj.weight": {
+      "dtype": "F32",
+      "key": "stages.2.2.attn.attn.pos_embed.proj.weight",
+      "shape": [
+        1,
+        1,
+        3,
+        3
+      ]
+    },
+    "stages.2.2.attn.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.2.attn.attn.qkv.weight",
+      "shape": [
+        3,
+        1
+      ]
+    },
+    "stages.2.2.attn.conv.bias": {
+      "dtype": "F32",
+      "key": "stages.2.2.attn.conv.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.2.2.attn.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.2.attn.conv.weight",
+      "shape": [
+        1,
+        2,
+        7,
+        7
+      ]
+    },
+    "stages.2.2.dwconv.bias": {
+      "dtype": "F32",
+      "key": "stages.2.2.dwconv.bias",
+      "shape": [
+        168
+      ]
+    },
+    "stages.2.2.dwconv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.2.dwconv.weight",
+      "shape": [
+        168,
+        1,
+        7,
+        7
+      ]
+    },
+    "stages.2.2.grn.bias": {
+      "dtype": "F32",
+      "key": "stages.2.2.grn.bias",
+      "shape": [
+        672
+      ]
+    },
+    "stages.2.2.grn.weight": {
+      "dtype": "F32",
+      "key": "stages.2.2.grn.weight",
+      "shape": [
+        672
+      ]
+    },
+    "stages.2.2.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.2.2.norm.bias",
+      "shape": [
+        168
+      ]
+    },
+    "stages.2.2.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.2.2.norm.weight",
+      "shape": [
+        168
+      ]
+    },
+    "stages.2.2.pwconv1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.2.pwconv1.bias",
+      "shape": [
+        672
+      ]
+    },
+    "stages.2.2.pwconv1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.2.pwconv1.weight",
+      "shape": [
+        672,
+        168
+      ]
+    },
+    "stages.2.2.pwconv2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.2.pwconv2.bias",
+      "shape": [
+        168
+      ]
+    },
+    "stages.2.2.pwconv2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.2.pwconv2.weight",
+      "shape": [
+        168,
+        672
+      ]
+    },
+    "stages.2.3.attn.attn.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.3.attn.attn.mlp.fc1.bias",
+      "shape": [
+        4
+      ]
+    },
+    "stages.2.3.attn.attn.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.3.attn.attn.mlp.fc1.weight",
+      "shape": [
+        4,
+        1
+      ]
+    },
+    "stages.2.3.attn.attn.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.3.attn.attn.mlp.fc2.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.2.3.attn.attn.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.3.attn.attn.mlp.fc2.weight",
+      "shape": [
+        1,
+        4
+      ]
+    },
+    "stages.2.3.attn.attn.norm1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.3.attn.attn.norm1.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.2.3.attn.attn.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.3.attn.attn.norm1.weight",
+      "shape": [
+        1
+      ]
+    },
+    "stages.2.3.attn.attn.norm2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.3.attn.attn.norm2.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.2.3.attn.attn.norm2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.3.attn.attn.norm2.weight",
+      "shape": [
+        1
+      ]
+    },
+    "stages.2.3.attn.attn.pos_embed.proj.bias": {
+      "dtype": "F32",
+      "key": "stages.2.3.attn.attn.pos_embed.proj.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.2.3.attn.attn.pos_embed.proj.weight": {
+      "dtype": "F32",
+      "key": "stages.2.3.attn.attn.pos_embed.proj.weight",
+      "shape": [
+        1,
+        1,
+        3,
+        3
+      ]
+    },
+    "stages.2.3.attn.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.3.attn.attn.qkv.weight",
+      "shape": [
+        3,
+        1
+      ]
+    },
+    "stages.2.3.attn.conv.bias": {
+      "dtype": "F32",
+      "key": "stages.2.3.attn.conv.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.2.3.attn.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.3.attn.conv.weight",
+      "shape": [
+        1,
+        2,
+        7,
+        7
+      ]
+    },
+    "stages.2.3.dwconv.bias": {
+      "dtype": "F32",
+      "key": "stages.2.3.dwconv.bias",
+      "shape": [
+        168
+      ]
+    },
+    "stages.2.3.dwconv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.3.dwconv.weight",
+      "shape": [
+        168,
+        1,
+        7,
+        7
+      ]
+    },
+    "stages.2.3.grn.bias": {
+      "dtype": "F32",
+      "key": "stages.2.3.grn.bias",
+      "shape": [
+        672
+      ]
+    },
+    "stages.2.3.grn.weight": {
+      "dtype": "F32",
+      "key": "stages.2.3.grn.weight",
+      "shape": [
+        672
+      ]
+    },
+    "stages.2.3.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.2.3.norm.bias",
+      "shape": [
+        168
+      ]
+    },
+    "stages.2.3.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.2.3.norm.weight",
+      "shape": [
+        168
+      ]
+    },
+    "stages.2.3.pwconv1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.3.pwconv1.bias",
+      "shape": [
+        672
+      ]
+    },
+    "stages.2.3.pwconv1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.3.pwconv1.weight",
+      "shape": [
+        672,
+        168
+      ]
+    },
+    "stages.2.3.pwconv2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.3.pwconv2.bias",
+      "shape": [
+        168
+      ]
+    },
+    "stages.2.3.pwconv2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.3.pwconv2.weight",
+      "shape": [
+        168,
+        672
+      ]
+    },
+    "stages.2.4.attn.attn.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.4.attn.attn.mlp.fc1.bias",
+      "shape": [
+        4
+      ]
+    },
+    "stages.2.4.attn.attn.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.4.attn.attn.mlp.fc1.weight",
+      "shape": [
+        4,
+        1
+      ]
+    },
+    "stages.2.4.attn.attn.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.4.attn.attn.mlp.fc2.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.2.4.attn.attn.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.4.attn.attn.mlp.fc2.weight",
+      "shape": [
+        1,
+        4
+      ]
+    },
+    "stages.2.4.attn.attn.norm1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.4.attn.attn.norm1.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.2.4.attn.attn.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.4.attn.attn.norm1.weight",
+      "shape": [
+        1
+      ]
+    },
+    "stages.2.4.attn.attn.norm2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.4.attn.attn.norm2.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.2.4.attn.attn.norm2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.4.attn.attn.norm2.weight",
+      "shape": [
+        1
+      ]
+    },
+    "stages.2.4.attn.attn.pos_embed.proj.bias": {
+      "dtype": "F32",
+      "key": "stages.2.4.attn.attn.pos_embed.proj.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.2.4.attn.attn.pos_embed.proj.weight": {
+      "dtype": "F32",
+      "key": "stages.2.4.attn.attn.pos_embed.proj.weight",
+      "shape": [
+        1,
+        1,
+        3,
+        3
+      ]
+    },
+    "stages.2.4.attn.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.4.attn.attn.qkv.weight",
+      "shape": [
+        3,
+        1
+      ]
+    },
+    "stages.2.4.attn.conv.bias": {
+      "dtype": "F32",
+      "key": "stages.2.4.attn.conv.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.2.4.attn.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.4.attn.conv.weight",
+      "shape": [
+        1,
+        2,
+        7,
+        7
+      ]
+    },
+    "stages.2.4.dwconv.bias": {
+      "dtype": "F32",
+      "key": "stages.2.4.dwconv.bias",
+      "shape": [
+        168
+      ]
+    },
+    "stages.2.4.dwconv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.4.dwconv.weight",
+      "shape": [
+        168,
+        1,
+        7,
+        7
+      ]
+    },
+    "stages.2.4.grn.bias": {
+      "dtype": "F32",
+      "key": "stages.2.4.grn.bias",
+      "shape": [
+        672
+      ]
+    },
+    "stages.2.4.grn.weight": {
+      "dtype": "F32",
+      "key": "stages.2.4.grn.weight",
+      "shape": [
+        672
+      ]
+    },
+    "stages.2.4.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.2.4.norm.bias",
+      "shape": [
+        168
+      ]
+    },
+    "stages.2.4.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.2.4.norm.weight",
+      "shape": [
+        168
+      ]
+    },
+    "stages.2.4.pwconv1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.4.pwconv1.bias",
+      "shape": [
+        672
+      ]
+    },
+    "stages.2.4.pwconv1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.4.pwconv1.weight",
+      "shape": [
+        672,
+        168
+      ]
+    },
+    "stages.2.4.pwconv2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.4.pwconv2.bias",
+      "shape": [
+        168
+      ]
+    },
+    "stages.2.4.pwconv2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.4.pwconv2.weight",
+      "shape": [
+        168,
+        672
+      ]
+    },
+    "stages.2.5.attn.attn.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.5.attn.attn.mlp.fc1.bias",
+      "shape": [
+        4
+      ]
+    },
+    "stages.2.5.attn.attn.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.5.attn.attn.mlp.fc1.weight",
+      "shape": [
+        4,
+        1
+      ]
+    },
+    "stages.2.5.attn.attn.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.5.attn.attn.mlp.fc2.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.2.5.attn.attn.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.5.attn.attn.mlp.fc2.weight",
+      "shape": [
+        1,
+        4
+      ]
+    },
+    "stages.2.5.attn.attn.norm1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.5.attn.attn.norm1.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.2.5.attn.attn.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.5.attn.attn.norm1.weight",
+      "shape": [
+        1
+      ]
+    },
+    "stages.2.5.attn.attn.norm2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.5.attn.attn.norm2.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.2.5.attn.attn.norm2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.5.attn.attn.norm2.weight",
+      "shape": [
+        1
+      ]
+    },
+    "stages.2.5.attn.attn.pos_embed.proj.bias": {
+      "dtype": "F32",
+      "key": "stages.2.5.attn.attn.pos_embed.proj.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.2.5.attn.attn.pos_embed.proj.weight": {
+      "dtype": "F32",
+      "key": "stages.2.5.attn.attn.pos_embed.proj.weight",
+      "shape": [
+        1,
+        1,
+        3,
+        3
+      ]
+    },
+    "stages.2.5.attn.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.5.attn.attn.qkv.weight",
+      "shape": [
+        3,
+        1
+      ]
+    },
+    "stages.2.5.attn.conv.bias": {
+      "dtype": "F32",
+      "key": "stages.2.5.attn.conv.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.2.5.attn.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.5.attn.conv.weight",
+      "shape": [
+        1,
+        2,
+        7,
+        7
+      ]
+    },
+    "stages.2.5.dwconv.bias": {
+      "dtype": "F32",
+      "key": "stages.2.5.dwconv.bias",
+      "shape": [
+        168
+      ]
+    },
+    "stages.2.5.dwconv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.5.dwconv.weight",
+      "shape": [
+        168,
+        1,
+        7,
+        7
+      ]
+    },
+    "stages.2.5.grn.bias": {
+      "dtype": "F32",
+      "key": "stages.2.5.grn.bias",
+      "shape": [
+        672
+      ]
+    },
+    "stages.2.5.grn.weight": {
+      "dtype": "F32",
+      "key": "stages.2.5.grn.weight",
+      "shape": [
+        672
+      ]
+    },
+    "stages.2.5.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.2.5.norm.bias",
+      "shape": [
+        168
+      ]
+    },
+    "stages.2.5.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.2.5.norm.weight",
+      "shape": [
+        168
+      ]
+    },
+    "stages.2.5.pwconv1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.5.pwconv1.bias",
+      "shape": [
+        672
+      ]
+    },
+    "stages.2.5.pwconv1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.5.pwconv1.weight",
+      "shape": [
+        672,
+        168
+      ]
+    },
+    "stages.2.5.pwconv2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.5.pwconv2.bias",
+      "shape": [
+        168
+      ]
+    },
+    "stages.2.5.pwconv2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.5.pwconv2.weight",
+      "shape": [
+        168,
+        672
+      ]
+    },
+    "stages.2.6.attn.attn.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.6.attn.attn.mlp.fc1.bias",
+      "shape": [
+        4
+      ]
+    },
+    "stages.2.6.attn.attn.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.6.attn.attn.mlp.fc1.weight",
+      "shape": [
+        4,
+        1
+      ]
+    },
+    "stages.2.6.attn.attn.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.6.attn.attn.mlp.fc2.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.2.6.attn.attn.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.6.attn.attn.mlp.fc2.weight",
+      "shape": [
+        1,
+        4
+      ]
+    },
+    "stages.2.6.attn.attn.norm1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.6.attn.attn.norm1.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.2.6.attn.attn.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.6.attn.attn.norm1.weight",
+      "shape": [
+        1
+      ]
+    },
+    "stages.2.6.attn.attn.norm2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.6.attn.attn.norm2.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.2.6.attn.attn.norm2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.6.attn.attn.norm2.weight",
+      "shape": [
+        1
+      ]
+    },
+    "stages.2.6.attn.attn.pos_embed.proj.bias": {
+      "dtype": "F32",
+      "key": "stages.2.6.attn.attn.pos_embed.proj.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.2.6.attn.attn.pos_embed.proj.weight": {
+      "dtype": "F32",
+      "key": "stages.2.6.attn.attn.pos_embed.proj.weight",
+      "shape": [
+        1,
+        1,
+        3,
+        3
+      ]
+    },
+    "stages.2.6.attn.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.6.attn.attn.qkv.weight",
+      "shape": [
+        3,
+        1
+      ]
+    },
+    "stages.2.6.attn.conv.bias": {
+      "dtype": "F32",
+      "key": "stages.2.6.attn.conv.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.2.6.attn.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.6.attn.conv.weight",
+      "shape": [
+        1,
+        2,
+        7,
+        7
+      ]
+    },
+    "stages.2.6.dwconv.bias": {
+      "dtype": "F32",
+      "key": "stages.2.6.dwconv.bias",
+      "shape": [
+        168
+      ]
+    },
+    "stages.2.6.dwconv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.6.dwconv.weight",
+      "shape": [
+        168,
+        1,
+        7,
+        7
+      ]
+    },
+    "stages.2.6.grn.bias": {
+      "dtype": "F32",
+      "key": "stages.2.6.grn.bias",
+      "shape": [
+        672
+      ]
+    },
+    "stages.2.6.grn.weight": {
+      "dtype": "F32",
+      "key": "stages.2.6.grn.weight",
+      "shape": [
+        672
+      ]
+    },
+    "stages.2.6.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.2.6.norm.bias",
+      "shape": [
+        168
+      ]
+    },
+    "stages.2.6.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.2.6.norm.weight",
+      "shape": [
+        168
+      ]
+    },
+    "stages.2.6.pwconv1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.6.pwconv1.bias",
+      "shape": [
+        672
+      ]
+    },
+    "stages.2.6.pwconv1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.6.pwconv1.weight",
+      "shape": [
+        672,
+        168
+      ]
+    },
+    "stages.2.6.pwconv2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.6.pwconv2.bias",
+      "shape": [
+        168
+      ]
+    },
+    "stages.2.6.pwconv2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.6.pwconv2.weight",
+      "shape": [
+        168,
+        672
+      ]
+    },
+    "stages.2.7.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "stages.2.7.attn.proj.bias",
+      "shape": [
+        168
+      ]
+    },
+    "stages.2.7.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "stages.2.7.attn.proj.weight",
+      "shape": [
+        168,
+        256
+      ]
+    },
+    "stages.2.7.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.7.attn.qkv.weight",
+      "shape": [
+        768,
+        168
+      ]
+    },
+    "stages.2.7.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.7.mlp.fc1.bias",
+      "shape": [
+        672
+      ]
+    },
+    "stages.2.7.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.7.mlp.fc1.weight",
+      "shape": [
+        672,
+        168
+      ]
+    },
+    "stages.2.7.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.7.mlp.fc2.bias",
+      "shape": [
+        168
+      ]
+    },
+    "stages.2.7.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.7.mlp.fc2.weight",
+      "shape": [
+        168,
+        672
+      ]
+    },
+    "stages.2.7.norm1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.7.norm1.bias",
+      "shape": [
+        168
+      ]
+    },
+    "stages.2.7.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.7.norm1.weight",
+      "shape": [
+        168
+      ]
+    },
+    "stages.2.7.norm2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.7.norm2.bias",
+      "shape": [
+        168
+      ]
+    },
+    "stages.2.7.norm2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.7.norm2.weight",
+      "shape": [
+        168
+      ]
+    },
+    "stages.2.7.pos_embed.proj.bias": {
+      "dtype": "F32",
+      "key": "stages.2.7.pos_embed.proj.bias",
+      "shape": [
+        168
+      ]
+    },
+    "stages.2.7.pos_embed.proj.weight": {
+      "dtype": "F32",
+      "key": "stages.2.7.pos_embed.proj.weight",
+      "shape": [
+        168,
+        1,
+        3,
+        3
+      ]
+    },
+    "stages.2.8.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "stages.2.8.attn.proj.bias",
+      "shape": [
+        168
+      ]
+    },
+    "stages.2.8.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "stages.2.8.attn.proj.weight",
+      "shape": [
+        168,
+        256
+      ]
+    },
+    "stages.2.8.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.8.attn.qkv.weight",
+      "shape": [
+        768,
+        168
+      ]
+    },
+    "stages.2.8.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.8.mlp.fc1.bias",
+      "shape": [
+        672
+      ]
+    },
+    "stages.2.8.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.8.mlp.fc1.weight",
+      "shape": [
+        672,
+        168
+      ]
+    },
+    "stages.2.8.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.8.mlp.fc2.bias",
+      "shape": [
+        168
+      ]
+    },
+    "stages.2.8.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.8.mlp.fc2.weight",
+      "shape": [
+        168,
+        672
+      ]
+    },
+    "stages.2.8.norm1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.8.norm1.bias",
+      "shape": [
+        168
+      ]
+    },
+    "stages.2.8.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.8.norm1.weight",
+      "shape": [
+        168
+      ]
+    },
+    "stages.2.8.norm2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.8.norm2.bias",
+      "shape": [
+        168
+      ]
+    },
+    "stages.2.8.norm2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.8.norm2.weight",
+      "shape": [
+        168
+      ]
+    },
+    "stages.2.8.pos_embed.proj.bias": {
+      "dtype": "F32",
+      "key": "stages.2.8.pos_embed.proj.bias",
+      "shape": [
+        168
+      ]
+    },
+    "stages.2.8.pos_embed.proj.weight": {
+      "dtype": "F32",
+      "key": "stages.2.8.pos_embed.proj.weight",
+      "shape": [
+        168,
+        1,
+        3,
+        3
+      ]
+    },
+    "stages.2.9.bias": {
+      "dtype": "F32",
+      "key": "stages.2.9.bias",
+      "shape": [
+        168
+      ]
+    },
+    "stages.2.9.weight": {
+      "dtype": "F32",
+      "key": "stages.2.9.weight",
+      "shape": [
+        168
+      ]
+    },
+    "stages.3.0.bias": {
+      "dtype": "F32",
+      "key": "stages.3.0.bias",
+      "shape": [
+        386
+      ]
+    },
+    "stages.3.0.weight": {
+      "dtype": "F32",
+      "key": "stages.3.0.weight",
+      "shape": [
+        386,
+        168,
+        2,
+        2
+      ]
+    },
+    "stages.3.1.attn.attn.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.3.1.attn.attn.mlp.fc1.bias",
+      "shape": [
+        4
+      ]
+    },
+    "stages.3.1.attn.attn.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.3.1.attn.attn.mlp.fc1.weight",
+      "shape": [
+        4,
+        1
+      ]
+    },
+    "stages.3.1.attn.attn.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.3.1.attn.attn.mlp.fc2.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.3.1.attn.attn.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.3.1.attn.attn.mlp.fc2.weight",
+      "shape": [
+        1,
+        4
+      ]
+    },
+    "stages.3.1.attn.attn.norm1.bias": {
+      "dtype": "F32",
+      "key": "stages.3.1.attn.attn.norm1.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.3.1.attn.attn.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.3.1.attn.attn.norm1.weight",
+      "shape": [
+        1
+      ]
+    },
+    "stages.3.1.attn.attn.norm2.bias": {
+      "dtype": "F32",
+      "key": "stages.3.1.attn.attn.norm2.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.3.1.attn.attn.norm2.weight": {
+      "dtype": "F32",
+      "key": "stages.3.1.attn.attn.norm2.weight",
+      "shape": [
+        1
+      ]
+    },
+    "stages.3.1.attn.attn.pos_embed.proj.bias": {
+      "dtype": "F32",
+      "key": "stages.3.1.attn.attn.pos_embed.proj.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.3.1.attn.attn.pos_embed.proj.weight": {
+      "dtype": "F32",
+      "key": "stages.3.1.attn.attn.pos_embed.proj.weight",
+      "shape": [
+        1,
+        1,
+        3,
+        3
+      ]
+    },
+    "stages.3.1.attn.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "stages.3.1.attn.attn.qkv.weight",
+      "shape": [
+        3,
+        1
+      ]
+    },
+    "stages.3.1.attn.conv.bias": {
+      "dtype": "F32",
+      "key": "stages.3.1.attn.conv.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.3.1.attn.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.3.1.attn.conv.weight",
+      "shape": [
+        1,
+        2,
+        7,
+        7
+      ]
+    },
+    "stages.3.1.dwconv.bias": {
+      "dtype": "F32",
+      "key": "stages.3.1.dwconv.bias",
+      "shape": [
+        386
+      ]
+    },
+    "stages.3.1.dwconv.weight": {
+      "dtype": "F32",
+      "key": "stages.3.1.dwconv.weight",
+      "shape": [
+        386,
+        1,
+        7,
+        7
+      ]
+    },
+    "stages.3.1.grn.bias": {
+      "dtype": "F32",
+      "key": "stages.3.1.grn.bias",
+      "shape": [
+        1544
+      ]
+    },
+    "stages.3.1.grn.weight": {
+      "dtype": "F32",
+      "key": "stages.3.1.grn.weight",
+      "shape": [
+        1544
+      ]
+    },
+    "stages.3.1.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.3.1.norm.bias",
+      "shape": [
+        386
+      ]
+    },
+    "stages.3.1.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.3.1.norm.weight",
+      "shape": [
+        386
+      ]
+    },
+    "stages.3.1.pwconv1.bias": {
+      "dtype": "F32",
+      "key": "stages.3.1.pwconv1.bias",
+      "shape": [
+        1544
+      ]
+    },
+    "stages.3.1.pwconv1.weight": {
+      "dtype": "F32",
+      "key": "stages.3.1.pwconv1.weight",
+      "shape": [
+        1544,
+        386
+      ]
+    },
+    "stages.3.1.pwconv2.bias": {
+      "dtype": "F32",
+      "key": "stages.3.1.pwconv2.bias",
+      "shape": [
+        386
+      ]
+    },
+    "stages.3.1.pwconv2.weight": {
+      "dtype": "F32",
+      "key": "stages.3.1.pwconv2.weight",
+      "shape": [
+        386,
+        1544
+      ]
+    },
+    "stages.3.2.attn.attn.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.3.2.attn.attn.mlp.fc1.bias",
+      "shape": [
+        4
+      ]
+    },
+    "stages.3.2.attn.attn.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.3.2.attn.attn.mlp.fc1.weight",
+      "shape": [
+        4,
+        1
+      ]
+    },
+    "stages.3.2.attn.attn.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.3.2.attn.attn.mlp.fc2.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.3.2.attn.attn.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.3.2.attn.attn.mlp.fc2.weight",
+      "shape": [
+        1,
+        4
+      ]
+    },
+    "stages.3.2.attn.attn.norm1.bias": {
+      "dtype": "F32",
+      "key": "stages.3.2.attn.attn.norm1.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.3.2.attn.attn.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.3.2.attn.attn.norm1.weight",
+      "shape": [
+        1
+      ]
+    },
+    "stages.3.2.attn.attn.norm2.bias": {
+      "dtype": "F32",
+      "key": "stages.3.2.attn.attn.norm2.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.3.2.attn.attn.norm2.weight": {
+      "dtype": "F32",
+      "key": "stages.3.2.attn.attn.norm2.weight",
+      "shape": [
+        1
+      ]
+    },
+    "stages.3.2.attn.attn.pos_embed.proj.bias": {
+      "dtype": "F32",
+      "key": "stages.3.2.attn.attn.pos_embed.proj.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.3.2.attn.attn.pos_embed.proj.weight": {
+      "dtype": "F32",
+      "key": "stages.3.2.attn.attn.pos_embed.proj.weight",
+      "shape": [
+        1,
+        1,
+        3,
+        3
+      ]
+    },
+    "stages.3.2.attn.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "stages.3.2.attn.attn.qkv.weight",
+      "shape": [
+        3,
+        1
+      ]
+    },
+    "stages.3.2.attn.conv.bias": {
+      "dtype": "F32",
+      "key": "stages.3.2.attn.conv.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.3.2.attn.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.3.2.attn.conv.weight",
+      "shape": [
+        1,
+        2,
+        7,
+        7
+      ]
+    },
+    "stages.3.2.dwconv.bias": {
+      "dtype": "F32",
+      "key": "stages.3.2.dwconv.bias",
+      "shape": [
+        386
+      ]
+    },
+    "stages.3.2.dwconv.weight": {
+      "dtype": "F32",
+      "key": "stages.3.2.dwconv.weight",
+      "shape": [
+        386,
+        1,
+        7,
+        7
+      ]
+    },
+    "stages.3.2.grn.bias": {
+      "dtype": "F32",
+      "key": "stages.3.2.grn.bias",
+      "shape": [
+        1544
+      ]
+    },
+    "stages.3.2.grn.weight": {
+      "dtype": "F32",
+      "key": "stages.3.2.grn.weight",
+      "shape": [
+        1544
+      ]
+    },
+    "stages.3.2.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.3.2.norm.bias",
+      "shape": [
+        386
+      ]
+    },
+    "stages.3.2.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.3.2.norm.weight",
+      "shape": [
+        386
+      ]
+    },
+    "stages.3.2.pwconv1.bias": {
+      "dtype": "F32",
+      "key": "stages.3.2.pwconv1.bias",
+      "shape": [
+        1544
+      ]
+    },
+    "stages.3.2.pwconv1.weight": {
+      "dtype": "F32",
+      "key": "stages.3.2.pwconv1.weight",
+      "shape": [
+        1544,
+        386
+      ]
+    },
+    "stages.3.2.pwconv2.bias": {
+      "dtype": "F32",
+      "key": "stages.3.2.pwconv2.bias",
+      "shape": [
+        386
+      ]
+    },
+    "stages.3.2.pwconv2.weight": {
+      "dtype": "F32",
+      "key": "stages.3.2.pwconv2.weight",
+      "shape": [
+        386,
+        1544
+      ]
+    },
+    "stages.3.3.attn.attn.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.3.3.attn.attn.mlp.fc1.bias",
+      "shape": [
+        4
+      ]
+    },
+    "stages.3.3.attn.attn.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.3.3.attn.attn.mlp.fc1.weight",
+      "shape": [
+        4,
+        1
+      ]
+    },
+    "stages.3.3.attn.attn.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.3.3.attn.attn.mlp.fc2.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.3.3.attn.attn.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.3.3.attn.attn.mlp.fc2.weight",
+      "shape": [
+        1,
+        4
+      ]
+    },
+    "stages.3.3.attn.attn.norm1.bias": {
+      "dtype": "F32",
+      "key": "stages.3.3.attn.attn.norm1.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.3.3.attn.attn.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.3.3.attn.attn.norm1.weight",
+      "shape": [
+        1
+      ]
+    },
+    "stages.3.3.attn.attn.norm2.bias": {
+      "dtype": "F32",
+      "key": "stages.3.3.attn.attn.norm2.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.3.3.attn.attn.norm2.weight": {
+      "dtype": "F32",
+      "key": "stages.3.3.attn.attn.norm2.weight",
+      "shape": [
+        1
+      ]
+    },
+    "stages.3.3.attn.attn.pos_embed.proj.bias": {
+      "dtype": "F32",
+      "key": "stages.3.3.attn.attn.pos_embed.proj.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.3.3.attn.attn.pos_embed.proj.weight": {
+      "dtype": "F32",
+      "key": "stages.3.3.attn.attn.pos_embed.proj.weight",
+      "shape": [
+        1,
+        1,
+        3,
+        3
+      ]
+    },
+    "stages.3.3.attn.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "stages.3.3.attn.attn.qkv.weight",
+      "shape": [
+        3,
+        1
+      ]
+    },
+    "stages.3.3.attn.conv.bias": {
+      "dtype": "F32",
+      "key": "stages.3.3.attn.conv.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.3.3.attn.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.3.3.attn.conv.weight",
+      "shape": [
+        1,
+        2,
+        7,
+        7
+      ]
+    },
+    "stages.3.3.dwconv.bias": {
+      "dtype": "F32",
+      "key": "stages.3.3.dwconv.bias",
+      "shape": [
+        386
+      ]
+    },
+    "stages.3.3.dwconv.weight": {
+      "dtype": "F32",
+      "key": "stages.3.3.dwconv.weight",
+      "shape": [
+        386,
+        1,
+        7,
+        7
+      ]
+    },
+    "stages.3.3.grn.bias": {
+      "dtype": "F32",
+      "key": "stages.3.3.grn.bias",
+      "shape": [
+        1544
+      ]
+    },
+    "stages.3.3.grn.weight": {
+      "dtype": "F32",
+      "key": "stages.3.3.grn.weight",
+      "shape": [
+        1544
+      ]
+    },
+    "stages.3.3.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.3.3.norm.bias",
+      "shape": [
+        386
+      ]
+    },
+    "stages.3.3.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.3.3.norm.weight",
+      "shape": [
+        386
+      ]
+    },
+    "stages.3.3.pwconv1.bias": {
+      "dtype": "F32",
+      "key": "stages.3.3.pwconv1.bias",
+      "shape": [
+        1544
+      ]
+    },
+    "stages.3.3.pwconv1.weight": {
+      "dtype": "F32",
+      "key": "stages.3.3.pwconv1.weight",
+      "shape": [
+        1544,
+        386
+      ]
+    },
+    "stages.3.3.pwconv2.bias": {
+      "dtype": "F32",
+      "key": "stages.3.3.pwconv2.bias",
+      "shape": [
+        386
+      ]
+    },
+    "stages.3.3.pwconv2.weight": {
+      "dtype": "F32",
+      "key": "stages.3.3.pwconv2.weight",
+      "shape": [
+        386,
+        1544
+      ]
+    },
+    "stages.3.4.attn.attn.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.3.4.attn.attn.mlp.fc1.bias",
+      "shape": [
+        4
+      ]
+    },
+    "stages.3.4.attn.attn.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.3.4.attn.attn.mlp.fc1.weight",
+      "shape": [
+        4,
+        1
+      ]
+    },
+    "stages.3.4.attn.attn.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.3.4.attn.attn.mlp.fc2.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.3.4.attn.attn.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.3.4.attn.attn.mlp.fc2.weight",
+      "shape": [
+        1,
+        4
+      ]
+    },
+    "stages.3.4.attn.attn.norm1.bias": {
+      "dtype": "F32",
+      "key": "stages.3.4.attn.attn.norm1.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.3.4.attn.attn.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.3.4.attn.attn.norm1.weight",
+      "shape": [
+        1
+      ]
+    },
+    "stages.3.4.attn.attn.norm2.bias": {
+      "dtype": "F32",
+      "key": "stages.3.4.attn.attn.norm2.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.3.4.attn.attn.norm2.weight": {
+      "dtype": "F32",
+      "key": "stages.3.4.attn.attn.norm2.weight",
+      "shape": [
+        1
+      ]
+    },
+    "stages.3.4.attn.attn.pos_embed.proj.bias": {
+      "dtype": "F32",
+      "key": "stages.3.4.attn.attn.pos_embed.proj.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.3.4.attn.attn.pos_embed.proj.weight": {
+      "dtype": "F32",
+      "key": "stages.3.4.attn.attn.pos_embed.proj.weight",
+      "shape": [
+        1,
+        1,
+        3,
+        3
+      ]
+    },
+    "stages.3.4.attn.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "stages.3.4.attn.attn.qkv.weight",
+      "shape": [
+        3,
+        1
+      ]
+    },
+    "stages.3.4.attn.conv.bias": {
+      "dtype": "F32",
+      "key": "stages.3.4.attn.conv.bias",
+      "shape": [
+        1
+      ]
+    },
+    "stages.3.4.attn.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.3.4.attn.conv.weight",
+      "shape": [
+        1,
+        2,
+        7,
+        7
+      ]
+    },
+    "stages.3.4.dwconv.bias": {
+      "dtype": "F32",
+      "key": "stages.3.4.dwconv.bias",
+      "shape": [
+        386
+      ]
+    },
+    "stages.3.4.dwconv.weight": {
+      "dtype": "F32",
+      "key": "stages.3.4.dwconv.weight",
+      "shape": [
+        386,
+        1,
+        7,
+        7
+      ]
+    },
+    "stages.3.4.grn.bias": {
+      "dtype": "F32",
+      "key": "stages.3.4.grn.bias",
+      "shape": [
+        1544
+      ]
+    },
+    "stages.3.4.grn.weight": {
+      "dtype": "F32",
+      "key": "stages.3.4.grn.weight",
+      "shape": [
+        1544
+      ]
+    },
+    "stages.3.4.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.3.4.norm.bias",
+      "shape": [
+        386
+      ]
+    },
+    "stages.3.4.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.3.4.norm.weight",
+      "shape": [
+        386
+      ]
+    },
+    "stages.3.4.pwconv1.bias": {
+      "dtype": "F32",
+      "key": "stages.3.4.pwconv1.bias",
+      "shape": [
+        1544
+      ]
+    },
+    "stages.3.4.pwconv1.weight": {
+      "dtype": "F32",
+      "key": "stages.3.4.pwconv1.weight",
+      "shape": [
+        1544,
+        386
+      ]
+    },
+    "stages.3.4.pwconv2.bias": {
+      "dtype": "F32",
+      "key": "stages.3.4.pwconv2.bias",
+      "shape": [
+        386
+      ]
+    },
+    "stages.3.4.pwconv2.weight": {
+      "dtype": "F32",
+      "key": "stages.3.4.pwconv2.weight",
+      "shape": [
+        386,
+        1544
+      ]
+    },
+    "stages.3.5.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "stages.3.5.attn.proj.bias",
+      "shape": [
+        386
+      ]
+    },
+    "stages.3.5.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "stages.3.5.attn.proj.weight",
+      "shape": [
+        386,
+        256
+      ]
+    },
+    "stages.3.5.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "stages.3.5.attn.qkv.weight",
+      "shape": [
+        768,
+        386
+      ]
+    },
+    "stages.3.5.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.3.5.mlp.fc1.bias",
+      "shape": [
+        1544
+      ]
+    },
+    "stages.3.5.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.3.5.mlp.fc1.weight",
+      "shape": [
+        1544,
+        386
+      ]
+    },
+    "stages.3.5.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.3.5.mlp.fc2.bias",
+      "shape": [
+        386
+      ]
+    },
+    "stages.3.5.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.3.5.mlp.fc2.weight",
+      "shape": [
+        386,
+        1544
+      ]
+    },
+    "stages.3.5.norm1.bias": {
+      "dtype": "F32",
+      "key": "stages.3.5.norm1.bias",
+      "shape": [
+        386
+      ]
+    },
+    "stages.3.5.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.3.5.norm1.weight",
+      "shape": [
+        386
+      ]
+    },
+    "stages.3.5.norm2.bias": {
+      "dtype": "F32",
+      "key": "stages.3.5.norm2.bias",
+      "shape": [
+        386
+      ]
+    },
+    "stages.3.5.norm2.weight": {
+      "dtype": "F32",
+      "key": "stages.3.5.norm2.weight",
+      "shape": [
+        386
+      ]
+    },
+    "stages.3.5.pos_embed.proj.bias": {
+      "dtype": "F32",
+      "key": "stages.3.5.pos_embed.proj.bias",
+      "shape": [
+        386
+      ]
+    },
+    "stages.3.5.pos_embed.proj.weight": {
+      "dtype": "F32",
+      "key": "stages.3.5.pos_embed.proj.weight",
+      "shape": [
+        386,
+        1,
+        3,
+        3
+      ]
+    },
+    "stages.3.6.attn.proj.bias": {
+      "dtype": "F32",
+      "key": "stages.3.6.attn.proj.bias",
+      "shape": [
+        386
+      ]
+    },
+    "stages.3.6.attn.proj.weight": {
+      "dtype": "F32",
+      "key": "stages.3.6.attn.proj.weight",
+      "shape": [
+        386,
+        256
+      ]
+    },
+    "stages.3.6.attn.qkv.weight": {
+      "dtype": "F32",
+      "key": "stages.3.6.attn.qkv.weight",
+      "shape": [
+        768,
+        386
+      ]
+    },
+    "stages.3.6.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.3.6.mlp.fc1.bias",
+      "shape": [
+        1544
+      ]
+    },
+    "stages.3.6.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.3.6.mlp.fc1.weight",
+      "shape": [
+        1544,
+        386
+      ]
+    },
+    "stages.3.6.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.3.6.mlp.fc2.bias",
+      "shape": [
+        386
+      ]
+    },
+    "stages.3.6.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.3.6.mlp.fc2.weight",
+      "shape": [
+        386,
+        1544
+      ]
+    },
+    "stages.3.6.norm1.bias": {
+      "dtype": "F32",
+      "key": "stages.3.6.norm1.bias",
+      "shape": [
+        386
+      ]
+    },
+    "stages.3.6.norm1.weight": {
+      "dtype": "F32",
+      "key": "stages.3.6.norm1.weight",
+      "shape": [
+        386
+      ]
+    },
+    "stages.3.6.norm2.bias": {
+      "dtype": "F32",
+      "key": "stages.3.6.norm2.bias",
+      "shape": [
+        386
+      ]
+    },
+    "stages.3.6.norm2.weight": {
+      "dtype": "F32",
+      "key": "stages.3.6.norm2.weight",
+      "shape": [
+        386
+      ]
+    },
+    "stages.3.6.pos_embed.proj.bias": {
+      "dtype": "F32",
+      "key": "stages.3.6.pos_embed.proj.bias",
+      "shape": [
+        386
+      ]
+    },
+    "stages.3.6.pos_embed.proj.weight": {
+      "dtype": "F32",
+      "key": "stages.3.6.pos_embed.proj.weight",
+      "shape": [
+        386,
+        1,
+        3,
+        3
+      ]
+    },
+    "stem_dct.conv_cb.bias": {
+      "dtype": "F32",
+      "key": "stem_dct.conv_cb.bias",
+      "shape": [
+        4
+      ]
+    },
+    "stem_dct.conv_cb.weight": {
+      "dtype": "F32",
+      "key": "stem_dct.conv_cb.weight",
+      "shape": [
+        4,
+        64,
+        1,
+        1
+      ]
+    },
+    "stem_dct.conv_cr.bias": {
+      "dtype": "F32",
+      "key": "stem_dct.conv_cr.bias",
+      "shape": [
+        4
+      ]
+    },
+    "stem_dct.conv_cr.weight": {
+      "dtype": "F32",
+      "key": "stem_dct.conv_cr.weight",
+      "shape": [
+        4,
+        64,
+        1,
+        1
+      ]
+    },
+    "stem_dct.conv_y.bias": {
+      "dtype": "F32",
+      "key": "stem_dct.conv_y.bias",
+      "shape": [
+        24
+      ]
+    },
+    "stem_dct.conv_y.weight": {
+      "dtype": "F32",
+      "key": "stem_dct.conv_y.weight",
+      "shape": [
+        24,
+        64,
+        1,
+        1
+      ]
+    },
+    "stem_dct.transform.transform.weights": {
+      "dtype": "F32",
+      "key": "stem_dct.transform.transform.weights",
+      "shape": [
+        8,
+        8
+      ]
+    }
+  },
+  "unmapped": [
+    "stem_dct.imagenet_mean",
+    "stem_dct.imagenet_std",
+    "stem_dct.lifted_tensor_0",
+    "stem_dct.mean",
+    "stem_dct.var"
+  ]
+}

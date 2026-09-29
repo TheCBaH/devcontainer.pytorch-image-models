@@ -1,0 +1,3946 @@
+{
+  "schema_version": 1,
+  "source": {
+    "filename": "model.safetensors",
+    "repo_id": "timm/mobileone_s3.apple_in1k",
+    "revision": "29a687f5d735adb9ee23667dce14b60e8eaa6e88",
+    "sha256": "9340b9e332591b2c83579ce71d9f149eb7e7bec4a520ed60a26d52819f9f55bd",
+    "size": 41158048,
+    "url": "https://huggingface.co/timm/mobileone_s3.apple_in1k/resolve/29a687f5d735adb9ee23667dce14b60e8eaa6e88/model.safetensors"
+  },
+  "tensors": {
+    "head.fc.bias": {
+      "dtype": "F32",
+      "key": "head.fc.bias",
+      "shape": [
+        1000
+      ]
+    },
+    "head.fc.weight": {
+      "dtype": "F32",
+      "key": "head.fc.weight",
+      "shape": [
+        1000,
+        2048
+      ]
+    },
+    "stages.0.0.conv_kxk.0.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.0.0.conv_kxk.0.bn.bias",
+      "shape": [
+        64
+      ]
+    },
+    "stages.0.0.conv_kxk.0.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.0.0.conv_kxk.0.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.0.0.conv_kxk.0.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.0.0.conv_kxk.0.bn.running_mean",
+      "shape": [
+        64
+      ]
+    },
+    "stages.0.0.conv_kxk.0.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.0.0.conv_kxk.0.bn.running_var",
+      "shape": [
+        64
+      ]
+    },
+    "stages.0.0.conv_kxk.0.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.0.0.conv_kxk.0.bn.weight",
+      "shape": [
+        64
+      ]
+    },
+    "stages.0.0.conv_kxk.0.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.0.0.conv_kxk.0.conv.weight",
+      "shape": [
+        64,
+        1,
+        3,
+        3
+      ]
+    },
+    "stages.0.0.conv_scale.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.0.0.conv_scale.bn.bias",
+      "shape": [
+        64
+      ]
+    },
+    "stages.0.0.conv_scale.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.0.0.conv_scale.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.0.0.conv_scale.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.0.0.conv_scale.bn.running_mean",
+      "shape": [
+        64
+      ]
+    },
+    "stages.0.0.conv_scale.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.0.0.conv_scale.bn.running_var",
+      "shape": [
+        64
+      ]
+    },
+    "stages.0.0.conv_scale.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.0.0.conv_scale.bn.weight",
+      "shape": [
+        64
+      ]
+    },
+    "stages.0.0.conv_scale.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.0.0.conv_scale.conv.weight",
+      "shape": [
+        64,
+        1,
+        1,
+        1
+      ]
+    },
+    "stages.0.1.conv_kxk.0.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.0.1.conv_kxk.0.bn.bias",
+      "shape": [
+        128
+      ]
+    },
+    "stages.0.1.conv_kxk.0.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.0.1.conv_kxk.0.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.0.1.conv_kxk.0.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.0.1.conv_kxk.0.bn.running_mean",
+      "shape": [
+        128
+      ]
+    },
+    "stages.0.1.conv_kxk.0.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.0.1.conv_kxk.0.bn.running_var",
+      "shape": [
+        128
+      ]
+    },
+    "stages.0.1.conv_kxk.0.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.0.1.conv_kxk.0.bn.weight",
+      "shape": [
+        128
+      ]
+    },
+    "stages.0.1.conv_kxk.0.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.0.1.conv_kxk.0.conv.weight",
+      "shape": [
+        128,
+        64,
+        1,
+        1
+      ]
+    },
+    "stages.0.2.conv_kxk.0.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.0.2.conv_kxk.0.bn.bias",
+      "shape": [
+        128
+      ]
+    },
+    "stages.0.2.conv_kxk.0.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.0.2.conv_kxk.0.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.0.2.conv_kxk.0.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.0.2.conv_kxk.0.bn.running_mean",
+      "shape": [
+        128
+      ]
+    },
+    "stages.0.2.conv_kxk.0.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.0.2.conv_kxk.0.bn.running_var",
+      "shape": [
+        128
+      ]
+    },
+    "stages.0.2.conv_kxk.0.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.0.2.conv_kxk.0.bn.weight",
+      "shape": [
+        128
+      ]
+    },
+    "stages.0.2.conv_kxk.0.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.0.2.conv_kxk.0.conv.weight",
+      "shape": [
+        128,
+        1,
+        3,
+        3
+      ]
+    },
+    "stages.0.2.conv_scale.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.0.2.conv_scale.bn.bias",
+      "shape": [
+        128
+      ]
+    },
+    "stages.0.2.conv_scale.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.0.2.conv_scale.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.0.2.conv_scale.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.0.2.conv_scale.bn.running_mean",
+      "shape": [
+        128
+      ]
+    },
+    "stages.0.2.conv_scale.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.0.2.conv_scale.bn.running_var",
+      "shape": [
+        128
+      ]
+    },
+    "stages.0.2.conv_scale.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.0.2.conv_scale.bn.weight",
+      "shape": [
+        128
+      ]
+    },
+    "stages.0.2.conv_scale.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.0.2.conv_scale.conv.weight",
+      "shape": [
+        128,
+        1,
+        1,
+        1
+      ]
+    },
+    "stages.0.2.identity.bias": {
+      "dtype": "F32",
+      "key": "stages.0.2.identity.bias",
+      "shape": [
+        128
+      ]
+    },
+    "stages.0.2.identity.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.0.2.identity.num_batches_tracked",
+      "shape": []
+    },
+    "stages.0.2.identity.running_mean": {
+      "dtype": "F32",
+      "key": "stages.0.2.identity.running_mean",
+      "shape": [
+        128
+      ]
+    },
+    "stages.0.2.identity.running_var": {
+      "dtype": "F32",
+      "key": "stages.0.2.identity.running_var",
+      "shape": [
+        128
+      ]
+    },
+    "stages.0.2.identity.weight": {
+      "dtype": "F32",
+      "key": "stages.0.2.identity.weight",
+      "shape": [
+        128
+      ]
+    },
+    "stages.0.3.conv_kxk.0.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.0.3.conv_kxk.0.bn.bias",
+      "shape": [
+        128
+      ]
+    },
+    "stages.0.3.conv_kxk.0.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.0.3.conv_kxk.0.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.0.3.conv_kxk.0.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.0.3.conv_kxk.0.bn.running_mean",
+      "shape": [
+        128
+      ]
+    },
+    "stages.0.3.conv_kxk.0.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.0.3.conv_kxk.0.bn.running_var",
+      "shape": [
+        128
+      ]
+    },
+    "stages.0.3.conv_kxk.0.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.0.3.conv_kxk.0.bn.weight",
+      "shape": [
+        128
+      ]
+    },
+    "stages.0.3.conv_kxk.0.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.0.3.conv_kxk.0.conv.weight",
+      "shape": [
+        128,
+        128,
+        1,
+        1
+      ]
+    },
+    "stages.0.3.identity.bias": {
+      "dtype": "F32",
+      "key": "stages.0.3.identity.bias",
+      "shape": [
+        128
+      ]
+    },
+    "stages.0.3.identity.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.0.3.identity.num_batches_tracked",
+      "shape": []
+    },
+    "stages.0.3.identity.running_mean": {
+      "dtype": "F32",
+      "key": "stages.0.3.identity.running_mean",
+      "shape": [
+        128
+      ]
+    },
+    "stages.0.3.identity.running_var": {
+      "dtype": "F32",
+      "key": "stages.0.3.identity.running_var",
+      "shape": [
+        128
+      ]
+    },
+    "stages.0.3.identity.weight": {
+      "dtype": "F32",
+      "key": "stages.0.3.identity.weight",
+      "shape": [
+        128
+      ]
+    },
+    "stages.1.0.conv_kxk.0.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.1.0.conv_kxk.0.bn.bias",
+      "shape": [
+        128
+      ]
+    },
+    "stages.1.0.conv_kxk.0.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.1.0.conv_kxk.0.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.1.0.conv_kxk.0.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.1.0.conv_kxk.0.bn.running_mean",
+      "shape": [
+        128
+      ]
+    },
+    "stages.1.0.conv_kxk.0.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.1.0.conv_kxk.0.bn.running_var",
+      "shape": [
+        128
+      ]
+    },
+    "stages.1.0.conv_kxk.0.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.1.0.conv_kxk.0.bn.weight",
+      "shape": [
+        128
+      ]
+    },
+    "stages.1.0.conv_kxk.0.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.1.0.conv_kxk.0.conv.weight",
+      "shape": [
+        128,
+        1,
+        3,
+        3
+      ]
+    },
+    "stages.1.0.conv_scale.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.1.0.conv_scale.bn.bias",
+      "shape": [
+        128
+      ]
+    },
+    "stages.1.0.conv_scale.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.1.0.conv_scale.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.1.0.conv_scale.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.1.0.conv_scale.bn.running_mean",
+      "shape": [
+        128
+      ]
+    },
+    "stages.1.0.conv_scale.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.1.0.conv_scale.bn.running_var",
+      "shape": [
+        128
+      ]
+    },
+    "stages.1.0.conv_scale.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.1.0.conv_scale.bn.weight",
+      "shape": [
+        128
+      ]
+    },
+    "stages.1.0.conv_scale.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.1.0.conv_scale.conv.weight",
+      "shape": [
+        128,
+        1,
+        1,
+        1
+      ]
+    },
+    "stages.1.1.conv_kxk.0.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.1.1.conv_kxk.0.bn.bias",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.1.conv_kxk.0.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.1.1.conv_kxk.0.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.1.1.conv_kxk.0.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.1.1.conv_kxk.0.bn.running_mean",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.1.conv_kxk.0.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.1.1.conv_kxk.0.bn.running_var",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.1.conv_kxk.0.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.1.1.conv_kxk.0.bn.weight",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.1.conv_kxk.0.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.1.1.conv_kxk.0.conv.weight",
+      "shape": [
+        320,
+        128,
+        1,
+        1
+      ]
+    },
+    "stages.1.10.conv_kxk.0.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.1.10.conv_kxk.0.bn.bias",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.10.conv_kxk.0.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.1.10.conv_kxk.0.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.1.10.conv_kxk.0.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.1.10.conv_kxk.0.bn.running_mean",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.10.conv_kxk.0.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.1.10.conv_kxk.0.bn.running_var",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.10.conv_kxk.0.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.1.10.conv_kxk.0.bn.weight",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.10.conv_kxk.0.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.1.10.conv_kxk.0.conv.weight",
+      "shape": [
+        320,
+        1,
+        3,
+        3
+      ]
+    },
+    "stages.1.10.conv_scale.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.1.10.conv_scale.bn.bias",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.10.conv_scale.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.1.10.conv_scale.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.1.10.conv_scale.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.1.10.conv_scale.bn.running_mean",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.10.conv_scale.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.1.10.conv_scale.bn.running_var",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.10.conv_scale.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.1.10.conv_scale.bn.weight",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.10.conv_scale.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.1.10.conv_scale.conv.weight",
+      "shape": [
+        320,
+        1,
+        1,
+        1
+      ]
+    },
+    "stages.1.10.identity.bias": {
+      "dtype": "F32",
+      "key": "stages.1.10.identity.bias",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.10.identity.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.1.10.identity.num_batches_tracked",
+      "shape": []
+    },
+    "stages.1.10.identity.running_mean": {
+      "dtype": "F32",
+      "key": "stages.1.10.identity.running_mean",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.10.identity.running_var": {
+      "dtype": "F32",
+      "key": "stages.1.10.identity.running_var",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.10.identity.weight": {
+      "dtype": "F32",
+      "key": "stages.1.10.identity.weight",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.11.conv_kxk.0.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.1.11.conv_kxk.0.bn.bias",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.11.conv_kxk.0.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.1.11.conv_kxk.0.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.1.11.conv_kxk.0.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.1.11.conv_kxk.0.bn.running_mean",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.11.conv_kxk.0.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.1.11.conv_kxk.0.bn.running_var",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.11.conv_kxk.0.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.1.11.conv_kxk.0.bn.weight",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.11.conv_kxk.0.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.1.11.conv_kxk.0.conv.weight",
+      "shape": [
+        320,
+        320,
+        1,
+        1
+      ]
+    },
+    "stages.1.11.identity.bias": {
+      "dtype": "F32",
+      "key": "stages.1.11.identity.bias",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.11.identity.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.1.11.identity.num_batches_tracked",
+      "shape": []
+    },
+    "stages.1.11.identity.running_mean": {
+      "dtype": "F32",
+      "key": "stages.1.11.identity.running_mean",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.11.identity.running_var": {
+      "dtype": "F32",
+      "key": "stages.1.11.identity.running_var",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.11.identity.weight": {
+      "dtype": "F32",
+      "key": "stages.1.11.identity.weight",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.12.conv_kxk.0.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.1.12.conv_kxk.0.bn.bias",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.12.conv_kxk.0.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.1.12.conv_kxk.0.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.1.12.conv_kxk.0.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.1.12.conv_kxk.0.bn.running_mean",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.12.conv_kxk.0.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.1.12.conv_kxk.0.bn.running_var",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.12.conv_kxk.0.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.1.12.conv_kxk.0.bn.weight",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.12.conv_kxk.0.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.1.12.conv_kxk.0.conv.weight",
+      "shape": [
+        320,
+        1,
+        3,
+        3
+      ]
+    },
+    "stages.1.12.conv_scale.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.1.12.conv_scale.bn.bias",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.12.conv_scale.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.1.12.conv_scale.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.1.12.conv_scale.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.1.12.conv_scale.bn.running_mean",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.12.conv_scale.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.1.12.conv_scale.bn.running_var",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.12.conv_scale.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.1.12.conv_scale.bn.weight",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.12.conv_scale.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.1.12.conv_scale.conv.weight",
+      "shape": [
+        320,
+        1,
+        1,
+        1
+      ]
+    },
+    "stages.1.12.identity.bias": {
+      "dtype": "F32",
+      "key": "stages.1.12.identity.bias",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.12.identity.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.1.12.identity.num_batches_tracked",
+      "shape": []
+    },
+    "stages.1.12.identity.running_mean": {
+      "dtype": "F32",
+      "key": "stages.1.12.identity.running_mean",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.12.identity.running_var": {
+      "dtype": "F32",
+      "key": "stages.1.12.identity.running_var",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.12.identity.weight": {
+      "dtype": "F32",
+      "key": "stages.1.12.identity.weight",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.13.conv_kxk.0.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.1.13.conv_kxk.0.bn.bias",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.13.conv_kxk.0.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.1.13.conv_kxk.0.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.1.13.conv_kxk.0.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.1.13.conv_kxk.0.bn.running_mean",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.13.conv_kxk.0.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.1.13.conv_kxk.0.bn.running_var",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.13.conv_kxk.0.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.1.13.conv_kxk.0.bn.weight",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.13.conv_kxk.0.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.1.13.conv_kxk.0.conv.weight",
+      "shape": [
+        320,
+        320,
+        1,
+        1
+      ]
+    },
+    "stages.1.13.identity.bias": {
+      "dtype": "F32",
+      "key": "stages.1.13.identity.bias",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.13.identity.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.1.13.identity.num_batches_tracked",
+      "shape": []
+    },
+    "stages.1.13.identity.running_mean": {
+      "dtype": "F32",
+      "key": "stages.1.13.identity.running_mean",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.13.identity.running_var": {
+      "dtype": "F32",
+      "key": "stages.1.13.identity.running_var",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.13.identity.weight": {
+      "dtype": "F32",
+      "key": "stages.1.13.identity.weight",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.14.conv_kxk.0.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.1.14.conv_kxk.0.bn.bias",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.14.conv_kxk.0.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.1.14.conv_kxk.0.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.1.14.conv_kxk.0.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.1.14.conv_kxk.0.bn.running_mean",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.14.conv_kxk.0.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.1.14.conv_kxk.0.bn.running_var",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.14.conv_kxk.0.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.1.14.conv_kxk.0.bn.weight",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.14.conv_kxk.0.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.1.14.conv_kxk.0.conv.weight",
+      "shape": [
+        320,
+        1,
+        3,
+        3
+      ]
+    },
+    "stages.1.14.conv_scale.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.1.14.conv_scale.bn.bias",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.14.conv_scale.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.1.14.conv_scale.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.1.14.conv_scale.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.1.14.conv_scale.bn.running_mean",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.14.conv_scale.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.1.14.conv_scale.bn.running_var",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.14.conv_scale.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.1.14.conv_scale.bn.weight",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.14.conv_scale.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.1.14.conv_scale.conv.weight",
+      "shape": [
+        320,
+        1,
+        1,
+        1
+      ]
+    },
+    "stages.1.14.identity.bias": {
+      "dtype": "F32",
+      "key": "stages.1.14.identity.bias",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.14.identity.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.1.14.identity.num_batches_tracked",
+      "shape": []
+    },
+    "stages.1.14.identity.running_mean": {
+      "dtype": "F32",
+      "key": "stages.1.14.identity.running_mean",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.14.identity.running_var": {
+      "dtype": "F32",
+      "key": "stages.1.14.identity.running_var",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.14.identity.weight": {
+      "dtype": "F32",
+      "key": "stages.1.14.identity.weight",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.15.conv_kxk.0.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.1.15.conv_kxk.0.bn.bias",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.15.conv_kxk.0.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.1.15.conv_kxk.0.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.1.15.conv_kxk.0.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.1.15.conv_kxk.0.bn.running_mean",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.15.conv_kxk.0.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.1.15.conv_kxk.0.bn.running_var",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.15.conv_kxk.0.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.1.15.conv_kxk.0.bn.weight",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.15.conv_kxk.0.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.1.15.conv_kxk.0.conv.weight",
+      "shape": [
+        320,
+        320,
+        1,
+        1
+      ]
+    },
+    "stages.1.15.identity.bias": {
+      "dtype": "F32",
+      "key": "stages.1.15.identity.bias",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.15.identity.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.1.15.identity.num_batches_tracked",
+      "shape": []
+    },
+    "stages.1.15.identity.running_mean": {
+      "dtype": "F32",
+      "key": "stages.1.15.identity.running_mean",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.15.identity.running_var": {
+      "dtype": "F32",
+      "key": "stages.1.15.identity.running_var",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.15.identity.weight": {
+      "dtype": "F32",
+      "key": "stages.1.15.identity.weight",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.2.conv_kxk.0.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.1.2.conv_kxk.0.bn.bias",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.2.conv_kxk.0.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.1.2.conv_kxk.0.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.1.2.conv_kxk.0.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.1.2.conv_kxk.0.bn.running_mean",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.2.conv_kxk.0.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.1.2.conv_kxk.0.bn.running_var",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.2.conv_kxk.0.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.1.2.conv_kxk.0.bn.weight",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.2.conv_kxk.0.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.1.2.conv_kxk.0.conv.weight",
+      "shape": [
+        320,
+        1,
+        3,
+        3
+      ]
+    },
+    "stages.1.2.conv_scale.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.1.2.conv_scale.bn.bias",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.2.conv_scale.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.1.2.conv_scale.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.1.2.conv_scale.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.1.2.conv_scale.bn.running_mean",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.2.conv_scale.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.1.2.conv_scale.bn.running_var",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.2.conv_scale.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.1.2.conv_scale.bn.weight",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.2.conv_scale.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.1.2.conv_scale.conv.weight",
+      "shape": [
+        320,
+        1,
+        1,
+        1
+      ]
+    },
+    "stages.1.2.identity.bias": {
+      "dtype": "F32",
+      "key": "stages.1.2.identity.bias",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.2.identity.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.1.2.identity.num_batches_tracked",
+      "shape": []
+    },
+    "stages.1.2.identity.running_mean": {
+      "dtype": "F32",
+      "key": "stages.1.2.identity.running_mean",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.2.identity.running_var": {
+      "dtype": "F32",
+      "key": "stages.1.2.identity.running_var",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.2.identity.weight": {
+      "dtype": "F32",
+      "key": "stages.1.2.identity.weight",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.3.conv_kxk.0.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.1.3.conv_kxk.0.bn.bias",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.3.conv_kxk.0.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.1.3.conv_kxk.0.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.1.3.conv_kxk.0.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.1.3.conv_kxk.0.bn.running_mean",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.3.conv_kxk.0.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.1.3.conv_kxk.0.bn.running_var",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.3.conv_kxk.0.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.1.3.conv_kxk.0.bn.weight",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.3.conv_kxk.0.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.1.3.conv_kxk.0.conv.weight",
+      "shape": [
+        320,
+        320,
+        1,
+        1
+      ]
+    },
+    "stages.1.3.identity.bias": {
+      "dtype": "F32",
+      "key": "stages.1.3.identity.bias",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.3.identity.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.1.3.identity.num_batches_tracked",
+      "shape": []
+    },
+    "stages.1.3.identity.running_mean": {
+      "dtype": "F32",
+      "key": "stages.1.3.identity.running_mean",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.3.identity.running_var": {
+      "dtype": "F32",
+      "key": "stages.1.3.identity.running_var",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.3.identity.weight": {
+      "dtype": "F32",
+      "key": "stages.1.3.identity.weight",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.4.conv_kxk.0.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.1.4.conv_kxk.0.bn.bias",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.4.conv_kxk.0.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.1.4.conv_kxk.0.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.1.4.conv_kxk.0.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.1.4.conv_kxk.0.bn.running_mean",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.4.conv_kxk.0.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.1.4.conv_kxk.0.bn.running_var",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.4.conv_kxk.0.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.1.4.conv_kxk.0.bn.weight",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.4.conv_kxk.0.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.1.4.conv_kxk.0.conv.weight",
+      "shape": [
+        320,
+        1,
+        3,
+        3
+      ]
+    },
+    "stages.1.4.conv_scale.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.1.4.conv_scale.bn.bias",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.4.conv_scale.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.1.4.conv_scale.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.1.4.conv_scale.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.1.4.conv_scale.bn.running_mean",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.4.conv_scale.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.1.4.conv_scale.bn.running_var",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.4.conv_scale.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.1.4.conv_scale.bn.weight",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.4.conv_scale.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.1.4.conv_scale.conv.weight",
+      "shape": [
+        320,
+        1,
+        1,
+        1
+      ]
+    },
+    "stages.1.4.identity.bias": {
+      "dtype": "F32",
+      "key": "stages.1.4.identity.bias",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.4.identity.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.1.4.identity.num_batches_tracked",
+      "shape": []
+    },
+    "stages.1.4.identity.running_mean": {
+      "dtype": "F32",
+      "key": "stages.1.4.identity.running_mean",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.4.identity.running_var": {
+      "dtype": "F32",
+      "key": "stages.1.4.identity.running_var",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.4.identity.weight": {
+      "dtype": "F32",
+      "key": "stages.1.4.identity.weight",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.5.conv_kxk.0.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.1.5.conv_kxk.0.bn.bias",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.5.conv_kxk.0.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.1.5.conv_kxk.0.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.1.5.conv_kxk.0.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.1.5.conv_kxk.0.bn.running_mean",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.5.conv_kxk.0.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.1.5.conv_kxk.0.bn.running_var",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.5.conv_kxk.0.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.1.5.conv_kxk.0.bn.weight",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.5.conv_kxk.0.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.1.5.conv_kxk.0.conv.weight",
+      "shape": [
+        320,
+        320,
+        1,
+        1
+      ]
+    },
+    "stages.1.5.identity.bias": {
+      "dtype": "F32",
+      "key": "stages.1.5.identity.bias",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.5.identity.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.1.5.identity.num_batches_tracked",
+      "shape": []
+    },
+    "stages.1.5.identity.running_mean": {
+      "dtype": "F32",
+      "key": "stages.1.5.identity.running_mean",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.5.identity.running_var": {
+      "dtype": "F32",
+      "key": "stages.1.5.identity.running_var",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.5.identity.weight": {
+      "dtype": "F32",
+      "key": "stages.1.5.identity.weight",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.6.conv_kxk.0.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.1.6.conv_kxk.0.bn.bias",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.6.conv_kxk.0.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.1.6.conv_kxk.0.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.1.6.conv_kxk.0.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.1.6.conv_kxk.0.bn.running_mean",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.6.conv_kxk.0.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.1.6.conv_kxk.0.bn.running_var",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.6.conv_kxk.0.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.1.6.conv_kxk.0.bn.weight",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.6.conv_kxk.0.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.1.6.conv_kxk.0.conv.weight",
+      "shape": [
+        320,
+        1,
+        3,
+        3
+      ]
+    },
+    "stages.1.6.conv_scale.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.1.6.conv_scale.bn.bias",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.6.conv_scale.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.1.6.conv_scale.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.1.6.conv_scale.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.1.6.conv_scale.bn.running_mean",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.6.conv_scale.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.1.6.conv_scale.bn.running_var",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.6.conv_scale.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.1.6.conv_scale.bn.weight",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.6.conv_scale.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.1.6.conv_scale.conv.weight",
+      "shape": [
+        320,
+        1,
+        1,
+        1
+      ]
+    },
+    "stages.1.6.identity.bias": {
+      "dtype": "F32",
+      "key": "stages.1.6.identity.bias",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.6.identity.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.1.6.identity.num_batches_tracked",
+      "shape": []
+    },
+    "stages.1.6.identity.running_mean": {
+      "dtype": "F32",
+      "key": "stages.1.6.identity.running_mean",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.6.identity.running_var": {
+      "dtype": "F32",
+      "key": "stages.1.6.identity.running_var",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.6.identity.weight": {
+      "dtype": "F32",
+      "key": "stages.1.6.identity.weight",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.7.conv_kxk.0.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.1.7.conv_kxk.0.bn.bias",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.7.conv_kxk.0.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.1.7.conv_kxk.0.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.1.7.conv_kxk.0.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.1.7.conv_kxk.0.bn.running_mean",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.7.conv_kxk.0.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.1.7.conv_kxk.0.bn.running_var",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.7.conv_kxk.0.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.1.7.conv_kxk.0.bn.weight",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.7.conv_kxk.0.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.1.7.conv_kxk.0.conv.weight",
+      "shape": [
+        320,
+        320,
+        1,
+        1
+      ]
+    },
+    "stages.1.7.identity.bias": {
+      "dtype": "F32",
+      "key": "stages.1.7.identity.bias",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.7.identity.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.1.7.identity.num_batches_tracked",
+      "shape": []
+    },
+    "stages.1.7.identity.running_mean": {
+      "dtype": "F32",
+      "key": "stages.1.7.identity.running_mean",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.7.identity.running_var": {
+      "dtype": "F32",
+      "key": "stages.1.7.identity.running_var",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.7.identity.weight": {
+      "dtype": "F32",
+      "key": "stages.1.7.identity.weight",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.8.conv_kxk.0.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.1.8.conv_kxk.0.bn.bias",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.8.conv_kxk.0.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.1.8.conv_kxk.0.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.1.8.conv_kxk.0.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.1.8.conv_kxk.0.bn.running_mean",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.8.conv_kxk.0.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.1.8.conv_kxk.0.bn.running_var",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.8.conv_kxk.0.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.1.8.conv_kxk.0.bn.weight",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.8.conv_kxk.0.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.1.8.conv_kxk.0.conv.weight",
+      "shape": [
+        320,
+        1,
+        3,
+        3
+      ]
+    },
+    "stages.1.8.conv_scale.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.1.8.conv_scale.bn.bias",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.8.conv_scale.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.1.8.conv_scale.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.1.8.conv_scale.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.1.8.conv_scale.bn.running_mean",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.8.conv_scale.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.1.8.conv_scale.bn.running_var",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.8.conv_scale.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.1.8.conv_scale.bn.weight",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.8.conv_scale.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.1.8.conv_scale.conv.weight",
+      "shape": [
+        320,
+        1,
+        1,
+        1
+      ]
+    },
+    "stages.1.8.identity.bias": {
+      "dtype": "F32",
+      "key": "stages.1.8.identity.bias",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.8.identity.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.1.8.identity.num_batches_tracked",
+      "shape": []
+    },
+    "stages.1.8.identity.running_mean": {
+      "dtype": "F32",
+      "key": "stages.1.8.identity.running_mean",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.8.identity.running_var": {
+      "dtype": "F32",
+      "key": "stages.1.8.identity.running_var",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.8.identity.weight": {
+      "dtype": "F32",
+      "key": "stages.1.8.identity.weight",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.9.conv_kxk.0.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.1.9.conv_kxk.0.bn.bias",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.9.conv_kxk.0.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.1.9.conv_kxk.0.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.1.9.conv_kxk.0.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.1.9.conv_kxk.0.bn.running_mean",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.9.conv_kxk.0.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.1.9.conv_kxk.0.bn.running_var",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.9.conv_kxk.0.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.1.9.conv_kxk.0.bn.weight",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.9.conv_kxk.0.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.1.9.conv_kxk.0.conv.weight",
+      "shape": [
+        320,
+        320,
+        1,
+        1
+      ]
+    },
+    "stages.1.9.identity.bias": {
+      "dtype": "F32",
+      "key": "stages.1.9.identity.bias",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.9.identity.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.1.9.identity.num_batches_tracked",
+      "shape": []
+    },
+    "stages.1.9.identity.running_mean": {
+      "dtype": "F32",
+      "key": "stages.1.9.identity.running_mean",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.9.identity.running_var": {
+      "dtype": "F32",
+      "key": "stages.1.9.identity.running_var",
+      "shape": [
+        320
+      ]
+    },
+    "stages.1.9.identity.weight": {
+      "dtype": "F32",
+      "key": "stages.1.9.identity.weight",
+      "shape": [
+        320
+      ]
+    },
+    "stages.2.0.conv_kxk.0.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.2.0.conv_kxk.0.bn.bias",
+      "shape": [
+        320
+      ]
+    },
+    "stages.2.0.conv_kxk.0.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.0.conv_kxk.0.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.0.conv_kxk.0.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.0.conv_kxk.0.bn.running_mean",
+      "shape": [
+        320
+      ]
+    },
+    "stages.2.0.conv_kxk.0.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.0.conv_kxk.0.bn.running_var",
+      "shape": [
+        320
+      ]
+    },
+    "stages.2.0.conv_kxk.0.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.2.0.conv_kxk.0.bn.weight",
+      "shape": [
+        320
+      ]
+    },
+    "stages.2.0.conv_kxk.0.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.0.conv_kxk.0.conv.weight",
+      "shape": [
+        320,
+        1,
+        3,
+        3
+      ]
+    },
+    "stages.2.0.conv_scale.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.2.0.conv_scale.bn.bias",
+      "shape": [
+        320
+      ]
+    },
+    "stages.2.0.conv_scale.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.0.conv_scale.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.0.conv_scale.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.0.conv_scale.bn.running_mean",
+      "shape": [
+        320
+      ]
+    },
+    "stages.2.0.conv_scale.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.0.conv_scale.bn.running_var",
+      "shape": [
+        320
+      ]
+    },
+    "stages.2.0.conv_scale.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.2.0.conv_scale.bn.weight",
+      "shape": [
+        320
+      ]
+    },
+    "stages.2.0.conv_scale.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.0.conv_scale.conv.weight",
+      "shape": [
+        320,
+        1,
+        1,
+        1
+      ]
+    },
+    "stages.2.1.conv_kxk.0.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.2.1.conv_kxk.0.bn.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.1.conv_kxk.0.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.1.conv_kxk.0.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.1.conv_kxk.0.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.1.conv_kxk.0.bn.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.1.conv_kxk.0.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.1.conv_kxk.0.bn.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.1.conv_kxk.0.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.2.1.conv_kxk.0.bn.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.1.conv_kxk.0.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.1.conv_kxk.0.conv.weight",
+      "shape": [
+        768,
+        320,
+        1,
+        1
+      ]
+    },
+    "stages.2.10.conv_kxk.0.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.2.10.conv_kxk.0.bn.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.10.conv_kxk.0.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.10.conv_kxk.0.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.10.conv_kxk.0.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.10.conv_kxk.0.bn.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.10.conv_kxk.0.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.10.conv_kxk.0.bn.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.10.conv_kxk.0.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.2.10.conv_kxk.0.bn.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.10.conv_kxk.0.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.10.conv_kxk.0.conv.weight",
+      "shape": [
+        768,
+        1,
+        3,
+        3
+      ]
+    },
+    "stages.2.10.conv_scale.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.2.10.conv_scale.bn.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.10.conv_scale.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.10.conv_scale.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.10.conv_scale.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.10.conv_scale.bn.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.10.conv_scale.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.10.conv_scale.bn.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.10.conv_scale.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.2.10.conv_scale.bn.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.10.conv_scale.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.10.conv_scale.conv.weight",
+      "shape": [
+        768,
+        1,
+        1,
+        1
+      ]
+    },
+    "stages.2.10.identity.bias": {
+      "dtype": "F32",
+      "key": "stages.2.10.identity.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.10.identity.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.10.identity.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.10.identity.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.10.identity.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.10.identity.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.10.identity.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.10.identity.weight": {
+      "dtype": "F32",
+      "key": "stages.2.10.identity.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.11.conv_kxk.0.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.2.11.conv_kxk.0.bn.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.11.conv_kxk.0.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.11.conv_kxk.0.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.11.conv_kxk.0.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.11.conv_kxk.0.bn.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.11.conv_kxk.0.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.11.conv_kxk.0.bn.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.11.conv_kxk.0.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.2.11.conv_kxk.0.bn.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.11.conv_kxk.0.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.11.conv_kxk.0.conv.weight",
+      "shape": [
+        768,
+        768,
+        1,
+        1
+      ]
+    },
+    "stages.2.11.identity.bias": {
+      "dtype": "F32",
+      "key": "stages.2.11.identity.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.11.identity.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.11.identity.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.11.identity.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.11.identity.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.11.identity.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.11.identity.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.11.identity.weight": {
+      "dtype": "F32",
+      "key": "stages.2.11.identity.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.12.conv_kxk.0.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.2.12.conv_kxk.0.bn.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.12.conv_kxk.0.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.12.conv_kxk.0.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.12.conv_kxk.0.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.12.conv_kxk.0.bn.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.12.conv_kxk.0.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.12.conv_kxk.0.bn.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.12.conv_kxk.0.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.2.12.conv_kxk.0.bn.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.12.conv_kxk.0.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.12.conv_kxk.0.conv.weight",
+      "shape": [
+        768,
+        1,
+        3,
+        3
+      ]
+    },
+    "stages.2.12.conv_scale.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.2.12.conv_scale.bn.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.12.conv_scale.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.12.conv_scale.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.12.conv_scale.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.12.conv_scale.bn.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.12.conv_scale.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.12.conv_scale.bn.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.12.conv_scale.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.2.12.conv_scale.bn.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.12.conv_scale.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.12.conv_scale.conv.weight",
+      "shape": [
+        768,
+        1,
+        1,
+        1
+      ]
+    },
+    "stages.2.12.identity.bias": {
+      "dtype": "F32",
+      "key": "stages.2.12.identity.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.12.identity.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.12.identity.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.12.identity.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.12.identity.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.12.identity.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.12.identity.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.12.identity.weight": {
+      "dtype": "F32",
+      "key": "stages.2.12.identity.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.13.conv_kxk.0.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.2.13.conv_kxk.0.bn.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.13.conv_kxk.0.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.13.conv_kxk.0.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.13.conv_kxk.0.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.13.conv_kxk.0.bn.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.13.conv_kxk.0.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.13.conv_kxk.0.bn.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.13.conv_kxk.0.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.2.13.conv_kxk.0.bn.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.13.conv_kxk.0.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.13.conv_kxk.0.conv.weight",
+      "shape": [
+        768,
+        768,
+        1,
+        1
+      ]
+    },
+    "stages.2.13.identity.bias": {
+      "dtype": "F32",
+      "key": "stages.2.13.identity.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.13.identity.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.13.identity.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.13.identity.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.13.identity.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.13.identity.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.13.identity.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.13.identity.weight": {
+      "dtype": "F32",
+      "key": "stages.2.13.identity.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.14.conv_kxk.0.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.2.14.conv_kxk.0.bn.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.14.conv_kxk.0.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.14.conv_kxk.0.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.14.conv_kxk.0.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.14.conv_kxk.0.bn.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.14.conv_kxk.0.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.14.conv_kxk.0.bn.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.14.conv_kxk.0.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.2.14.conv_kxk.0.bn.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.14.conv_kxk.0.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.14.conv_kxk.0.conv.weight",
+      "shape": [
+        768,
+        1,
+        3,
+        3
+      ]
+    },
+    "stages.2.14.conv_scale.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.2.14.conv_scale.bn.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.14.conv_scale.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.14.conv_scale.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.14.conv_scale.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.14.conv_scale.bn.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.14.conv_scale.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.14.conv_scale.bn.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.14.conv_scale.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.2.14.conv_scale.bn.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.14.conv_scale.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.14.conv_scale.conv.weight",
+      "shape": [
+        768,
+        1,
+        1,
+        1
+      ]
+    },
+    "stages.2.14.identity.bias": {
+      "dtype": "F32",
+      "key": "stages.2.14.identity.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.14.identity.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.14.identity.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.14.identity.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.14.identity.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.14.identity.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.14.identity.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.14.identity.weight": {
+      "dtype": "F32",
+      "key": "stages.2.14.identity.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.15.conv_kxk.0.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.2.15.conv_kxk.0.bn.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.15.conv_kxk.0.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.15.conv_kxk.0.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.15.conv_kxk.0.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.15.conv_kxk.0.bn.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.15.conv_kxk.0.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.15.conv_kxk.0.bn.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.15.conv_kxk.0.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.2.15.conv_kxk.0.bn.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.15.conv_kxk.0.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.15.conv_kxk.0.conv.weight",
+      "shape": [
+        768,
+        768,
+        1,
+        1
+      ]
+    },
+    "stages.2.15.identity.bias": {
+      "dtype": "F32",
+      "key": "stages.2.15.identity.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.15.identity.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.15.identity.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.15.identity.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.15.identity.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.15.identity.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.15.identity.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.15.identity.weight": {
+      "dtype": "F32",
+      "key": "stages.2.15.identity.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.16.conv_kxk.0.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.2.16.conv_kxk.0.bn.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.16.conv_kxk.0.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.16.conv_kxk.0.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.16.conv_kxk.0.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.16.conv_kxk.0.bn.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.16.conv_kxk.0.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.16.conv_kxk.0.bn.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.16.conv_kxk.0.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.2.16.conv_kxk.0.bn.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.16.conv_kxk.0.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.16.conv_kxk.0.conv.weight",
+      "shape": [
+        768,
+        1,
+        3,
+        3
+      ]
+    },
+    "stages.2.16.conv_scale.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.2.16.conv_scale.bn.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.16.conv_scale.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.16.conv_scale.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.16.conv_scale.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.16.conv_scale.bn.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.16.conv_scale.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.16.conv_scale.bn.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.16.conv_scale.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.2.16.conv_scale.bn.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.16.conv_scale.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.16.conv_scale.conv.weight",
+      "shape": [
+        768,
+        1,
+        1,
+        1
+      ]
+    },
+    "stages.2.16.identity.bias": {
+      "dtype": "F32",
+      "key": "stages.2.16.identity.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.16.identity.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.16.identity.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.16.identity.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.16.identity.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.16.identity.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.16.identity.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.16.identity.weight": {
+      "dtype": "F32",
+      "key": "stages.2.16.identity.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.17.conv_kxk.0.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.2.17.conv_kxk.0.bn.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.17.conv_kxk.0.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.17.conv_kxk.0.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.17.conv_kxk.0.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.17.conv_kxk.0.bn.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.17.conv_kxk.0.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.17.conv_kxk.0.bn.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.17.conv_kxk.0.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.2.17.conv_kxk.0.bn.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.17.conv_kxk.0.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.17.conv_kxk.0.conv.weight",
+      "shape": [
+        768,
+        768,
+        1,
+        1
+      ]
+    },
+    "stages.2.17.identity.bias": {
+      "dtype": "F32",
+      "key": "stages.2.17.identity.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.17.identity.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.17.identity.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.17.identity.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.17.identity.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.17.identity.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.17.identity.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.17.identity.weight": {
+      "dtype": "F32",
+      "key": "stages.2.17.identity.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.18.conv_kxk.0.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.2.18.conv_kxk.0.bn.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.18.conv_kxk.0.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.18.conv_kxk.0.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.18.conv_kxk.0.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.18.conv_kxk.0.bn.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.18.conv_kxk.0.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.18.conv_kxk.0.bn.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.18.conv_kxk.0.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.2.18.conv_kxk.0.bn.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.18.conv_kxk.0.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.18.conv_kxk.0.conv.weight",
+      "shape": [
+        768,
+        1,
+        3,
+        3
+      ]
+    },
+    "stages.2.18.conv_scale.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.2.18.conv_scale.bn.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.18.conv_scale.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.18.conv_scale.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.18.conv_scale.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.18.conv_scale.bn.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.18.conv_scale.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.18.conv_scale.bn.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.18.conv_scale.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.2.18.conv_scale.bn.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.18.conv_scale.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.18.conv_scale.conv.weight",
+      "shape": [
+        768,
+        1,
+        1,
+        1
+      ]
+    },
+    "stages.2.18.identity.bias": {
+      "dtype": "F32",
+      "key": "stages.2.18.identity.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.18.identity.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.18.identity.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.18.identity.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.18.identity.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.18.identity.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.18.identity.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.18.identity.weight": {
+      "dtype": "F32",
+      "key": "stages.2.18.identity.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.19.conv_kxk.0.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.2.19.conv_kxk.0.bn.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.19.conv_kxk.0.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.19.conv_kxk.0.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.19.conv_kxk.0.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.19.conv_kxk.0.bn.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.19.conv_kxk.0.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.19.conv_kxk.0.bn.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.19.conv_kxk.0.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.2.19.conv_kxk.0.bn.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.19.conv_kxk.0.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.19.conv_kxk.0.conv.weight",
+      "shape": [
+        768,
+        768,
+        1,
+        1
+      ]
+    },
+    "stages.2.19.identity.bias": {
+      "dtype": "F32",
+      "key": "stages.2.19.identity.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.19.identity.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.19.identity.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.19.identity.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.19.identity.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.19.identity.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.19.identity.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.19.identity.weight": {
+      "dtype": "F32",
+      "key": "stages.2.19.identity.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.2.conv_kxk.0.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.2.2.conv_kxk.0.bn.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.2.conv_kxk.0.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.2.conv_kxk.0.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.2.conv_kxk.0.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.2.conv_kxk.0.bn.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.2.conv_kxk.0.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.2.conv_kxk.0.bn.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.2.conv_kxk.0.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.2.2.conv_kxk.0.bn.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.2.conv_kxk.0.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.2.conv_kxk.0.conv.weight",
+      "shape": [
+        768,
+        1,
+        3,
+        3
+      ]
+    },
+    "stages.2.2.conv_scale.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.2.2.conv_scale.bn.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.2.conv_scale.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.2.conv_scale.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.2.conv_scale.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.2.conv_scale.bn.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.2.conv_scale.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.2.conv_scale.bn.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.2.conv_scale.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.2.2.conv_scale.bn.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.2.conv_scale.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.2.conv_scale.conv.weight",
+      "shape": [
+        768,
+        1,
+        1,
+        1
+      ]
+    },
+    "stages.2.2.identity.bias": {
+      "dtype": "F32",
+      "key": "stages.2.2.identity.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.2.identity.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.2.identity.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.2.identity.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.2.identity.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.2.identity.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.2.identity.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.2.identity.weight": {
+      "dtype": "F32",
+      "key": "stages.2.2.identity.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.3.conv_kxk.0.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.2.3.conv_kxk.0.bn.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.3.conv_kxk.0.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.3.conv_kxk.0.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.3.conv_kxk.0.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.3.conv_kxk.0.bn.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.3.conv_kxk.0.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.3.conv_kxk.0.bn.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.3.conv_kxk.0.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.2.3.conv_kxk.0.bn.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.3.conv_kxk.0.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.3.conv_kxk.0.conv.weight",
+      "shape": [
+        768,
+        768,
+        1,
+        1
+      ]
+    },
+    "stages.2.3.identity.bias": {
+      "dtype": "F32",
+      "key": "stages.2.3.identity.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.3.identity.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.3.identity.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.3.identity.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.3.identity.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.3.identity.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.3.identity.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.3.identity.weight": {
+      "dtype": "F32",
+      "key": "stages.2.3.identity.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.4.conv_kxk.0.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.2.4.conv_kxk.0.bn.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.4.conv_kxk.0.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.4.conv_kxk.0.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.4.conv_kxk.0.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.4.conv_kxk.0.bn.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.4.conv_kxk.0.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.4.conv_kxk.0.bn.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.4.conv_kxk.0.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.2.4.conv_kxk.0.bn.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.4.conv_kxk.0.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.4.conv_kxk.0.conv.weight",
+      "shape": [
+        768,
+        1,
+        3,
+        3
+      ]
+    },
+    "stages.2.4.conv_scale.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.2.4.conv_scale.bn.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.4.conv_scale.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.4.conv_scale.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.4.conv_scale.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.4.conv_scale.bn.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.4.conv_scale.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.4.conv_scale.bn.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.4.conv_scale.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.2.4.conv_scale.bn.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.4.conv_scale.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.4.conv_scale.conv.weight",
+      "shape": [
+        768,
+        1,
+        1,
+        1
+      ]
+    },
+    "stages.2.4.identity.bias": {
+      "dtype": "F32",
+      "key": "stages.2.4.identity.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.4.identity.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.4.identity.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.4.identity.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.4.identity.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.4.identity.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.4.identity.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.4.identity.weight": {
+      "dtype": "F32",
+      "key": "stages.2.4.identity.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.5.conv_kxk.0.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.2.5.conv_kxk.0.bn.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.5.conv_kxk.0.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.5.conv_kxk.0.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.5.conv_kxk.0.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.5.conv_kxk.0.bn.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.5.conv_kxk.0.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.5.conv_kxk.0.bn.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.5.conv_kxk.0.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.2.5.conv_kxk.0.bn.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.5.conv_kxk.0.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.5.conv_kxk.0.conv.weight",
+      "shape": [
+        768,
+        768,
+        1,
+        1
+      ]
+    },
+    "stages.2.5.identity.bias": {
+      "dtype": "F32",
+      "key": "stages.2.5.identity.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.5.identity.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.5.identity.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.5.identity.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.5.identity.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.5.identity.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.5.identity.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.5.identity.weight": {
+      "dtype": "F32",
+      "key": "stages.2.5.identity.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.6.conv_kxk.0.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.2.6.conv_kxk.0.bn.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.6.conv_kxk.0.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.6.conv_kxk.0.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.6.conv_kxk.0.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.6.conv_kxk.0.bn.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.6.conv_kxk.0.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.6.conv_kxk.0.bn.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.6.conv_kxk.0.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.2.6.conv_kxk.0.bn.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.6.conv_kxk.0.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.6.conv_kxk.0.conv.weight",
+      "shape": [
+        768,
+        1,
+        3,
+        3
+      ]
+    },
+    "stages.2.6.conv_scale.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.2.6.conv_scale.bn.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.6.conv_scale.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.6.conv_scale.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.6.conv_scale.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.6.conv_scale.bn.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.6.conv_scale.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.6.conv_scale.bn.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.6.conv_scale.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.2.6.conv_scale.bn.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.6.conv_scale.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.6.conv_scale.conv.weight",
+      "shape": [
+        768,
+        1,
+        1,
+        1
+      ]
+    },
+    "stages.2.6.identity.bias": {
+      "dtype": "F32",
+      "key": "stages.2.6.identity.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.6.identity.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.6.identity.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.6.identity.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.6.identity.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.6.identity.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.6.identity.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.6.identity.weight": {
+      "dtype": "F32",
+      "key": "stages.2.6.identity.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.7.conv_kxk.0.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.2.7.conv_kxk.0.bn.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.7.conv_kxk.0.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.7.conv_kxk.0.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.7.conv_kxk.0.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.7.conv_kxk.0.bn.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.7.conv_kxk.0.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.7.conv_kxk.0.bn.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.7.conv_kxk.0.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.2.7.conv_kxk.0.bn.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.7.conv_kxk.0.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.7.conv_kxk.0.conv.weight",
+      "shape": [
+        768,
+        768,
+        1,
+        1
+      ]
+    },
+    "stages.2.7.identity.bias": {
+      "dtype": "F32",
+      "key": "stages.2.7.identity.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.7.identity.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.7.identity.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.7.identity.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.7.identity.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.7.identity.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.7.identity.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.7.identity.weight": {
+      "dtype": "F32",
+      "key": "stages.2.7.identity.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.8.conv_kxk.0.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.2.8.conv_kxk.0.bn.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.8.conv_kxk.0.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.8.conv_kxk.0.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.8.conv_kxk.0.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.8.conv_kxk.0.bn.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.8.conv_kxk.0.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.8.conv_kxk.0.bn.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.8.conv_kxk.0.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.2.8.conv_kxk.0.bn.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.8.conv_kxk.0.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.8.conv_kxk.0.conv.weight",
+      "shape": [
+        768,
+        1,
+        3,
+        3
+      ]
+    },
+    "stages.2.8.conv_scale.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.2.8.conv_scale.bn.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.8.conv_scale.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.8.conv_scale.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.8.conv_scale.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.8.conv_scale.bn.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.8.conv_scale.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.8.conv_scale.bn.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.8.conv_scale.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.2.8.conv_scale.bn.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.8.conv_scale.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.8.conv_scale.conv.weight",
+      "shape": [
+        768,
+        1,
+        1,
+        1
+      ]
+    },
+    "stages.2.8.identity.bias": {
+      "dtype": "F32",
+      "key": "stages.2.8.identity.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.8.identity.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.8.identity.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.8.identity.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.8.identity.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.8.identity.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.8.identity.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.8.identity.weight": {
+      "dtype": "F32",
+      "key": "stages.2.8.identity.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.9.conv_kxk.0.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.2.9.conv_kxk.0.bn.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.9.conv_kxk.0.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.9.conv_kxk.0.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.9.conv_kxk.0.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.9.conv_kxk.0.bn.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.9.conv_kxk.0.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.9.conv_kxk.0.bn.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.9.conv_kxk.0.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.2.9.conv_kxk.0.bn.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.9.conv_kxk.0.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.2.9.conv_kxk.0.conv.weight",
+      "shape": [
+        768,
+        768,
+        1,
+        1
+      ]
+    },
+    "stages.2.9.identity.bias": {
+      "dtype": "F32",
+      "key": "stages.2.9.identity.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.9.identity.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.2.9.identity.num_batches_tracked",
+      "shape": []
+    },
+    "stages.2.9.identity.running_mean": {
+      "dtype": "F32",
+      "key": "stages.2.9.identity.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.9.identity.running_var": {
+      "dtype": "F32",
+      "key": "stages.2.9.identity.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.2.9.identity.weight": {
+      "dtype": "F32",
+      "key": "stages.2.9.identity.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stages.3.0.conv_kxk.0.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.3.0.conv_kxk.0.bn.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.3.0.conv_kxk.0.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.3.0.conv_kxk.0.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.3.0.conv_kxk.0.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.3.0.conv_kxk.0.bn.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.3.0.conv_kxk.0.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.3.0.conv_kxk.0.bn.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.3.0.conv_kxk.0.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.3.0.conv_kxk.0.bn.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stages.3.0.conv_kxk.0.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.3.0.conv_kxk.0.conv.weight",
+      "shape": [
+        768,
+        1,
+        3,
+        3
+      ]
+    },
+    "stages.3.0.conv_scale.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.3.0.conv_scale.bn.bias",
+      "shape": [
+        768
+      ]
+    },
+    "stages.3.0.conv_scale.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.3.0.conv_scale.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.3.0.conv_scale.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.3.0.conv_scale.bn.running_mean",
+      "shape": [
+        768
+      ]
+    },
+    "stages.3.0.conv_scale.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.3.0.conv_scale.bn.running_var",
+      "shape": [
+        768
+      ]
+    },
+    "stages.3.0.conv_scale.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.3.0.conv_scale.bn.weight",
+      "shape": [
+        768
+      ]
+    },
+    "stages.3.0.conv_scale.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.3.0.conv_scale.conv.weight",
+      "shape": [
+        768,
+        1,
+        1,
+        1
+      ]
+    },
+    "stages.3.1.conv_kxk.0.bn.bias": {
+      "dtype": "F32",
+      "key": "stages.3.1.conv_kxk.0.bn.bias",
+      "shape": [
+        2048
+      ]
+    },
+    "stages.3.1.conv_kxk.0.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stages.3.1.conv_kxk.0.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stages.3.1.conv_kxk.0.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stages.3.1.conv_kxk.0.bn.running_mean",
+      "shape": [
+        2048
+      ]
+    },
+    "stages.3.1.conv_kxk.0.bn.running_var": {
+      "dtype": "F32",
+      "key": "stages.3.1.conv_kxk.0.bn.running_var",
+      "shape": [
+        2048
+      ]
+    },
+    "stages.3.1.conv_kxk.0.bn.weight": {
+      "dtype": "F32",
+      "key": "stages.3.1.conv_kxk.0.bn.weight",
+      "shape": [
+        2048
+      ]
+    },
+    "stages.3.1.conv_kxk.0.conv.weight": {
+      "dtype": "F32",
+      "key": "stages.3.1.conv_kxk.0.conv.weight",
+      "shape": [
+        2048,
+        768,
+        1,
+        1
+      ]
+    },
+    "stem.conv_kxk.0.bn.bias": {
+      "dtype": "F32",
+      "key": "stem.conv_kxk.0.bn.bias",
+      "shape": [
+        64
+      ]
+    },
+    "stem.conv_kxk.0.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stem.conv_kxk.0.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stem.conv_kxk.0.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stem.conv_kxk.0.bn.running_mean",
+      "shape": [
+        64
+      ]
+    },
+    "stem.conv_kxk.0.bn.running_var": {
+      "dtype": "F32",
+      "key": "stem.conv_kxk.0.bn.running_var",
+      "shape": [
+        64
+      ]
+    },
+    "stem.conv_kxk.0.bn.weight": {
+      "dtype": "F32",
+      "key": "stem.conv_kxk.0.bn.weight",
+      "shape": [
+        64
+      ]
+    },
+    "stem.conv_kxk.0.conv.weight": {
+      "dtype": "F32",
+      "key": "stem.conv_kxk.0.conv.weight",
+      "shape": [
+        64,
+        3,
+        3,
+        3
+      ]
+    },
+    "stem.conv_scale.bn.bias": {
+      "dtype": "F32",
+      "key": "stem.conv_scale.bn.bias",
+      "shape": [
+        64
+      ]
+    },
+    "stem.conv_scale.bn.num_batches_tracked": {
+      "dtype": "I64",
+      "key": "stem.conv_scale.bn.num_batches_tracked",
+      "shape": []
+    },
+    "stem.conv_scale.bn.running_mean": {
+      "dtype": "F32",
+      "key": "stem.conv_scale.bn.running_mean",
+      "shape": [
+        64
+      ]
+    },
+    "stem.conv_scale.bn.running_var": {
+      "dtype": "F32",
+      "key": "stem.conv_scale.bn.running_var",
+      "shape": [
+        64
+      ]
+    },
+    "stem.conv_scale.bn.weight": {
+      "dtype": "F32",
+      "key": "stem.conv_scale.bn.weight",
+      "shape": [
+        64
+      ]
+    },
+    "stem.conv_scale.conv.weight": {
+      "dtype": "F32",
+      "key": "stem.conv_scale.conv.weight",
+      "shape": [
+        64,
+        3,
+        1,
+        1
+      ]
+    }
+  },
+  "unmapped": []
+}

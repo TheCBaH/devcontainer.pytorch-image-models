@@ -1,0 +1,439 @@
+{
+  "schema_version": 1,
+  "source": {
+    "filename": "model.safetensors",
+    "repo_id": "timm/test_convnext2.r160_in1k",
+    "revision": "cf66909d51806c68e55af7728125ec2bc0ceb63d",
+    "sha256": "dd1f18fb7ba6954031ff5ead19dc4099d2535be8b98a9300f196d0fc791cc6b7",
+    "size": 1916376,
+    "url": "https://huggingface.co/timm/test_convnext2.r160_in1k/resolve/cf66909d51806c68e55af7728125ec2bc0ceb63d/model.safetensors"
+  },
+  "tensors": {
+    "model.head.fc.bias": {
+      "dtype": "F32",
+      "key": "head.fc.bias",
+      "shape": [
+        1000
+      ]
+    },
+    "model.head.fc.weight": {
+      "dtype": "F32",
+      "key": "head.fc.weight",
+      "shape": [
+        1000,
+        128
+      ]
+    },
+    "model.head.norm.bias": {
+      "dtype": "F32",
+      "key": "head.norm.bias",
+      "shape": [
+        128
+      ]
+    },
+    "model.head.norm.weight": {
+      "dtype": "F32",
+      "key": "head.norm.weight",
+      "shape": [
+        128
+      ]
+    },
+    "model.stages.0.blocks.0.conv_dw.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.conv_dw.bias",
+      "shape": [
+        32
+      ]
+    },
+    "model.stages.0.blocks.0.conv_dw.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.conv_dw.weight",
+      "shape": [
+        32,
+        1,
+        7,
+        7
+      ]
+    },
+    "model.stages.0.blocks.0.gamma": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.gamma",
+      "shape": [
+        32
+      ]
+    },
+    "model.stages.0.blocks.0.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.mlp.fc1.bias",
+      "shape": [
+        128
+      ]
+    },
+    "model.stages.0.blocks.0.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.mlp.fc1.weight",
+      "shape": [
+        128,
+        32
+      ]
+    },
+    "model.stages.0.blocks.0.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.mlp.fc2.bias",
+      "shape": [
+        32
+      ]
+    },
+    "model.stages.0.blocks.0.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.mlp.fc2.weight",
+      "shape": [
+        32,
+        128
+      ]
+    },
+    "model.stages.0.blocks.0.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.norm.bias",
+      "shape": [
+        32
+      ]
+    },
+    "model.stages.0.blocks.0.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.0.blocks.0.norm.weight",
+      "shape": [
+        32
+      ]
+    },
+    "model.stages.1.blocks.0.conv_dw.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.conv_dw.bias",
+      "shape": [
+        64
+      ]
+    },
+    "model.stages.1.blocks.0.conv_dw.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.conv_dw.weight",
+      "shape": [
+        64,
+        1,
+        7,
+        7
+      ]
+    },
+    "model.stages.1.blocks.0.gamma": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.gamma",
+      "shape": [
+        64
+      ]
+    },
+    "model.stages.1.blocks.0.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.mlp.fc1.bias",
+      "shape": [
+        256
+      ]
+    },
+    "model.stages.1.blocks.0.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.mlp.fc1.weight",
+      "shape": [
+        256,
+        64
+      ]
+    },
+    "model.stages.1.blocks.0.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.mlp.fc2.bias",
+      "shape": [
+        64
+      ]
+    },
+    "model.stages.1.blocks.0.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.mlp.fc2.weight",
+      "shape": [
+        64,
+        256
+      ]
+    },
+    "model.stages.1.blocks.0.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.norm.bias",
+      "shape": [
+        64
+      ]
+    },
+    "model.stages.1.blocks.0.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.1.blocks.0.norm.weight",
+      "shape": [
+        64
+      ]
+    },
+    "model.stages.1.downsample.0.bias": {
+      "dtype": "F32",
+      "key": "stages.1.downsample.0.bias",
+      "shape": [
+        32
+      ]
+    },
+    "model.stages.1.downsample.0.weight": {
+      "dtype": "F32",
+      "key": "stages.1.downsample.0.weight",
+      "shape": [
+        32
+      ]
+    },
+    "model.stages.1.downsample.1.bias": {
+      "dtype": "F32",
+      "key": "stages.1.downsample.1.bias",
+      "shape": [
+        64
+      ]
+    },
+    "model.stages.1.downsample.1.weight": {
+      "dtype": "F32",
+      "key": "stages.1.downsample.1.weight",
+      "shape": [
+        64,
+        32,
+        2,
+        2
+      ]
+    },
+    "model.stages.2.blocks.0.conv_dw.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.conv_dw.bias",
+      "shape": [
+        96
+      ]
+    },
+    "model.stages.2.blocks.0.conv_dw.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.conv_dw.weight",
+      "shape": [
+        96,
+        1,
+        7,
+        7
+      ]
+    },
+    "model.stages.2.blocks.0.gamma": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.gamma",
+      "shape": [
+        96
+      ]
+    },
+    "model.stages.2.blocks.0.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.mlp.fc1.bias",
+      "shape": [
+        384
+      ]
+    },
+    "model.stages.2.blocks.0.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.mlp.fc1.weight",
+      "shape": [
+        384,
+        96
+      ]
+    },
+    "model.stages.2.blocks.0.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.mlp.fc2.bias",
+      "shape": [
+        96
+      ]
+    },
+    "model.stages.2.blocks.0.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.mlp.fc2.weight",
+      "shape": [
+        96,
+        384
+      ]
+    },
+    "model.stages.2.blocks.0.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.norm.bias",
+      "shape": [
+        96
+      ]
+    },
+    "model.stages.2.blocks.0.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.2.blocks.0.norm.weight",
+      "shape": [
+        96
+      ]
+    },
+    "model.stages.2.downsample.0.bias": {
+      "dtype": "F32",
+      "key": "stages.2.downsample.0.bias",
+      "shape": [
+        64
+      ]
+    },
+    "model.stages.2.downsample.0.weight": {
+      "dtype": "F32",
+      "key": "stages.2.downsample.0.weight",
+      "shape": [
+        64
+      ]
+    },
+    "model.stages.2.downsample.1.bias": {
+      "dtype": "F32",
+      "key": "stages.2.downsample.1.bias",
+      "shape": [
+        96
+      ]
+    },
+    "model.stages.2.downsample.1.weight": {
+      "dtype": "F32",
+      "key": "stages.2.downsample.1.weight",
+      "shape": [
+        96,
+        64,
+        2,
+        2
+      ]
+    },
+    "model.stages.3.blocks.0.conv_dw.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.conv_dw.bias",
+      "shape": [
+        128
+      ]
+    },
+    "model.stages.3.blocks.0.conv_dw.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.conv_dw.weight",
+      "shape": [
+        128,
+        1,
+        7,
+        7
+      ]
+    },
+    "model.stages.3.blocks.0.gamma": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.gamma",
+      "shape": [
+        128
+      ]
+    },
+    "model.stages.3.blocks.0.mlp.fc1.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.mlp.fc1.bias",
+      "shape": [
+        512
+      ]
+    },
+    "model.stages.3.blocks.0.mlp.fc1.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.mlp.fc1.weight",
+      "shape": [
+        512,
+        128
+      ]
+    },
+    "model.stages.3.blocks.0.mlp.fc2.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.mlp.fc2.bias",
+      "shape": [
+        128
+      ]
+    },
+    "model.stages.3.blocks.0.mlp.fc2.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.mlp.fc2.weight",
+      "shape": [
+        128,
+        512
+      ]
+    },
+    "model.stages.3.blocks.0.norm.bias": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.norm.bias",
+      "shape": [
+        128
+      ]
+    },
+    "model.stages.3.blocks.0.norm.weight": {
+      "dtype": "F32",
+      "key": "stages.3.blocks.0.norm.weight",
+      "shape": [
+        128
+      ]
+    },
+    "model.stages.3.downsample.0.bias": {
+      "dtype": "F32",
+      "key": "stages.3.downsample.0.bias",
+      "shape": [
+        96
+      ]
+    },
+    "model.stages.3.downsample.0.weight": {
+      "dtype": "F32",
+      "key": "stages.3.downsample.0.weight",
+      "shape": [
+        96
+      ]
+    },
+    "model.stages.3.downsample.1.bias": {
+      "dtype": "F32",
+      "key": "stages.3.downsample.1.bias",
+      "shape": [
+        128
+      ]
+    },
+    "model.stages.3.downsample.1.weight": {
+      "dtype": "F32",
+      "key": "stages.3.downsample.1.weight",
+      "shape": [
+        128,
+        96,
+        2,
+        2
+      ]
+    },
+    "model.stem.0.bias": {
+      "dtype": "F32",
+      "key": "stem.0.bias",
+      "shape": [
+        32
+      ]
+    },
+    "model.stem.0.weight": {
+      "dtype": "F32",
+      "key": "stem.0.weight",
+      "shape": [
+        32,
+        3,
+        4,
+        4
+      ]
+    },
+    "model.stem.1.bias": {
+      "dtype": "F32",
+      "key": "stem.1.bias",
+      "shape": [
+        32
+      ]
+    },
+    "model.stem.1.weight": {
+      "dtype": "F32",
+      "key": "stem.1.weight",
+      "shape": [
+        32
+      ]
+    }
+  },
+  "unmapped": []
+}
