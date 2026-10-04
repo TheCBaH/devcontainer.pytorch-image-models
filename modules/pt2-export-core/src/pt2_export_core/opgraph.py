@@ -165,10 +165,10 @@ def _concrete_shape(val):
     """`val`'s shape as plain ints, or None if it is absent or symbolic."""
     if val is None or not hasattr(val, 'shape'):
         return None
-    try:
-        return [int(d) for d in val.shape]
-    except Exception:
-        return None  # data-dependent/dynamic dim -- no honest concrete answer
+    shape = list(val.shape)
+    if any(not isinstance(d, int) for d in shape):
+        return None
+    return shape
 
 
 def op_config(node):
@@ -204,7 +204,7 @@ def op_config(node):
     dtype = getattr(out, 'dtype', None)
     if dtype is not None:
         config['out_dtype'] = _DTYPE_NAMES.get(str(dtype), str(dtype))
-    out_shape = _concrete_shape(out)
+    out_shape = getattr(out, 'shape', None)
     if out_shape is not None:
         config['out_rank'] = len(out_shape)
 

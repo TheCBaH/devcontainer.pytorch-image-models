@@ -55,3 +55,26 @@ def test_strict_json_loads_accepts_well_formed_documents():
     assert strict_json_loads('{"a": 1, "b": [1, 2, {"$nonfinite_float": "-inf"}]}') == {
         'a': 1, 'b': [1, 2, {'$nonfinite_float': '-inf'}],
     }
+
+
+@pytest.mark.filterwarnings('ignore:.*LeafSpec.*:FutureWarning')
+def test_collecting_dynamic_facts_preserves_symbolic_shapes():
+    import torch
+
+    from pt2_export_core.opgraph import collect_ops
+
+    class Model(torch.nn.Module):
+        def forward(self, value):
+            return value.sin() + value
+
+    exported = torch.export.export(
+        Model(), (torch.randn(2, 16),), strict=False,
+        dynamic_shapes=({0: torch.export.Dim('batch', min=2, max=4),
+                         1: torch.export.Dim('sequence', min=4, max=64)},),
+    )
+    ops, _ = collect_ops(exported)
+    assert all(config['out_rank'] == 2 for _, config, _ in ops)
+    functional = exported.run_decompositions(decomp_table={})
+    assert len(functional.range_constraints) == 2
+    value = torch.randn(3, 19)
+    torch.testing.assert_close(functional.module()(value), Model()(value))
