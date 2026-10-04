@@ -192,7 +192,7 @@ _OpsDumper.add_representer(
 
 
 def render_ops_yaml(ops_by_model, op_schemas, skipped, dialect, zoo_name, zoo_version,
-                     torch_version, script='scripts/export_report.py'):
+                     torch_version, script='scripts/export_report.py', *, exact_symints=False):
     """The cross-reference itself: an operator catalog plus a sparse models × operations
     matrix whose cells are {configuration id: node count}.
 
@@ -240,13 +240,21 @@ def render_ops_yaml(ops_by_model, op_schemas, skipped, dialect, zoo_name, zoo_ve
             f'# extra rows here. The undecomposed graph, which does not vary, is in {ATEN.yaml_name}.',
             '#',
         ]
+    if exact_symints:
+        header += [
+            '# Fixed arguments retain their exact values, including SymInt-typed constants.',
+            '# Only genuinely symbolic integers use {$symint: true}; mixed lists retain',
+            '# each fixed element. Symbol expressions and bounds remain in the graph.',
+            '# Configuration ids are positional within an op, so',
+        ]
+    else:
+        header += [
+            '# SymInt arguments are tensor extents that scale with the input resolution, so they are',
+            '# recorded as arity ("[*4]", or "*" for a scalar) rather than verbatim, except on',
+            '# ' + ', '.join(_literal_symint_ops(catalog)) + ',',
+            '# where they are architectural knobs. Configuration ids are positional within an op, so',
+        ]
     header += [
-        '# SymInt arguments are tensor extents that scale with the input resolution, so they are',
-        '# recorded as arity ("[*4]", or "*" for a scalar) rather than verbatim, except on',
-        # Only the exceptions this dialect contains: the set spans both, and naming absent ops
-        # would send a reader looking for them here.
-        '# ' + ', '.join(_literal_symint_ops(catalog)) + ',',
-        '# where they are architectural knobs. Configuration ids are positional within an op, so',
         '# they can shift between runs when a newly seen configuration sorts ahead of an old one.',
         '',
     ]
@@ -259,13 +267,16 @@ def fmt_config(config):
     parts = []
     for key, value in config.items():
         if isinstance(value, list):
-            rendered = '[' + ','.join(str(v) for v in value) + ']'
+            rendered = '[' + ','.join('SymInt' if isinstance(v, dict) and '$symint' in v
+                                      else str(v) for v in value) + ']'
         elif isinstance(value, bool):
             rendered = 'true' if value else 'false'
         elif value is None:
             rendered = 'none'
         elif isinstance(value, dict) and '$nonfinite_float' in value:
             rendered = value['$nonfinite_float']  # opgraph._plain()'s tagged non-finite shape
+        elif isinstance(value, dict) and '$symint' in value:
+            rendered = 'SymInt'
         else:
             rendered = str(value)
         parts.append(f'{key}={rendered}')
@@ -273,7 +284,7 @@ def fmt_config(config):
 
 
 def render_ops_md(ops_by_model, op_schemas, families, skipped, dialect, zoo_name, zoo_version,
-                   torch_version, script='scripts/export_report.py'):
+                   torch_version, script='scripts/export_report.py', *, exact_symints=False):
     """Op-major digest of the cross-reference: for each operator, which configurations the
     zoo needs and how many variants need each. The model axis is collapsed to counts --
     the per-variant detail lives in the YAML, which is the machine-readable artifact."""
@@ -305,13 +316,21 @@ def render_ops_md(ops_by_model, op_schemas, families, skipped, dialect, zoo_name
     lines.append('')
     lines.append(dialect.prose)
     lines.append('')
+    symint_prose = (
+        'Fixed arguments retain their exact values, including SymInt-typed constants. '
+        'Only genuinely symbolic integers appear as `SymInt` (YAML: `{$symint: true}`); '
+        'mixed lists retain each fixed element, e.g. `size=[1,SymInt,64]`. Symbol '
+        'expressions and bounds remain in the exported graph. '
+        if exact_symints else
+        'SymInt arguments are tensor extents that scale with input resolution, so they '
+        'are recorded as arity (`size=[*4]`) rather than verbatim, except on ' +
+        ', '.join(f'`{op}`' for op in _literal_symint_ops(catalog)) +
+        ', where they are architectural knobs. '
+    )
     lines.append('A *configuration* is an operator\'s non-Tensor schema arguments plus `out_dtype` '
                  'and `out_rank` taken from the graph\'s shape metadata, and for convolutions the '
-                 '`kernel` size and whether it is `depthwise`. SymInt arguments are tensor extents that scale '
-                 'with input resolution, so they are recorded as arity (`size=[*4]`) rather than '
-                 'verbatim, except on ' +
-                 ', '.join(f'`{op}`' for op in _literal_symint_ops(catalog)) +
-                 ', where they are architectural knobs. `models` counts variants using that '
+                 '`kernel` size and whether it is `depthwise`. ' + symint_prose +
+                 '`models` counts variants using that '
                  'configuration, `nodes` the total call sites across them. The full per-variant '
                  f'matrix is in [`{dialect.yaml_name}`]({dialect.yaml_name}); ids here are that '
                  'file\'s ids.')

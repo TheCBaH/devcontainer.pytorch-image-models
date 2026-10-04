@@ -15,14 +15,8 @@ import json
 import math
 import re
 
-# torch.export retains SymInt arguments for two structurally different things: tensor
-# extents (a `view` size, a `slice` bound), whose values are a function of the input
-# resolution, and genuine architectural knobs that merely happen to be SymInt-typed. Only
-# the latter belong in an operator's configuration -- recording the former verbatim
-# explodes the catalog (measured: `view.size` alone contributes 533 distinct values across
-# 30 timm models, vs 6 once abstracted), so SymInt args are recorded as arity except for the
-# ops listed here. An op not listed defaults to abstraction, which is the safe direction:
-# a new op can never blow the catalog up, only under-describe itself.
+# Timm's legacy catalog groups tensor extents by arity, retaining architectural knobs.
+# exact_symints=True instead preserves constants and marks genuinely symbolic values.
 SYMINT_LITERAL_OPS = {
     'aten.convolution.default',
     'aten.constant_pad_nd.default',
@@ -171,12 +165,29 @@ def _concrete_shape(val):
     return shape
 
 
-def op_config(node):
+def _exact_symint(value):
+    if isinstance(value, (list, tuple)):
+        return [_exact_symint(item) for item in value]
+    metadata = getattr(value, 'meta', None)
+    if metadata is not None:
+        if 'val' not in metadata:
+            raise ValueError('SymInt argument node has no value metadata')
+        value = metadata['val']
+    expression = getattr(getattr(value, 'node', None), 'expr', None)
+    if expression is not None:
+        # Evaluating a SymInt itself can specialize the exported graph's guards.
+        return {'$symint': True} if expression.free_symbols else int(expression)
+    return _plain(value)
+
+
+def op_config(node, *, exact_symints=False):
     """(op name, configuration) for one call_function node of an exported graph.
 
     The configuration is the node's non-Tensor schema arguments (the knobs a backend has
     to honour: stride, eps, dim, keepdim, ...) with tensor-extent SymInts abstracted per
-    SYMINT_LITERAL_OPS, plus a few facts derived from the graph's own shape metadata that
+    SYMINT_LITERAL_OPS unless exact_symints preserves fixed values and tags actual symbolic
+    integers. Symbol expressions remain in the exported graph. Also includes facts from
+    the graph's own shape metadata that
     the argument list does not carry -- most importantly a convolution's kernel size and
     whether it is depthwise, which is the difference between two very different kernels
     wearing the same `aten.convolution.default` name.
@@ -191,6 +202,9 @@ def op_config(node):
         if 'Tensor' in str(arg.type) or arg.name in DROPPED_ARGS:
             continue
         value = node.args[i] if i < len(node.args) else node.kwargs.get(arg.name, arg.default_value)
+        if exact_symints and arg.name in symints:
+            config[arg.name] = _exact_symint(value)
+            continue
         if abstract_symints and arg.name in symints:
             value = f'[*{len(value)}]' if isinstance(value, (list, tuple)) else '*'
         config[arg.name] = _plain(value)
@@ -263,11 +277,13 @@ def strict_json_loads(data):
                        object_pairs_hook=_reject_duplicate_keys)
 
 
-def collect_ops(ep):
+def collect_ops(ep, *, exact_symints=False):
     """([[op name, configuration, node count], ...], {op name: schema}) for an exported program.
 
     call_function nodes without a schema (`operator.getitem`, higher-order ops) are
     structural graph plumbing rather than operators a backend lowers, so they are skipped.
+    exact_symints=True retains fixed values and tags dynamic integers as {$symint: True},
+    including individual elements of mixed lists; the default retains legacy aggregation.
     """
     counts = {}
     configs = {}  # keyed the same, but keeping the schema-ordered dict for output
@@ -275,7 +291,7 @@ def collect_ops(ep):
     for node in ep.graph_module.graph.nodes:
         if node.op != 'call_function' or not hasattr(node.target, '_schema'):
             continue
-        target, config = op_config(node)
+        target, config = op_config(node, exact_symints=exact_symints)
         if target in DROPPED_OPS:
             continue
         schemas[target] = str(node.target._schema).replace('aten::', '', 1)
