@@ -80,6 +80,7 @@ def test_collecting_dynamic_facts_preserves_symbolic_shapes():
     torch.testing.assert_close(functional.module()(value), Model()(value))
 
 
+@pytest.mark.filterwarnings('ignore:.*LeafSpec.*:FutureWarning')
 def test_exact_arguments_separate_constants_and_dynamic_list_elements():
     import torch
     import yaml
