@@ -5,6 +5,7 @@
         "dockerfile": "Dockerfile"
     },
     "features": {
+        "ghcr.io/devcontainers/features/sshd:1": {}
     },
     "customizations": {
     },
@@ -14,4 +15,3 @@
     },
     "waitFor": "postCreateCommand"
 }
-

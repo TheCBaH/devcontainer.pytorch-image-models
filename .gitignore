@@ -1,5 +1,6 @@
 .venv
 __pycache__/
+/.devcontainer/devcontainer-lock.json
 .report-dry-run.*
 /.models-dry-run/
 
