@@ -325,3 +325,9 @@ The repo ships a devcontainer with all dependencies pre-installed. Open it in VS
 ```bash
 make report.dry-run
 ```
+## Evaluation contracts
+
+Releases also provide a v2 asset index, standalone authoritative inputs,
+small evaluation archives, and shared decoded RGB tensors. See
+[evaluation-v2](docs/evaluation-v2.md) for discovery, bindings,
+preprocessing provenance, compatibility and verification commands.

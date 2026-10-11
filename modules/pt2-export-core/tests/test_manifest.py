@@ -1,6 +1,7 @@
 import hashlib
 import json
 import os
+import zipfile
 
 import pytest
 
@@ -181,3 +182,96 @@ def test_manifest_json_stale_digest_caught_by_pinned_invocation(tmp_path):
 
     with pytest.raises(ValueError, match='manifest.json disagrees'):
         manifest.release_assets(str(release_dir), expect_checksums_sha256=new_pin)
+
+
+def _v2_release(tmp_path):
+    directory = tmp_path / 'v2'
+    directory.mkdir()
+    members = {
+        'images.zip': ['images/example.jpg'], 'm1.zip': ['m1.pt2'],
+        'm1-eval.zip': ['cases.json', 'contract-v2.json', 'expected.json', 'outputs.pt', 'preprocessing.json'],
+        'images.pt': ['archive/data.pkl'], 'm1-inputs.pt': ['archive/data.pkl']}
+    for filename, names in members.items():
+        with zipfile.ZipFile(directory / filename, 'w') as z:
+            for name in names: z.writestr(name, b'{}')
+    (directory / 'images-metadata.json').write_text('{}')
+    for name in ('catalogue.json', 'compat-report.json'): (directory / name).write_text('{}')
+    assets = {}
+    for asset_id, filename, fmt in (
+            ('legacy_images', 'images.zip', 'zip'), ('decoded_images', 'images.pt', 'torch.save'),
+            ('image_metadata', 'images-metadata.json', 'json'), ('m1/archive', 'm1.zip', 'zip'),
+            ('m1/evaluation', 'm1-eval.zip', 'zip'), ('m1/inputs', 'm1-inputs.pt', 'torch.save')):
+        entry = manifest.build_asset_entry(directory / filename, f'https://github.com/org/repo/releases/download/v1/{filename}')
+        entry.update(filename=filename, format=fmt)
+        if fmt == 'zip': entry['members'] = sorted(members[filename])
+        assets[asset_id] = entry
+    legacy = manifest.render_manifest(
+        producer={'repo': 'org/repo', 'tag': 'v1', 'commit': 'a' * 40,
+                  'commit_timestamp': '2026-10-11T00:00:00+00:00', 'timm_version': '1', 'torch_version': '2'},
+        selected_names={'m1'}, release_names={'m1'},
+        images_entry={k: assets['legacy_images'][k] for k in ('url', 'sha256', 'bytes')},
+        model_entries={'m1': assets['m1/archive']}, retired={})
+    document = {**{k: legacy[k] for k in ('producer', 'selected_models', 'release_models', 'retired')},
+                'schema_version': 2, 'scope': 'full', 'assets': assets,
+                'models': {'m1': {'status': 'current', 'archive': 'm1/archive',
+                                  'evaluation': 'm1/evaluation', 'inputs': 'm1/inputs',
+                                  'graph': {'sha256': 'a' * 64, 'bytes': 1,
+                                            'url': f'https://raw.githubusercontent.com/org/repo/{"a" * 40}/models/m1/models/model.json'},
+                                  'weight_map': None}}}
+    (directory / 'manifest.json').write_text(json.dumps(legacy))
+    (directory / 'manifest-v2.json').write_text(json.dumps(document))
+    _v2_checksums(directory)
+    return directory, document
+
+
+def _v2_checksums(directory):
+    files = [p.name for p in directory.iterdir() if p.name != 'checksums.txt']
+    (directory / 'checksums.txt').write_text(manifest.render_checksums(str(directory), files))
+
+
+def test_v2_assets_all_indexed_on_both_publication_passes(tmp_path):
+    directory, _ = _v2_release(tmp_path)
+    pin, files = manifest.release_assets(str(directory))
+    assert len(files) == 11
+    assert manifest.release_assets(str(directory), expect_checksums_sha256=pin) == (pin, files)
+
+
+@pytest.mark.parametrize('mutation', ['stale', 'size', 'duplicate', 'missing', 'extra', 'members', 'shared'])
+def test_v2_gate_rejects_bad_descriptors_even_with_new_checksums(tmp_path, mutation):
+    directory, document = _v2_release(tmp_path)
+    asset = document['assets']['m1/evaluation']
+    if mutation == 'stale': asset['sha256'] = 'b' * 64
+    if mutation == 'size': asset['bytes'] += 1
+    if mutation == 'duplicate': asset['filename'] = 'images.zip'
+    if mutation == 'missing': document['assets'].pop('m1/inputs')
+    if mutation == 'extra': (directory / 'extra.txt').write_text('extra')
+    if mutation == 'members': asset['members'] = ['wrong.json']
+    if mutation == 'shared': document['assets']['legacy_images']['sha256'] = 'b' * 64
+    (directory / 'manifest-v2.json').write_text(json.dumps(document))
+    _v2_checksums(directory)
+    for pin in (None, manifest.sha256_file(directory / 'checksums.txt')):
+        with pytest.raises(ValueError):
+            manifest.release_assets(str(directory), expect_checksums_sha256=pin)
+
+
+def test_v2_coordinated_change_after_attestation_rejects_original_pin(tmp_path):
+    directory, document = _v2_release(tmp_path)
+    pin, _ = manifest.release_assets(str(directory))
+    (directory / 'images-metadata.json').write_text('{"changed":true}')
+    entry = document['assets']['image_metadata']
+    entry.update(manifest.build_asset_entry(directory / entry['filename'], entry['url']))
+    (directory / 'manifest-v2.json').write_text(json.dumps(document))
+    _v2_checksums(directory)
+    with pytest.raises(ValueError, match='pinned digest'):
+        manifest.release_assets(str(directory), expect_checksums_sha256=pin)
+
+
+@pytest.mark.parametrize('rel', ['../outside', '/absolute', 'a/../b', 'checksums.txt'])
+def test_checksum_paths_cannot_escape_release(rel):
+    with pytest.raises(ValueError):
+        manifest._parse_checksums(f'{"a" * 64}  {rel}\n')
+
+
+def test_duplicate_checksum_line_rejected():
+    with pytest.raises(ValueError, match='duplicate'):
+        manifest._parse_checksums(f'{"a" * 64}  a.zip\n' * 2)

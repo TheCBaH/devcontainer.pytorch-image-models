@@ -64,7 +64,8 @@ AUTOCAST_TIMEOUT ?= 180
         models.select.fp16 models.select.bf16 models.fp16 models.bf16 \
         models.fetch models.fetch-sensitive models.compat-static models.role-candidates download images release \
         models.weights models.weights.verify models.weights.check-values \
-        release.manifest release.assets release.dry-run check-history check-models test
+        release.manifest release.assets release.dry-run release.images release.inputs.verify \
+        check-history check-models test
 
 # ── timm export report ───────────────────────────────────────────────────────
 
@@ -332,6 +333,14 @@ release: $(RELEASE_DIR)/images.zip
 	uv run python $(PT2_SCRIPT) --manifest $(MANIFEST) release \
 		--images $(DATA_DIR)/images --release-dir $(RELEASE_DIR) --work-dir $(WORK_DIR)
 
+release.images: $(RELEASE_DIR)/images.zip
+	uv run python $(PT2_SCRIPT) decode-images --images-archive $(RELEASE_DIR)/images.zip \
+		--output $(RELEASE_DIR)/images.pt --metadata $(RELEASE_DIR)/images-metadata.json
+
+release.inputs.verify:
+	uv run python $(PT2_SCRIPT) --manifest $(MANIFEST) --models-dir $(MODELS_DIR) \
+		verify-inputs --release-dir $(RELEASE_DIR)
+
 # The one canonical validation/checksum DAG: release (hard-stops here on any release-tier
 # failure) -> manifest + catalogue + compat-report (schema-validated) -> verify-release
 # (byte-compares every embedded graph against the committed one, re-validates every
@@ -341,6 +350,7 @@ release.manifest: release
 		--release-dir $(RELEASE_DIR) --work-dir $(WORK_DIR) \
 		--repo $(RELEASE_REPO) --tag $(RELEASE_TAG) --commit $(RELEASE_COMMIT) \
 		--default-model $(DEFAULT_MODEL)
+	$(MAKE) release.inputs.verify
 	uv run python $(PT2_SCRIPT) --manifest $(MANIFEST) --models-dir $(MODELS_DIR) \
 		verify-release --release-dir $(RELEASE_DIR)
 

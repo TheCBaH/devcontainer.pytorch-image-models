@@ -36,6 +36,7 @@ import shutil
 import sys
 import tempfile
 import zipfile
+from pathlib import Path
 
 from exportlib import MAX_RES, resolved_input_size
 from pt2_export_core import compat, manifest as manifest_mod, opgraph, schema_validate, selection
@@ -49,6 +50,8 @@ from pt2_export_core.harness import cpu_count, run_pool, run_worker
 
 import models_history
 from weights_map import WEIGHTS_MAP
+import input_assets
+import evaluation_contract
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SCHEMAS_DIR = os.path.join(REPO_ROOT, 'schemas')
@@ -293,23 +296,14 @@ def worker_convert(name, output, pretrained, max_res, manifest, policy='fp32', d
 
 
 def worker_pack(name, model_path, images_dir, images_archive, images_sha256, output, max_res,
-                 manifest):
-    """Build one release archive: the .pt2, how to preprocess for it, and what it predicts.
+                 manifest, decoded_images=None, image_metadata=None, decoded_sha256=None):
+    """Stage one inference result for full, evaluation and standalone input assets.
 
-    Both caller-supplied inputs -- `images_archive` and `model_path` -- are validated before
-    anything is trusted from them, independently of whatever called this (reachable directly
-    via the public `pack` subcommand, not only through `cmd_release`):
-      - `images_archive` is bounded/duplicate-checked via `_read_images_archive` (which itself
-        goes through `safe_zip_open`), its digest checked against `images_sha256`, and its
-        normalized image-sample set compared against `images_dir`'s.
-      - `model_path` is bounded/duplicate-checked via `safe_zip_open` before
-        `torch.export.load` ever touches it; the exact validated bytes (not a second,
-        independent re-read of the path) are what both get deserialized and get embedded in
-        the output archive, so the two can never silently diverge.
+    The saved decoded RGB asset is the only preprocessing source. The legacy
+    images_dir argument remains accepted for existing callers.
     """
     import torch
     import timm
-    from PIL import Image
     from timm.data import create_transform, resolve_data_config
     from timm.models import get_pretrained_cfg
 
@@ -319,12 +313,17 @@ def worker_pack(name, model_path, images_dir, images_archive, images_sha256, out
         if actual_sha256 != images_sha256:
             raise ValueError(f'images.zip sha256 mismatch: expected {images_sha256}, '
                              f'got {actual_sha256}')
-        local_samples = _local_image_samples(images_dir)
-        if set(archive_samples) != set(local_samples):
-            only_archive = sorted(set(archive_samples) - set(local_samples))
-            only_local = sorted(set(local_samples) - set(archive_samples))
-            raise ValueError(f'images.zip vs {images_dir} sample mismatch -- '
-                             f'only in archive: {only_archive}; only in images_dir: {only_local}')
+        if decoded_images is None:
+            decoded_images = os.path.join(os.path.dirname(output), 'images.pt')
+            image_metadata = os.path.join(os.path.dirname(output), 'images-metadata.json')
+            input_assets.decode_images(images_archive, decoded_images, image_metadata, images_sha256)
+            decoded_sha256 = manifest_mod.sha256_file(decoded_images)
+        decoded = input_assets.load_images(decoded_images, image_metadata,
+                                            expected_sha256=decoded_sha256)
+        metadata = opgraph.strict_json_loads(Path(image_metadata).read_bytes())
+        if metadata['source_archive_sha256'] != images_sha256 or set(decoded) != set(archive_samples):
+            raise ValueError('decoded images source or sample set disagrees with images.zip')
+        local_samples = sorted(decoded)
 
         # The registry entry, not a built model: every field needed here is config, and
         # instantiating the architecture would allocate a second full set of weights
@@ -372,22 +371,15 @@ def worker_pack(name, model_path, images_dir, images_archive, images_sha256, out
             pt2_bytes, exported = zf._with_validated_source(_read_and_load)
         module = exported.module()
         transform = create_transform(**data_config, is_training=False)
+        preprocessing['recipe'] = input_assets.recipe(data_config, transform)
+        schema_validate.validate_document(preprocessing, 'preprocessing', SCHEMAS_DIR)
 
-        # The images ship once, unmodified, in their own archive; preprocessing is per model,
-        # so what this model actually consumes is captured here as inputs.pt, per image and
-        # pre-batch-dim. Inference then reads its tensors back out of that file (torch.load,
-        # not the freshly-transformed value still sitting in memory), so the archive is proven
-        # to contain exactly what was run, not just what was intended.
-        #
-        # Each image's own transform+forward runs in its own try/except: a failure carries the
-        # lexical image key and how far the loop got, and stops the loop rather than
-        # continuing past it -- the fail-closed archive policy is unchanged (no archive is
-        # produced on any failure), but the diagnostic now names which image and why.
+        # Inference reloads the saved inputs rather than using in-memory transform results.
         inputs = {}
+        geometry = {}
         for completed, image_name in enumerate(local_samples):
             try:
-                inputs[image_name] = transform(
-                    Image.open(os.path.join(images_dir, image_name)).convert('RGB'))
+                inputs[image_name], geometry[image_name] = input_assets.preprocess(decoded[image_name], transform)
             except Exception as e:
                 raise ValueError(f'image {image_name!r} ({completed}/{len(local_samples)} '
                                  f'preprocessed): {type(e).__name__}: {e}') from e
@@ -403,7 +395,7 @@ def worker_pack(name, model_path, images_dir, images_archive, images_sha256, out
         expected = {}
         outputs = {}
         inputs_buffer.seek(0)
-        loaded_inputs = torch.load(inputs_buffer, weights_only=True)
+        loaded_inputs = input_assets.load_tensors(inputs_buffer.getvalue())
         for completed, (image_name, image_input) in enumerate(loaded_inputs.items()):
             try:
                 with torch.no_grad():
@@ -457,16 +449,32 @@ def worker_pack(name, model_path, images_dir, images_archive, images_sha256, out
         }
         schema_validate.validate_document(contract, 'contract', SCHEMAS_DIR)
 
+        with safe_zip_open(pt2_bytes, profile=release_pt2_profile(manifest)) as pt2_archive:
+            root = single_root(pt2_archive.names(), model_path)
+            graph_bytes = pt2_archive.read_member(root + '/models/model.json')
+        contract_v2, cases = evaluation_contract.build_contract(
+            name, graph_bytes, loaded_inputs, outputs, decoded_sha256=decoded_sha256,
+            geometry=geometry)
+        staged = {'preprocessing.json': input_assets.json_bytes(preprocessing),
+                  'expected.json': input_assets.json_bytes(expected),
+                  'contract.json': input_assets.json_bytes(contract),
+                  'contract-v2.json': input_assets.json_bytes(contract_v2),
+                  'cases.json': input_assets.json_bytes(cases),
+                  'inputs.pt': inputs_buffer.getvalue(), 'outputs.pt': outputs_buffer.getvalue()}
+
         with zipfile.ZipFile(output, 'w', zipfile.ZIP_DEFLATED) as z:
             # The exact bytes safe_zip_open validated and torch.export.load deserialized --
             # never a second, independent read of model_path, which could silently embed a
             # different file than the one actually loaded and run above.
             z.writestr(f'{name}.pt2', pt2_bytes)
-            z.writestr('preprocessing.json', json.dumps(preprocessing, indent=2, allow_nan=False) + '\n')
-            z.writestr('expected.json', json.dumps(expected, indent=2, allow_nan=False) + '\n')
-            z.writestr('contract.json', json.dumps(contract, indent=2, sort_keys=True, allow_nan=False) + '\n')
-            z.writestr('inputs.pt', inputs_buffer.getvalue())
-            z.writestr('outputs.pt', outputs_buffer.getvalue())
+            for member, data in staged.items():
+                z.writestr(member, data)
+        evaluation_path = os.path.join(os.path.dirname(output), f'{name}-eval.zip')
+        with zipfile.ZipFile(evaluation_path, 'w', zipfile.ZIP_DEFLATED) as z:
+            for member in input_assets.EVALUATION_MEMBERS:
+                z.writestr(member, staged[member])
+        with open(os.path.join(os.path.dirname(output), f'{name}-inputs.pt'), 'wb') as f:
+            f.write(staged['inputs.pt'])
 
         result['status'] = 'ok'
         result['images'] = len(expected)
@@ -739,7 +747,8 @@ def cmd_pack(args):
     # rather than a guess between it and the broader SELECTED_PT2_PROFILE.
     release_names(load_manifest(args.manifest), [args.name])
     worker_pack(args.name, args.model, args.images, args.images_archive, args.images_sha256,
-                args.output, args.max_res, args.manifest)
+                args.output, args.max_res, args.manifest, args.decoded_images,
+                args.image_metadata, args.decoded_sha256)
 
 
 def cmd_aoti_attempt(args):
@@ -778,6 +787,14 @@ def cmd_release(args):
     # _read_images_archive), before its digest is handed to every pack worker; each worker
     # independently repeats the same checks, since `pack` is also reachable directly.
     images_sha256, _ = _read_images_archive(images_archive)
+    destination = os.path.join(release_dir, 'images.zip')
+    if os.path.abspath(images_archive) != destination:
+        shutil.copyfile(images_archive, destination)
+        images_archive = destination
+    decoded_path = os.path.join(release_dir, 'images.pt')
+    metadata_path = os.path.join(release_dir, 'images-metadata.json')
+    input_assets.decode_images(images_archive, decoded_path, metadata_path, images_sha256)
+    decoded_sha256 = manifest_mod.sha256_file(decoded_path)
 
     pack_results = {}
 
@@ -798,6 +815,8 @@ def cmd_release(args):
             ['--manifest', args.manifest, '--max-res', args.max_res, 'pack', name,
              '--model', pt2, '--images', os.path.abspath(args.images),
              '--images-archive', images_archive, '--images-sha256', images_sha256,
+             '--decoded-images', decoded_path, '--image-metadata', metadata_path,
+             '--decoded-sha256', decoded_sha256,
              '--output', release_zip],
             name, args.timeout, hf_home=args.hf_home,
         )
@@ -891,6 +910,7 @@ def cmd_manifest(args):
         images_entry=images_entry, model_entries=model_entries, retired=retired,
     )
     schema_validate.validate_document(manifest_doc, 'manifest', SCHEMAS_DIR)
+    manifest_v2 = _build_manifest_v2(args, manifest_doc, scope)
 
     catalogue_doc = manifest_mod.render_catalogue(
         selected_names=selected_names, default_model=args.default_model, repo=args.repo,
@@ -904,7 +924,8 @@ def cmd_manifest(args):
     )
     schema_validate.validate_document(compat_doc, 'compat-report', SCHEMAS_DIR)
 
-    for filename, doc in (('manifest.json', manifest_doc), ('catalogue.json', catalogue_doc),
+    for filename, doc in (('manifest.json', manifest_doc), ('manifest-v2.json', manifest_v2),
+                          ('catalogue.json', catalogue_doc),
                           ('compat-report.json', compat_doc)):
         with open(os.path.join(args.release_dir, filename), 'w') as f:
             json.dump(doc, f, indent=2, sort_keys=True, allow_nan=False)
@@ -913,6 +934,166 @@ def cmd_manifest(args):
     print(f'wrote manifest.json ({len(model_entries)} models), catalogue.json '
          f'({len(selected_names)} models), compat-report.json (scope: {scope}) to '
          f'{args.release_dir}', file=sys.stderr)
+    return 0
+
+
+def _build_manifest_v2(args, legacy, scope):
+    from pathlib import Path
+    assets = {}
+
+    def asset(asset_id, filename, fmt, profile=None):
+        path = os.path.join(args.release_dir, filename)
+        entry = manifest_mod.build_asset_entry(path, _asset_url(args.repo, args.tag, filename))
+        entry.update(filename=filename, format=fmt)
+        if profile is not None:
+            with safe_zip_open(path, profile=profile) as archive:
+                entry['members'] = sorted(archive.names())
+        assets[asset_id] = entry
+        return asset_id
+
+    asset('legacy_images', 'images.zip', 'zip', IMAGES_ARCHIVE_PROFILE)
+    asset('decoded_images', 'images.pt', 'torch.save')
+    asset('image_metadata', 'images-metadata.json', 'json')
+    models = {}
+    for name in legacy['models']:
+        graph_path = Path(args.models_dir) / name / 'models/model.json'
+        graph_url = f'https://raw.githubusercontent.com/{args.repo}/{args.commit}/models/{name}/models/model.json'
+        graph = manifest_mod.build_asset_entry(graph_path, graph_url)
+        map_path = Path(args.models_dir) / name / WEIGHTS_MAP
+        weight_map = (manifest_mod.build_asset_entry(map_path,
+                      f'https://raw.githubusercontent.com/{args.repo}/{args.commit}/models/{name}/{WEIGHTS_MAP}')
+                      if map_path.exists() else None)
+        models[name] = {
+            'status': 'current', 'graph': graph, 'weight_map': weight_map,
+            'archive': asset(f'{name}/archive', f'{name}.zip', 'zip', release_pt2_profile(args.manifest)),
+            'evaluation': asset(f'{name}/evaluation', f'{name}-eval.zip', 'zip', input_assets.EVALUATION_PROFILE),
+            'inputs': asset(f'{name}/inputs', f'{name}-inputs.pt', 'torch.save')}
+    document = {'schema_version': 2, 'scope': scope, 'assets': assets, 'models': models,
+                **{k: legacy[k] for k in ('producer', 'selected_models', 'release_models', 'retired')}}
+    schema_validate.validate_document(document, 'manifest-v2', SCHEMAS_DIR)
+    manifest_mod.validate_v2_index(legacy, document)
+    return document
+
+
+def _verify_v2_release(args, *, check_full=True, replay=False):
+    from pathlib import Path
+    directory = Path(args.release_dir)
+    legacy = opgraph.strict_json_loads((directory / 'manifest.json').read_bytes())
+    document = opgraph.strict_json_loads((directory / 'manifest-v2.json').read_bytes())
+    schema_validate.validate_document(document, 'manifest-v2', SCHEMAS_DIR)
+    expected_files = manifest_mod.validate_v2_index(legacy, document)
+    if check_full:
+        actual_files = {p.name for p in directory.iterdir() if p.name != 'checksums.txt'}
+        if actual_files != expected_files:
+            raise ValueError('required release file set is missing or contains unexpected files')
+    for asset in document['assets'].values():
+        path = directory / asset['filename']
+        if not check_full and asset['filename'].endswith('.zip') and asset['filename'] not in ('images.zip',) and not asset['filename'].endswith('-eval.zip'):
+            continue
+        if manifest_mod.sha256_file(path) != asset['sha256'] or path.stat().st_size != asset['bytes']:
+            raise ValueError(f'{path.name}: asset hash/size disagreement')
+        if asset['format'] == 'zip':
+            profile = (IMAGES_ARCHIVE_PROFILE if path.name == 'images.zip' else
+                       input_assets.EVALUATION_PROFILE if path.name.endswith('-eval.zip') else
+                       release_pt2_profile(args.manifest))
+            with safe_zip_open(path, profile=profile) as archive:
+                if sorted(archive.names()) != asset['members']:
+                    raise ValueError(f'{path.name}: asset member list disagreement')
+    images = input_assets.load_images(directory / 'images.pt', directory / 'images-metadata.json',
+                                     expected_sha256=document['assets']['decoded_images']['sha256'])
+    metadata = opgraph.strict_json_loads((directory / 'images-metadata.json').read_bytes())
+    if metadata['source_archive_sha256'] != legacy['images']['sha256']:
+        raise ValueError('decoded metadata source digest disagreement')
+    with safe_zip_open(directory / 'images.zip', profile=IMAGES_ARCHIVE_PROFILE) as source:
+        for key, sample in metadata['samples'].items():
+            if hashlib.sha256(source.read_member(sample['source_member'])).hexdigest() != sample['source_sha256']:
+                raise ValueError(f'{key}: source image digest disagreement')
+    for name, model in document['models'].items():
+        graph_path = Path(args.models_dir) / name / 'models/model.json'
+        graph_bytes = graph_path.read_bytes()
+        if hashlib.sha256(graph_bytes).hexdigest() != model['graph']['sha256'] or len(graph_bytes) != model['graph']['bytes']:
+            raise ValueError(f'{name}: indexed graph digest/size disagreement')
+        map_path = Path(args.models_dir) / name / WEIGHTS_MAP
+        if model['weight_map'] is None:
+            if map_path.exists():
+                raise ValueError(f'{name}: indexed weight map absence disagreement')
+        elif (manifest_mod.sha256_file(map_path) != model['weight_map']['sha256'] or
+              map_path.stat().st_size != model['weight_map']['bytes']):
+            raise ValueError(f'{name}: indexed weight map disagreement')
+        with safe_zip_open(directory / f'{name}-eval.zip', profile=input_assets.EVALUATION_PROFILE) as evaluation:
+            if sorted(evaluation.names()) != input_assets.EVALUATION_MEMBERS:
+                raise ValueError(f'{name}: forbidden or missing evaluation members')
+            common = {m: evaluation.read_member(m) for m in input_assets.EVALUATION_MEMBERS}
+        contract = opgraph.strict_json_loads(common['contract-v2.json'])
+        cases = opgraph.strict_json_loads(common['cases.json'])
+        preprocessing = opgraph.strict_json_loads(common['preprocessing.json'])
+        expected = opgraph.strict_json_loads(common['expected.json'])
+        if contract['model'] != name or preprocessing['model'] != name or contract['inputs']['asset'] != model['inputs']:
+            raise ValueError(f'{name}: evaluation model/asset identity disagreement')
+        if contract['decoded_images']['sha256'] != document['assets']['decoded_images']['sha256']:
+            raise ValueError(f'{name}: decoded-image contract digest disagreement')
+        schema_validate.validate_document(preprocessing, 'preprocessing', SCHEMAS_DIR)
+        if any(preprocessing[k] != preprocessing['recipe']['config'][k] for k in preprocessing['recipe']['config']):
+            raise ValueError(f'{name}: legacy/resolved preprocessing config disagreement')
+        if (preprocessing['timm_version'] != preprocessing['recipe']['versions']['timm'] or
+                preprocessing['torch_version'] != preprocessing['recipe']['versions']['torch']):
+            raise ValueError(f'{name}: preprocessing version disagreement')
+        inputs_bytes = (directory / f'{name}-inputs.pt').read_bytes()
+        inputs = input_assets.load_tensors(inputs_bytes)
+        outputs = input_assets.load_tensors(common['outputs.pt'])
+        evaluation_contract.validate_contract(contract, cases, graph_bytes, inputs, outputs, decoded_keys=set(images))
+        reproduced, geometry = input_assets.reproduce(images, preprocessing)
+        input_assets.compare_inputs(name, reproduced, inputs)
+        for case in cases['cases']:
+            if geometry[case['decoded_image_key']] != case['geometry']:
+                raise ValueError(f'{name}/{case["id"]}: observed geometry disagreement')
+        if set(expected) != set(outputs):
+            raise ValueError(f'{name}: top-five sample set disagreement')
+        for key, tensor in outputs.items():
+            values = tensor.tolist()
+            ranks = sorted(range(len(values)), key=lambda i: (-values[i], i))[:5]
+            if expected[key] != {'top5': ranks, 'logits': [round(values[i], 4) for i in ranks]}:
+                raise ValueError(f'{name}/{key}: top-five output disagreement')
+        if check_full:
+            with safe_zip_open(directory / f'{name}.zip', profile=release_pt2_profile(args.manifest)) as full:
+                for member, data in common.items():
+                    if full.read_member(member) != data:
+                        raise ValueError(f'{name}/{member}: common bytes disagree')
+                if full.read_member('inputs.pt') != inputs_bytes:
+                    raise ValueError(f'{name}: standalone inputs differ from full archive')
+                if replay:
+                    _replay_evaluation(name, full.read_member(f'{name}.pt2'), contract, cases,
+                                       inputs, outputs, release_pt2_profile(args.manifest))
+    return document
+
+
+def _replay_evaluation(name, pt2_bytes, contract, cases, inputs, outputs, profile):
+    import torch
+    with safe_zip_open(pt2_bytes, profile=profile) as archive:
+        module = archive._with_validated_source(lambda handle, _: torch.export.load(handle)).module()
+    for case in cases['cases']:
+        args = [evaluation_contract.input_value(inputs[case['inputs'][b['sample_input']]['tensor_key']],
+                                                b['transform']) for b in contract['inputs']['bindings']]
+        with torch.no_grad():
+            result = module(*args)
+        results = (result,) if isinstance(result, torch.Tensor) else result
+        for binding, value in zip(contract['outputs']['bindings'], results, strict=True):
+            actual = evaluation_contract.output_value(value, binding['transform'])
+            reference = outputs[case['outputs'][binding['sample_output']]['tensor_key']]
+            matches = _numeric_match(actual, reference, contract['comparison']['atol'],
+                                     contract['comparison']['rtol'])
+            if not matches:
+                raise ValueError(f'{name}/{case["id"]}: fresh replay differs')
+
+
+def cmd_verify_inputs(args):
+    _verify_v2_release(args, check_full=False)
+    return 0
+
+
+def cmd_decode_images(args):
+    digest, _ = _read_images_archive(args.images_archive)
+    input_assets.decode_images(args.images_archive, args.output, args.metadata, digest)
     return 0
 
 
@@ -986,6 +1167,13 @@ def cmd_verify_release(args):
     release_tier = release_names(models)
     profile = release_pt2_profile(args.manifest)
     problems = []
+    checksums_path = os.path.join(args.release_dir, manifest_mod.CHECKSUMS_FILENAME)
+    if os.path.exists(checksums_path):
+        os.remove(checksums_path)
+    try:
+        _verify_v2_release(args, replay=True)
+    except Exception as e:
+        problems.append(f'v2 release: {e}')
 
     manifest_doc = None
     manifest_path = os.path.join(args.release_dir, 'manifest.json')
@@ -1006,7 +1194,8 @@ def cmd_verify_release(args):
         except Exception as e:
             problems.append(f'{name}: {e}')
 
-    for filename, schema_name in (('manifest.json', 'manifest'), ('catalogue.json', 'catalogue'),
+    for filename, schema_name in (('manifest.json', 'manifest'), ('manifest-v2.json', 'manifest-v2'),
+                                  ('catalogue.json', 'catalogue'),
                                   ('compat-report.json', 'compat-report')):
         path = os.path.join(args.release_dir, filename)
         if not os.path.exists(path):
@@ -1054,7 +1243,7 @@ def cmd_release_assets(args):
     verification -- see pt2_export_core.manifest.release_assets for the full contract.
     """
     checksums_sha256, paths = manifest_mod.release_assets(
-        args.release_dir, expect_checksums_sha256=args.expect_checksums_sha256)
+        args.release_dir, expect_checksums_sha256=args.expect_checksums_sha256, schemas_dir=SCHEMAS_DIR)
     for path in paths:
         print(path)
     print(f'checksums_sha256={checksums_sha256}')
@@ -1125,13 +1314,26 @@ def main():
     p = sub.add_parser('pack', help='build one release archive')
     p.add_argument('name')
     p.add_argument('--model', required=True)
-    p.add_argument('--images', required=True, help='flat directory of sample images')
+    p.add_argument('--images', default=None, help='legacy argument; decoded images are authoritative')
     p.add_argument('--images-archive', required=True,
                    help='images.zip -- validated and cross-checked against --images')
     p.add_argument('--images-sha256', required=True,
                    help='expected sha256 of --images-archive')
     p.add_argument('--output', required=True)
+    p.add_argument('--decoded-images')
+    p.add_argument('--image-metadata')
+    p.add_argument('--decoded-sha256')
     p.set_defaults(func=cmd_pack)
+
+    p = sub.add_parser('decode-images', help='build and reload the shared RGB tensor asset')
+    p.add_argument('--images-archive', required=True)
+    p.add_argument('--output', required=True)
+    p.add_argument('--metadata', required=True)
+    p.set_defaults(func=cmd_decode_images)
+
+    p = sub.add_parser('verify-inputs', help='reproduce staged inputs from decoded images and recipes')
+    p.add_argument('--release-dir', default=os.path.join(repo_root, '.build', 'release'))
+    p.set_defaults(func=cmd_verify_inputs)
 
     p = sub.add_parser('aoti-attempt',
                        help='best-effort AOTInductor-CPU attempt against one release archive')

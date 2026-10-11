@@ -1,0 +1,300 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/thecbah/devcontainer.pytorch-image-models/schemas/preprocessing.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "model": {
+      "type": "string",
+      "minLength": 1
+    },
+    "pretrained_tag": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "input_size": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "crop_pct": {
+      "type": "number",
+      "exclusiveMinimum": 0,
+      "maximum": 1
+    },
+    "crop_mode": {
+      "enum": [
+        "center",
+        "squash",
+        "border",
+        null
+      ]
+    },
+    "interpolation": {
+      "enum": [
+        "bilinear",
+        "bicubic"
+      ]
+    },
+    "mean": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "std": {
+      "type": "array",
+      "items": {
+        "type": "number",
+        "exclusiveMinimum": 0
+      },
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "num_classes": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "timm_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "torch_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "recipe": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": 1
+        },
+        "backend": {
+          "const": "PIL"
+        },
+        "config": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "input_size": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "minItems": 3,
+              "maxItems": 3
+            },
+            "crop_pct": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 1
+            },
+            "crop_mode": {
+              "enum": [
+                "center",
+                "squash",
+                "border",
+                null
+              ]
+            },
+            "interpolation": {
+              "enum": [
+                "bilinear",
+                "bicubic"
+              ]
+            },
+            "mean": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 3,
+              "maxItems": 3
+            },
+            "std": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "minItems": 3,
+              "maxItems": 3
+            }
+          },
+          "required": [
+            "input_size",
+            "crop_pct",
+            "crop_mode",
+            "interpolation",
+            "mean",
+            "std"
+          ]
+        },
+        "versions": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "timm": {
+              "type": "string",
+              "minLength": 1
+            },
+            "torch": {
+              "type": "string",
+              "minLength": 1
+            },
+            "torchvision": {
+              "type": "string",
+              "minLength": 1
+            },
+            "Pillow": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "timm",
+            "torch",
+            "torchvision",
+            "Pillow"
+          ]
+        },
+        "timm_commit": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "helper_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "platform": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "architecture": {
+              "type": "string",
+              "minLength": 1
+            },
+            "system": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "architecture",
+            "system"
+          ]
+        },
+        "pipeline": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 4,
+          "maxItems": 4
+        },
+        "crop_mode_resolved": {
+          "enum": [
+            "center",
+            "squash",
+            "border"
+          ]
+        },
+        "scale_size": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "resize_rounding": {
+          "enum": [
+            "truncate_secondary_dimension",
+            "ties_to_even"
+          ]
+        },
+        "crop_rounding": {
+          "const": "ties_to_even"
+        },
+        "padding": {
+          "const": "extra_pixel_right_bottom"
+        },
+        "padding_fill": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 255
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "interpolation": {
+          "enum": [
+            "bilinear",
+            "bicubic"
+          ]
+        },
+        "antialias": {
+          "const": "PIL_always"
+        },
+        "operations": {
+          "const": [
+            "RGB_PIL_reconstruction",
+            "resize_uint8",
+            "center_crop_or_pad_uint8",
+            "CHW_float32",
+            "divide_float32_255",
+            "subtract_float32_mean",
+            "divide_float32_std"
+          ]
+        }
+      },
+      "required": [
+        "schema_version",
+        "backend",
+        "config",
+        "versions",
+        "timm_commit",
+        "helper_sha256",
+        "platform",
+        "pipeline",
+        "crop_mode_resolved",
+        "scale_size",
+        "resize_rounding",
+        "crop_rounding",
+        "padding",
+        "padding_fill",
+        "interpolation",
+        "antialias",
+        "operations"
+      ]
+    }
+  },
+  "required": [
+    "model",
+    "pretrained_tag",
+    "input_size",
+    "crop_pct",
+    "crop_mode",
+    "interpolation",
+    "mean",
+    "std",
+    "num_classes",
+    "timm_version",
+    "torch_version",
+    "recipe"
+  ]
+}

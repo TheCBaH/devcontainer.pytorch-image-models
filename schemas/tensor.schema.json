@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/thecbah/devcontainer.pytorch-image-models/schemas/tensor.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "dtype": {
+      "enum": [
+        "uint8",
+        "float32"
+      ]
+    },
+    "shape": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "maxItems": 8
+    },
+    "bytes": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "byte_order": {
+      "const": "little"
+    },
+    "layout": {
+      "enum": [
+        "row_major",
+        "CHW"
+      ]
+    }
+  },
+  "required": [
+    "dtype",
+    "shape",
+    "bytes",
+    "sha256",
+    "byte_order",
+    "layout"
+  ]
+}

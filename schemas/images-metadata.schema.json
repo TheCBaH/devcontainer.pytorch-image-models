@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/thecbah/devcontainer.pytorch-image-models/schemas/images-metadata.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "source_archive_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "images_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "sample_order": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "decoding": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "color_mode": {
+          "const": "RGB"
+        },
+        "exif_orientation": {
+          "const": "not_applied"
+        },
+        "Pillow": {
+          "type": "string",
+          "minLength": 1
+        },
+        "jpeg_decoder": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "libjpeg_turbo": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "color_mode",
+        "exif_orientation",
+        "Pillow",
+        "jpeg_decoder",
+        "libjpeg_turbo"
+      ]
+    },
+    "samples": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "source_member": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "tensor": {
+            "$ref": "tensor.schema.json"
+          }
+        },
+        "required": [
+          "source_member",
+          "source_sha256",
+          "tensor"
+        ]
+      }
+    },
+    "attribution": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "labels": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "source_archive_sha256",
+    "images_sha256",
+    "sample_order",
+    "decoding",
+    "samples",
+    "attribution",
+    "labels"
+  ]
+}

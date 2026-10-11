@@ -105,6 +105,9 @@ IMAGES_ARCHIVE_PROFILE = ZipProfile(
     max_member_bytes=64 * 2**20,
 )
 
+EVALUATION_ARCHIVE_PROFILE = ZipProfile(16 * 2**20, 1 * 2**20, 5, 16 * 2**20, 1100, 8 * 2**20)
+TENSOR_ARCHIVE_PROFILE = ZipProfile(512 * 2**20, 2 * 2**20, 1024, 512 * 2**20, 1100, 128 * 2**20)
+
 
 # max_members: a real .pt2 stores every parameter/buffer as its own zip member (plus a handful
 # of fixed metadata entries), so this scales with model parameter *count*, not weight_cap_mb --

@@ -92,7 +92,7 @@ jobs:
       # changed at all since the first pass (ruling out a coordinated edit to an asset and
       # its checksums.txt line, made consistently, between the two invocations -- two
       # independently-passing rehashes alone would not catch that), and additionally
-      # re-verifies every manifest.json archive entry against the freshly-rehashed digests.
+      # re-verifies both indices' hashes, byte counts, member lists and complete asset set.
       # This second pass's own path list, not the first's, is what gets published below.
       - name: release assets (second pass, pinned)
         id: assets_second

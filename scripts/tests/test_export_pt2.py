@@ -260,7 +260,7 @@ def test_worker_pack_round_trip(tmp_path, tiny_pt2, tiny_images, capsys):
     with zipfile.ZipFile(output) as z:
         names = set(z.namelist())
         assert names == {'test_vit4.pt2', 'preprocessing.json', 'expected.json', 'contract.json',
-                         'inputs.pt', 'outputs.pt'}
+                         'inputs.pt', 'outputs.pt', 'contract-v2.json', 'cases.json'}
         expected = json.loads(z.read('expected.json'))
         assert set(expected) == {'a.jpg', 'b.jpg'}
         for entry in expected.values():
@@ -277,20 +277,18 @@ def test_worker_pack_round_trip(tmp_path, tiny_pt2, tiny_images, capsys):
             assert z.read('test_vit4.pt2') == f.read()
 
 
-def test_worker_pack_rejects_images_mismatch(tmp_path, tiny_pt2, tiny_images, capsys):
+def test_worker_pack_uses_decoded_archive_without_jpeg_directory(tmp_path, tiny_pt2, tiny_images, capsys):
     images_dir, images_archive, images_sha256 = tiny_images
     other_images_dir = tmp_path / 'other_images'
-    other_images_dir.mkdir()
-    from PIL import Image
-    Image.new('RGB', (160, 160)).save(other_images_dir / 'different.jpg')
+    assert not other_images_dir.exists()
 
     output = str(tmp_path / 'mismatch.zip')
     export_pt2.worker_pack('test_vit4', tiny_pt2, str(other_images_dir), images_archive,
                            images_sha256, output, 160, MODELS_SELECTED)
     result = json.loads(capsys.readouterr().out.strip().splitlines()[-1])
-    assert result['status'] == 'failed'
-    assert 'sample mismatch' in result['error']
-    assert not os.path.exists(output)
+    assert result['status'] == 'ok', result
+    with zipfile.ZipFile(output) as archive:
+        assert json.loads(archive.read('contract.json'))['inputs']['keys'] == ['a.jpg', 'b.jpg']
 
 
 @pytest.mark.filterwarnings("ignore:Duplicate name:UserWarning")

@@ -9,10 +9,12 @@ release_assets()'s own two-pass, pinned-digest contract below.
 """
 import hashlib
 import os
+import re
 import subprocess
 
 from . import opgraph
-from .archive import release_pt2_profile, safe_zip_open
+from .archive import (IMAGES_ARCHIVE_PROFILE, EVALUATION_ARCHIVE_PROFILE, TENSOR_ARCHIVE_PROFILE,
+                      ZipProfile, release_pt2_profile, safe_zip_open)
 
 CHECKSUMS_FILENAME = 'checksums.txt'
 
@@ -156,6 +158,10 @@ def _parse_checksums(text):
         digest, sep, rel = line.partition('  ')
         if not sep or not digest or not rel:
             raise ValueError(f'malformed {CHECKSUMS_FILENAME} line: {line!r}')
+        if (not re.fullmatch('[0-9a-f]{64}', digest) or rel in entries
+                or rel == CHECKSUMS_FILENAME or os.path.isabs(rel)
+                or any(part in ('', '.', '..') for part in rel.split('/'))):
+            raise ValueError(f'invalid or duplicate {CHECKSUMS_FILENAME} entry: {rel!r}')
         entries[rel] = digest
     return entries
 
@@ -182,7 +188,93 @@ def _verify_manifest_digests(manifest, checksums_entries):
                          + '\n  '.join(problems))
 
 
-def release_assets(release_dir, expect_checksums_sha256=None):
+def validate_v2_index(legacy, document):
+    """Resolve the complete asset set and preserve the shared v1 discovery identities."""
+    if document['schema_version'] != 2:
+        raise ValueError('unsupported manifest-v2 schema version')
+    for field in ('producer', 'selected_models', 'release_models', 'retired'):
+        if document[field] != legacy[field]:
+            raise ValueError(f'manifest-v2 {field} disagrees with manifest.json')
+    if set(document['models']) != set(legacy['models']):
+        raise ValueError('v1/v2 model populations disagree')
+    for field in ('selected_models', 'release_models'):
+        population = document[field]
+        if population['count'] != len(population['names']) or len(set(population['names'])) != population['count']:
+            raise ValueError(f'manifest-v2 invalid {field} population')
+    if document['scope'] == 'full' and set(document['models']) != set(document['release_models']['names']):
+        raise ValueError('manifest-v2 full release is incomplete')
+    assets = document['assets']
+    producer = document['producer']
+    filenames = [a['filename'] for a in assets.values()]
+    if (len(set(filenames)) != len(filenames)
+            or any(not re.fullmatch('[A-Za-z0-9][A-Za-z0-9_.-]*', x) for x in filenames)):
+        raise ValueError('manifest-v2 duplicate or invalid asset filename')
+    required = {'legacy_images', 'decoded_images', 'image_metadata'}
+    for name, model in document['models'].items():
+        base = f'https://raw.githubusercontent.com/{producer["repo"]}/{producer["commit"]}/models/{name}/'
+        if model['graph']['url'] != base + 'models/model.json':
+            raise ValueError(f'{name}: graph URL is not addressed by the producer commit')
+        if model['weight_map'] is not None and model['weight_map']['url'] != base + 'models/safetensors.json':
+            raise ValueError(f'{name}: weight-map URL is not addressed by the producer commit')
+        if model['status'] != legacy['models'][name]['status']:
+            raise ValueError(f'{name}: v1/v2 model status disagrees')
+        for field, suffix, filename, fmt in (
+                ('archive', 'archive', f'{name}.zip', 'zip'),
+                ('evaluation', 'evaluation', f'{name}-eval.zip', 'zip'),
+                ('inputs', 'inputs', f'{name}-inputs.pt', 'torch.save')):
+            asset_id = f'{name}/{suffix}'
+            if model[field] != asset_id or asset_id not in assets:
+                raise ValueError(f'{name}: unresolved or wrong {field} asset')
+            required.add(asset_id)
+            if assets[asset_id]['filename'] != filename or assets[asset_id]['format'] != fmt:
+                raise ValueError(f'{name}: wrong {field} asset format/filename')
+        shared = assets[model['archive']]
+        for field in ('url', 'sha256', 'bytes', 'members'):
+            if shared[field] != legacy['models'][name]['archive'][field]:
+                raise ValueError(f'{name}: v1/v2 archive {field} disagrees')
+    if required != set(assets):
+        raise ValueError('manifest-v2 missing or unexpected indexed assets')
+    for asset in assets.values():
+        expected_url = f'https://github.com/{producer["repo"]}/releases/download/{producer["tag"]}/{asset["filename"]}'
+        if asset['url'] != expected_url:
+            raise ValueError('manifest-v2 asset URL disagrees with producer release')
+    for asset_id, filename, fmt in (('legacy_images', 'images.zip', 'zip'),
+                                    ('decoded_images', 'images.pt', 'torch.save'),
+                                    ('image_metadata', 'images-metadata.json', 'json')):
+        if assets[asset_id]['filename'] != filename or assets[asset_id]['format'] != fmt:
+            raise ValueError(f'{asset_id}: wrong shared asset')
+    for field in ('url', 'sha256', 'bytes'):
+        if assets['legacy_images'][field] != legacy['images'][field]:
+            raise ValueError(f'v1/v2 images {field} disagrees')
+    return set(filenames) | {'manifest.json', 'manifest-v2.json', 'catalogue.json', 'compat-report.json'}
+
+
+def verify_v2_assets(release_dir, legacy, document, entries):
+    if document['scope'] != 'full':
+        raise ValueError('smoke-scope v2 artifacts cannot be published')
+    required = validate_v2_index(legacy, document)
+    if required != set(entries):
+        raise ValueError('manifest-v2 required file set disagrees with checksums.txt')
+    for asset_id, asset in document['assets'].items():
+        filename = asset['filename']
+        path = os.path.join(release_dir, filename)
+        if entries.get(filename) != asset['sha256']:
+            raise ValueError(f'{asset_id}: manifest-v2 sha256 disagrees with verified digest')
+        if os.path.getsize(path) != asset['bytes']:
+            raise ValueError(f'{asset_id}: manifest-v2 byte count disagrees')
+        if asset['format'] == 'zip':
+            profile = (IMAGES_ARCHIVE_PROFILE if asset_id == 'legacy_images' else
+                       EVALUATION_ARCHIVE_PROFILE if asset_id.endswith('/evaluation') else
+                       ZipProfile(512 * 2**20, 2 * 2**20, 4096, 512 * 2**20, 1100, 256 * 2**20))
+            with safe_zip_open(path, profile=profile) as archive:
+                if sorted(archive.names()) != asset['members']:
+                    raise ValueError(f'{asset_id}: manifest-v2 member list disagrees')
+        elif asset['format'] == 'torch.save':
+            with safe_zip_open(path, profile=TENSOR_ARCHIVE_PROFILE):
+                pass
+
+
+def release_assets(release_dir, expect_checksums_sha256=None, schemas_dir=None):
     """Recompute and re-verify the release asset list from disk every time this runs -- never
     trusts an in-memory list carried across a separate CI process, and never trusts an
     earlier verification.
@@ -216,6 +308,8 @@ def release_assets(release_dir, expect_checksums_sha256=None):
 
     for rel, expected_digest in sorted(entries.items()):
         path = os.path.join(release_dir, rel)
+        if os.path.islink(path) or os.path.realpath(path) != os.path.abspath(path):
+            raise ValueError(f'{rel}: symlink asset is not allowed')
         if not os.path.exists(path):
             raise FileNotFoundError(f'{rel}: listed in {CHECKSUMS_FILENAME} but missing from '
                                     f'{release_dir}')
@@ -234,11 +328,20 @@ def release_assets(release_dir, expect_checksums_sha256=None):
         raise ValueError(f'{len(extra)} file(s) under {release_dir} are not listed in '
                          f'{CHECKSUMS_FILENAME}: {sorted(extra)}')
 
-    if expect_checksums_sha256 is not None:
+    v2_path = os.path.join(release_dir, 'manifest-v2.json')
+    if expect_checksums_sha256 is not None or os.path.exists(v2_path):
         manifest_path = os.path.join(release_dir, 'manifest.json')
         with open(manifest_path, 'rb') as f:
             manifest = opgraph.strict_json_loads(f.read())
         _verify_manifest_digests(manifest, entries)
+        if os.path.exists(v2_path):
+            with open(v2_path, 'rb') as f:
+                document = opgraph.strict_json_loads(f.read())
+            if schemas_dir is not None:
+                from .schema_validate import validate_document
+                validate_document(document, 'manifest-v2', schemas_dir)
+                validate_document(manifest, 'manifest', schemas_dir)
+            verify_v2_assets(release_dir, manifest, document, entries)
 
     ordered = [os.path.join(release_dir, CHECKSUMS_FILENAME)] + \
               [os.path.join(release_dir, rel) for rel in sorted(entries)]

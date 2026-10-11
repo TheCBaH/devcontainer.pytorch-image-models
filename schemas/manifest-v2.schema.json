@@ -1,0 +1,196 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/thecbah/devcontainer.pytorch-image-models/schemas/manifest-v2.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 2
+    },
+    "scope": {
+      "enum": [
+        "full",
+        "smoke"
+      ]
+    },
+    "producer": {
+      "$ref": "manifest.schema.json#/properties/producer"
+    },
+    "selected_models": {
+      "$ref": "manifest.schema.json#/properties/selected_models"
+    },
+    "release_models": {
+      "$ref": "manifest.schema.json#/properties/release_models"
+    },
+    "assets": {
+      "type": "object",
+      "minProperties": 3,
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "filename": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]*$"
+          },
+          "url": {
+            "type": "string",
+            "minLength": 1
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "format": {
+            "enum": [
+              "zip",
+              "torch.save",
+              "json"
+            ]
+          },
+          "members": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "filename",
+          "url",
+          "bytes",
+          "sha256",
+          "format"
+        ],
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "format": {
+                  "const": "zip"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "members"
+              ]
+            },
+            "else": {
+              "not": {
+                "required": [
+                  "members"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    "models": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "status": {
+            "const": "current"
+          },
+          "archive": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evaluation": {
+            "type": "string",
+            "minLength": 1
+          },
+          "inputs": {
+            "type": "string",
+            "minLength": 1
+          },
+          "graph": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "url": {
+                "type": "string",
+                "minLength": 1
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "bytes": {
+                "type": "integer",
+                "minimum": 1
+              }
+            },
+            "required": [
+              "url",
+              "sha256",
+              "bytes"
+            ]
+          },
+          "weight_map": {
+            "oneOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "sha256": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  },
+                  "bytes": {
+                    "type": "integer",
+                    "minimum": 1
+                  }
+                },
+                "required": [
+                  "url",
+                  "sha256",
+                  "bytes"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "status",
+          "archive",
+          "evaluation",
+          "inputs",
+          "graph",
+          "weight_map"
+        ]
+      }
+    },
+    "retired": {
+      "$ref": "manifest.schema.json#/properties/retired"
+    }
+  },
+  "required": [
+    "schema_version",
+    "scope",
+    "producer",
+    "selected_models",
+    "release_models",
+    "assets",
+    "models",
+    "retired"
+  ]
+}

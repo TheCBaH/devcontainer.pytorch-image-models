@@ -1,0 +1,383 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/thecbah/devcontainer.pytorch-image-models/schemas/contract-v2.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 2
+    },
+    "model": {
+      "type": "string",
+      "minLength": 1
+    },
+    "graph": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "user_inputs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "dtype": {
+                "const": "float32"
+              },
+              "shape": {
+                "type": "array",
+                "items": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "maxItems": 8
+              }
+            },
+            "required": [
+              "name",
+              "dtype",
+              "shape"
+            ]
+          },
+          "minItems": 1
+        },
+        "user_outputs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "dtype": {
+                "const": "float32"
+              },
+              "shape": {
+                "type": "array",
+                "items": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "maxItems": 8
+              }
+            },
+            "required": [
+              "name",
+              "dtype",
+              "shape"
+            ]
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "sha256",
+        "path",
+        "user_inputs",
+        "user_outputs"
+      ]
+    },
+    "decoded_images": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "asset": {
+          "const": "decoded_images"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "metadata_asset": {
+          "const": "image_metadata"
+        }
+      },
+      "required": [
+        "asset",
+        "sha256",
+        "metadata_asset"
+      ]
+    },
+    "inputs": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "asset": {
+          "type": "string",
+          "minLength": 1
+        },
+        "bindings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "graph_input": {
+                "type": "string",
+                "minLength": 1
+              },
+              "sample_input": {
+                "type": "string",
+                "minLength": 1
+              },
+              "graph_dtype": {
+                "const": "float32"
+              },
+              "graph_shape": {
+                "type": "array",
+                "items": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "maxItems": 8
+              },
+              "sample": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "dtype": {
+                    "enum": [
+                      "uint8",
+                      "float32"
+                    ]
+                  },
+                  "shape": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer",
+                      "minimum": 1
+                    },
+                    "maxItems": 8
+                  },
+                  "layout": {
+                    "enum": [
+                      "row_major",
+                      "CHW"
+                    ]
+                  }
+                },
+                "required": [
+                  "dtype",
+                  "shape",
+                  "layout"
+                ]
+              },
+              "transform": {
+                "oneOf": [
+                  {
+                    "const": {
+                      "op": "identity"
+                    }
+                  },
+                  {
+                    "const": {
+                      "op": "unsqueeze",
+                      "axis": 0
+                    }
+                  }
+                ]
+              }
+            },
+            "required": [
+              "graph_input",
+              "sample_input",
+              "graph_dtype",
+              "graph_shape",
+              "sample",
+              "transform"
+            ]
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "asset",
+        "bindings"
+      ]
+    },
+    "outputs": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "member": {
+          "const": "outputs.pt"
+        },
+        "bindings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "graph_output": {
+                "type": "string",
+                "minLength": 1
+              },
+              "sample_output": {
+                "type": "string",
+                "minLength": 1
+              },
+              "graph_dtype": {
+                "const": "float32"
+              },
+              "graph_shape": {
+                "type": "array",
+                "items": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "maxItems": 8
+              },
+              "sample": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "dtype": {
+                    "enum": [
+                      "uint8",
+                      "float32"
+                    ]
+                  },
+                  "shape": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer",
+                      "minimum": 1
+                    },
+                    "maxItems": 8
+                  },
+                  "layout": {
+                    "enum": [
+                      "row_major",
+                      "CHW"
+                    ]
+                  }
+                },
+                "required": [
+                  "dtype",
+                  "shape",
+                  "layout"
+                ]
+              },
+              "transform": {
+                "oneOf": [
+                  {
+                    "const": []
+                  },
+                  {
+                    "const": [
+                      {
+                        "op": "select",
+                        "axis": 0,
+                        "index": 0
+                      },
+                      {
+                        "op": "cast",
+                        "dtype": "float32"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "required": [
+              "graph_output",
+              "sample_output",
+              "graph_dtype",
+              "graph_shape",
+              "sample",
+              "transform"
+            ]
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "member",
+        "bindings"
+      ]
+    },
+    "cases": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "member": {
+          "const": "cases.json"
+        }
+      },
+      "required": [
+        "member"
+      ]
+    },
+    "preprocessing": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "member": {
+          "const": "preprocessing.json"
+        }
+      },
+      "required": [
+        "member"
+      ]
+    },
+    "comparison": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "atol": {
+          "type": "number",
+          "minimum": 0
+        },
+        "rtol": {
+          "type": "number",
+          "minimum": 0
+        },
+        "finite": {
+          "const": "required"
+        },
+        "rule": {
+          "const": "abs(actual-reference)<=atol+rtol*abs(reference)"
+        },
+        "preprocessing": {
+          "const": "exact_bits"
+        },
+        "tie_break": {
+          "const": "(-logit_value, class_index)"
+        }
+      },
+      "required": [
+        "atol",
+        "rtol",
+        "finite",
+        "rule",
+        "preprocessing",
+        "tie_break"
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "model",
+    "graph",
+    "decoded_images",
+    "inputs",
+    "outputs",
+    "cases",
+    "preprocessing",
+    "comparison"
+  ]
+}

@@ -8,6 +8,7 @@ import os
 import subprocess
 import sys
 import zipfile
+from pathlib import Path
 
 import pytest
 
@@ -47,8 +48,9 @@ def release_pipeline(tmp_path_factory):
     release_dir.mkdir()
 
     from PIL import Image
-    for n in ['a.jpg', 'b.jpg']:
-        Image.new('RGB', (160, 160), color=(10, 20, 30)).save(images_dir / n)
+    from test_input_contracts import patterned
+    for n, dims in [('a.jpg', (181, 239)), ('b.jpg', (243, 179))]:
+        patterned(*dims).save(images_dir / n)
     images_archive = release_dir / 'images.zip'
     with zipfile.ZipFile(images_archive, 'w') as z:
         for n in ['a.jpg', 'b.jpg']:
@@ -172,3 +174,101 @@ def test_release_assets_two_pass_pinned_flow(release_pipeline):
                            expect_checksums_sha256='0' * 64)
     with pytest.raises(ValueError, match='does not match the pinned digest'):
         export_pt2.cmd_release_assets(wrong_pin_args)
+
+
+def test_evaluation_and_input_assets_share_bytes_and_legacy_replays(release_pipeline):
+    import io
+    import torch
+    directory = release_pipeline['release_dir']
+    with zipfile.ZipFile(os.path.join(directory, f'{NAME}.zip')) as full, \
+         zipfile.ZipFile(os.path.join(directory, f'{NAME}-eval.zip')) as evaluation:
+        assert sorted(evaluation.namelist()) == export_pt2.input_assets.EVALUATION_MEMBERS
+        for member in evaluation.namelist():
+            assert evaluation.read(member) == full.read(member)
+        standalone = Path(directory, f'{NAME}-inputs.pt').read_bytes()
+        assert standalone == full.read('inputs.pt')
+        # The v1 playback path ignores the additive JSON members.
+        legacy = json.loads(full.read('contract.json'))
+        assert legacy['schema_version'] == 1
+        module = torch.export.load(io.BytesIO(full.read(f'{NAME}.pt2'))).module()
+        inputs = torch.load(io.BytesIO(full.read('inputs.pt')), weights_only=True)
+        outputs = torch.load(io.BytesIO(full.read('outputs.pt')), weights_only=True)
+        with torch.no_grad():
+            for key in inputs:
+                assert export_pt2._numeric_match(module(inputs[key].unsqueeze(0))[0].float(),
+                    outputs[key], legacy['expected']['atol'], legacy['expected']['rtol'])
+
+
+def test_independent_reproduction_does_not_open_full_archive(release_pipeline, tmp_path):
+    import shutil
+    directory = tmp_path / 'inputs-only'
+    shutil.copytree(release_pipeline['release_dir'], directory)
+    (directory / f'{NAME}.zip').unlink()
+    args = _Args(manifest=release_pipeline['manifest'], models_dir=release_pipeline['models_dir'],
+                 release_dir=str(directory))
+    assert export_pt2.cmd_verify_inputs(args) == 0
+
+
+@pytest.mark.parametrize('mutation', ['missing', 'unexpected', 'input', 'evaluation',
+                                     'unresolved', 'graph', 'descriptor', 'geometry', 'images'])
+def test_v2_incomplete_or_inconsistent_release_never_gets_checksums(release_pipeline, tmp_path, mutation):
+    import shutil
+    from pathlib import Path
+    directory = tmp_path / mutation
+    shutil.copytree(release_pipeline['release_dir'], directory)
+    index = json.loads((directory / 'manifest-v2.json').read_bytes())
+    if mutation == 'missing': (directory / f'{NAME}-inputs.pt').unlink()
+    if mutation == 'unexpected': (directory / 'unexpected.txt').write_text('extra')
+    if mutation == 'input': (directory / f'{NAME}-inputs.pt').write_bytes(b'bad')
+    if mutation == 'images': (directory / 'images.pt').write_bytes(b'bad')
+    if mutation == 'unresolved': index['models'][NAME]['inputs'] = 'missing/inputs'
+    if mutation in ('evaluation', 'graph', 'descriptor', 'geometry'):
+        path = directory / f'{NAME}-eval.zip'
+        with zipfile.ZipFile(path) as z:
+            members = {n: z.read(n) for n in z.namelist()}
+        if mutation == 'evaluation': members['forbidden.pt2'] = b'bad'
+        if mutation == 'graph':
+            doc = json.loads(members['contract-v2.json'])
+            doc['graph']['sha256'] = 'a' * 64
+            members['contract-v2.json'] = export_pt2.input_assets.json_bytes(doc)
+        if mutation in ('descriptor', 'geometry'):
+            doc = json.loads(members['cases.json'])
+            if mutation == 'descriptor':
+                doc['cases'][0]['inputs']['image']['tensor']['sha256'] = 'a' * 64
+            else:
+                doc['cases'][0]['geometry'][0]['after'][0] += 1
+            members['cases.json'] = export_pt2.input_assets.json_bytes(doc)
+        with zipfile.ZipFile(path, 'w', zipfile.ZIP_DEFLATED) as z:
+            for n, data in members.items(): z.writestr(n, data)
+        asset = index['assets'][f'{NAME}/evaluation']
+        asset.update(sha256=export_pt2.manifest_mod.sha256_file(path), bytes=path.stat().st_size,
+                     members=sorted(members))
+    (directory / 'manifest-v2.json').write_bytes(export_pt2.input_assets.json_bytes(index))
+    args = _Args(manifest=release_pipeline['manifest'], models_dir=release_pipeline['models_dir'],
+                 release_dir=str(directory))
+    assert export_pt2.cmd_verify_release(args) == 1
+    assert not (directory / 'checksums.txt').exists()
+
+
+@pytest.mark.parametrize('mutation', ['hash', 'size', 'duplicate', 'population', 'unresolved', 'extra', 'members'])
+def test_first_and_second_publication_pass_reject_invalid_v2_index(release_pipeline, tmp_path, mutation):
+    import shutil
+    directory = tmp_path / mutation
+    shutil.copytree(release_pipeline['release_dir'], directory)
+    path = directory / 'manifest-v2.json'
+    doc = json.loads(path.read_bytes())
+    asset = doc['assets'][f'{NAME}/inputs']
+    if mutation == 'hash': asset['sha256'] = 'b' * 64
+    if mutation == 'size': asset['bytes'] += 1
+    if mutation == 'duplicate': asset['filename'] = 'images.pt'
+    if mutation == 'population': doc['release_models']['names'] = []
+    if mutation == 'unresolved': doc['models'][NAME]['inputs'] = 'missing'
+    if mutation == 'extra': doc['assets']['unexpected'] = dict(asset, filename='other.pt')
+    if mutation == 'members': doc['assets'][f'{NAME}/evaluation']['members'] = ['bad']
+    path.write_bytes(export_pt2.input_assets.json_bytes(doc))
+    files = [p.name for p in directory.iterdir() if p.name != 'checksums.txt']
+    (directory / 'checksums.txt').write_text(export_pt2.manifest_mod.render_checksums(str(directory), files))
+    for pin in [None, export_pt2.manifest_mod.sha256_file(directory / 'checksums.txt')]:
+        with pytest.raises(Exception):
+            export_pt2.manifest_mod.release_assets(str(directory), expect_checksums_sha256=pin,
+                                                    schemas_dir=export_pt2.SCHEMAS_DIR)

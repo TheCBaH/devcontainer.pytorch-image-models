@@ -4,10 +4,17 @@ on:
   push:
   pull_request:
   workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Select validation or inventory'
+        default: ci
+        type: choice
+        options: [ci, input-inventory, preprocessing-fixtures, release-validation]
 
 jobs:
 
   uv:
+    if: github.event_name != 'workflow_dispatch' || inputs.mode == 'ci'
     runs-on: ubuntu-24.04-arm
     steps:
       - name: checkout
@@ -65,6 +72,7 @@ jobs:
   # in parallel with each other and with the jobs above) instead of folded into `uv`, since this
   # regeneration is otherwise the same cost class as `report.ci`+`models` a second time.
   precision:
+    if: github.event_name != 'workflow_dispatch' || inputs.mode == 'ci'
     runs-on: ubuntu-24.04-arm
     strategy:
       fail-fast: false
@@ -112,6 +120,7 @@ jobs:
   # ones at whatever `main` was when they were fetched. Only main saves -- a branch's entry
   # would land in a scope nothing else reads, and cost quota for it.
   weights:
+    if: github.event_name != 'workflow_dispatch' || inputs.mode == 'ci'
     runs-on: ubuntu-24.04-arm
     env:
       HF_HOME: ${{ github.workspace }}/.hf-cache
@@ -147,6 +156,7 @@ jobs:
           key: ${{ steps.hf.outputs.key }}
 
   devcontainer:
+    if: github.event_name != 'workflow_dispatch' || inputs.mode == 'ci'
     runs-on: ubuntu-24.04-arm
     permissions:
       packages: write
@@ -208,3 +218,81 @@ jobs:
 
       - name: check tree is unmodified
         run: ${{ env.EXEC }} make check-tree-clean
+
+  input-inventory:
+    if: github.event_name == 'workflow_dispatch' && inputs.mode == 'input-inventory'
+    runs-on: ubuntu-24.04-arm
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          submodules: true
+      - uses: astral-sh/setup-uv@v10.2.0
+        with:
+          python-version: '3.13'
+          enable-cache: true
+      - run: make download
+      - run: uv run python scripts/input_inventory.py --output input-inventory.json
+      - uses: actions/upload-artifact@v7.0.0
+        with:
+          name: input-inventory
+          path: input-inventory.json
+
+  preprocessing-fixtures:
+    if: github.event_name == 'workflow_dispatch' && inputs.mode == 'preprocessing-fixtures'
+    runs-on: ubuntu-24.04-arm
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          submodules: true
+      - uses: astral-sh/setup-uv@v10.2.0
+        with:
+          python-version: '3.13'
+          enable-cache: true
+      - run: uv run python scripts/preprocessing_fixtures.py --output preprocessing-fixtures
+      - uses: actions/upload-artifact@v7.0.0
+        with:
+          name: preprocessing-fixtures
+          path: preprocessing-fixtures
+
+  release-validation:
+    if: github.event_name == 'workflow_dispatch' && inputs.mode == 'release-validation'
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          submodules: true
+          fetch-depth: 0
+      - uses: astral-sh/setup-uv@v10.2.0
+        with:
+          python-version: '3.13'
+          enable-cache: true
+      - uses: ./.github/workflows/actions/hf-cache
+      - run: make download models.fetch
+        env:
+          HF_HOME: ${{ github.workspace }}/.hf-cache
+      - run: make release.manifest
+        env:
+          HF_HOME: ${{ github.workspace }}/.hf-cache
+          RELEASE_REPO: ${{ github.repository }}
+          RELEASE_TAG: dry-run-${{ github.sha }}
+          RELEASE_COMMIT: ${{ github.sha }}
+      - name: Verify publication passes and independent input reproduction
+        run: |
+          make release.inputs.verify
+          OUTPUT="$(make release.assets)"
+          DIGEST="$(echo "$OUTPUT" | tail -n1 | cut -d= -f2)"
+          make release.assets EXPECT_CHECKSUMS_SHA256="$DIGEST"
+      - uses: actions/upload-artifact@v7.0.0
+        if: always()
+        with:
+          name: release-validation
+          path: |
+            .build/release/manifest*.json
+            .build/release/images*
+            .build/release/*-eval.zip
+            .build/release/*-inputs.pt
+            .build/release/checksums.txt
+            .build/release/catalogue.json
+            .build/release/compat-report.json
+            .build/work/pack-results.json
