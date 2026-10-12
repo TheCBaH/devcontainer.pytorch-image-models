@@ -38,10 +38,11 @@ models:
     migrate_to: null
 
   mobilenet_edgetpu_v2_m:
-    removed_in: v0.0.4
+    removed_in: v0.0.8
     reason: >-
-      Same coverage-optimization reshuffle as maxxvitv2_nano_rw_256. The mobilenet_edgetpu_v2
-      family has no other release candidate this round.
+      Coverage selection reshuffled after the timm 1.0.30 update. The model
+      remains available upstream, but the selected release tier has no
+      mobilenet_edgetpu_v2 representative.
     migrate_to: null
 
   mobilenetv3_large_150d:
@@ -68,3 +69,10 @@ models:
       Same coverage-optimization reshuffle as maxxvitv2_nano_rw_256.
     migrate_to: tf_mobilenetv3_small_minimal_100
 
+  fastvit_sa12:
+    removed_in: v0.0.8
+    reason: >-
+      Coverage selection reshuffled after the timm 1.0.30 update. The FastViT
+      representative is now fastvit_t12. fastvit_sa12 remains available
+      upstream.
+    migrate_to: fastvit_t12

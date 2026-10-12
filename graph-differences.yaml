@@ -13,7 +13,7 @@
 
 models:
   convit_tiny: _to_copy.default=10/0
-  fastvit_sa12: _unsafe_view.default=2/0 clone.default=29/27 view.default=7/9
+  csatv2: _unsafe_view.default=5/1 clone.default=47/44 view.default=143/147
   sam2_hiera_tiny: _unsafe_view.default=11/0 clone.default=44/33 view.default=55/66
   test_vit4: _unsafe_view.default=9/0 clone.default=38/29 view.default=10/19
   vit_small_patch16_lingbot: _to_copy.default=1/0
